@@ -1623,4 +1623,86 @@ https://www.quora.com/When-using-Flask-is-using-React-instead-of-Jinja2-worth-it
 
 
 
+2023/6/20
+1. docker沒有apt-get怎麼辦?? Here's a reference talks about this:
+https://juejin.cn/s/docker%E6%B2%A1%E6%9C%89apt-get%E5%91%BD%E4%BB%A4
 
+2. Docker container沒辦法執行, 使用以下指令後成功:
+https://www.zhihu.com/question/442341345
+docker run -itd --net=host --name=container_name image_name
+
+3. docker的終端機沒辦法使用sudo???  可以使用 "docker exec -ti -u root container_name bash", here's a reference talks about this:
+https://stackoverflow.com/questions/25845538/how-to-use-sudo-inside-a-docker-container
+
+4. 嘗試安裝docker extension 在vscode上卻跳出錯誤"XHR failed :Error: XRH failed" 在output上,    最後發現是vpn的問題, 把vpn斷掉就可以用了
+
+5. 如何把檔案從本機複製到docker的container裡面, 可以使用以下指令:
+docker cp <filename> <container-name):/path/to/file/in/container
+如果想要從docker container 複製到本機, 可以使用以下指令:
+docker cp <container-name>:/path/to/file/in/container .
+
+以下是reference:
+https://www.796t.com/post/bGc3cQ==.html
+
+
+6. Docker container明明就關閉了為何打開web還會有docker的web?? Here's a reference talks about this(跟cache有關):
+https://stackoverflow.com/questions/50160488/docker-is-stopped-still-webpage-is-rendered-in-browser
+
+
+2023/6/21
+
+1. 使用docker安裝mysql 卻不知為何無法開啟服務, 這裡找到一招可以解決:
+https://www.youtube.com/watch?v=kphq2TsVRIs&ab_channel=DatabaseStar
+他使用以下的指令
+docker run --name some-mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=your_password -d mysql_image
+
+2. 我想要在docker的容器下指令安裝mysql, 卻失敗了, 她顯示'mysql-server' has no installation candidate?
+以下是一個解決方法:
+https://stackoverflow.com/questions/20259036/mysql-package-mysql-server-has-no-installation-candidate
+基本他是直接下載mariadb!! 不曉得這樣會有甚麼問題…
+
+
+3. What is the difference between docker-compose and docker create image?
+
+
+4. 如何知道docker-composer的內容有被成功加入到container
+
+
+5. Docker-compose常用指令:
+docker-compose -f  my-docker-compose.yml up -d
+
+
+
+
+2023/6/22
+1. 發現在mac的根目錄/, 無法mkdir!!! 似乎是catalina之後的權限都被鎖住了, 以下是相關的討論:
+https://blog.csdn.net/waiter456/article/details/123256959
+可行的解法:
+https://apple.stackexchange.com/questions/388236/unable-to-create-folder-in-root-of-macintosh-hd
+https://zhuanlan.zhihu.com/p/87601725
+
+2. 在使用docker-compose pull mysql 的image的時候發現竟然有錯誤, 結果發現是Mac的晶片是arm64的與一般pc不太一樣, 需要特別的image, 以下是解法, 可以修改(或者說增加)docker compose裡面的設定, here's a reference talks about this:
+https://chilunhuang.github.io/posts/8942/
+	
+3. mac的晶片要怎麼看?
+https://blog.csdn.net/qq_38652871/article/details/125155361
+	
+4. 徹底移除docker images的chat-gpt建議方法:
+	1. 確認有無容器正在使用該image, 可以使用docker ps指令查看, 如果該容器在運行中, 請使用docker stop <容器ID>停止容器, 然後使用docker rm <容器ID>, 刪除容器.
+	2. 使用docker images 顯示所有images, 之後刪除你想刪除的Image, 使用docker rmi指令刪除image, 例如:  docker rmi myImage:tag
+	3. 由於docker ps指令只會顯示正在運行的容器, 所以要看到停止運行的容器, 可以使用:
+		docker ps --filter "status=exited"
+	
+5. 在使用spinach db upgrade的時候發現跳出有關charcode的錯誤, 懷疑是資料庫需要設定成utf-8???? 我發現hao的.env裡面的DEV_DATABASE_URL="mysql://root:root@db:3306/spinach?charset=utf8mb4" 
+我猜測有可能是要設定charset??
+	
+6. 那我如何在linux上修改env變數??修改之後有用嗎?? Here's a reference talks about this:
+https://www.javatpoint.com/linux-set-environment-variable
+
+7. docker中的Network的詳細原理???以下是可以參考的資料:
+https://ithelp.ithome.com.tw/articles/10193291
+https://ephrain.net/docker-%E8%AE%93-docker-%E9%80%8F%E9%81%8E-proxy-%E9%80%A3%E7%B7%9A/
+
+8. 如何透過vscode具編輯docker內container的文件??? Here's a referene youtube(but I am sure if this works or not.)
+https://www.youtube.com/watch?v=L1-dx-ZD0Ao&ab_channel=VisualStudioCode
+https://medium.com/%E5%A4%BE%E7%B8%AB%E4%B8%AD%E6%B1%82%E7%94%9F%E5%AD%98%E7%9A%84%E4%BA%BA%E9%A1%9E/%E4%BD%BF%E7%94%A8visual-studio-code-%E9%81%A0%E7%AB%AF%E6%93%8D%E4%BD%9Cdocker%E7%92%B0%E5%A2%83%E4%B8%8B%E7%9A%84%E6%AA%94%E6%A1%88-ebb35292a5b1
