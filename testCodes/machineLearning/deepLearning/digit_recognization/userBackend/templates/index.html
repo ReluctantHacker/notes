@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Canvas Drawing</title>
+    <style>
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="64" height="64"></canvas>
+    <canvas id="compressed-canvas" width="8" height="8"></canvas>
+    <button onclick="clearCanvas()">clear</button>
+    <button onclick="guess()">guess</button>
+    <!--
+    <script src="script.js"></script>
+    -->
+    <!--
+    <script src="static/js/script.js"></script>
+    -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

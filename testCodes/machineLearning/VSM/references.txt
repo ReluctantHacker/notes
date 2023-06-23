@@ -1,0 +1,9 @@
+https://towardsdatascience.com/support-vector-machine-python-example-d67d9b63f1c8
+--- SVM, machine learning website, it talks about the basic.
+
+here's another references talks about the difference between "vsm" and
+"logistic regression"
+
+here's one more references talk about the vsm example:
+https://stackoverflow.com/questions/22294241/plotting-a-decision-boundary-separating-2-classes-using-matplotlibs-pyplot
+https://stackoverflow.com/questions/48639028/how-to-plot-decision-boundaries-between-3-classes-using-discriminant-functions

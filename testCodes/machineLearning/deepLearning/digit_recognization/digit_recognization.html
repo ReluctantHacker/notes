@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Handwriting Recognition</title>
+	<style>
+		canvas {
+			border: 1px solid black;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>Handwriting Recognition</h1>
+	<canvas id="canvas" width="200" height="200"></canvas>
+	<button onclick="recognize()">Recognize</button>
+	<script src="https://cdn.jsdelivr.net/npm/image-compressor/dist/image-compressor.min.js"></script>
+	<script>
+		var canvas = document.getElementById("canvas");
+		var ctx = canvas.getContext("2d");
+		var drawing = false;
+
+		canvas.addEventListener("mousedown", function(event) {
+			drawing = true;
+			ctx.beginPath();
+			ctx.moveTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
+		});
+
+		canvas.addEventListener("mousemove", function(event) {
+			if (drawing) {
+				ctx.lineTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
+				ctx.stroke();
+			}
+		});
+
+		canvas.addEventListener("mouseup", function(event) {
+			drawing = false;
+		});
+
+
+		/*
+		function compress_img(imgs){
+			const compressor = new ImageCompressor();
+			const fileInput = 
+
+
+		}
+	       */
+
+		function compress() {
+			var dataURL = canvas.toDataURL();
+			
+		}
+
+
+
+
+		  const input = document.getElementById('input');
+		  const output = document.getElementById('output');
+		  const file = input.files[0];
+		  const reader = new FileReader();
+
+		  reader.readAsDataURL(file);
+		  reader.onload = function () {
+		    const img = new Image();
+		    img.src = reader.result;
+			console.log(img.src);
+
+		    img.onload = function () {
+		      const canvas = document.createElement('canvas');
+		      const ctx = canvas.getContext('2d');
+
+		      canvas.width = 8;
+		      canvas.height = img.height * (canvas.width / img.width);
+
+		      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+		      const compressedDataUrl = canvas.toDataURL(file.type, 0.5);
+
+		      output.src = compressedDataUrl;
+		    };  
+		  };
+		}
+
+		
+
+		function recognize() {
+			// Get the drawing result's image data as an array
+			var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+			var data = imageData.data;
+			var dataURL = canvas.toDataURL();
+			console.log(data);
+			console.log(dataURL);
+					
+			
+			// Before we really use this kinda data. We should compress the image to the size as small as
+			// nueral network model can handle
+			// Chatgpt suggest you can use image_compressor (which is a javascript image compression lib)
+			// TODO: Preprocess image and recognize handwriting using machine learning
+
+		}
+	</script>
+</body>
+</html>
