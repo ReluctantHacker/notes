@@ -1,0 +1,1626 @@
+﻿2022/8/23
+
+1. Our office's computers would reset to default setting every time when you restart your computers.
+2. in tableau, there are tableau and tableau server, you can use broswer to login in tableau server and check some data and setting. 
+3. what's the difference between .hypher files and .tde files. It seems like hyper files are updated to tde fies.
+4. are sql server files .mdf encryped?(or are they safe?)  Seems like no and here's why we need "Transparent data encryped".
+Here's some references talk about this: 
+	https://stackoverflow.com/questions/2186591/how-safe-are-sql-server-2005-mdf-files-re-security
+	https://docs.microsoft.com/en-us/sql/relational-databases/security/encryption/transparent-data-encryption?view=sql-server-2017
+	https://stackoverflow.com/questions/54597082/sql-server-encrypt-mdf-file
+5. how to connect tableau to sql server? 
+	https://www.youtube.com/watch?v=vsthuQk-D18
+6. what is mapping in data analysis, it's kinda like old database field match the new database field, here's some reference:
+	https://www.talend.com/resources/data-mapping/ 
+7. what does data retrievel do? 
+	https://zhuanlan.zhihu.com/p/217566122
+8. what does "extract" do in tableau?
+9. what's the difference between "data living" and "data extract"??? here's some reference: 
+	https://www.tableau.com/zh-tw/about/blog/2016/4/tableau-online-tips-extracts-live-connections-cloud-data-53351
+10. what's the usage of "@" the decorators symbol in python?? here's some renferece:
+	https://builtin.com/software-engineering-perspectives/python-symbol
+	 
+
+
+
+question collection to david:
+1. does every table in david_test has no relationships with each other?
+2. are the tableau server's data from sql server? or the data is just saved in tableau's own databases.
+3. It seems like table server's database collect the columns from sql server's tables?
+4. what is tableau data engine? i saw this one on tableau server?
+5. why do we have p_日报, t_日报 , what's the difference between them and why do we need them both at the same time?
+6. how tableau server connect to mssql server?
+7. there are four datasource in tableau server which are "daily", "log", "thirdParty2", "operation"
+
+
+2022/8/24
+
+1. study about david's code and trying to understand the relationship between "ETL" and david's python code, 
+I was wondering it's doing the "ETL" job
+2. Compared the coding files between taiwinner's production server and test server and i find that test server has 
+files than production files, in a sense that means that the test server is more general than the production server.
+3. tried to figure out if the gitRepo folder in test server actually git all the files in that server actually needs.
+4. I just found that in Taiwinner's production server, there's no crawler script. that means that the test server does
+the crawler??.
+5. ok, i know why tableau server use .hyper files, it's because tableau server is slow when directly connect to 
+sql server, but if you directly use .hyper files, then the speed would way more faster.
+
+
+
+questions collection to david:
+1. why do we use hyper file rather than just using directly connection between sql server and tableau server?
+2. David use git for versino control, but the problem is why didn't david use git repository code as the running code.
+He used git only for code version control but didn't use the code in git repository but seems like copying them to other
+folder outside the gitRepo folder and use them, why? why not just use the gitRepo's code?
+3. Only the test server does the crawler script?? or Production server does crawler too???
+4. what does attendance_record folder do in python script?? 
+
+
+
+2022/8/25
+
+1. keep study about how david's python script and how it works? i read one by one.
+2. what is decorator "@" in python and why do we use it??? here' a reference talk about this, you can check the 
+second answer, and the decorator is actually very useful in python, you should definitely check it out.
+	https://www.zhihu.com/question/26930016
+3. the account before has some type from 7/4 to 8/4 kinda like that, so you need to be careful.
+4. what is table mapping. here's some reference: 
+	https://www.tutorialspoint.com/qlikview/qlikview_mapping_tables.htm
+
+2022/8/26
+1. Alan taught me about the model of the financial table of taiwinner.
+2. keep study david's code.
+3. what is concurrent.future?? here's some reference: 
+	https://steam.oxxostudio.tw/category/python/library/concurrent-futures.html
+4. how to use pandas.read_excel()?
+
+
+
+
+questions collection to david:
+1. why did david use selenium for crawlers script?
+2. why in crawlers script, david need to download the chrome driver and zip the file?? why did he need to use chrome driver
+when the driver is already in the server.
+3. i was really confused right now, in david's code it seems like david only crawled the chrome driver?? but not the 
+customer's rate data???
+4. why did david use pycharm, why do we use it?
+
+
+
+2022/8/29
+1. How to use tableau flow ?? here's a tutorial you should check it out: 
+https://www.youtube.com/watch?v=ECHtuvYxRRA
+2. what does "in-memory" mean for database?? 
+https://zh.wikipedia.org/zh-tw/%E5%86%85%E5%AD%98%E6%95%B0%E6%8D%AE%E5%BA%93
+3. what are the benefits of the "in-memory" databases?? 
+https://www.syscom.com.tw/ePaper_New_Content.aspx?id=355&EPID=191&TableName=sgEPArticle
+4. but if the data is very huge, how can "in memory computer(IMC)" be even possible? here's some references:
+https://www.zhihu.com/question/24519772
+5. and what is the relationship between "Von Neumann architecture" and "in-memory-computing"?
+https://zh.wikipedia.org/zh-tw/%E5%86%AF%C2%B7%E8%AF%BA%E4%BC%8A%E6%9B%BC%E7%BB%93%E6%9E%84
+
+2022/8/30
+1. how to remove the language i don't need by command line or powershell? 
+https://www.sysgeek.cn/windows-10-force-remove-language-pack/
+https://zh.freax.be/outriders-launch-times
+
+
+
+2022/9/1
+1. sql server doesn't get smaller when you delete the rows you have to use shrink, here's some reference:
+https://social.msdn.microsoft.com/Forums/zh-TW/3f870601-a8d4-4b4d-9cd7-2173b53d47b4/2103438500360392600924460360392600927284277943572223567?forum=240
+https://stackoverflow.com/questions/49359889/database-size-after-deleting-rows-does-not-change
+https://stackoverflow.com/questions/439071/how-do-i-shrink-my-sql-server-database
+
+
+
+
+questions to david:
+1. 兩邊資料庫是否有同步的program 
+2. 
+
+
+2022/9/2
+1. how to use decorator in python again? when you use decorator you are actually doing something like the reference below:
+https://stackoverflow.com/questions/14536242/decorator-error-nonetype-object-is-not-callable
+2. what if i use 2 decorator in python script? 
+https://medium.com/citycoddee/python%E9%80%B2%E9%9A%8E%E6%8A%80%E5%B7%A7-3-%E7%A5%9E%E5%A5%87%E5%8F%88%E7%BE%8E%E5%A5%BD%E7%9A%84-decorator-%E5%97%B7%E5%97%9A-6559edc87bc0
+3. how do i package python code to exe? 
+4. as the question3 told, what's the difference between disutils and pyinstaller? here's some reference
+https://www.readfog.com/a/1631851083966025728
+
+
+2022/9/7
+1. how to use python exec() function: https://stackoverflow.com/questions/8294618/define-a-lambda-expression-that-raises-an-exception
+
+
+
+2022/9/12
+1. github 正式環境如何操作: https://ithelp.ithome.com.tw/questions/10190410
+2. github 如何自動部屬? https://learnku.com/articles/9319/the-automatic-deployment-server-environment-and-use-git-to-achieve-the-local-code-automatically-synchronized-to-the-server
+3. windows command line 卡住(或是python卡住), 這是可能的原因: https://blog.csdn.net/qq_34254642/article/details/104641591
+
+2022/9/13
+1. convention of the python variable or function or other naming style:
+https://zhuanlan.zhihu.com/p/389055515
+2. about python internal object: http://note.drx.tw/2015/01/google-python-style-callname-rules-main.html ,
+you can use this in a lotta situation.
+3. is __init__.py must be neccessary in python package? it seems not: https://segmentfault.com/q/1010000012365228 , https://zhuanlan.zhihu.com/p/130927618
+4. 現鈔, 現匯, 買入賣出... : https://www.zhihu.com/question/21482074
+
+2022/9/14
+1. how do you use "cmd" to call another "cmd" to do some bat commands? here's the reference:
+https://stackoverflow.com/questions/9392874/bat-file-open-new-cmd-window-and-execute-a-command-in-there
+2. git silent installation: https://superuser.com/questions/944576/git-for-windows-silent-install-silent-arguments
+3. can you connect mysql database with sql server management tool? it seems like possible?  https://docs.devart.com/odbc/mysql/microsoft_sql_server_manager_s.htm
+4. how can you change password in sql server in sqlcmd, here's some reference: https://www.techonthenet.com/sql_server/users/alter_login.php
+5. i did change password in sqlcmd following the way number 4 did but nothing happens, how?
+6. here's how you can use sqlcmd to show all the login user: "select name, type_desc from sys.sql_logins"
+7. sqlcmd, how to create login username and set password? here's some reference: you can use "create login username with PASSWORD = 'password';"
+
+
+2022/9/15
+1. git push can't be done because of the authentication method change in github, you have to use token, here's how you can make it: 
+https://stackoverflow.com/questions/68775869/message-support-for-password-authentication-was-removed-please-use-a-personal
+in the reference url above, you can use the developer's hack method to directly make push step works very convenient
+https://brucehsu-developer.medium.com/%E8%BD%89%E6%8F%9B%E4%BD%BF%E7%94%A8-personal-access-token-%E6%9B%B4%E5%AE%89%E5%85%A8%E7%9A%84%E6%93%8D%E4%BD%9C-github-86deee62bd52
+
+
+2022/9/16
+1. When using Git, is it a bad practice if I always commit and push to the master branch directly? here's some reference:
+https://www.quora.com/When-using-Git-is-it-a-bad-practice-if-I-always-commit-and-push-to-the-master-branch-directly
+2. When using Git, if there is no such branch in github, then you can't push the current branch, you have to create branch first, 
+here's the way i think you can check it out: 
+https://stackoverflow.com/questions/13743468/why-cant-i-push-my-new-branch
+3. Try to use flask to create a back end for jeffrey project
+4. In windows command line, if you just want to show the directories in current folder. you can use "dir /AD"
+
+2022/9/19
+1. python vs traditional ETL tools(like "DataStage/Pentaho <also called kettle> or whatever else"), here's some reference i think you should check out:
+https://www.quora.com/When-you-choose-to-make-an-ETL-pipeline-manually-Python-Java-Scala-etc-instead-of-make-it-in-a-tool-such-as-Informatica-SSIS-Pentaho-etc
+here's some reference of etl tools:
+https://zhuanlan.zhihu.com/p/491090772
+2. english, "scrape" means "crawl", well ,kinda, when you see "scrape" or something like "scrapy" it means "crawler"
+3. i just find out that you can't connect to "test sql server" is because the firewall problem, you can set your "port" connectable in <<Windows Firewall with Advanced Security>>,
+here's some reference:
+https://store.oceansystems.com/knowledgebase/quickdme-faqs/sql-server-sql-express/configure-sql-express-server-host-enable-tcp-ip-firewall-settings/
+https://www.tomshardware.com/news/how-to-open-firewall-ports-in-windows-10,36451.html  ---> definitely check it out.    
+4. in the note 3. in windows Firewall with Advanced Security, I set the profile to "all" which is including "Domain", "Private" and "public", then finally can connect the "test server"
+, I guess the problem is that the test server is not in the domain of our environment.
+
+
+2022/9/20
+1. how to set envrionment variable in windows command line? using this command: "setx PATH "%PATH%;C:\Something\bin" , here's some reference:
+https://stackoverflow.com/questions/24219627/how-to-update-system-path-variable-permanently-from-cmd
+2. how to silent install python? here's some reference: 
+https://docs.python.org/3/using/windows.html
+3. 
+
+2022/9/21
+1. what's the difference between "apply", "map", "applymap" in pandas?  
+
+2022/9/22
+1. pandas dataframe index method: https://stackoverflow.com/questions/21800169/python-pandas-get-index-of-rows-where-column-matches-certain-value
+2. for method for pandas dataframe: https://stackoverflow.com/questions/16476924/how-to-iterate-over-rows-in-a-dataframe-in-pandas
+
+
+2022/9/23
+1. In vim, how do i delete all after cursor? Here's some reference: https://unix.stackexchange.com/questions/4415/delete-from-cursor-to-end-of-line-in-vi
+2. for flask website developement, how can i use index.html in flask application?? here's some refernce tutorial talk about this:
+https://www.digitalocean.com/community/tutorials/how-to-make-a-web-application-using-flask-in-python-3
+
+
+2022/9/26
+1. how do i import relative packages in python?? https://stackoverflow.com/questions/66024987/how-to-import-a-module-from-outside-the-current-folder
+2. 
+
+
+2022/9/27
+1. how to use "keyword arguments" in function in python: https://stackoverflow.com/questions/18195391/why-a-calling-function-in-python-contains-variable-equal-to-value
+, here's another reference i think you can check it out: https://treyhunner.com/2018/04/keyword-arguments-in-python/
+2. test_module_rows for "2022-09-01" month, the number of records is: 645
+
+2022/9/28
+1. how to use flask to run python code in back end. here a good tutorial and a good reference: 
+https://stackoverflow.com/questions/42601478/flask-calling-python-function-on-button-onclick-event
+2. 
+
+2022/9/29
+1. in python class, what's the difference between "staticmethod", "classmethod" and normal instance method. here's some reference talk about this: 
+https://zhuanlan.zhihu.com/p/28010894
+https://blog.csdn.net/Gobsd/article/details/56282967
+, <---- here's another reference talk about this.
+2. should and could i use bultin server in flask?? here's some discussion talk about this: 
+https://stackoverflow.com/questions/20843486/what-are-the-limitations-of-the-flask-built-in-web-server
+3. CA003499 9/7's record in questions has some problems.
+
+2022/10/4
+1. 我發現 CB0154YH 6月的問題討論 有7月的帳務(第144欄位), 很有可能是Jay打錯了.
+2. how can i use command line to connect to remote server?? for example:     something like this: 
+\\192.168.200.2\ga-data\12-分析臨時共用\02-個人資料\Jeffrey
+here's some reference talk about this: 
+https://superuser.com/questions/52220/how-do-i-connect-to-a-network-share-via-the-windows-command-prompt
+
+2022/10/5
+1. when you want to use git remote on remote shared disk(something like Z disk or F disk rather your own host's disk", you would encounter some problem like this:
+you can't use "git add file" it would tell you that the other people own this directory!, here's some reference i think you can check it out:
+https://zhuanlan.zhihu.com/p/503889333
+https://www.aspirantzhang.com/network/git-fatal-unsafe-repository.html
+
+2022/10/6
+1. Here's a machine learning basic tutorial step by step, i think you can read about this: 
+https://machinelearningmastery.com/machine-learning-in-python-step-by-step/
+2. I used matplotlib and i wondering if i can use two "figure" and show two plot diagram, here's some reference talk about this, you can actually make it:
+https://stackoverflow.com/questions/7744697/how-to-show-two-figures-using-matplotlib
+
+2022/10/12
+1. Here's another machine learning basic, talk about how to use "support vector machine", you should definitely check it out:
+https://towardsdatascience.com/support-vector-machine-python-example-d67d9b63f1c8
+2. Here's another reference talk about what's a model in machine learning: 
+https://zhuanlan.zhihu.com/p/74874291
+3. 餘額表的專案 支出和收入相反了, 然後 需要在併上跟thirdParty2 一樣的欄位
+4. 有使用外幣的盤口基本都沒有使用費用去支付手續費, 但我還是把匯率轉換的邏輯加進去
+
+2022/10/13
+1. 今天遇到一個很突然的bug, 關於問題回復, 重跑7, 8月的的資料, 7月對, 8月錯, 其實是因為david的程式t_questions這支不會去併下個月的資料, 理論上重跑8月的資料要去併9月的資料, 但是
+這支程式不會, 所以應該要用p_questions這支程式去跑.
+
+2022/10/14
+1. how to use excel to find the number of a columns with certain value(and all the values it has)?
+
+
+2022/10/17
+1. Ijust find out that CB002007 收入金額 = 205021 in Alan's result he gave to me, is equal to the 小小聚合代付, which only one records(but we want the summation), so Alan was definitely wrong
+
+
+2022/10/18
+1. i am studying about how to make login page for a website And I got a problem which is that "Does the default page should be <<index.html>> or <<login.html>>".
+It seems like the <<index.html>> should be default page in some discussion, here's some discussions:
+https://stackoverflow.com/questions/17785500/should-index-page-be-the-first-page-or-the-login-page-what-is-the-best-practice
+2. i am trying to create a login.html using css style but somehow flask get find the path of the css file path, well, here's some references talk about this, i don't know but it works: 
+https://blog.csdn.net/weixin_43853673/article/details/104875913
+3. here's some flask simple login tutorial reference: 
+https://ithelp.ithome.com.tw/articles/10224408
+4. 
+
+2022/10/20
+1. here's an example of how to use flask basic login, i think you should definitely check it out:
+https://hackmd.io/@shaoeChen/rkpy9CGZz?type=view
+
+2022/10/21
+1. other kinda regressions, including linear regression and polynomial regression example: 
+https://github.com/chwang12341/Machine-Learning/blob/master/Linear_Regression/sklearn_learning/Linear_Regression.ipynb
+2. i met an interesting question about the error of dimension of the numpy array when i use logisitc model of machine learning, here's some very important reference talk
+about this:
+https://stackoverflow.com/questions/51150153/valueerror-expected-2d-array-got-1d-array-instead 
+here's another explanation:
+https://discuss.codingblocks.com/t/what-is-meaning-of-reshape-1-1/14830
+here's another example of logistic regression:
+https://github.com/andy6804tw/2021-13th-ironman/blob/main/9.%E9%82%8F%E8%BC%AF%E8%BF%B4%E6%AD%B8/9.%E9%82%8F%E8%BC%AF%E8%BF%B4%E6%AD%B8.ipynb
+3. david's cell phone: 0972737388 
+
+
+2022/10/24	
+1. sql server backup problems, here's some reference i think you should check
+https://ithelp.ithome.com.tw/articles/10282099
+https://blog.hungwin.com.tw/sqlserver-backup-delete-file/
+https://stackoverflow.com/questions/18286765/sql-server-operating-system-error-5-5access-is-denied    --> the folder path get access denied, how?
+
+2022/10/25
+1. I was trying to backup tableau server by using "TSM", here's some reference:
+https://help.tableau.com/current/server/zh-tw/cli_maintenance_tsm.htm#tsm
+2. I was trying to backup tableau server by using "TSM" command but fail and the reason is highly, and here's the reason, because the memory of the 
+production server is too small(only 4G), it is mininumtly need 8G, here's some references: 
+https://community.tableau.com/s/question/0D54T00000C5OxaSAF/hi-guys-im-with-tableau-message-error-error-occured-during-initialization-of-vm-could-not-reserve-enough-space-for-object-heap
+3. maybe you can use "tableau server api" to solve some automation problem: 
+https://help.tableau.com/current/server/zh-tw/tsm.htm
+
+2022/10/27
+1. I was study about machine learning, and i create differential function and newton's method for find the solution of the functions
+2. I was trying to test the baskup files about tableau_server
+3. 
+
+2022/10/28
+1.  I was trying to make developing envrionment automatically executed, and here's a command to execute switch the screen to clone to "extend":
+https://sdwh.dev/posts/2020/06/DisplaySwitch/
+You can use this command: "displayswitch/extend"  to switch screen setting
+2. conclusion of first notes: here're two interesting commands i think you should know:
+"displayswitch/extend  (or you can use internal, clone, external and so on)
+"scrnsave.scr /s"
+
+2022/10/31
+1. how to use python array slicing element from an array? You should know how to use it:
+https://www.w3schools.com/python/numpy/numpy_array_slicing.asp
+2. When I use sklearn's logisticRegression() function, how can i get the "weight" and "bias" of the fit function?? here's some reference:
+https://stackoverflow.com/questions/56039406/how-can-i-display-the-weights-and-bias-from-linearregression
+3. windows task scheduler how to make notification when there's a fail(use email or some other way)? here's some reference:
+https://superuser.com/questions/249103/make-windows-task-scheduler-alert-me-on-fail
+
+
+2022/11/1
+1. study about support vector machine, so why do we call support vector machine "support vector"? here's some explanation:
+https://towardsdatascience.com/so-why-the-heck-are-they-called-support-vector-machines-52fc72c990a1
+https://zhuanlan.zhihu.com/p/49331510
+2. in windows schedule task, how can you get the fail event? and maybe send some message to mail or chat software, here's some reference:
+https://superuser.com/questions/249103/make-windows-task-scheduler-alert-me-on-fail  , you can use this method to send message but you can get the event name.
+3. in telegram send message bot, here's some reference talk about :
+https://stackoverflow.com/questions/55218068/telegram-bot-chat-not-found
+here's another one:
+https://stackoverflow.com/questions/41174831/telegram-bot-chat-not-found
+
+2022/11/2
+1. windows schedule event log, no matter the task successs or fails, the event id always complete with '201', so if we want to trigger the failure alert, we also need to 
+know the result code of the event, here's some reference talk about this:
+https://superuser.com/questions/1278486/acting-on-exit-code-in-windows-task-scheduler
+here's another reference talk about this:
+https://stackoverflow.com/questions/39458024/how-to-trigger-windows-task-schedule-restart-after-fails-with-python-script
+2. in powershell, you can use this kinda script to get the information about the schedule action that is running or not:
+https://stackoverflow.com/questions/49259076/show-task-scheduler-jobs-that-contain-actions
+3. i encountered a very important problem about how to get the schedule task name of the task is running.
+
+
+2022/11/3
+1. What's the difference between "support vector machine" and "Logistic regression" in theory way and practical way? here's some reference talk about this:
+https://medium.com/axum-labs/logistic-regression-vs-support-vector-machines-svm-c335610a3d16
+in this website above you can search "distance between the line and the support vectors" then you would find a perfect answers.
+
+Here's some reference talk about the difference between logistic regression and linear regression:
+https://www.quora.com/What-are-the-advantages-of-support-vector-machines-SVM-compared-with-linear-regression-or-logistic-regression  # the first answer reply a good explanation
+https://ithelp.ithome.com.tw/articles/10269006   # in this website you can search "線性迴歸與邏輯迴歸"
+
+the logistic model would always be linear because you suppose the model to be something like this: w1*x1+w2*x2+b = 0  and it is "linear" !! And then you take this kinda thing to 
+sigmoid function. So the result must be linear.
+
+
+
+
+2. well, it seems like "logistic regression" and "support vector machine" both use vector coefficients but the next steps they use different method to fit the 
+boundary?? here's some reference:
+https://scipython.com/blog/plotting-the-decision-boundary-of-a-logistic-regression-model/
+3. how can you print number result without scientific notation, for example,
+if i want to print my results as 0.0001 rather than 1.0000e_05 ,because maybe
+i want to use this result as data to do something. Here's some reference:
+https://stackoverflow.com/questions/658763/how-to-suppress-scientific-notation-when-printing-float-values
+here's another reference talks about this:
+https://thispointer.com/print-numpy-array-without-scientific-notation-in-python/
+
+4. how can i get trigger task name when the trigger happens in windows
+scheduler task? i think the <ValueQueries> tag is the key point, here's some
+reference: https://michlstechblog.info/blog/windows-passing-parameters-to-event-triggered-schedule-tasks/
+
+
+2022/11/4
+1. which one is better for linear classification? Logistic regression or SVM? Here's some references talks about this:
+https://www.quora.com/Which-is-better-for-binary-classification-SVM-or-logistic-regression    , you can read the answer from Tarun Bawa
+2. how to use trigger events?? in windows scheduler task:
+https://community.broadcom.com/communities/community-home/digestviewer/viewthread?MID=783977
+3. how to get task log event: https://stackoverflow.com/questions/50349577/how-to-pass-the-name-of-failed-task-to-action-argument-on-event-log-eventid-203
+
+
+
+2022/11/7
+1. i was making windows schedule task, for task completement trigger the message to telegram but doesn't work.
+2. in sql server, what's the difference between "delete from table" and "drop table" and "truncate table"? here's some reference: 
+https://dotblogs.com.tw/brian/2013/03/22/98648 
+the key point is that using "delete from" would cause a lotta memories, it's not a good way to delete whole table data.
+
+
+
+2022/11/8
+1. how do you search special symbol character in vim?
+You can use escape character: like '\', so if you want to search ',' you can type '\,'. something like that.
+2. what is make_blobs in sklearn, and how do you use this, here's some explanation:
+https://blog.csdn.net/DeniuHe/article/details/102407537
+
+2022/11/9
+1. tsm command still can't be used after liscence renew, so it's probably another problem, here's some references and possible reasons cause this kinda trouble:
+https://kb.tableau.com/articles/issue/tsm-commands-failing-after-rebooting-the-server-host?lang=it-it
+
+2022/11/11
+1. in machine learning, how can i deal with multi-class classificaiton? here are some references talks about this you should be able to understand the content:
+https://towardsdatascience.com/multi-class-classification-one-vs-all-one-vs-one-94daed32a87b
+https://data-flair.training/blogs/iris-flower-classification/
+2. what's the difference between name "multinomial" and "polynomial"??
+3. what's the difference between name "nomial" and "nominal"?? they are kinda difference.
+4. I still can't use tableau api, and i think it's still because of the permission of the ryan account doesn't have the permission that's probably the reason:
+https://kb.tableau.com/articles/issue/unable-to-refresh-salesforce-data-source-on-tableau-server-due-to-java-lang-runtimeexception-operation-timed-out
+
+
+2022/11/14
+1. how to backup sql server in sql commands? here's some reference:
+https://stackoverflow.com/questions/42315280/how-to-copy-mdf-and-ldf-files-from-one-location-to-another-while-the-applicati
+
+
+2022/11/15
+1. Here's an exmaple talk about how to use matplotlib to draw colorful plot:
+https://stackoverflow.com/questions/70891146/how-to-plot-descion-boundary-for-three-classes-in-logistic-regression
+
+
+2022/11/16
+1. I was studying machine learning, and I was already to know the binary classification problem but can't still understand how to classified three classification problem.
+So I was trying to use "vsm(vector support machine)" method to deal with the "iris" flower problem which is a three classification problem.
+2. when i use iris flower data, the data i loaded from internet was got arranged, so i have to make it more random, you can use train_test_split function to separate the 
+train data and test data, it's very convinent. Here's some reference talks about this:
+https://blog.csdn.net/qq_43391414/article/details/112909834
+3. when i use train_test_split function in sklearn here's a very import two parameters for function you should know:
+	a. random_state=??  ---> which would make the data separate with a randomness. The number of the this argument is kinda like seed which would make result the same 
+when you set this argument the same.
+	b. test_size(or you can use train_size) this is the percentage of the train and test data you want to separate
+4. how can i draw three dimensions data in two dimension diagram(which is the normal diagram)?? Here's the usage of "scatter matrix" which you were gonna use this in iris example
+5. I want to use scatter_matrix function and pandas has one but what about matplotlib? doesn't it have one?
+
+
+2022/11/17
+1. how can i draw the boundary of the classification problem in the matplotlib?? here's some references talk about this:
+https://stackoverflow.com/questions/22294241/plotting-a-decision-boundary-separating-2-classes-using-matplotlibs-pyplot
+2. could i use the same method for two dimensional classification problem with three dimensional classification problem? i don't know, i am not sure about this.
+
+
+2022/11/28
+1. i was trying to find the answer if we can get the all the query parameters that a website can be used but it seems like it's not possible: 
+here's some reference talk about this:
+https://stackoverflow.com/questions/20009262/how-to-know-what-are-all-the-possible-parameters-for-a-query-string-for-a-site
+2. 
+
+
+2022/11/29
+1. when you want to scrape something that is rendered by javascript which is basically cannot be scraped by normal method, you can use selenium.
+Or you would have a high probability to find the data you want in <script> tag. I scrape something inside <script> tag and find the exchange rate data i want.
+2. when you want to use regular expression to find the text between two words, here's some reference talk about this:
+https://stackoverflow.com/questions/32680030/match-text-between-two-strings-with-regular-expression
+
+
+2022/11/30
+1. I think i have already know the basic idea behind the machine learning classification problem and i want test something more.
+2. I was planning to start learning neural network and deep learning.
+3. Now the first question came up. What is the difference between "neural network" and "deep learning". 
+Well, it seems like "deep learning" is a subject and "neural network" is a solution model to it, here's some referene talk about this:
+https://www.zhihu.com/question/26017374
+https://www.geeksforgeeks.org/difference-between-a-neural-network-and-a-deep-learning-system/
+4. What's the difference between "Neural Network" and "SVM". It seems like they are all a kinda machine learning model.
+Here are some reference talk about this:
+https://ithelp.ithome.com.tw/articles/10187829
+5. 
+
+
+2022/12/1
+1. What is the difference between "Logistic Regression" and "Neural Network". I saw that Neural Network "neuron" use the idea of Logistic Regression, Doesn't that make both 
+method the same thing? Here are some explanation:
+https://stats.stackexchange.com/questions/43538/what-is-the-difference-between-logistic-regression-and-neural-networks
+It seems like logistic regression is the basic 
+
+
+2022/12/2
+1. I was study about deep learning basic, here are some reference talk about this:
+https://towardsdatascience.com/multi-layer-neural-networks-with-sigmoid-function-deep-learning-for-rookies-2-bf464f09eb7f
+2. English note:  backpropagation, darn
+3. The key point between single peceptron in neural network and multiple layer of neural network is "hidden layers"
+4. What does the node mean in deep learning diagram? here are some reference talk about this:
+https://www.youtube.com/watch?v=fHzaWO2mGuA
+Well, basically, nodes actually mean a number that has been calculated by weight.
+5. I am kinda confused right now... What is the difference between "neuron" and "node"??
+6. how to build a simple basic neural network with only 3 simple layers, here's an simple tutorial referece talk about this: 
+this example is very import because it doesn't use any lib and show the basic idea about the what deep learning exactly does:
+https://medium.com/@qempsil0914/implement-neural-network-without-using-deep-learning-libraries-step-by-step-tutorial-python3-e2aa4e5766d1
+7. here's another example talk about basic three layers neural network, you can understand the basic idea behind what a neuron is: 
+https://becominghuman.ai/understanding-neural-networks-2-the-math-of-neural-networks-in-3-equations-6085fd3f09df
+
+
+
+2022/12/9
+1. when I want to download mingw(gcc for windows), i encountered a problem that i download process incorrectly, here's the solution for this:
+https://stackoverflow.com/questions/46455927/mingw-w64-installer-the-file-has-been-downloaded-incorrectly
+
+
+2022/12/12
+1. I reviewed about c language, pointer, array, pointer array, array of pointer, something like that.
+2. I reviewed about c language, dynamic memory, static memory.
+3. I reviewed about c language, struct, define, construct, something like that.
+4. why does c language has no memory check mechansm, the point is c language allowing undefineed behavior happens:
+here's some refernece talks about this:
+https://stackoverflow.com/questions/1239938/accessing-an-array-out-of-bounds-gives-no-error-why
+5. music note:
+https://www.youtube.com/watch?v=0QKQlf8r7ls
+6. i was up to modified the delete_from_db function in src because the date i want delete is maybe not the same type
+
+
+2022/12/13
+1. I was keeping studying about c language, how to use realloc function to reset the memory i want to give to a variable.
+2. I was reviewing about how chars and strings works in c language and here's some reference talk about this:
+this is the probabily best practice for creating string in c language:
+https://www.tutorialandexample.com/null-character-in-c
+3. You can use "sizeof" function to determine the byte size of the array datatype. That's how you check how many byte length you can use in c language
+array, here's a reference talks about this:
+https://stackoverflow.com/questions/37538/how-do-i-determine-the-size-of-my-array-in-c
+4. But here raise another question, does dynamics memory can use this same "sizeof" technique? I have to test this out.
+5. the size of a poiner in c language, here's some reference talks about this:
+https://www.scaler.com/topics/size-of-a-pointer-in-c/
+6. what is the difference between "int array[10];" and "(int *)malloc(sizeof(int)*10);", they both create array but here are still some difference between them.
+Here are some references talk about this: 
+https://stackoverflow.com/questions/41512872/can-malloc-be-used-to-define-the-size-of-an-array
+They key point is that the malloc would create an "annoymous" array which you can only know the pointer of that array. So you 
+can't size of it. All you can do is track the size by yourself.
+7. This website give you a very good example of how to use c language to create a project including phonebook and calendar.
+https://www.codewithc.com/mini-project-in-c-phonebook/
+8. i was reciewing about how to use c language to read file and write file
+
+
+2022/12/14
+1. I was reviewing about c language, how to read a file and write a file content in c language. And compare the method of reading file and write file with python.
+2. I was reading about how to use fscanf and how it works. It seems like it can remember the position you've already read. here's a reference talks about this:
+https://stackoverflow.com/questions/24523431/reading-files-how-file-pointer-is-moved-using-fscanf-and-how-scanf-fscanf-work
+3. And here is another function that you can use to read a file. "fget()"
+4. Is there a way to read the file by certain line? It seems no.
+http://stackoverflow.com/questions/8175144/how-to-fgets-a-specific-line-from-a-file-in-c
+
+
+2022/12/15
+1. I was reviewing about c language, how to use struct.
+2. I gradually remembered how to use struct. when you want to use struct to some variable. it some kinda would need uncertain size of variable so you need to use
+dynamic memory to create struct variable. here's some reference talks about:
+https://stackoverflow.com/questions/62979813/when-do-we-use-structure-variable-and-structure-pointer
+3. about c language object oriented Progamming. You can create object as you want. here's some references talks about this:
+https://www.zhihu.com/question/59292999
+4. I was studying about how to use pointer function in c language.
+
+2022/12/16
+1. If you want to create a struct in c language you have to use dynamic memory to that. Or you would get memory wrong alert.
+2. I was modified moduleCleanFunct for taiwinner. I think that sucks.
+3. In python dataframe, how do you drop multiple columns, here's some references talks about this:
+https://www.geeksforgeeks.org/how-to-drop-one-or-multiple-columns-in-pandas-dataframe/
+4. In python how do you pass a "list" as an command argument to the script.
+
+
+2022/12/19
+1. I find a weird thing about python local and global variable. In python, you can't change global variable in function!! That's very important!! 
+here's some  reference talks about this:
+https://ithelp.ithome.com.tw/articles/10223457
+
+
+2022/12/21
+1. What is the difference between activiation function and loss function in machine learning? Does deep learning use activiation function as same as 
+loss function.
+2. I was studying about how to use flask to create login and here's some references i think is very good:
+https://blog.teclado.com/handling-the-next-url-when-logging-in-with-flask/
+3. How to use flask's module, here's some references talk about this:
+http://www.coolpython.net/flask_tutorial/template/flask-template-if.html
+4. how can i prevent users from directly accessing url and redict to login if not logged in flask. Here are some references talk about this:
+https://stackoverflow.com/questions/68552644/trying-to-use-flask-principal-to-restrict-access-to-particular-web-pages
+https://stackoverflow.com/questions/65434221/prevent-users-from-directly-accessing-url-and-redirect-to-login-if-not-logged-in
+https://copyprogramming.com/howto/prevent-users-from-directly-accessing-url-and-redirect-to-login-if-not-logged-in-flask
+5. Here is another thing to consider when you use flask session, there's the the secret key. here's some reference talk about this:
+https://stackoverflow.com/questions/26080872/secret-key-not-set-in-flask-session-using-the-flask-session-extension
+6. How to use url_for to redirect different pages url? here's some references:
+https://stackoverflow.com/questions/65066253/how-to-make-a-redirect-button-in-flask-template
+
+
+2022/12/22
+1. I was studying about how to use how can i run python code from another python script, here's some reference talks about this:
+https://stackoverflow.com/questions/68325664/run-os-command-inside-a-directory
+2. And I was studying about how to chain the commands all together in windows command line, here's some reference talks about this:
+https://stackoverflow.com/questions/8055371/how-do-i-run-two-commands-in-one-line-in-windows-cmd
+3. In flask how can i know if the task is running or end of the running.
+4. How can you show the innerhtml content even if you submit the form? Here's some references talks about this:
+https://www.youtube.com/watch?v=jDfrY2UUSrc
+
+2022/12/23
+1. I was studying about how to use flask to sumbit something and also doing innerHTML method and we can do this thing by the method above,
+but when the action in form tag doesn't work anymore. And how do i solve this problem?
+2. I was studying how to use use flask to send variable to javascript an , You can should be able to read the file content and define the function
+to send the result to file.
+
+
+
+2022/12/26
+1. How can i use flask to show dynamic html result in web page. Here's some reference talks about this:
+https://stackoverflow.com/questions/26536187/is-it-possible-to-dynamically-update-a-rendered-template-in-flask-server-side
+2. Review about the difference between AJAX and XMLHttpRequest and JQuery and fetchAPI
+3. When i use innerHTML in javascript, I find that i can't get flask return value, it would get "empty" or just "undefined", i must use addEventListener,
+Here's some references talk about this:
+https://stackoverflow.com/questions/61766579/empty-response-when-responding-to-xmlhttprequest-from-flask
+
+
+2022/12/27
+1. How to get the button's name or id or whatever when i click the button in html by javascrpt. here's some references talks about this:
+https://www.geeksforgeeks.org/how-to-get-the-id-of-the-clicked-button-using-javascript-jquery/
+2. How can i pass arguments to "addEventListener()" function in javascript?? 
+https://stackoverflow.com/questions/256754/how-to-pass-arguments-to-addeventlistener-listener-function
+
+2022/12/28
+1. How to use html to create an input dialog, here's a basic tutorial talks about this:
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
+2. How do you use dialog in html to create a new windows:
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
+
+2022/12/29
+1. Me and Kory talked about the environment about how to use new host to handle "tableau server" and "sql server", there're two plans.
+	a. tableau server install in a new windows machine, and sql server leave in the old machine.  In this plan, windows is very expensive. But the befits
+	is that you can use a new machine to install the newest tableau server which has high probability to successes.
+	b. sql server install in a new linux machine, and tableau server leave in the old one.  In this plan, linux is more cheap than windows server.
+	almost free. So this plan's befit is "cheap".
+
+
+2023/1/3
+1. How to change the diable attribute in html division, here's some references:
+https://sebhastian.com/html-disable-button/
+https://stackoverflow.com/questions/15555295/how-to-disable-div-element-and-everything-inside
+
+2023/1/4
+1. I was studying about how to use checkbox to execute javascript.
+2. How can you get from javascript to flask server? here's some referencese talks about this:
+https://stackoverflow.com/questions/11774265/how-do-you-access-the-query-string-in-flask-routes
+https://stackabuse.com/get-request-query-parameters-with-flask/
+	the basic idea is using the query strings.
+	and in javascript xmlHttpRequest, how to send query strings:
+https://stackoverflow.com/questions/8064691/how-do-i-pass-along-variables-with-xmlhttprequest
+
+
+2023/1/6
+1. when I use two dialog in one page, it seems like it we appear some weird situation that you would reload the page when you 
+use the second dialog. It seems like you can't use two form in one page.  NONONONONO. I figured it out. It just the wrong typing. I type "dialog" to "dailog". 
+That make things fails.
+2. I was decide to skip the backend css style.
+3. I am trying to doing the other back run.
+4. sql server setting foreign key tutorial: https://www.youtube.com/watch?v=TpKcAmaaBts
+
+
+2023/1/7
+1. I was reviewing about mysql, how to use mysql and how can i use it for data analysis.
+2. How can i installl client mysql command line tool for windows(or for linux), here're some references:
+3. I just download "MySQL shell" but don't know how to use it? The command line would show "MySQL JS" which means "MySQL javascript", So how can i change javascript
+to sql? Here are some referneces talk about this:
+https://stackoverflow.com/questions/65640284/how-to-change-mysql-js-to-only-mysql
+4. how to use "identity columns" in sql server: 
+https://www.red-gate.com/simple-talk/databases/sql-server/learn/sql-server-identity-column/
+5. what is the difference between "clustered index" and "nonclustered index". Here are some references talk about this:
+https://stackoverflow.com/questions/1251636/what-do-clustered-and-non-clustered-index-actually-mean
+6. music note 2:
+https://www.youtube.com/watch?v=ajTTZ7iy6Ls  (2:30:00)
+7. Your c langauge algorithm homework: 	
+1. find the length of an number(integer) 
+2. use the way of finding remainder to separate that number in the first condition. and here are some refnereces:
+https://stackoverflow.com/questions/3068397/finding-the-length-of-an-integer-in-c
+3. How can invert the order of an integer number in c language? Well, it's easy in python.
+
+
+2023/1/9
+1. there are some javascript lib that is very useful and popular for data visualization and 3d website:
+1. D3.js
+2. three.js
+
+2023/1/10
+1. study about c language, can we return different type of variable in a different type function? for example:
+int testFunct(){
+	char testChar = 'a';
+	return testChar;
+}
+Here's some references talk about this:
+https://www.decodejava.com/c-function-return-types.htm
+2. what if I don't return anything in a function in c language?? for example:
+int main(){
+	doing something;  // no return anything.
+}
+Here's some references talk about this:
+https://stackoverflow.com/questions/8844915/what-happens-if-main-does-not-return-an-int-value
+3. Why can't i assign array in c language directly?? Here's some references:
+https://stackoverflow.com/questions/744536/c-array-declaration-and-assignment
+simply put, arrays are not assignable.
+4. Is an array's name a pointer? Here's a reference talks about this that is very import:
+https://stackoverflow.com/questions/1641957/is-an-array-name-a-pointer
+5. In c language, why doesn't c language detect( or say check) the range of an array? It seems like it's because of efficiency!!!
+Here are some references talk about this:
+https://www.quora.com/Why-doesnt-the-C-programming-language-check-at-runtime-to-ensure-that-the-array-accesses-are-never-out-of-bound
+https://zhuanlan.zhihu.com/p/519962963
+The key point is efficiency.
+6. what is the difference between "pointer to int" and "pointer to an array of ints". It seems like both situation can take as
+array to use. Here's a references talks about this:
+https://stackoverflow.com/questions/2397792/difference-between-pointer-to-int-and-pointer-to-array-of-ints
+7. I am trying to use dynamic memory(malloc()) to create bubble Sort function.
+
+
+2023/1/11
+1. I can't find "make" command for making file in mingw?? Here's the some reference talks about this:
+https://blog.csdn.net/sz76211822/article/details/77645960
+2. review about c language compiler process: it would create ".o" file and ".a" file. here's a simple reference: 
+https://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/
+3. how can i check if my windows system is original or pariated? Here's a simple reference:
+https://answers.microsoft.com/zh-hans/windows/forum/all/%E6%A3%80%E6%B5%8Bwin10%E7%94%B5%E8%84%91%E7%B3%BB/77871307-aa81-478e-bc4d-f007687d7f46
+use the command:
+slmgr.vbs -xpr
+here's another reference:
+https://kknews.cc/zh-tw/digital/ygjmp3b.html
+and you can use command:
+slmgr.vbs -dli
+slmgr.vbs -dlv
+4. if your windows system has no "ssh" commands you can just install it from internet. Here's a very useful reference:
+https://docs.plm.automation.siemens.com/content/polarion/19.3/help/en_US/polarion_linux_installation/configure_ole_object_support_and_attachment_preview_generator/install_openssh.html
+you can directly install the ssh folder. and here's the download site:
+https://github.com/PowerShell/Win32-OpenSSH/releases/tag/v7.9.0.0p1-Beta
+5. About tableau, What is the difference between "tableau api" and "tableau tabcmd"
+Here's a references talks about this:
+https://community.tableau.com/s/question/0D54T00000oLs65SAC/whats-the-difference-between-tableau-server-rest-api-and-tabcmd-
+6. you can use tabcmd to export csv files and xlsx file, here's some reference:
+https://kb.tableau.com/articles/Issue/tabcmd-export-get-ignores-filter-parameters-when-run-from-a-batch-file?lang=zh-tw
+
+2023/1/12
+1. ssh tool Putty basic tutorial:
+https://uncleit.net/windows%E4%B8%8A%E6%9C%80%E5%8F%97%E6%AD%A1%E8%BF%8E%E7%9A%84ssh%E9%80%A3%E7%B7%9A%E8%BB%9F%E9%AB%94%E3%80%8Cputty%E3%80%8D%E6%95%99%E5%AD%B8.html
+
+
+2023/1/15
+1. when i use sql server, I cannot use "select something from table where column = 'chinese words';
+Here's some reference you can solve this problem:
+
+用
+select * from 中華民國地址 where 城市 like N'%桃園%'
+試試.
+
+
+---------------------------------------------------------------
+
+可以了 感謝
+
+但為什麼 要加 N 呢??
+
+之前 TRY 都不用
+
+是不是 我的 SERVER 有設定上的問題??
+
+因為 另外一台 就可以 不需要 N
+
+---------------------------------------------------------------
+
+您的欄位" 城市 " 型態應該是定成NVarchar,而不是Varchar,所以在insert,update,select時,要加N
+
+
+---------------------------------------------------------------
+但是 我 另外一台 SERVER 也是 NVarchar
+一樣 都可以耶
+
+那 N 代表什麼意思呢
+
+感謝
+
+
+---------------------------------------------------------------
+
+這主要是因為資料庫屬性中有個定序的設定問題.
+假如你的定序設定是用Chinese_Taiwan.....的話,
+不用加N也是可以的.
+
+相關資料.
+http://technet.microsoft.com/zh-tw/library/ms187582.aspx
+http://technet.microsoft.com/zh-tw/library/ms188325.aspx
+
+
+---------------------------------------------------------------
+
+那 灌好 伺服器
+該 如何 修改 定序 呢??
+
+我參考了 內建的文件 找不到
+Microsoft SQL Server 安裝精靈的 [定序設定]
+
+---------------------------------------------------------------
+
+透過Microsoft SQL Server Management Studio,
+在該資料庫的屬性中,
+有個[選項]中就可以修改定序.
+
+---------------------------------------------------------------
+
+那邊 不能修改 是 暗的
+我已經 重灌 然後 調整過了
+
+感謝 大大們
+2. music note 3:
+https://www.youtube.com/watch?v=76Pdg2-BpG0
+3. review about the http request command line tool "curl", here's some references talk about this:
+https://blog.csdn.net/weixin_41287260/article/details/119851086
+4. In curl commands, you can use -X to change http request method, for example:
+curl -X GET http://www.google.com --verbose    ---> this would show the method "get"
+curl -X POST http://www.google.com --verbose    ---> this would show the medhotd "post"
+5. In curl commands, when you use: curl --request (which is curl -X) POST --verbose http://google.com -d "testData", How can you show the data content in respose?
+here's some references(It seems like there's no way to show it by curl commands)
+https://superuser.com/questions/291424/how-do-you-display-post-data-with-curl
+6. How to use curl to run rest api? Here's some references talk about this:
+https://segmentfault.com/a/1190000041718917
+7. In tableau server, i use tableau server api 3.18 version doesn't work but 3.17 works.
+8. tableau api basic tutorial: 
+https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_ref_authentication.htm
+
+
+2023/1/16
+1. Here's another curl call restful api example:
+https://www.youtube.com/watch?v=fVmHqtjFzbA
+2. tableau server python api basic tutorial:
+https://www.youtube.com/watch?v=NHomg6M9RcA
+3. tableau server api sign in basic tutorial:
+You can use this command to get site's id and auth token:
+curl --request POST http://35.185.182.105/api/3.17/auth/signin -H "Content-Type: application/json" -d @loginPro.json --verbose
+And you have the site's id and auth token you can get the view id from command:
+curl --request GET http://35.185.182.105/api/3.17/sites/a2fcf902-b158-4028-a9c2-fb94cc129316/views?pageSize=130  -H "X-Tableau-Auth:rnki0VJCT8K7Qpr_cDM4Pw|2U76XDsLHGK5NYgfZwgsD8u7Gp6hsU1F|a2fcf902-b158-4028-a9c2-fb94cc129316"  --verbose
+which "X-Tableau_Auth" is the credential token
+
+
+2023/1/18
+1. 問題回復, BC002017盤口, 覆核日期有出現2023-12月的, 很有可能他本來就錯了.
+2. when i use tableau server api in (pro host), the api would directly use 3.7(but the api for export crosstab excel doesn't support this function) even i set it to like 3.9, here's the evidence:
+response:
+<?xml version='1.0' encoding='UTF-8'?>
+<tsResponse xmlns="http://tableau.com/api" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://tableau.com/api http://tableau.com/api/ts-api-3.7.xsd">   --> it show 3.7
+<error code="404003"><summary>找不到资源</summary>
+<detail>URI 中指定的资源“/3.9/sites/a2fcf902-b158-4028-a9c2-fb94cc129316/views/085886a4-1e29-4a32-ae90-4f526ac33670/crosstab/excel”未知。</detail></error></tsResponse>
+
+but when i use the new tabeleau server on linux, there's no such problem, so in new linux tableau server, it works.
+3. I was reviewing about how to use c language to read a file contains characters or number into an array
+4. And I was trying to use dynamic memory to read the file.
+
+2023/1/19
+1. I was trying to run the bat command from another machine in windows system. For example: I want to execute test.py which is in the tableau-dev(windows machine) from tableau-server(machine).
+And here's the command line tool called PsExec.exe. It seems like it can do this. but when i tried. It would show "Couldn't access". 
+2. I was trying to use c language to read number files as array.
+3. In c language, there are some ways to find the length of a digit number, here are some reference:
+https://www.javatpoint.com/count-the-number-of-digits-in-c
+4. what does "?" question mark and ":" colon mark operators mean in c language:
+here's the reference talk about this:
+http://courses.washington.edu/css342/zander/css332/datatypes.html
+this is a syntatic sugar.
+
+2023/1/30
+1. I was trying to complete new codes, and I up to exchange rate crawler, and it can't insert to sql.
+
+2023/1/31
+1. I solved the problem i was encounter yesterday, and now exchange_rate can 
+2. I was reviewing about c language, how can i read and write data into files?
+3. How can i export the tableau data to csv or excel and then use python to check if the data are the same or not.
+4. C language how to write char and int to the file, here's some reference:
+https://stackoverflow.com/questions/11573974/write-to-txt-file
+5. In c language, how can i find the size of a file? here's some reference:
+https://stackoverflow.com/questions/238603/how-can-i-get-a-files-size-in-c
+6. In c language, what is the usage of the function fseek(), here's some reference talk about this:
+https://pydoing.blogspot.com/2010/07/c-fseek.html
+The key point is using the "SEEK_END", "SEEK_SET", "SEEK_CUR"
+7. what does "0L" mean in c language? It seems like "OL" is 0?? What is the difference?
+
+
+2023/2/1 
+1. what exactly does machine learning do? (basic)
+假設使用的是邏輯回歸:
+	1. 第一步, 需要有數據(可能是二維的數據, 或更高維度的數據, 但通常不會是一維的數據), 這些數據的某個值會是1 or 0, 例如x = [[1, 2], [2, 4], [3, 4]], y = [1, 0, 1]
+	2. 接下來, 有了數據之後, 需要把數據進行"邏輯回歸", 找到最佳的線性方程, 我們可以用這個線性方程去預測未知的數值, 分類之後的數值會直接是1 or 0.
+	3. 如果是分類問題的話可以使用sigmoid function 作為"激活函數(activation function)", "激活函數"其實就是最後數據要進行二元分類的時候, 可以使用這個函數去計算, 不一定是sigmoid, 也可以是tanh或其他的.
+
+假設使用線性回歸:
+	線性回歸的輸入x = [[1, 2], [2, 4], [3, 5]], y = [3, 4, 6]
+	y 不一定是0 or 1. 線性回歸的目的在於預測y的值, 而邏輯回歸的目的在於直接分類y, y的值是[0, 1], 當然y的值也可能不只兩個, 例如[0, 1, 2]
+You can also use VSM:
+2. Trying to review about machine learning. the difference between linear regression, logistic regression and neural network.
+3. What is the relation between neural network and matrix.
+4. Trying to learn the basic of image recognition
+5. What are the eigenvector and eigenvalue of an image
+6. But what do eigenvalue and eigenvector have to do with pictures? here's some reference talks about this:
+https://math.stackexchange.com/questions/92171/what-do-eigenvalues-have-to-do-with-pictures
+https://blog.csdn.net/AddVH/article/details/106312289
+7. I saw some people use "PIL" python library to deal with images but I remember there's another library called "opencv" So what's the difference between both of them?  
+Here's a reference talks about this:
+https://www.geeksforgeeks.org/convert-opencv-image-to-pil-image-in-python/
+8. Here's another reference talk about how to use eigenvalue and eigenvector of a picture:
+手寫數字識別:
+https://www.k2zone.cn/?p=977
+In the article above, the it talk about "feature vectors" which is not the same as eigenvectors.
+
+
+2023/2/2
+1. It seems like if we want to find the eigenvalue and eigenvector of an image
+or a picture, we need to use "singular value decomposition(奇異值分解(SVD))" 
+You should definitey check it out:
+https://zh.wikipedia.org/wiki/%E5%A5%87%E5%BC%82%E5%80%BC%E5%88%86%E8%A7%A3
+here's another reference: this talks about how to compress image by .
+https://yadominjinta.github.io/2019/12/02/Image-compression-and-linear-alegebra.html
+3. what is "EigenDecomposition(特徵分解)"?
+eigenDecomposition is actually doing this kinda thing below:
+A = QTQ^-1   which is decomposite matrix A into diagnozied matrix T(which is composed by eigenvalue) and Q which is composed by eigenvector.
+4. how to make any indepent basis to normalized orthogonal basis?? YOU CAN USE "Schmidt normalization"
+5. eigenDecomposition only works on square matrix but SVD can works on rather just that.
+6. about the confusion of orthogonalization of eigenvector, here's some
+reference talksk about this:
+https://www.quora.com/How-is-it-possible-to-orthogonalize-eigenvectors-when-they-are-not-orthogonal
+7. use schmidt method to normalized vectors, here's reference:
+https://zhuanlan.zhihu.com/p/136627868
+8. For symetry matrix, you can turn eigenvectors to normalized orthogonal matrix but only for symmetry matrix, here's some reference:
+https://zh.wikipedia.org/wiki/%E7%89%B9%E5%BE%81%E5%88%86%E8%A7%A3
+9. But why do we use SVD (why use singular value?) what does singular value
+do?
+10. Normalization of eigenValue, here's some reference:
+https://ithelp.ithome.com.tw/articles/10197357
+11. Here's another reference talk about "singular value decomposition" and image compression
+
+2023/2/3
+1. I was modifing the backend style and trying to make code right.
+2. Tring to test how to use the new system.
+
+2023/2/4
+1. How to use google Icons? Here's a simple tutorial reference:
+https://www.w3schools.com/icons/google_icons_intro.asp
+
+2023/2/7
+1. Trying to complete the backend reinsert code.
+2. Reviewing about d3.js which is an popular javascript data visualization lib. Here are some comments about d3.js You can take reference:
+https://www.zhihu.com/question/38648735
+3. What is SVG exactly, we always see svg format on web but don't really understand what it is.
+4. How to make SVG image, basic tutorial: 
+https://www.youtube.com/watch?v=mZdzzaNjiqU&t=789s
+5. And what is the difference between "SVG" and "CSS", both used in web?
+well, css is used for stylizing the web but SVG is used for creating vector images.
+6. Before we starting to learn d3.js, we need to understand what exactly SVG is, here are some references talk about this:
+https://ithelp.ithome.com.tw/m/articles/10264614
+7. Reviewing about ajax. Actually, You are using ajax in the backend for Tawinner database which is "XMLHttpRequest()" function, it 
+can 
+8. Reviewing. How can i pass value from database to javascript XMLHttpRequest()?? Here's some references:
+https://stackoverflow.com/questions/11178426/how-can-i-pass-data-from-flask-to-javascript-in-a-template
+9. How can i get data from flask to XMLHttpRequest(), It seems like you have to use addEventListener, here's some reference:
+https://stackoverflow.com/questions/61766579/empty-response-when-responding-to-xmlhttprequest-from-flask
+10. In SQLAlchemy(python's sql connection library), if you want to get the result of "select", you have to use something like:
+result = cursor.fetchall()
+and then
+It seems like XMLHttpRequests only get string data type.
+And here's a reference talks about this:
+https://stackoverflow.com/questions/58658690/retrieve-query-results-as-dict-in-sqlalchemy
+11. If I want to completely understand about how to use flask as a backend tool, You better create an example practice case:
+	1. A library system, which is store many books and you can insert data into the system and you can search books, and read books.
+
+2023/2/8
+1. I was studying about "feature extration". In chinese we call it "特徵提取", 這裡的"特徵"和特徵向量不是同一個東西,
+Here are some reference talk about this:
+https://www.zhihu.com/question/26559064
+2. In opencv-python, "imshow()" only works with waitKey(), Here's a reference talks about this:
+https://stackoverflow.com/questions/21810452/cv2-imshow-command-doesnt-work-properly-in-opencv-python
+3. The relationships between deep learning(neural network) and matrix(linear algebra)? It seems like Neural network is nothing but matrixs in 
+linear algebra!!! Here are some reference talk about this:
+https://zhuanlan.zhihu.com/p/73497541
+4. Review about c language, how is the pointer works??
+for example, "pointer of an array" and "array pointer":
+	// pointer of an array"
+	int (*arrayP)[10];     //  the operator precedence is this: "()", "[]", "*". Refernece: https://en.cppreference.com/w/c/language/operator_precedence 
+	// So that means that this line of code means that 
+	arrayP取值之後是一個有[10]的元素的array, 且每個元素的datatype都是int
+
+	// array pointer
+	int *pArray[10];
+	// the code means that 
+	pArray是一個陣列, 且每一個元素取值之後都是int, 這表示每個元素都是一個指向int的指標
+5. In most regression, "least square method" is used for regression, but there's another one method to deal with different situation, called robost regression,
+Here's some references talk about this:
+https://ithelp.ithome.com.tw/articles/10186403
+6. what is the relationship between "Gradient Descent" and "Least Square"?? here's some references talk about this:
+https://medium.com/analytics-vidhya/sklearn-linear-regression-under-the-hood-31ee71aec00
+7. In "least square" why do we use y on x? Or is "y on x" the same as "x on y"? And not the same why? why not symmetry? here's the import reference:
+https://stats.stackexchange.com/questions/22718/what-is-the-difference-between-linear-regression-on-y-with-x-and-x-with-y
+here's another reference:
+https://www.zhihu.com/question/57431366
+I think this is because of statics of y and x is different, which make regression x on y and regression y on x are not the same.
+8. In "least square" regression problem, the loss function is actually "Sigma(y-yp)^2", because accoding to the definitions we know that, the loss function
+should be the function that need to be minimized? You can see the wikipedia:
+https://en.wikipedia.org/wiki/Cost_function
+9. I was trying to create newton's method to solve least square problem but I failed. I remember that I used to make it done before. Here's a reference You
+can check it out:
+https://azrael.digipen.edu/MAT180/NewtonsMethod.pdf
+10. Why don't we use newton's method in machine learning? here's some reference talk about this:
+https://blog.csdn.net/weixin_46221946/article/details/126820460
+
+
+2023/2/9
+1. Why newton's method not widely used in machine learning? here's some reference:
+https://stats.stackexchange.com/questions/253632/why-is-newtons-method-not-widely-used-in-machine-learning
+2. Here's an example talks about how to use Newton's method:
+https://oemiliatano.github.io/2021/03/01/%E6%9C%80%E4%BD%B3%E5%8C%96-%E7%89%9B%E9%A0%93%E6%B3%95/
+3. What is the difference between "objective function" and "loss function"?  They are basically pretty much the same thing in machine learning, 
+Here's some references talk about this:
+https://stats.stackexchange.com/questions/179026/objective-function-cost-function-loss-function-are-they-the-same-thing
+4. What is "forward propgation" and "backward propgation" in machine learning?? here's some references talk about this:
+https://chih-sheng-huang821.medium.com/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92-%E7%A5%9E%E7%B6%93%E7%B6%B2%E8%B7%AF-%E5%A4%9A%E5%B1%A4%E6%84%9F%E7%9F%A5%E6%A9%9F-multilayer-perceptron-mlp-%E5%90%AB%E8%A9%B3%E7%B4%B0%E6%8E%A8%E5%B0%8E-ee4f3d5d1b41
+5. What is the relationship bewteen "Gradient Descent" and "Backward Propagation". It seems like "Backward Propgation" is just a more efficient method for "Gradient Descent". They are 
+basically the same thing.
+https://ithelp.ithome.com.tw/articles/10272479
+6. "Backward Propagation" in short called "BP"
+7. What is the difference between "CNN (Convolution Neural Network)" and "MLP (Multilayer perceptron)"? Here's some reference talks about this:
+Convolutional Neural Networks are MLPs with a special structure.
+check out Zia's answer:
+https://www.quora.com/Whats-the-difference-between-convolution-neural-networks-and-multi-layer-perceptron
+Here's another references talks about this:
+https://stats.stackexchange.com/questions/234891/what-is-the-difference-between-convolutional-neural-networks-and-deep-learning
+8. Here's another references talk about how "Backward Propagation" works and talk about the "Gradient Descent" and "Image recognition".
+https://datasciocean.tech/deep-learning-core-concept/backpropagation-explain/
+https://datasciocean.tech/deep-learning-core-concept/deep-learning-gradient-descent/
+https://datasciocean.tech/deep-learning-core-concept/neural-network-classify-handwritten-digit-image/
+9. Here's another example talk about how to make a digit number images recognition tutorial. You should definitely check it out(He use flask too!):
+https://www.toptal.com/data-science/machine-learning-number-recognition
+10. In hidde layer, How do i decide how many units does a hidden layer should have?  Here's a references talk about this:
+https://www.quora.com/How-do-I-decide-the-number-of-nodes-in-a-hidden-layer-of-a-neural-network-I-will-be-using-a-three-layer-model
+11. Wait a second!! How many weights does I have in a neural neworks diagram?? Here's a reference talk about this: 
+https://stats.stackexchange.com/questions/296981/ormula-for-number-of-weights-in-neural-network
+12. In Gradient Descent, How many times does it should take to get the correct result? It seems like when the datasets get more data, the rate and times have to change with it?
+13. I just try simple Gradient Descent but it keep diverging??? How can this happens? Here's some references talk about this:
+https://stackoverflow.com/questions/41354177/why-does-simple-gradient-descent-diverge
+14. But in 13. Doesn't that mean when the dataset is huge, this would make objective function huge?
+
+
+2023/2/10
+1. What is the difference, and what is the usage difference between "neural network" and "Support vector machine"?? Well, it seems like they're different, Here's some references talk about this:
+https://www.zhihu.com/question/22290096
+2. Why is "neural network" more popular than "Support vector machine"?? Here's some reference talks about this:
+https://stats.stackexchange.com/questions/510052/are-neural-networks-better-than-svms
+3. I think if I want to understand why hidden layer has more than 1 units i have to understand "backward propogation" first, here's some referece talk about this:
+https://www.brilliantcode.net/1326/backpropagation-1-gradient-descent-chain-rule/
+4. So "forward propagation"*"backward propagation" = gradient(f), Here's the reference:
+https://ithelp.ithome.com.tw/articles/10272479
+5. Here's another example explaning how "backward propagation" works:
+https://mattmazur.com/2015/03/17/a-step-by-step-backpropagation-example/
+here's another one. ---> important
+https://allen108108.github.io/blog/2020/06/01/%E7%82%BA%E4%BB%80%E9%BA%BC%E9%9C%80%E8%A6%81%E5%8F%8D%E5%90%91%E5%82%B3%E6%92%AD%20_%20Why%20Backpropagation%20_/
+here's another references talk about this:
+https://www.zhihu.com/question/27239198
+6. Difference between "error function" and "loss function"?? here's some reference talk about this:
+https://zh.wikipedia.org/zh-tw/%E8%AF%AF%E5%B7%AE%E5%87%BD%E6%95%B0
+https://www.jianshu.com/p/7a592ad7591a   ---> error function's definition doesn't change but loss function doesn't. Loss function's definition is based on your choice.
+
+
+2023/2/13
+1. Why some python's code use underscore as function's name??? I have seen some python coder use this. Here's some reference:
+https://stackoverflow.com/questions/8689964/why-do-some-functions-have-underscores-before-and-after-the-function-name
+2. In python numpy array. When you use "someArray.T" that means you actually find the transpose of that array(or matrix in this situation).
+3. I am studying about how to use backward propagation in python algorithm. It's kinda complicated now.
+
+
+2023/2/14
+1. I was keeping trying to make neural network practice example.
+
+2023/2/16
+1. I was studying about neural network. And I finally made a correct model but sometimes it would happen something like "overfitting" which make me confused
+2. How do i choose the number of units of hidden layers in the nueral network?? Here's some reference talk about this:
+https://zhuanlan.zhihu.com/p/100419971
+3. How exactly does overfitting(or underfitting) happens? here's some reference talks about this:
+https://stats.stackexchange.com/questions/338255/what-is-effect-of-increasing-number-of-hidden-layers-in-a-feed-forward-nn
+4. How to solve gradient disappearance, It seems like we should normalization the input data. here's some reference:
+https://www.cupoy.com/qa/club/ai_tw/0000016D6BA22D97000000016375706F795F72656C656173654B5741535354434C5542/0000017B5471FC67000000086375706F795F72656C656173655155455354
+here's another reference:
+https://www.zhihu.com/question/38102762
+5. I find that's weird that taiwinner database "cost_living_partition" view.
+
+
+2023/2/18
+1. music note 4:
+https://www.youtube.com/watch?v=oksffSVy1Vg
+2. I keep studying about how to use neural network. 
+
+2023/2/20
+1. I keep modifying the taiwinner backend web, and finally finish the co_mapping problem.
+2. What exactly is "modularity" for development?? Any example?
+3. I keep modifying the new database and finally trying to complete the problem of view_cost_living_partition, Why the data number is different from the "pro server"
+
+2023/2/21
+1. What does "!" mean in c language?? 
+2. I was reviewing about c language, how to read and write file, and what is the difference between array pointer and pointer of an array.
+3. music note 5: 
+https://www.youtube.com/watch?v=ctX9oil5uWY
+4. 
+
+2023/2/22
+1. about Guassian curvature(important), you should definitely check it out:
+https://www.toutiao.com/article/6751046884359406091/?&source=m_redirect&wid=1677047260149
+2. I complete the codes that backend needs.
+3. Trying to understand why digit recognization nueral network wouldn't work. Still doesn't work
+
+
+2023/2/23
+1. Python flask multipleThreading, how can i execute two task at the same time? here's some reference talks about this:
+https://flask-yushu.gitbook.io/yushu/5.flask-zhong-de-duo-xian-cheng-yu-xian-cheng-ge-li-ji-shu/5.2-quan-ju-jie-shi-qi-suo-gil
+2. In numpy, if you want to combine two array like array1=[[1, 2, 3, 4], [2, 3, 4, 8]] and array2=[[1], [2]], You can use np.concatenate((array1, array2), axis=1), 
+here's some reference: 
+https://sparkbyexamples.com/numpy/numpy-concatenate-arrays/
+3. How to use python's requests to get tableau server's api(well, not just tableau server api, including any other kinda restful api), here's some reference:
+https://stackoverflow.com/questions/8685790/adding-headers-to-requests-module
+4. how to upload file by python requests:
+https://stackoverflow.com/questions/22567306/how-to-upload-file-with-python-requests
+5. how to send file by telegram bot, here's some reference:
+https://stackoverflow.com/questions/55470047/how-to-send-file-via-telegram-bot
+
+2023/2/24
+1. I was studying about machine Learning, using "neural network" to deal with "iris flower" problem. The unbelievable part is that IT WORKS!!
+2. In python when we encounter the month and date for only single number, how can we fullfill the 0, here's some reference:
+https://blog.csdn.net/lxq_9532/article/details/85759673
+
+2023/3/1
+1. I was trying to modified digit recognization python deep neural network test. And I just found out that if you want to increase the accuracy of 
+the prediction, sometimes you can increase the iteration number of the descent gradient method. And It's just not only work on digit recognization. 
+It also works on iris flowers recogniztion.
+2. I was keep studying neural network. And there's weird situations happens in the iris_recognization case. That is the accuracy of the program would 
+sometimes suddenly discrease
+3. How to send multiple files in python requests at the same time(so far i only know how to send one file one time), here's some reference:
+https://stackoverflow.com/questions/18179345/uploading-multiple-files-in-a-single-request-using-python-requests-module
+4. So I know that send multiple files with "sendDocument" api doesn't work, then what about "sendGroupMedia" api?? does that work? api doesn't work, then what about "sendMediaGroup" api?? does that work?
+5. I was trying to use "sendMediaGroup" api, but it keeps failing. So Maybe I should use another api other people made: "python-telegram-bot", here's some reference:
+https://stackoverflow.com/questions/58893142/how-to-send-telegram-mediagroup-with-caption-text
+6. How to send image by python requests to telegram, here' some reference:
+https://stackoverflow.com/questions/71985926/how-to-send-image-by-url-with-telegram-api-using-python/71985948
+
+
+2023/3/2
+1. I was trying to use telegram restful api of "sendMediaGroup" to send two images and it works!! Here's the reference:
+https://stackoverflow.com/questions/73717024/how-to-send-photos-with-multipart-form-data-in-media-group-with-python-requests
+2. After trying again and again, I started wondering if the "sendMediaGroup" can't send files unless the files are already in the server?? Here's some refereces talk about this:
+https://github.com/unreal4u/telegram-api/issues/76
+still suspect that "sendMediaGroup" can't send local files, here's another reference:
+https://community.n8n.io/t/telegram-media-upload/15391/6
+3. How to modified excel(or access excel) contents in python. You can use "openpyxl", Here's some reference:
+https://pythoninoffice.com/use-python-to-delete-excel-rows-columns/
+4. How can i crypto excel files by python, here's some reference:
+https://blog.csdn.net/SDKL_YI/article/details/124401238
+
+2023/3/3
+1. In neural network, how many nodes and hidden layers should i choose when it count to the accuracy, here's some reference:
+https://www.linkedin.com/pulse/choosing-number-hidden-layers-neurons-neural-networks-sachdev
+2. In neural network, when you want to save or load the training result models you can save it as json files. Here' some reference talk about this:
+https://stackoverflow.com/questions/55102781/how-to-save-and-load-my-neural-network-model-after-training-along-with-weights-i
+3. What language does "stable diffusion" use? It seems like it use python. But if it use python then it should i kinda slow??
+4. Can I use "C language" to build the neural network training model??
+5. I think I should try to build some test python lib by c or c++. When you still have times.
+6. Try to practice c++.
+
+
+2023/3/8
+1. I keep studying about a math subject "why Guassian curvature is intrinsic,how can i explain it with a simple idea"?
+here's some ideas i think you can consider about:
+https://www.britannica.com/science/differential-geometry/Curvature-of-surfaces
+2. In Guassian curvature i think i lost the goal of what i should prove that makes we can't prove the right thing. 
+I think there's a hint about what should i really prove: https://en.wikipedia.org/wiki/Gaussian_curvature
+Gauss's Theorema egregium (Latin: "remarkable theorem") states that Gaussian curvature of a surface can be determined from the measurements of length on the surface itself. 
+In fact, it can be found given the full knowledge of the first fundamental
+form and expressed via the first fundamental form and its partial derivatives
+of first and second order. Here's some reference:
+https://encyclopediaofmath.org/wiki/Gaussian_curvature
+3. what is the gemoetric meaning of the coefficients of the first fundamental form?
+4. In taiwinner, You should try to testing create folders in ga_data and make sure that you can put the files in that folder.
+5. I think you should really really need to understand "the first fundamental form" and not just only know that first fundamental form is "ds", here's wiki:
+https://en.wikipedia.org/wiki/First_fundamental_form
+6. In first fundamental form, there's one import thing called "metric tensor", I think should really need to know:
+度量張量在黎曼幾何裡面又叫黎曼度量，物理學譯為度規張量，是指一用來衡量度量空間中距離，面積及角度的二階張量。
+7. Here's another reference talk about the area using the "first fundamental form"
+
+8. Here's another reference talk about why Gaussian curvature is invariant under isometry transformation:
+https://math.stackexchange.com/questions/434267/gaussian-curvature-invariant-under-an-isometry
+9. Any isometry preserves the length and angle?? Here's some reference:
+https://math.stackexchange.com/questions/1131642/isometries-preserving-distance-but-not-angles
+10. About isometry preserves about the angle?
+
+
+2023/3/9
+1. What exactly make the accuracy can't go any higher in neural network? Here might be a reason:
+https://stackoverflow.com/questions/42998307/how-to-solve-the-issue-testing-accuracy-reduce-during-iterations
+2. I keep fail to improve digit recognization accuracy, but this time, holy shit!!! It works. 
+I use 500 training data, and 3000 hundred iteration and use learning rate accoroding as a function of iteration number! And the accuracy is 97%!! oh my god!
+3. But!! when I increase the number of the test data, the same thing happens again the accuracy fall down!!
+4. What is the difference between "validation set" and "test set". It seems like they are almost the same.
+5. What if I use the trained model to test "training data" ?? What accuray would I get??
+6. How do i use vim to compile latex file to pdf, here's some referece:
+https://www.youtube.com/watch?v=igX_QbCS5bg
+7. Well, It seems like you can't just transfer .tex files to pdf unless you have the software.
+here's some reference:
+https://tex.stackexchange.com/questions/49569/where-to-download-pdflatex-exe
+8. I give up using vim to create latex pdf. Here's another software called "LyX", I think I could try this one.
+here' some reference talk about this:
+https://www.reddit.com/r/LaTeX/comments/1mhlbv/lyx_vs_pure_latex_which_one_should_i_started_first/
+9. or you can use "TEX Live" it seems better than other
+10. "TEX Live" is just too huge. Here seems like another light weight alternative solution called "TinyTex"
+
+2023/3/10
+1. Keep studying about how to use latex. Now I use "tinyTex". The exe (pdfLatex.exe) files do works. Here's some latex basic tutorial that works now:
+https://guides.nyu.edu/LaTeX/creating-document
+2. When I use windows "invoke-WebRequest(iwr)" to get the files on github. It showed that "iwr : 要求已經中止: 無法建立 SSL/TLS 的安全通道。". 
+It seems like windows default support is just too old. Here's the reference of how to modified this kinda thing:
+https://blog.miniasp.com/post/2019/01/12/PowerShell-Invoke-WebRequest-use-TLS-v12
+3. And here's the way you can download "vim plugin" on your windows by powershell command line:
+https://www.youtube.com/watch?v=jyWis694NVc
+4. There's the way talk about how you can install vimtex in your vim:
+https://vimawesome.com/plugin/vimtex
+5. If you want to plug something plugin in vim, you can use this kinda thing inside the "_vimrc" (or .vimrc file in linux)
+here's the reference:
+https://blog.csdn.net/guchaono1/article/details/114632338
+The process is below:
+
+call plug#begin('~/.vim/plugged')
+Plug 'lervag/vimtex'
+call plug#end()
+
+
+just put the plugin you want to plug between two lines:
+
+call plug#begin('~/.vim/plugged')
+call plug#end()
+
+and then use the command below INSIDE .vimrc file!
+:source %
+:PlugInstall
+
+the the plug would be installed.
+
+6. What is the difference between ".vim" folder and "vimfiles" folder, here's the reference below:
+basically ".vim" folder is for linux based system, and vimfiles is for gvim windows based system:
+https://stackoverflow.com/questions/851133/what-is-the-difference-between-vim72-and-vimfiles-folder
+7. I still can't solve the problem 
+
+2023/3/13
+1. I was study about how to use vpn. And here's a software i use called "vpn gate" and  it is useful. But here's the thing
+You should be careful. You shouldn't install the wrong software. Here's some reference talk about this:
+https://zhidao.baidu.com/question/1047140770396026859.html?qbpn=1_1&fr=newsearchlist&word=SoftEther%20VPN%20Client%E6%89%93%E5%BC%80%E4%B9%8B%E5%90%8E%E6%B2%A1%E6%9C%89vpn%20gate%E5%85%AC%E5%85%B1VPN%E4%B8%AD%E7%BB%A7%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%8C%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F
+2. and I was trying to use chatgpt inside taiwinnerData's private network. And It failed! Because I found out that 
+TaiwinnerData's IP is located in HongKong which chatgpt doesn't suppot to!!! 
+The only way you can use chatgpt inside Taiwinner is to use VPN to connect to other network rather than China
+3. You can use the command below to check your ip location:
+
+curl ipinfo.io
+
+4. How can i remote other computer in a remoted computer?
+
+
+2023/3/14
+1. I was trying to use Taiwinner's computer to login ChatGPT with vpn and it worked.
+In the normal situation in Taiwinner. The ip address is like in HK. So you can't login into ChatGPT. 
+
+The interesting things is when i cut the VPN. The ChatGPT can still login!! I think that's because of cookies or something. It has remember you already.
+
+
+2023/3/24
+1. When you want to restore sql server database from the backup file, you are supposed to restart sql server, here's a reference talks about this:
+https://www.ubackup.com/enterprise-backup/sql-database-restore-failed-database-in-use-1021.html
+
+2023/3/27
+1. I was studying about neural network of digit recognization using backward propogation. The problem i had is that 
+when the dataset is the training data from sklearn. It works fine but when it counts to the dataset i created the accuracy failed. how?
+
+2. Maybe because i should use (convolutionarl neural network)? does it has a better performance in digit recognition?
+
+3. What is the difference between CNN, RNN, DNN ??? 
+
+
+2023/3/31
+1. Keep studying about CNN, it's saying that CNNs has more accuracy than NN.
+2. Study about the algorithm of CNN. 
+3. study about the algorithm of  "Convolutional Layer"
+4. It seems like "Convolutional Layer" is trying to get "feature". 
+5. But what does "feature" mean in image reconition? Here's some reference talks about this:
+https://chtseng.wordpress.com/2017/05/06/%E5%9C%96%E5%83%8F%E7%89%B9%E5%BE%B5%E6%AF%94%E5%B0%8D%E4%B8%80-%E5%8F%96%E5%BE%97%E5%BD%B1%E5%83%8F%E7%9A%84%E7%89%B9%E5%BE%B5%E9%BB%9E/
+The reference above introduce the algorithm that "opencv" has, including some of the famous algorithm
+
+
+2023/4/7
+1. There's a problem about third_bank, here's the sql code i found:
+
+find the problem of the the redundant records:
+select 简称 from view_余额表 where 其='2023-04-01' and 盘口编码='CC006008' and 用途='三方入款' and 日期='2023-4-3' and 余额表摘要 is  null order by 简称
+select distinct 简称 from view_余额表 where 其='2023-04-01' and 盘口编码='CC006008' and 用途='三方入款' and 日期='2023-4-3' and 余额表摘要 is  null  order by 简称
+show the difference between the view and module records:
+select* from view_余额表 where 其='2023-04-01' and 盘口编码='CC006008' and 简称='715支付'
+select * from t_余额表 where 其='2023-04-01' and 盘口编码='CC006008' and 简称='715支付'
+
+
+2023/4/10
+1. How to use sql server's "while" loop to do something.
+2. How to use sql server's row_number() function to do something.
+
+2023/4/11
+1. I was studying about what is "Euler Characteristic" and how can i use it? Here's some references talk about this:
+https://zhuanlan.zhihu.com/p/348237282
+2. Keep study about feature of machine learning.
+3. When you talk about "extration of feature" in machine leanring, "keypoint feature" is very important,
+It is kinda like when you give machine a human face image, the algorithm can say the keypoints on the face like eyes ears, the corners or the edge of the face.
+That makes reconitions possible. Here's some reference you can check it out:
+https://chtseng.wordpress.com/2017/05/06/%E5%9C%96%E5%83%8F%E7%89%B9%E5%BE%B5%E6%AF%94%E5%B0%8D%E4%B8%80-%E5%8F%96%E5%BE%97%E5%BD%B1%E5%83%8F%E7%9A%84%E7%89%B9%E5%BE%B5%E9%BB%9E/
+https://medium.com/data-breach/introduction-to-feature-detection-and-matching-65e27179885d
+https://medium.com/analytics-vidhya/understanding-keypoints-and-orb-algorithm-f260e6fb640c
+4. I was study about multiprocess and mutlithreads, here's some reference:
+https://stackoverflow.com/questions/69145314/does-running-two-scripts-in-parallel-on-a-dual-core-cpu-decrease-the-speed-as-co
+
+
+2023/4/12
+1. How can i use bat to call another batch file and then run at the same time.
+Here's the basic example you can take as reference:
+
+start "cmd.exe /k"  python test2.py 
+python test1.py
+
+2. How to timing the programming time in python?
+3. How to timing the programming time in c Language?
+
+2023/4/19
+1. i was studying about "Bivector". It is very relative with "exterior algebra"
+2. What is the difference between "exterior product" and "cross product"??
+3. I was studying about the algorithms used in image feature detection.
+4. Harris corner detector. Here's some reference:
+https://medium.com/data-breach/introduction-to-harris-corner-detector-32a88850b3f6
+5. Review about how to use python and c language to write a differential function
+6. There are some methods to get the answer of extreme value of the a function(no matter how many variables.)
+including 
+	a. Newton's method
+	b. Gradient method
+	
+	But New's method is too complicated in multiple variables problem.
+	so most of the time, people use gradient method.
+
+7. When you want to use "gradient method", the key point is find the gradient, the most used method to use is "backward propagation", which is actually chain rule
+in calculus.
+8. Keep studying about Harris corner detection algorithm
+
+2023/4/20
+1. I was modifying the database of TaiwinnerData and it seems work.
+2. I was keep studying about "What is the difference between exterior product and cross product"?  Here's some reference:
+https://www.quora.com/What-is-the-difference-between-cross-product-and-exterior-product-with-the-derivation-of-the-formulae
+3. You have to understand the formula definition of the "cross product" and "exterior product"
+4. Keep studying Harris corner detector? Here's some reference talks about this:
+https://muthu.co/harris-corner-detector-implementation-in-python/
+https://medium.com/data-breach/introduction-to-harris-corner-detector-32a88850b3f6
+5. 
+
+
+2023/4/21
+1. Keep studying Harris corner detector
+2. I am studying about how to use c language function. You can use function inside another function.
+3. In feature detection, the corner detection is one of the most important element. Here's some reference talk about this:
+https://zh.wikipedia.org/zh-tw/%E8%A7%92%E6%A3%80%E6%B5%8B
+4. What is correlation in probability, here's some reference:
+https://zh.wikipedia.org/zh-tw/%E7%9B%B8%E5%85%B3_(%E6%A6%82%E7%8E%87%E8%AE%BA)
+
+
+2023/4/24
+1. I kept studying about what is the difference between "cross product" and "exterior product".
+	And maybe you can read the second explanation below:
+	https://www.quora.com/What-is-the-difference-between-cross-product-and-exterior-product-with-the-derivation-of-the-formulae
+	It says something about "Tensor product". Maybe you can get some idea from that.
+
+2023/4/25
+1. I kept studying about the difference between  "cross product" and "exterior product" 
+2. before we talk about exterior product. It seems like we have to talk about "tensor product" first.
+	You can take a look at wikipedia which is about "tensor product":
+	https://zh.wikipedia.org/zh-tw/%E5%BC%A0%E9%87%8F%E7%A7%AF
+3. Here's another reference talk about the relationship between wedge product(which is exterior product) and "tensor product":
+https://math.stackexchange.com/questions/2312215/relationship-between-tensor-product-and-wedge-product
+
+2023/4/27
+1. Keep studying about what is "exterior product" and "tensor product".
+2. if we want to talk about exterior product, have to understand "multivectors"
+3. I think "multivectors" is the key, if you understand "multivectors" you can understand why we need "exterior product"  and why we need "exterior product"
+4. study about how to use multiple process in python.
+
+
+2023/5/8
+1. When I use multiple Threads in python. every function you want to execute would execute together with threads you are starting to run.
+So if you want to wait for other threads to end. You have to use join() function, here's some example talks about this:
+https://medium.com/ching-i/%E5%A4%9A%E5%9F%B7%E8%A1%8C%E7%B7%92-python-threading-52e1dfb3d5c9
+2. I was trying to use python to run multiple threads, but the speed is way more slower than single thread. It seems like the multiple threads in python
+is not reallyl multiple but single thread and need to swtich to threads each other. Here's some refernece talks about this:
+https://blog.csdn.net/winter2121/article/details/115280178
+
+2023/5/10
+1. How can i set "login system" in flask backend.
+2. python, what does this mean below?
+	def my_funct(*args):
+		print(args)
+
+	def my_funct(**kwargs):
+		print(kwargs)
+
+3. python, how to define a function inside another function?
+4. In python, multiprocesses in taiwinner. 
+The 4 process spend like 30 minutes
+The 10 processes spend like 26 minutes
+
+2023/5/15
+1. I was studying how to use "tableau" basic. Including below
+	a. how to create basic view from data source from sql server
+	b. how to create parameter with formula
+2. how can i disconnect/log out from windows network share(you can see from file explorer), here's some reference talks about
+this:
+https://superuser.com/questions/883604/disconnecting-logging-out-from-windows-network-share-without-restarting-workst
+3. review about flask backend, here's an sample project:
+https://github.com/psergicv/Restaurant-Management-System
+4. When you run flask --app run in this example above, when you ask you that you need MySQLdb, You should use this command below:
+"pip install mysqlclient"
+5. how do i transpose data from backend to frontend.
+6. I need to study docker. What exactly is docker? And how can i use it?
+
+2023/5/16
+1. I was using python flask backend. xhr.responseText in javascript doesn't show anything. Again, this problem is encountered before
+, You have to use requestListener to deal with this.
+2. What if i use fetch()?
+
+2023/5/23
+1. sql Server, how to clear the log files? Here's some reference:
+https://dotblogs.com.tw/mepowerlmay/2019/03/24/164610
+
+2023/5/24
+1. When I was trying to shrink sql server's log file by "sqlAlchemy" lib from python, It happens some error. Here's the reference:
+https://stackoverflow.com/questions/60204631/why-i-receive-error-pyodbc-error-hy000-the-driver-did-not-supply-an-error
+
+2023/5/26
+1. Flask Practice, full tutorial, here's some rerference talks about this:
+https://hackmd.io/@shaoeChen/HJiZtEngG/https%3A%2F%2Fhackmd.io%2Fs%2FSyP4YEnef
+2. I was trying to use python multiple Process, and I encounter something called "運行一次包裝器"? What is it?
+3. It seems like it is because of the "Priority" of the task in windows scheduler. Here's a reference talks about this:
+https://community.safe.com/s/question/0D54Q000080hBRlSAM/deployed-batch-runs-very-slow-as-scheduled-task
+Here's another reference talks about this:
+https://serverfault.com/questions/151824/process-runs-slower-as-a-scheduled-task-than-it-does-interactively
+The key points is that in windows vista, the task schedule has it's own priority. You should export 
+the schedule task and reset the priority value.
+
+2023/5/30
+1. Study about how to use mutlprocessing, Process, pool in python to deal with multiProcess data to sql program. It
+seems like you have to use "Pool" to prevent recreate connection in every process
+2. Review about how to use "with" statement in python. And how it works. It seems like with statement is mostly used
+in "file open" situation, but i see other situation use it too. Here's some reference talks about this:
+https://builtin.com/software-engineering-perspectives/what-is-with-statement-python
+3. How to use "Process" and "Pool" in "multiprocessing" in python basic?? Here's a reference:
+https://docs.python.org/zh-tw/3/library/multiprocessing.html
+4. What is the difference between "Pool" and "Process" in "multiprocessing" in python?? Here's a reference talks about this:
+https://towardsdatascience.com/how-to-use-the-multiprocessing-package-in-python3-a1c808415ec2
+5. Why is there no faster when i use Pool() in multiprocessing when the Pool number over than 2? Here's a reference talks about this:
+https://stackoverflow.com/questions/50748857/why-is-there-no-influence-after-using-more-than-2-processes-in-pool
+
+2023/5/31
+1. keep studying about How python multiprocessing works? And how can i use it?? Here's a reference talks about this:
+https://zhuanlan.zhihu.com/p/340657122
+2. In python, how can we change scientific notation to normal float?? You first need to learn how to use format() function in python
+3. Review about how to use format() in python. Here's some reference talks about this:
+https://www.w3schools.com/python/ref_string_format.asp
+4. why use oop in python? Here's some reference talks about this:
+https://stackoverflow.com/questions/36640673/why-should-i-use-classes-in-python
+5. When I code in python, when and how to use "comments" and "docstrings"? And what is the difference between both of them?
+Here's a reference talks about this:
+https://www.pythonforbeginners.com/comments/when-to-use-comments-vs-docstrings-in-python
+6. Here's another flask example I think you can check it out:
+https://github.com/XD-DENG/flask-example
+https://github.com/sumairz/photo-gallery-python-flask
+7. In vim, if you want to get the total line number you can use "ctrl-g"
+
+2023/6/1
+1. Keep modified taiwinner module codes
+2. study about how to use decorator correctly.
+3. What is *args and **kwargs do in decorator?? Here's a reference talk about how to use "*" and "**".
+https://skylinelimit.blogspot.com/2018/04/python-args-kwargs.html
+
+
+2023/6/2
+1. study about how to use selenium to do the basic download method, here are some references:
+https://ithelp.ithome.com.tw/articles/10276797    ---> this website is kinda outdated. the function is not useful anymore
+https://www.browserstack.com/guide/download-file-using-selenium-python
+https://pythonexamples.org/python-selenium-find-element-by-class-name/
+https://www.geeksforgeeks.org/download-file-in-selenium-using-python/
+
+
+2023/6/5
+1. modified ETL codes.
+2. In python, when you want to use string for a variable file path, you should better use "r" before the string or some error 
+may come, here's a reference talks about this:
+https://stackoverflow.com/questions/37400974/error-unicode-error-unicodeescape-codec-cant-decode-bytes-in-position-2-3
+3. should I use documentation even when i remember the lib?
+https://www.quora.com/Is-it-okay-if-I-dont-remember-the-syntax-of-the-libraries-I-use-in-Python
+4. When i use vim, how can i search an exact string? here's some reference
+https://stackoverflow.com/questions/22147639/finding-exact-match-in-vim
+5. Some website will ask you to "accept cookies", that's a very important part of web development, here's some reference:
+https://www.kocpc.com.tw/archives/461832
+6. In word, how can i create new page? to avoiding to keep tape "Enter" to change to a new page, here's a reference:
+http://lisinfochamber.blogspot.com/2015/05/word-pagebreak.html
+7. What is the usage of "Pull Request" in github?? Here's some reference talks about this:
+https://gitbook.tw/chapters/github/pull-request
+8. How frequent does people use "Pull Request" when they are working in companies? You can see the answer in above
+referece url too
+9. Here's an example of php web developing:
+https://github.com/pterodactyl/panel
+And it is so compliated!
+What is the mearning of the .filename? I see this files in the main folder. Here are some reference.
+https://askubuntu.com/questions/1072377/what-does-the-period-mean-at-the-start-of-a-filename-in-a-terminal-command
+It seems like they are hidden files in linux??
+
+For example, What is the usage of '.editorconfig'?? here's a reference talks about this:
+
+https://blog.csdn.net/qq_20553613/article/details/105496828
+https://ithelp.ithome.com.tw/m/articles/10276220
+
+And ChatGpt said it is almost the same as above url. And it also said that '.' files default hidden file in linux. 
+So I think when the the project in github has '.' files, it probably means that it is developed in linux
+10. Here's another example project(big one) but use python and flask. And it also has '.editorconfig' and  '.gitignore'
+, '.prettierrrc', '.flake8'
+
+Here it is:
+https://github.com/jkenlooper/puzzle-massive
+
+
+
+
+2023/6/6/
+1. keey studying about .editorconfig file and other .file and what is ".gitignore" file?
+2. PyCharm is one of the the most popular IDE in python community
+3. Study about how to use Pycharm
+4. When i start a project in Pycharm, Pycharm would create a lotta small files I don't really understand what it is for.
+	1. For example. What is "venv" folder in pyCharm main pythonProject folder?? It actually means virtual environment.
+		here's a reference talks about this:
+			https://www.freecodecamp.org/news/python-virtual-environments-explained-with-examples/
+	2. And what does ".idea" folder do? Here's a reference talks about this:
+			https://twitter.com/pycharm/status/936344172969242625
+		here's the conversation:
+			JetBrains PyCharm: Right, the .idea folder contains the IDE settings, such as the project interpreter. When you then 
+			open that project, does it load faster?
+		Well, it seems like .idea is for Jet Brains company, so you say that when the project has such .idea folder
+		It has a high probability that it is developed by JetBrains's IDE.
+
+5. Why does PEP8 recommendleaving a blank line at the end of the file? Here's some discussion talks about this:
+https://www.reddit.com/r/Python/comments/1zjugg/question_why_does_pep8_recommend_leaving_a_blank/
+6. In vscode, If you want to change line after autocomplete of the text you're typing, you can use Ctrl+Enter
+	In PyCharm, same thing, you can use Shift+Enter to change to the new line
+
+	here's a reference talks about this:
+		https://stackoverflow.com/questions/66468316/vscode-how-to-jump-after-auto-closing-bracket
+7. What exactly is the beneifits of Pycharm?
+8. How do i use Pycharm with git? Here's a reference talks about this:
+https://www.cnblogs.com/mind18/p/14595531.html
+https://blog.csdn.net/qq_38604355/article/details/105483794
+
+9. Spyder is also a IDE!! Same as Pycharm.
+10. But what is better, Spyder or Pycharm?? Here's a reference talks about this:
+https://www.zhihu.com/question/48168875
+11. Should I use IDE?? Here's a discussion talks about this:
+https://www.reddit.com/r/learnprogramming/comments/1u60pn/does_using_an_ide_really_turn_you_stupid/
+
+
+or maybe I should learn both
+12. What is the usage of ".gitignore" file? Here's some refernces talk about this:
+https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+	It is for when you don't want some files to be tracked by git. You add to that files to .gitigmore
+
+13. But why and when do I need .gitignore?? If I don't want git to track that file. Why not simply just don't add that file?
+Here's a reference talks about this:
+https://stackoverflow.com/questions/13675216/why-should-i-use-gitignore
+14. What is ".github" file for? here are some referneces talk about this:
+https://www.freecodecamp.org/news/how-to-use-the-dot-github-repository/
+https://stackoverflow.com/questions/60507097/is-there-an-overview-of-what-can-go-into-a-github-dot-github-directory
+15. let's talk about .git file again! .git file contains all the information required for version control. Here'a reference:
+https://stackoverflow.com/questions/29217859/what-is-the-git-folder
+
+
+
+2023/6/7
+1. AWS basic tutorial reference:
+https://akuma1.pixnet.net/blog/post/291578440-%EF%BC%88%E4%B8%80%EF%BC%89%E5%89%8D%E8%A8%80%EF%BC%8D%EF%BC%8Daws%E7%B6%93%E9%A9%97%E6%95%99%E5%AD%B8
+https://www.youtube.com/watch?v=G0hvLDTmXig&list=PLliocbKHJNwsyKkNwFUHbZZOJ2gT9qnT9
+
+2. most popular cloud service comparason, reference:
+https://www.nextlink.cloud/news/aws-gcp-azure-compare-cloud-news-20221116/
+
+3. "README.md" and "CODE_OF_CONDUCT.md" what exactly are the usage of this two files? Here's a reference talks about this:
+https://www.renfei.net/posts/1003278
+
+4. "SECURITY.md" file is for github security panel. I think the most md files are for github?? Not really sure.
+
+5. For github projects "puzzle-massive-develop" and "panel-develop", They all have "CHANGELOG.md", "CODE_OF_CONDUCT.md", "CONTRIBUTING.md"
+So I think they probably all for github
+
+6. What does .flake file do in some project
+I ask ChatGpt, and it seems like you can install flake8 by pip install and the usage is for test if python's code is correct or match pep8 or not
+And you can set the test condition in ".flake8" files
+
+7. What are .iml files for?? here's a reference talks about this:
+什麼是iml文件，如何打開一個iml文件？
+IML是IntelliJ IDEA的，用來開發Java應用程序的IDE創建的模塊文件。它存儲有關開發模塊，它可能是Java，插件，Android或Maven的組件信息;
+節省了模塊路徑，依賴關係和其他設置。 
+So it seems like .iml files are for Jet Brains only.
+
+8. What is "jinja2" for templates in python web backend? I saw them on "puzzle-massive-develop"
+well. It seems like "jinja2" is very similar to "React"? I am not sure, here's a reference talks about this:
+https://www.quora.com/When-using-Flask-is-using-React-instead-of-Jinja2-worth-it
+---> but it's five years ago
+
+9. And what is the different usage between "jinja2" and "react". It seems like jinja2 is for backend but react is for front end.
+
+
+
+
