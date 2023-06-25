@@ -1,0 +1,25 @@
+appleID: j62ul3fu6@gmail.com/Applej6gp6fu6
+米約mail.yandex.com:  jeffrey@iyes.dev/aJXPKL)9w&%,Y8M
+米約Bitbucket:   jeffrey/Bitbucketj6gp6fu6
+米約Jira:	jeffrey/Jiraj6gp6fu6	全名:jeffreyWu
+米約CF(Confluence):   jeffrey/CFj6gp6fu6
+米約mac帳密:   jeffrey/j6gp6fu6
+米約telegram:   +1(856) 553-5193
+米約vpn: ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpLZEYwODNUcloxWHpDN0Jlb0RiWXNo@18.163.217.66:28086/?outline=1
+
+
+
+串接支付:
+spinach payment
+入口:
+pay_v2
+trans_v2
+transfer:
+轉帳的功能
+
+bopi.py(or bobi.py)
+用gateway取得...
+
+getway.py  包含所有支付
+transfer notify
+
