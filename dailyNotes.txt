@@ -1715,3 +1715,8 @@ https://www.freecodecamp.org/news/how-to-setup-virtual-environments-in-python/
 2. How can i ping docker container?? Is that even possible?? Or is that even neccessary?
 It seems like it's not possible. Here's a reference talks about this:
 https://stackoverflow.com/questions/39216830/how-could-i-ping-my-docker-container-from-my-host
+3. I was trying to connect the mysql database from host to docker's container's mysql but keep failing! It seems like it's because of TCP?? 
+Here's a reference to solve this:
+https://stackoverflow.com/questions/33001750/connect-to-mysql-in-a-docker-container-from-the-host
+He uses this command to solve:
+mysql -h localhost -P 3306 --protocol=tcp -u root
