@@ -1732,3 +1732,6 @@ virtualenv -p /opt/homebrew/Cellar/python@3.9/3.9.17/bin/python3.9 ~/venv/paymen
 	1. how can i use "virtualenvs" for python.
 	2. How to use vscode plugin and package to create your own development env.
 	3. You should start to learn how to create api for payment?
+	4. Trying to use other terminal, for example iterm2
+7. Here's a tutorial talks about iterm2, how can you install and set the iterm2:
+https://medium.com/statementdog-engineering/prettify-your-zsh-command-line-prompt-3ca2acc967f
