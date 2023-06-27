@@ -1728,4 +1728,7 @@ Here's the final command i use to solve the migrate problem for bopay database:
 migrate -path ./migrations -database "mysql://root:root@tcp(localhost:3307)/bopay?charset=utf8mb4"  -verbose up
 5. The virutal environment Hoa created for me:
 virtualenv -p /opt/homebrew/Cellar/python@3.9/3.9.17/bin/python3.9 ~/venv/payment/
-
+6. I should start to learn 
+	1. how can i use "virtualenvs" for python.
+	2. How to use vscode plugin and package to create your own development env.
+	3. You should start to learn how to create api for payment?
