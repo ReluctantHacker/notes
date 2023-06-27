@@ -1720,3 +1720,11 @@ Here's a reference to solve this:
 https://stackoverflow.com/questions/33001750/connect-to-mysql-in-a-docker-container-from-the-host
 He uses this command to solve:
 mysql -h localhost -P 3306 --protocol=tcp -u root
+4. When I use golang migrate, trying to migrate database from host to docker container's mysql, It keeps failing. 
+And I ask chatgpt and He gave me a useful solution,  it seems like it's because of the "TCP"
+Here's the solution he gave to me:
+migrate -database "mysql://root:mypassword@tcp(localhost:3306)/mydatabase" -path ./migrations up
+Here's the final command i use to solve the migrate problem for bopay database:
+migrate -path ./migrations -database "mysql://root:root@tcp(localhost:3307)/bopay?charset=utf8mb4"  -verbose up
+
+And finally I know what happens, It seems like 
