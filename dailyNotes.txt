@@ -1712,3 +1712,6 @@ https://medium.com/%E5%A4%BE%E7%B8%AB%E4%B8%AD%E6%B1%82%E7%94%9F%E5%AD%98%E7%9A%
 2023/6/27
 1. python virtualenvs basic tutorial:
 https://www.freecodecamp.org/news/how-to-setup-virtual-environments-in-python/
+2. How can i ping docker container?? Is that even possible?? Or is that even neccessary?
+It seems like it's not possible. Here's a reference talks about this:
+https://stackoverflow.com/questions/39216830/how-could-i-ping-my-docker-container-from-my-host
