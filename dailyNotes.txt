@@ -1706,3 +1706,9 @@ https://ephrain.net/docker-%E8%AE%93-docker-%E9%80%8F%E9%81%8E-proxy-%E9%80%A3%E
 8. 如何透過vscode具編輯docker內container的文件??? Here's a referene youtube(but I am sure if this works or not.)
 https://www.youtube.com/watch?v=L1-dx-ZD0Ao&ab_channel=VisualStudioCode
 https://medium.com/%E5%A4%BE%E7%B8%AB%E4%B8%AD%E6%B1%82%E7%94%9F%E5%AD%98%E7%9A%84%E4%BA%BA%E9%A1%9E/%E4%BD%BF%E7%94%A8visual-studio-code-%E9%81%A0%E7%AB%AF%E6%93%8D%E4%BD%9Cdocker%E7%92%B0%E5%A2%83%E4%B8%8B%E7%9A%84%E6%AA%94%E6%A1%88-ebb35292a5b1
+
+
+
+2023/6/27
+1. python virtualenvs basic tutorial:
+https://www.freecodecamp.org/news/how-to-setup-virtual-environments-in-python/
