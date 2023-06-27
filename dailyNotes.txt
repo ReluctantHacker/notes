@@ -1726,5 +1726,6 @@ Here's the solution he gave to me:
 migrate -database "mysql://root:mypassword@tcp(localhost:3306)/mydatabase" -path ./migrations up
 Here's the final command i use to solve the migrate problem for bopay database:
 migrate -path ./migrations -database "mysql://root:root@tcp(localhost:3307)/bopay?charset=utf8mb4"  -verbose up
+5. The virutal environment Hoa created for me:
+virtualenv -p /opt/homebrew/Cellar/python@3.9/3.9.17/bin/python3.9 ~/venv/payment/
 
-And finally I know what happens, It seems like 
