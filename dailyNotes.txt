@@ -1766,5 +1766,12 @@ below is the chatgpt explanation:
 	當您創建數據庫或數據表時，您無需指定字符集或字符編碼相關的屬性，因為 SQL Server 已經預設使用 Unicode 字符集來處理數據。您只需要
 	關注排序規則（collation）的選擇，以確定字符數據的比較和排序方式。
 7. How do you create database with charset setting???
+create database <database_name> charset set utf8mb4 collate utf8mb4_bin
+8. You have to know how to use "like" Operator to search ambigous string in sql language!! Here's a reference talks about this:
+http://tw.gitbook.net/sql/sql-like-clause.html
+9. In mysql workbench, if you want to execute script in shortcut, you can use "Ctrl+Shift+Enter"(or "Command+Shift+Enter" for mac)
+In sql server, you can use F5 to execute script in sql server management work dashboard ui.
+10. In mysql, how can you 
+11. In vscode, you can use "Ctrl+p"(or Cmd+p in macos) to search files in current folder 
 
 
