@@ -1735,3 +1735,10 @@ virtualenv -p /opt/homebrew/Cellar/python@3.9/3.9.17/bin/python3.9 ~/venv/paymen
 	4. Trying to use other terminal, for example iterm2
 7. Here's a tutorial talks about iterm2, how can you install and set the iterm2:
 https://medium.com/statementdog-engineering/prettify-your-zsh-command-line-prompt-3ca2acc967f
+
+
+
+2023/6/28
+1. Trying to understand the char setting in mysql. (It seems like it has later and utf8 something)
+2. In spinach server does the payment should have date in the mysql???
+
