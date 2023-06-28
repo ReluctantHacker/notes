@@ -1773,5 +1773,18 @@ http://tw.gitbook.net/sql/sql-like-clause.html
 In sql server, you can use F5 to execute script in sql server management work dashboard ui.
 10. In mysql, how can you 
 11. In vscode, you can use "Ctrl+p"(or Cmd+p in macos) to search files in current folder 
+12. In python, decorator's standard example which is given by ChatGpt:
+	def to_upper(func):
+	    def wrapper(*args, **kwargs):
+		return func(*args, **kwargs).upper()
+	    return wrapper
+
+	@to_upper
+	def greet(name):
+	    return f'Hello, {name}!'
+
+	print(greet('Alice'))  # 輸出：HELLO, ALICE!
+
+In decorator, It usually includes "*args, **kwargs, so you have to know the both of them.
 
 
