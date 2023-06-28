@@ -1741,4 +1741,9 @@ https://medium.com/statementdog-engineering/prettify-your-zsh-command-line-promp
 2023/6/28
 1. Trying to understand the char setting in mysql. (It seems like it has later and utf8 something)
 2. In spinach server does the payment should have date in the mysql???
+3. When I fetch mysql for a docker container, it happens that it doesn't have "apt" or "apk". Then how am I gonna install anything???
+The answer is below:
+you can use command "yum", it's another package manager(which is default for docker mysql image). 
+Here's a reference talks about this:
+https://stackoverflow.com/questions/73053173/apt-get-command-not-found-in-mysql-docker-cli
 
