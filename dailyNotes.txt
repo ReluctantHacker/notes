@@ -1746,4 +1746,25 @@ The answer is below:
 you can use command "yum", it's another package manager(which is default for docker mysql image). 
 Here's a reference talks about this:
 https://stackoverflow.com/questions/73053173/apt-get-command-not-found-in-mysql-docker-cli
+4. In mysql, how can i check mysql "charsets"? Here's a reference that's use this checking command:
+https://stackoverflow.com/questions/45729326/how-to-change-the-default-character-set-of-mysql-using-docker-compose
+5. "Charset" is not the same as "data type". Don't confuse with them.
+6. In "SQL server", it has so called "charset encoding" which is exactly the same idea as mysql charset. But in "SQL Server" the 
+"charset encoding" is default "UTF-16" after you create any database. And you don't need to worry about charset in sql server because
+"UTF-16" basically support any language. 
+But it's different in mysql! In mysql you need to set charset yourself when you create database!
+below is the chatgpt explanation:
+	在 SQL Server 中，字符集（charset）的概念與 MySQL 或其他一些數據庫系統不同。在 MySQL 中，字符集用於指定數據庫中存儲的字符的編碼
+	方式，而在 SQL Server 中，該概念被稱為字符編碼（character encoding）。 
+	 
+	SQL Server 使用 Unicode 字符集（UTF-16）來存儲數據，這意味著它支持存儲和處理多種語言和字符集。Unicode 字符集能夠表示幾乎所有已
+	知字符，包括各種語言、符號和表情符號。 
+	 
+	因此，在 SQL Server 中，您不需要指定特定的字符集或編碼方式，因為它預設使用 Unicode 字符集來處理字符數據。這使得 SQL Server 具有
+	良好的跨語言和字符集支持，無需擔心字符編碼的問題。 
+	 
+	當您創建數據庫或數據表時，您無需指定字符集或字符編碼相關的屬性，因為 SQL Server 已經預設使用 Unicode 字符集來處理數據。您只需要
+	關注排序規則（collation）的選擇，以確定字符數據的比較和排序方式。
+7. How do you create database with charset setting???
+
 
