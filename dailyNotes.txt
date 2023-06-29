@@ -1789,6 +1789,21 @@ In decorator, It usually includes "*args, **kwargs, so you have to know the both
 13. In python, there's a module called "click" that you can install by pip.  It's use for "creating your own command line"
 Here's a reference talks about this:
 https://myapollo.com.tw/blog/python-click/
+14. I use spinach to create a superuser(which is root admin), and i want to check the user setting which i just created in the database
+(mysql), and I find "username: root", "pw_hash: compliated random string" and other columns
+Now the question is:
+Why are you use hash(雜湊)? Here's a reference talks about this(and is very important!):
+https://medium.com/@brad61517/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8-%E5%AF%86%E7%A2%BC%E5%AD%98%E6%98%8E%E7%A2%BC-%E6%80%8E%E9%BA%BC%E4%B8%8D%E7%9B%B4%E6%8E%A5%E5%8E%BB%E8%A3%B8%E5%A5%94%E7%AE%97%E4%BA%86-%E6%B7%BA%E8%AB%87-hash-%E7%94%A8%E9%9B%9C%E6%B9%8A%E4%BF%9D%E8%AD%B7%E5%AF%86%E7%A2%BC-d561ad2a7d84
+15. 公司最近有個web專案, 使用docker的container裝載著個web 專案, 當我啟動容器的時候, container自動開啟web的服務, 請問這是
+如何做到的, 一般不是都要等container開啟之後還需要執行一些開啟web的指令才能開啟服務的嗎?
+I asked ChatGPT, it said that it's because of the "Dockerfile".
+Mostly, Dockerfile would have this kinda line in the end of the file:
+
+CMD ["python", "app.py"]
+
+This is what docker container automatically run when it starts.
+
+
 
 2023/6/29
 1. How can i use python to create another python code? According to the miyo bopay-payment case. It's using yaml as the 
