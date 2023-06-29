@@ -1812,7 +1812,13 @@ documents to create python codes. maybe i can try it.
 https://www.jianshu.com/p/828fdff3c883
 3. How can I show the docker volumes? I just found that maybe i fail to attach the files path for bopay-payment docker 
 container.
-
+4. What is async? and sync? in mysql.   And web的異步需求甚麼時候會機會使用?? And what is the relationship between them and NATS?
+5. 關於python web同步異步的一個大概說明(it's probably not totally correct):
+https://zhuanlan.zhihu.com/p/371625071
+Here's another reference talks about this(I think this one is more accurate):
+https://codimd.mcl.math.ncu.edu.tw/s/yTqt6QuaZ
+Here's another one talk about IO-bound and CPU-bound(which are important for programmer to decide use mutl-process or multi-thread):
+https://ycc.idv.tw/multithread-multiprocess-gil.html
 
 
 
