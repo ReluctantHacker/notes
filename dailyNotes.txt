@@ -1793,6 +1793,8 @@ https://myapollo.com.tw/blog/python-click/
 2023/6/29
 1. How can i use python to create another python code? According to the miyo bopay-payment case. It's using yaml as the 
 documents to create python codes. maybe i can try it. 
+2. How to use pytest and yaml files to create pytest files??? here are some reference talk about this:
+https://www.jianshu.com/p/828fdff3c883
 
 
 
