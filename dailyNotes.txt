@@ -1820,6 +1820,10 @@ https://codimd.mcl.math.ncu.edu.tw/s/yTqt6QuaZ
 Here's another one talk about IO-bound and CPU-bound(which are important for programmer to decide use mutl-process or multi-thread):
 https://ycc.idv.tw/multithread-multiprocess-gil.html
 
+2023/7/3
+1. api 金流串接, some references:
+https://www.tsg.com.tw/blog-detail4-120-0-api.htm
+
 
 
 
