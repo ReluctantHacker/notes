@@ -1824,6 +1824,11 @@ https://ycc.idv.tw/multithread-multiprocess-gil.html
 1. api 金流串接, some references:
 https://www.tsg.com.tw/blog-detail4-120-0-api.htm
 
+2023/7/4
+1. what is the difference between DaiShou and DaiFu??? here's a reference talks about this:
+https://progressbar.tw/posts/220
+在我國概念下，第三方支付是指進行「線上」代收代付的業者，它們的服務就是收受交易雙方當事人的金錢，再依據指示把錢交給收款人或是代收 
+
 
 
 
