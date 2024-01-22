@@ -1,0 +1,6 @@
+1. pip install virtualenv   --- download python virtual environment manager 
+2. virtualenv venv   --- This would create virtual environment called "venv"
+3. venv/Scripts/activate  --- This would startup the virtual environment in Windows system.
+4. source venv/bin/activate  --- this would startup the vritual environment in Linux system.
+5. pip install package_name   --- once you enter the virtual environment you can use "pip" to install whatever you want.
+6. deactivate   --- If you want to get out of the virutal environment you can directly "deactivate" command".
