@@ -1,0 +1,67 @@
+"----------Set Personal Prefernce----------
+set belloff=all
+set number
+set nowrap
+set textwidth=0
+syntax on
+" auto-completion
+filetype indent on 
+filetype plugin indent on
+autocmd FileType python set omnifunc=python3complete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#Complete
+autocmd FileType html set omnifunc=htmlcomplete#Complete
+" change default vim split bar
+set fillchars+=vert:\ 
+highlight VertSplit cterm=None ctermbg=black
+" show search word by '/' command with current_number/total_number
+set shortmess-=S
+
+
+
+
+"----------Set  Personal Shortcuts----------
+nnoremap <Leader>s :<C-u> call gitblame#echo() <CR>
+nnoremap <C-j> :bn<CR>
+nnoremap <C-k> :bp<CR>
+
+
+"----------Set font color----------
+highlight LineNr ctermfg=152
+highlight statement ctermfg=100
+highlight preproc  ctermfg=83
+highlight type ctermfg=111
+highlight comment ctermfg=152
+highlight function ctermfg=140
+highlight constant ctermfg=123
+
+
+"----------Plugins Install List----------
+call plug#begin()
+  Plug 'zivyangll/git-blame.vim'
+  Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  Plug 'tpope/vim-fugitive'
+  Plug 'rbong/vim-flog'
+call plug#end()
+
+
+"----------LeaderF Setting----------
+let g:Lf_ShortcutF = 'f'
+let g:Lf_WindowPosition = 'popup'
+let g:Lf_previewInPopup = 1
+
+
+"----------Airline Setting----------
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = ''
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline#extensions#tabline#buffer_nr_show = 1 "显示buffer编号
+let g:airline#extensions#tabline#buffer_nr_format = '%s:'
+let g:airline#extensions#battery#enabled = 1
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_theme='simple'
+" set airline showing items,  without branch in the list, it was not loading the branch
+let g:airline_extensions = ['branch', 'tabline'] 
