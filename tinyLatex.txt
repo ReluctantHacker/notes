@@ -1,0 +1,7 @@
+After you finishing download and install "TinyLaTex", You should do one more, doing this below:
+
+# Add TinyTeX to the PATH
+export PATH="$HOME/.TinyTeX/bin/x86_64-linux:$PATH"
+
+This path would actually add "pdflatex" executing file (which can compile .tex files to pdf files) to the path. (Of course, if you want to add the path 
+permanently, You should add this path to ".bashrc")
