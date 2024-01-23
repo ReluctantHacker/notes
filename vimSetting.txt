@@ -1,7 +1,8 @@
-"----------Set Personal Prefernce----------
+"----------Set Personal Preference----------
 set belloff=all
 set number
-set nowrap
+" this would change line when the line is pass over the screen end(of course it doesn't change the real line, it change the screen line)
+set wrap
 set textwidth=0
 syntax on
 " auto-completion
