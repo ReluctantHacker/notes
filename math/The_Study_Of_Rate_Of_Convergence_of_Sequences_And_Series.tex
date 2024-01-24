@@ -1,15 +1,135 @@
 \documentclass{article}
-\title{My First LaTeX Document}
-\author{Your Name}
+\usepackage{amsmath}
+
+
+\title{The Study of Rate of Convergence of Sequences and Series}
+\author{Jeffrey}
+\date{2024/xx/xx}
+
 
 \begin{document}
 \maketitle
+  \section{Introduction}
+  In this study, I am going to take a deep look in What Sequences and Series really are, what makes them Converge and their rate of Convergence. I should clealry understand the concepts of Sequences, Series, and their relationships with each other. This understanding is crucial because Sequences and Series form the foundation of the Calculus. The convergence of a Sequence is actuallly a part of the definition of differentiation.
 
-\section{Introduction}
-This is a simple LaTeX document.
+  \section{What is a Sequence?}
+  When discussing sequences, it's essential to consider the concept of a 'set' as well; they are closely related. A sequence can be thought of as a set without order. (In this study I only talk about discrete sets and sequences but there's actually continuous ones!) \\
 
-\section{Section}
-Here is a section with some text.
+  In 'Naive Set Theory', the elements in a set can encompass anything; for instance, let $S_1=\{A, B, C, D\}$, where A could represent a person, B might signify an abstract concept like a president falling in love with a little girl, C could be a pizza, and D an integer. The possibilities are entirely open. \\
+
+  The key distinction is that a set, such as $S_1=\{A, B, C, D\}$, is indifferent to the order of its elements. It is identical to $S_2=\{B, C, D, A\}$; the order doesn't matter. However, in a sequence, the order is crucial. For example, Sequence $C_1=\{A, B, C, D\}$ is NOT the same as Sequence $C_2=\{B, C, D, A\}$. \\
+
+  The elements in a sequence can take various forms, just like elements in a set. However, in this study, I specifically focus on "Sequences of numbers", encompassing real numbers, irrational numbers, imaginary numbers, and so forth. \\ 
+
+  There are several well-known sequences, such as Fibonacci Sequence, Bernoulli Numbers, Natural numbers, Prime numbers and others. These sequences may be finite or infinite but all have their own specific arrangement order or pattern. Identifying patterns within these sequences allows for the 'prediction' of the next element in a certain sense. If a sequence lacks a discernible pattern, it is categorized as a random sequence, which holds significance in probability theory and statistics. This study exclusively delves into sequences with identifiable patterns. \\
+
+  \section{Definition of Limit}
+  Now that we have a fundamental understanding of what sequence is, let's skip the easy part and delve directly into the infinite situation. A sequence can consist of an infinite number of terms. In such cases, our curiosity is often piqued about the behavior as we approach infinity. If the sequence converges to a specific number, we classfiy it as a convergent sequence. If the sequence does not converge to a specific number, such as reaching infinity, we refer to it as a divergent sequence.  \\
+
+  These things are easy but it is actually powerful and is used in differetiation. For example, how do we solve this $\frac{d(x^2+x+1)}{dx}$?  It's simple. \\
+
+  \begin{center}
+	  $\dfrac{d(x^2+x+1)}{dx} =$ \\[1ex] 
+	  $\dfrac{[(x+dx)^2+(x+dx)+1]-(x^2+x+1)}{dx} =$ \\[1ex]
+	  $\dfrac{x^2+2xdx+dx^2+x+dx+1-x^2-x-1}{dx} =$  \\[1ex]
+	  $\dfrac{2xdx+dx^2+dx}{dx} =$ \\[1ex]
+	  $2x+dx+1 =$ \\[1ex]
+	  (For dx, which is infinitely small compared to 2x and 1, should counts as 0.) \\[1ex]
+	  $2x+1$ \\[1ex] 
+  \end{center}
+
+  In the above example, of course, one might just consider applying Newton's binomial theorem; however, not this time. We see, we treat dx as a real number in the process at the beginning, but in the end we treat it as 0. This is actually a significant issue here, as dx should not simultaneously be a real number and 0. The root of this problem lies in the lack of a clear definition for dx, which is an infinitely small number referred to as 'infinitesimal'. \\
+
+  This issue is famously known as the 'Second Math Crisis', which occurred during the era of Newton and Leibniz. There are two ways to deal with this infinitely small crisis. First way, as one can intuitively come up with, is to define dx rigorously. This appoach is known as 'Non-Standard Analysis(NSA)', mainly developed by Abraham Robinson around 1960. However, the reason we refer to this intuitive solution 'Non-Standard' is that it was developed after the 'Standard analysis', which uses 'limit' idea instead of 'infinitesimal'. Most mathematicians accept 'Standard' more than 'Non-Standard' nowaday ,and interestingly, it may be more intuitive. \\
+
+  The reason I said it may be more intuitive is because nobody truly understand what 'infinitely close' or 'infinitely long' means, but everybody understands the idea of "wherever you go, I can go closer". It uses a Trick to make infinite question collapse to a finite question. \\
+
+  The definition of 'limit' was developed by great Cauchy and Weierstrass. For example, the limit of a function $f(x)$ as $x$ approaches $c$ is denoted by \[\lim_{x \to c} f(x)\] and represent the value that $f(x)$ approaches as $x$ gets arbitrarily close to $c$. 
+
+  \[\lim_{x \to c} f(x) = L\]
+
+  We can use the famous Epsilon-Delta definition to define what 'limit' reallly is:
+
+  \[\forall \epsilon > 0, \exists \delta > 0 \text { such that } 0 < |x -c| < \delta \implies |f(x) - L| < \epsilon\]
+
+  $\epsilon$ and $\delta$ can be any number. That means you can always find another smaller one. See, instead of directly dealing with 'infinitesimal', it says for all $\epsilon$ . This 'all' idea replaces 'infinity' which we don't really understand. Very clever. \\
+
+  People developed this concept around age 5 or maybe 6 when playing 'Say The Biggest Number' on the playground(around the time you are leanring words like 'thousand', 'million', 'billion' etc). Eventually someone comes up with "Whatever you say plus one". \\
+
+  This idea, "Whatever you say...I adjust it thusly..." is incredibly deep and is the foundation for all rigorous ideas of 'limit'.  \\
+
+  It is interesting because it places the work of infinity on your imaginary opponent. They actually give you epsilon out of this weird, murky infinite soup... and after that its a normal finite problem to manipulate it in your argument. \\
+
+
+  (If you are interested in digging deeper into 'Naive Set Theory' and 'Continuity of sets', you can check the study I create 'The Third Math Crisis: A Path from Naive Set Theory to Modern Set Theory.'. Here are some references:\\
+  https://math.stackexchange.com/questions/3299369/is-an-uncountable-set-and-a-continuous-set-the-same-thing \\
+  https://mathbitsnotebook.com/Algebra2/FunctionGraphs/FGContinuousDiscrete.html \\
+  ) \\
+
+
+  \section{The Infinite sequences and its convergence}
+  We only talk about discrete sequences in this study.(However, remember there are continuous ones.") If a sequence
+
+  \[
+	  \lim_{n \to \infty} a_n = C \text{ , for }n=1, 2, 3...\infty
+  \] 
+
+
+  If C is a finite real number, We say this sequence is convergent to C or else, if C is $\infty$, $-\infty$ or uncertain we say it is divergent. 
+
+  In the most cases, if you find the function of $a_n$, like $a_n = f(n)$ then you can know if it's convergent or not. For example, a geometric sequence is like this below
+
+  \[
+	  a_n=f(n)=ar^{n-1}
+  \]
+
+  follows the recursive relation
+  
+%  \begin{center}
+%  	$a_n=ra_{n-1}$ for every integer $n\geq2$
+%  \end{center}
+
+  \[
+	  a_n=ra_{n-1} \text{ for every integer } n\geq2
+  \]
+
+  Such sequence is obviously divergent for 
+
+  \[
+	  \lim_{n \to \infty} ar^{n-1} = \infty
+  \]
+
+  For another example, Fibonacci sequence
+
+  \[
+	  F_n = \{1, 1, 2, 3, 5, 8, 13, 21, 34, 55...\} = F(n) = \dfrac{\phi^n - \psi^n}{\phi - \psi} = \dfrac{\phi^n - \psi^n}{\sqrt{5}} \text{ where}
+  \]
+
+  \[
+	  \phi = \dfrac{1+\sqrt{5}}{2} \approx 1.618... \text{ which is the well-known golden ratio, and }
+  \]
+
+  \[
+	  \psi = \dfrac{1-\sqrt{5}}{2} \approx -0.618... \text{ } \phi \text{ and } \psi \text{ are conjugate to each other.}
+  \]
+
+  And of course, it follows the recursive relation
+
+  \[
+	  F_n = F_{n-1} + F_{n-2}
+  \]
+
+  Fibonnaci sequence is divergent and it's term tend to infinity. The sequence of ratios of n-th and n-1 term of Fibonnaci sequence is Convergent.
+
+  \[
+	  \lim_{n \to \infty} F_n^* = \lim_{n \to \infty} \dfrac{F_{n+1}}{F_n} = \phi = 1.618... \text{ which is convergent to the well-known golden ratio.}
+  \]
+
+  \section{The rate of the convergence}
+
+
+
+
 
 \subsection{Subsection}
 And a subsection.
