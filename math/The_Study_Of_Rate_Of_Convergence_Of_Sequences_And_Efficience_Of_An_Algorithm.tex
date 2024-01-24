@@ -2,7 +2,7 @@
 \usepackage{amsmath}
 
 
-\title{The Study of Rate of Convergence of Sequences and Series}
+\title{The Study of Rate of Convergence of Sequences and the Efficiency of an Algorithm}
 \author{Jeffrey}
 \date{2024/xx/xx}
 
@@ -25,7 +25,8 @@
 
   \section{Definition of Limit}
   Now that we have a fundamental understanding of what sequence is, let's skip the easy part and delve directly into the infinite situation. A sequence can consist of an infinite number of terms. In such cases, our curiosity is often piqued about the behavior as we approach infinity. If the sequence converges to a specific number, we classfiy it as a convergent sequence. If the sequence does not converge to a specific number, such as reaching infinity, we refer to it as a divergent sequence.  \\
-
+  
+  \subsection{The weird Infinitesimal in Differentiation}
   These things are easy but it is actually powerful and is used in differetiation. For example, how do we solve this $\frac{d(x^2+x+1)}{dx}$?  It's simple. \\
 
   \begin{center}
@@ -37,6 +38,8 @@
 	  (For dx, which is infinitely small compared to 2x and 1, should counts as 0.) \\[1ex]
 	  $2x+1$ \\[1ex] 
   \end{center}
+
+  \subsection{The Second Crisis of Math}
 
   In the above example, of course, one might just consider applying Newton's binomial theorem; however, not this time. We see, we treat dx as a real number in the process at the beginning, but in the end we treat it as 0. This is actually a significant issue here, as dx should not simultaneously be a real number and 0. The root of this problem lies in the lack of a clear definition for dx, which is an infinitely small number referred to as 'infinitesimal'. \\
 
@@ -64,11 +67,14 @@
   (If you are interested in digging deeper into 'Naive Set Theory' and 'Continuity of sets', you can check the study I create 'The Third Math Crisis: A Path from Naive Set Theory to Modern Set Theory.'. Here are some references:\\
   https://math.stackexchange.com/questions/3299369/is-an-uncountable-set-and-a-continuous-set-the-same-thing \\
   https://mathbitsnotebook.com/Algebra2/FunctionGraphs/FGContinuousDiscrete.html \\
+  https://zhuanlan.zhihu.com/p/60177203 \\
   ) \\
 
 
   \section{The Infinite sequences and its convergence}
-  We only talk about discrete sequences in this study.(However, remember there are continuous ones.") If a sequence
+  Now we understand the idea behind how differentiation works, it takes the idea of 'Convergence of Sequences' and 'for all'. Let's keep talking about convergence of a sequence. We focus on the discrete sequences here.(However, remember there are continuous ones.") 
+
+  If a sequence
 
   \[
 	  \lim_{n \to \infty} a_n = C \text{ , for }n=1, 2, 3...\infty
@@ -122,16 +128,87 @@
   Fibonnaci sequence is divergent and it's term tend to infinity. The sequence of ratios of n-th and n-1 term of Fibonnaci sequence is Convergent.
 
   \[
-	  \lim_{n \to \infty} F_n^* = \lim_{n \to \infty} \dfrac{F_{n+1}}{F_n} = \phi = 1.618... \text{ which is convergent to the well-known golden ratio.}
+	  \lim_{n \to \infty} F_n^* =
   \]
 
-  \section{The rate of the convergence}
+  \[
+	  \lim_{n \to \infty} \dfrac{F_{n+1}}{F_n} = 
+  \]
+
+  \[
+	  \lim_{n \to \infty} \dfrac{\phi^{n+1} - \psi^{n+1}}{\phi^n - \psi^n} = 
+  \]
+
+  \begin{center}
+	  (Because $\displaystyle \lim_{n \to \infty} \psi^n = 0$)
+  \end{center}
+
+  \[
+	  \lim_{n \to \infty} \dfrac{\phi^{n+1}}{\phi^n} = \phi = 1.618...
+  \]
+
+  It converges to the well-known golden ratio.
+
+  \section{The Rate of Divergence or Convergence of a sequence}
+  A sequence can be convergent or divergent, of course; However, if there are two sequences which have the same starting point and ending point(which can be $\infty$, $-\infty$ or a real number $L$,), then, which one is going faster? That means which one need less steps to get closer to the infinity point?
+
+  \subsection{The Rate of Divergence}
+
+  For example, 
+
+  \[
+	  A_n = n \text{ ,} A_1 = 0 \text{ ,} A_\infty = \infty
+  \]
+
+  \[
+	  B_n = n^2 \text{ ,} B_1 = 0 \text{ ,} B_\infty = \infty
+  \]
+
+  $A_n$ and $B_n$ both start at the $0$ and diverge to the $\infty$. Well, Apparently, $B_n$ grows more faster than $A_n$. We can use differentiaion to take a good look of what happened. For
+
+  \[
+	  A_n = A(n)
+  \]
+
+  \[
+	  B_n = B(n)
+  \]
+
+  We can easily see that 
+  
+  \[
+	  \dfrac{dA(n)}{dn} = A'(n) = 1
+  \]
+
+  \[
+	  \dfrac{dB(n)}{dn} = B'(n) = 2n
+  \]
+
+  And, $B'(n)>A'(n)$ for $n>0$. So, we can say that $B(n)$ grows faster, or in other words, $B(n)$ get closer to $\infty$ more faster than $A(n)$ does for $n>0$. \\
+
+  With this basic idea above, we can compare sequences by their differential, all we need to do is just finding the sequence's function.
+
+  \subsection{What is a Series?}
+  A Series is either finite or infinite, just like a sequence is. In the end, we all know that a series is just a summation of every term in a sequence. Nothing more, right? Interestingly, there's still something more can be discussed. \\
+
+  Specifically speaking, if we collect all the Series of a summation of a sequence, then we get a Sequence. How? See, we could have
+
+  \[
+	  \sum_{n=1}^{m} A_n = S_m
+  \]
+
+  $S_m$ is actually a sequence based on m and it's parent sequence! \\
+
+  Now when the $m \to \infty$, then we get a infinite series
+
+  \[
+	  \lim_{m \to \infty} \sum_{n=1}^{m} A_n = \lim_{m \to \infty} S_m
+  \]
+
+  In sum, it's all about sequences. A series is just a sequence of additions, or a sequence of partial sums; conversely, every sequence of addable objects(in particular, numbers), can be decomposed into a series.
+
+  \subsection{The rate of convergence}
 
 
-
-
-
-\subsection{Subsection}
-And a subsection.
 
 \end{document}
