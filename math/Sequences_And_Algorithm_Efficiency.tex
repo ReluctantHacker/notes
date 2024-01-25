@@ -2,7 +2,7 @@
 \usepackage{amsmath}
 
 
-\title{The Study of Rate of Convergence of Sequences and the Efficiency of an Algorithm}
+\title{The Study of Sequences and the Efficiency of an Algorithm}
 \author{Jeffrey}
 \date{2024/xx/xx}
 
@@ -10,7 +10,7 @@
 \begin{document}
 \maketitle
   \section{Introduction}
-  In this study, I am going to take a deep look in What Sequences and Series really are, what makes them Converge and their rate of Convergence. I should clealry understand the concepts of Sequences, Series, and their relationships with each other. This understanding is crucial because Sequences and Series form the foundation of the Calculus. The convergence of a Sequence is actuallly a part of the definition of differentiation.
+  In this study, I am going to take a deep look about Sequences and Series, what makes them Converge and their rate of Convergence. I should clealry understand the concepts of Sequences, Series, and their relationships with each other. This understanding is crucial because Sequences and Series form the foundation of the Calculus. The convergence of a Sequence is actuallly a part of the definition of differentiation.
 
   \section{What is a Sequence?}
   When discussing sequences, it's essential to consider the concept of a 'set' as well; they are closely related. A sequence can be thought of as a set without order. (In this study I only talk about discrete sets and sequences but there's actually continuous ones!) \\
@@ -158,7 +158,7 @@
   \section{The Rate of Divergence or Convergence of a sequence}
   A sequence can be convergent or divergent, of course; However, if there are two sequences which have the same starting point and ending point(which can be $\infty$, $-\infty$ or a real number $L$,), then, which one is going faster? That means which one need less steps to get closer to the infinity point?
 
-  \subsection{The Rate of Divergence}
+  \subsection{The definition of this so called "Rate"}
 
   For example, 
 
@@ -170,7 +170,7 @@
 	  B_n = n^2 \text{ ,} B_1 = 0 \text{ ,} B_\infty = \infty
   \]
 
-  $A_n$ and $B_n$ both start at the $0$ and diverge to the $\infty$. Well, Apparently, $B_n$ grows more faster than $A_n$. We can use differentiaion to take a good look of what happened. For
+  $A_n$ and $B_n$ both start at the $0$ and diverge to the $\infty$. Well, Apparently, $B_n$ grows more faster than $A_n$, right? But wait... what does this "faster" even mean? We need a rigorous definition of this 'growing speed'. The reasonable definition should be like this: 'when n plus 1 how much this sequence's term grows?' And this is differentiation. So, we can have this 
 
   \[
 	  A_n = A(n)
@@ -192,7 +192,9 @@
 
   And, $B'(n)>A'(n)$ for $n>0$. So, we can say that $B(n)$ grows faster, or in other words, $B(n)$ get closer to $\infty$ more faster than $A(n)$ does for $n>0$. \\
 
-  With this basic idea above, we can compare sequences by their differential, all we need to do is just finding the sequence's function.
+  With this basic idea above, we can compare sequences by their differential, all we need to do is just finding the sequence's function. \\
+
+  Let's just hold a second and talk about another closed math object: Series
 
   \subsection{What is a Series?}
   A Series is either finite or infinite, just like a sequence is. In the end, we all know that a series is just a summation of every term in a sequence. Nothing more, right? Interestingly, there's still something more can be discussed. \\
@@ -213,24 +215,96 @@
 
   In sum, it's all about sequences. A series is just a sequence of additions, or a sequence of partial sums; conversely, every sequence of addable objects(in particular, numbers), can be decomposed into a series.
 
-  \subsection{Digging deeper about The Rate of Divergence}
+  \subsection{Digging deeper about The Rate of Divergence or Convergence}
   Now, with the basic concept about Series, we discuss some famous series. First, the Harmonic Series
 
   \[
-	  \sum_{k=1}^{\infty} \dfrac{1}{k} = 1 + \dfrac{1}{2} + \dfrac{1}{3} + \dfrac{1}{4} + ...
+	  \sum_{n=1}^{\infty} \dfrac{1}{n} = 1 + \dfrac{1}{2} + \dfrac{1}{3} + \dfrac{1}{4} + ...
   \]
 
-  It seems like the series is convergent because $\displaystyle \lim_{k \to \infty} \dfrac{1}{k} = 0$. But we can easily show that this series is actually divergent to $\infty$ by using some convergent test(like integral test), though the convergent rate is very slow. \\
+  It seems like the series is convergent because $\displaystyle \lim_{n \to \infty} \dfrac{1}{n} = 0$. But no! We can easily show that this series is actually divergent to $\infty$ by using some convergent test(like integral test), though the convergent rate is very slow. (In fact, it is so slow that we need to sum all the $10^{43}$ terms to make the series get $100$ but it really does diverge.) \\
 
-  But how do we know the convergent rate of harmonic series? By differentiation again? It turns out that it is not that simples as it seems. We have to find the sequence of harmonic series $H_n$ first
+  How do we exactly find the convergent rate of this harmonic series? Just like the conclusion we just got, we should find the sequence of this series, which is $H_m$ 
 
   \[
-	  H_n = \sum_{k=1}^{n} \dfrac{1}{k}
+	  H_m = \sum_{n=1}^{m} \dfrac{1}{n}
   \]
 
   This sequence, we also call it 'Harmonic Numbers'. \\
 
-  Harmonic numbers have been studied since antiquity and are important in various branches of number theory. They are sometimes loosely termed harmonic series, are closely related to the 'Reimann zeta function', and appear in the expressions of various special functions. We can check more details in Wikipedia.
+  Harmonic numbers have been studied since antiquity and are important in various branches of number theory. They are sometimes loosely termed harmonic series, are closely related to the 'Reimann zeta function', and appear in the expressions of various special functions. We can check more details in Wikipedia. The specific form of Harnonic numbers is not that simple to get, the first accurate form is derived by Great Euler; However, we don't need the form of Harmonic numbers to get the divergent rate of it because we have a powerful weapon: Integral. How does integral change the game? See, we have the differential of Harmonic numbers
+
+  \[
+	  \dfrac{dH_m}{dm} =
+  \]
+
+  \[
+	  \dfrac{d \left( \displaystyle \sum_{n}^{m} n^{-1} \right)}{dm}
+  \]
+
+  Now what? We don't know the form of $H_m$, it should be a function $H(m)$. Don't worry, we actually don't need it here, integral does the trick. You see, when $m \to \infty$
+
+  \[
+	  \lim_{m \to \infty} \sum_{n}^{m} n^{-1} = \int_{1}^{m} n^{-1} dn
+  \]
+
+  This 'integral' idea is very much like the idea 'Integral Test'. It can be used in most cases, and would lead us to a very simple result.
+
+  \[
+	  \dfrac{d \displaystyle \int_{1}^{m} n^{-1} dn}{dm} = 
+  \]
+
+  \[
+	  \dfrac{d \left( \ln n |_{1}^{m} \right)}{dm} = 
+  \]
+
+  \[
+	  \dfrac{d (\ln m - \ln 1)}{dm} = 
+  \]
+
+  \[
+	  \dfrac{d (\ln m)}{dm} = 
+  \]
+
+  \[
+	  \dfrac{1}{m} = m^{-1}
+  \]
+
+  And we see the result is exactly the m-term in the original series $\displaystyle \sum_{n}^{m} n^{-1}$. Interesting, right? We just go around and turn back. Here's more, this result can generize to any series because in the process above we first integral then differentiate it and the starting point is constant so the result must be the term itself. In the end, we have this conclusion:
+
+  \begin{center}
+	  \textbf{For a series $A = \displaystyle \sum_{n}^{\infty} a_n$ , then it's rate of divergence(and also convergence) is $\displaystyle \lim_{n \to \infty} a_n$}
+  \end{center}
+
+  Let's take another example and compare them. For 
+
+  \[
+	  B_m = \displaystyle \sum_{n}^{m} n^{- \dfrac{1}{2}}  
+  \]
+
+  We can prove that $B_m$ diverges too. Now let's compare $H_m$ and $B_m$ who diverges faster
+
+  \[
+	  \dfrac{dB_m}{dH_m} = \displaystyle \lim_{m \to \infty} \sqrt{m} = \infty
+  \]
+
+  So, obviously $B_m$ diverges faster(infinitely faster!) than $H_m$. Actually, both $H_m$ and $B_m$ is the member of 'Riemann Zeta Function' which is extremely crucial in number theory, and is the main topic of 'Riemann Hypothesis', but I am not gonna discuss Zeta Function too deep, let us just still fucos on the rate of divergence. For Zeta Function:
+
+  \[
+	  \zeta(s) = \displaystyle \sum_{n=1}^{\infty} \dfrac{1}{n^s} = \dfrac{1}{1^s} + \dfrac{1}{2^s} + \dfrac{1}{3^s} + ...
+  \]
+
+  Specifically, if $Re(s) > 1$ then $\zeta(s)$ converges. On the other hand, $Re(s) \leq 1$ then $\zeta(s)$ diverges. 
+
+  When $Re(s) = 1$, zeta function would become $\zeta(1)$, namely, Harmonic Series. 
+
+  We can easily see that Harmonic Series has the slowest divergent rate in Zeta Function. When $s$ grows, divergent rate also grows. 
+
+  % here's a reference: https://www.zhihu.com/question/33700283
+
+
+
+
 
 
   \subsection{The rate of convergence}
