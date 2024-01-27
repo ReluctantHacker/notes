@@ -9257,4 +9257,32 @@ https://www.youtube.com/watch?v=nZkYVpfuoF4
 	1. What is CI/CD?
 	2. Linux 中的.bashrc檔案到底是幹嘛用的?? 其實這個檔案和".vimrc"是類似的概念, vimrc在每次打開vim時會執行的vim代碼, 同樣的.bashrc是linux每次開啟終端機時會執行的bash代碼!!!
 	3. test
+
+
+
+
+2024/1/27
+	1. Why would I get dizzy if I suddenly stop running when jogging? It seems like heart bumping faster when you jogging. The blood pressure in vessels would getting higher and it makes your blood vessel dilate. If you suddenly stop running, your heart beats would gradually slow down. However, your vessel needs more time to constract to the normal size.  The physics behind blood vessels is called "Hemodynamics". This should explain your dizziness.  Here's some reference talks about this:
+https://www.reddit.com/r/running/comments/jpvdki/dizziness_right_after_i_stop_running/
+
+	2. The detailed blood vessels pressure needs some more physics to explain it. It's about "Fluid Mechanics" which includes "Aerodynamics空氣力學" and "Hydraculics水力學". You've learned "Rigit Body Dynamics" before!
+
+	3. There are generally three dynamics branch I've know now. 
+	# Rigid Body Dynamics(Which you've studied in college before), 
+	# Fluid Mechanics(includes Aerodynamics and Hydraculics), 
+	# Solid Mechanics
+
+	4. Difference between "Dyanmics", "Kinetics", "mechanics"??
+	###Kinetics:   
+		"Kinectics" only study about "math". It only talks about "position", "speed", "acceleration"...etc. And it doesn't care about "physical law". For example, a projectile question, asking the final speed and angle, if we know the origin velocity and acceleration(which is g=9.8). This question can be solve without any knowledges about "Newton's law", "Gravity law". This is Kinetics.
+	###Dynamics:
+		"Dynamics" is "Kinetics" adding "Physical law" which is "Newton's law(or relativity)" and "Gravity law". It cares about the quantity like "momentum", "force", "energe", etc.
+	###Mechanics 
+		"Mechanics" includes "Dynamics". It can be considered as the study of the cases of the principles of dynamics.
+	
+	
+""
+
+% When we talk about "dynamics", there seems have FOUR kinda dynamics "rigid dynamics", 
+
 	
