@@ -270,7 +270,7 @@
 	  \dfrac{1}{m} = m^{-1}
   \]
 
-  And we see the result is exactly the m-term in the original series $\displaystyle \sum_{n}^{m} n^{-1}$. Interesting, right? We just go around and turn back. Here's more, this result can generize to any series because in the process above we first integral then differentiate it and the starting point is constant so the result must be the term itself. In the end, we have this conclusion:
+  And we see the result is exactly the m-term in the original series $\displaystyle \sum_{n}^{m} n^{-1}$. Interesting, right? We just go around and turn back. Here's more, this result can generize to any series because in the process above we first integral then differentiate it and the starting point is constant so the result must be the term of series itself. Finally, we have this conclusion:
 
   \begin{center}
 	  \textbf{For a series $A = \displaystyle \sum_{n}^{\infty} a_n$ , then it's rate of divergence(and also convergence) is $\displaystyle \lim_{n \to \infty} a_n$}
@@ -294,16 +294,97 @@
 	  \zeta(s) = \displaystyle \sum_{n=1}^{\infty} \dfrac{1}{n^s} = \dfrac{1}{1^s} + \dfrac{1}{2^s} + \dfrac{1}{3^s} + ...
   \]
 
-  Specifically, if $Re(s) > 1$ then $\zeta(s)$ converges. On the other hand, $Re(s) \leq 1$ then $\zeta(s)$ diverges. 
+  Specifically, if $Re(s) > 1$ then $\zeta(s)$ converges. On the other hand, $Re(s) \leq 1$ then $\zeta(s)$ diverges. $Re(s) = 1$ is actually the "border" of divergence(convergence). Meanwhile, $Re(s) = 1$, zeta function would become $\zeta(1)$, namely, Harmonic Series, which is, the slowest divergent rate for Zeta Function. As $s$ decreasing, divergent rate grows. \\
 
-  When $Re(s) = 1$, zeta function would become $\zeta(1)$, namely, Harmonic Series. \\
+  \subsection{Slower(or Faster) Rate}
+  In Zeta Function, of course, Harmonic Series diverges fastest, because it is the "border". But what if it's not just about Zeta Function?? Is Harmonic Series still the slowest? Or...Is there even a slowest one?? \\
 
-  We can easily see that Harmonic Series has the slowest divergent rate in Zeta Function. As $s$ decreasing, divergent rate grows. 
+  Well~of course, We can say that 
 
-  % here's a reference: https://www.zhihu.com/question/33700283
+  \[
+	  \displaystyle \lim_{n \to \infty} \left( \dfrac{\dfrac{2}{n}}{\dfrac{1}{n}} \right) = 2 
+  \]
+
+  \[
+	  \text{ , So } \sum_{n=1}^{\infty}\dfrac{2}{n} \text{ diverges 2 times faster than the standard Harmonic Series.}
+  \]
+
+  However, this serires is at the same order as Harmonic Series. So it doesn't count. It's not what we are looking for. We are looking for different order. So the question becomes like this... 
+
+  \[
+	  \text{For }\displaystyle \sum_{n=1}^{\infty} f(n) = \infty \text{ and } \lim_{n \to \infty} \left( \dfrac{\dfrac{1}{n}}{f(n)} \right) = \infty \text{ , find } f(n) 
+  \]
+
+  This is a considerable question. You see, we already have:
+
+  \[
+	  \displaystyle \lim_{n \to \infty} \left( \dfrac{\dfrac{1}{n^c}}{\dfrac{1}{n}} \right) = \infty \text{ for any } c<1 \text{(} c\geq1 \text{ is convergent)}
+  \]
+
+  Intuitively, we may think that Harmonic Series is probabbly the slowest one for every series existed. But, it's not! Let's talk about another important thing called "Order of Growth".
+
+  We know that $f(n) = n$ is linear growth, $f(n) = n^2$ is second order growth, $f(n) = n^3$ is third order growth and so on. They all grow from starting point $f(0) = 0$ to $f(\infty) = \infty$. However one thing we need to take a good look is that $\displaystyle \lim_{n \to \infty} \dfrac{dn^{s}}{dn} = \lim_{n \to \infty} n^{s-1}  = \infty \text{ for } s>1$. This mean $n^s$ has speed infintely larger.  We call this situation that "$n^{s}$ has bigger 'order'". In the end, we can have the conclusion:
+
+  \[
+	  f(n) \text{ has bigger order than } g(n) \text{ if } \displaystyle \lim_{n \to \infty} \left( \dfrac{\dfrac{df(n)}{dn}}{\dfrac{dg(n)}{dn}} \right) = \infty
+  \]
+
+
+  \[
+	  f(n) \text{ has smaller order than } g(n) \text{ if } \displaystyle \lim_{n \to \infty} \left( \dfrac{\dfrac{df(n)}{dn}}{\dfrac{dg(n)}{dn}} \right) = 0
+  \]
+
+  \[
+	  f(n) \text{ has same order as } g(n) \text{ if } \displaystyle \lim_{n \to \infty} \left( \dfrac{\dfrac{df(n)}{dn}}{\dfrac{dg(n)}{dn}} \right) = c \text{ for c is a real number}
+  \]
+
+  Now, let's compare some common functions together. For example, 
+
+  \[
+	  f(n) = n, g(n) = \ln(n) \text{ Who grows faster(to infinty)?} 
+  \]
+
+  Apparently $f(n)$ is faster. However, you can see one thing that is very interesting:
+
+  \[
+	  \lim_{n \to \infty} \dfrac{d\ln(n)}{dn} = \lim_{n \to \infty} \dfrac{1}{n} = 0
+  \]
+
+  The growing speed of $\ln(n)$ is $0$ in the infinite point! \\
+
+  Now, what about:
+
+  \[
+	  f(n) = n^{\frac{1}{2}}, g(n) = \ln(n) \text{ who grows faster?}
+  \]
+  
+  We can see that 
+
+  \[
+	  \displaystyle \lim_{n \to \infty} \dfrac{dn^{\frac{1}{2}}}{dn} = \lim_{n \to \infty} \dfrac{1}{2\sqrt{n}} = 0
+  \]
+
+  Both speed is $0$ in the finity point. We need to compare them by fraction:
+
+  \[
+	  \displaystyle \lim_{n \to \infty} \left( \dfrac{\dfrac{dn^{frac{1}{2}}}{dn}}{\dfrac{d\ln(n)}{dn}} \right) = \lim_{n \to \infty} \dfrac{n}{n\sqrt{n}} = \infty
+  \]
 
 
 
+
+
+
+
+  The question above can be concluded as fellow:
+
+
+
+  There's actually no "Slowest(or Fastest)" rate of divergerce(or convergence). In zeta function, harmonic series is the slowest one but it still not the slowest for all kinda series. We can easily find slower or faster.
+
+  \subsection{Order of Growth}
+
+  
 
 
 
