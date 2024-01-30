@@ -155,7 +155,7 @@
 
   It converges to the well-known golden ratio.
 
-  \section{The Rate of Divergence or Convergence of a sequence}
+  \section{The Rate of Divergence of a sequence}
   A sequence can be convergent or divergent, of course; However, if there are two sequences which have the same starting point and ending point(which can be $\infty$, $-\infty$ or a real number $L$,), then, which one is going faster? That means which one need less steps to get closer to the infinity point?
 
   \subsection{The definition of this so called "Rate"}
@@ -215,7 +215,7 @@
 
   In sum, it's all about sequences. A series is just a sequence of additions, or a sequence of partial sums; conversely, every sequence of addable objects(in particular, numbers), can be decomposed into a series.
 
-  \subsection{Digging deeper about The Rate of Divergence or Convergence}
+  \subsection{Digging deeper about The Rate of Divergence}
   Now, with the basic concept about Series, we discuss some famous series. First, the Harmonic Series
 
   \[
@@ -296,7 +296,7 @@
 
   Specifically, if $Re(s) > 1$ then $\zeta(s)$ converges. On the other hand, $Re(s) \leq 1$ then $\zeta(s)$ diverges. $Re(s) = 1$ is actually the "border" of divergence(convergence). Meanwhile, $Re(s) = 1$, zeta function would become $\zeta(1)$, namely, Harmonic Series, which is, the slowest divergent rate for Zeta Function. As $s$ decreasing, divergent rate grows. \\
 
-  \subsection{Slower(or Faster) Rate}
+  \subsection{Slower(or Faster) Rate of Divergence}
   In Zeta Function, of course, Harmonic Series diverges fastest, because it is the "border". But what if it's not just about Zeta Function?? Is Harmonic Series still the slowest? Or...Is there even a slowest one?? \\
 
   Well~of course, We can say that 
@@ -321,7 +321,7 @@
 	  \displaystyle \lim_{n \to \infty} \left( \dfrac{\dfrac{1}{n^c}}{\dfrac{1}{n}} \right) = \infty \text{ for any } c<1 \text{(} c\geq1 \text{ is convergent)}
   \]
 
-  Intuitively, we may think that Harmonic Series is probabbly the slowest one for every series existed. But, it's not! Let's talk about another important thing called "Order of Growth".
+  Intuitively, we may think that Harmonic Series is probabbly the slowest one for every series existed. But, it's not! Let's talk about another important thing called "Order of Growth". \\
 
   We know that $f(n) = n$ is linear growth, $f(n) = n^2$ is second order growth, $f(n) = n^3$ is third order growth and so on. They all grow from starting point $f(0) = 0$ to $f(\infty) = \infty$. However one thing we need to take a good look is that $\displaystyle \lim_{n \to \infty} \dfrac{dn^{s}}{dn} = \lim_{n \to \infty} n^{s-1}  = \infty \text{ for } s>1$. This mean $n^s$ has speed infintely larger.  We call this situation that "$n^{s}$ has bigger 'order'". In the end, we can have the conclusion:
 
@@ -341,55 +341,82 @@
   Now, let's compare some common functions together. For example, 
 
   \[
-	  f(n) = n, g(n) = \ln(n) \text{ Who grows faster(to infinty)?} 
+	  f(n) = n, g(n) = n^{\frac{1}{2}} \text{ Who has a bigger order?} 
   \]
 
-  Apparently $f(n)$ is faster. However, you can see one thing that is very interesting:
+  Apparently $f(n)$ has bigger order. However, you can see one thing that is very interesting for $g(n)$:
 
   \[
-	  \lim_{n \to \infty} \dfrac{d\ln(n)}{dn} = \lim_{n \to \infty} \dfrac{1}{n} = 0
+	  \lim_{n \to \infty} \dfrac{dn^{\frac{1}{2}}}{dn} = \lim_{n \to \infty} \dfrac{1}{2\sqrt{n}} = 0
   \]
 
-  The growing speed of $\ln(n)$ is $0$ in the infinite point! \\
+  The growing speed of $n^{\frac{1}{2}}$ is $0$ in the infinite point! That means it grows infinitely small when $n \to \infty$ \\
 
-  Now, what about:
+  We can easily have this conclusion below 
 
   \[
-	  f(n) = n^{\frac{1}{2}}, g(n) = \ln(n) \text{ who grows faster?}
+	  f(n, s) = n^{s} \text{ then } f(n, x) \text{ has a bigger "Growing" order than } f(n, y) \text{ if } x>y \text{ for all } x>0 \text{ , } y>0 
   \]
-  
-  We can see that 
 
   \[
-	  \displaystyle \lim_{n \to \infty} \dfrac{dn^{\frac{1}{2}}}{dn} = \lim_{n \to \infty} \dfrac{1}{2\sqrt{n}} = 0
+	  \text{Even though, the }  \displaystyle \lim_{n \to \infty} f(n) = 0
   \]
 
-  Both speed is $0$ in the finity point. We need to compare them by fraction:
+  With this conclusion, we can say that... there's no such thing called the "slowest growing order" function. Because we can always find another smaller growing order. \\
+
+  Now a natural question rises, is there any function that has a smaller growing order than $f(n, s) = n^{s}$ for $s>0$ ?? \\
+
+  Yes, there is! $\ln(n)$ \\
 
   \[
-	  \displaystyle \lim_{n \to \infty} \left( \dfrac{\dfrac{dn^{frac{1}{2}}}{dn}}{\dfrac{d\ln(n)}{dn}} \right) = \lim_{n \to \infty} \dfrac{n}{n\sqrt{n}} = \infty
+	  \displaystyle \lim_{n \to \infty} \left( \dfrac{\dfrac{dn^{\frac{1}{2}}}{dn}}{\dfrac{d\ln(n)}{dn}} \right) = \lim_{n \to \infty} \dfrac{n}{2\sqrt{n}} = \infty
   \]
 
+  Wow...so now...let's keep going, is there any function that has smaller growing order than $ln(n)$? Yes! $\ln\ln(n)$ and $\sqrt{\ln(n)}$ \\ 
 
+  You can easily prove yourself that this is true. The key point is that, AGAIN, there's no such thing call the "smallest growing order". Because you can always use $\ln()$ , $\sqrt()$ or a lotta different functions(or even combination of them) to make growing order smaller! \\
 
+  With this idea in mind, let's go back to talk about Series. \\
 
+  What has a slower divergence order than $\displaystyle \lim_{m \to \infty} \sum_{n=1}^{m} \dfrac{1}{n}$?  \\
 
+  The answer is
 
+  \[
+	  \displaystyle \lim_{m \to \infty} \sum_{n=1}^{m} \dfrac{1}{n\ln(n)}
+  \]
 
-  The question above can be concluded as fellow:
+  You can always build a series that has a slower divergence order by add $\ln(n)$ in it.
 
+  \[
+	  \displaystyle \lim_{m \to \infty} \sum_{n=1}^{m} \dfrac{1}{n\ln(n)\ln(n)}
+  \]
 
-
-  There's actually no "Slowest(or Fastest)" rate of divergerce(or convergence). In zeta function, harmonic series is the slowest one but it still not the slowest for all kinda series. We can easily find slower or faster.
-
-  \subsection{Order of Growth}
-
-  
-
-
+  So, AGAIN, there's no slowest divergent order.
 
   \subsection{The rate of convergence}
 
+  We have discussed about rate of divergence. But what about the rate of convergence?? Is the definition the same as divergence? Surprisingly, it's not the same!!! \\
+
+  Pay attention!! Here's the situation. When we talk about "Divergence speed of a sequence". It's equally asking "How fast the sequence get closer to the infinity?" A very natural definition of this question is the differential of the sequence itself. But! If we are asking "Convergent speed". The story is different! \\
+
+  In the convergence, if the convergent speed is fast, the first step should be the largest, but as we go further, it would get smaller. Eventually it would be infinitely small, that's a reason it converges. As you can see, Using differentiation to define such "convergent speed" is not gonna work. So we need to find another way to define convengent speed. \\
+
+  A reasonable definition should be considered about the "gap" between convergent point and the current running point. We should talk about how this "gap" is getting small as we go further when $n \to \infty$. It turns out that the definition is the the "ratio" of this "gap" getting smaller.
+
+  \[
+	  \displaystyle \lim_{n \to \infty} \dfrac{\|a_{n+1} - a_\infty\|}{\|a_{n} - a_{\infty}\|} = \mu
+  \]
+
+  For $\mu$ is the rate of convergence and $a_{n}$ is the convergent sequence. \\ 
+  
+  Here's more. If $\mu=\infty$, that means that $\|a_{a+1}-a_{\infty}\|$ is infinity larger than $\|a_{n}-a_{\infty}\|$. And, of course, if $\mu=0$, that means it's infinitely smaller. Just like "Growing speed" in divergent case, in convergence, there's also an "Order" for it.
+
+  \[
+	  \displaystyle \lim_{n \to \infty} \dfrac{\|a_{n+1} - a_\infty\|}{\|a_{n} - a_{\infty}\|^{q}} = C \text{ for C is real positive constant and } q>1
+  \]
+
+  We call $q$ the "order of convergence". This definition is reasonable. Because we are talking about "The ratio of the 'gap' getting smaller between running point and convergent point". You can get a lotta example in Wikipedia.
 
 
 \end{document}
