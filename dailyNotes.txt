@@ -9283,6 +9283,26 @@ https://www.reddit.com/r/running/comments/jpvdki/dizziness_right_after_i_stop_ru
 	
 ""
 
-% When we talk about "dynamics", there seems have FOUR kinda dynamics "rigid dynamics", 
+
+
+2024/1/28
+1. What is "resting heart rate("?
+
+2. I want to build a web page that can showing "average temperature of every country", "population of every country", sum up, it's about "the data of every country"
+
+3. Keep studying about How Sequence divergences and it's speed.
+
+4. Is there "slowest(or fastest)" sequence? No! Here's a discussion talks about this:
+https://math.stackexchange.com/questions/452053/is-there-a-slowest-rate-of-divergence-of-a-series
+here's another reference:
+https://www.zhihu.com/question/448428983
+
+
+
+2024/1/30
+1. Study about the growing rate of a function. What is the slowest growing rate? Here's a reference talks about this:
+https://math.stackexchange.com/questions/1388242/function-grows-slower-than-lnx
+
+2. Study about the difference between rate of divergence and rate of convergence.
 
 	
