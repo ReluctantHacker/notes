@@ -9305,4 +9305,50 @@ https://math.stackexchange.com/questions/1388242/function-grows-slower-than-lnx
 
 2. Study about the difference between rate of divergence and rate of convergence.
 
+
+2024/2/1
+1. Review about what is "differential form"?? And what is "orientable"? Here's a reference talks about this:
+http://chowkafat.net/Math/Integration_form.pdf
+https://math.uchicago.edu/~may/REU2012/REUPapers/Presman.pdf
+https://www.math.umd.edu/~immortal/MATH431/book/ch_geometricalgebra.pdf
+https://www.researchgate.net/figure/Geometric-meaning-of-vectors-dx-dy-and-dx-dy_fig1_323166788
+https://www.zatlovac.eu/lecturenotes/GAIntroLagape.pdf
+https://spot.colorado.edu/~jnc/lecture1.pdf
+
+2. In python, What is "shallow copy" or "deep copy"??
+
+3. Study about the "scope" of python variable, 
+
+4. Review about "call by value" and "call by reference"
+
+5. Study about hash table
+
+6. Study about binary tree, (and it's relationship with stack and heap and queue)
+
+7. Study about virtual memory
+
+8. Some test for data structure:
+https://www.slideshare.net/yichang14/20-237440392
+
+9. What is "GSM"?
+
+10. What is "Electron", it is kinda  a GUI application developement software
+
+11. Study about project structure, here are two basic project structure that most uses:
+https://hackmd.io/@shaoeChen/HyP-nW9mf?type=view
+
+12. Some useful practice case for Flask and FastApi
+https://hackmd.io/@shaoeChen/HJiZtEngG/https%3A%2F%2Fhackmd.io%2Fs%2FSyP4YEnef
+https://github.com/Kludex/awesome-fastapi-projects/tree/master
+https://blog.csdn.net/weixin_45621944/article/details/109906498
+https://github.com/BanditKin/-chat-room
+https://github.com/01-ai/Yi/blob/main/Dockerfile
+https://github.com/omise/omise-flask-example
+
+13. What is pywsgi server?
+
+14. In WSL, how do I it's using too much RAM! How to solve it? Here's a reference talks about this:
+https://blog.csdn.net/qq_36743482/article/details/132879300
+
+
 	
