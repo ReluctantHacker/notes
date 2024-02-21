@@ -9351,4 +9351,27 @@ https://github.com/omise/omise-flask-example
 https://blog.csdn.net/qq_36743482/article/details/132879300
 
 
+2024/2/16
+1. Remember! MRO of python is actually "C3", not 廣度優先(but a lotta tutorial would say so, you should be careful), here's a another reference talks about this:
+https://blog.csdn.net/qq_41856663/article/details/126849875
+
+2. About python's super() function for class. Here's another reference talks about this, you should check:
+https://zhuanlan.zhihu.com/p/356720970
+
+
+2024/2/17
+1. What is "this" in javascript? And what is "self" in python? Here's a reference talks about this:
+https://www.shubo.io/javascript-this/
+
+2024/2/19
+1. What is "session", "cookie", "token"?? It's very important!! Here are some references:
+https://www.maxlist.xyz/2019/06/29/flask-session/
+https://developer.aliyun.com/article/1050292
+https://blog.yyisyou.tw/5d272c64/
+
+2024/2/21
+1. Python's common class method, very important!!! here's a reference talks about this:
+https://www.learncodewithmike.com/2020/01/python-method.html
+
+
 	
