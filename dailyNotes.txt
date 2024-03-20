@@ -9363,15 +9363,244 @@ https://zhuanlan.zhihu.com/p/356720970
 1. What is "this" in javascript? And what is "self" in python? Here's a reference talks about this:
 https://www.shubo.io/javascript-this/
 
+
 2024/2/19
 1. What is "session", "cookie", "token"?? It's very important!! Here are some references:
 https://www.maxlist.xyz/2019/06/29/flask-session/
 https://developer.aliyun.com/article/1050292
 https://blog.yyisyou.tw/5d272c64/
 
+
 2024/2/21
 1. Python's common class method, very important!!! here's a reference talks about this:
 https://www.learncodewithmike.com/2020/01/python-method.html
+
+2. In python, very important again!!! There's also another method that is ONLY used in class but can't be used outside, we call this method "private method". In convention, we named this kinda function like this "def __priMethod()" Here are two other references talk about this:
+https://www.geeksforgeeks.org/private-methods-in-python/
+https://chenhh.gitbooks.io/parallel_processing/content/cython/python_class.html
+
+
+2024/2/23
+1. The most common cpu instruction structures, here are two, 
+	First, x86 (which is the familiar one that most used in windows pc.). It used CISC(complex)
+	Second, arm (which is mostly used in embedded system). It used RISC(reduced)
+
+2. Here's a reference talks about the difference between 'x86', 'arm'
+https://vocus.cc/article/63cad57ffd89780001ca57aa
+
+3. 
+
+
+2024/2/26
+1. About javascript, here's a tutorial about "static" method:
+https://ithelp.ithome.com.tw/articles/10217952
+
+2. Apache vs NGINX, here's a reference talks about this:
+https://tenten.co/insight/dev/apache-nginx-comparison/
+
+3. Here's a reference talks about how to deploy Flask with Gunicorn and Nginx(on Ubuntu)
+https://www.youtube.com/watch?v=KWIIPKbdxD0
+
+4. What is "Kotlin"? And what is the relationships between java and javascript?? 
+
+5. I had already use "wget https://downloads.raspberrypi.org/raspios_lite_armhf_latest -O raspios_lite" to download the "raspios_lite_armhf_latest.zip" but haven't decompress it.
+
+6. Here's a reference youtube tutorial video talks about how to emulate ARM64 Raspberry Pi image with QEMU
+https://www.youtube.com/watch?v=Y-FUvi1z1aU
+
+7. I was studying about damped harmonic motion. Here's a reference talks about this:
+https://courses.lumenlearning.com/suny-osuniversityphysics/chapter/15-5-damped-oscillations/
+
+8. I was study about "php" static class. Here's a reference talks about this:
+https://www.php.net/manual/zh/language.oop5.static.php
+
+
+
+2024/2/27
+1. About frontend and backend, here are some references talk about the general ideas:
+https://yual.in/posts/frontend-backend-concept
+https://ithelp.ithome.com.tw/articles/10231011
+
+2. About deployment of frontend and backend, they are usually separated and deployed on different machine, here's a reference talks about this:
+https://www.twblogs.net/a/5d4d2121bd9eee5327fc5040
+
+
+2024/3/1
+1. In Python and Javascript, async function is very very similar, they almost have the same structure, like
+	a. Both Python and Javascript, the key word "await" must always be in "async function"
+	b. In Python, a async function would be a "Coroutine", and in Javascript, a async function would be a "Promise". They are all used to deal with async function.
+	Here are some references talk about this:
+	https://ithelp.ithome.com.tw/articles/10262385
+	https://ithelp.ithome.com.tw/articles/10242047
+
+	The more details you can check with ChatGPT.
+
+
+2024/3/3
+1. 如何處理重複請求的問題?? 前端和後端有各自的辦法. Here are some references talk about this:
+	https://blog.csdn.net/m0_64346035/article/details/125177485
+	https://topic.alibabacloud.com/tc/a/how-to-gracefully-handle-multiple-requests-caused-by-a-users-mis-operation_8_8_31105325.html
+	https://developer.aliyun.com/article/1346557
+
+
+2. 關於資料庫的deadlock(very important), here's a reference talks about this:
+	這裡有兩個針對Mysql deadlock較為詳細的解釋和解法
+	https://yuanchieh.page/posts/2020/2020-12-26_mysql-deadlock-%E5%95%8F%E9%A1%8C%E6%8E%92%E6%9F%A5%E8%88%87%E8%99%95%E7%90%86/
+	https://www.aneasystone.com/archives/2018/04/solving-dead-locks-four.html
+
+	這裡有一個不是特別準確的說明:
+	https://ithelp.ithome.com.tw/articles/10335204?sc=rss.qu
+
+	這裡有個關於sql server的狀況(但是他講的不是很詳細)
+	https://www.uuu.com.tw/Public/content/article/20/20201207.htm
+
+	這裡有個關於deadlock如何發生的說明:
+	https://stackoverflow.com/questions/2774935/what-is-a-deadlock-in-a-database
+
+
+3. !!!! IMPORTANT!! deadlock不會只有資料庫會發生, 作業系統也會發生!! 上面的筆記2的references大部分是在講作業系統!!! Here are another references talks about this:
+	這裡有一些關於deadlock較為詳細的解決說明:
+	https://ithelp.ithome.com.tw/articles/10206428
+	https://ithelp.ithome.com.tw/articles/10283726
+	https://ithelp.ithome.com.tw/articles/10206625
+
+4. 資料庫的索引是幹嘛用的啊, here's some references talk about this:
+	https://blog.gmifly.tw/2020/02/23/%E4%BB%80%E9%BA%BC%E6%98%AF%E5%BB%BA%E7%AB%8B%E7%B4%A2%E5%BC%95/
+
+4. 一般的手機通訊軟體(line, skype, weixin, etc), 他們的對話紀錄(文字)以及圖片紀錄是存放在手機本地端, 還是server? 手機通訊軟體需要server嗎?
+
+5. Windows的BitLocker是甚麼? 有甚麼功能?
+
+
+2024/3/4
+1. 關於python, ai專案, 如何規劃和開發:
+	這裡有一個初步的專案
+	https://edge.aif.tw/express-stable-diffusion/
+
+2. 在javascript裡面...想要使用websocket, 需要一個獨立的websocket server??? 這裡面有提到的樣子.
+	https://segmentfault.com/a/1190000014582485
+
+
+2024/3/9
+1. 資料結構學系筆記, 有向圖與無向圖的表示, here are some references:
+	https://luciuschang.wordpress.com/2018/06/19/%e6%9c%89%e5%90%91%e5%9c%96%e8%88%87%e7%84%a1%e5%90%91%e5%9c%96%e7%9a%84%e8%a1%a8%e7%a4%ba%e6%96%b9%e5%bc%8f/
+	https://medium.com/@amber.fragments/%E8%B3%87%E6%96%99%E7%B5%90%E6%A7%8B-%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98-7-graph-%E5%9C%96-d4359fb6f19a
+
+2. 
+
+
+2024/3/17
+1. 正在讀資料結構, 目前讀到的內容包括, stack, Queue, linked, tree, hash table等等的c語言實作:
+	https://hackmd.io/@coherent17/Sk4fomSkt
+
+2. 同時也讀到, 前序, 後序, 中序, 還有他們與binary tree的關係:
+	https://magiclen.org/arithmetic/
+
+3. 目前研讀binary tree, 讀完了基本的tree性質, full tree, complete tree等等, 目前讀到binary tree的depth-first search, 還需要研究為何binary tree可以替代(?)一般的tree.
+
+4. 研讀"資管", 看到"雲端服務"章節, 嘗試研讀"常見的技術, 以及各方面的優缺點"(可以查看chatgpt)
+
+
+
+2024/3/18
+1. 研究軟體系統的一些常見架構: 分散式架構, 主從式架構, 服務導向架構(SOA)
+2. CDN是甚麼?
+3. 關於分散式架構的一些較為細緻的說明:
+	https://rickhw.github.io/2018/06/18/DistributedSystems/Gossip-in-Distributed-Systems/
+4. 甚麼是微服務架構(microservices)? 他是有SOA演變而來
+5. SOA和RPC, 分散式系統, 有甚麼關係啊?
+	https://www.gss.com.tw/eis/55-eis52/215-soa#chapter308
+6. IPC, RPC, 分散式系統, 有甚麼關係??
+	https://morosedog.gitlab.io/technology-20200229-tech-6/
+	關於IPC, 我覺得比較好的一個解釋:
+	https://baike.sogou.com/v7857011.htm
+	RPC其實屬於一種IPC的實作:
+	https://stackoverflow.com/questions/2161674/is-there-a-difference-between-rpc-and-ipc
+	關於RPC的實現概念:
+	https://www.zhihu.com/tardis/zm/art/426303359?source_id=1005
+	https://www.zhihu.com/question/41609070
+7. 關於分布式系統CAP理論,一個比較完整的解釋:
+	https://zhuanlan.zhihu.com/p/33999708
+8. 資料庫的ACID:
+	https://lance.coderbridge.io/2021/04/24/short-what-is-acid/
+
+9. 甚麼是物件導向設計, 瀑布式開發
+
+
+2024/3/19
+1. 研究乙太網路的IP規則, 子網遮罩
+
+
+	
+2024/3/20
+1. 正在研讀資料結構, 看到如何把tree 化成binary tree, 以及thread binary tree, 基本上把tree的基本概念看得差不多了, 接著可能就要複習以及研究如何用c語言(或其他語言)實作tree.
+
+2. 正在研究網路, CICR如何救援IPv4地址耗盡的問題?
+
+3. 正在研究網路, 現在大部分的網路都用CICR, 而不用傳統的A, B, C類來當作網路分類
+
+4. 一般的裝置只看的到自己的私網IP, 如何看到對外IP?
+	https://magiclen.org/check-ip/
+
+5. 研究DNS, 甚麼是DNS server? 
+	關於DNS, 我覺得比較實用的說明
+	https://zhuanlan.zhihu.com/p/584431040
+	關於DNS服務器, 一個較為詳細的解釋
+	https://www.stockfeel.com.tw/dns-%E4%BC%BA%E6%9C%8D%E5%99%A8%E6%98%AF%E4%BB%80%E9%BA%BC%EF%BC%9F%E5%A6%82%E4%BD%95%E9%81%8B%E7%94%A8%EF%BC%9F/
+	
+	
+
+
+6. 甚麼是CNAME, 跟DNS有關......
+	Copilot's Tutorial:
+		NS 記錄（Name Server 記錄）：
+			NS 記錄指定了一個網域名稱的 DNS 伺服器。它告訴其他 DNS 伺服器哪個伺服器負責解析該網域的名稱。簡而言之，NS 記錄是網域名稱與其 DNS 伺服器之間的映射。
+
+		A 記錄（Address 記錄）：
+			A 記錄將網域名稱映射到 IPv4 地址（例如，192.168.1.1）。當你在瀏覽器中輸入網址時，瀏覽器會向 DNS 伺服器查詢該網域的 A 記錄，以獲取相應的 IP 地址，然後連接到該 IP 地址的主機。
+
+		CNAME 記錄（Canonical Name 記錄）：
+			CNAME 記錄是一個別名記錄，用於將一個網域名稱映射到另一個網域名稱。它通常用於實現網站的重定向或子網域的別名。例如，如果你有一個網站 example.com，並希望 www.example.com 也指向相同的內容，你可以在 DNS 中設置一個 CNAME 記錄，將 www.example.com 指向 example.com。
+
+7. 關於CNAME的另一個說明...
+	https://www.zhihu.com/question/22916306
+
+7. 突然想到郵件伺服器, 與 SMTP, pop3等等東西, 來研究一下...
+	https://www.stockfeel.com.tw/%ef%bd%8dail-%e4%bc%ba%e6%9c%8d%e5%99%a8%e6%98%af%e4%bb%80%e9%ba%bc%ef%bc%9f%e5%a6%82%e4%bd%95%e9%81%8b%e7%94%a8%ef%bc%9f/
+
+8. DNS server如何實現負載平衡?
+
+9. CDN是什麼?? (似乎是為了解決網路雍塞的問題!)
+	https://zhuanlan.zhihu.com/p/52362950
+
+	CDN的概念, 其實主要就是用了"緩存服務器"來分擔源服務器的流量負擔, 藉由把用戶需求過的內容存到就近的緩存服務器, 達到"源服務器只需要與緩存服務器有流量交往就好"而不需要"對所有用戶有流量交往", 詳細內容可與chatgpt討論
+
+10. CDN的定義...讓我突然想起BitTorrent, 兩者的原理其實有點相像...
+	https://kknews.cc/zh-tw/other/2qax8yy.html
+
+11. 镜像服务器?? 是甚麼??
+	镜像服务器(Mirror server)与主服务器的服务内容都是一样的，只是放在一个不同的地方，分担主机的负载。简单来说就是和照镜子似的，能看，但不是原版的。在网上内容完全相同而且同步更新的两个或多个服务器，除主服务器外，其余的都被称为镜像服务器。 光盘镜像服务器一般采用BNC和 RJ-45标准网络接口，设置、升级和管理均可通过WEB浏览器或网上邻居远程进行。
+
+12. 關於網路卡:
+	https://www.youtube.com/watch?v=QHoW3GEWLD8&ab_channel=HowTo
+
+13. 網路卡分成有線跟無線, 現在很多筆電都不支援有線了(沒有內建的有線網路卡)
+
+14. 研究ether net, 有關CSAM/CD, 以下是危機百科的一段說明, 似乎CSMA/cs與hub有關??
+	With the growing popularity of Ethernet switches in the 1990s, IEEE 802.3 deprecated Ethernet repeaters in 2011,[2] making CSMA/CD and half-duplex operation less common and less important.
+
+15. 關於CSMA/CD的一個完美解釋(他還順便講了CSMA/CA)
+	https://www.youtube.com/watch?v=iKn0GzF5-IU&ab_channel=PowerCertAnimatedVideos
+
+16. CSMA/CD還牽扯到了full-duplex, half-duplex的觀念, 可以去維基百科看一下
+
+
+
+
+
+
+
+
 
 
 	
