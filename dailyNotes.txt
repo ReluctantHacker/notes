@@ -9593,14 +9593,124 @@ https://www.twblogs.net/a/5d4d2121bd9eee5327fc5040
 	https://www.youtube.com/watch?v=iKn0GzF5-IU&ab_channel=PowerCertAnimatedVideos
 
 16. CSMA/CD還牽扯到了full-duplex, half-duplex的觀念, 可以去維基百科看一下
+	現在基本上已經沒有再使用CSMA/CD技術了(沒有意義了)
+	https://www.zhihu.com/question/480967242
+
+17.
 
 
+2024/3/21
+1. shannon's theorem 和傅立葉定理有非常大的關係!! 為何頻帶越大, 可傳輸的資料量就越多? 傅立葉定理(frequency domain <--> time domain)其實已經表明了!!!!!
+	https://digitalimagepro.blogspot.com/2013/11/what-is-time-domain-and-frequency-domain.html
+
+2. 關於不同頻率的波的穿透力!
+	https://www.zhihu.com/question/53925123
 
 
+3. 關於為何需要載波?
+	因為低頻波需要很大的天線(接收或傳送信號), 物理上不合適, 高頻波繞射能力低下(貫穿能力又太強), 所以也不合適, 只有特定的頻率段比較合適用來傳輸訊號, 而除了網路通信與電話通信以外還有其他的需求佔用了這個頻段, 所以其實可以用的頻段相當的小.
+		https://www.youtube.com/watch?v=DXt-rXDu9M8&ab_channel=Lesics
+		https://www.zhihu.com/question/27715913
 
 
+4. 回過頭研究"編碼"問題, 所謂編碼就是把"數位資料(例如ASCII馬等等)"傳換成"數位訊號(例如基頻波)"
+
+5. 研究了各種編碼...也研究了Manchester編碼, 為何Manchester編碼是自同步??
+	這裡有個講解很清楚!
+	https://www.zhihu.com/question/315659425
+
+6. 開始研究"資管與資安", 甚麼是CMMI???
+	https://zhuanlan.zhihu.com/p/687905438
+	https://www.zhihu.com/question/20091558
+
+7. 研究ITSM以及ITIL
+	https://zhuanlan.zhihu.com/p/648873132
+	https://www.zhihu.com/question/22614261
+
+8. 稍微看了一下"委外管理", "關係管理", "風險管理", "績效管理"
+
+9. 甚麼是Open data???
+	https://zhuanlan.zhihu.com/p/50823898
 
 
+2024/3/22
+1. 研究網路通訊.......packet 和frame的差別是甚麼, 感覺差不多啊?? (我後來終於弄懂了, 一個是第三層, 一個是第二層, 但概念是一樣的)
+	https://stackoverflow.com/questions/31446777/difference-between-packets-and-frames
+
+2. 研讀網路通訊, 看到link data layer: sliding windows 
+
+3. 研讀"資料結構", 我把graph的基本都看完了
+
+4. 有關AOE network(有權重的有向圖), 如何求出最短路徑??, 以下是一些reference:
+	https://ithelp.ithome.com.tw/articles/10207076
+	https://zhuanlan.zhihu.com/p/340950042
 
 
+2024/3/23
+1. 研究sql資料庫的正規化
+
+2. sql資料庫一定要正規化嗎? 正規化一定比較好嗎? 甚麼是反正規化(不想要資料庫太正規化)???
+	https://ithelp.ithome.com.tw/articles/10229472
+
+3. 2NF, 3NF區別??
+	(important!!!!)
+	https://stackoverflow.com/questions/723998/what-are-database-normal-forms-and-can-you-give-examples/724032#724032
+
+4. 研究資料庫, 關於各種類型的資料庫, 甚麼網狀型, 樹狀形, 關聯型(最常在使用的), 物件導向型
+
+5. 研究資料庫, 一對一, 一對多, 多對多(一般會化成多個一對多), 這些關係如何處裡? 才能更好??
+	https://notes.andywu.tw/2018/%E8%B3%87%E6%96%99%E5%BA%AB-%E9%97%9C%E8%81%AF%E4%BB%8B%E7%B4%B9-%E4%B8%80%E5%B0%8D%E4%B8%80%E3%80%81%E4%B8%80%E5%B0%8D%E5%A4%9A%E3%80%81%E5%A4%9A%E5%B0%8D%E5%A4%9A/
+
+6. 資料庫table, 一對一有這個需要嗎?? 為何不做成一個table? 
+	https://stackoverflow.com/questions/3939589/database-design-should-one-to-one-relationships-be-avoided
+
+7. 為何多對多的table中間需要一個連接用的table
+
+8. 關於資料庫的研讀, 我看到第四章的56頁
+
+9. sql 語法練習50道題目
+	https://hackmd.io/@_7vFEnkKTve5g-aFhT8EvQ/Sy-H0QeWr
+
+10. 研究資料結構, 稍微研究了, extended binary tree, weighted extended binary tree, huffman tree, AVL tree, m-way-search-tree
+	(m-way-tree, 和b-tree比較複雜...他屬於非binary tree 了)
+	https://hackmd.io/@Zero871015/ryxf04h2X?type=view
+
+11. 研究資料結構, 看到高等樹的page.40, 要睡了...
+
+
+2024/3/24
+1. 研究網路, 在傳輸錯誤控制中有種方法叫CRC, 其中使用了"模2除法", 納甚麼東西???
+	https://www.newton.com.tw/wiki/%E6%A8%A12%E9%99%A4%E6%B3%95
+
+2. 研究網路, 大致看完了"鏈路層"
+
+3. 研究網路層(講義這一章節裡面裡前半部分的內容, 感覺大部分都太過冷門, 應該不會考, 因此隨意看看然後跳到"路由"的部分"
+
+4. 甚麼是"路由表"
+
+5. 路由又分"直連路由", "動態路由", "靜態路由"等等
+	https://zhuanlan.zhihu.com/p/405894469
+
+6. 其實路由協議(routing protocol)就是direct(直連), static(靜態), RIP(動態), ISIS(動態), OSPF(動態), BGP(動態)...........
+
+7. 192.168.1.0是甚麼地址, 據說可用地址從(192.168.1.1~192.168.1.254, 255是廣播地址)???
+
+8. 動態路由裡面, 有一種重要的演算法叫做Dijkstra 演算法, 一下有個非常清楚的說明:
+	https://www.freecodecamp.org/chinese/news/dijkstras-shortest-path-algorithm-visual-introduction/
+	這裡有另一個:
+	https://zhuanlan.zhihu.com/p/129373740
+
+9. DV routing演算法...這個有點複雜..., 以下這個印度人的影片講的滿清楚的:
+	https://www.youtube.com/watch?v=hdpnoOcrGck
+	另一個說明:
+	https://my.eng.utah.edu/~cs5480/notes/chapter4-2007-Part2.pdf
+
+10. DV rounting會有機會發生一種奇特的Bug, 叫做路由環路:
+	https://www.zhihu.com/question/457908689
+	https://www.zhihu.com/question/51828562
 	
+	A, B, C三台路由器, 形成三角互聯
+	A想發packet給C, 根據A的路由表顯示, B可以到達C. 於是A把packet發給B, B接收packet後, 查詢自己的路由表, 發現到C的最優路徑是A, 於是又把packet發給A, 來來往往, 變成loop. 會發生這樣的原因, 有可能來自C 壞掉了, 但是壞掉的通知傳送的慢, 因為A需要透過B才能到達C(可見C到A的距離是比到B還更遠), 所以B會先收到C壞掉了, B-C距離改成infinity, 路由變成B要到C需要經過A, 然後就形成loop了.
+
+
+
