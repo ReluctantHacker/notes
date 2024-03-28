@@ -9713,4 +9713,146 @@ https://www.twblogs.net/a/5d4d2121bd9eee5327fc5040
 	A想發packet給C, 根據A的路由表顯示, B可以到達C. 於是A把packet發給B, B接收packet後, 查詢自己的路由表, 發現到C的最優路徑是A, 於是又把packet發給A, 來來往往, 變成loop. 會發生這樣的原因, 有可能來自C 壞掉了, 但是壞掉的通知傳送的慢, 因為A需要透過B才能到達C(可見C到A的距離是比到B還更遠), 所以B會先收到C壞掉了, B-C距離改成infinity, 路由變成B要到C需要經過A, 然後就形成loop了.
 
 
+2024/3/25
+1. 研究"資料結構, 演算法", 看到big-o , small-o ,兩個差別在呢???
+	重要參考(非常清楚的講清了所有notation!!):
+	https://stackoverflow.com/questions/1364444/difference-between-big-o-and-little-o-notation
+
+2. 研究big-o, small-o, theta, big-omega, small-omega等等符號的意義
+
+3. 研究如何將遞迴演算轉成"通式"
+
+4. 關於"遞迴樹", 一個比較清楚的解釋(裡面還提到代換法, 代換法和遞迴樹最好一起搭配)
+	https://ithelp.ithome.com.tw/articles/10266723
+
+5. 關於"遞迴樹"和"master theorem"
+	(講的蠻清楚的)
+	https://mycollegenotebook.medium.com/%E6%99%82%E9%96%93%E8%A4%87%E9%9B%9C%E5%BA%A6-%E9%81%9E%E8%BF%B4-%E4%B8%8B-master-th-307ad4608ab6
+
+
+2024/3/26
+1. 研究"系統專案管理"
+	
+2. 系統專案管理中, 甚麼是"瀑布式開發", "敏捷開發(敏捷開發中最出名的是Scrum)"
+	https://zhuanlan.zhihu.com/p/81383161
+	https://zhuanlan.zhihu.com/p/108638046
+
+3. 軟體相關常見職務名稱
+	https://www.mropengate.com/2015/05/sa-sd-rd-pg-pm-dba-mis-qa-sales.html
+
+4. 繼續研究"資料結構", 開始看"sorting algorithm"
+
+5. bubbleSort, selectionSort, insertionSort 比較簡單, 記住基本邏輯精神即可, quickSort較複雜, 它需要partition, partition 又有兩種辦法, (兩種辦法要熟練)
+	https://www.shubo.io/quick-sort/
+
+6. 看到merge sort, heap sort
+	https://medium.com/@amber.fragments/%E6%BC%94%E7%AE%97%E6%B3%95-%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98-11-%E5%90%88%E4%BD%B5%E6%8E%92%E5%BA%8F%E6%B3%95-merge-sort-80aaa58fa878
+	https://hackmd.io/@Aquamay/BylVMPFkiu
+	https://magiclen.org/heap-sort/
+
+
+2024/3/27
+1. 研究"資管"
+
+2. 關於資安相關的一些你應該會的內容
+	https://medium.com/blacksecurity/goodauditor-134c07fdf0d0
+
+3. 關於ITSM(IT service management)和ITIL(IT infrastructure library)
+	https://www.intel.com.tw/content/www/tw/zh/business/resources/it-service-management.html
+
+4. ITSM只是個概念(it服務管理), ITIL是他的實作, 這裡有簡介
+	https://zhuanlan.zhihu.com/p/648873132
+
+5. ITIL也能考認證...跟CMMI一樣啊... 
+	https://www.zhihu.com/question/22614261
+
+6. 从早期的OA、CRM到后来的ERP，再到今天的MES、DCS等系统
+
+7. 甚麼是PKI(public key infrastructure)??  他屬於非對稱加密, 需要公鑰和私鑰, 甚麼又是非對稱加密, 公鑰和私鑰的區別??
+
+8. 甚麼是"對稱加密"於"非對稱加密"
+	https://cloud.google.com/learn/what-is-encryption?hl=zh-tw
+	https://www.cloudflare.com/zh-tw/learning/ssl/what-is-asymmetric-encryption/
+	以下是一個關於這個問題的優秀解釋, youtube影片
+	https://www.youtube.com/watch?v=AQDCe585Lnc&ab_channel=SimplyExplained
+
+9. RSA算法的原理是甚麼(很有趣, 考完高考後可以看)
+	https://www.zhihu.com/question/304030251
+
+9. SSL和TSL
+
+9. 甚麼是"多租戶身分管理"?? 這種技術被廣泛使用在雲端技術中, 為了分配資源給不同訂閱服務的用戶
+	https://ithelp.ithome.com.tw/articles/10332416
+
+10. 甚麼是SaaS(Software as Serivce)?? 其實就是一種雲端服務, 你不需要安裝軟體在你的主機, 透過網路存取即可使用
+
+11. 存取控制, 常見的存取控制包含RBAC, ABAC, MAC, DAC, 這些控制方式, 你可以問chatgpt, 跟chatgpt討論
+	也可參考如下資料
+	https://zhuanlan.zhihu.com/p/677809705
+
+
+12. 甚麼是資安稽核? 好像其實就是一個組織或系統的資安安全程度考核
+	https://marketing.ares.com.tw/newsletter/2022-05-cybersecurity/info-security-audit
+	https://medium.com/blacksecurity/goodauditor-134c07fdf0d0
+	這個用題目的方式, 問你甚麼事資安稽核
+	https://ithelp.ithome.com.tw/articles/10276760
+
+13. BCM是甚麼? 他是資安的一個概念, 似乎可以把它想像成系統的資安免疫系統(你需要訂製)
+	https://www.newton.com.tw/wiki/%E6%A5%AD%E5%8B%99%E6%8C%81%E7%BA%8C%E7%AE%A1%E7%90%86#%E4%BB%80%E9%BA%BC%E6%98%AF%E6%A5%AD%E5%8B%99%E6%8C%81%E7%BA%8C%E7%AE%A1%E7%90%86%EF%BC%88BCM%EF%BC%89
+	https://zhuanlan.zhihu.com/p/406997703
+
+14. 這裡有個資安與網路的面試題目集合, 挺有趣的
+	https://ithelp.ithome.com.tw/articles/10265075
+
+15. 關於資訊系統安全弱點與檢測, chatgpt提供的一些參考:
+	漏洞掃描（Vulnerability Scanning）：漏洞掃描工具可以自動掃描系統中的漏洞和弱點，包括操作系統、應用程序、網絡服務等方面的漏洞。這些工具可以幫助系統管理員及時發現並修補系統中存在的漏洞。
+
+	滲透測試（Penetration Testing）：滲透測試是通過模擬真實攻擊情景來檢測系統的安全弱點。安全專家可以通過手動測試和自動化工具來尋找系統中的漏洞，並試圖利用這些漏洞來進行攻擊，以評估系統的安全性。
+
+	安全漏洞報告（Security Vulnerability Reporting）：廣泛使用的軟件和應用程序通常會發布安全漏洞報告，用戶可以通過訂閱相應的安全通知來及時了解和修補系統中的漏洞。
+
+	代碼審查（Code Review）：對系統代碼進行審查是發現和修補潛在安全漏洞的重要方法。通過仔細檢查代碼，發現可能存在的漏洞和安全問題，並及時進行修補和加固。
+
+	安全配置檢查（Security Configuration Review）：檢查系統和應用程序的安全配置是發現安全弱點的關鍵步驟之一。確保系統配置符合安全最佳實踐，並且及時修補存在的配置漏洞。
+
+	綜上所述，發現和修補系統中的安全弱點是保護資訊系統安全的關鍵步驟之一。通過使用多種安全工具和技術，進行定期的安全檢測和漏洞修補，可以有效降低系統被攻擊的風險，保護敏感信息和系統的安全性。
+
+16. !!!!!!!!!!!!!資訊相關法律整理!!!!!!!!!!!!!幹!!!!!!!!看一下吧, 有時間看一下吧
+	https://moda.gov.tw/ACS/laws/regulations/624
+
+
+17. 回頭研究"資料結構"
+
+18. 準備看"heap sort", 但是要理解heap sort前, 總要知道甚麼是heap, heap 與樹有關,priority queue又與heap有關, 而Dijkstra Algorithm 有與 priority queue有關......
+
+19. 基本上heap tree跟binary search tree很像, 只差在沒有限制左右子樹的大小而已, 分成max heap tree(root最大值), min heap tree(root為最小值)
+	https://www.shubo.io/binary-heap/
+	https://ithelp.ithome.com.tw/articles/10266206
+
+20. heap tree, 和heap sort, 我秒懂了!! 把亂序的數字insert進一顆空的heap tree, 需要n*log(n)的時間複雜度, 把他從root extra出來(這個時候排序就自動按照大小了!!)也需要n*log(n)的時間複雜度, 所以總共的時間複雜度還是n*log(n)!!!!!
+
+21. 看完了priority queue了, 其實priority queue就是抽象的ADT, heap則是他的資料結構的一種實作(剛好非常適合)!!
+	https://stackoverflow.com/questions/18993269/difference-between-priority-queue-and-a-heap
+	https://x-wei.github.io/heap-summary.html
+
+22. 基本上把sort的章節看完了(有些特殊的排序, 有時間再看吧...)
+
+
+
+23. 開始看search(搜索), 首先linear search 還分成, sential和non-sential
+	https://stackoverflow.com/questions/33329349/whats-the-point-of-using-linear-search-with-sentinel
+
+
+24. binary search, 跟binary search tree的概念挺像的, 排序好的序列, 執行binary search, 以下是個較為完整的說明
+	https://magiclen.org/binary-search/
+
+25. interpolation search(內插search), 他的資料也得排序過才可以(如果不排序也無法內插....)
+	以下是interpolation search的精神(其實就是按照比例插入, 與數學上的內插法有異曲同工之妙)
+	https://www.youtube.com/watch?v=DlCPTPQD6Mw
+
+26. 開始看hashing, hash table(hash map), 到底甚麼是hashing??
+	https://www.zhihu.com/question/20820286
+
+27. 
+	
 
