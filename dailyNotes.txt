@@ -8699,22 +8699,26 @@ https://www.youtube.com/watch?v=fw1kRz83Fj0&t=1675s&ab_channel=Mathologer
 1. classmethod vs staticmethod vs normal method in a class:
 	classmethod is a function for "class" object itself.
 	normal method is for instance of a class object itself.
-	staticmethod is just a normal function but in the class(or instance)
-2. staticmethod can prevend you from using the function in a instance. for example below:
+	staticmethod is just a normal function which has nothing to do with the class(or the instance) itself, it is just in the class(or instance)
 
-Class testClass():
-	def __init__(self):
-		pass
-	@staticmethod
-	def test_static():
-		do_something()
-
-# when you create an instance of class testClass
-testInstance = testClass()
-# you can't do 
-testInstance.test_static()
-# because test_static() does't accept "self" as its variables. This function can only 
-server in inside testClass(instance) itself.
+2. staticmethod can prevend you from using the function in a instance. Here's an example chatgpt gave.
+	class MathUtility:
+	    @staticmethod
+	    def add(x, y):
+		return x + y
+	
+	    @staticmethod
+	    def multiply(x, y):
+		return x * y
+	
+	# 直接通过类名调用静态方法
+	print(MathUtility.add(3, 5))        # 输出：8
+	print(MathUtility.multiply(3, 5))   # 输出：15
+	
+	# 也可以通过类的实例调用静态方法
+	math_util = MathUtility()
+	print(math_util.add(3, 5))          # 输出：8
+	print(math_util.multiply(3, 5))     # 输出：15
 
 3. What is endpoint in backend development??
 	Endpoint actually means that an api address that can handle request data and calculate request
@@ -9854,5 +9858,368 @@ https://www.twblogs.net/a/5d4d2121bd9eee5327fc5040
 	https://www.zhihu.com/question/20820286
 
 27. 
+
+
+
+2024/3/28
+1. 繼續研究資料結構, hash的部分, 以下注意"是Yes呀"的回答, hash算法其實就是: 就是把任意大小的数据转换成固定长度的数据。
+	https://www.zhihu.com/question/20820286
+
+2. 我覺得wikipedia對hash的部分講的蠻清楚的, 尤其是在處裡碰撞的部分
+	https://en.wikipedia.org/wiki/Hash_table
+	還有其他資源也不錯
+	https://ithelp.ithome.com.tw/articles/10333085
+
+	下面有一個關於quadratic probing 的一個比較清楚的解釋
+	https://www.youtube.com/watch?v=tfXPEgYDQgI&ab_channel=LalithaNatraj
+
+	double hashing
+	https://www.youtube.com/watch?v=HcWxaVl1TII
+
+3. 我記得有些系統會設計把帳號密碼用hash值存在資料庫中...這個時候如果要從資料庫的hash值推回原來的帳號密碼呢? 如何做? 還是根本就辦不到? 密碼遺忘了, 是救不回來的
+
+4. 有關用hash來存取密碼? MD5就是一種hash算法...用hash來計算密碼並存入資料庫可能會遇到的問題?
+	https://medium.com/@brad61517/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8-%E5%AF%86%E7%A2%BC%E5%AD%98%E6%98%8E%E7%A2%BC-%E6%80%8E%E9%BA%BC%E4%B8%8D%E7%9B%B4%E6%8E%A5%E5%8E%BB%E8%A3%B8%E5%A5%94%E7%AE%97%E4%BA%86-%E6%B7%BA%E8%AB%87-hash-%E7%94%A8%E9%9B%9C%E6%B9%8A%E4%BF%9D%E8%AD%B7%E5%AF%86%E7%A2%BC-d561ad2a7d84
+
+5. 有關hash的存取密碼方法的漏洞, 可以參考hash的彩虹表(有名的), 可以自己wiki一下, 要防止她可透過add salt!
+
+6. 要切記!! hash 並不是加密! 他和加密的本質是有區別的, 加密是指可以反向解密的, 但是hash是破壞式的算法(原始資料失真), 原始資料無法反向被解出來(只能透過對照表)
+
+8. 大概看完hash了, 開始看dynamic programming!!!! 以下有個知乎說明, 清晰的點出了, dynamic programming和greedy的策略差異性
+	https://www.zhihu.com/question/23995189
+
+9. 看完以上的解釋後, 感覺dynamic programming似乎和kijdstra algorithm有點像啊...兩者不知有甚麼關聯
+
+
+
+10. 開始看"網路", review之前看過的, 在第二層(data link layer)中, 流量控制(特指sliding window), 如何達到流量控制的效果?
+	https://notfalse.net/24/tcp-flow-control
+
+11. 關於sliding window, 這裡有個印度人的youtube. 我覺得講的還可以, 可以參考
+	https://www.youtube.com/watch?v=LnbvhoxHn8M
+	另一個老外講的
+	https://www.youtube.com/watch?v=klDhO9N01c4
+
+12. 壅塞控制(Congestion control)與流量控制(flow control), 錯誤控制(error control), 這些東西要詳細了解(including the technique they used), 尤其是TCP的...
+
+13. 關於TCP壅塞控制的解釋
+	https://www.zhihu.com/question/58517416
+	另一個說明(比較沒那麼好, 但是可以參考)
+	https://notfalse.net/28/tcp-congestion-control
+
+14. 有點困惑, 壅塞窗口和滑動窗口...差別在哪啊??
+	https://www.zhihu.com/question/38749788
+	https://www.zhihu.com/question/264518499
+
+
+2024/3/29
+1. 下載A片的時候發現有些影片沒有提供mp4, 或是影片檔案的連結, 而是HLS協議(使用了.m3u8檔案和.ts檔案, 覺得有趣就研究了一下.
+	https://ithelp.ithome.com.tw/articles/10206687
+
+2. HLS可能用在點播的影片沒有問題, 但用在直播可能就會延遲, 不理想
+
+
+2024/3/30
+1. 昨天混了一整天...資料庫的部分少看了一天...記得要補啊...😓
+
+2. 繼續看"網路"
+
+3. 看了老半天壅塞控制(congestion control), 感覺找到了一個比較有系統的結論如下:
+	a. 首先系統會先設定一個初始的ssthresh(這裡是重點!!我一開始不知道ssthresh有初始值, 所以想了很久沒有弄懂, 這個初始值可能會猜測系統的流量上限, 把ssthresh訂在這個上限的低一點位置)
+	b. 執行slow start, 把cwnd(壅塞窗口)從一個MSS(maximum segment size)的大小開始傳送, 收到ACK(確認)後, 倍數增加, 一個變兩個, 兩個變四個, 指數增長
+	c. 這個時候可能兩種狀況. 
+		1. 增長過程中發現重複ACK(表示發生壅塞, 掉包了), 他雖然還沒有達到預設的初始ssthresh, 但是系統已經能知道ssthresh很有可能比我一開系統亂猜的初始值訂的要小, 這時候會進入下一個階段, 快速重傳(fast retransmit, 也就是cwnd減半), 然後進入壅塞避免(congestion avoidance, 也就是速度增長從指數增長改成線性增長, 一次增加一個MSS), 接著再次看有沒有壅塞發生(重複ACK, 也就是掉包了), 如果又發生, 那就再次進入快速重傳, 然後在雍塞避免, 無限循環, 動態的調整ssthresh
+		2. 另一種可能是, 一開始傳送數據時, 一路沒有壅塞(重複ACK接收, 也就是掉包了), 直到傳送速率到了ssthresh, 便進入壅塞避免(congestion avoidance), 雖然!! 這個時候並沒有發生雍塞!!!  當壅塞避免的時候, 發生了雍塞(重複ACK, 掉包了), 那就進入快速重傳, 然後在雍塞避免, 這一段就與第一種可能一樣了.
+
+
+4. 開始看"系統專案管理", 我覺得首先要研究, 系統專案管理的流程, 他使用到的名詞概念
+	專案管理的5大流程:
+		o.啟動 - 定義專案範圍，確認專案目標
+		o.規劃 - 提出專案規劃與設計，組織專案成員
+		o.執行 - 資源配置與整合、跨部門溝通、細項工作執行
+		o.控管 - 掌握專案完成度、時間、資源、預算
+		o.結案 - KPI、指標的檢討、知識的萃取與整理
+
+5. 3-tier和web-base差別是甚麼??
+	有個參考(但講的不很清楚, 只提供了一些靈感)
+	https://blog.tigernaxo.com/posts/software/arch-n-tier/
+
+	以下有另一段來自quora的回答
+		Almost all web applications are working on a 3 tier architecture.
+			1. Web browser is the presentation tier. It is a platform interact with the user for presenting and capturing the data / information.
+			2. A development tool for handling a dynamic web site is the second tier; such as ASP, JAVA, PHP, Ruby on Rails, Python and its frameworks like Django etc. represent second tire.
+			3. The database in server level infrastructure is the third tire. ORACLE, MYSQL, MS SQL, Etc. along with Server level OS forms the third tire.
+		Almost all dynamic web sites are depending on this three tire architecture.
+
+	簡單來說結論可以歸納為:
+		3-tier: web-based applications
+		2-tier: desktop applications, excel sheets, word document, desktop games	
+
+6. 軟體開發(或是系統項目開發)的六大基本步驟
+	a. 了解需求(溝通)
+	b. 需求分析(分析師的工作)----將需求業務邏輯釐清, 確認軟體類型與功能, 操作介面的樣式, 風險評估, 時程規劃
+	c. 軟體(或系統)設計----設計軟體框架, 會使用到的軟體工具, 設計數據結構, 模塊功能的劃分, UI設計預覽圖產生, 最後交給甲方評審, 確認開始開發
+	d. 軟體(或系統)開發----就開發, 寫code, 自測
+	e. 軟體(或系統)測試----進行全面測試, 看有沒有bug
+	f. 軟體(或系統)維護----測試無誤後就上線, 接下來就是維護
+
+7. 甚麼是KPI(Key performance indicator)?? 其實就是把組織員工的工作表現用一些具體屬性來衡量, 例如:
+	销售业绩指标：
+		
+		销售额（总体销售收入）
+		销售增长率（相对于前期的增长率）
+		销售渗透率（市场份额）
+		客户增长率（新客户获取速度）
+		平均交易金额
+		客户满意度指数
+	市场营销指标：
+		
+		市场份额
+		品牌知名度
+		网站流量和转化率
+		社交媒体参与度
+		营销成本率
+		平均营销成本每次获取
+	客户服务指标：
+		
+		客户满意度评分
+		客户投诉率
+		客户保留率
+		平均响应时间
+		服务水平协议达成率
+		客户续约率
+	财务绩效指标：
+		
+		净利润率
+		资产回报率
+		财务杠杆
+		现金流量
+		成本控制率
+		资本回报率
+	生产和运营指标：
+		
+		生产效率（产量/工时）
+		库存周转率
+		损耗率
+		质量缺陷率
+		交货准时率
+		设备利用率
+	人力资源指标：
+		
+		员工流失率
+		员工满意度调查分数
+		平均员工培训小时数
+		招聘效率（招聘成本和时间）
+		绩效评估结果
+		平均员工工资成本
+
+8. KPI的制定, 基本採用SMART原則:
+	S 代表具體（Specific）：指績效考核要切中特定的工作指標，不能籠統；
+	M 代表可度量（Measurable）：指績效指標是數量化或者行為化的，驗證這些績效指標的數據或者信息是可以獲得的；
+	A 代表可實現（Attainable）：指績效指標在付出努力的情況下可以實現，避免設立過高或過低的目標；
+	R 代表關聯性（Relevant），指績效指標是與上級目標具明確的關聯性,最終與公司目標相結合；
+	T 代表有時限（Time bound）：注重完成績效指標的特定期限。	
+
+9. 軟體開發的時候, 甚麼是"耦合度"?? "內聚度"
+	這裡有個參考:
+		https://www.zhihu.com/question/21019721	
+	"耦合度"其實就是模塊(或功能)之間的相依程度, 如果模塊A和模塊B的相依性很好, 我們就說耦合性高, 耦合高會導致難以進行程式整體調整.
+	"內聚度"指一个模块或一个组件内部各个元素之间联系的紧密程度。内聚度高意味着一个模块内的各个元素彼此相关联，并围绕着共同的目标或功能进行组织和设计。内聚度低则表示一个模块内的各个元素之间联系不够紧密，可能包含无关的功能，或者功能之间的联系很弱。
+
+	現在大部分的開發都採用"高內聚, 低耦合"(其實說穿了就是能分門別類, 就分門別類, 這樣效率本來就會更高), 以下有個參考清楚的說明:
+		https://www.zhihu.com/question/347264877/answer/834666851
+
+10. 軟體開發時, 需要考慮要用什麼樣的開發方法, 敏捷開法, 瀑布開發, RAD(rapid application development),
+	RAD和敏捷開發都屬於快速開發的方法, 但兩者沒有傳承關係, 不要搞混了, RAD比agile早了10多年, 主要採用原型疊代法.	
+	這裡有個討論:
+		https://softwareengineering.stackexchange.com/questions/180590/is-agile-a-variant-of-rad
+
+11. 在分析和設計階段需要會UML class圖, UML class圖主要是用在"物件導向的軟體設計", 平常不會用在資料庫的架構設計!!!!! 不可搞混!!  以下有些概念細節需要大概知道:
+	參考:
+	https://misomiso43.medium.com/%E7%B0%A1%E5%96%AE%E7%90%86%E8%A7%A3-uml-%E9%A1%9E%E5%88%A5%E5%9C%96-f0b32a3272c
+
+	簡而言之class與instance之間可能有的關係, 如下
+	class level:
+		a. Generalization/Inheritance(其實就是繼承關係): A is a type of B.
+		b. Realization/Implementation(其實就是接口關係): A implements B, which is an interface.
+	instance level:
+		Have:
+			a. Aggregation: A owns B, but both has its own lifecycle.
+			b. Composition: B is part of A, follow A's lifecycle
+		Use:
+			a. Dependency: A uses B but in a weak relationship. If one changes many affect another one.
+			b. Association: A knows B. Static relationship between A and B.
+
+
+12. 在物件導向設計中, "接口(interface)"和"父類"的區別是甚麼? 感覺子類繼承接口和繼承父類, 都是繼承, 程式上似乎沒有本質區別?? 但他們是有區別的!!! 而且區別很大, 在抽象概念上他們並不一樣!!
+	通常父類只會有一個! 但是接口可能有好幾個, 例如鳥是動物, 也就是動物是鳥的父類, 那飛行所需要的技能就是所謂的接口! 總之就是"特化"的東西(父類中不需要包含的東西), 可以獨立用一個接口來實現.
+
+	以下是一些討論和參考:
+		https://blog.csdn.net/m0_71417856/article/details/130467940
+		https://codegym.cc/tw/groups/posts/tw.104.chou-xiang-lei-he-jie-kou-de-qu-bie
+		https://m.imooc.com/qadetail/107540
+
+12. 雖然UML class圖, 比較不會用在資料庫的設計上, 但是當我們需要一個很重要的東西時, UML class 圖一就可以派上用場, 這個很重要的東西叫做ORM(Object-Relational Mapping)
+
+13. ORM很重要!!!! 他其實就是把軟體程式中所使用的類別(class)模型映射到資料庫模型!! 你之前在python的後端開發就是使用了ORM, 所以才會發現程式裡面有一堆資料庫欄位的"類別(class)", 而且你不需要實際去輸入sql語句來操作資料庫!!! chatgpt也有提到以下:
+	然而，虽然 UML 类图主要用于对象导向程序设计，但它们也可以在数据库设计中发挥作用，尤其是在对象关系映射（Object-Relational Mapping，ORM）的场景下。ORM 是一种将对象模型和关系数据库模型进行映射的技术，它可以让开发人员使用面向对象的方式来操作和管理数据库，而不必直接操作数据库表和 SQL 查询。
+
+	在 ORM 中，UML 类图可以用于描述对象模型和数据库表之间的映射关系，例如将类的属性映射到数据库表的列，将类之间的关联关系映射为数据库表之间的外键关系等。通过使用 UML 类图来描述对象模型和数据库模型之间的映射关系，开发人员可以更清晰地理解系统的结构和设计，并更容易进行系统开发和维护。
+
+14. ORM可以幫我們擋掉大部分的SQL injection, 但還是有其他可能, 所以設計ORM的時候仍須注意, 以下是一些討論與參考:
+	https://stackoverflow.com/questions/5173002/where-are-orms-vulnerable-for-sql-injection
 	
+	來自chatgpt:
+		然而，即使使用 ORM，如果开发人员不注意安全性，仍然存在 SQL 注入的风险。例如，如果开发人员在使用 ORM 时没有正确验证和处理用户输入数据，或者在自定义查询时直接拼接字符串而不使用参数化查询，那么仍然可能受到 SQL 注入攻击。
+
+	因此，尽管 ORM 可以降低 SQL 注入攻击的风险，但开发人员仍然需要注意编写安全的代码，包括正确验证和处理用户输入数据，以及使用参数化查询等安全技术来防止 SQL 注入攻击。
+
+
+15. UML的class diagram和ERD(數據庫在用的...)有甚麼差別?
+	UML class diagram 是針對"物件導向"的設計方法工具, ERD是針對資料庫資料關聯的設計方法工具, 不可搞混!!
+
+16. 開始看資訊管理
+
+17. 複習了CMMI, ITSM, 
+
+18. 複習了敏捷開發的一些常見框架: scrum, rad(rapid application development), xp(extreme programming, 極限編程)
+
+19. 其實大多數的敏捷開發方法都差不太多, 都會強調迭代, 持續改進, 只有些關鍵稍有不同, 例如scrum強調將功能的優先級別作為劃分, 在每次迭代週期優先處裡優先級別較高的任務. RAD則是強調每次迭代都更新一個新的版本原型, 直到無數次迭代後慢慢接近客戶所需為止. 而極限編程強調
+	這裡有個比較scrum和xp的文章:
+		https://www.mountaingoatsoftware.com/blog/differences-between-scrum-and-extreme-programming
+
+20. PSP(personal software process), TSP(team software process)又是甚麼鬼東西??
+	PSP:
+		a. 過程管理
+		b. 大小估計
+		c. 時間估計
+		d. 質量管理
+
+	TSP:
+		a. 團隊協作
+		b. 質量管理
+		c. 風險管理
+		d. 過程管理
+
+21. 通常會把PSP/TSP和CMM, CMMI放在一起說, CMM和TSP, PSP一起討論並執行...
+
+22. 軟體開發通常又分輕量級開發和重量級開發(這個大概知道就好了...):
+	###重量级（Heavyweight）：
+
+		重量级开发方法通常指的是具有复杂结构和完整功能的开发框架或方法。这种方法通常具有严格的规范和标准，涵盖了全面的开发过程，包括需求分析、设计、开发、测试、部署和维护等各个阶段。
+		重量级开发方法需要较长的时间来规划和实施，通常需要大量的人力资源和资金投入。它们适用于复杂的软件项目，如企业级应用、大型系统或关键业务应用等。
+		例子：传统的瀑布模型、RUP（Rational Unified Process）、CMMI（Capability Maturity Model Integration）等。
+
+	###轻量级（Lightweight）：
+
+		轻量级开发方法强调简单、灵活和迭代的开发方式，通常更加注重快速交付和持续改进。这种方法通常更加灵活，能够快速响应需求变化和用户反馈。
+		轻量级开发方法通常简化了开发过程，去除了一些繁琐的规范和流程，注重于核心功能的实现和用户价值的提供。它们适用于小型团队或项目，如创业公司、敏捷开发团队等。
+		例子：Scrum、XP（Extreme Programming）、Lean Software Development、Kanban 等。
+
+	
+
+2024/3/31
+1. 開始看系統專案管理, 甚麼是系統轉換(System Conversion, 系統轉移)??
+	其實就是把舊系統的數據以及業務功能在新系統上實現, 過程可能會牽涉數據清洗, 數據轉換, 功能轉換等等等...
+	主要有三種轉換方式.
+	a、直接转换(pilot operation))：
+		在确定新的管理信息系统运行准确无误时，在某一时刻终止现行系统，启用新的管理信息系统。这种转换方式费用低，方法简单，但风险大。适合于处理过程不太复杂的小型简单系统。
+	b、并行转换(parallel operation)：
+		新的管理信息系统和现行系统并行工作一段时间，在新的管理信息系统运行准确无误时，替代现行系统。这种转换方式有利于减轻管理人员心理压力、安全性较好，但费用高，两个系统的数据一般不具备可比性。适合于处理过程复杂、数据重要的系统。
+	c、分段转换(phased operation)：
+		是直接转换和并行转换的结合，分阶段将新的管理信息系统的各个子系统替代现行系统。这种转换方式心理、安全性较好，但费用高。适合于处理过程复杂、数据重要的大型复杂系统。一般多采用这种方式进行系统转换。
+	d. 試驗轉換(pilot operation, 與直接差不多, 有時候當成同一個):
+		试点运营的基本思想是先在一个较小的范围内，例如某个特定的部门、项目组或者地区，部署新系统并让其运行一段时间，以验证系统的可行性、稳定性和有效性。確定OK在一次全面更換至新系統.
+
+2. RUP又是甚麼? 他又是一種軟體開發模式, 主要用於大型軟件開發(大型組織比較會採用), 將大系統切割成小專案進行迭代開發, 有點像是scrum或敏捷開發, 區別在哪??
+	以下是一些參考:
+		https://blog.csdn.net/Ideality_hunter/article/details/78615312
+		https://medium.com/@ArthurKC/%E8%BB%9F%E9%AB%94%E9%96%8B%E7%99%BC%E6%A8%A1%E5%9E%8B-ba9e49bef880
+
+3. 關於一些軟體開發方法的歷史:
+	https://medium.com/@ArthurKC/%E8%BB%9F%E9%AB%94%E9%96%8B%E7%99%BC%E6%A8%A1%E5%9E%8B-ba9e49bef880
+
+4. 關於RUP與agile的差異, 感覺主要就是, RUP雖然也是迭代開發, 但管理方式更傾向於傳統的瀑布式開發, 每個迭代階段都有"分析", "設計", "實現", "測試", "部屬", 較為嚴格的遵守流程與規範文件, 相反的agile就是強調彈性與靈活度為主, 而且管理方式是每個team自己管理自己, 通常適用於中小型項目或者具有較高不確定性的項目.
+
+5. 當一個系統大致開發完畢後, 需要進行測試, 高考考試大綱提到的測試項目如下:
+	a. 接受度測試
+	b. 系統整合測試
+	c. 自行統整合測試
+	d. 黑(白)箱測試
+	e. 安全性測試
+
+6. 但是其他學習資源有提到不大一樣的測試項目(雖然基本大同小異)
+	https://ithelp.ithome.com.tw/articles/10251509
+
+	裡面提到的流程大概如下:
+		a. Unit Test(單元測試)
+		b. Integration Test(整合測試)
+		c. System Test(End-to-end Test, 系統測試)
+		d. Accentance test(接受度測試)
+
+7. 又有另一個學習資源提到不大一樣的測試項目(也是大同小異)
+	https://ithelp.ithome.com.tw/articles/10078821
+	
+	裡面提到的流程大概如下:
+		a. Unit Test(單元測試)
+		b. Integration Test(整合測試)
+		c. System Test(End-to-end Test, 系統測試)
+		d. Stress test(壓力測試)----其實就測試系統在甚麼條件下能正常運作, 若超出這個條件系統便會不穩定甚至崩壞
+		e. Accentance test(接受度測試)
+	
+	
+8. 感覺資訊管理大致內容看的差不多了, 開始看歷屆題目, 發現歷屆題目考題很刁鑽偏門啊......A
+
+9. 到底甚麼是DevOps(考題有出現)?? 這個名詞在我的軟體面試上一直出現...
+	他其實就是一種軟體開發方式或說文化吧, "Dev(development)"是開發, "Ops(Operations)"是運維(或運營), 強調自動化部屬(CI/CD)
+	一下是一些參考:
+		https://zhuanlan.zhihu.com/p/562036793
+		https://ithelp.ithome.com.tw/articles/10184557#Culture
+
+10. SRE又是甚麼?? 和DevOps的區別是甚麼??
+	有些討論如下(但不是很準確):
+		https://www.zhihu.com/question/355429227
+		
+	chatgpt 的說明(感覺比較能自圓其說):	
+		DevOps和SRE都是旨在提高软件服务可靠性和效率的方法论，但它们在重点和实践上有一些区别：
+
+			####重点不同：
+
+				DevOps更侧重于推动开发团队和运维团队之间的协作和整合，通过持续交付和自动化等方式提高软件交付的速度和质量，以满足快速变化的业务需求。
+				SRE更侧重于提高服务的可靠性和稳定性，通过可靠性工程和自动化运维等方式确保服务的高可用性和高性能，以满足用户的服务水平协议（SLA）。
+
+			####方法和实践不同：
+
+				DevOps强调文化、流程和工具的整合，鼓励开发和运维团队共同负责整个软件交付过程，以实现快速、可靠的交付。
+				SRE强调工程化方法和实践，注重量化可靠性和持续改进，通过监控、SLI/SLO/SLA制定、容量规划等手段来提高服务的可靠性。
+
+			####团队组成和角色不同：
+
+				DevOps团队通常由开发人员和运维人员共同组成，强调跨职能团队的协作和共同责任。
+				SRE团队通常由具有软件工程和系统运维经验的工程师组成，强调工程化方法和运维自动化。
+			####目标不同：
+
+				DevOps的目标是实现快速、可靠的软件交付，促进业务的持续创新和竞争优势。
+				SRE的目标是确保服务的高可靠性和高性能，最大程度地满足用户的需求和期望。
+
+11. 身為專案管理人員, 你要會算預算, 會管理預算, 學會軟體相關的預算如何計算...
+
+
+12. 開始念"程式設計"
+
+13. 看一些c++, c++中有個概念叫做stream, 甚麼意思?
+	以下有個非常重要的概念, 強調了輸出輸入本身不是c/c++的語言固有的東西, 是compiler提供的
+		https://blog.csdn.net/Lee_Shuai/article/details/53313988
+
+14. 回憶了一下c++的namespace, 其實就是為了方便, 例如std::cout, 是iostream提供的, std就是namespace
+
+15. 物件導向程式設計有個很重要的概念叫做"工廠模式"(不是python才有, 大部分語言都有), 主要目的是因為如果物件的創造過程本身很複雜, 而程式設計師不希望其他人在使用創建對應的物件時碰到那些複雜的東西, 那工廠模式就登場了, 以下有一個很清楚的知乎說明(仔細看大寬寬的回答)
+	https://www.zhihu.com/question/42975862
+
+16. 看到c++的class, 太累了, 先睡了...
+				
+
+
+
+
 
