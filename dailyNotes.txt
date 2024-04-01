@@ -9508,12 +9508,19 @@ https://www.twblogs.net/a/5d4d2121bd9eee5327fc5040
 
 2024/3/18
 1. 研究軟體系統的一些常見架構: 分散式架構, 主從式架構, 服務導向架構(SOA)
+
 2. CDN是甚麼?
+
 3. 關於分散式架構的一些較為細緻的說明:
 	https://rickhw.github.io/2018/06/18/DistributedSystems/Gossip-in-Distributed-Systems/
 4. 甚麼是微服務架構(microservices)? 他是有SOA演變而來
-5. SOA和RPC, 分散式系統, 有甚麼關係啊?
-	https://www.gss.com.tw/eis/55-eis52/215-soa#chapter308
+
+5. SOA和RPC(Remote Procedure Call), 分散式系統, 有甚麼關係啊?
+	有個簡單的說明:
+		https://www.gss.com.tw/eis/55-eis52/215-soa#chapter308
+
+	我們先把RPC的概念說清楚, 首先RPC是在一個正在記憶體中執行的function調用另一個正在另一個記憶體區塊執行中的function的技術, 他是IPC(Inter-Process Communication, 進程間通訊)的實作, 由於進程間通訊有限制, 所以需要IPC, 而RPC便是其最廣泛的實作, 被廣泛運用在分散式系統
+
 6. IPC, RPC, 分散式系統, 有甚麼關係??
 	https://morosedog.gitlab.io/technology-20200229-tech-6/
 	關於IPC, 我覺得比較好的一個解釋:
@@ -9524,8 +9531,13 @@ https://www.twblogs.net/a/5d4d2121bd9eee5327fc5040
 	https://www.zhihu.com/tardis/zm/art/426303359?source_id=1005
 	https://www.zhihu.com/question/41609070
 7. 關於分布式系統CAP理論,一個比較完整的解釋:
-	https://zhuanlan.zhihu.com/p/33999708
-8. 資料庫的ACID:
+	一個討論如下:
+		https://zhuanlan.zhihu.com/p/33999708
+	
+	CAP其實就是分散式架構中不同主機(或是不同分布點)之間的通訊的三大性質{Consistency, Available, Partition tolerance}, C, A, P只能同時最多有兩個成立, 不可能同時三個都成立, 這是分散式系統中一個重要的理論基礎, Consistency就是不同分布點之間的資料同步性, Available就是A分布點獲得B分布點資料的可行性, Partition tolerance就是分散式系統的分散能力, 例如A分布點壞掉的話, B分布點還能正常運作的能力
+
+
+8. 資料庫的ACID(Atomicity, Consistency, Isolation, Durability), 其實就是transaction應該遵守的一些原則:
 	https://lance.coderbridge.io/2021/04/24/short-what-is-acid/
 
 9. 甚麼是物件導向設計, 瀑布式開發
@@ -9670,7 +9682,7 @@ https://www.twblogs.net/a/5d4d2121bd9eee5327fc5040
 
 7. 為何多對多的table中間需要一個連接用的table
 
-8. 關於資料庫的研讀, 我看到第四章的56頁
+8. 關於資料庫的研讀, 我看到第四章的55頁
 
 9. sql 語法練習50道題目
 	https://hackmd.io/@_7vFEnkKTve5g-aFhT8EvQ/Sy-H0QeWr
@@ -10217,6 +10229,102 @@ https://www.twblogs.net/a/5d4d2121bd9eee5327fc5040
 	https://www.zhihu.com/question/42975862
 
 16. 看到c++的class, 太累了, 先睡了...
+
+
+2024/4/1
+1. 開始看資料庫應用, 多對多中間需要差一個輔助表(一般情況下, 無法兩個表直接向聯來達到多對多的效果)
+
+2. 資料庫中的disjoint和overlap是甚麼? disjoint constraint, overlap constraint
+
+3. 在集合論中, 有個概念叫做"disjoint sets", 是集合論中一個很初級的概念, 就是"互斥集", 兩個集合中的元素都不一樣, 就是說這兩個集合的元素沒有交集, 例如: A = {1, 2, 3, 4}, B = {5, 6, 7, 8}, A和B disjoint(互斥), 或者說A和B為互斥集(disjoint sets)
+	以下是關於集合論中的資料結構應用可能會使用到的參考:
+		https://web.ntnu.edu.tw/~algo/Set.html
+
+4. 那甚麼是overlap?? 在集合論中有個概念叫做"overlapping joint", 其實就是"有交集的集合", 例如A = {1, 2, 3, 4}, B = {3, 4, 5, 6}, A和B的交集為{3, 4}, A和B overlapping(有交集), 或者說A和B為overlapping sets
+
+5. 回到資料庫的討論, 所以很自然而然的, disjoint constraint表示兩個表應該為互斥, 
+
+6. ER Diagram 有分Chen's notation 與 Crow's Foot(烏鴉腳, 其實就是你熟悉的那種圖) Engineering style, 兩種都有人在用, 參考如下:
+	https://www.lucidchart.com/pages/er-diagrams
+
+7. 複習資料庫正規化(主要就是第一正規化, 第二正規化, 第三正規化)
+	1. 第一正規化: 把可以拆分的欄位拆出, 且不能有重複的資料(一樣)的資料, 也就是需要有primary key
+	2. 第二正規化: 部分相依於primary keys的欄位必須獨立出去
+	3. 第三正規化: 欄位本身不相依於primary keys, 但她所相依的欄位卻完全相依於primary keys, 這樣的欄位也要獨立出去
+	重要的說明範例:
+		https://stackoverflow.com/questions/723998/what-are-database-normal-forms-and-can-you-give-examples/724032#724032
+
+8. 甚麼是BCNF, 他是3NF的嚴格版本, 但感覺幾乎和3NF一樣?? 到底區別在哪?? 關鍵在於"candidate keys"的概念(其實就是primary keys有可能很多種組合的可能..."
+
+9. 要搞懂BCNF, 需要三個知識, 
+	1. "candidate keys(候選鍵)"----可以唯一決定record的欄位集合(可能有很多種),不接受冗餘欄位, candidate keys 為super keys的子集合
+	2. "super keys(超鍵)"----可以唯一決定record的欄位集合(可能有很多種), 接受冗餘欄位.
+	3. "functional dependency(函數相依)"---- Y依賴X, 記做 X -> Y
+	4. "closure(閉包)"----一樣是集合論的概念, 假設一個集合S裡的元素, 經過F運算後仍然在該集合中, 則我們稱"這集合S在F運算下閉合(closed)", 當一個集合 S 在某個運算下不閉合的時候，我們通常可以找到包含 S 的最小的閉合集合。這個最小閉合集合被稱為 S 的（關於這個運算的）閉包(closure)!!!!
+		參考:
+			https://zh.wikipedia.org/zh-tw/%E9%97%AD%E5%8C%85_(%E6%95%B0%E5%AD%A6)
+
+10. 在已知依賴關係的情況下candidate keys的找法(記住, candidate keys是super keys的最小子集合, 當然可能有很多個, 我們把所有的super keys找出, 自然能發現candidate keys)
+	以下是一些題目和解答參考:
+		https://stackoverflow.com/questions/21224354/finding-candidate-keys-for-given-relation
+		https://stackoverflow.com/questions/2718420/candidate-keys-from-functional-dependencies
+
+	Question1. R = {A, B, C, D, E}, function dependencies are: A->B, ED->A, BC->E, 則candidates keys為{A, C, D}, {B, C, D}, {C, D, E}
+	
+		Solution:
+			其實很簡單, 一步一步做就很清楚了
+			首先找出所有沒有考慮相依性的superkeys(其實就只有R本身而已)
+			{A, B, C, D, E} 
+			在找出只考慮一個相依性的superkeys
+			{A, C, D, E} (在這裡我們替除了B, 因為A->B, B依賴A)
+			{B, C, D, E} (在這裡我們替除了A, 因為ED->A, A依賴ED)
+			{A, B, C, D} (在這裡我們替除了E, 因為BC->E, E依賴BC)
+			接著按照上面的結果, 再多考慮一個相依性的superkeys
+			{C, D, E} (在這裡我們從{A, C, D, E}出發, 考慮了ED->A)
+			{B, C, D} (在這裡我們從{B, C, D, E}出發, 考慮了BC->E)
+			{A, C, D} (在這裡我們從{A, B, C, D}出發, 考慮了A->B)
+			接下來無法再依照相依性剔除任何元素了...所以superkeys為以下:
+			{A, B, C, D, E}, {A, C, D, E}, {B, C, D, E}, {A, C, C, D}, {C, D, E}, {B, C, D}, {A, C, D}
+			candidate keys為最小的子集合, 所以如下:
+			{C, D, E}, {B, C, D}, {A, C, D}
+
+	Quesiton2. R = {A, B, C, D}, function dependencies are: D->B, AB->D, AB->C, C->A, 則candidates keys為{C, D}, {A, B}, {B, C}, {A, D}
+
+		solution: 
+			一樣, 與上一題一模一樣的方式,找出所有superkeys
+			{A, B, C, D}
+			{A, C, D} (根據D->B) 
+			{A, B, C} (根據AB->D)
+			{A, B, D} (根據AB->C)
+			{B, C, D} (根據C->A)
+			{C, D} (根據D->B, C->A)
+			{A, B} (根據AB->D, AB->C)
+			{B, C} (根據AB->D, C->A)
+			{A, D} (根據AB->C, D->B)
+			{A, B} (根據AB->C, AB->D)
+			{C, D} (根據C->A, D->B)
+			剔除重複的狀況後, 得到candidate keys為
+			{C, D}, {A, B}, {B, C}, {A, D}	
+
+11. 有了以上的預備知識, 我們接著看BCNF, 以下有個資料對BCNF的定義有個較為清晰的定義:
+	https://blog.build-school.com/2022/07/22/%E8%B3%87%E6%96%99%E5%BA%AB%E6%AD%A3%E8%A6%8F%E5%8C%96%E7%AD%86%E8%A8%98/#boyee-codd%e6%ad%a3%e8%a6%8f%e5%8c%96%ef%bc%88bcnf%ef%bc%89
+	另一個討論我覺得有參考價值:
+		https://stackoverflow.com/questions/8437957/difference-between-3nf-and-bcnf-in-simple-terms-must-be-able-to-explain-to-an-8
+
+12. BCNF實在搞不懂...浪費太多時間了, 放棄了...
+
+13. 資料庫的索引(index)為何可以增加搜索數據的速度, 其實不難理解, 資料存入資料庫若是沒有任何資料結構, 那搜索將採用線性搜索, 也就是時間複雜度是O(n), 如果做了B-Tree的索引結構, 那搜索速率自然提升到O(log(n)) 
+	補充: 雖然索引(index)會使搜索效率提升, 但是insert, 或update的速率是會下降的, 因為他需要先找到, 才能插入或update, 但是沒做索引的話, 直接插入就好, 不用理會index的結構到底如何
+
+	以下是一些參考:
+		https://blog.gmifly.tw/2020/02/23/%E4%BB%80%E9%BA%BC%E6%98%AF%E5%BB%BA%E7%AB%8B%E7%B4%A2%E5%BC%95/
+		https://ithelp.ithome.com.tw/articles/10341649	
+
+
+13. 有了以上這些資料庫的基本知識後, 開始練習設計資料庫
+
+14. 
+	
 				
 
 
