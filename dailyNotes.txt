@@ -9900,7 +9900,8 @@ https://www.twblogs.net/a/5d4d2121bd9eee5327fc5040
 8. 大概看完hash了, 開始看dynamic programming!!!! 以下有個知乎說明, 清晰的點出了, dynamic programming和greedy的策略差異性
 	https://www.zhihu.com/question/23995189
 
-9. 看完以上的解釋後, 感覺dynamic programming似乎和kijdstra algorithm有點像啊...兩者不知有甚麼關聯
+9. 看完以上的解釋後, 感覺dynamic programming似乎和Dijkstra algorithm有點像啊...兩者不知有甚麼關聯
+	其實兩個不一樣, 都是找最佳路徑, 但實際上Dijkstra採用"貪婪(greedy)"策略, 而不是dynamic programming
 
 
 
@@ -10324,10 +10325,96 @@ https://www.twblogs.net/a/5d4d2121bd9eee5327fc5040
 13. 有了以上這些資料庫的基本知識後, 開始練習設計資料庫
 
 14. 
+
+
+2024/4/2
+1. 開始看"資料結構", 繼續之前沒有看完的dynamic programming
+	之前還沒看完的參考:
+		https://www.zhihu.com/question/23995189
+
+2. 我們來比較dynamic programming和greedy的使用時機和他們甚麼時候會fail
+	找了網路上的一些參考, 竟然找不到嚴謹的歸納...可見這算是一個沒有結論的問題, 暫時只能從經驗法則出發...
+	但還是有些文章有些價值:
+		https://www.freecodecamp.org/news/when-to-use-greedy-algorithms/
+
+3. dynamic programming和greedy, 常見的一些演算法分類:
+	贪婪算法（Greedy Algorithms）：
+		Prim's 最小生成树算法（Prim's algorithm for Minimum Spanning Tree）
+		Kruskal 最小生成树算法（Kruskal's algorithm for Minimum Spanning Tree）
+		Dijkstra 单源最短路径算法（Dijkstra's algorithm for Single Source Shortest Path）
+		贪心背包算法（Greedy Knapsack Algorithm）
+		最小硬币找零问题（Minimum Coin Change Problem）
+
+	动态规划算法（Dynamic Programming）：
+		Floyd-Warshall 全源最短路径算法（Floyd-Warshall algorithm for All Pairs Shortest Path）
+		背包问题（Knapsack Problem）
+		最长公共子序列问题（Longest Common Subsequence Problem）
+		编辑距离问题（Edit Distance Problem）
+		最长递增子序列问题（Longest Increasing Subsequence Problem）
 	
 				
+4. 甚麼是最小生成樹(Minimum spanning tree, MST)??
+	其實"樹(tree)"是"無向圖(graph)"的一種, 只要沒有環的聯通圖就是樹了.
+	而最小生成樹其實就是, 在所有的V都有經過(或者是說採到)的情況下, E的權重總和最短的一棵樹, wikipedia有蠻充分地解釋的:
+		https://zh.wikipedia.org/zh-tw/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91
+
+5. 對大多數的演算有了概念後, 開始嘗試使用c語言和c++來實現這些資料結構和演算法.
 
 
+6. 在C語言中, int *testArray = malloc(num*sizeof(int)); // malloc returns a pointer to the first element of the array!!!  
+
+7. 看了一下C++, 幹!! 怎麼那麼多語法莫名奇妙啊...沒有一個統一的規則...以下有個對C++語法複雜的討論:
+	https://www.zhihu.com/question/264197435
+
+8. 還是得看c++, 關於c++的構造函數, 其實就相當於python的__init__, class初始化一個instance的時候所建立的一些初使變量, 以下有三種構造函數的寫法:
+	https://zhuanlan.zhihu.com/p/168787937
+
+9. 在C++中, 甚麼是"模板(template)"? 該如何使用?? 其實模板的本質就是要讓參數的型態可以在使用中的時候自由決定, 原始的c語言, 函數或是類的變數型態, 是在一開始宣告的時候就要確定寫好, template讓你可以在要使用的時候自行決定要用哪種變數型態! 有他方便的地方.
+	以下有一個介紹, 我覺得算是說明的較為清楚的:
+		https://vinesmsuic.github.io/c++-template/
+
+	其實模板在c++中使用的聽廣泛的, <vector>就是一個典型的範例, 例如以下:
+		std::vector<int> vec(3);
+	std::vector就是典型的"模板類", 指定int進去作為變數的型態!
+
+10. 在c++中, class test在創建instance的時候, 為何有時是test obj;, 有時是test obj(); 其實就是無參數的構造函數VS有參數的構造函數.
+
+11. 在c語言中在函數中以函數為參數時候, 要注意幾件事情:
+	First of all:
+		A函數的名稱在c code裡面是"指向A函數的指針"
+		所以...
+		int resultFunct(XXXXXXX) {
+		}
+		
+		int main() {
+			resultFunct(testFunct);
+		}
+
+		我們在resultfunct裡面傳遞的testFunct, 實際上是testFunct的指針,
 
 
+	Second of all: 
+		int *testFunct() {
+			// test
+		}
 
+		testFunct本身表示函數返回一個指向int的指針!
+
+		所以你不能把int *funct()當成函數參數(除非你這個funct()函數本身就是要返回指針, 但在這個範例中我們要他返回普通的int), 例如以下錯誤的範例
+		int resultFunct(int *funct()) {
+			// test
+		}
+
+	正確的寫法應該是
+		int resultFunct(int (*Funct)()) {
+		}
+
+		翻譯成人話就是, testFunct取值後是一個function, 且他返回一個int.
+
+
+12. c++還有一種特性叫做"元編程(meta-programming)", 可以稍微了解一下(不用太花時間, 這個太難了), 以下有個參考, 解釋了何謂meta-programming:
+	https://www.zhihu.com/question/23856985
+
+13. 開始使用c語言去寫資料結構, 正寫道linked list, 發現需要double star **!!!!
+	重要參考:
+		https://hackmd.io/@coherent17/Sk4fomSkt
