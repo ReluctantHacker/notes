@@ -10418,3 +10418,172 @@ https://www.twblogs.net/a/5d4d2121bd9eee5327fc5040
 13. 開始使用c語言去寫資料結構, 正寫道linked list, 發現需要double star **!!!!
 	重要參考:
 		https://hackmd.io/@coherent17/Sk4fomSkt
+
+
+2024/4/3
+1. Linked list c language reference:
+	https://alrightchiu.github.io/SecondRound/linked-list-xin-zeng-zi-liao-shan-chu-zi-liao-fan-zhuan.html	
+
+2. 有關c語言的一些筆記
+
+3. 在c語言裡面, "**"會使用在你想要修改"指針指向哪個地址的時候", "*"則是使用在你想要修改"該指針所指向的地址的值", 這很重要的概念, **會用在linked list 的插入功能(包含頭部插入, 尾部插入, 甚至要delete特定的值都會用到)
+
+4. Linked list在實做的時候有幾個重要的概念
+	a. linked list的首個資料位址(head的指針)代表了這個linked list(這個概念與array有異曲同工之妙)
+	b. 你要可以實作從頭插入(可以用在stack), 或是從尾部插入(可以用在queue), 
+	c. 每一個node都要包含以個data值和一個指向下一個node的指針
+		typedef struct Node {
+			int data;
+			struct Node *next;
+		} Node;
+	d. 初始化的時候, 要先有個NULL, 這個NULL隨著你的插入, 要一直擺在最後一個, 它代表了Linked list的終點.
+
+5. 在c語言中, 有個很重要的語法概念要知道
+	//以下寫法是錯誤的
+	typedef struct testStrc {
+		int a;
+		int b;	
+	} testStrc;
+
+	int main() {
+		testStrc *s; // 這裡宣告s的指針, 但是並沒有初始化s, 只有s指針, 想要初始化s必須用以下兩種方式
+		s->a = 11111;
+	}
+
+	//正確方案1
+	typedef struct testStrc {
+		int a;
+		int b;		
+	}
+
+	int main() {
+		testStrc s; // 這裡宣告s, 並不是指針, 而是真的s testStrc, 所以s的結構有被初始化
+		s.a = 11111; // 可行!
+	}
+
+	//正確方案2
+	typedef struct testStrc {
+		int a;
+		int b;
+	}
+	
+	int main() {
+		testStrc *s = (testStrc *)malloc(sizeof(testStrc));  // 這裡宣告s雖然是指針, 但是malloc幫我們把s指向的結構建立, 所以有初始化
+		s->a = 11111; //可行!
+	}
+
+6. stack的編程(array方法)重點:
+	A. 要完全表達一個stack, 需要兩個元素, 一個array, 一個top(最後插入的元素的位置)
+	B. Push, Pop, 一個top++(順便把一個data加入array), 一個top--
+	C. Top的初始化的時候要為-1, 這樣剛好加入一個元素後剛好top為0, 從array的第一個元素開始算
+
+7. 
+
+
+
+2024/4/4
+1. stack看完後, 開始看前順, 後序, 中序, 之後開始進到queue
+
+2. 記住重點
+	前序"DLR",
+	中序"LDR",
+	後序"LRD"
+	看D的位置來決定何謂前後
+
+3. 在四則運算中, D表示運算符號, L, R表示數字
+
+4. 中序式, 前序式, 後序式...以及他們與binary tree的關係(Very important!!!)
+	reference:
+	/*
+	https://magiclen.org/arithmetic/
+	*/
+
+5. 中序式, 前序式, 後序式, 和樹的關係, 有幾個重點, 
+	a. 首先要與樹的概念作結合, 每個樹都可以這三種traversal
+	b. 給你traversal結果, 以及他所對應的Preorder+Inorder結果, 或是PostOrder+Inorder, 要能回推他的樹結構!
+		例如, 有棵樹, Traversal結果如下:
+			Preorder Traversal: ABCDEFGHI
+			Inorder Traversal: BCAEDGHFI
+			
+		問你樹的結構如何? 其實解法很簡單, 我們可以無限遞迴以下步驟, 
+		1. 從Preorder的定義可以知道ABCDEFGHI中, A必定是root, 
+		2. 從Inorder的定義可以知道BC|A|EDGHFI, 其中A我們已經知道是root了, 所以可以拆分成佐子樹為Inorder traversal 為BC, 右子樹的Inorder Traversal 為 EDGHFI
+		3. 從2的結果, Preorder也可以拆分成A|BC|DEFGHI, 其中BC為左子樹, DEFGHI為右子樹, 接著回到步驟1. 對得到的子樹木做一樣的拆分
+	d. 若是只有Preorder+PostOrder的組合, 是無法得知樹的結構的, 因為可能會有很多種可能組合, 我們可以3個節點的tree試試看就知道了
+		例如, Preorder: ABC, PostOrder: CBA
+
+6. 中序轉後序需要1個stack, 
+	1. 從前面往後面scan, 
+	2. scan到數字直接丟result, 
+	3. scan到運算符就和stack的top比較優先級, top優先級別較高(>)則top丟到result, 直到top優先級別沒有比較高(<=),在把scan到運算符號丟的stack,
+	4. 若是stack為空則等於優先級別最低, 直接把scan到運算符號丟入stack 
+
+7. 後序的計算結果演算法, 一樣需要一個stack
+	1. 從前面scan,
+	2. scan到數字就丟進stack
+	3. scan到運算號, 則把stack中的兩個數字pop出來進行運算, 之後把相加結果在放入stack. 周而復始.
+
+8. 中序轉前序較複雜, 需要2個stack
+	1. 從後面往前面scan,
+	2. scan到數字, 直接丟進result_stack
+	3. scan到運算符號, 則和assistant_stack的top比較優先級(assistant_stack空時則視為級別最小), 若是較大(>)則丟入assistant_stack, 若是較小(<=)則pop出來, 並丟入result_stack, 最後在把scan到到的算符丟入assistant_stack中, 周而復始, 最後result_stack pop出來, 其順序結果便會是preorder
+
+9. 前序的計算結果演算法, 一樣需要一stack (與後序計算基本一樣)
+	1. 由後面往前面scan
+	2. scan到數字就丟進stack
+	3. scan到運算號, 則把stack中的兩個數字pop出來進行運算, 之後把相加結果在放入stack. 周而復始.
+
+10. 開始看queue, queue除了大家都知道的定義以外, 實作上還有個比較重要的概念, 就是:
+	1. stack是push和pop都在頭一個地方!(head或者我們可以說top)
+	2. queue則是push在尾巴, pop在頭部!, 理論上我們要記錄頭部與尾部的位置
+
+
+
+11. 來不及了, 開始看"專案管理", 上次看到"身為專案管理人員, 你要會算預算, 會管理預算, 學會軟體相關的預算如何計算"
+
+12. 關於cocomo(Constructive Cost Model), 軟體開發所需成本和預算的計算模型, 他的一些參數是根據統計學得到的...
+	主要有3個公式如下:
+		a. Effort = a * (LOC)^b * EAF,         其中Effort簡寫可以表示為E, 單位為"人月(人數*月數)", LOC為(lines of code, 也可以叫做SLOC(source lines of code)), 而EAF則是Effort Adjustment Factor(在中級模型及詳細模型才有這個因子), 他是一個開發內容以外的影響因素集合體, 考慮了工具的使用、开发环境、人员素质等
+
+		b. Duration = c * (Effort)^d,          其中Duration簡寫可以表示為D, 我們可以發現, 開發所需時間為Effort的次方
+
+		c. People = Effort/Duration,           其中People簡寫可以表示為P
+
+	在wikipedia裡面有較為詳細的說明
+
+13. cocomo有三個層級,
+	第一層, 基本Cocomo, 使用軟體初期開發, 不考慮EAF
+	第二層, 考慮EAF
+	第三層, ...考慮到了所有開發階段的情況
+
+14. 甚麼是"成本效益分析(Cost-benefit analysis)?? 與COCOMO不同, Cocomo單純計算軟體的工作量量和所花費的可能時間, 人力需求
+
+15. 要理解"成本效益分析", 首先要知道, 這個東西是經濟學的概念, 他不是軟體開發相關的東西(不是技術性的), 但是做為一位優秀的軟體專案管理人員, 這個簡單的計算還是要會的, 有幾個概念要先知道, 才方便接下來更進一步的計算:
+	a. 折現率---------- 你把錢放著不動(你可以方銀行, 也可以怎樣怎樣的因素考慮進去), 你的錢自動放大的比例, 例如100萬, 明年便105萬, 我們稱作折現率5%, 你的錢變成1.05倍
+		有個折現率的說明(可以參考北洋投教的說明):\
+			https://www.zhihu.com/question/301077862
+
+	b. 現值(present value)-------------就是把未來的錢的大小(面值), 按照折現率換成現在的錢大小
+
+	c. 淨現值(net present value)------------就是我們主要想計算的東西, 他就是把所有的錢按照各自的折現率, 計算回現值, 再減去所花費的錢(一樣是現值), 所得到的結果(其實也就是到底賺多少).  也可說是: 淨現值係指一個投資項目的全部現金流入的折現值和全部現金流出的折現值之間的差額.   所謂淨現值係指一個投資項目的全部現金流入的折現值和全部現金流出的折現值之間的差額。 如果NPV>0，說明該投資的現金流入現值大於現金流出現值，其結果可以增加淨利。 淨現值法要求比較各個可行投資方案的淨現值，並選擇可達成淨利最大化的投資項目。 
+
+16. 進度績效指標SPI(Schedule performance index), 與成本績效指標CPI(Cost performance index), 是甚麼? 怎麼算?? 
+	a. SPI其實就是專案的完成度, SPI=實際完成/預計完成
+	b. CPI其實就是專案的花費程度, CPI=實際花費/預計花費 
+
+	以下有個文章講的很清楚(他裡面有包含專案管理其他一些需要會的一些東西!)
+		https://www.projectclub.com.tw/hard-power/project-management/1569-evm-2.html
+
+17. 發現一個專案管理教學影片, 裡面的內容我覺得我可以看一下, 或許有命題大綱沒有提到的部分:
+	https://www.youtube.com/watch?v=fZgeSmMvgp0&list=PLOpbrT9Fr3o8aOenSUYDiqyfeqJTNflzZ&ab_channel=Wen-derYu
+	https://www.youtube.com/watch?v=Muc7qbsiedg&list=PLcrEJ2wkjUA1F1sbhPuOhHsR1FXTrO0FH&ab_channel=%E9%95%B7%E5%AE%8F%E5%B0%88%E6%A1%88
+	https://www.youtube.com/watch?v=qSDj8daWdyQ&list=PLyM935cBtWkUXGCwy8yGqdxjof6cvjcYE&index=1&ab_channel=%E5%8A%89%E5%A3%AB%E8%B1%AA
+
+17. 還有SPI和CPI, ...怎麼感覺和KPI大有關係? 
+
+
+
+	
+
+
+
