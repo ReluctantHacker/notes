@@ -10579,11 +10579,100 @@ https://www.twblogs.net/a/5d4d2121bd9eee5327fc5040
 	https://www.youtube.com/watch?v=Muc7qbsiedg&list=PLcrEJ2wkjUA1F1sbhPuOhHsR1FXTrO0FH&ab_channel=%E9%95%B7%E5%AE%8F%E5%B0%88%E6%A1%88
 	https://www.youtube.com/watch?v=qSDj8daWdyQ&list=PLyM935cBtWkUXGCwy8yGqdxjof6cvjcYE&index=1&ab_channel=%E5%8A%89%E5%A3%AB%E8%B1%AA
 
-17. 還有SPI和CPI, ...怎麼感覺和KPI大有關係? 
+18. 還有SPI和CPI, ...怎麼感覺和KPI大有關係? 
 
 
 
+2024/4/5
+1. 繼續讀"資料結構", 看到queue的實作, Queue其實實作上與stack 差不了太多, 只有幾點要注意
+	a. stack只有一個位置的資訊要維護, 就是top(或是head), queue有兩個位置的資訊需要維護, front, rear
+	b. stack 中 push, 和pop都是在top(或head)的位置, 但是queue中push在rear的位置, pop則是在front的位置
+	c. 跟stack一樣, 你可以使用array或是linked list實作
+	d. 一顆full binary tree, 他的高度H, 則他的node數為: (2^H -1).......要熟
+
+2. 樹的實作, 一般的樹基本可以使用linked list來存, 但是我們一般更常把tree化成binary tree, 用binary tree來進行操作, 所以binary tree至關重要
+
+3. 關於Binary  tree有幾個重要的特點
+	a. binary tree的子樹有左右之分, 一班的樹的子樹是沒有這種區別的, 子樹就只是單純的子樹
+	b. binary tree的子樹, 必定也是Binary tree
+	c. 和stack, queue一樣, 可以用array 和linked list 實作
+
+4. 關於binary tree, 容易搞混的"Full binary tree(滿)", "Complete binary tree(完整)"
+	a. full binary tree, 樹全部長滿
+	b. complete binary tree, 樹的最後一個level不用全部長滿, 但是必須按照左到右填入.
+
+5. full binary tree, 和complete binary tree的高度都為為log_2(n+1) !!!! 這是重點之一, 因為full binary tree, complete tree兩個同時也是平衡樹.
+
+
+6. 使用array存取binary tree
+	a. 使用full tree的結構來存資料(但實際資料不會每個節點都存入, 所以有些節點沒有存資料), 需要2^H - 1大小的array
+	b. 由於array可以用編號直接鎖定data內容, 這點會增加搜索速度, 因為編號為i的node, 他的左子Node編號為2*i, 右子node編號為2*i+1
+
+	c. 樹越是不平衡, 越是浪費array空間(因為有很多空下來了)
+
+
+7. 使用linked list 存取binary tree
+	a. 與stack和queue的模式基本相同, 只是改成left child, right child
+		typedef struct node {
+			int data;
+			struct node *lchild;
+			struct node *rchild;
+		}
+
+	b. 由於樹木的葉子沒有childs, 所有葉子們的linked 空間是空的, 沒有存任何東西, 浪費掉了, 而葉子的數量相當於全部node數量的一半, 也就是表示有大約一半的空間浪費了.
+
+	c. 不需要像array一樣要事先設定好大小, 可以自由增長
+
+
+8. 用c語言實作binary tree的traveral, 其實很簡單, 就是對左右子樹一直traversal, 就是用recursive
+
+9. 使用traversal來判斷tree的node總數, 其實就是一直count左右子樹而已, 用哪種traversal都可以, 也是用recursive
+
+10. 找tree的高度(height), 原則就是一直找左右子樹的高度, 也是用recursive
+
+11. 到這裡你應該發現了, 關於binary tree的算法, 到目前為止都是用recursive!!!!
+
+12. 從以上recursive的方法, 再結合之前quicksort時候使用的recursive, 在笨應該也觀察出規律了, 你發現一件事情:
+	method_A: 由child到father進行運算, 也就是由所有leaf一路算回root (例子: binary tree的所有相關算法幾乎都是)
+		def recursiveFunc():
+			recursiveFunc()
+			doSomething()
+
+	method_B: 由father到child進行運算, 也就是由root一路算到所有leaf (例子: quickSort)
+		def recursiveFunc():
+			doSomething()
+			recursiveFunc()
+
+13. 看到如何實作binary search tree
+
+
+14. 開始看"網路", 稍微複習了TCP, 開始看UDP, RTP
+
+15. TCP是在第三層IP層的基礎上加了"可靠"的性質, 那UDP做了甚麼?
+	感覺起來UDP並沒有做甚麼事情...感覺就是甚麼都不做, 那為何不直接使用IP協議就好, 其實還是有個原因, 就是UDP提供了port, 以下是一個我覺得比較有意思的說明:
+	https://zhuanlan.zhihu.com/p/145946470
 	
+	常用的使用UDP协议包括：TFTP、SNMP、NFS、DNS、BOOTP。
+16. 這裡有另一個關於RTP較為詳細和清楚的說明:	
+	https://zhuanlan.zhihu.com/p/345506335
+	
+	基本上可以把RTP當成第四層的子層, 或者是4.5層, 他基於UDP, RTP 在 UDP 的基础上增加了一些额外的特性，如序列号、时间戳和负载类型标识符，以支持实时数据传输的需求。
 
+17. RTP有個很重要的應用:
+	A. 通訊軟體的視訊和音訊通話, 
+	B. stream(串流)...這個比較沒那麼長使用RTP, 只有偶爾會考慮用RTP, 串流主要使用HLS, DASH
+	以下是一個說明:
+	https://zhuanlan.zhihu.com/p/352932897	
+	
+18. 關於串流常常使用的協議有HLS, DASH, 這兩個都是基於HTTP, 也就是說, 他們其實是把每一個小stream都用一個http request請求, 來達到串流的效果.  你可以參考HLS中使用的m3u8檔案就可以理解其中的精神.
 
+19. 關於傳輸層看的差不多了, 主要就是TCP, UDP, RTP, RTCP等等
+
+20. 接下來看應用層(application layer), 主要有HTTP, VolP, TCP, 等等等, 多看多分
+
+21. HTTP和TCP比較常被拿來比較, 
+	A. HTTP主要用於web之間, server and client, 傳輸HTML, 圖片, 視頻等等...
+	B. TCP也是server and client, 但是單純是傳輸檔案(其實現在很少人用TCP了)
+
+22. Volp協議看一下吧
 
