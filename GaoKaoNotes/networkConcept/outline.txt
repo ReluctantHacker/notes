@@ -1,0 +1,42 @@
+// reference: https://www.cs.nthu.edu.tw/~nfhuang/chap01.htm
+
+1. 網路分7層, 每一層都封包化, 上一層的大包包住下一層小包, 像是俄羅斯套娃一樣:
+	a. 實體層(physical layer): 處裡硬體之間通訊時的物理問題
+	b. 鏈路層(data-link layer): 處理資料的封包化, 以及通路的基本防錯機制, 以及透過網路卡的號碼mac定位封包路徑
+	c. 網路層(network layer): 處理按照實體位置定位(IP), 彌補了鏈路層只能透過Mac, 造成遠距傳輸的中繼難以完成
+	d. 傳輸層(transport layer): 加了port號, 並在網路層的架構上決定是否要可靠(TCP), 或繼續不可靠(UDP)
+	e. 交談層(session layer): 為雙方使用者建立對談(session)空間
+	f. 表現層(presenatation layer): 主要負責資料加解密
+	g. 應用層(application layer): 你很熟了, 主要有Http, TCP(很少再用了), VoIp(通訊軟體的視訊或電話)
+
+2. 層與層之間的溝通, 分成以下幾種:
+	a. 一對一多工
+	b. 向上多工（Upward Multiplexing）
+	c. 向下多工（Downward Multiplexing）
+
+3. 每一層的PDU(Protocol data unit): 一下參考來自wikipedia
+	Protocol data units of the OSI model are:[1]
+		The Layer 4: transport layer PDU is the "segment" or the "datagram".
+		The Layer 3: network layer PDU is the "packet".
+		The Layer 2: data link layer PDU is the "frame".
+		The Layer 1: physical layer PDU is the bit or, more generally, symbol.
+
+	其實就是每一層都封包化, 第一點筆記已經講過了, 每一層的"包"給他不同名稱, 且他們大小都不一定一樣
+
+4.  IEEE Project 802網路結構, 他是"實體層"和"鏈路層"的協議或規範, 由於這個兩層包含很多不同種的傳輸方式, 例如有線, 無限, 局域, 廣域等等, 所以他是很多協議的集合體.
+
+	802.1 ：高層次介面 (High Level Interface)
+	802.2 ：邏輯鏈結控制 (Logical Link Control)
+	802.3 ：CSMA/CD 網路
+	802.4 ：Token-Bus 網路
+	802.5 ：Token-Ring 網路
+	802.6 ：DQDB大都會網路 (Metropolitan Area Networks)
+	802.7 ：寬頻技術 (Broadband Technical Advisory Group)
+	802.8 ：光纖技術 (Fiber Optic Technical Advisory Group)
+	802.9 ：語音／數據整合區域網路 (Integrated Voice and Data LAN Working Group)
+	802.10：區域網路安全技術 (LAN Security Working Group)
+	802.11：無線式區域網路 (Wireless LAN)
+	802.12：Demand-Priority 高速區域網路 (100VG-AnyLAN)
+	802.14：CATV網路
+
+5. 其他層的協議, 例如網路層的IP, 傳輸曾的TCP, UDP, 應用層的HTTP, TCP, VoIP等等
