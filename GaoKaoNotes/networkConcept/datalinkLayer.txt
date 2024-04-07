@@ -1,0 +1,86 @@
+#############################################################################################################
+1. MAC 地址:
+	A. 48位元(bit)組成, 或也可以說 6位元組(byte)
+	B. 16進制表示
+	C. 通常8位元(bit)一組
+	D. 範例: 00:1A:2B:3C:4D:5E
+	E. 總數: 2^48 ~ 281兆
+	F. 是網路卡的唯一地址, 訊號依照MAC地址決定傳送給誰(注意, 網路卡沒有IP地址, 別誤會!!)
+
+#############################################################################################################
+2. 乙太網路包(ethernet packet) 和 Frame(訊框, 第二層的傳輸單位PDU, 包含在ethernet packet), 以下是組成, 照順序
+	A. Preamble(乙太packet的一部分, 不是frame的一部分):
+		a. 固定7位元組(byte)
+	
+	B. Start frame delimeter(SFD, 乙太packet的一部分, 不是frame的一部分):
+		a. 固定1位元組(byte)
+		b. 表示frame開始
+	
+	C. Frame:
+		a. header(total 14位元組(byte)):
+			I. MAC destination(Frame header的一部分): 
+				🤔. 固定6位元組(byte)
+
+			II. MAC source(Frame header的一部分):
+				🤔. 固定6位元組(byte)
+
+			III. Ethertype(Ethernet II) or length(IEEE 802.3), (Frame的一部分):
+				🤔. 固定2位元組(byte)
+
+		d. Payload(大小不固定):
+			I. 42~1500位元組(byte)
+				🤔. 包含各層的包
+
+		C. Tail(Frame Check Sequence, FCS)
+			a. 4位元組(byte)	
+			b. frame傳輸過程有錯誤或損毀, 從此處輔助復原
+			c. 採用循環冗餘檢驗(Cyclic Redundancy Check, CRC):
+				🤔. 利用模2除法原理(mod 2)
+
+	D. Interpacket gap(IPG)
+		a. 固定12位元組(byte)
+		b. 表示frame結束, 並提供足夠的長度時間
+
+#############################################################################################################
+3. 非連線, 連接
+	A. 非連接服務(Connectionless Service), 又叫做(不可靠, Unreliable connection)
+		a. 一直丟data, 不管有沒有收到
+		b. 無法保證data有無丟失
+	
+	B. 連接服務(Connection-oriented Service, CS), 又叫做(可靠, reliable connection)
+		a. 有接收確認機制(ack)
+
+#############################################################################################################
+4. 流量控制(flow control)
+	A. sliding window
+
+#############################################################################################################
+5. 錯誤控制(errorControl)
+	A. 錯誤偵測(Error Detection)
+		a. 同位元檢查(parity check)
+		b. 檢查集(Check sum, CS)
+		c. 循環多餘碼檢查法(Cycle Redundancy Check, CRC), 一般都是用這個
+	B. 自動回覆請求(Automatic Repeat Request, ARQ):
+		a. 停止與等待ARQ(Stop-and-Wait Automatic Repeat Request)
+		b. 退後N ARQ(Go-Back_N Automatic Repeat Request)
+		c. 選擇性重複 ARQ(Select-Repeat Automatic Repeat Request)--->大部分都用這個(例如TCP)
+
+#############################################################################################################
+6. 存取機制(電腦和電腦的連線方式), 或者說網路架構
+	A. 點對點(point to point policy)
+		a. 環狀網路就是典型例子:
+			I. 例如: A_PC連B_PC連C_PC連D_PC連A_PC
+
+	B. 多重存取(Multiple Access policy)
+		a. 匯流排架構(bus), 
+		b. 廣播data, 讓所有人都收到
+		c. 用mac address來判斷, 不是給自己的再丟掉
+		d. 採用CSMA/CD
+		e. 可能需要hub
+
+	C. 交換(Switching policy): ------>現在都用這種了
+		a. 星狀網路(switch在中間作為中繼站)
+		d. 大部分都是"全雙工(full duplex)"
+		c. 需要交換器(switch)
+			switch 原理:
+				

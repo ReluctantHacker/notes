@@ -1,0 +1,64 @@
+#############################################################################################################
+1. IP 地址:
+	A. 32位元(bit)組成, 或也可以說 4位元組(byte)
+	B. 10進制表示
+	C. 通常8位元(bit)一組
+	D. 範例: 192.168.1.1
+	E. 總數只有: 2^32 ~ 42億
+	F. 他是根據"地區(或是組織)"劃分的地址, 不可重複
+	G. 不夠用, 需要NAT
+
+#############################################################################################################
+2. IP 封包(packet), 以下是組成, 照順序
+	A. header:
+		a. 東西太多了, 跳過一些
+		b. source IP address:
+			I. 4 byte
+		c. destination IP address
+			I. 4 byte
+
+	B. data: 包含其他層的內容
+
+3. 路由(routing)
+	A. ARP(Address resolution protocol)
+		a. 網路卡只認識MAC不認識IP, 你傳IP她看不懂
+		b. 從IP找對應的MAC
+		c. 每一台電腦都維護自己的ARP表
+		d. ARP表中沒有對應IP MAC對, 則廣播尋找
+		e. ARP攻擊
+			I. 需求者廣播循址
+			II. 攻擊者收到後, 連續發出假的回應(一般不會回應)
+			III. 是一種LAN的攻擊手段, 通常攻擊者會假裝自己是gateway(因為需求通常都通向gateway)
+	
+	B. 所謂路由其實就是目的地址:X.X.X.X, 那我當下要去哪裡可以連到, 有可能是b.b.b.b		
+
+	C. 路由器(router)
+		a. 路由器的定義
+			I. node ----- a device that implements IPv6(or IPv4)
+			II. router ----- a node that forwards IPv6(or IPv4) packets not explicitly addressed to itself.
+			III. host ----- any node that is not a router
+		
+		b. 一台路由器可能會連接很多不同的子網路, 再不同的子網路裡該路由器都會有一個屬於自己的IP, 所以一台路由器可能會有很多IP(注意! 這個本來就是可能的, 只有MAC地址才是只能有一個, 除非你有兩張網路卡)
+
+	C. 路由表(routing table), 裡面有三種協議的路由
+
+		若是忘記原理的話, 看以下的影片, 會秒懂:
+			https://www.youtube.com/watch?v=AzXys5kxpAM
+
+		a. 直連路由(direct)
+			I. router與destination同一個子網路!
+			III. 你不需要手動設定, 因為同一個網路, 直接就可以知道
+
+		b. 靜態路由(static)
+			I. 非direct的狀況, 你可以手動設定下一跳的IP, 只要該IP與你共處同一子網路
+			II. 需人工手動維護
+		
+		c. 動態路由(dynamic), 若是非direct, 又嫌static太麻煩, 可以選擇設定以下協議:
+			I. RIP(Routing Information Protocol)
+			II. ISIS(Intermediate System to Intermediate System)
+			III. OSPF(Open Shortest Path First)
+			IIII. BGP(Border Gateway Protocol)
+			
+
+6. 其實路由協議(routing protocol)就是direct(直連), static(靜態), RIP(動態), ISIS(動態), OSPF(動態), BGP(動態)...........
+
