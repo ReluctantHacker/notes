@@ -9625,6 +9625,7 @@ https://www.twblogs.net/a/5d4d2121bd9eee5327fc5040
 
 3. 關於為何需要載波?
 	因為低頻波需要很大的天線(接收或傳送信號), 物理上不合適, 高頻波繞射能力低下(貫穿能力又太強), 所以也不合適, 只有特定的頻率段比較合適用來傳輸訊號, 而除了網路通信與電話通信以外還有其他的需求佔用了這個頻段, 所以其實可以用的頻段相當的小.
+
 		https://www.youtube.com/watch?v=DXt-rXDu9M8&ab_channel=Lesics
 		https://www.zhihu.com/question/27715913
 
@@ -10676,3 +10677,16 @@ https://www.twblogs.net/a/5d4d2121bd9eee5327fc5040
 
 22. Volp協議看一下吧
 
+
+2024/4/7
+1. 繼續看"網路", 並整理一些筆記
+
+2. 有一個關於router運作方式的精彩解釋!!!! 一定要會啊!!
+	https://www.youtube.com/watch?v=AzXys5kxpAM
+
+3. 關於網路的一些考題, 較難的:
+	https://www.tkbtv.com.tw/tkbxo/examSearch/toExamDetail.action?kind=287&code=9973#1
+	https://blog.gtwang.org/web-development/network-lantency-and-bandwidth/
+
+4. 關於各種路由協議的比較(RIP, OSPF, BGP)
+	https://blog.csdn.net/starter_____/article/details/102740204
