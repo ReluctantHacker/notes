@@ -19,6 +19,7 @@
 
 	B. data: 包含其他層的內容
 
+#############################################################################################################
 3. 路由(routing)
 	A. ARP(Address resolution protocol)
 		a. 網路卡只認識MAC不認識IP, 你傳IP她看不懂
@@ -55,10 +56,46 @@
 		
 		c. 動態路由(dynamic), 若是非direct, 又嫌static太麻煩, 可以選擇設定以下協議:
 			I. RIP(Routing Information Protocol)
-			II. ISIS(Intermediate System to Intermediate System)
-			III. OSPF(Open Shortest Path First)
-			IIII. BGP(Border Gateway Protocol)
+				🤔. 使用情況:
+					😄. 使用較小的網路,  由於速度較慢, 漸漸被OSPF取代, 有明顯缺點如下:
+						😊. 收敛慢
+						😊. 易产生路由环路
+						😊. 可扩展性差，最大只能支持15跳
+						
+				🤔. 採用距離向量算法(distance-vector routing, DV routing)
+					😄. Bellman-Ford Algorithm(是一種dynamic programming, 計算較慢, 但準)
+						😊. 詳細算法參考以下:
+						https://www.youtube.com/watch?v=hdpnoOcrGck
+						https://my.eng.utah.edu/~cs5480/notes/chapter4-2007-Part2.pdf
+
+				🤔. DV routing有機會發生Looping 異常, 原理如下:
+					A, B, C三台路由器, 形成三角互聯
+					A想發packet給C, 根據A的路由表顯示, B可以到達C. 於是A把packet發給B, B接收packet後, 查詢自己的路由表, 發現到C的最優路徑是A, 於是又把packet發給A, 來來往往, 變成loop. 會發生這樣的原因, 有可能來自C 壞掉了, 但是壞掉的通知傳送的慢, 因為A需要透過B才能到達C(可見C到A的距離是比到B還更遠), 所以B會先收到C壞掉了, B-C距離改成infinity, 路由變成B要到C需要經過A, 然後就形成loop了.
+					😄. 解法1: 水平分離切口(Split Horizon Hack)
+					😄. 解法2: 暫停(Hold Down)
 			
+			II. ISIS(Intermediate System to Intermediate System)
+				🤔. 使用狀況:
+					😄. 適用於中等網路, 靈活度和可擴展性都很不錯
 
-6. 其實路由協議(routing protocol)就是direct(直連), static(靜態), RIP(動態), ISIS(動態), OSPF(動態), BGP(動態)...........
+				🤔. 链路状态算法
+					😄. Dijsktra Algorithm (是一種greedy approach, 計算較快, 但沒那麼準)
+						😊. 詳細算法參考以下:
+						https://www.freecodecamp.org/chinese/news/dijkstras-shortest-path-algorithm-visual-introduction/
+						https://zhuanlan.zhihu.com/p/129373740
 
+			III. OSPF(Open Shortest Path First)
+				🤔. 使用狀況:
+					😄. 適用較大的網路, 使用情形非常活耀, 很受歡迎
+				🤔. 链路状态算法
+					😄. Dijsktra算法 (是一種greedy approach, 計算較快, 但沒那麼準)			
+				
+			IIII. BGP(Border Gateway Protocol)
+				🤔. 使用狀況:
+					😄. 適用超大的網路, 
+						😊. 互联网路由(為全球互聯網提供重要的作用)
+						😊. 跨国公司网络
+						😊. 多地域的云服务提供商
+						😊. 网络架构中的边界控制
+				🤔. 採用路徑向量算法(path-vector routing, PV routing)
+			
