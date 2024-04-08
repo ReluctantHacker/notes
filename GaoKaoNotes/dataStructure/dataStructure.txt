@@ -1,0 +1,340 @@
+#############################################################################################################
+1. some datastructure
+	A. primitive: integer, float, string, boolean
+	B. non-primitive: 
+		a. 線性(in sequential order): list, tuple, array, linked list, stack, queue
+		b. 非線性: set, dictionary, tree, graph
+
+#############################################################################################################
+2. Program Complexity
+	A. Space complexity
+
+	B. Time complexity
+		a. f ∈ o(g)  ---   order(f)<order(g)  ---  lim f(x)/g(x) = 0 , x->∞
+		a. f ∈ O(g)  ---   order(f)≤order(g)  ---  lim f(x)/g(x) < ∞ , x->∞
+		a. f ∈ ϴ(g)  ---   order(f)=order(g)  ---  lim f(x)/g(x) ∈ R > 0 , x->∞
+		a. f ∈ Ω(g)  ---   order(f)≥order(g)  ---  lim f(x)/g(x) > 0 , x->∞
+		a. f ∈ ω(g)  ---   order(f)>order(g)  ---  lim f(x)/g(x) = ∞ , x->∞
+
+#############################################################################################################
+3. Recursive Algorithm(basic)
+	A. Factorial
+	B. Fibonacci Number
+	C. Greatest Common Divisor(GCD)
+	D. Binomial Coefficient
+	E. Ackerman's Function
+	F. Tower of Hanoi
+	G. Permutation
+
+
+#############################################################################################################
+4. array
+	A. first dimensional array
+	B. second dimensional array
+		沒考過
+	C. third dimensional array
+		沒考過
+
+#############################################################################################################
+5. linked list
+	A. 優點
+		a. 動態性: 動態增加空間, 不需要一開始設定好
+		b. 非連續性: 不需要連續的儲存空間
+		c. 插入元素, 或刪除元素效率高: 時間複雜度O(1)
+
+	B. 缺點:
+		a. 隨機訪問效率低: 需要從頭查找, 時間複雜度O(n)
+		b. 占用額外的空間
+	
+#############################################################################################################
+6. stack
+	A. ADT
+		a. 性質:
+			I. First in Last out(FILO)
+
+		b. 操作:
+			I. push(): push an element in stack's top position
+			II. pop(): return the the top element and remove it from the stack
+			III. peek(): return the top element
+			IIII. isempty(): return if stack is empty or not
+			IIIII. size(): return how many data in stack
+			ps: 基本你會發現stack push, pop 都是對top作用, 所以增刪都在同一個位置
+	B. array 實作
+		a. 實作要點:
+			I. 一個array, 長度依需求
+			II. 一個int top, 紀錄top的位置
+			III. top的初始化為-1, push則+1, pop則-1
+
+	C. linked list實作:
+		a. 實作要點:
+			I. 一個data
+			II. 一個*next, 指向下一個node
+			III. 初始node為NULL
+			IIII. 與array實作的方向相反, 在header的地方push(也pop), 
+			IIIII. header node代表了這個stack
+			IIIIII. NULL node 代表這個stack的結束位置
+
+#############################################################################################################
+6. 中序式與(後序式 or 前序式)互轉的演算法
+	A. infix -> postfix
+		a. 需要1個stack
+		b. 由左向右scan
+		c. 把"算符"push(pop)到stack(stack只會需要存算符)
+	B. postfix的計算演算法
+		a. 需要1個stack
+		b. 由左向右scan
+		b. 把"數字"push(pop)到stack(stack只會需要存數字)
+	C. infix -> prefix
+		a. 需要2個stack
+		b. 由右向左scan
+		c. 一個stack是temp, 一個是result
+	D. prefix的計算演算法
+		a. 需要1個stack
+		a. 由右向左scan
+		c. 把"數字"push(pop)到stack(stack只會需要存數字), 跟postfix很像, 只是計算時的次序要注意
+
+
+#############################################################################################################
+7. Queue
+	A. ADT
+		a. 性質:
+			I. First in First out(FIFO)
+
+		b. 操作:
+			I. enqueue(): push an element in queue's rear position
+			II. dequeue(): return the the front element and remove it from the queue
+			III. isfull(): return if queue is full or not
+			IIII. isempty(): return if queue is empty or not
+			IIIII. front(): return the front element of the queue
+			ps: 基本你會發現queue push, pop 分別在頭和尾, 所以增刪在不同位置
+	B. array 實作
+		a. 實作要點:
+			I. 一個array, 長度依需求
+			II. 一個int front, 紀錄front的位置
+			III. 一個int rear, 紀錄rear的位置
+			III. front, rear的初始化皆為-1, enqueue則rear++, dequeue則rear-1, front不變
+
+	C. linked list實作:
+		a. 實作要點:
+			I. 一個data
+			II. 一個*next, 指向下一個node
+			III. 需要一個front node和一個rear node, 兩個打包成一個queue
+			III. 初始front node 和 rear node 皆為NULL
+			IIII. rear node enqueue, front node dequeue
+			IIIII. NULL node 代表這個queue的結束位置
+
+
+#############################################################################################################
+7. Priority Queue
+	A. ADT
+		a. 性質:
+			I. 不一定First in First out(FIFO)
+			II. enqueue任意元素(權值)
+			III. dequeue最大/最小 權值的元素
+
+		b. 操作:
+			I. 利用heap tree(簡稱heap), 
+				🤔. 定義
+					😄. 為一complete binary tree(故必定平衡)
+					😄. 父node必定比子node大(max heap, 反之則為min heap), 
+					😄. 所有子node皆符合上述定義
+			ps: heap和heap sort大有關係!!!!
+
+
+#############################################################################################################
+8. Binary Tree(Tree 也屬於 graph)
+	A. 總性質:
+		a. 任意tree可化為binary tree
+		b. 任意node最多只有兩個degree(分支)
+		c. 左右子樹有次序之分(一般tree沒有特別定義)
+
+	B. Full binary tree
+		a. 性質:
+			I. 必定平衡
+			II. 除了leaf以外, 所有node當成root的子樹都必定為full binary tree
+			III. 最後一個level填滿
+			IIII. 公式:
+				🤔. N = 2^H - 1   等價於  log_2(N+1) = H, N=node數, H為高度
+				🤔. lN = 2^(H-1)
+
+	C. Complete binary tree
+		a. 性質:
+			I. 必定平衡
+			II. 除了leaf以外, 所有node當成root的子樹也都必定為complete binary tree
+			III. 最後一個level未必填滿, 但是一定由左到右填入, 不會有跳過
+			IIII. 公式: log_2(N+1) = H, 無條件退位
+
+	D. Pathological Tree
+		a. 性質:
+			I. H = N, H=高度, N=node數
+		b. left-skewed binary tree
+		c. rigth-skewed binary tree
+
+	E. 實作
+		a. 使用array
+			I. 優點:
+				🤔. 對於full B.T完全沒有浪費空間
+				🤔. 容易取得某node之左右子node, 以及父node的資料
+					😄. 某node的編號為i則:
+						😄. 左子node編號為2i, if 2i>N, 左子node不存在
+						😄. 右子node編號為2i+1, if 2i+1>N, 右子node不存在
+						😄. 父node編號為[i/2]([]:無條件捨位), if [i/2]<1, 則父node不存在
+			II. 缺點:
+				🤔. 節點增刪不易, 若空間不構, 要重新宣告array
+				🤔. skewed B.T極度浪費空間
+
+		b. 使用linked list(大部分實作還是用這個)
+			I. 優點: 
+				🤔. node增刪容易
+				🤔. 對於skewed B.T
+			II. 缺點: 
+				🤔. 不易取得父node
+					😄. 因為每個node只存左子node以及右子node
+				🤔. link空間仍浪費約一半
+					😄. 因為所有leaf的link皆沒有用到
+			III. 實作:
+				🤔. 每個node皆需要
+					😄. data
+					😄. left child node(c語言可用指標)
+					😄. right child node(c語言可用指標)
+				🤔. root代表了這棵樹
+			
+	 
+#############################################################################################################
+9. Binary Tree Traversal(操作上幾乎都使用recursive)
+	A. breadth first(廣度優先) Traversal
+		a. 由左到右
+		b. 再由上到下
+		c. 簡單來說就是同一level的先處理完再處理下一個level
+
+	B. Depth first(深度優先) Traversal
+		a. 前序(preorder, DLR) Traversal, preorderTrav()
+			I. 採用recursive
+			II. time complexity: O(n)
+
+		b. 中序(inorder, LDR) Traversal, inorderTrav()
+			I. 採用recursive
+			II. time complexity: O(n)
+
+		c. 後序(postorder, LRD) Traversal, postorderTrav()
+			I. 採用recursive
+			II. time complexity: O(n)
+
+		d. 給(inorder和preorder)排序結果, 回推binary tree
+			I. preorder的root必定在最前面
+			II. inorder的root必定在左右子tree的inorder中間
+			III. 重複I, II
+
+		c. 給(inorder和postorder)排序結果, 回推binary tree
+			I. postorder的root必定在最後面
+			II. inorder的root必定在左右子tree的inorder中間
+			III. 重複I, II
+
+		d. 給(preorder和postorder)排序結果, 回推binary tree
+			I. 可能有很多種結果, 故無法
+
+		e. 計算B.T node 總數, count()
+			I. 採用recursive
+
+		f. 計算B.T 高度, height()
+			I. 採用recursive
+
+		g. B.T每一node左右子tree交換, swap()
+			I. 採用recursive
+
+		
+#############################################################################################################
+10. Binary search tree
+	A. 定義:
+		a. 左子樹所有Node鍵値均小於Root鍵値
+		b. 右子樹所有Node鍵値均大於Root鍵値
+		c. 左、右子樹亦是Binary Search Tree
+
+	B. 建立:
+		a. 準備一段資料, 例如array
+		b. 將array的首個資料當作root
+		c. 接著按照binary search tree定義依序填入
+		d. 平均時間複雜度: O(nlog n)
+			I. 推導:
+				🤔. total time complexity = log(1) + log(2) + log(3) + ... log(n) = log(n!)
+				🤔. log(n!) = nlog(n) when n->∞, according to stirling formula(use intergral)
+		e. 最差時間複雜度: O(n^2)
+ 
+	C. 查找(search)
+		a. 最壞情況O(n), 這棵樹剛好是skewed tree
+		b. 平均情況O(log n)
+
+	D. 插入(insert)
+		a. 最壞情況O(n)
+		b. 平均情況O(log n)
+
+	E. 刪除(delete)
+		a. 最壞情況O(n)
+		b. 平均情況O(log n)
+
+	F. 排序(sort), BST也可以用於排序(但資料必須先建立成BST)
+		a. 用inorder traversal, 即可得到"由小到大"的排序結果
+		b. 時間複雜度自然是traversal的複雜度O(n)
+		c. 在tree sort實作中, 需要把"create tree"的複雜度也算進來, 所以總共還是要O(nlog(n))
+
+	
+#############################################################################################################
+11. Tree 或 forest 化 Binary tree
+	A. Tree 化 binary tree
+		a. sibling之間建立link
+		b. 每一個node只保留最左子node的link和剛才建立的sibling link, 其餘link皆斷
+
+	B. Forest(many unlinked tree) 化 binary tree
+		a. 所以tree皆化binary tree
+		b. 將binary trees們的root建立link
+		c. 以第一顆tree的root為新root
+
+
+#############################################################################################################
+12. 圖(Graph), 利用集合(set)的概念會很好理解
+	A. 無向圖(undirected graph)
+		a. G=(V, E), V=vertex, E=edge
+		b. E通常表示(vi, vj), 其中vi, vj為兩相鄰vertex
+		b. (vi, vj) != (vj, vi)
+
+	B. 有向圖(directed graph)
+		a. G=(V, E), V=vertex, E=edge
+		b. E通常表示(vi, vj), 其中vi, vj為兩相鄰vertex
+		c. (vi, vj) != (vj, vi)
+
+	C. 完整圖(complete graph)
+		a. 無向圖的完整圖
+			I. 所有vertex都與其他vertex形成一個edge
+			II. 若有n個vertex, 則共有n(n-1)/2個edge
+		b. 有向圖的完整圖	
+			I. 所有vertex都與其他vertex形成兩個(來回)有向邊edge
+			II. 如有n個vertex, 則共有n(n-1)個edge
+
+	D. 子圖(subgraph)	
+		a. 集合V(G') 屬於 集合V(G) 且 集合E(G') 屬於 集合E(G), 則G'為G的subgraph
+
+	E. 路徑(path)
+		a. 定義:
+			I. vertex v到v', 經過的所有edge的集合
+		b. 長度(path length):
+			I. edge的個數
+		c. 簡單路徑(simple path):
+			I. 除了頂點和終點, 其他點皆不同
+				🤔. 若頂點和終點相同稱為"迴圈(cycle)"
+
+	F. 連通(connected)
+		a. for 無向圖
+			I. 任意vertex與任意vertex之間皆有path存在, 即表示此圖connected
+
+		b. for 有向圖
+			I. 強連通(strongly connected)
+				🤔. 任意vertex與任意vertex之間皆有path(雙向)存在
+			II. 弱連通(weakly connected)
+				🤔. 任意vertex與任意vertex之間皆有path(單項或雙向)存在
+				🤔. 但是至少有一對vertex之間只有單向path(只能往, 不能返)
+			III. 不相連(disjoint)
+				🤔. 並非任意vertex之間皆有path(單向或雙向)
+				🤔. 圖可以分成不相連的子圖
+				🤔. 
+		
+	

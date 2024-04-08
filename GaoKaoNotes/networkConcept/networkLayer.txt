@@ -55,47 +55,86 @@
 			II. 需人工手動維護
 		
 		c. 動態路由(dynamic), 若是非direct, 又嫌static太麻煩, 可以選擇設定以下協議:
-			I. RIP(Routing Information Protocol)
-				🤔. 使用情況:
-					😄. 使用較小的網路,  由於速度較慢, 漸漸被OSPF取代, 有明顯缺點如下:
-						😊. 收敛慢
-						😊. 易产生路由环路
-						😊. 可扩展性差，最大只能支持15跳
-						
-				🤔. 採用距離向量算法(distance-vector routing, DV routing)
-					😄. Bellman-Ford Algorithm(是一種dynamic programming, 計算較慢, 但準)
-						😊. 詳細算法參考以下:
-						https://www.youtube.com/watch?v=hdpnoOcrGck
-						https://my.eng.utah.edu/~cs5480/notes/chapter4-2007-Part2.pdf
+			I. 內部網關協議(Interior Gateway Protocol, IGP)
+				🤔. RIP(Routing Information Protocol)
+					😄. 使用情況:
+						😊. 使用較小的網路,  由於速度較慢, 漸漸被OSPF取代, 有明顯缺點如下:
+							😊. 收敛慢
+							😊. 易产生路由环路
+							😊. 可扩展性差，最大只能支持15跳
+							
+					😄. 採用距離向量算法(distance-vector routing, DV routing)
+						😄. Bellman-Ford Algorithm(是一種dynamic programming, 計算較慢, 但準)
+							😊. 詳細算法參考以下:
+							https://www.youtube.com/watch?v=hdpnoOcrGck
+							https://my.eng.utah.edu/~cs5480/notes/chapter4-2007-Part2.pdf
 
-				🤔. DV routing有機會發生Looping 異常, 原理如下:
-					A, B, C三台路由器, 形成三角互聯
-					A想發packet給C, 根據A的路由表顯示, B可以到達C. 於是A把packet發給B, B接收packet後, 查詢自己的路由表, 發現到C的最優路徑是A, 於是又把packet發給A, 來來往往, 變成loop. 會發生這樣的原因, 有可能來自C 壞掉了, 但是壞掉的通知傳送的慢, 因為A需要透過B才能到達C(可見C到A的距離是比到B還更遠), 所以B會先收到C壞掉了, B-C距離改成infinity, 路由變成B要到C需要經過A, 然後就形成loop了.
-					😄. 解法1: 水平分離切口(Split Horizon Hack)
-					😄. 解法2: 暫停(Hold Down)
-			
-			II. ISIS(Intermediate System to Intermediate System)
-				🤔. 使用狀況:
-					😄. 適用於中等網路, 靈活度和可擴展性都很不錯
-
-				🤔. 链路状态算法
-					😄. Dijsktra Algorithm (是一種greedy approach, 計算較快, 但沒那麼準)
-						😊. 詳細算法參考以下:
-						https://www.freecodecamp.org/chinese/news/dijkstras-shortest-path-algorithm-visual-introduction/
-						https://zhuanlan.zhihu.com/p/129373740
-
-			III. OSPF(Open Shortest Path First)
-				🤔. 使用狀況:
-					😄. 適用較大的網路, 使用情形非常活耀, 很受歡迎
-				🤔. 链路状态算法
-					😄. Dijsktra算法 (是一種greedy approach, 計算較快, 但沒那麼準)			
+					😄. DV routing有機會發生Looping 異常, 原理如下:
+						A, B, C三台路由器, 形成三角互聯
+						A想發packet給C, 根據A的路由表顯示, B可以到達C. 於是A把packet發給B, B接收packet後, 查詢自己的路由表, 發現到C的最優路徑是A, 於是又把packet發給A, 來來往往, 變成loop. 會發生這樣的原因, 有可能來自C 壞掉了, 但是壞掉的通知傳送的慢, 因為A需要透過B才能到達C(可見C到A的距離是比到B還更遠), 所以B會先收到C壞掉了, B-C距離改成infinity, 路由變成B要到C需要經過A, 然後就形成loop了.
+						😄. 解法1: 水平分離切口(Split Horizon Hack)
+						😄. 解法2: 暫停(Hold Down)
 				
-			IIII. BGP(Border Gateway Protocol)
-				🤔. 使用狀況:
-					😄. 適用超大的網路, 
-						😊. 互联网路由(為全球互聯網提供重要的作用)
-						😊. 跨国公司网络
-						😊. 多地域的云服务提供商
-						😊. 网络架构中的边界控制
-				🤔. 採用路徑向量算法(path-vector routing, PV routing)
-			
+				🤔. ISIS(Intermediate System to Intermediate System)
+					😄. 使用狀況:
+						😄. 適用於中等網路, 靈活度和可擴展性都很不錯
+
+					😄. 链路状态算法
+						😄. Dijsktra Algorithm (是一種greedy approach, 計算較快, 但沒那麼準)
+							😊. 詳細算法參考以下:
+							https://www.freecodecamp.org/chinese/news/dijkstras-shortest-path-algorithm-visual-introduction/
+							https://zhuanlan.zhihu.com/p/129373740
+
+				🤔. OSPF(Open Shortest Path First)
+					😄. 使用狀況:
+						😄. 適用較大的網路, 使用情形非常活耀, 很受歡迎
+					😄. 链路状态算法
+						😄. Dijsktra算法 (是一種greedy approach, 計算較快, 但沒那麼準)
+
+			I. 邊界網關協議(Border Gateway Protocol, BGP)
+				🤔. BGP(Border Gateway Protocol)
+					😄. 使用狀況:
+						😄. 適用超大的網路, 
+							😊. 互联网路由(為全球互聯網提供重要的作用)
+							😊. 跨国公司网络
+							😊. 多地域的云服务提供商
+							😊. 网络架构中的边界控制
+					😄. 採用路徑向量算法(path-vector routing, PV routing)
+					😄. 重要性質:
+						😄. 大多数ISP必须使用BGP来与其他ISP建立路由连接
+						😄.即使大多数互联网用户不直接使用它，但是与7号信令系统——即通过PSTN的跨供应商核心响应设置协议相比，BGP仍然是互联网最重要的协议之一
+						😄. 特大型的私有IP网络也可以使用BGP
+						😄. 例如，当需要将若干个大型的OSPF（开放最短路径优先）网络进行合并，而OSPF本身又无法提供这种可扩展性时
+						😄. 使用BGP的另一个原因是其能为多宿主的单个或多个ISP（RFC 1998）网络提供更好的冗余
+
+				
+#############################################################################################################
+4. 路由(routing), 廣域範圍
+	A. 自治系統(Autonomous System)
+		a. 用通俗的语言来形容，就是一个互联网的独立王国，
+		b. 这一个个独立王国互联起来，就组成了互联网（Internet）
+		c. 每个王国有自己独立的国号，以区别于别的王国，这个国号用自治系统号ASN(Autonomous System Number)
+		d. ASN 由两个字节组成，理论上取值范围为 1- 65535，末尾的1024个ASN是私有自治号, 用于王国内部的下属郡国使用，不能外泄（类似私有IP，如果不小心外泄，别人也会忽略）。
+
+	B. 自治系統(Autonomous System)之間如何互聯
+		a. 透過BGP協議, 交換各自的IP路由表
+		b. 透過AS 各自的邊界路由器border router, 也就是连接两个或多个自治系统（AS）之间的边界的路由器。它位于网络的边缘，负责连接不同自治系统之间的网络
+		c. ASN就是BGP协议用来辨识邻国的一个身份证，同时在交换的路由表信息里，会附上各自的AS号
+
+	C. 網際網路服務供應商(ISP, Internet Service Provider)
+		a. 通常會有自己的ASN(一些大型的公司如Google, Apple也會有)
+		b. 為一般企業及私人網際網路瀏覽所提供的上網服務
+			I. 整合服務數位網路(ISDN)
+			II. DSL(ADSL)
+			III. 纜線數據機
+			IIII. 專線(Leased Line)
+			IIIII. 電力線通訊(Power Line Communication，簡稱PLC)
+			IIIIII. WiMAX
+		c. 網際網路代管服務
+			I. 主機代管(Colocation、IDC)
+			II. 電子郵件(E-Mail)
+			III. 網頁代管(web hosting)
+			IIII. 域名系統(DNS)
+			IIIII. 代理伺服器(Proxy)
+			IIIIII. 新聞群組(Newsgroup)
+			IIIIIII. 雲端運算
