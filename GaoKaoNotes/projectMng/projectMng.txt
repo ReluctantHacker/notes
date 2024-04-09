@@ -1,0 +1,208 @@
+|#############################################################################################################|
+1. 專案管理5大流程:
+	A. 啟動 - 定義專案範圍，確認專案目標
+	B. 規劃 - 提出專案規劃與設計，組織專案成員
+	C. 執行 - 資源配置與整合、跨部門溝通、細項工作執行
+	D. 控管 - 掌握專案完成度、時間、資源、預算
+	E. 結案 - KPI、指標的檢討、知識的萃取與整理
+
+
+|#############################################################################################################|
+2. 系統開發5大步驟(系統分析, 系統設計, 系統開發, 系統測試, 系統部屬,維護)
+	A. 系統分析(需求分析)
+		a. ERM(entity relationship model)
+			I. ER diagram
+				🤔. 用途: 資料庫設計
+				🤔. chen's notation
+				🤔. crow's foot(就是你熟悉的那種圖)
+				🤔. 參考資源: https://www.lucidchart.com/pages/er-diagrams
+				
+		b. DFD(data flow diagram)
+
+		c. UML(unified modeling language)
+			I. class diagram(類圖, 最重要)
+				🤔. 用途: 物件導向程式設計
+				🤔. class和instance的關係, 可能如下
+					😄. class level:
+						😄. Generalization/Inheritance(就是繼承關係): A is a type of B.
+						😄. Realization/Implementation(就是接口關係): A implements B, which is an interface.
+							😄. 通常父類只會有一個! 但是接口可能有好幾個, 例如鳥是動物, 也就是動物是鳥的父類, 那飛行所需要的技能就是所謂的接口! 總之就是"特化"的東西(父類中不需要包含的東西), 可以獨立用一個接口來實現.
+					😄. instance level:
+						😄. have:
+							😄. Aggregation: A owns B, but both has its own lifecycle.
+							😄. Composition: B is part of A, follow A's lifecycle
+						😄. use:
+							😄. Dependency: A uses B but in a weak relationship. If one changes many affect another one.
+							😄. Association: A knows B. Static relationship between A and B.
+				🤔. 參考資源: 
+					https://misomiso43.medium.com/%E7%B0%A1%E5%96%AE%E7%90%86%E8%A7%A3-uml-%E9%A1%9E%E5%88%A5%E5%9C%96-f0b32a3272c
+					https://blog.csdn.net/m0_71417856/article/details/130467940
+					https://codegym.cc/tw/groups/posts/tw.104.chou-xiang-lei-he-jie-kou-de-qu-bie
+					https://m.imooc.com/qadetail/107540
+				
+				🤔. ORM(Object-Relational Mapping)
+					😄. 在現代軟體開發中是很重要的一種實現
+					😄. 其實就是把軟體程式中所使用的類別(class)模型映射到資料庫模型
+					😄. 你在miyue他們python後端就是使用ORM, 所以才會發現他們程式裡面有一堆資料庫欄位的"類別(class), 而且要對資料庫操作, 是直接寫python指令, 在較OP去執行
+					😄. 讓你不需要實際去輸入sql語句來操作資料庫!!!方便
+					😄. 阻擋了一部份的sql injection
+
+			II. use case diagram
+			III. sequence diagram
+			IIII. activity diagram
+			IIIII. state diagram
+			IIIIII. component diagram
+			IIIIIII. deployment diagram
+			
+	B. 系統設計
+		a. 系統架構設計
+			I. 2-tier
+				🤔. 定義: 操作和系統資料處理分成2層次
+				🤔. 例如:
+					😄. Desktop application
+					😄. excel sheets,
+					😄. word document,
+					😄. desktop games
+			II. 3-tier
+				🤔. 定義: 操作和系統資料處理和資料儲存分稱3層次
+				🤔. 例如:
+					😄. 大部分的web-application
+			III. web-base
+				🤔. 基於web, 能用瀏覽器操作
+
+			IIII. 分散式架構(distributed computging)
+				🤔. 理論基礎
+					😄. CAP theorem:
+						😄. Consistency
+						😄. Available
+						😄. Partition tolerance
+						😄. 以上三大性質最多只能同時成立兩個
+
+				🤔. 使用技術:
+					😄. IPC(進程間同訊, Inner process communication)
+						😄. 概念:
+							😄. 進程之間通訊是有限制的
+							😄. IPC就是要想辦法突破
+
+						😄. 實作分類
+							😄. 管道(pipe)
+							😄. 系統IPC
+								😄. 消息列隊(message queues)
+								😄. 信號(signal)
+								😄. 共享內存(shared memory)
+							😄. 套接字(socket)
+							😄. 消息傳遞(messsage passing)
+								😄. RPC(remote process call) --- *被廣泛使用
+				🤔. 實際範例:
+					😄. 幾乎所有雲服務(cloud services)
+
+				🤔. CDN(內容傳遞網路, content delivery(distribution) network)
+					😄. 其實CDN和分散式架構只有間接關係, 但由於他的重要性, 這裡還是提一下
+					😄. 現在幾乎所有的網路都會用到CDN
+					😄. 技術:
+						😄. 使用了"緩存服務器"來分擔源服務器的流量負擔,
+						😄. 藉由把用戶需求過的內容存到就近的緩存服務器,
+						😄. 源服務器只需要與緩存服務器有流量交往就好而不需要對所有用戶有流量交往,
+								  ____ client
+							No CDN	 |     
+							 ________|____ client
+						 	|        |
+							| server |____ client
+							| 負擔大 |
+							 --------|____ client
+								 |
+								 |____ client
+
+							                            _____ client
+								  ____ CDN server__|
+							with CDN |  (緩存部分內容) |_____ client
+							 ________|
+						 	|        |                  _____ client
+							| server |____ CDN server__|
+							| 負擔小 |                 |_____ client
+							 --------|                  
+								 |                  _____ client
+								 |____ CDN server__|
+										   |_____ client
+
+				🤔. 鏡像服務器(mirror server)
+					😄. 镜像服务器(Mirror server)与主服务器的服务内容都是一样的，只是放在一个不同的地方，分担主机的负载。
+					😄. 简单来说就是和照镜子似的，能看，但不是原版的。在网上内容完全相同而且同步更新的两个或多个服务器，除主服务器外，其余的都被称为镜像服务器。 光盘镜像服务器一般采用BNC和 RJ-45标准网络接口，设置、升级和管理均可通过WEB浏览器或网上邻居远程进行。
+
+			IIIII. 主從式架構(client-server model, c/s model)
+			IIIIII. 服務導向架構(SOA, Service-oriented architecture)
+			IIIIIII. 微服務(microservices)
+				🤔. 由SOA演變而來
+
+		b. 結構化設計:
+			I. 現在大部分的系統都採用"低耦合, 高內聚"
+			II. 耦合: 模組(或功能)和模組之間的相依性
+			III. 內聚: 模組(或功能)內部組件之間的相依性
+			IIII. 參考資源: 
+				https://www.zhihu.com/question/347264877/answer/834666851
+
+	C. 系統開發
+
+	D. 系統測試
+		a. 測試項目:
+			I. 功能测试(Functional Testing):
+				🤔. 验证系统的功能是否符合需求和规格说明, 包括单元测试, 集成测试, 系统测试等
+			II. 性能测试(Performance Testing)
+				🤔. 测试系统的性能, 包括响应时间, 吞吐量, 并发用户量等, 以确保系统在各种负载条件下能够正常运行
+			III. 安全测试(Security Testing)
+				🤔. 验证系统的安全性, 包括身份验证, 授权, 数据加密, 漏洞扫描等, 以确保系统对潜在威胁有足够的防御能力
+			IIII. 兼容性测试(Compatibility Testing)
+				🤔. 测试系统在不同平台, 操作系统, 浏览器, 设备等环境下的兼容性, 以确保系统在各种情况下都能正常工作
+			IIIII. 可用性测试(Usability Testing)
+				🤔. 评估系统的易用性和用户体验, 包括界面设计, 导航结构, 操作流程等, 以确保系统对用户友好并容易上手
+			IIIIII. 回归测试(Regression Testing)
+				🤔. 在系统经过修改或更新后重新运行之前的测试用例, 以确保修改不会影响系统的其他功能和性能
+			IIIIIII. 壓力測試(Stress Testing)
+				🤔. 在系统达到其容量限制时进行测试, 以确定系统在负载过重或异常情况下的稳定性和可靠性
+			IIIIIIII. 恢复测试(Recovery Testing)
+				🤔. 测试系统在发生故障或异常情况后的恢复能力, 包括数据恢复, 系统重启, 备份和恢复等
+
+		b. 測試流程:
+			I. Unit Test(單元測試)
+			II. Integration Test(整合測試)
+			III. System Test(End-to-end Test, 系統測試)
+			IIII. Stress test(壓力測試)----其實就測試系統在甚麼條件下能正常運作, 若超出這個條件系統便會不穩定甚至崩壞
+			IIIII. Accentance test(接受度測試)
+
+	E. 系統部屬與維護
+		a. 
+
+
+|#############################################################################################################|
+3. 系統開發常見的模型
+	A. 重量級(heavyweight)
+		a. 定義:
+			重量级开发方法通常指的是具有复杂结构和完整功能的开发框架或方法。这种方法通常具有严格的规范和标准，涵盖了全面的开发过程，包括需求分析、设计、开发、测试、部署和维护等各个阶段。重量级开发方法需要较长的时间来规划和实施，通常需要大量的人力资源和资金投入。它们适用于复杂的软件项目，如企业级应用、大型系统或关键业务应用等。
+		b. 範例:
+			I. 瀑布開發模型(waterfall model)
+			II. RUP(Rational United Process)
+				🤔. 將大系統切割成小專案進行"迭代"
+			III. 螺旋模型(spiral model)
+				🤔. 兼具RAP與系統發展生命週期模型
+			III. CMMI
+
+	B. 輕量級(lightweight)
+		a. 定義:
+			轻量级开发方法强调简单、灵活和迭代的开发方式，通常更加注重快速交付和持续改进。这种方法通常更加灵活，能够快速响应需求变化和用户反馈。轻量级开发方法通常简化了开发过程，去除了一些繁琐的规范和流程，注重于核心功能的实现和用户价值的提供。它们适用于小型团队或项目，如创业公司、敏捷开发团队等。
+
+		b. 範例:
+			I. 敏捷開發(agile)
+				🤔. scrum
+					😄. 短迭代週期(稱之為sprint): 2~4 weeks
+					😄. sprint planning meeting: 每次sprint前meet
+					😄. 每日站會(daily scrum meeting): 會報昨日進度, 今日計畫
+					😄. 成員組成:
+						😄. Product Owner
+						😄. Scrum Master: usually chose from the scrum team
+						😄. Development Team: including 开发人员、测试人员、设计师等
+				
+				🤔. EP(Extreme programming)
+
+			II. RAD(rapid application deveopment)
+				🤔. 軟體原型(Software prototyping)
+				🤔. 迭代開發
