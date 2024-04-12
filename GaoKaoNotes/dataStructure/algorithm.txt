@@ -1,0 +1,197 @@
+|#############################################################################################################|
+1. Recursive Algorithm(basic)
+	A. Factorial
+	B. Fibonacci Number
+	C. Greatest Common Divisor(GCD)
+	D. Binomial Coefficient
+	E. Ackerman's Function
+	F. Tower of Hanoi
+	G. Permutation
+
+|#############################################################################################################|
+2. 排序Sort
+	A. 初等排序方法:  (平均average case: O(n^2))
+		a. bubble sort 
+			I. 時間複雜度(avg): O(n^2) 
+			II. 時間複雜度(worst): O(n^2) 
+			III. 時間複雜度(best): O(n) 
+				🤔. 你每次比較一輪都可以偵測是否有裡面的元素有swap過, 如果完全沒有swap過, 表示已經排序好了, 最好裝況是一開始就已經排好, 你只需要比較第一輪完就能確定
+
+			IIII. 穩定性(stability): stable
+			IIIII. 空間複雜度: O(1)
+			
+		b. selection sort
+			I. 時間複雜度(avg): O(n^2) 
+			II. 時間複雜度(worst): O(n^2) 
+			III. 時間複雜度(best): O(n^2) 
+				🤔. 此法沒有機制可以確定在"過程中"就已經sort完了, 只能確保"最後"一定sort完
+			IIII. 穩定性(stability): un-stable
+			IIIII. 空間複雜度: O(1)
+		
+		c. insertion
+			I. 時間複雜度(avg): O(n^2) 
+			II. 時間複雜度(worst): O(n^2) 
+			III. 時間複雜度(best): O(n) 
+				🤔. 如果一開始就已經排好了, 每一輪都只需要比較一次(而且不需移動), 所以比n次即可
+			IIII. 穩定性(stability): stable
+			IIIII. 空間複雜度: O(1)
+
+	B. 高等排序方法:  (平均average case: O(nlog(n))  
+		z(補充). recursion tree(遞迴樹):
+		reference:
+		https://mycollegenotebook.medium.com/%E6%99%82%E9%96%93%E8%A4%87%E9%9B%9C%E5%BA%A6-%E9%81%9E%E8%BF%B4-%E4%B8%8A-f6d51a462394
+		https://mycollegenotebook.medium.com/%e6%99%82%e9%96%93%e8%a4%87%e9%9b%9c%e5%ba%a6-%e9%81%9e%e8%bf%b4-%e4%b8%8b-master-th-307ad4608ab6		
+			I. 以下會提到的高等排序法皆使用或間接使用"divid and conquer", 他們的平均時間複雜度為O(nlog(n)), 但why??
+			II. 我們可以用recursion tree把這些排序法展開, recursion tree的高度為O(log(n)), 
+			III. 每一層所需計算總次數為O(n) ---> (這個你仔細想, 他每一層事實上元素總量沒有變!!! 只是分成比較細而已, 你x層和x+1層要比較的次數是一樣的)
+
+			
+		a. quick sort
+			I. 時間複雜度(avg): O(nlog(n)) 
+			II. 時間複雜度(worst): O(n^2) 
+				🤔. 如果排序本身是完全反向的, 那妳每一輪pivot都會擺到最後(後最前看你怎麼設定), 所以你完全沒有"divide", 自然就退化成低等的排序法了
+			III. 時間複雜度(best): O(nlog(n)) 
+			IIII. 穩定性(stability): un-stable
+			IIIII. 空間複雜度: O(log(n))
+			IIIIII. 算法:
+				🤔. 基本算法如下:
+				reference:
+				https://www.shubo.io/quick-sort/
+					quickSort(): {
+						partition()   // 找出pivot位置(此時pivot的元素已經確認其順序)
+						quickSort()   // 0到pivot 做 quickSort
+						quickSort()   // pivot到end做 quickSort
+					}
+
+				🤔. Partition如何處理, 有兩個常見的辦法:
+					😄. Lomuto Partition Scheme
+						😄. 首先選出一個pivot, 這邊是用陣列內的最後一個元素arr[hi]
+						😄. 用i紀錄下一個小於等於pivot的元素所要放置的位置, 初始化為lo
+						😄. 接著遍歷 arr, 範圍從 lo 到 hi - 1, 當發現小於等於pivot的元素時, 就跟位於i的元素交換位置. 每次交換完, 就把i往前加一
+						😄. 遍歷結束以後, 再把位於i的元素和位於hi的元素(也就是pivot)作交換
+						😄. 最後回傳 i，它就是 pivot 的 index
+
+					😄. Hoare partition scheme
+						😄. 選擇陣列中央的元素作為pivot
+						😄. 從最前面開始掃描大於pivot的元素, 從最後面開始掃描小於pivot 的元素, 找到之後交換
+						😄. 重複以上步驟, 直到lo和hi相遇
+
+		b. merge sort
+			I. 時間複雜度(avg): O(nlog(n)) 
+			II. 時間複雜度(worst): O(nlog(n)) 
+				🤔. 
+			III. 時間複雜度(best): O(nlog(n)) 
+			IIII. 穩定性(stability): stable
+			IIIII. 空間複雜度: O(n)
+			IIIIII. 算法:
+				🤔. 基本算法如下:
+				reference:
+				https://hackmd.io/@Aquamay/BylVMPFkiu
+					mergeSort(): {
+						mergeSort()   // pivot到end做 quickSort
+						mergeSort()
+						merge()
+					}
+				
+				🤔. 你可以注意到這算法得function執行順序跟quickSort剛好相反!! quickSort是從father->child計算, mergeSort是從child到father計算!
+				🤔. 你在仔細看會發現他跟binary tree的traversal八七相似, 因為他們原理其實大同小異!
+
+		c. heap sort
+			I. 時間複雜度(avg): O(nlog(n)) 
+			II. 時間複雜度(worst): O(nlog(n)) 
+				🤔. 
+			III. 時間複雜度(best): O(nlog(n)) 
+			IIII. 穩定性(stability): un-stable
+			IIIII. 空間複雜度: O(1)
+			IIIIII. 算法:
+				🤔. 基本算法如下:
+					😄. 先把未排序的arr[]的數據按照heap的規則丟進一個heap, 這需要O(n)--->這個證明比較複雜, 有空再研究吧...
+						😄. heap必為complete binary tree 且父node必大於子node(min heap則反之)
+						😄. 插入node進heap
+							😄. node先到complete B.T的最後, 然後向上挑戰父node, 反覆執行, 直到以下發生:
+								😄. 挑戰失敗
+								😄. 無父node
+							😄. insert動作的時間複雜度為O(log(n)), 因為"往上挑戰父node的平均次數為樹高的一半, 其實就是log(n)/2, 
+
+
+					😄. 再從heap的root一個個extract出來(這個時候就自動排序了)須O(nlog(n))
+						😄. extract root from heap
+							😄. heap的最後一個node移去補root的位置(之所以最後一個node, 是因為要維持complete B.T的結構), 但就這樣必定不是Heap了, 所以要做以下調整
+							😄. 新root與自己的子node比大小, 最大的子node跟這root換位置, 一直往下比, 直到
+								😄. 碰到底層, 
+								😄. 或是已經沒有更大的子node了
+							😄. extract動作的時間複雜度也為O(log(n)), 因為"往下挑戰品均次數也會為樹高的一半, 也就是log(n)/2
+							😄. extract所有node所需時間複雜度為:
+								😄. log(1) + log(2) + log(3) + ... log(n) = log(n!) =~ nlog(n), 根據stirling formula  ----> O(nlog(n))
+					
+					😄. 最終結果時間複雜度還是O(nlog(n))
+
+			????甚麼叫做sort是否in-place?
+|#############################################################################################################|
+3. 搜索(Search)
+	A. Search的分類:
+		a. Internal Search vs External search
+			I. Internal search
+			II. External search
+				🤔. 資料量大, 無法在記憶中處理, 需放入更大的儲存空間中進行(ex: disk)
+				🤔. 例如:
+					😄. m-way search tree
+					😄. B-tree (平衡版的m-way search tree)
+	
+		b. Static vs Dynamic search
+			I. Static:
+				🤔. 搜索的資料集不變動(或不經常)
+			II. Dynamic:
+				🤔. 搜索的資料集時常變動
+
+	B. 線性搜索(Linear Search)  --- time complexity: O(n)
+		a. 有分2種:
+			I. Non-Sential:
+				for (int i = 0; i < length; i++) {
+				    if (array[i] == elementToSearch) {
+					return i; // I found the position of the element requested
+				    }
+				}
+
+			II. Sential:
+				// a的最後面插入element元素(不然如果a裡面沒有element, while會停不下來)
+				while(a[i] != elementToSearch) {
+    				i++;
+				}
+
+				🤔. sential 的方法少了"i<length"的判斷所需花費的時間, 因此在array很大的時候, 省下約一半的時間
+
+	C. 二元搜索(Binary Search)  ----> 需要已經排列好
+	reference:
+	https://stackoverflow.com/questions/21586085/difference-between-binary-search-and-binary-search-tree
+
+		a. 精神:
+			Binary search其實就是在一棵binary search tree進行搜索(binary search通常會表述為在一個sorted的collection裡面進行search, 但其實兩者是等價的)
+
+		b. 根據其精神, 很自然知道其time complexity: O(log(n))
+
+		c. 算法:
+			I. 以array的中間元素為基準點, array左右對切, 判斷在左還右, 然後recursive執行, 是一個由大到小的過程
+			II. 算法大致長成以下:
+				binSearch() {
+					dosomething;
+					binSearch(); // 左邊
+					binSearch(); // 右邊
+				}
+
+	B. 內差法搜索(Interpolation Search)  ----> 需要已經排列好, 且必須要要有array的direct access機制才行
+		a. 精神:
+			I. 和數學上的代數內插法有異曲同工之妙, 內插法有線性和非線性, 但在此我們暫時都把已排序的資料的value當成線性遞增(或遞減)	
+			II. a[i] - a[j] 應該要大致正比於 i - j    (都當成線性來看的話)
+			III. 找到位置的內差值
+			III. 若x為搜索值, 則第一輪內插位置k 應有關係為 (x-a[0])/(a[end]-a[0]) = (k-0)/(end-0)
+			III. 找k後, 判斷k位置的元素比x大還小, 若較小則在k的左側中繼續用內插法找尋(若較大就右邊)
+
+		b. 根據其精神, 其time complexity: O(log(n))
+
+		c. 算法:
+			I. 基本可以採用while迴圈
+
+
+			
+

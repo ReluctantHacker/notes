@@ -26,6 +26,16 @@
 	F. Tower of Hanoi
 	G. Permutation
 
+	H. Recursive算法的大原則如下: 
+	method_A: 由child到father進行運算, 也就是由所有leaf一路算回root (例子: binary tree的所有相關算法幾乎都是)
+		def recursiveFunc():
+			recursiveFunc()
+			doSomething()
+
+	method_B: 由father到child進行運算, 也就是由root一路算到所有leaf (例子: quickSort)
+		def recursiveFunc():
+			doSomething()
+			recursiveFunc()
 
 |#############################################################################################################|
 4. array
@@ -258,7 +268,11 @@
 			I. 推導:
 				🤔. total time complexity = log(1) + log(2) + log(3) + ... log(n) = log(n!)
 				🤔. log(n!) = nlog(n) when n->∞, according to stirling formula(use intergral)
+			若是不信, 以下還有一個討論:
+			https://stackoverflow.com/questions/8118221/what-is-ologn-on-and-stirlings-approximation
+
 		e. 最差時間複雜度: O(n^2)
+			I. 剛我是一skewed tree
  
 	C. 查找(search)
 		a. 最壞情況O(n), 這棵樹剛好是skewed tree
