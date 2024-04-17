@@ -176,14 +176,14 @@
 			I. 整合服務數位網路(ISDN)
 			II. DSL(ADSL)
 			III. 纜線數據機
-			IIII. 專線(Leased Line)
-			IIIII. 電力線通訊(Power Line Communication，簡稱PLC)
-			IIIIII. WiMAX
+			IV. 專線(Leased Line)
+			V. 電力線通訊(Power Line Communication，簡稱PLC)
+			VII. WiMAX
 		c. 網際網路代管服務
 			I. 主機代管(Colocation、IDC)
 			II. 電子郵件(E-Mail)
 			III. 網頁代管(web hosting)
-			IIII. 域名系統(DNS)
-			IIIII. 代理伺服器(Proxy)
-			IIIIII. 新聞群組(Newsgroup)
-			IIIIIII. 雲端運算
+			IV. 域名系統(DNS)
+			V. 代理伺服器(Proxy)
+			VI. 新聞群組(Newsgroup)
+			VII. 雲端運算

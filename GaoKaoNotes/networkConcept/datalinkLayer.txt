@@ -1,5 +1,5 @@
 |#############################################################################################################|
-1. MAC 地址:
+1. MAC(media access control) 地址:
 	A. 48位元(bit)組成, 或也可以說 6位元組(byte)
 	B. 16進制表示
 	C. 通常8位元(bit)一組
@@ -35,6 +35,8 @@
 		d. Payload(大小不固定):
 			I. 42~1500位元組(byte)
 				🤔. 包含各層的包
+				🤔. 最大上限為通常為1500 byte, 此上限稱之為MTU(Maximum Transmission Unit, byte為單位)
+					😄. 注意! 只有乙太網路和wifi的frame payload的MTU才是1500上限, 其他協議有各自的上限(自己wiki查看MTU)
 
 		C. Tail(Frame Check Sequence, FCS)
 			a. 4位元組(byte)	
@@ -47,13 +49,39 @@
 		b. 表示frame結束, 並提供足夠的長度時間
 
 |#############################################################################################################|
-3. 非連線, 連接
-	A. 非連接服務(Connectionless Service), 又叫做(不可靠, Unreliable connection)
-		a. 一直丟data, 不管有沒有收到
-		b. 無法保證data有無丟失
-	
-	B. 連接服務(Connection-oriented Service, CS), 又叫做(可靠, reliable connection)
+3. 連接, 非連線, 可靠, 非可靠
+reference:
+https://www.zhihu.com/question/289026686
+
+	A. 連接導向(Connection-oriented Service, CS), 又叫做(可靠, reliable connection)
+		a. 有建立"對話線路(session)"
+		b. 確保數據(或訊息)可以按照"順序"抵達
+		c. 採用類似"電話模型"的機制
+			I. 你打電話需要撥號, 然後建立連線
+			II. 雙方需要建立"對話(session)"
+			III. 連線建立後, 雙方知道彼此正在"通話(互傳訊息)", 即使雙方甚麼訊息都沒傳送
+			IV. 結束通話後, 代表雙方都知道彼此不再傳送訊息
+
+	B. 非連接服務(Connectionless Service), 又叫做
+		a. 無建立"對話線路(session)"
+		b. 數據(或訊息)不一定按照"順序"抵達
+		c. 採用類似"郵政模型"的機制
+			I. 你寄信前不用跟人打招呼
+			II. 雙方不用建立連線
+			III. B傳送訊息給A前, A可能不知道B要傳送訊息給他(反之亦然)
+			IV. B若不傳信訊息給A, A也不會知道, 兩者之間沒有一個"對話連線"機制
+
+
+	C. 可靠(reliable)
 		a. 有接收確認機制(ack)
+		b. 發送端能確定接收端"收到了"
+		c. ack機制能確保data不會丟失
+
+	D. 非可靠(unreliable)
+		a. 無確認接收機制, no ack
+		b. 發送端不管對方收到沒, 也無法管
+		c. 無法保證data有無丟失
+	
 
 |#############################################################################################################|
 4. 流量控制(flow control)
@@ -65,6 +93,7 @@
 		a. 同位元檢查(parity check)
 		b. 檢查集(Check sum, CS)
 		c. 循環多餘碼檢查法(Cycle Redundancy Check, CRC), 一般都是用這個
+
 	B. 自動回覆請求(Automatic Repeat Request, ARQ):
 		a. 停止與等待ARQ(Stop-and-Wait Automatic Repeat Request)
 		b. 退後N ARQ(Go-Back_N Automatic Repeat Request)
@@ -88,4 +117,5 @@
 		d. 大部分都是"全雙工(full duplex)"
 		c. 需要交換器(switch)
 			switch 原理:
-				
+			
+	

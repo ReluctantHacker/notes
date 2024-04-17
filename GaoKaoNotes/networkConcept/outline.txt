@@ -1,29 +1,57 @@
 // reference: https://www.cs.nthu.edu.tw/~nfhuang/chap01.htm
 
-1. 網路分7層, 每一層都封包化, 上一層的大包包住下一層小包, 像是俄羅斯套娃一樣:
-	a. 實體層(physical layer): 處裡硬體之間通訊時的物理問題
-	b. 鏈路層(data-link layer): 處理資料的封包化, 以及通路的基本防錯機制, 以及透過網路卡的號碼mac定位封包路徑
-	c. 網路層(network layer): 處理按照實體位置定位(IP), 彌補了鏈路層只能透過Mac, 造成遠距傳輸的中繼難以完成
-	d. 傳輸層(transport layer): 加了port號, 並在網路層的架構上決定是否要可靠(TCP), 或繼續不可靠(UDP)
-	e. 交談層(session layer): 為雙方使用者建立對談(session)空間
-	f. 表現層(presenatation layer): 主要負責資料加解密
-	g. 應用層(application layer): 你很熟了, 主要有Http, TCP(很少再用了), VoIp(通訊軟體的視訊或電話)
+1. OSI(Open system interconnection) model, 
+	a. 說明: 
+		I. 分7層, 每一層都封包化, 上一層的大包包住下一層小包, 像是俄羅斯套娃一樣:
 
-2. 層與層之間的溝通, 分成以下幾種:
+	b. 分層:
+		I. 實體層(physical layer): 
+			🤔. 處裡硬體之間通訊時的物理問題
+		II. 鏈路層(data-link layer): 
+			🤔. 處理資料的封包化, 以及通路的基本防錯機制, 以及透過網路卡的號碼mac定位封包路徑
+		III. 網路層(network layer): 
+			🤔. 處理按照實體位置定位(IP), 彌補了鏈路層只能透過Mac, 造成遠距傳輸的中繼難以完成
+		IV. 傳輸層(transport layer): 
+			🤔. 加了port號, 並在網路層的架構上決定是否要可靠(TCP), 或繼續不可靠(UDP)
+		V. 交談層(session layer): 
+			🤔. 為雙方使用者建立對談(session)空間
+		VI. 表現層(presenatation layer): 
+			🤔. 主要負責資料加解密
+		VII. 應用層(application layer): 
+			🤔. 你很熟了, 主要有Http, FTP(很少再用了), VoIp(通訊軟體的視訊或電話)
+
+2. TCP/IP model, 
+reference:
+https://zhuanlan.zhihu.com/p/268196525
+https://stackoverflow.com/questions/9329105/are-we-using-tcp-ip-or-osi-in-internet
+	a. 說明:
+		I. 分4層, 算是OSI的簡化(或可以說是inspired by OSI), 但是由於比OSI更早投入市場, 現在市面上大部分都是TCP/IP model的應用, 已經成為國際標準, OSI反而少用, 主要用於教學
+		II. 简称TCP/IP, 因為该協定家族的兩個核心協定: TCP(传输控制协议)和IP(网际协议), 為该家族中最早通過的標準
+
+	b. 分層:
+		I. 网络接口层(Network Access): 负责监视数据在主机和网络之间的交换
+		II. 网际层(Internet): 主要解决主机到主机的通信问题
+		III. 传输层(Transport): 为应用层实体提供端到端的通信功能，保证了数据包的顺序传送及数据的完整性
+		IV. 应用层(Application): 为用户提供所需要的各种服务
+
+3. 5層model,  這也算是OSI的簡化, 主要是為了方便教學, 把OSI 5, 6, 7層簡併到第5層, 
+	
+
+4. 層與層之間的溝通, 分成以下幾種:
 	a. 一對一多工
 	b. 向上多工（Upward Multiplexing）
 	c. 向下多工（Downward Multiplexing）
 
-3. 每一層的PDU(Protocol data unit): 一下參考來自wikipedia
-	Protocol data units of the OSI model are:[1]
-		The Layer 4: transport layer PDU is the "segment" or the "datagram".
+5. 每一層的PDU(Protocol data unit): 一下參考來自wikipedia
+	Protocol data units of the OSI model are:
+		The Layer 4: transport layer PDU is the "segment(for TCP)" or the "datagram(for UDP)".
 		The Layer 3: network layer PDU is the "packet".
 		The Layer 2: data link layer PDU is the "frame".
 		The Layer 1: physical layer PDU is the bit or, more generally, symbol.
 
 	其實就是每一層都封包化, 第一點筆記已經講過了, 每一層的"包"給他不同名稱, 且他們大小都不一定一樣
 
-4.  IEEE Project 802網路結構, 他是"實體層"和"鏈路層"的協議或規範, 由於這個兩層包含很多不同種的傳輸方式, 例如有線, 無限, 局域, 廣域等等, 所以他是很多協議的集合體.
+6.  IEEE Project 802網路結構, 他是"實體層"和"鏈路層"的協議或規範, 由於這個兩層包含很多不同種的傳輸方式, 例如有線, 無限, 局域, 廣域等等, 所以他是很多協議的集合體.
 
 	802.1 ：高層次介面 (High Level Interface)
 	802.2 ：邏輯鏈結控制 (Logical Link Control)
@@ -39,4 +67,4 @@
 	802.12：Demand-Priority 高速區域網路 (100VG-AnyLAN)
 	802.14：CATV網路
 
-5. 其他層的協議, 例如網路層的IP, 傳輸曾的TCP, UDP, 應用層的HTTP, TCP, VoIP等等
+7. 其他層的協議, 例如網路層的IP, 傳輸曾的TCP, UDP, 應用層的HTTP, FTP, VoIP等等

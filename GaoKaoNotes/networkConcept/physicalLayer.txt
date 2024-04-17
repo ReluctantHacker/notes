@@ -2,24 +2,82 @@
 1. 傳輸媒介:
 	A. 有線:
 		a. 雙絞線(twisted pair) - 
+		reference:
+		https://www.youtube.com/watch?v=_NX99ad2FUA
+		https://www.youtube.com/watch?v=NWhoJp8UQpo
 			I. 最常見的網路線, 
 			II. 大量用於乙太網路, 電話線路, 
 			III. 絕緣銅線絞合是為了減低電磁干擾 
-			IIII. 細分:
-				🤔. UTP(unshielded twisted pair)-成本較低, 但抗造較差
-				🤔. STP(shielded twisted pair)-成本較高, 但抗造較好
-					以上兩類都有cat分級, 表示傳輸效能好壞, 等級越高效能越好
-						😄. cat5
-						😄. cat6
+			IV. 細分:
+				🤔. UTP(unshielded twisted pair):
+					😄. 成本較低, 但抗造較差
+					😄. 最最常見!一般居家或辦公室都使用此
+				🤔. STP(shielded twisted pair):
+					😄. 成本較高, 但抗造較好
+					😄. 工業用, 如: 工业控制系统、医疗设备、高密度布线环境等
+			VI. cat(category)分級, 表示傳輸效能好壞, 等級越高效能越好
+				🤔. cat5
+				🤔. cat6
+			VI. 通常8條上色細線, 倆倆一對twisted(所以共有4對)
+			reference:
+			https://kknews.cc/zh-tw/news/mmopn42.html
+			https://serverfault.com/questions/449416/why-do-ethernet-cables-have-8-wires
+				🤔. 細線的上色方式分2類(功能完全一樣, 只是線的上色方式不同, 與RJ-45接合時要注意):
+					😄. 568A
+					😄. 568B
+				🤔. 4對當中有一對負責傳輸(TX pair, 一根傳送+信號, 一根傳送-信號)
+				🤔. 4對當中有一對負責接收(RX pair, 一根接收+信號, 一根接收-信號)
+				🤔. 剩下兩對留給電話線
+			VII. 常使用接頭(connector)
+				🤔. UTP用RJ-45
+				🤔. STP用RJ-48
+			VIII. 連接分類
+				🤔. straight
+					😄. 線的兩端都使用568B(或568A, 反正兩邊要一樣)`
+					😄. 一端連接你電腦的網路卡, 另一端連接router或switch
+					😄. 使用不同設備之間的連接(例如電腦跟route)
+				🤔. crossover
+					😄. 線的一端都使用568B(或568A), 另一端用568A(或5688, 反正要不一樣)
+					😄. 使用"相同"設備之間的連接(例如電腦跟電腦)
+					😄. 此法現在很少再用了, 通常電腦跟電腦通訊, 直接一台switch拿來用
 		b. 同軸電纜(coaxial cable) - 
 			I. 一根中心導體, 絕緣層, 金屬屏蔽層, 外部絕緣層組成, 
 			II. 它通常用于电视信号传输、有线宽带、局域网等。
-		c. 光纖纜線(optical fiber) - 
+			III. 現在網路很少再用了...基本在乙太網路中已經被twisted pair取代了
+		c. 光纖纜線(optical fiber) 
 			I. 超高带宽、
 			II. 低延迟和
 			III. 抗干扰性能, 幾乎不收到距離影響
-			IIII. 一般的海底電纜超長距離傳輸都是用他
-		
+			IV. 一般的海底電纜超長距離傳輸都是用他
+
+		d. 物理介質分類標準(100Base, 100Base-T, 100Base-TX, etc):
+		reference:
+		https://www.twblogs.net/a/5b7a98562b7177392c9666dd
+			I. 定義:
+				🤔. 10/100/1000, 數字表示網線支持的傳輸速率, 單位為Mbps(M bit per second)
+				🤔. base表示基頻傳輸(baseband)
+				🤔. T/F/C, 字母T表示Twisted pair, F表示Fiber(光纖), C表示
+				🤔. 4/X, 最後的子母表示細分標準, 同一種速度規格下可能還有細分
+
+			II. 實例
+				🤔. 10Base5
+					😄. 是以太網路的第一個商用變體
+					😄. 採用同軸電纜, 10表示支援10Mbps傳輸速度, 5表示最大長度500m
+					😄. 沒用了
+
+				🤔. 10Base2
+					😄. 為了降低10Base5而設計的
+					😄. 沒用了
+
+				🤔. 10Base-T(including 10BaseTe) 
+				🤔. 10Base-F 
+				🤔. 10Base-FL
+				🤔. 10Base-FB
+				🤔. 100Base-T
+				🤔. 100Base-TX
+				🤔. 100Base-TL
+				🤔. 還有很多, 自己查吧...
+
 	B. 無線(frequency from low to high):
 		a. 無線電(radio) - 手機(無論多少G), wifi, bluetooth, 一般的局域無線網路
 		b. 微波(Microwave) - 長途電話, 超長距離傳輸
@@ -29,6 +87,7 @@
 			I. 頻率越高, 繞射能力越差(容易被擋住)
 			II. 頻率在更高, 貫穿力(頻率越高能量越高!)越強, 對有機生命有害, 也會損害電子設備
 			III. 低頻波需要很大的天線來接收和發送, 物理上不合適
+
 
 |#############################################################################################################|
 2. 網路範圍(由近到遠)
@@ -51,7 +110,7 @@
 			I. twisted pair, 
 			II. coaxial cable, 
 			III. optical fiber, 
-			IIII. EM wave
+			IV. EM wave
 	C. MAN(metropolitan area network)---------
 		a. 距離:
 			城市範圍
@@ -70,7 +129,7 @@
 			I. 电缆、
 			II. 光纤、
 			III. 微波链路、
-			IIII. 卫星链接等。
+			IV. 卫星链接等。
 			传输介质的选择取决于覆盖范围、带宽需求、成本等因素。
 
 |#############################################################################################################|
@@ -173,8 +232,11 @@
 			II. 只能一個bit接著一個bit傳, 不能同時同地好幾個bit, 
 			III. 若同時同地兩個bit, 即發生碰撞(collision), 訊號發生衝突
 				🤔. 解法1. 使用CSMA/CD(Carrier Sense Multiple Access with Collision Detection)
+				reference:
+				https://networkengineering.stackexchange.com/questions/12626/how-does-ethernet-detect-a-collision-in-the-csma-cd-method
 					😄. 有碰撞發生就廣播通知所有人
 					😄. 等待隨機的時間重送訊號
+					😄. 以前的網路之所以使用此法的原因是因為以前的"線"只能半雙工(Half duplex), 他的絞線數量只有4條細線, 這造成了"整個網路"實際上只有一條線!! hub的目的就是把零散的線, 變成"一條線(專業上稱"共享介質")"! 但她還是只有一條線, 這條金屬線若是有高電壓流過, 所有接到這條線的終端都會收到電壓變化, 所以舊的半雙工模式是"廣播"模式, 一人發送, 所有人收到. 這同時也造成碰撞問題, 若兩個人在相同時間發送電壓信號, 所有人都收到疊加的電壓信號, 這樣就無法判斷這個信號了, 這就是"碰撞". 但這也給了"listen before transmit(LBS)"留了餘地, 竟然所有信號都是廣播, 那自然可以監聽是否有人在發送信號, 若是等了一小段時間, 發現all clear, 就能發送. 若是傳送過程中有另一個人也傳送了信號, 就又發生碰撞, 這個時候由於有兩端同時增加電壓, 所有人都知道了發生碰撞, 原本發送的兩個人將隨機等待一段時間後重新發送	 
 				🤔. 解法2. 全雙工(full duplex), 使用到了多工技術
 					😄. 全雙工收發可以分開, 不會碰撞, 詳細請看多工技術, 
 					😄. 採用分時間多工(也難以用分頻率, 基頻本來頻寬就低)
@@ -205,7 +267,32 @@
 	B. 寬頻傳輸(broadband), 白光就是一種寬頻, 他是多個頻率的波疊加(彩虹)
 		a. 物理定律限制, 
 			I. 必定需要載波(carrier)
-			II. 單向傳輸
+			II. 也會有碰撞問題, 在有線網路中即是使用CSMA/CD(與基頻傳輸一樣), 與全雙工(full-duplex)
+
+			III. 無線網路, Wifi !!! 也會有碰撞問題(兩根天線, 一根收, 一根發, 沒辦法同時收發(會自擾), 也就是half-duplex), 由於是半雙工, 只能採用類似CSMA/CD的辦法, 但她又無法collision detection, 只能採用collision avoidance
+			reference:
+			https://www.zhihu.com/question/392213415
+				🤔. 先說說關於wifi的原理:
+					😄. wifi基地台使用特定頻段(不一定相同)的通信信道
+					😄. 設備連線wifi基地台, 其實就是在該信道進行收發
+					😄. 所有收聽該信道的設備都能獲取任意傳入該信道的信息(但加密過, 一般收到了也解不開, 只有真的接收者才能解)
+						😄. WPA2 加密協議
+						😄. WPA3 加密協議
+					😄. 為何wifi還在用Half-duplex?
+						😄. 因為full-duplex成本高, 需要解決無線傳輸的接收自擾的問題(你自己發出的球狀波信號你自己也收的到, 跟有線網路限制在一條線裡面是完全不同的情形)
+					😄. 由於是half-duplex, 所以會有collision發生
+					😄. 即使你沒有wifi基地台的密碼登入, 你還是能"聽"到wifi的信號(雖然加密過)
+
+				🤔. wifi碰撞的解決: CSMA/CA(Carrier sense mutliple Access with Collison Avoidance)
+					😄. CSMA的部分與CSMA/CD是差不多的, 基本就是wifi由於"廣播", 所有人都收得到, 你能知道此時有沒有人再發送信號, 等沒人發送時, 你在發送信號
+					😄. 但是wifi無法Collision detection, 因為你發送信號的時候, 基地台開啟發送天線, 發送信號, 此時基地台的接收天線是關閉的, 根本不知道你在發送, 這個時候, 通常你如果沒有收到基地台的接收ack通知, 你就會再次重複監聽並等待all clear, 重複過程並重新發送
+					😄.  RTS/CTS(request to send/clear to send)
+					reference:
+					https://www.zhihu.com/question/42698166
+						😄. 基本上就是發送一個RTS楨給接收方
+						😄. 接收方通知所有人停止, 並確認all clear後, 發送CTS給原發送方
+						😄. 需注意的是RTS/CTS只是減少了碰撞機率, 並沒辦法徹底防止, 由於RTS楨較小, 所以發生碰撞機率較低, 但仍有機會
+
 		
 		b. 使用地方: 
 			I. wifi
@@ -269,4 +356,9 @@
 		d. 網路的覆載量比較高的時候，也會有比較高的機率造成路由器來不及處理而把封包放入佇列中，進而增加 queuing delay 的時間
 
 
-		
+|#############################################################################################################|
+6. 物理知識補充(message latency), 信息的雙工與半雙工
+	A. 物理限制:
+		a. 電線(電流傳輸), 水管, 都是half-duplex, 但是電磁波(球波之類的), 或是水波, 光纖內傳送的光波, 是full-duplex!!!! 	
+		b. 整根電線的電壓, 電流, 必定要一樣(除非是動態), 水管裡的水壓和水流也是一樣, 所以會碰撞(collision)!!!
+		c. 電磁波是球面波, 可以疊加, 也可以互相穿透, 所以不會碰撞, 水波也是如此.

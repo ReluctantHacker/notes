@@ -8,7 +8,7 @@
 
 
 |#############################################################################################################|
-2. 系統開發5大步驟(系統分析, 系統設計, 系統開發, 系統測試, 系統部屬,維護)
+2. 系統開發5大步驟(系統分析, 系統設計, 系統開發, 系統測試, 系統部屬,維護) 也叫做軟體開發生命週期(Software Development Life Cycle，SDLC)
 	A. 系統分析(需求分析)
 		a. ERM(entity relationship model)
 			I. ER diagram
@@ -201,6 +201,7 @@
 					😄. 监控和警报: 集成监控和警报系统, 实时监视应用程序的性能和健康状态, 及时发现并解决问题
 
 
+
 |#############################################################################################################|
 3. 系統開發常見的模型
 	A. 重量級(heavyweight)
@@ -234,3 +235,157 @@
 			II. RAD(rapid application deveopment)
 				🤔. 軟體原型(Software prototyping)
 				🤔. 迭代開發
+
+
+
+
+|#############################################################################################################|
+4. 系統轉換
+	A、直接转换(pilot operation))：
+		在确定新的管理信息系统运行准确无误时，在某一时刻终止现行系统，启用新的管理信息系统。这种转换方式费用低，方法简单，但风险大。适合于处理过程不太复杂的小型简单系统。
+
+	B、并行转换(parallel operation)：
+		新的管理信息系统和现行系统并行工作一段时间，在新的管理信息系统运行准确无误时，替代现行系统。这种转换方式有利于减轻管理人员心理压力、安全性较好，但费用高，两个系统的数据一般不具备可比性。适合于处理过程复杂、数据重要的系统。
+
+	C、分段转换(phased operation)：
+		是直接转换和并行转换的结合，分阶段将新的管理信息系统的各个子系统替代现行系统。这种转换方式心理、安全性较好，但费用高。适合于处理过程复杂、数据重要的大型复杂系统。一般多采用这种方式进行系统转换。
+
+	D. 試驗轉換(pilot operation, 與直接差不多, 有時候當成同一個):
+		试点运营的基本思想是先在一个较小的范围内，例如某个特定的部门、项目组或者地区，部署新系统并让其运行一段时间，以验证系统的可行性、稳定性和有效性。確定OK在一次全面更換至新系統.
+
+
+ 
+|#############################################################################################################|
+5. 品質管理
+reference:
+https://www.cnblogs.com/ivy-zheng/p/15844172.html
+
+	A. CMMI(能力成熟度模型整合, Capability Maturity Model Integration)---->注重組織開發能力的提升
+		a. 是一種衡量軟體開發組織作業成熟度的一個標準(也可用別的領域)
+		b. 可以考取證照, 這個證照對公司的對外形象大有加分
+		c. 分級:
+			I. 成熟度1: initial
+				🤔. Processes unpredictable, poorly controlled and reactive
+			
+			II. 成熟度2: managed
+				🤔. Processes characterized for projects and is often reactive
+			
+			III. 成熟度3: defined
+				🤔. processes characterized for the organization and is proactive
+
+			IIII. 成熟度4: quantitatively managed
+				🤔. Processes measured and controlled 
+
+			IIIII. 成熟度5: optimizing
+				🤔. Focus on process impovement
+
+
+	B. PSP(personal software process): ----->注重個人開發能力的提升
+		a. 過程管理
+		b. 大小估計
+		c. 時間估計
+		d. 質量管理
+
+	C. TSP(team software process): ----->注重團隊開發能力的提升
+		a. 團隊協作
+		b. 質量管理
+		c. 風險管理
+		d. 過程管理
+				
+
+
+|#############################################################################################################|
+5. 成本控制
+	A. COCOMO(Constructive Cost Model) ----> 技術上需要花費多少"人力成本", "時間成本"
+	reference:
+	https://techdifferences.com/difference-between-cocomo-1-and-cocomo-2.html
+
+		a. Basic COCOMO	
+			I. 適用初期開發或小型專案
+			II. 不考慮EAF
+
+		b. 中級COCOMO
+			I. 適用中型專案, 
+			II. 考慮EAF
+
+		c. 高級COCOMO 
+			I. 基於以上兩者的改進版本, 考慮了專案的所有階段
+			II. 適用大型專案
+
+		d. 基本公式:
+			I. Effort = a * (LOC)^b * EAF,         其中Effort簡寫可以表示為E, 單位為"人月(人數*月數)", LOC為(lines of code, 也可以叫做SLOC(source lines of code)), 而EAF則是Effort Adjustment Factor(在中級模型及詳細模型才有這個因子), 他是一個開發內容以外的影響因素集合體, 考慮了工具的使用、开发环境、人员素质等
+
+			II. Duration = c * (Effort)^d,          其中Duration簡寫可以表示為D, 我們可以發現, 開發所需時間為Effort的次方
+
+			III. People = Effort/Duration,           其中People簡寫可以表示為P
+
+	B. COCOMO II       ------> COCOMO的進化版本!!
+		a. 應用開發模型
+		b. 早期設計模型
+		c. 重用模型
+		d. 後架構模型
+		e. 與cocomo I的差異
+			I. COCOMO是線性的, COCOMO II為非線性
+			II. COCOMO使用代碼行數來表示軟體大小, COCOMO II使用object數量, function 數量, 代碼行數...
+			III. COCOMO II還使用了縮放因子(scaling factor)
+
+	B. 成本效益分析(Cost-benefit analysis) -----這是一個經濟學概念, 與技術沒有任何關係, 他適用在任何商業行為
+		a. 折現率---------- 你把錢放著不動(你可以方銀行, 也可以怎樣怎樣的因素考慮進去), 你的錢自動放大的比例, 例如100萬, 明年便105萬, 我們稱作折現率5%, 你的錢變成1.05倍
+			有個折現率的說明(可以參考北洋投教的說明):\
+				https://www.zhihu.com/question/301077862
+
+		b. 現值(present value)-------------就是把未來的錢的大小(面值), 按照折現率換成現在的錢大小
+
+		c. 淨現值(net present value)------------就是我們主要想計算的東西, 他就是把所有的錢按照各自的折現率, 計算回現值, 再減去所花費的錢(一樣是現值), 所得到的結果(其實也就是到底賺多少).  也可說是: 淨現值係指一個投資項目的全部現金流入的折現值和全部現金流出的折現值之間的差額.   所謂淨現值係指一個投資項目的全部現金流入的折現值和全部現金流出的折現值之間的差額。 如果NPV>0，說明該投資的現金流入現值大於現金流出現值，其結果可以增加淨利。 淨現值法要求比較各個可行投資方案的淨現值，並選擇可達成淨利最大化的投資項目。 
+
+	C. 時程管理
+		a. 績效指標
+			I. KPI(key performance index)
+				🤔. 採用SMART標準
+					😄. S 代表具體(Specific):
+						😄. 指績效考核要切中特定的工作指標，不能籠統；
+					😄. M 代表可度量(Measurable): 
+						😄. 指績效指標是數量化或者行為化的，驗證這些績效指標的數據或者信息是可以獲得的；
+					😄. A 代表可實現(Attainable): 
+						😄. 指績效指標在付出努力的情況下可以實現，避免設立過高或過低的目標；
+					😄. R 代表關聯性(Relevant): 
+						😄. 指績效指標是與上級目標具明確的關聯性,最終與公司目標相結合；
+
+					😄. T 代表有時限(Time bound): 
+						😄. 注重完成績效指標的特定期限。	
+
+			*以下兩個專門用於時程專案管理
+			II. SPI(schedule performance index)
+				🤔. SPI其實就是專案的完成度, 
+				🤔. SPI=實際完成/預計完成
+				🤔. SPI=EV/PV,   
+					😄. EV(Earned value): 某時間點已經完成的工作量(通常單位為時間)
+					😄. PV(Planned value): 某時間點應該完成的工作量(通常單位為時間) 
+					😄. 時程變異(schedule variance, SV): SV=EV-PV
+						😄. 表示: 計畫完成PV, 但完成了EV, 
+						😄. SV是差異:
+							😄. +表示超前, 
+							😄. 0表示剛好
+							😄. -表示落後
+					😄. 以上結論也可總結成:
+						😄. SPI>1: 超前
+						😄. SPI=1: 剛好
+						😄. SPI<1: 落後
+
+			III. CPI(cost performance index)
+				🤔. CPI其實就是專案的花費程度, 
+				🤔. CPI=實際花費/預計花費 
+				🤔. CPI=EV/AV
+					😄. EV(Earned value): 某時間點已經完成的工作量(通常單位為時間)
+					😄. AV(Actual cost): 某時間點實際完成的工作量(通常單位為時間) 
+					😄. 成本變異(Cost variance, CV): CV=EV-AV
+						😄. 表示: 實際用了AV, 但完成了EV, 
+						😄. CV是差異
+							😄. +表示結餘,
+							😄. 0表示剛好 
+							😄. -表示超支
+					😄. 以上結論也可總結成:
+						😄. CPI>1: 結餘
+						😄. CPI=1: 剛好
+						😄. CPI<1: 超支
+
