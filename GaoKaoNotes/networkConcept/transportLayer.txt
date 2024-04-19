@@ -1,2 +1,225 @@
 |#############################################################################################################|
-1. 
+1. TCP(transmission control protocol)基本介紹   --- 最被廣泛使用的協議, 與IP組合成TCP/IP model
+	A. TCP segment(TCP's PDU): 以下是組成, 照順序
+		a. header:
+			I. source port
+				🤔. 16 bit
+
+			II. destination port
+				🤔. 16 bit
+
+			III. 序號(sequence number)
+				🤔. 注意, 這個在IP packet header裡面是沒有的, 也就是到了TCP才真的定義了序號
+				🤔. 32 bit
+
+			IV. Acknowlegment number(if ack set)
+				🤔. 32 bit
+				🤔. 代表著希望對方下一次傳送時所夾帶的sequence number
+				🤔. 其值等於(對方傳送的segment的sequence_number + 對方傳送的segment的len)
+
+			V. flags:  (以下這些flag一個1 bit(可以是1或0), 共占用8 bit)
+				🤔. CWR(Congestion Window Reduced)
+					😄. 當接收到雍塞通知, 身為發送方, 通知對方(接收方)自己已經減少發送速度
+
+				🤔. ECE(Excplicit Congestion Notificaton)
+					😄. 通知對方, 發生雍塞
+
+				🤔. URG(Urgent)
+					😄.  当URG 标志位被设置时, 表示该 TCP 报文中包含的数据具有紧急性
+
+				🤔. ACK(Acknowledgment)
+					😄. 在"確認機制"中有重要應用
+
+				🤔. PSH(Push)
+					😄. push, 推送數據時使用
+
+				🤔. RST(Reset)
+					😄. 在重新建立連線時有重要應用
+
+				🤔. SYN(Synchronize)
+					😄. 在建立連線時有重要應用
+
+				🤔. FIN(Finish)
+					😄. 在結束連線時有重要應用
+
+			VI. windows size
+				🤔. 這個東西就是sliding window流量控制的窗口大小, 用來通知對方自己的當前的接收窗口大小是多少
+			V. checksum
+				🤔. TCP採用checksum進行錯誤控制!
+
+			VI. Urgent pointer
+
+		b. data body: 包含其他層的內容
+		
+		c. Segment的最大長度, 也就是所謂的MSS(Maximum Segment Size)
+		reference:
+		https://www.zhihu.com/question/19790398
+		https://medium.com/fcamels-notes/tcp-maximum-segment-size-%E6%98%AF%E4%BB%80%E9%BA%BC%E4%BB%A5%E5%8F%8A%E6%98%AF%E5%A6%82%E4%BD%95%E6%B1%BA%E5%AE%9A%E7%9A%84-b5fd9005702e
+		https://zhuanlan.zhihu.com/p/100385612
+			I. MSS深受MTU(Maximum transmit Unit, 請看datalinkLayer筆記)的限制, 不能超過MTU
+				🤔. segment如果超過MTU的大小, 那他將會被IP層切割(split), 可能1個segment被切成2個packet, 這樣會造成一個問題, 就是萬一其中一個packet丟包, segment由於占了2個packet, 所有兩個packet都要重傳, 造成資源浪費, 與其讓IP層切割, 不如TCP層自己切割, 限制在MTU大小以內, 也就是MSS
+
+
+	B. 連接導向(connection-oriented)--(詳細請看datalinkLayer筆記)
+		a. 在TCP/IP model 四層架構中, 連接導向的問題由TCP負責解決(事實上其他層都跳過了這個問題, 大部分的連接問題都是TCP解決的)
+
+		b. "3次握手(three-way handshake)"建立連線, SYN, ACK分別是segment裡面對應的flag為on(1)
+		reference:
+		https://www.youtube.com/watch?v=fQC4v07gs5k
+
+			I. sender  ------SYN------>  receiver
+			II. sender  <------SYN/ACK------  receiver
+			III. sender  ------ACK------>  receiver
+
+		c. "4次揮手(four-way wavehand)"斷開連線, SYN, ACK, FIN分別是segment裡面對應的flag為on(1)
+			I. sender  ------FIN/ACK------>  receiver
+			II. sender  <------ACK------  receiver
+				🤔. 在這一步驟中, receiver收到FIN/ACK後, 他先回了一個ACK表示收到
+				🤔. 隨後receiver自己準備APP的斷線作業, 但是這可能需要花點時間, 
+				🤔. 等到receiver處理完手上的作業, 再向sender發送屬於自己的斷線請求
+			III. sender  <------FIN/ACK------  receiver
+			IV. sender  ------ACK------>  receiver
+
+		d. TCP的"連線"狀態本質是甚麼?
+		reference:
+		https://ithelp.ithome.com.tw/articles/10274640
+		https://medium.com/swlh/understanding-socket-connections-in-computer-networking-bac304812b5c
+		
+			I. socket connection
+				🤔. 甚麼是socket?
+					😄. 簡單來說, socket其實就是IP address+ port號
+					😄. 詳細一點, 他是兩個programs在網路上的雙向link
+			II. TCB 连接控制块(TCP Control Block, TCB)
+					😄. 雙方系統各自保有自己的TCB, TCB的存在也代表了socket正在連線, 如連線斷開對應的TCB也自動釋放
+					😄. 此數據結構包含了該連線的各種參數, 序號, 確認號, 窗口大小, 超時計數器等
+
+		
+	C. segment序列號(sequence number)計算規則, (基本採用Byte order的方式)
+	reference:
+	https://madpackets.com/2018/04/25/tcp-sequence-and-acknowledgement-numbers-explained/
+	https://zhuanlan.zhihu.com/p/439614017
+		a. 規則:
+			I. A傳送給B的A_segment, 應有seq_num, ack_num, len(segment長度)
+			II. B傳送給A的B_segment, 也應有seq_num, ack_num, len(segment長度)
+			III. A傳送的A_segment應基於A前一次收到B的B_segment, 
+				🤔. A_seqment.ack_num= B_seqment.seq_num + B_seqment.len
+		b. 範例: 
+			I. A   ---------seq_num=1, ack_num=1, len=10------------>  B
+			II. A   <---------seq_num=1, ack_num=11, len=33------------  B
+			III. A   ---------seq_num=11, ack_num=34, len=12------------>  B
+			IV. A   <---------seq_num=34, ack_num=33, len=13------------  B
+
+
+	D. byte流導向(byte-stream oriented)	
+	reference:
+	https://www.researchgate.net/post/What_is_the_difference_between_message-oriented_protocols_and_stream-oriented_protocols
+		a. byte stream oriented, 代表了以下事情
+			I. application layer把data用byte stream的方式傳送給TCP layer, 
+			II. TCP layer收到byte stream後, 會自己"分段(或是打包, 看大小)", 把一定數量(不一定, 請看壅塞控制)的Bytes加上TCP headers一起打包成segment送給IP layer進行packet包裝
+			III. 對方的TCP layer收到segment後, 把segment轉成byte stream送往自己的application layer
+			IV. application layer 讀取byte stream
+
+		b. message oriented(used in UDP), 為了方便統整和理解, 這裡也說明這個概念
+			I. application layer把data打包(或分段, 一樣看大小)成一個group給UDP layer
+			II. UDP layer本身只要把UDP header加入就成了datagram, 之後送往IP layer進行包裝
+			III. 對方的UDP layer 收到datagram後, 直接把datagram的內容整包送往自己的application layer
+			IV. application layer讀取到的是已經打包(或分段)完的data
+
+		c. 一下有一段比較精準的總結: 
+			TCP is a stream oriented protocol and UDP is a message-oriented protocol. TCP receives the stream of bytes from application layer protocols and divide it in to segments and pass it to IP. But UDP receives already divided or grouped bytes of data from application protocols and add UDP headers which will become datagram and send it to IP, then application layers has the burden of dividing the streams of data in to messages when they run on top of UDP .
+
+
+	E. 可靠性(reliablility)
+		a. 確認應答(Acknowledgmenet)
+			I. 確認機制
+				🤔. 接收方需發送ACK(確認)消息給發送方, 通知發送方已經收到消息
+			I. 重傳機制
+				🤔.  若發送方遲遲未收到ACK, 則自動認定數據丟失或損毀, 觸發重傳機制, 重新發送未被確認的數據包
+		b. 流量控制, 主要使用滑動窗口(sliding window)   ---- 傳送方為了適應接收方的接收速度而做出調整
+		reference:
+		https://notfalse.net/24/tcp-flow-control
+		https://www.youtube.com/watch?v=LnbvhoxHn8M
+		https://www.youtube.com/watch?v=klDhO9N01c4
+		/*重要*/
+		https://www.zhihu.com/question/32255109
+			I. sliding window有傳送端的"傳送窗口"和接收方的"接收窗口", 窗口大小意味著一次所能發送或接收的最大數據量.
+				sender window -------> receiver window
+			II. sliding window的單位是byte而不是segment, 別搞錯了, 就好像ack和sequence的單位都是byte
+			III. 前面講過, 接收方發送的ack所攜帶的ack_number, 是表示接收方下一個想要的sequence_number
+				🤔. 如果接收方沒有收到B, 即使傳送方一直丟出C, D, E, F, 接收方的回應ack_number, 仍會是B, 表示他就要B, 傳送方收到接收方的ack, 就能明白接收方沒收到B, 從B開始重傳
+
+			IV. TCP是全雙工, 通訊雙方都有各自的發送窗口與接收窗口
+			V. sliding windows其實涵蓋了部分"確認應答"機制
+			
+		c. 錯誤控制
+			I. 奇偶較驗
+			II. checksum  --- **TCP使用
+			III. 檢查冗於碼 CRC(check redundant code) --- datalink layer使用(因為datalinkLayer發生錯誤可能性較高, 故使用更高效的算法)
+
+
+		d. 壅塞控制       ---- 傳送方為了適應網路的傳輸狀況(可能有起伏, 時大時小)做出調整
+		reference:
+		https://www.zhihu.com/question/38749788
+		https://www.zhihu.com/question/264518499
+
+			I. 首先系統會先設定一個初始的ssthresh(這裡是重點!!我一開始不知道ssthresh有初始值, 所以想了很久沒有弄懂, 這個初始值可能會猜測系統的流量上限, 把ssthresh訂在這個上限的低一點位置)
+
+			II. 執行slow start, 把cwnd(壅塞窗口)從一個MSS(maximum segment size)的大小開始傳送, 收到ACK(確認)後, 倍數增加, 一個變兩個, 兩個變四個, 指數增長
+
+			III. 這個時候可能兩種狀況. 
+				🤔. 增長過程中發現重複ACK(表示發生壅塞, 掉包了), 他雖然還沒有達到預設的初始ssthresh, 但是系統已經能知道ssthresh很有可能比我一開系統亂猜的初始值訂的要小, 這時候會進入下一個階段, 快速重傳(fast retransmit, 也就是cwnd減半), 然後進入壅塞避免(congestion avoidance, 也就是速度增長從指數增長改成線性增長, 一次增加一個MSS), 接著再次看有沒有壅塞發生(重複ACK, 也就是掉包了), 如果又發生, 那就再次進入快速重傳, 然後在雍塞避免, 無限循環, 動態的調整ssthresh
+				🤔. 另一種可能是, 一開始傳送數據時, 一路沒有壅塞(重複ACK接收, 也就是掉包了), 直到傳送速率到了ssthresh, 便進入壅塞避免(congestion avoidance), 雖然!! 這個時候並沒有發生雍塞!!!  當壅塞避免的時候, 發生了雍塞(重複ACK, 掉包了), 那就進入快速重傳, 然後在雍塞避免, 這一段就與第一種可能一樣了.
+
+
+
+|#############################################################################################################|
+2. UDP(User datagram protocol)   ---- 與TCP幾乎可以說是兩個極端...兩個要一起看
+	A. datagram(UDP's PDU)
+		a. header:
+			I. source port
+			II. destination port
+			III. length
+			IV. checksum
+
+	B. 非連接導向(connectionless)--(詳細請看datalinkLayer筆記)
+		a. 採用"郵政模型"
+		b. 收發雙方彼此都不知道對方的狀態
+
+	C. 信息導向(message oriented)
+		a. 在TCP的byte stream oriented筆記有詳細說明.
+
+	D. 不可靠傳輸(unreliable)
+		a. 但是較快速, 適用容許一定程度丟失的應用, 例如電話訊號, 電視訊號, 連線遊戲.
+		b. 接收方不會回復ack(就好像你寄信, 對方不會回應"收到了")
+
+	E. 不保證資料順序, 你可以注意到datagram裡面連序號(sequence number)都沒有
+
+|#############################################################################################################|
+3. RTP(Real-time transport protocol), RTCP(RTP control protol), 兩個基本一起使用
+reference:
+https://zhuanlan.zhihu.com/p/352932897	
+
+	A. 基本上可以把RTP當成第四層的子層, 或者是4.5層, 他基於UDP, RTP在UDP的基础上增加了一些额外的特性, 如序列号, 时间戳和负载类型标识符, 以支持实时数据传输的需求.
+		a. 序列號: 用于对数据包进行排序和重组, 以应对网络中的乱序到达和丢包现象 
+		b. 时间戳: 标识媒体数据的时序信息, 以便接收端能够正确播放和同步数据
+		c. 有效载荷: 包含了音频, 视频或其他媒体数据, 其格式和编码方式由负载类型字段指定
+		d. 同步源标识符(SSRC): 其實就幫傳送端源頭取一個ID, 確保每一個發送者都有唯一的標示符, 不然只憑IP+port, 有可能出現單個IP+port, 然後多個媒體流, 幾乎所有的application layer協議, header都會有標示符(唯一), 以確保對象正確.
+
+	B. 應用在通訊軟體的視訊和音訊通話, 其實就是所謂的VolP(voice over internet protocol)的其中一種
+
+	C. ConnectionLess(無連接)
+
+	D. 不可靠(unreliable):
+		a. 無確認(ack), 無重傳(retrasmit), 專注於實時姓, 流暢性
+
+	E. 偶爾用在stream(串流)...這個比較沒那麼長使用RTP, 只有偶爾會考慮用RTP, 串流主要使用HLS, DASH(這兩個基於http, http基於TCP)
+
+	F. RTCP(RTP control protocol), 幫助RTP
+		a. 传输统计信息: RTCP可以收集和传输关于RTP数据流的统计信息, 如丢包率, 延迟, 抖动等, 以便用于性能监控和调优
+
+		b. 反馈机制: RTCP可以用于实现反馈机制, 允许接收端向发送端提供有关数据接收质量和需求的反馈信息, 如NACK(Negative Acknowledgement)和RR(Receiver Report)等
+
+		c. 同步和定时: RTCP还可以用于同步和定时控制, 通过发送RTCP包来同步参与会话的各个终端设备的时钟和状态
+
+		d. 带宽控制: RTCP可以用于实现带宽控制, 根据网络状况和参与者的需求动态调整数据传输的带宽和质量
+
