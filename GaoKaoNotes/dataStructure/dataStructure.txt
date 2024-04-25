@@ -89,19 +89,25 @@
 	A. infix -> postfix
 		a. 需要1個stack
 		b. 由左向右scan
-		c. 把"算符"push(pop)到stack(stack只會需要存算符)
+		c. 遇到"數字"直接輸出至結果, 遇到"算符"則與stack的top比較優先級, 不能"<="top, 否則stack pop(), 直到不再"<=", 才push進stack, 注意! stack(stack只會需要存算符), 
+		d. 遇到"("則push進stack, 遇到")"則pop stack, 直到遇到"("
 	B. postfix的計算演算法
 		a. 需要1個stack
 		b. 由左向右scan
 		b. 把"數字"push(pop)到stack(stack只會需要存數字)
 	C. infix -> prefix
-		a. 需要2個stack
+		a. 需要1個stack
 		b. 由右向左scan
-		c. 一個stack是temp, 一個是result
+		c. 遇到"數字"直接輸出至結果, 遇到"算符"則與stack的top比較優先級, 不能"<"top, 否則stack pop(), 直到不再"<", 才push進stack, 注意! stack(stack只會需要存算符), 
+		d. 遇到")"則push進stack, 遇到"("則pop stack, 直到遇到")"
+		c. 由於是從右邊開始scan, 其結果會是reverse的, 所以你需要自己reverse過來(可以用另一個stack完成此事)
 	D. prefix的計算演算法
 		a. 需要1個stack
 		a. 由右向左scan
 		c. 把"數字"push(pop)到stack(stack只會需要存數字), 跟postfix很像, 只是計算時的次序要注意
+
+	E. 重要練習題(裡面涵蓋一些概念, 細品):
+		http://sptutor.dyu.edu.tw/DSTutor/exprDemo6.jsp
 
 
 |#############################################################################################################|
@@ -360,7 +366,7 @@
 			II. 出分支度(Outdegree)
 				🤔. 指出v的e個數
 			III. 公式
-				🤔. e = total_sum(indegree) = total_sum(outdegree)
+				🤔. e = total_sum(indegree) = total_sum(outdegree)  (某點的入, 必定是某點的出!, 有入必有出)
 				🤔. 從以上公式可以知道, 想要算總e, 只要算總indegree 或是 總 outdegree即可
 
 	H. 資料結構(數學)如何表示graph?

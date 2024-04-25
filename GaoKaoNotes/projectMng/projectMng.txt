@@ -1,10 +1,10 @@
 |#############################################################################################################|
 1. 專案管理5大流程:
-	A. 啟動 - 定義專案範圍，確認專案目標
-	B. 規劃 - 提出專案規劃與設計，組織專案成員
-	C. 執行 - 資源配置與整合、跨部門溝通、細項工作執行
-	D. 控管 - 掌握專案完成度、時間、資源、預算
-	E. 結案 - KPI、指標的檢討、知識的萃取與整理
+	A. 啟動 - 定義專案範圍，確認專案目標 (start)
+	B. 規劃 - 提出專案規劃與設計，組織專案成員 (plan)
+	C. 執行 - 資源配置與整合、跨部門溝通、細項工作執行 (do)
+	D. 控管 - 掌握專案完成度、時間、資源、預算 (control)
+	E. 結案 - KPI、指標的檢討、知識的萃取與整理 (end)
 
 
 |#############################################################################################################|
@@ -39,6 +39,12 @@
 					https://blog.csdn.net/m0_71417856/article/details/130467940
 					https://codegym.cc/tw/groups/posts/tw.104.chou-xiang-lei-he-jie-kou-de-qu-bie
 					https://m.imooc.com/qadetail/107540
+					這裡有一個參考滿詳細的, 但是association和combination的地方怪怪的:
+					https://spicyboyd.blogspot.com/2018/07/umlclass-diagram-relationships.html
+
+				🤔. 練習題目:
+					https://dotblogs.com.tw/unified_modeling_language/2019/04/01/115230
+					https://www.uml-diagrams.org/software-licensing-domain-diagram-example.html?context=cls-examples
 				
 				🤔. ORM(Object-Relational Mapping)
 					😄. 在現代軟體開發中是很重要的一種實現
@@ -48,8 +54,14 @@
 					😄. 阻擋了一部份的sql injection
 
 			II. use case diagram
+			reference:
+			https://ithelp.ithome.com.tw/articles/10224701
 			III. sequence diagram
+			reference:
+			https://ithelp.ithome.com.tw/articles/10224701
 			IIII. activity diagram
+			reference:
+			https://ithelp.ithome.com.tw/articles/10224701
 			IIIII. state diagram
 			IIIIII. component diagram
 			IIIIIII. deployment diagram

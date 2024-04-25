@@ -10661,7 +10661,8 @@ https://www.twblogs.net/a/5d4d2121bd9eee5327fc5040
 
 17. RTP有個很重要的應用:
 	A. 通訊軟體的視訊和音訊通話, 
-	B. stream(串流)...這個比較沒那麼長使用RTP, 只有偶爾會考慮用RTP, 串流主要使用HLS, DASH
+	B. stream(串流)...這個比較沒那麼長使用RTP, 只有偶爾會考慮用RTP, 串流主要使用HLS, DASH(這兩個是基於http, 而http有基於TCP)
+
 	以下是一個說明:
 	https://zhuanlan.zhihu.com/p/352932897	
 	
@@ -10669,9 +10670,9 @@ https://www.twblogs.net/a/5d4d2121bd9eee5327fc5040
 
 19. 關於傳輸層看的差不多了, 主要就是TCP, UDP, RTP, RTCP等等
 
-20. 接下來看應用層(application layer), 主要有HTTP, VolP, TCP, 等等等, 多看多分
+20. 接下來看應用層(application layer), 主要有HTTP, VolP, FTP, 等等等, 多看多分
 
-21. HTTP和TCP比較常被拿來比較, 
+21. HTTP和FTP比較常被拿來比較, 
 	A. HTTP主要用於web之間, server and client, 傳輸HTML, 圖片, 視頻等等...
 	B. TCP也是server and client, 但是單純是傳輸檔案(其實現在很少人用TCP了)
 
@@ -10690,3 +10691,122 @@ https://www.twblogs.net/a/5d4d2121bd9eee5327fc5040
 
 4. 關於各種路由協議的比較(RIP, OSPF, BGP)
 	https://blog.csdn.net/starter_____/article/details/102740204
+
+2024/4/8
+1. 關於自治系統(autonomous systemm)和border router的一個詳細解釋:
+	https://www.zhihu.com/question/21024981
+
+
+2024/4/9
+1. 開始看"專案管理",  整理專案管理筆記
+
+2. 回頭整理了"網路"的筆記, 思考了, 網路攻擊大部分是透過哪一層(OSI), 主要集中在"應用層"和"傳輸層"
+
+	应用层（第七层）攻击：
+		应用层攻击主要针对网络应用程序，包括 Web 应用、邮件服务器、DNS 服务器等。常见的应用层攻击包括 DDOS 攻击、SQL 注入、跨站脚本（XSS）攻击、跨站请求伪造（CSRF）等。
+
+	传输层（第四层）攻击:
+		传输层攻击通常针对网络连接和传输协议，包括 TCP 和 UDP。常见的传输层攻击包括 SYN 攻击、UDP Flood 攻击、TCP Flood 攻击、SYN-ACK Flood 攻击等。
+
+3. 重新整理"子網遮罩", "CICR", "NAT", 到"網路"筆記
+
+4. DNS屬於應用層, 我應該把DNS歸納在應用層(嗎?)
+
+5. 繼續"專案管理"
+
+6. 開始整理"資料庫"的筆記
+
+7. 筆記整理的差不多了, 開始練習sql 50題
+	https://hackmd.io/@_7vFEnkKTve5g-aFhT8EvQ/Sy-H0QeWr#%E7%B7%B4%E7%BF%92%E9%A1%8C
+
+8. 關於sql 中group by的詳細用法:
+	https://zhuanlan.zhihu.com/p/460005395
+
+
+2024/4/10
+1. 繼續看"資料庫", sql 50題
+
+2. 關於"資料庫"看到第27題, 關於group by 失敗的問題...為何有時候可以, 有時候失敗??
+
+3. 繼續看"系統專案管理", 繼續整理筆記
+
+4. 關於專案開發時間和人力成本的計算模型, 除了cocomo還有一些其他的你可能要會:
+	https://cloud.tencent.com/developer/article/1702820
+	https://cloud.tencent.com/developer/article/1665130
+	上面有個模型Putnam模型, 其實也是考題裡面提到的SLIM 模型
+
+
+2024/4/11
+1. 開始看"資料結構"
+
+2. 看到m-way-tree, 準備睡覺, 其實AVL tree, binary search tree, 還有一個很重要的tree跟兩個大有關係, 叫做recursion tree(地回樹), 在演算法才提到他, 大我覺得其實也可以先整理`
+
+
+2024/4/12
+1. "資料結構"
+2. 看到search的部分, 把binary search以及interpolation search 看得差不多了, 並做了筆記
+
+2024/4/13
+1. miss
+
+2024/4/14
+1. 看"資料庫", 主要練習sql的select 語法
+
+2024/4/15
+1. 早上把50題sql select題目看過一遍
+
+2. 下午開始看"網路", 先複習
+
+3. 連接導向, 非連接導向, 可靠性, 非可靠性, 這4個之間的關聯....???
+
+2024/4/16
+1. 看網路, 整理筆記
+
+2024/4/17
+1. 看網路, 整理筆記
+
+2024/4/18
+1. 看"資管", 基本把筆記都整理好了
+
+2024/4/19
+1. 看"資料結構"
+
+2024/4/20
+1. 把"資料結構"筆記整理的差不多了, 下次可能就要開始總複習了
+
+2024/4/21
+1. 開始看"資料庫" ER diagram的部分
+
+2. 這裡有一個基礎的資料庫, 練習題:
+	https://blog.csdn.net/songxinfeng1989/article/details/104520218
+
+2024/4/22
+1. 都在看"網路", 整理筆記
+
+2024/4/23
+1. 看"資料結構", 剛看完expression, 看到queue
+
+2024/4/24
+1. 主要都在看"資料庫", 看到關聯代數(Relational Algebra), 正要開始寫練習題
+
+2024/4/25
+1. 看了一下"資料庫", 看"關聯代數(relational Algebra), 
+
+2. 開始看"資料結構"(快速複習, 順便用程式實作), 從queue繼續開始看
+
+3. "資料結構"看到實作"adjacency list"的部分, 如何實作?? 比較好?
+
+4. 繼續看"資料結構", 看到如何實作graph的traversal, 或許要用到c++, 所以練了C++
+	c++實作參考:
+		https://kopu.chat/%e5%af%a6%e4%bd%9cgraph%e8%88%87dfs%e3%80%81bfs%e8%b5%b0%e8%a8%aa/
+	c實作參考:
+		https://medium.com/@ehowming/%E8%A4%87%E7%BF%92%E6%95%B4%E7%90%86-%E5%9F%BA%E7%A4%8E%E8%B3%87%E6%96%99%E7%B5%90%E6%A7%8B-c%E8%AA%9E%E8%A8%80-%E5%9C%96-graph-14333bf40f9
+
+5. 複習C++中模板的用法, 
+
+6. 嘗試把c++的vector稍微熟悉一下, here's a reference talks about this:
+	https://hackmd.io/@ndhu-programming-2021/Sy8Oqd5TF
+
+
+
+
