@@ -60,6 +60,10 @@ https://stackoverflow.com/questions/19781294/whats-the-difference-in-notation-fo
 		https://medium.com/pierceshih/%E7%AD%86%E8%A8%98-%E5%AF%A6%E9%AB%94%E9%97%9C%E8%81%AF%E5%9C%96-87c3ecbc5ff0
 		https://www.mis.nsysu.edu.tw/db-book/pro_ch3.html
 
+	E. EER model(enhance ER model)
+	reference:
+	http://uml.org.cn/sjjm/Chapter10-4.pdf
+
 
 |#############################################################################################################|
 4. 資料庫設計
@@ -129,16 +133,48 @@ https://stackoverflow.com/questions/19781294/whats-the-difference-in-notation-fo
 
 |#############################################################################################################|
 5. transaction(交易)
+沒時間了...除了講義以外, 記得看以下reference:
+https://zhuanlan.zhihu.com/p/133823461
 	A. ACID(Atomicity, Consistency, Isolation, Durability)
-		reference:
-		https://lance.coderbridge.io/2021/04/24/short-what-is-acid/
+	reference:
+	https://lance.coderbridge.io/2021/04/24/short-what-is-acid/
 
 		a. Atomicity
+			I. Transaction為最小單元, 不可再分割, Transaction內的運算只能一起成功或一起失敗
 		b. Consistency
+			I. Transaction的運算必須與現實世界的規則一致
 		c. Isolation
+			I. Transaction之間互相獨立, 彼此不會互相影響
 		d. Durability
+			I. Transaction commit 後, 其運算結果應在具有持久性
 
-	B. deadlock(死鎖)
+	B. Transaction的執行:
+		a. 概念上, 一個交易是由數個以下五種基本運算動作所組成：
+			I. begin(T)：表示一個交易T開始執行。
+			II. read(X, x)：表示從硬碟讀取資料項X到主記憶體變數x。
+			III. write(x, X)：表示將主記憶體變數x寫至硬碟資料項X。
+			IV. commit(T)：表示一個交易T成功的結束。
+			V abort(T)：表示一個交易T被駁回，其以前做過的動作因此全部還原。
+
+	C. Transaction的並行處理(一般為了效率, 不會按順序處理, 都採並行)  --- 線上講義ch12
+		a. 任意交錯執行可能會有以下問題:
+			I. 更新遺失的問題（The Lost Update Problem）
+			II. 污染讀取的問題（The Dirty Read Problem）
+			III. 無法重複讀取的問題（The Non-repeatable Read Problem）
+			IV. 幽靈資料的問題（The Phantom Problem）
+
+	D. Checkpoint機制:
+	reference:
+	https://www.newton.com.tw/wiki/CheckPoint
+	http://debussy.im.nuu.edu.tw/sjchen/Database/Final/Ch09.pdf
+
+	E. 二階段鎖
+	reference:
+	https://zhuanlan.zhihu.com/p/133823461
+	https://www.twblogs.net/a/5d407451bd9eee51fbf99a58
+	https://www.itread01.com/articles/1476768602.html
+
+	F. deadlock(死鎖)
 		a. 發生機制:
 			I. Mutual Exclusion:
 				🤔. 一個resource一次只能被一個process用

@@ -10808,5 +10808,25 @@ https://www.twblogs.net/a/5d4d2121bd9eee5327fc5040
 	https://hackmd.io/@ndhu-programming-2021/Sy8Oqd5TF
 
 
+2024/4/26
+1. 開始看"網路", 
 
+2. 路由器的迴圈問題和switch的迴圈問題...如何解決?? 原理是甚麼??
+
+3. 網路剩下SNMP沒看完
+
+
+
+2024/4/27
+1. 看"資料結構", 看到huffman tree的程式實作, 需要用到heap
+
+
+2024/4/28
+1. 複習"資料結構", 看到merge sort的程式實作,
+
+2024/4/29
+1. 複習"資料結構", 基本把greedy, dynamic programmin看完, 開始準備寫歷屆考題, 寫到107年, 發現雙連通的概念沒有學過
+
+2024/4/30
+1. 主要看"資料庫", 有關Transaction(包含schedule, 鎖lock, checkpoint, commit等概念)以及擴充實體模型圖(EERD), 
 
