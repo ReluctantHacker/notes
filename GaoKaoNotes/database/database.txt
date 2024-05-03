@@ -20,6 +20,19 @@
 		a. 由多台數據庫server組合而成, 
 		b. 使用者在存取資料時, 資料可以來自於不同的伺服器中
 		c. 效率較好, server負擔較小, 但也較難建立
+		d. 透明度:
+			I. 在分散式系統中，透明度（Transparency）指的是系統對用戶或應用程序隱藏了其內部的細節，使其感覺就像是在使用單一的、統一的系統。透明度旨在簡化系統的使用和管理，使得用戶和應用程序可以將注意力集中在功能和應用上，而不必關心底層的實現細節。透明度通常包括以下幾個方面：
+
+				🤔. 存取透明度（Access Transparency）：
+					😄. 使用者無需關心資料的存儲位置和具體的存取方式，只需通過統一的接口來訪問資料。
+				🤔. 位置透明度（Location Transparency）：
+					😄. 使用者不需要知道資料或服務的實際位置，可以通過統一的命名來訪問它們。即使資料或服務的位置發生變化，使用者也不會受到影響。
+				🤔. 移動透明度（Mobility Transparency）：
+					😄. 使用者可以在系統中自由地移動，而不會影響其訪問資料或服務的能力。系統能夠自動地處理資源的移動和重新配置，而不需要用戶干預。
+				🤔. 重定向透明度（Redirection Transparency）：
+					😄. 系統可以根據負載情況和資源可用性，自動地將請求重定向到最合適的資源或服務上，用戶不需要手動干預。
+				🤔. 故障透明度（Failure Transparency）：
+					😄. 系統可以自動地處理故障和錯誤，並提供恢復機制，使得用戶無需感知到系統的故障或錯誤。
 
 
 |#############################################################################################################|
@@ -71,9 +84,12 @@ https://stackoverflow.com/questions/19781294/whats-the-difference-in-notation-fo
 	reference:
 	https://stackoverflow.com/questions/723998/what-are-database-normal-forms-and-can-you-give-examples/724032#724032
 		a. 第一正規化: 把可以拆分的欄位拆出, 且不能有重複的資料(一樣)的資料, 也就是需要有primary key
+			I. Every non-key attribute should be dependent on the key
 		b. 第二正規化: 部分相依於primary keys的欄位必須獨立出去
+			I. Every non-key attribute should be dependent on the key and the whole key
 		c. 第三正規化: 欄位本身不相依於primary keys, 但她所相依的欄位卻完全相依於primary keys, 這樣的欄位也要獨立出去
-		d. BCNF
+			I. Every non-key attribute should be dependent on the key, the whole key and nothing but the key
+		d. BCNF ---> Every attribute(including non-key or key attribute) should be dependent on the key, the whole key and nothing but the key
 		reference:
 		以下的解釋有一個精采的範例
 		https://www.youtube.com/watch?v=VWnKUKH4tLg
@@ -126,9 +142,16 @@ https://stackoverflow.com/questions/19781294/whats-the-difference-in-notation-fo
 					{C, D}, {A, B}, {B, C}, {A, D}	
 
 	C. 索引(index):
-		a. 基本解釋: 為何可以增加搜索數據的速度, 其實不難理解, 資料存入資料庫若是沒有任何資料結構, 那搜索將採用線性搜索, 也就是時間複雜度是O(n), 如果做了B-Tree的索引結構, 那搜索速率自然提升到O(log(n)) 
+		a. 基本解釋: 為何可以增加搜索數據的速度, 其實不難理解, 資料存入資料庫若是沒有任何資料結構, 那搜索將採用線性搜索, 也就是時間複雜度是O(n), 如果做了B-Tree(balanced m-way search tree)的索引結構, 那搜索速率自然提升到O(log(n)) 
 
 		b. 缺點:  雖然索引(index)會使搜索效率提升, 但是insert, 或update的速率是會下降的, 因為他需要先找到, 才能插入或update, 但是沒做索引的話, 直接插入就好, 不用理會index的結構到底如何
+
+		c. 叢集索引(cluster index), 非叢集索引(non-cluster index)
+		reference: 
+		https://www.youtube.com/watch?v=YuRO9-rOgv4
+			I. 要理解這裡兩者的區別, 我們得先知道B+樹, 首先大部分的索引其實都使用B+樹(前面提到B-Tree, 只是方便說明, 其實應該是B+ tree), B+樹為了減小樹高(增加search效率), 而把值都存在葉節點, 其他節點只存key...
+			II. 叢集索引的排列順序就是實際上(物理上)資料的排列順序(由於在實際物理上做了B+ tree結構, 所以更快)，而非叢集索引的排列順序不會/無法影響到實際資料的排列順序。 也因此，一個資料表中可以包含很多非叢集索引, 但只會有一個叢集索引。
+			III. cluster新增資料較慢, 但查詢較快, noncluster新增資料較快, 但查詢較慢(兩者都比不做索引要快)
 
 
 |#############################################################################################################|
@@ -168,13 +191,15 @@ https://zhuanlan.zhihu.com/p/133823461
 	https://www.newton.com.tw/wiki/CheckPoint
 	http://debussy.im.nuu.edu.tw/sjchen/Database/Final/Ch09.pdf
 
-	E. 二階段鎖
+	E. 隔離等級
+
+	F. 二階段鎖
 	reference:
 	https://zhuanlan.zhihu.com/p/133823461
 	https://www.twblogs.net/a/5d407451bd9eee51fbf99a58
 	https://www.itread01.com/articles/1476768602.html
 
-	F. deadlock(死鎖)
+	G. deadlock(死鎖)
 		a. 發生機制:
 			I. Mutual Exclusion:
 				🤔. 一個resource一次只能被一個process用
@@ -241,11 +266,39 @@ https://zhuanlan.zhihu.com/p/133823461
 6. nosql
 
 
+|#############################################################################################################|
+7. 資料倉儲
+	A. 定義:
+		a. 通常集合了多個資料庫的資料, 他的目的是把多方面(或多個系統)的資料統一集中儲存和處理, 而通常資料庫的資料只針對一個系統
+
+	B. 與資料庫的區別:
+	reference:
+	https://stackoverflow.com/questions/3419353/what-is-the-difference-between-a-database-and-a-data-warehouse
+	注意腰果的答案
+	https://www.zhihu.com/question/24110442
+		a. 資料庫:  --> 有效地檢索、更新和管理資料。
+			I. 資料庫使用OLTP(online Transaction processing) 
+			II. 資料庫通常用於再線的業務處理
+			III. 通常要求正規化, 節省儲存空間
+			IV. 不適合用來分析(效率不好)
+
+		b. 資料倉儲 --> 用於集成和分析大量資料的系統，通常來自於不同來源的資料
+			I. 資料倉儲使用(OLAP, online analytical processing)
+ 			II. 資料倉儲用於數據分析, 數據挖掘, 機器學習, 特徵分析
+			III. 不正規化, 為了節省分析需求所花費的時間, 增加效率
+			IV. 適合拿來分析
+
+	C. 常見操作
+		a. 上卷（Roll Up）/聚合：选定某些维度，根据这些维度来聚合事实，如果用SQL来表达就是select dim_a, aggs_func(fact_b) from fact_table group by dim_a.e.g. 风控场景：点赞场景，决策REJECT，UV多少
+		b. 下钻（Drill Down）：上卷和下钻是相反的操作。它是选定某些维度，将这些维度拆解出小的维度（如年拆解为月，省份拆解为城市），之后聚合事实。e.g. 风控场景：点赞场景，命中规则A，决策REJECT，UV多少
+		c. 切片（Slicing、Dicing）：选定某些维度，并根据特定值过滤这些维度的值，将原来的大Cube切成小cube。如dim_a in ('CN', 'USA')e.g. 风控场景：点赞场景，命中规则A、规则B，规则C，决策REJECT，UV是多少
+		d. 旋转（Pivot/Rotate）：维度位置的互换
+		
 
 
 
 |#############################################################################################################|
-7. 資料庫考題
+8. 資料庫考題
 選擇題(不分章節):
 https://www.itest.org.tw/PDF/9912exam/IDD-9912.pdf
 https://www.takming.edu.tw/course/%E4%B8%89%E5%B9%B4%E7%B4%9A%E8%B3%87%E6%96%99%E5%BA%AB.pdf

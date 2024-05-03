@@ -18,7 +18,10 @@ https://kknews.cc/zh-tw/tech/azkm2q6.amp
 		reference:
 		https://ithelp.ithome.com.tw/articles/10322987
 			I. 軟體防火牆
+				🤔. 由於設計硬體這件事是價格不斐的投資，拿著現有、通用硬體就能做事的軟體防火牆，就相對便宜得多了。像是我們一般人家中新台幣一兩千就能入手的路由器（Router），內建的就大多是軟體防火牆。
 			II. 硬體防火牆
+				🤔. 而「硬體防火牆」，就貴的多，一般也只有企業等級的防火牆會採用這樣的解決方案。相對於軟體來講，用硬體實現防火牆的優勢當然就在於性能高的多！像是分析封包、匹配規則等計算可以透過特殊設計的硬體來做，效率就會比通用的 CPU 做的運算高的多（如同 GPU 在圖形運算上遠快於 CPU 一樣）。
+
 		c. 防火牆的多種不同政策(access policy)
 			I. 基本存取: 允許內部網路和受信任的網路
 			II. 全面管制: 限制所有流量
@@ -157,7 +160,7 @@ https://ithelp.ithome.com.tw/articles/10202316
 
 	
 |#############################################################################################################|
-7. IPSEC(Internet protocol security)   ---- 一套通訊協定(多個協定組成), 通常用於VPN
+7. IPSEC(Internet protocol security)   ---- 一套通訊協定(多個協定組成), 通常用於VPN, IPSEC與IP都屬網路層(使用時可選擇一個)
 reference:
 https://www.cloudflare.com/zh-tw/learning/network-layer/what-is-ipsec/
 	A. 重要性:
@@ -165,7 +168,7 @@ https://www.cloudflare.com/zh-tw/learning/network-layer/what-is-ipsec/
 
 
 	B. 定義:
-		a. 是一種用於保護網際網路通信安全性的協議套件。它提供了對 IP 網絡上的數據進行加密和身份驗證的標準化機制，從而確保數據在傳輸過程中的機密性、完整性和可用性(CIA, condidentiality, integrity, authenticity)。
+		a. 是一種用於保護網際網路通信安全性的協議套件。它提供了對 IP 網絡上的數據進行加密和身份驗證的標準化機制，從而確保數據在傳輸過程中的機密性、完整性和可用性(CIA, confidentiality, integrity, authenticity)。
 
 		b. 包含幾個主要協定(protocol):
 			I. 驗證標頭(AH, Authentication Header):

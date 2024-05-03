@@ -1,0 +1,209 @@
+#############################################################################################################
+1. 傳輸媒介:
+	A. 有線:
+		a. 雙絞線(twisted pair) - 
+			I. 最常見的網路線, 
+			II. 大量用於乙太網路, 電話線路, 
+			III. 絕緣銅線絞合是為了減低電磁干擾 
+			IIII. 細分:
+				🤔. UTP(unshielded twisted pair)-成本較低, 但抗造較差
+				🤔. STP(shielded twisted pair)-成本較高, 但抗造較好
+					以上兩類都有cat分級, 表示傳輸效能好壞, 等級越高效能越好
+						😄. cat5
+						😄. cat6
+		b. 同軸電纜(coaxial cable) - 
+			I. 一根中心導體, 絕緣層, 金屬屏蔽層, 外部絕緣層組成, 
+			II. 它通常用于电视信号传输、有线宽带、局域网等。
+		c. 光纖纜線(optical fiber) - 
+			I. 超高带宽、
+			II. 低延迟和
+			III. 抗干扰性能, 幾乎不收到距離影響
+			IIII. 一般的海底電纜超長距離傳輸都是用他
+		
+	B. 無線(frequency from low to high):
+		a. 無線電(radio) - 手機(無論多少G), wifi, bluetooth, 一般的局域無線網路
+		b. 微波(Microwave) - 長途電話, 超長距離傳輸
+		c. 紅外線(Infraed) - 許多遙控器
+		d. 雷射(Laser) - 光纖中使用
+		補充: 無線傳輸的頻寬很有限, 主要使用低頻波, 主要有兩個原因:
+			I. 頻率越高, 繞射能力越差(容易被擋住)
+			II. 頻率在更高, 貫穿力(頻率越高能量越高!)越強, 對有機生命有害, 也會損害電子設備
+			III. 低頻波需要很大的天線來接收和發送, 物理上不合適
+
+#############################################################################################################
+2. 網路範圍(由近到遠)
+	A. PAN(peronal area network)-------
+		a. 距離:
+			幾公尺以內超進距離, 通常是給各人使用
+		b. 實例: 
+			I. bluetooth(IEEE 802.15.1), 
+			II. RFID(他的一個重要子集: NFC, 實例有: 悠遊卡, 電子支付)
+		c.傳輸介質:
+			I. radio
+	B. LAN(local area network)--------
+		a. 距離:
+			幾十公尺以內的範圍, 給家庭, 或辦公室使用, 或組織單位使用
+		b. 例如: 
+			I. ethernet(IEEE 802.3), 
+			II. wifi(IEEE 802.11), 
+			III. token ring(IEEE 802.5)
+		c. 傳輸介質:
+			I. twisted pair, 
+			II. coaxial cable, 
+			III. optical fiber, 
+			IIII. EM wave
+	C. MAN(metropolitan area network)---------
+		a. 距離:
+			城市範圍
+		b. 例如:
+			I. fixed WIMAX(IEEE 802.16)
+		c. 傳輸介質:
+			I. 光纤、
+			II. 电缆
+	D. WAN(wide area network)---------
+		a. 距離:
+			全球, 國家, 城市
+		b. 例如: 
+			I. mobile WIMAX(IEE 802.20)
+		c. 傳輸媒介:
+			广域网使用各种传输介质，包括
+			I. 电缆、
+			II. 光纤、
+			III. 微波链路、
+			IIII. 卫星链接等。
+			传输介质的选择取决于覆盖范围、带宽需求、成本等因素。
+
+#############################################################################################################
+3. 資料(data), 訊號(signal)
+	A. data, 是具體資訊
+		a. 類比data(analogical, continous)
+			I. 音樂
+			II. 影片
+		b. 數位data(digital, discrete)
+			I. 文字文件
+			II. 圖片
+		c. 電腦只接受01 data, 所有data都要轉成01 data, 這個動作叫做編碼(encoding)
+			I. ASCII
+			II. big-5
+					
+	B. signal, 是傳輸時的waveform, 真實在空間中傳輸, 透過媒介(有線或無線), 所有data都要轉成signal 才能傳送
+		a. 類比signal(analogical)
+			I. 波型連續
+			II. 抗噪能力弱
+			III. 不利於遠距傳輸
+			IIII. 逐漸在市場上被淘汰
+			iIIII. 範例:
+				🤔. 有線電話
+				
+		b. 數位signal(digital), 波型可能是連續的, 但是概念上是離散(discrete)即是, 被調製過也可能是
+			I. 脈衝波, 方波, 被調制(modulated)的脈衝波或方波, 
+			II. 抗噪能力強
+			III. 有利於遠距傳輸
+			IIII. 逐漸在市場上佔主導地位
+			IIIII. 範例:
+				🤔. 太多了, 現在幾乎所有透過網路的服務都是digital訊號
+
+	C. signal和data之間互相轉換的技術(有四種轉換)
+			
+			數位資料 -> -> 數位訊號
+				  \ /
+				  / \
+			類比資料 -> -> 類比訊號
+
+		a. 數位資料 -> 數位訊號[需要編碼(encoding)], 幾種常見的編碼如下(各有優缺):
+			I. 電報編碼
+				🤔. 高電壓:1, 低電壓:0
+			II. RS232C編碼
+				🤔. 正電壓:0, 負電壓:1
+			III. 差動式編碼(Differential Zero-Complemented Encoding)
+				🤔. 單位時間內, 電壓"無"變化表示:1, 電壓"有"變化表示:0
+			IIII. 曼徹斯特編碼(Manchester Encoding)
+				🤔. 低電壓->高電壓: 1, 高電壓->低電壓: 0
+				🤔. 採用此種編碼會自動使通訊雙方同步, 因為一個bit到另一個bit, 波型必定變化
+			IIIII. 差動式曼徹斯特編碼(Differential Manchester Encoding)
+				🤔. 在每一位元時間的中間都有電位變化（high →low 或 low →high）
+				🤔. 位元時間的起始有變化，高電位->低電位，或低電位->高電位, 都是: 0
+				🤔. 位元的時間起始沒有變化: 1
+
+		b. 數位資料 -> 類比訊號[需要調變(modulation)和解調(demodulation)], 幾種常見方式如下(各有優缺):
+			以下都是加入載波(carrier), 因為我們要把頻率調整到媒介適合傳輸的頻率
+
+			I. 頻率偏移調便(Frequency Shift Key Modulation, FSK)
+			II. 振幅偏移調變(Amplitude Shift Key Modulation, ASK)
+			III. 相位偏移調變(Phase Shift Key Modulation, PSK)
+
+		c. 類比資料 -> 數位訊號[需要取樣(sampling), 請參考sampling theory], 以下是過程:
+
+				    --------          --------
+				    | PAM  | PAM訊號  | PCM  | 數位訊號
+			類比資料--> |      |--------> |      |----------->
+				    | 取樣 |          | 編碼 | 0101110110
+				    --------	      --------
+
+			I. 把類許訊號取樣, 使用PAM(Pulse Amplitude Modulation)的方式進行調變
+				🤔. 取樣理論(sampling theory)
+					😄. 任何訊號都是由基頻疊加而成
+					😄. 取樣頻率f_s只要大於訊號的最大頻率B, 就能獲得無失真訊號 f_s > 2B
+					
+			II. 把PAM訊號用PCM(Pulse Code Modulation)轉換成數位訊號傳出
+				🤔. 將PAM的取樣結果, 按照amplitutde大小, 轉換成實際的數字(量化)
+				🤔. 再把以上量化結果再次轉成二進制, 01資料表示, 用數位訊號(脈衝波或方波)傳出
+
+		d. 類比資料 -> 類比訊號[需要調變, 原理與b十分相似]
+			
+			I. 頻率調便(Frequency Key Modulation, FM)
+			II. 振幅調變(Amplitude Key Modulation, AM)
+			III. 相位調變(Phase Key Modulation, PM)
+
+			以前的收音機和電視採用這個技術
+
+
+#############################################################################################################
+4. 基頻傳輸(baseband), 寬頻傳輸(broadband)
+
+			數位資料 -> -> 數位訊號 -> -> 基頻傳輸
+				  \ /            \ /
+				  / \            / \
+			類比資料 -> -> 類比訊號 -> -> 寬頻傳輸
+
+
+	A. 基頻傳輸(baseband)
+		a. 物理定律限制, 
+			I. 使用數位訊號(脈衝波, 方波) 
+			II. 只能一個bit接著一個bit傳, 不能同時同地好幾個bit, 
+			III. 若同時同地兩個bit, 即發生碰撞(collision), 訊號發生衝突
+				🤔. 解法1. 使用CSMA/CD(Carrier Sense Multiple Access with Collision Detection)
+					😄. 有碰撞發生就廣播通知所有人
+					😄. 等待隨機的時間重送訊號
+				🤔. 解法2. 全雙工(full duplex), 使用到了多工技術
+					😄. 全雙工收發可以分開, 不會碰撞, 詳細請看多工技術, 
+					😄. 採用分時間多工(也難以用分頻率, 基頻本來頻寬就低)
+
+		b. 使用地方:
+			I. 乙太網路(ethernet), 大量運用
+
+		c. 傳輸媒介:
+			I. 雙絞線、
+			II. 同軸電纜（50 歐姆）
+			III. 光纖
+
+		d. 技術需求:
+			I. 多工(multiplexing), 一般都使用分時多工技巧
+				🤔. 分時多工(不同時間範圍執行不同工作的訊號) -- 基頻採用
+				🤔. 分頻多工(不同頻段範圍執行不同工作的訊號) -- 基頻不採用
+			II. 同步化(Synchronization), 發送方和接收方速率可能不同, 需要同步
+				🤔. 同步傳輸技術
+					😄. 曼徹斯特編碼, 直接就同步了
+					😄. 曼徹斯特編碼每個bit震幅都變化, 頻寬多兩倍, 浪費頻寬, 不適用高速網路
+				🤔. 非同步傳輸技術
+					😄. 將訊號用特定的長度來分段(例如8 bit一段)
+					😄. 每一段前後加入start bit和stop bit, 用來通知校正需求
+					😄. 精神就是採用每隔一個分段, 就校正一次
+					😄. 缺點是分段不能太長
+
+	B. 寬頻傳輸(broadband), 白光就是一種寬頻, 他是多個頻率的波疊加(彩虹)
+		a. 物理定律限制, 
+			I. 必定需要載波(carrier)
+			II. 單向傳輸
+					
+

@@ -43,6 +43,11 @@
 			b. frame傳輸過程有錯誤或損毀, 從此處輔助復原
 			c. 採用循環冗餘檢驗(Cyclic Redundancy Check, CRC):
 				🤔. 利用模2除法原理(mod 2)
+					😄. 模2除法不借位, 只管比較1, 0
+					😄. reference:
+						https://www.newton.com.tw/wiki/%E6%A8%A12%E9%99%A4%E6%B3%95
+						https://cs.newpaltz.edu/~easwarac/CN/Module7/CRC2.pdf#:~:text=CRC%20calculations%20are%20done%20in%20modulo%202%20arithmetic%2C,01011%20%3D%2010010%2011001%20-%2001011%20%3D%2010010
+				🤔. 接發雙方事先確認好除數Q, 發送方把frame數據用模2除法運算, 把結果FCS加在frame的後端傳送, 接收方計算收到反向計算, 如果FCS符合則傳輸過程沒錯, 否則有錯
 
 	D. Interpacket gap(IPG)
 		a. 固定12位元組(byte)
@@ -53,7 +58,7 @@
 reference:
 https://www.zhihu.com/question/289026686
 
-	A. 連接導向(Connection-oriented Service, CS), 又叫做(可靠, reliable connection)
+	A. 連接導向(Connection-oriented Service, CS)
 		a. 有建立"對話線路(session)"
 		b. 確保數據(或訊息)可以按照"順序"抵達
 		c. 採用類似"電話模型"的機制
@@ -62,7 +67,7 @@ https://www.zhihu.com/question/289026686
 			III. 連線建立後, 雙方知道彼此正在"通話(互傳訊息)", 即使雙方甚麼訊息都沒傳送
 			IV. 結束通話後, 代表雙方都知道彼此不再傳送訊息
 
-	B. 非連接服務(Connectionless Service), 又叫做
+	B. 非連接服務(Connectionless Service)
 		a. 無建立"對話線路(session)"
 		b. 數據(或訊息)不一定按照"順序"抵達
 		c. 採用類似"郵政模型"的機制
@@ -116,7 +121,19 @@ https://www.zhihu.com/question/289026686
 		a. 星狀網路(switch在中間作為中繼站)
 		d. 大部分都是"全雙工(full duplex)"
 		c. 需要交換器(switch)
-			switch 原理:
+			I. switch 原理: 
+				🤔. switch的port號會記住mac地址
+			
+			II. switch迴圈(loop):
+			reference:
+			https://www.youtube.com/watch?v=HwNaFQK5QE8
+				🤔. 可能發生在網路環境有兩個以上的switch互相連接時
+				🤔. 如果一個switch收到一個廣播封包, 他會向所有Port發送封包
+
+			III. 生成樹協議(spanning tree protocol, STP)
+				🤔. 其實就是使用演算法中的生成樹(沒有迴圈的子圖)的原理, 避免迴圈發生, 會切斷造成迴路的線路通訊
+				
+				
 			
 	
 |#############################################################################################################|
@@ -126,6 +143,3 @@ https://www.zhihu.com/question/289026686
 		b. T2, 速度: 6.312Mbps = T1*4
 		c. T3, 速度: 44.736Mbps = T1*28
 		d. T4, 速度: 274.176Mbps = T1*168
-
-T-carrier lines
-	A. T1

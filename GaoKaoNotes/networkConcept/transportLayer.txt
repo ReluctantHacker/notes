@@ -21,7 +21,7 @@
 				🤔. CWR(Congestion Window Reduced)
 					😄. 當接收到雍塞通知, 身為發送方, 通知對方(接收方)自己已經減少發送速度
 
-				🤔. ECE(Excplicit Congestion Notificaton)
+				🤔. ECE(Excplicit Congestion Notificaton echo)
 					😄. 通知對方, 發生雍塞
 
 				🤔. URG(Urgent)
@@ -167,7 +167,7 @@
 			II. 執行slow start, 把cwnd(壅塞窗口)從一個MSS(maximum segment size)的大小開始傳送, 收到ACK(確認)後, 倍數增加, 一個變兩個, 兩個變四個, 指數增長
 
 			III. 這個時候可能兩種狀況. 
-				🤔. 增長過程中發現重複ACK(表示發生壅塞, 掉包了), 他雖然還沒有達到預設的初始ssthresh, 但是系統已經能知道ssthresh很有可能比我一開系統亂猜的初始值訂的要小, 這時候會進入下一個階段, 快速重傳(fast retransmit, 也就是cwnd減半), 然後進入壅塞避免(congestion avoidance, 也就是速度增長從指數增長改成線性增長, 一次增加一個MSS), 接著再次看有沒有壅塞發生(重複ACK, 也就是掉包了), 如果又發生, 那就再次進入快速重傳, 然後在雍塞避免, 無限循環, 動態的調整ssthresh
+				🤔. 增長過程中發現重複ACK(表示發生壅塞, 掉包了), 他雖然還沒有達到預設的初始ssthresh(slow start thresh), 但是系統已經能知道ssthresh很有可能比我一開系統亂猜的初始值訂的要小, 這時候會進入下一個階段, 快速重傳(fast retransmit, 也就是cwnd減半), 然後進入壅塞避免(congestion avoidance, 也就是速度增長從指數增長改成線性增長, 一次增加一個MSS), 接著再次看有沒有壅塞發生(重複ACK, 也就是掉包了), 如果又發生, 那就再次進入快速重傳, 然後在雍塞避免, 無限循環, 動態的調整ssthresh
 				🤔. 另一種可能是, 一開始傳送數據時, 一路沒有壅塞(重複ACK接收, 也就是掉包了), 直到傳送速率到了ssthresh, 便進入壅塞避免(congestion avoidance), 雖然!! 這個時候並沒有發生雍塞!!!  當壅塞避免的時候, 發生了雍塞(重複ACK, 掉包了), 那就進入快速重傳, 然後在雍塞避免, 這一段就與第一種可能一樣了.
 
 

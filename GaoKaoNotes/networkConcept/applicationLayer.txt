@@ -1,7 +1,47 @@
 |#############################################################################################################|
 1. 網頁相關
-	A. HTTP
-	B. HTTPS
+	A. HTTP ---> 建立在TCP/IP之上
+		a. HTTP方法:
+		reference:
+		https://www.zhihu.com/question/533810340
+			I. GET -->常用
+				🤔. 用於從服務器獲取資源。GET 方法請求指定的資源，並將其返回給客戶端
+			II. POST  -->常用
+				🤔. 用於向服務器提交數據。POST 方法將數據提交給服務器，通常用於創建新資源或提交表單數據
+			III. PUT
+				🤔. 用於更新現有資源。PUT 方法將指定的資源放置到服務器上，如果該資源已存在，則將其更新為請求中指定的內容。
+			IV. DELETE
+				🤔. 用於刪除指定的資源。DELETE 方法將指定的資源從服務器上刪除。
+			V. PATCH
+				🤔. 用於對資源的部分更新。PATCH 方法用於將局部更新應用於資源，僅更新指定的資源字段，而不是整個資源。
+
+		b. 狀態碼:
+			I. 200: 成功
+			II. 404(客戶端錯誤): 表示資源找不到
+			III. 500(服務端錯誤): 表示內部服務器錯誤(通常是後端程式哪裡有錯)
+
+		c. HTTP headers(常見):
+			I. 請求(request)
+				🤔. User-Agent, host, accept, 
+			II. 響應(response)
+				🤔. Server
+				🤔. Content-Type
+				🤔. Content-Length
+		
+		d. 特性:
+			I. 無狀態(stateless): 每次請求都是獨立的，服務器不保存客戶端的狀態信息。這就意味著每次請求需要攜帶所有必要的信息，例如 cookie、session ID 等。HTTP/1.1 支持持久連接（Keep-Alive）以減少 TCP 連接的開銷，HTTP/2 使用多路複用（Multiplexing）提高效率等
+
+
+		e. HTTPS:
+			I. HTTP 使用明文傳輸，安全性較低，而 HTTPS 使用 SSL/TLS 加密通信，安全性較高。HTTPS 的 URL 以 "https://" 開頭，通常用於安全敏感的場景，如網上銀行、購物網站等
+
+		f. 登入認證機制
+			I. session
+			II. cookie
+				🤔. 瀏覽器用來存取使用者"狀態"用的, 因為http本身無狀態
+			III. token
+				🤔. 採用每次發送都計算token, 接收方收到token在驗證是否正確, token會加密, 中途攔截到了沒用
+
 
 |#############################################################################################################|
 2. 郵件相關 
@@ -21,20 +61,59 @@
 
 |#############################################################################################################|
 5. 網路相關
-	A. DNS
-	B. DHCP
-	C. VolP
+	A. DNS(Domain name system)  ---->建立在UDP之上	
+	reference:
+	https://www.stockfeel.com.tw/dns-%E4%BC%BA%E6%9C%8D%E5%99%A8%E6%98%AF%E4%BB%80%E9%BA%BC%EF%BC%9F%E5%A6%82%E4%BD%95%E9%81%8B%E7%94%A8%EF%BC%9F/
+		a. 目的:
+			I. 解析domain name(例如: google.com) 和IP之間的對應關係, 因為router只認IP, 所以需要DNS
+
+		b. DNS的層級架構(由於全世界網址非常多, 沒辦法全部收集在一個中央機器裡, 需要把所有網址區分出不同"網路"domain"):
+			I. 根網域(Root domain): 根網域是 DNS 架構最上層的伺服器，全球共約 16 台，當下層的任何一台 DNS 伺服器無法查出某個網址對應的 IP 位址時，則會向最上層負責根網域的 DNS 伺服器查詢
+			II. 頂層網域（Top level domain）：使用國際標準組織（ISO）所制定的國碼（Country code）來區分頂層網域。例如：美國使用「us」、台灣使用「tw」、中國大陸使用「cn」、日本使用「jp」，由於美國是網際網路的創始國，所以通常可以不使用 us，全球的網域名稱是由「網際網路名稱與號碼分配組織（ICANN：Internet Corporation For Assigned Names and Numbers）」來管理（http://www.icann.org）。
+			III. 第二層網域（Second level domain）：由使用單位向各國的網址註冊中心申請，台灣的網域名稱是由「台灣網路資訊中心（TWNIC：Taiwan Network Information Center）」來管理（http://www.twnic.net），使用單位繳交年費即可取得第二層網域的使用權。例如：教育單位台大使用 ntu.edu.、政大使用 nccu.edu.；政府單位台北市政府使用 taipei.gov、國科會使用 nsc.gov；營利單位 Google 使用 google.com、台積電（2330-TW）使用 tsmc.com、聯發科（2454-TW）使用 mediatek.com 等
+			IV. 主機網域（Host domain）：由各使用單位之網管人員，依照實際需要自行細分成許多主機使用，每一台主機可以設定一個網域名稱，例如：台大的網頁使用 www、台大的選課系統使用 info、台大的郵件伺服器使用 mail 等。
+			
+		c. 紀錄:
+			I. NS紀錄(Name server 紀錄): 
+				🤔. NS 記錄指定了一個網域名稱的 DNS 伺服器。它告訴其他 DNS 伺服器哪個伺服器負責解析該網域的名稱。簡而言之，NS 記錄是網域名稱與其 DNS 伺服器之間的映射。(簡單來說就是記錄了哪個網域的地址, 要向哪個DNS server請求, 才能找到對應的IP)
+			II. A 紀錄(Address Name 紀錄):
+				🤔. 其實就是紀錄網址所對應的IP
+			III. CNAME紀錄(Canonical Name 紀錄)
+				🤔. 說穿了就是別名, 例如test.com指向IP=1.1.1.1, 而test.com的CNAME有testC1.com, testC2.com, testC3.com, 這三個CNAME都指向test.com. 他們三個本身不需要指向1.1.1.1, 只要指向test.com就好. 當你IP要改的時候, 別名自然也全部一起跟著變動
+
+	B. DHCP(Dynamic host configuration protocol, 動態主機配置協議)  ---> 基於UDP
+		a. IP 地址分配： DHCP 負責自動分配 IP 地址給網路上的客戶端設備。這使得管理員無需手動配置每個設備的 IP 地址，大大簡化了網路管理的工作。
+
+		b. 租用時間： DHCP 分配的 IP 地址是有限期限的，稱為租用時間。在租用時間到期之前，客戶端需要定期向 DHCP 伺服器更新租用，以確保繼續使用分配的 IP 地址。
+
+		c. 靜態分配： DHCP 還支持靜態 IP 地址分配，這意味著特定的 IP 地址可以保留給特定的設備，而不受動態分配的影響。這對於需要保持固定 IP 地址的設備（如伺服器）很有用。
+
+		d. 範圍和池： DHCP 伺服器通常配置了一個 IP 地址範圍，稱為地址池。當客戶端需要 IP 地址時，DHCP 伺服器從這個地址池中分配可用的 IP 地址給客戶端。
+
+		e. 中繼代理： DHCP 中繼代理是一個網路設備，負責轉發 DHCP 請求和回應，以幫助跨多個網路段的客戶端設備獲取 DHCP 配置信息。
+
+		f. 安全性： DHCP 伺服器可以設置安全功能，如 MAC 地址過濾、IP 地址綁定等，以確保僅授權的設備可以獲取 DHCP 配置信息，從而防止未授權的設備入侵網路。
+
+	C. VolP(voice over IP) --->並非單一協議, 有以下協議組成
+		a. RTP（Real-time Transport Protocol）：用於在網絡上傳輸語音和多媒體數據的協議。RTP確保了語音數據的即時性和同步性，使得通話品質更高。
+		b. SIP（Session Initiation Protocol）：是一種用於建立、修改和終止VoIP通話的協議。SIP允許通話參與者之間的通信會話，並提供了許多功能，如呼叫轉移、多方通話、音訊和視訊通話等。
+		c. H.323：是一組多媒體通信協議，用於視訊會議和語音通話。它定義了語音和視訊通信的標準，包括H.323協議和一系列相關標準，如H.225.0、H.245、H.450等。
+		d. Codecs（編解碼器）：用於將語音信號轉換為數字信號的編解碼器。常用的編解碼器包括G.711、G.729等，它們可以壓縮和解壓縮語音數據，從而節省帶寬並提高語音品質。 
+
 	D. Websocket
-	E. LTE
-	F. SNMP
+	E. LTE(long term evolution) --請看mobile筆記
 
+	F. SNMP(simple network management protocol, 簡單網路管理協議)
+		a. 用處:
+			I. 是一種用於管理和監控網絡設備的協議
+		
+		b. 功能:
+			I. 管理信息庫（MIB）：MIB是一個包含了管理信息的數據庫，它描述了網絡設備上可用的各種參數和屬性。通過MIB，管理器可以查詢設備的狀態、配置和性能指標。
+			II. SNMP管理器：SNMP管理器是一個用於監控和管理網絡設備的應用程序或系統。管理器可以向設備發送SNMP請求，從而獲取設備的信息或修改設備的配置。
+			III. SNMP代理：SNMP代理是安裝在網絡設備上的軟件或硬件組件，用於接收來自管理器的SNMP請求，並根據請求提供相應的響應。代理還可以將設備上的信息轉換成SNMP格式，並將其發送給管理器。
+			IV. SNMP協議操作：SNMP定義了一組用於管理和監控設備的協議操作，包括Get、Set、GetNext、GetBulk等。這些操作可以通過SNMP協議與設備進行通信，從而實現設備的配置和監控。
+			V. SNMP版本：SNMP有多個版本，包括SNMPv1、SNMPv2c和SNMPv3。這些版本在安全性、功能和效能方面有所不同，用戶可以根據自己的需求選擇適合的版本。
+			VI. 安全性：SNMPv3引入了安全性功能，包括消息加密和身份驗證機制，以保護通信的機密性和完整性，防止未授權的訪問和攻擊。
 
-1. DNS
-
-2. HTTP
-
-3. VOLP
-
-4. FTP
 
 

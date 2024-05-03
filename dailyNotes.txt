@@ -10830,3 +10830,12 @@ https://www.twblogs.net/a/5d4d2121bd9eee5327fc5040
 2024/4/30
 1. 主要看"資料庫", 有關Transaction(包含schedule, 鎖lock, checkpoint, commit等概念)以及擴充實體模型圖(EERD), 
 
+
+2024/5/1
+1. 複習"資料結構", 開始寫"資料結構"的考古題, 主要看了"雙連通", "連通", 連通元件(connected components)等等概念, 複習了AVL tree的概念
+
+2024/5/2
+1. 複習了網路(主要看了一些資安的東西)
+
+2024/5/3
+1. 資料庫刷題(主要看了複習了distributed database, cluster index, mongodb...等等概念
