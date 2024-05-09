@@ -141,6 +141,9 @@ https://stackoverflow.com/questions/19781294/whats-the-difference-in-notation-fo
 					剔除重複的狀況後, 得到candidate keys為
 					{C, D}, {A, B}, {B, C}, {A, D}	
 
+		f. decomposition(分解)
+			I. 資料表的分解(decomposition), 會希望是"lossless join", 這表示分解出的表, 在join時不會有資料的缺少, lossless join成立的條件是"一張表分解成兩張表, 兩張表的相同屬性, 一定要是其中一張表的primary key!" (其實就是你一般分解時候的直觀過程)
+
 	C. 索引(index):
 		a. 基本解釋: 為何可以增加搜索數據的速度, 其實不難理解, 資料存入資料庫若是沒有任何資料結構, 那搜索將採用線性搜索, 也就是時間複雜度是O(n), 如果做了B-Tree(balanced m-way search tree)的索引結構, 那搜索速率自然提升到O(log(n)) 
 
@@ -260,10 +263,16 @@ https://zhuanlan.zhihu.com/p/133823461
 
 			IIIIII. 編寫應用程序時注意trasaction順序
 		
-
+|#############################################################################################################|
+7. sql
+reference: 50題練習
+https://hackmd.io/@_7vFEnkKTve5g-aFhT8EvQ/Sy-H0QeWr#%E7%B7%B4%E7%BF%92%E9%A1%8C
+	A. 常見regular expression
 
 |#############################################################################################################|
-6. nosql
+6. nosql (還是要稍微把基本語法都看過一遍)
+reference:
+https://www.1ju.org/mongodb/mongodb-limit-record
 
 
 |#############################################################################################################|
@@ -309,7 +318,7 @@ https://www.takming.edu.tw/course/%E4%B8%89%E5%B9%B4%E7%B4%9A%E8%B3%87%E6%96%99%
 申論題(分章節):
 https://www.mis.nsysu.edu.tw/db-book/pro_ch3.html
 參考book:
-https://www.mis.nsysu.edu.tw/db-book/PDF/Ch1.pdf
+https://www.mis.nsysu.edu.tw/db-book/pdf/ch1.pdf
 http://debussy.im.nuu.edu.tw/sjchen/Database/Final/Ch03.pdf
 
 申論題2:
