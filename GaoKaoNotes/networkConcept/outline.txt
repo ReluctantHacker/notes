@@ -55,7 +55,15 @@ https://stackoverflow.com/questions/9329105/are-we-using-tcp-ip-or-osi-in-intern
 
 	802.1 ：高層次介面 (High Level Interface)
 	802.2 ：邏輯鏈結控制 (Logical Link Control)
-	802.3 ：CSMA/CD 網路
+	802.3 ：CSMA/CD 網路 -- ethernet
+		a. IEEE 802.3u Fast Ethernet：Fast Ethernet是一種以太網標準，提供了比傳統的10 Mbps乙太網路更快的數據傳輸速率，達到100 Mbps。它使用了與傳統乙太網路相同的CSMA/CD（載波感知多路存取/碰撞偵測）媒體訪問方法。
+
+		b. IEEE 802.3ab Gigabit Ethernet：Gigabit Ethernet是一種高速以太網標準，提供了比Fast Ethernet更快的數據傳輸速率，達到1 Gbps。它可以使用銅線或光纖作為物理媒介。
+
+		c. IEEE 802.3ae 10 Gigabit Ethernet：10 Gigabit Ethernet是一種更高速的以太網標準，提供了比Gigabit Ethernet更快的數據傳輸速率，達到10 Gbps。它通常用於需要更高頻寬的應用場景，如數據中心和企業網絡。
+
+		d. IEEE 802.3af Power over Ethernet (PoE)：PoE是一種技術，允許數據和電力通過單個乙太網路電纜傳輸。它允許網絡設備（如IP電話、監視攝像機和無線接入點）從乙太網路獲取電源，而無需額外的電源線。
+
 	802.4 ：Token-Bus 網路
 	802.5 ：Token-Ring 網路
 	802.6 ：DQDB大都會網路 (Metropolitan Area Networks)

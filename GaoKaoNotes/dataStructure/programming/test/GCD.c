@@ -11,7 +11,7 @@ int GCD(int n, int m) {
 
 int main() {
 	// show the result
-	int n = 49;
-	int m = 28;
+	int n = 28;
+	int m = 49;
 	printf("GCD(%d, %d): %d\n", n, m, GCD(n, m));
 }

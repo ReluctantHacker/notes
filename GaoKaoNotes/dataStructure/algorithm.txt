@@ -8,6 +8,10 @@
 	F. Tower of Hanoi
 	G. Permutation
 
+	H. 關於recursion relation的closed form(solution), 在數學上很重要!!!!, some references below:
+		https://brilliant.org/wiki/linear-recurrence-relations/
+		https://www.eecs.yorku.ca/~tgeorge/courses/EECS1028W20/solving-rec.pdf
+
 |#############################################################################################################|
 2. 排序Sort
 	A. 初等排序方法:  (平均average case: O(n^2))
@@ -97,6 +101,8 @@
 				🤔. 你在仔細看會發現他跟binary tree的traversal八七相似, 因為他們原理其實大同小異!
 
 		c. heap sort
+		reference:
+		https://stackoverflow.com/questions/9755721/how-can-building-a-heap-be-on-time-complexity
 			I. 時間複雜度(avg): O(nlog(n)) 
 			II. 時間複雜度(worst): O(nlog(n)) 
 				🤔. 
@@ -121,7 +127,7 @@
 								😄. 碰到底層, 
 								😄. 或是已經沒有更大的子node了
 							😄. extract動作的時間複雜度也為O(log(n)), 因為"往下挑戰品均次數也會為樹高的一半, 也就是log(n)/2
-							😄. extract所有node所需時間複雜度為:
+							😄. extract所有node所需時間複雜度為:(以下推倒方式有點問題...因為高度為2的節點不只一個)
 								😄. log(1) + log(2) + log(3) + ... log(n) = log(n!) =~ nlog(n), 根據stirling formula  ----> O(nlog(n))
 					
 					😄. 最終結果時間複雜度還是O(nlog(n))
@@ -199,6 +205,7 @@
 3. hashing
 reference:
 https://www.zhihu.com/question/20820286
+https://www.scholarhat.com/tutorial/datastructures/hashing-in-data-structures
 	A. 定義:
 		a. 將x值透過"hash function" 計算成 "hash address",
 		b. 一個hash table(或hash map) 中 有B個bucket, 每一個bucket對應一個hash address
@@ -333,7 +340,7 @@ https://ithelp.ithome.com.tw/articles/10277276
 				🤔. 這些邊界點的節點到原點的距離各自全部算出
 				🤔. 從中尋找最小的, min(), 並將該節點作為新的已訪問節點加入V_f中
 				🤔. 重複以上步驟, 直到沒有節點可以訪問
-				🤔. 限制條件: 權重必須為正
+				🤔. 限制條件: 權重必須為正(Dijkstra不能處理negative權值問題)
 				🤔. 時間複雜度: O(n^2), n為節點個數, 若是使用優化的數據結構(例如binary heap, Fibonacci heap), 時間複雜度還是可以再將低的
 
 			III. 應用:

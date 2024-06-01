@@ -120,15 +120,22 @@
 			I. enqueue(): push an element in queue's rear position
 			II. dequeue(): return the the front element and remove it from the queue
 			III. isfull(): return if queue is full or not
-			IIII. isempty(): return if queue is empty or not
-			IIIII. front(): return the front element of the queue
+			IV. isempty(): return if queue is empty or not
+			V. front(): return the front element of the queue
 			ps: 基本你會發現queue push, pop 分別在頭和尾, 所以增刪在不同位置
 	B. array 實作
-		a. 實作要點:
+		a. Linear Array實作要點(此法調整queue元素位置需要O(n), 不是很聰明):
 			I. 一個array, 長度依需求
 			II. 一個int front, 紀錄front的位置
 			III. 一個int rear, 紀錄rear的位置
-			III. front, rear的初始化皆為-1, enqueue則rear++, dequeue則rear-1, front不變
+			IV. front, rear的初始化皆為-1, enqueue則rear++, dequeue則front++
+			V. 當rear到最後一個位置時, 若front不是-1, 表示表示假滿, 把整個queue元素往左移動(front+1)格
+
+		b. Cicular Array:
+			I. 一個array, 長度依需求
+			II. 一個int front, 紀錄front的位置
+			III. 一個int rear, 紀錄rear的位置
+			IV. front, rear的初始化皆為0, enqueue則rear=(rear+1)%n, dequeue則front=(front+1)%n. 詳細方法請參考講義或是程序實作
 
 	C. linked list實作:
 		a. 實作要點:
@@ -159,7 +166,7 @@
 			II. heap實作:
 				🤔. 通常採用array的方式建構heap tree(不同於一般binary tree通常採用linked list)
 
-	B. double ended priority queue(雙邊佇列)
+	B. double ended queue(雙邊佇列)
 		a. 性質:
 			I. 兩端都可以自由插入或刪除(一般佇列是一端增, 一端刪)
 			
@@ -194,10 +201,24 @@
 						😄. time complexity: O(log(n)), average and worst case
 	
 
-	D. Symmetric Min-Max Heap(SMMH)
+	D. Symmetric Min-Max Heap(SMMH), 也可用在double ended priority queue
 	reference:
 	https://hackmd.io/@vRN1CwEsTLyHOsG4mC0d4Q/BkrYQ8B2V
 	https://www.tutorialspoint.com/symmetric-min-max-heaps
+		a. 定義:
+			I. 每一個node的左子node, 都喊"我跟我的後代比起來, 我是最小的
+			II. 每一個node的右子node, 都喊"我跟我的後代比起來, 我是最大的
+			III. root的value為空
+
+	E. deap (簡單版的SMMH), 也可用在double ended priority queue
+	reference:
+	https://medium.com/%E7%8B%97%E5%A5%B4%E5%B7%A5%E7%A8%8B%E5%B8%AB/%E5%9C%96%E8%A7%A3-double-ended-priority-queue-%E9%80%B2%E9%9A%8E%E6%A8%B9-1ae18d2ca402
+		a. 定義:
+			I. root為空
+			II. root的左子tree, 為"min-heap"
+			III, root的右子tree, 為"max-heap"
+			IV. 在root左子上的任一點 i，令 j 為他在右子樹中對應的節點，i 點的權重必須小於 j 點的權重。
+(p.s 若無對應點則取其父點)
 
 
 |#############################################################################################################|
@@ -388,6 +409,7 @@
 	F. 連通(connected)
 	reference: (以下參考是關於"連通"以及"連通分量(connected component)"的一些重要概念
 	https://web.ntnu.edu.tw/~algo/ConnectedComponent.html
+	https://web.ntnu.edu.tw/~algo/ConnectedGraph.html
 		a. for 無向圖
 			I. 任意vertex與任意vertex之間皆有path存在, 即表示此圖connected
 			II. 若不連通, 則必定可以分成不相連子圖
@@ -405,9 +427,13 @@
 		c. 連通元件(connected components):
 			I. 子圖中的最大邊界連通圖(可能有好幾個), 通常一個無向圖如果好幾個部分不相連, 則這些不相連的子圖, 都是connected components
 
-		d. 圖的"關節(joint)"
+		d. 圖的"關節(articulation point)"
 			I. 定義:
 				🤔. A joint in a graph is a vertex whose removal increases the number of connected components.
+		
+		e. 圖的"橋"
+			I. 定義:
+				🤔. 與關節類似, 只是他是"邊"
 
 		c. 雙連通(biconnected):
 		reference:
@@ -647,14 +673,19 @@
 				🤔. weight越大越應該離root近
 				🤔. 從最小的weight開始建tree, 可以使大的weight更靠近root
 
-			IV. 經典應用:  編碼/解碼 的最佳情況
+			IV. 時間複雜度:
+				🤔. building huffman tree: O(Nlog(N))
+				🤔. Encoding O(N)
+				🤔. Decoding O(N)
+
+			V. 經典應用:  編碼/解碼 的最佳情況
 				🤔. 要傳遞一段英文訊息, 共有26個英文字母代號可用, 每個字母出現的頻率已知, 若要使用2進制(0, 1)來為26個字母編碼, 怎樣會節省空間, 最有效率?
 					😄. 這個問題中, 字母頻率其實就是weight
 					😄. Huffman tree root往左走代表0, 往右走代表1
 					😄. 如此的編碼將會在平均上使傳遞的訊息 用最少的bit來表示, 最節省空間(因為他用了"min W.E.P.L", 同時編碼/解碼正比於bit數 所以 在平均上 也會達到最快(不可能更快了, 這跟信息entropy理論有關)
 					😄. 其精神便是越常出現的字母, 其編碼使用的bit數要越少(即path長度越短)
 
-			V. 程式實作: 
+			VI. 程式實作: 
 			reference:
 			以下包含了python, c, java, c++(除了python以外都很麻煩)
 			https://www.programiz.com/dsa/huffman-coding
@@ -717,7 +748,7 @@
 					😄. 若發生不平衡的插入值不再以上3個值之內, 則此插入值重插
 				🤔. 調整的時候會平衡所有子node, 不會對父node造成任何影響, 所以理論上, 你只需要選轉一次即可(重要概念!!考過!)
 
-			IIIII. 高度-節點數定理
+			IIIII. 高度-最少節點數定理
 				🤔. 建立高度h的AVL tree, 最少需要多少節點?
 					😄. 答: S(h) = S(h-1) + S(h-2) + 1, 原理如下:
 						😄. 首先, AVL tree的高度為h, 則任意node的左右子樹應為一個高度為h-1, 另一個高度為h-2, 這是最少節點的時候必定符合的
@@ -744,6 +775,9 @@
 		c. 伸展樹(Splay tree)
 	
 		d. 紅黑樹(Red-black tree)
+		reference:
+		https://tigercosmos.xyz/post/2019/11/algorithm/red-black-tree/
+		https://www.youtube.com/watch?v=UaLIHuR1t8Q
 
 		e. 加權平衡樹(weighted balanced tree)
 
@@ -768,7 +802,7 @@
 
 
 |#############################################################################################################|
-20. B-tree           *****---- degree>2的樹, 高考好像沒考過*****
+20. B-tree           
 	A. 定義:
 		a. 即是一個balanced的m-way search tree! 
 		b. 除了root及failure node之外, 其餘node的degree介於[m/2]至m  ----> 重點!!!
@@ -807,6 +841,12 @@
 		a. 資料庫索引(index)
 			I. 其採用的辦法正是B-Tree資料結構, 
 				原理: 為何可以增加搜索數據的速度, 其實不難理解, 資料存入資料庫若是沒有任何資料結構, 那搜索將採用線性搜索, 也就是時間複雜度是O(n), 如果做了B-Tree的索引結構, 那搜索速率自然提升到O(log(n)) 補充: 雖然索引(index)會使搜索效率提升, 但是insert, 或update的速率是會下降的, 因為他需要先找到, 才能插入或update, 但是沒做索引的話, 直接插入就好, 不用理會index的結構到底如何
+
+		b. 與binary tree在效率上的差異:
+			I. binary tree的效率為log_2(n), B-Tree的效率為log_m(n), 其中m為節點的degree分支度, 理論上log_m(n)和log_2(n)的order是一樣大的, 這個可以透過微積分證明, 但是通常我們如果資料量很大的時候, 使用硬碟去做資料結構, 我們會希望樹高越小越好, 因為硬碟加載數據效率較慢, 所以加載次數越少越好. reference:
+				https://blog.csdn.net/weixin_44685869/article/details/106083874
+				https://zhuanlan.zhihu.com/p/257842997
+
 
 	E. B+ Tree (某種程度上可以看做是B tree的改良版本)
 	reference:

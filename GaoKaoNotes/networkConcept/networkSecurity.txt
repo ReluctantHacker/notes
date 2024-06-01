@@ -12,6 +12,10 @@ https://kknews.cc/zh-tw/tech/azkm2q6.amp
 				c. protocol
 				d. 時間time
 				e. 動作
+				f. 封包內的關鍵字
+				g. 連接狀態
+					😄. 关于连接状态值得多关注，引入防火墙的目标肯定是“不允许internet上外部连接进入内部网络，但允许内部网络正常访问外部internet提供的服务“。这个目标设定能够阻隔来自外部internet的威胁，但内部网络访问外部网络时，存在着：• “内部网络”到“外部internet网络”是允许，因此内部“请求包”可以正常通过防火墙并发往外部internet网络。• 但当请求包在internet服务获得响应，此时“响应包”会从“外部internet网络”返回到“内部网络”，但因为我们防火墙设定规则：外部internet不允许包进入内部网络“，因此这个”响应包“一定会被防火墙给过滤丢弃。进而造成网络内部因为引入防火墙规则而无法访问外部internet的困境。解决方法是：防火墙引入连接状态规则。请求包 与响应包是同一个连接，防火墙通过识别连接状态，从而可以识别从“外部internet网络”返回到“内部网络”的“响应包”，从而允许响应包完成从外部网络到内部网络的转达。
+
 			III. 屬於主動防護(沒有攻擊活動, 他也有可能阻擋)
 			IV. 主要運用在OSI 2~4層
 		b. 防火牆分類
@@ -27,12 +31,27 @@ https://kknews.cc/zh-tw/tech/azkm2q6.amp
 			II. 全面管制: 限制所有流量
 			III. 開放架構: 允許所有流量
 
+		d. 防火牆的模式:
+			I. 透明(transparent)  --- 基本就是在網路上過濾封包, 不具備其他功能, 也不具備IP, 不會對網路拓撲有任何影響, 類似水管中間加個過濾器, 其他設備無法知道防火牆的存在, 方便佈署
+			II. 路由器(router) ---其實就是兼具路由器功能, 但其實路由器也可以有防火牆功能
+			III. NAT  --- 其實就是兼具NAT功能, 這點其實路由器也可以有NAT的功能
+
+		e. 防火牆的部屬架構
+		reference:
+		https://www.zhihu.com/question/22324268?ssr_src=heifetz
+			I. 
+
 	B. IDS(Intrusion-detection system, 入侵偵測系統),  ----> 監聽網路活動(封包可能已經進來內網了, 監視這些封包所造成的行為本身)
 		a. 定義和功能:
 			I. 是一種網路安全裝置或應用軟體，可以監控網路傳輸或者系統，檢查是否有可疑活動或者違反企業的政策
 			II. 主要依靠監聽網路封包的形式，針對運行的狀況來進行監測
 
 			III. IDS 檢測到潛在的入侵或安全事件後，會發出警報通知系統管理員，但本身不會主動採取防禦措施。屬於被動防禦
+
+		b. 佈署:
+		reference:
+		https://fptcloud.com/wp-content/uploads/2022/03/IDS-IPS-la-gi-.jpg
+			I. 主要採用"旁路佈署", 就是在防火牆後面的接一個switch, 接上IDS
 
 
 	C. IPS(Intrusion-prevention system)  ----> 監控封包內容(封包可能已經進入內網了), 若有可疑內容, 直接阻斷
@@ -46,6 +65,11 @@ https://kknews.cc/zh-tw/tech/azkm2q6.amp
 			IV. IPS 具有阻止入侵的能力，可以自動執行防禦措施，例如封鎖攻擊流量、阻止攻擊者訪問受影響的系統等。屬於主動防禦
 			
 			V. 當然他的缺點就是需要的計算資源比IDS要更多
+
+		b. 佈署:
+		reference:
+		https://fptcloud.com/wp-content/uploads/2022/03/IDS-IPS-la-gi-.jpg
+			I. 主要採用"直路佈署", 就是直接在防火牆後面接一個IPS, 之後IPS可能接switch, switch在接其他主機
 
 	D. WAF(Web application firewall)
 		a. 定義和功能:
@@ -192,3 +216,40 @@ https://www.cloudflare.com/zh-tw/learning/network-layer/what-is-ipsec/
 		reference:
 		https://www.tsnien.idv.tw/Manager_WebBook/chap10/10-6%20IKE%20%E5%8D%94%E5%AE%9A.html
 			I. 基本就是提供 IPSec 通訊中所需的一切與『鑰匙』（Key，或稱金鑰）相關的事情，其中除了包含加密與認證金鑰的產生，還可選擇不同的鑰匙產生技術、以及協議各種加密或認證系統
+
+
+|#############################################################################################################|
+8. MACSEC   --->就是MAC的安全版
+	A. MACsec从以下几个方面保障了用户业务数据在局域网中的安全传输：
+		a. 数据加密：MACsec使用AES-CMAC算法加密。发送方对数据进行加密，数据以密文的形式在局域网链路上传输，接收方对接收的加密数据解密后再进行其他处理。
+		b. 完整性校验：接收方对接收的数据进行完整性校验，以判定数据是否被篡改。发送方根据整个数据报文和加密算法计算出完整性校验值ICV(Integrity Check Value)，附加在报文后，接收方收到报文后根据除去ICV部分的数据报文和相同的加密算法计算出ICV，同报文中的ICV比较。若二者相同，则认为报文完整，校验通过；否则，丢弃报文。
+		c. 重播保护：为防止恶意用户通过重复发送捕获到的数据报文进行网络攻击，缺省情况下，接收方会丢弃重复或乱序的数据报文。数据报文在网络中传输时，可能出现报文顺序的重排。重播保护机制允许数据帧有一定的乱序，这些乱序的报文在用户指定的窗口范围内可以被合法接收，超出窗口的报文会被丢弃。假设配置的重播保护窗口大小为a，如果接收到了一个报文序号为x的报文，则下一个允许被接收的报文的序号必须大于或等于x+1-a。 
+
+
+	B. Differences between IPsec and MACsec:
+		a. Layer: IPsec works on IP packets at Layer 3, while MACsec operates on Ethernet frames at Layer 2.
+		b. Scope: IPsec can work across routers (WAN), while MACsec is limited to a LAN.
+		c. Traffic: MACsec can secure all DHCP and ARP communications that IPsec can't12.
+
+
+
+|#############################################################################################################|
+9. NAC(network access control) ---- 設備或是使用者想要連到該網路, 需要被授權
+	A. NAC（网络访问控制）是一种概念，它描述了一种网络安全机制，用于管理和控制设备对网络资源的访问。虽然NAC本身不是一个具体的协议或技术，但通常需要通过软件平台、硬件设备和网络设备等来实现。实现NAC通常需要使用特定的软件或硬件设备，以及相应的安全策略和配置。各种网络设备和安全厂商提供了各种NAC解决方案，可以根据组织的需求和网络环境选择合适的实现方式。
+
+	B. Network access control (NAC) is a security solution that restricts unauthorized users and devices from gaining access to a network123. NAC uses various methods, such as authentication, endpoint security, and network enforcement, to verify and control the access of users and devices143. NAC can be implemented through different network devices, such as "switches", "firewalls", and "wireless access points"
+
+
+	C. port based NAC, 基于网络交换机的端口来实施访问控制，而普通的NAC通常是基于设备的IP地址或其他网络特征来实施访问控制。 簡單來說就是 port based是基於switch的端口, 端口如何設定, 那接入該端口的設備就只能有端口給予的訪問權限, 而普通的nac, 是基於該設備的IP
+		a. 優點:
+			I. 更简单的部署和管理： Port-based NAC基于端口，因此管理和配置相对简单直观，不需要复杂的IP地址管理和配置。
+
+			II. 更直接的访问控制： 每个端口可以配置不同的访问策略，因此可以更直接地控制连接到该端口的设备的访问权限，而不需要考虑设备的IP地址等其他因素。
+
+			III. 更快的响应时间： 由于不涉及IP地址分配和配置，因此端口级别的访问控制可以更快地响应设备的连接和断开。
+
+			IV. 更强大的安全性： 端口级别的访问控制可以提供更严格的安全性，因为它不依赖于设备的IP地址，因此更难以绕过。
+
+			V. 更灵活的网络配置： 端口级别的访问控制允许网络管理员更灵活地配置网络，根据每个端口的具体需求和要求进行定制化配置。
+
+		b. 與NAC比較, 一般而言，哪种NAC更适合取决于网络的具体需求和环境。在一些情况下，基于端口的访问控制可能更简单和有效，特别是对于大型网络或对网络安全性要求较高的环境。然而，在另一些情况下，传统的基于设备IP的NAC可能更适用，特别是对于需要根据设备的身份和属性进行访问控制的情况。

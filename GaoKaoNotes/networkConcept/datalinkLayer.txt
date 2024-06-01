@@ -1,5 +1,5 @@
 |#############################################################################################################|
-1. MAC(media access control) 地址:
+1. MAC(media access control) 地址:  ---關於mac protocols詳情請看physical layer的multiple access protocols, 這些protocols都是用來實現mac的
 	A. 48位元(bit)組成, 或也可以說 6位元組(byte)
 	B. 16進制表示
 	C. 通常8位元(bit)一組
@@ -9,8 +9,45 @@
 		a. 有線網路卡(現在很多筆記本電腦都沒有了, 要額外裝)
 			I. 使用ethernet 協議
 		b. 無線網路卡
-			I. 使用wifi協議
+			I. 使用wifi協議(也有自己的mac address!!)
 		c. 其實網路卡mac地址可以手動改, 瞎改没什么坏处, 但是跟网内的MAC冲突就会出现问题, 但是你随便改一个冲突的概率微乎其微, 快赶上彗星撞地球了. 当然, 有时候需要刻意去修改MAC, 比如有的运营商为了防止多用户共享网络, 会绑定MAC地址到指定设备, 因此有的路由器提供MAC地址克隆功能
+
+
+|#############################################################################################################|
+2. 常見的連路層協議
+	A. LAN
+		a. point-to-point(P2P, 不可與peer-to-peer混淆)
+			I. Ethernet (IEEE 802.3)
+			II. Wifi (IEEE 802.11) 
+		b. point-to-multipoint(P2MP)
+	B. WAN  ---> 在WAN中通常無法直接使用LAN的通訊協議或是傳輸媒介, 這通常是因為距離或障礙物限制
+	reference:
+	https://www.youtube.com/watch?v=9WkZT0YMZ70
+		a. point-to-point topology
+			I. 定義:
+				🤔. Point-to-Point 是一種鏈路類型，指的是兩個網絡節點之間的直接連接。在這種結構中，鏈路是專用的，沒有其他節點可以使用這條鏈路。
+			II. 常用協議
+				🤔. HDLC (High-Level Data Link Control) ---> 通常為預設, 由SDLC進化而來
+				🤔. PPP (Point-to-Point Protocol)  --->常用
+				🤔. X.25
+		b. point-to-multipoint topology
+			I. 定義:
+				🤔. Point-to-Multipoint 是一種鏈路類型，指的是一個中心節點（如一個主機或路由器）與多個終端節點（如多個遠程站點）之間的連接。在這種結構中，中心節點可以與多個終端節點通信。
+			II. 常用協議:
+				🤔. Frame Relay 
+
+		c. 有關point-to-point和point-to-multipoint的一些結論
+			I. point-to-point 是專門指"兩個"nodes之間的網路
+			II. point-to-multipoint 是專門指一個node連結到多個nodes的網路
+			III. 任和更複雜的拓撲(例如甚麼mesh topo或star topo等等等)都看成是由point-to-point或是point-to-multipoint組合而成, 
+			IV. 在複雜的拓撲結構網路中任意兩個有直接相連的nodes之間可以使用point-to-point協議(HDLC或PPP)
+			V. 若有一個node連接多個node的情況, 則可以使用point-to-multipoint協議
+	C. 從LAN到WAN
+		a. 由於LAN主要使用ethernet或wifi, 數據從LAN到WAN勢必在鏈路層協議要有轉換, 不同鏈路層協議之間的轉換是通過每個路由器或交換設備在進入和離開不同網段時進行封裝和解封裝來實現的(同行是自動的), 通常這個過程不會影響到IP/TCP或以上數據包的內容, 
+
+
+	C. Bluetooth
+	D. LTE
 
 |#############################################################################################################|
 2. 乙太網路包(ethernet packet) 和 Frame(訊框, 第二層的傳輸單位PDU, 包含在ethernet packet), 以下是組成, 照順序
@@ -98,6 +135,9 @@ https://www.zhihu.com/question/289026686
 		a. 同位元檢查(parity check)
 		b. 檢查集(Check sum, CS)
 		c. 循環多餘碼檢查法(Cycle Redundancy Check, CRC), 一般都是用這個
+		d. ECC(Error correction code)
+		reference:
+		https://gordonfang-85054.medium.com/%E6%BC%A2%E6%98%8E%E7%A2%BC%E4%BB%8B%E7%B4%B9-hamming-code-intro-1c6669f0cff0
 
 	B. 自動回覆請求(Automatic Repeat Request, ARQ):
 		a. 停止與等待ARQ(Stop-and-Wait Automatic Repeat Request)
@@ -121,17 +161,41 @@ https://www.zhihu.com/question/289026686
 		a. 星狀網路(switch在中間作為中繼站)
 		d. 大部分都是"全雙工(full duplex)"
 		c. 需要交換器(switch)
-			I. switch 原理: 
-				🤔. switch的port號會記住mac地址
-			
-			II. switch迴圈(loop):
-			reference:
-			https://www.youtube.com/watch?v=HwNaFQK5QE8
-				🤔. 可能發生在網路環境有兩個以上的switch互相連接時
-				🤔. 如果一個switch收到一個廣播封包, 他會向所有Port發送封包
+			I. switch 運作機制: 
+				🤔. 地址學習（Address Learning）：當交換機收到一個數據幀時，它會記錄數據幀中源MAC地址和接收端口的對應關係。這樣，交換機就建立了源MAC地址和接收端口的映射表，稱為MAC地址表（MAC Address Table）或CAM表（Content Addressable Memory Table）。簡單來說就是switch的port號會記住mac地址
 
-			III. 生成樹協議(spanning tree protocol, STP)
-				🤔. 其實就是使用演算法中的生成樹(沒有迴圈的子圖)的原理, 避免迴圈發生, 會切斷造成迴路的線路通訊
+				🤔. 轉發（Forwarding）：當交換機收到一個數據幀時，它會檢查目標MAC地址在MAC地址表中是否存在。如果存在，則交換機會根據MAC地址表將數據幀轉發到對應的端口，這稱為單播（Unicast）轉發。如果目標MAC地址不在表中，則交換機會將數據幀轉發到所有端口，這稱為泛洪（Flood）轉發。一旦目標設備回應，交換機就會學習其MAC地址，並更新MAC地址表。
+					😄. Store-and-Forward（存儲轉發）：  --->最慢, 但最可靠
+						😄. 在Store-and-Forward模式下，Switch會接收整個frame，將其存儲在緩存中，然後檢查CRC（Cyclic Redundancy Check）錯誤檢查碼以確保frame的完整性。如果frame無錯誤，Switch才會根據其目標MAC地址進行轉發。這種方式可以確保轉發的frame是完整的，但可能會增加延遲。
+
+					😄. Cut-Through（剪切轉發）： --->最快, 但最不可靠
+						😄. 在Cut-Through模式下，Switch在接收到frame的目標MAC地址(只佔了6 byte, 後面的byte全部都不看了, 獲得dest Mac後直接轉發)後立即開始轉發，而無需等到整個frame接收完畢。Switch只需讀取frame的目標MAC地址和一些前綴部分就可以開始轉發。這種方式可以減少延遲，但無法檢查frame的完整性，因此可能會將損壞的frame轉發到網絡中。
+
+					😄. Fragment-Free（碎片免費）模式:  --->折衷
+					reference:
+					https://www.netadmin.com.tw/netadmin/zh-tw/technology/E966B2A3B5CC434FABB02DB9C46CD8E8
+						😄. 在Fragment-Free模式下，Switch僅會接收frame的前64至68個字節（根據乙太網路的標準最小frame大小來確定），以避免傳輸中的碎片。這可以在一定程度上確保轉發的frame不會因為碎片而引起延遲，同時又能保證frame的基本完整性。 在Fragment-Free模式中，交換器只會讀取Frame的前64個bytes（這也是乙太網路中Frame最小的資料單位），而最主要原因是，在乙太網路中碰撞幾乎都是發生在前64個bytes之中，因此一旦發生碰撞，就會產生小於64個bytes的Frame資料。所以，交換器經由讀取前64個bytes資料，就可以初步篩選經由碰撞所產生的Frame資料。 且一旦發現有錯誤的Frame，將會把這樣的Frame丟棄，這是與Cut-Though模式不同的地方。這個模式也稱為Modified Cut-Though模式。
+
+
+
+				🤔. 節流（Filtering）：交換機只向目標設備轉發數據幀，這種方式稱為節流。相比於集線器（Hub）廣播所有數據，交換機的節流能夠節省頻寬並減少網絡中的干擾。
+
+				🤔. 循環檢測（Loop Detection）：交換機會檢測和防止網絡中的循環。它使用的是STP（Spanning Tree Protocol）或RSTP（Rapid Spanning Tree Protocol）等協議，這些協議可以動態地配置端口並防止循環。
+					😄. switch迴圈(loop):
+					reference:
+					https://www.youtube.com/watch?v=HwNaFQK5QE8
+						😄. 可能發生在網路環境有兩個以上的switch互相連接時
+						😄. 如果一個switch收到一個廣播封包, 他會向所有Port發送封包
+
+					😄. 生成樹協議(spanning tree protocol, STP)
+						😄. 其實就是使用演算法中的生成樹(沒有迴圈的子圖)的原理, 避免迴圈發生, 會切斷造成迴路的線路通訊
+
+			II. switch的功能大致可以分成兩個方面:  ---> router也有一樣的分法, 只是抽象分類, 別想太複雜
+				🤔. 數據平面（Data Plane）：負責實際的數據包轉發。數據平面處理數據包的學習、轉發、節流等操作。
+				🤔. 控制平面（Control Plane）：負責學習交換機上的MAC地址、決定數據包轉發的方式、處理VLAN等操作。
+				
+			
+
 				
 				
 			
@@ -143,3 +207,41 @@ https://www.zhihu.com/question/289026686
 		b. T2, 速度: 6.312Mbps = T1*4
 		c. T3, 速度: 44.736Mbps = T1*28
 		d. T4, 速度: 274.176Mbps = T1*168
+
+|#############################################################################################################|
+7. 網路架構
+	A. 客戶端/服務器（Client/Server）架構
+		a. 在客戶端/服務器架構中，網絡中的設備分為兩類：客戶端和服務器。
+			I. 服務器：提供資源或服務，例如文件存儲、數據庫、電子郵件和網頁服務。
+			II. 客戶端：向服務器發送請求並接收回應。例如，Web瀏覽器作為客戶端向Web服務器請求網頁。
+		b. 這種架構適用於需要集中管理和高效處理請求的應用。
+
+	B. 對等網絡（Peer-to-Peer, P2P, 與point-to-point縮寫一樣但不是同一個概念, 別搞混）架構
+		a. 在對等網絡中，所有設備都是平等的，每個設備既可以作為客戶端，也可以作為服務器。
+			I. 特點：沒有中心化的服務器，所有節點都可以直接通信並共享資源。
+			II. 應用：文件共享網絡（如BitTorrent）、分佈式計算（如SETI@home）。
+		b. P2P架構適合去中心化、分佈式的應用，能有效利用網絡資源，但在管理和安全性上存在挑戰。
+
+	C. 混合網絡（Hybrid Network）架構
+		a. 混合網絡結合了客戶端/服務器和對等網絡架構的特點。
+		b. 應用：例如，Skype在用戶之間建立對等連接，但仍依賴中央服務器進行用戶認證和會話初始化。
+		c. 這種架構利用了P2P的高效資源共享和客戶端/服務器的集中管理優勢。
+
+
+
+
+|#############################################################################################################|
+7. 外接硬體控制
+	H. PnP(Plug and Play, 即插即用)
+		a. 最早是windows 95 這樣開始支援和推廣PnP的, 現在已經成為一般電腦的標準之一
+		b. 常見的PnP
+			I. 外接螢幕
+				🤔. HDMI、
+				🤔. DisplayPort、
+				🤔. VGA
+			II. 滑鼠和螢幕
+				🤔. 現在幾乎都是USB
+			III. USB設備
+				🤔. 你很熟了, 不講了
+			IV. 耳機
+				🤔. 你也很熟了

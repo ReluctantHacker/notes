@@ -16,7 +16,7 @@
 	B. 終端
 	C. 主從(client-server)
 		a. 就是一般常見的架構
-	D. 分散式
+	D. 分散式(distributed database)
 		a. 由多台數據庫server組合而成, 
 		b. 使用者在存取資料時, 資料可以來自於不同的伺服器中
 		c. 效率較好, server負擔較小, 但也較難建立
@@ -34,6 +34,102 @@
 				🤔. 故障透明度（Failure Transparency）：
 					😄. 系統可以自動地處理故障和錯誤，並提供恢復機制，使得用戶無需感知到系統的故障或錯誤。
 
+	E. 關於分散式系統distributed system和cluster system的區別
+		a. Cluster System
+			I. Cluster System（集群系统） 是由多个相互连接的计算机（节点）组成的系统，这些节点作为一个单一的统一系统进行协同工作。集群系统通常用于提高系统的性能、可用性和容错能力。其特点包括：
+
+				🤔. 共享存储：集群系统中的节点通常共享存储设备，所有节点可以访问相同的数据。
+				🤔. 紧密耦合：节点之间的通信通常通过高速网络（如千兆以太网或InfiniBand）进行，通信延迟较低。
+				🤔. 集中管理：集群系统通常由一个集中管理的调度系统或集群管理软件进行协调。
+				🤔. 应用场景：高性能计算（HPC）、数据库集群、Web服务器集群等。
+
+		b. Distributed System
+			I. Distributed System（分布式系统） 是由多个相互独立的计算机组成的系统，这些计算机通过网络协同工作，但每个计算机都是一个独立的实体。分布式系统旨在提供扩展性、容错性和地理分布能力。其特点包括：
+
+				🤔. 独立节点：分布式系统中的每个节点都是独立的，可以有自己的存储和计算资源。
+				🤔. 松散耦合：节点之间通过广域网（如互联网）进行通信，通信延迟较高且不稳定。
+				🤔. 去中心化管理：分布式系统通常没有单一的集中管理实体，各节点自主协作。
+				🤔. 应用场景：分布式文件系统（如Google File System）、分布式数据库（如Cassandra、DynamoDB）、内容分发网络（CDN）等。
+		c. 主要区别
+			I. 耦合程度：
+				🤔. Cluster System：紧密耦合，节点之间的通信延迟低，通常使用高速网络。
+				🤔. Distributed System：松散耦合，节点之间的通信延迟高，通常使用广域网。
+			II. 管理方式：
+				🤔. Cluster System：集中管理，由一个集群管理系统进行协调。
+				🤔. Distributed System：去中心化管理，各节点自主协作。
+			III. 存储方式：
+				🤔. Cluster System：通常使用共享存储，所有节点访问相同的数据。
+				🤔. Distributed System：各节点有自己的存储，数据分布在多个节点上。
+			IV. 应用场景：
+				🤔. Cluster System：适用于需要高性能计算、低延迟通信的应用，如HPC、数据库集群。
+				🤔. Distributed System：适用于需要扩展性、地理分布和容错能力的应用，如分布式数据库、分布式文件系统。
+			V. 容错机制：
+				🤔. Cluster System：通过冗余和故障转移机制实现高可用性。
+				🤔. Distributed System：通过数据复制、分片和一致性协议（如Paxos、Raft）实现容错和高可用性。
+		d. 举例说明
+			I. Cluster System 示例：
+				🤔. Hadoop YARN Cluster：用于分布式数据处理，但本质上是一个集群系统，因为它的节点紧密耦合并集中管理。
+				🤔. Oracle RAC（Real Application Clusters）：一个高可用性和高性能的数据库集群系统。
+			II. Distributed System 示例：
+				🤔. Google File System（GFS）：一种分布式文件系统，数据分布在多个节点上。
+				🤔. Apache Kafka：一个分布式消息系统，节点之间通过网络通信，各节点独立工作。
+		e. 总结:
+			I. 尽管 Cluster System 和 Distributed System 都涉及多计算机协作，但它们在耦合程度、管理方式、存储方式和应用场景上有显著不同。理解这些差异有助于在设计和选择系统架构时做出正确的决策。總結如下:
+
+				🤔. Cluster System（集群系统）
+					😄. 高耦合：节点之间通过高速网络紧密连接，通常使用专用硬件和软件来确保节点间的快速通信和协调。
+					😄. 协同工作：节点需要协同工作才能实现系统的整体功能。如果某个节点出现故障，其他节点通常可以接管其任务，但需要依赖集群管理软件的协调。
+					😄. 共享资源：节点通常共享存储和其他资源，所有节点可以访问相同的数据存储设备。
+					😄. 不能独立运作：单个节点通常不能独立完成整个系统的工作，必须依赖集群中的其他节点。
+				🤔. Distributed System（分布式系统）
+					😄. 低耦合：节点之间通过广域网（如互联网）连接，节点之间的通信延迟较高且不稳定。每个节点可以是地理上分散的，甚至位于不同的国家或地区。
+					😄. 独立运作：每个节点都是一个独立的实体，可以自主完成其分配的任务，即使其他节点出现故障，它们仍然能够继续运作。
+					😄. 独立资源：每个节点有自己的存储和计算资源，数据分布在多个节点上，各节点可以独立管理和存储自己的数据。
+					😄. 去中心化管理：分布式系统通常没有单一的集中管理实体，各节点通过一致性协议（如Paxos、Raft）进行协调和数据一致性。
+				🤔. 再次总结
+					😄. Cluster System 强调高性能、低延迟和节点间的紧密协作，适用于高性能计算和需要快速响应的应用场景。
+					😄. Distributed System 强调扩展性、容错性和地理分布，适用于大规模、容错性高和地理分布广泛的应用场景。
+
+	F. Cluster database VS distibuted database:   ---> cluster database和cluster index沒有關係! 別搞混
+		a. Database Cluster
+			I. Database Cluster 是由多个数据库服务器（节点）组成的系统，这些服务器共同工作以提高数据库的性能、可用性和容错能力。数据库集群通常有以下特点：
+
+				🤔. 高可用性：通过冗余和故障转移机制，确保即使一个节点故障，系统仍能继续运行。
+				🤔. 负载均衡：将数据库查询和写入请求分配到多个节点上，分散负载，提升整体性能。
+				🤔. 数据一致性：通过同步或异步复制机制，确保所有节点上的数据保持一致。
+				🤔. 常见应用：OLTP（在线事务处理）系统，要求高可用性和高吞吐量的系统。
+		b. 分散式数据库（Distributed Database）
+			I. 分散式数据库 是指将数据库的数据分布在多个地理位置不同的服务器或数据中心上，以实现数据的分散存储和处理。分散式数据库的主要特点包括：
+
+				🤔. 数据分片：数据被划分成多个片段（分片），每个分片存储在不同的服务器上，以实现水平扩展（scalability）。
+				🤔. 地理分布：数据分布在不同的地理位置，以减少延迟，提高访问速度，或者遵守数据主权法规。
+				🤔. 数据复制：为了提高数据可用性和容错能力，分散式数据库通常会将数据复制到多个节点。
+				🤔. 常见应用：OLAP（在线分析处理）系统，大数据处理，跨地域的应用程序。
+
+
+
+|#############################################################################################################|
+3. 資料庫設計基本流程
+	A. 需求分析
+		a. 收集和分析用戶需求。
+		b. 確定數據的類型、範圍和大小。
+		c. 定義數據的完整性、一致性和安全性需求。
+	B. 概念設計
+		a. 創建實體-關係圖（ERD）。
+		b. 確定實體、屬性和關係之間的約束。
+		c. 設計數據的規範化和非規範化。
+	C. 邏輯模型
+		a. 創建關係模式。
+		b. 定義主鍵、外鍵和索引。
+		c. 設計數據的完整性約束。
+	D. 物理模型
+		a. 選擇數據庫管理系統（例如MySQL、Oracle等）。
+		b. 創建表格、視圖和索引。
+		c. 設計數據的存儲和查詢策略。
+	E. 實施測試
+		a. 導入數據。
+		b. 執行功能測試和性能測試。
+		c. 確保數據的一致性和安全性。
 
 |#############################################################################################################|
 3. ER Model(ER digram)
@@ -98,7 +194,7 @@ https://stackoverflow.com/questions/19781294/whats-the-difference-in-notation-fo
 
 			I. "candidate keys(候選鍵)"----可以唯一決定record的欄位集合(可能有很多種),不接受冗餘欄位, candidate keys 為super keys的子集合
 			II. "super keys(超鍵)"----可以唯一決定record的欄位集合(可能有很多種), 接受冗餘欄位.
-			III. "functional dependency(函數相依)"---- Y依賴X, 記做 X -> Y
+			III. "functional dependency(函數相依)"---- Y依賴X, 記做 X -> Y.   記住!! X -> Y表示若X確定了, 則Y也跟著確定, 不會有X為x, 然後Y可以為y也可以為z, 這樣表示Y不依賴X. 最簡單的例子: 一個人的名字依賴於身分證號, 身分正號確定後, 名字也確定.  你不會身分證號為1, 然後名字可以有小王, 小美, 這樣就表示名字不依賴身分號. 我之前以為X -> Y 表示X只要變化, Y必定跟著變化! 但是這樣對依賴的概念定義是完全錯誤的!!! 例如身分證號不同, 你可能名字會一樣!!!! 同名同姓的人可能會有!!! 所以觀念錯誤了!!! 
 			IIII. "closure(閉包)"----一樣是集合論的概念, 假設一個集合S裡的元素, 經過F運算後仍然在該集合中, 則我們稱"這集合S在F運算下閉合(closed)", 當一個集合 S 在某個運算下不閉合的時候，我們通常可以找到包含 S 的最小的閉合集合。這個最小閉合集合被稱為 S 的（關於這個運算的）閉包(closure)!!!!
 
 		e. 在已知依賴關係的情況下candidate keys的找法(記住, candidate keys是super keys的最小子集合, 當然可能有很多個, 我們把所有的super keys找出, 自然能發現candidate keys)
@@ -142,7 +238,8 @@ https://stackoverflow.com/questions/19781294/whats-the-difference-in-notation-fo
 					{C, D}, {A, B}, {B, C}, {A, D}	
 
 		f. decomposition(分解)
-			I. 資料表的分解(decomposition), 會希望是"lossless join", 這表示分解出的表, 在join時不會有資料的缺少, lossless join成立的條件是"一張表分解成兩張表, 兩張表的相同屬性, 一定要是其中一張表的primary key!" (其實就是你一般分解時候的直觀過程)
+			I. 資料表的分解(decomposition), 會希望是"lossless join", 這表示分解出的表, 在join時不會有資料的缺少, lossless join成立的條件是"一張表分解成兩張表, 兩張表的相同屬性, 一定要是其中一張表的primary key!" (其實就是你一般分解時候的直觀過程).    lossless join 可以達到数据完整性、减少数据冗余、防止更新异常，还可以提高查询性能和增强数据独立性
+
 
 	C. 索引(index):
 		a. 基本解釋: 為何可以增加搜索數據的速度, 其實不難理解, 資料存入資料庫若是沒有任何資料結構, 那搜索將採用線性搜索, 也就是時間複雜度是O(n), 如果做了B-Tree(balanced m-way search tree)的索引結構, 那搜索速率自然提升到O(log(n)) 
@@ -193,6 +290,8 @@ https://zhuanlan.zhihu.com/p/133823461
 	reference:
 	https://www.newton.com.tw/wiki/CheckPoint
 	http://debussy.im.nuu.edu.tw/sjchen/Database/Final/Ch09.pdf
+		1. commit(無論是哪個transaction的commit)會把當前所有(包含所有transaction)的緩存history_log存入硬碟的history_log, checkpoint會把緩存的數據 和 緩存的history_log都存進硬碟, checkpoint是更新了硬碟的history_log, 也更新硬碟數據區 (需要注意的是, 妳的每一個資料庫操作, 增刪查改, 都會對 緩存區的數據有影響, 但不影響硬碟區, 只有checkpoint會把緩存區的數據寫入硬碟區的數據)
+		2. 當機時, 資料庫系統會把硬碟區的history_log中, checkpoint紀錄之後若T1(某個transaction)有動作紀錄, 且最後有commit(在checkpoint之後了), 他會把checkpoint之後T1的動作redo().   若是checkpoint紀錄之後, 有T2(另一個transaction)有動作, 但是到了最後沒有commit, 則把T2在整個硬碟區的history_log中的執行動作, 全部undo()(即使部分的T2動作在checkpoint之前, 也要undo()), 其實等於abord T2. 記住 redo(), undo這些動作全部都會記錄在緩存區的history_log中, 且之後你有新的commit()動作, 這些undo(), redo()也都會被存入硬碟區的history_log
 
 	E. 隔離等級
 
@@ -264,19 +363,40 @@ https://zhuanlan.zhihu.com/p/133823461
 			IIIIII. 編寫應用程序時注意trasaction順序
 		
 |#############################################################################################################|
-7. sql
+6. sql
 reference: 50題練習
 https://hackmd.io/@_7vFEnkKTve5g-aFhT8EvQ/Sy-H0QeWr#%E7%B7%B4%E7%BF%92%E9%A1%8C
-	A. 常見regular expression
+	A. sql 指令主要可以分為以下幾種類型:
+	reference:
+	https://www.geeksforgeeks.org/sql-ddl-dql-dml-dcl-tcl-commands/
+		a. DDL – Data Definition Language    ----> 用來定義資料(表, 欄位, 關聯)的結構
+		b. DQL – Data Query Language    ----> 就是select...用來獲取資料內容
+		c. DML – Data Manipulation Language  ----> 操控資料(包含增刪)欄位內容
+		d. DCL – Data Control Language    ---->  用來設定資料庫使用者所具備的操作權限
+		e. TCL – Transaction Control Language   ----> 用來控制transaction動作的
+		f. 由於大部分對資料庫的操作是透過應用程序進行的(例如php, java, c#, python等等後端語言的api), 所以commit, rollback, savepoint有的沒的, 你在直接連到資料庫操作時, 很少會用到這些語法, 但是這些語法在後端api的運作中就很重要了!
+
+	
+	B. 常見regular expression
+
+	C. sql 注入  -- 可以參考chatgpt的"高普考_資訊處理考科11", 我有跟AI討論了不同語言如何處理參數化查詢的問題
+	reference:
+	https://www.w3schools.com/sql/sql_injection.asp
+		a. 標準處理方法:
+			I. 採用"参数化查询"在以上referene有講到(注意不同後端語言的sql api會有不太一樣的方式, 大體精神一致)
+			II. 採用ORM(object relation mapping), 這個你已經大致知道了, 其實ORM本身就自動使用了參數化查詢的方式, 而且內置一些防sql 注入的機制 -----> 現代開發多採用此法了, 簡單, 快速, 方便
+
+	
+
 
 |#############################################################################################################|
-6. nosql (還是要稍微把基本語法都看過一遍)
+7. nosql (還是要稍微把基本語法都看過一遍)
 reference:
 https://www.1ju.org/mongodb/mongodb-limit-record
 
 
 |#############################################################################################################|
-7. 資料倉儲
+8. 資料倉儲
 	A. 定義:
 		a. 通常集合了多個資料庫的資料, 他的目的是把多方面(或多個系統)的資料統一集中儲存和處理, 而通常資料庫的資料只針對一個系統
 
@@ -305,9 +425,65 @@ https://www.1ju.org/mongodb/mongodb-limit-record
 		
 
 
+|#############################################################################################################|
+9. 資料儲存設備和架構:
+reference:
+https://blog.csdn.net/heguanghuicn/article/details/79478036
+https://www.iteye.com/blog/wallimn-1290721
+	A. File server
+	B. DAS(Directed-attached Storage)
+	C. NAS(Network-Attached Storage)
+		a. 通过TCP/IP协议访问数据，采用业界标准文件共享协议，如果NFS、HTTP、CIFS实现共享。
+
+	D. SAN(Storage Area Network) 一般說的SAN指的是FC-SAN(Fibre Channel SAN), IP-SAN等等說明
+		a. 基本定义：SAN（Storage Area Network）是一个专用的高性能网络，用于将多个存储设备集中在一起，使其能够被多个服务器高效访问。SAN 使用适当的技术，光纤通道（Fibre Channel)和SCSI，提供高带宽和低延迟的数据传输。虽然 SAN 是一个独立的网络，但它通常通过服务器与组织的局域网（LAN）和广域网（WAN）集成，形成一个整体的存储解决方案。
+			I. Fibre Channel ----> 使用SCSI:
+			reference:
+			https://en.wikipedia.org/wiki/Fibre_Channel
+			https://www.zhihu.com/question/24669457
+				🤔. 快但貴
+				🤔. 他並不基於ethernet(也不基於TCP/IP), 而是獨立的一個協議(也不屬於OSI模型中)
+
+			II. SCSI(small computer system interface):
+				🤔. 是一套独立的分层系统，不依赖于传统的网络协议栈（如MAC、IP、TCP）。SCSI协议设计用于计算机和存储设备之间的直接连接和数据传输，具有自己的分层结构和命令集(獨立於OSI七層, 自成一體)
+				🤔. 硬碟等存儲設備讀寫效率不同於一般的電腦, 所以需要特別的協議讓讀寫更有效率, 因此SCSI誕生
+				🤔. 用于计算机与存储设备之间的连接和数据传输
+
+		b. 优点：
+			I. 擴展性高（Scalable）：SAN 的设计允许轻松扩展存储容量，只需在 SAN 中直接增加存储设备即可，无需大幅修改现有架构。
+			II. 容错能力强（High Fault Tolerance）：SAN 通常配置 RAID（如 RAID 1 镜像、RAID 5 奇偶校验等），具备数据镜像、冗余恢复、备份等功能，防止数据损毁。
+			III. 高速（High Performance）：SAN 网络采用高带宽、低延迟的技术，如光纤通道(Fibre Channel Protocol (FCP) is a protocol that transports SCSI commands over Fibre Channel networks)或，提供快速的数据传输速度，适合高性能计算和大数据处理需求。
+
+		c. 缺点：
+			I. 成本高（High Cost）：SAN 系统的硬件设备（如光纤通道交换机、存储设备）、管理软件以及维护成本较高，适合大型企业和需要高性能存储解决方案的组织。
+
+	E. IP-SAN
+		a. 基本定義: 他在架構理念上與SAN相同, 但是不使用Fibre Channel協議, 而是使用了TCP/IP協議來傳輸資料, 這讓佈署和管理的成本大大降低, 當然她就比較慢了,  使用了iSCSI協議(FC-SAN使用Fibre Channel, 和SCSI)
+			I. iSCSI(Internet small computer System Interface)
+				🤔. iSCSI是一个将SCSI命令封装在TCP/IP数据包中的协议，通过标准以太网进行传输。
+				🤔. 在IP-SAN中，存储设备和服务器通过以太网交换SCSI命令和数据。
+				🤔. IP网络设备（如以太网交换机、路由器和标准网络接口卡（NIC））组成了一个使用TCP/IP协议的存储网络。
+
+		b. 優點: 
+			I. 成本低：具備FC-SAN的基本優點, 同時利用现有的以太网基础设施，降低了硬件和维护成本。
+			II. 灵活性：可以使用标准的网络设备，易于扩展和管理。
+			III. 广泛兼容：支持通过广域网（WAN）进行远程存储访问和数据备份。
+
+		c. 缺點:
+			I. 性能较低：虽然现代以太网（如万兆以太网）性能已经很高，但在某些高性能应用中，仍可能不如Fibre Channel。
+			II. 网络冲突：与其他网络流量共享带宽，可能导致网络拥塞和性能下降。
+
+	F. FC-SAN vs IP-SAN, 市場優勢比較?
+	reference:
+	https://cloud.baidu.com/article/2988731
+	https://searchstorage.techtarget.com.cn/6-16857/
+			
+
+
+
 
 |#############################################################################################################|
-8. 資料庫考題
+10. 資料庫考題
 選擇題(不分章節):
 https://www.itest.org.tw/PDF/9912exam/IDD-9912.pdf
 https://www.takming.edu.tw/course/%E4%B8%89%E5%B9%B4%E7%B4%9A%E8%B3%87%E6%96%99%E5%BA%AB.pdf

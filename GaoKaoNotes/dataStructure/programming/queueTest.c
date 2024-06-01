@@ -1,4 +1,5 @@
 // this is a queue practice by using array method
+// 這個方法不是標準方法, 你看看就好了
 #include <stdio.h>
 #include <stdlib.h>
 
