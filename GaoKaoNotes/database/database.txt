@@ -35,21 +35,21 @@
 					😄. 系統可以自動地處理故障和錯誤，並提供恢復機制，使得用戶無需感知到系統的故障或錯誤。
 
 	E. 關於分散式系統distributed system和cluster system的區別
-		a. Cluster System
-			I. Cluster System（集群系统） 是由多个相互连接的计算机（节点）组成的系统，这些节点作为一个单一的统一系统进行协同工作。集群系统通常用于提高系统的性能、可用性和容错能力。其特点包括：
+		a. Cluster System  ----> 所有主機都擁有完整的系統, 他們之間同時處裡一件事情, 達到速度上更快的效果
+			I. Cluster System（集群系统） 是由多个相互连接的计算机（节点）组成的系统，这些节点作为一个单一的统一系统进行协同工作。集群系统通常用于"""提高系统的性能、可用性和容错能力"""。其特点包括：
 
 				🤔. 共享存储：集群系统中的节点通常共享存储设备，所有节点可以访问相同的数据。
 				🤔. 紧密耦合：节点之间的通信通常通过高速网络（如千兆以太网或InfiniBand）进行，通信延迟较低。
 				🤔. 集中管理：集群系统通常由一个集中管理的调度系统或集群管理软件进行协调。
-				🤔. 应用场景：高性能计算（HPC）、数据库集群、Web服务器集群等。
+				🤔. 应用场景：高性能计算（HPC）, super computer(超級電腦)、数据库集群、Web服务器集群等。
 
-		b. Distributed System
-			I. Distributed System（分布式系统） 是由多个相互独立的计算机组成的系统，这些计算机通过网络协同工作，但每个计算机都是一个独立的实体。分布式系统旨在提供扩展性、容错性和地理分布能力。其特点包括：
+		b. Distributed System  ----> 把系統的組件分布到不同的主機中
+			I. Distributed System（分布式系统） 是由多个相互独立的计算机组成的系统，这些计算机通过网络协同工作，但每个计算机都是一个独立的实体。"""分布式系统旨在提供扩展性、容错性和地理分布能力"""。其特点包括：
 
 				🤔. 独立节点：分布式系统中的每个节点都是独立的，可以有自己的存储和计算资源。
 				🤔. 松散耦合：节点之间通过广域网（如互联网）进行通信，通信延迟较高且不稳定。
 				🤔. 去中心化管理：分布式系统通常没有单一的集中管理实体，各节点自主协作。
-				🤔. 应用场景：分布式文件系统（如Google File System）、分布式数据库（如Cassandra、DynamoDB）、内容分发网络（CDN）等。
+				🤔. 应用场景：分布式文件系统（如Google File System）、分布式数据库（如Cassandra、DynamoDB）、内容分发网络（CDN）等。 其實你熟悉的網頁開發, 也是分散式系統的一個實例, 後端與前端, 不同的組件分布在不同主機中, 彼此告內聚, 低耦合(不互相依賴, 各自作業)
 		c. 主要区别
 			I. 耦合程度：
 				🤔. Cluster System：紧密耦合，节点之间的通信延迟低，通常使用高速网络。
@@ -89,6 +89,7 @@
 				🤔. 再次总结
 					😄. Cluster System 强调高性能、低延迟和节点间的紧密协作，适用于高性能计算和需要快速响应的应用场景。
 					😄. Distributed System 强调扩展性、容错性和地理分布，适用于大规模、容错性高和地理分布广泛的应用场景。
+					😄. 分布式系統是把系統分散到各個主機中, 然而cluster系統是讓所有主機都擁有完整的系統, 他們之間同時處裡一件事情, 可以達到增加處理此事情的效果?? 是否可以想像成分布式系統是一間公司, 把該公司分成好幾個不同功能的部門, 而cluster系統則是把好幾間具有相同功能的小公司合再一起處理相同的工作
 
 	F. Cluster database VS distibuted database:   ---> cluster database和cluster index沒有關係! 別搞混
 		a. Database Cluster
@@ -280,28 +281,69 @@ https://zhuanlan.zhihu.com/p/133823461
 			V abort(T)：表示一個交易T被駁回，其以前做過的動作因此全部還原。
 
 	C. Transaction的並行處理(一般為了效率, 不會按順序處理, 都採並行)  --- 線上講義ch12
-		a. 任意交錯執行可能會有以下問題:
+		a. 任意交錯執行(併發), 若是使用到了相同的數據, 可能會有以下問題:
 			I. 更新遺失的問題（The Lost Update Problem）
 			II. 污染讀取的問題（The Dirty Read Problem）
 			III. 無法重複讀取的問題（The Non-repeatable Read Problem）
 			IV. 幽靈資料的問題（The Phantom Problem）
+			V. 要避免以上問題須使用"事務隔離", 以下有介紹
 
 	D. Checkpoint機制:
 	reference:
 	https://www.newton.com.tw/wiki/CheckPoint
 	http://debussy.im.nuu.edu.tw/sjchen/Database/Final/Ch09.pdf
 		1. commit(無論是哪個transaction的commit)會把當前所有(包含所有transaction)的緩存history_log存入硬碟的history_log, checkpoint會把緩存的數據 和 緩存的history_log都存進硬碟, checkpoint是更新了硬碟的history_log, 也更新硬碟數據區 (需要注意的是, 妳的每一個資料庫操作, 增刪查改, 都會對 緩存區的數據有影響, 但不影響硬碟區, 只有checkpoint會把緩存區的數據寫入硬碟區的數據)
-		2. 當機時, 資料庫系統會把硬碟區的history_log中, checkpoint紀錄之後若T1(某個transaction)有動作紀錄, 且最後有commit(在checkpoint之後了), 他會把checkpoint之後T1的動作redo().   若是checkpoint紀錄之後, 有T2(另一個transaction)有動作, 但是到了最後沒有commit, 則把T2在整個硬碟區的history_log中的執行動作, 全部undo()(即使部分的T2動作在checkpoint之前, 也要undo()), 其實等於abord T2. 記住 redo(), undo這些動作全部都會記錄在緩存區的history_log中, 且之後你有新的commit()動作, 這些undo(), redo()也都會被存入硬碟區的history_log
+		2. 當機時, 資料庫系統會把硬碟區的history_log中, checkpoint紀錄之後若T1(某個transaction)有動作紀錄, 且最後有commit(在checkpoint之後了), 他會把checkpoint之後T1的動作redo().   若是checkpoint紀錄之後, 有T2(另一個transaction)有動作, 但是到了最後沒有commit, 則把T2在整個硬碟區的history_log中的執行動作, 全部undo()(即使部分的T2動作在checkpoint之前, 也要undo()), 其實等於abord T2. 記住 redo(), undo這些動作全部都會記錄在緩存區的history_log中, 且之後你有新的commit()動作, 這些undo(), redo()也都會被存入硬碟區的history_log. 此外,  undo(), redo()的動作會作用到硬碟的數據區! 記住!
 
-	E. 隔離等級
+	E. 隔離等級(Isolation等級)   ----> 用以解決Transaction並行時, 可能造成的問題
+		a. 為提交讀(Read uncommitted)
+			I. 允许事务读取其他未提交事务所做的更改。
+			II. 可能会出现的问题：脏读（Dirty Read）、不可重复读（Non-repeatable Read）、幻读（Phantom Read）。
+			III. 优点：性能最好，开销最低。
+			IV. 适用场景：数据一致性要求较低的场景。
+		b. 提交讀(Read Committed)
+			I. 只能读取已提交事务的更改，避免了脏读。
+			II. 可能会出现的问题：不可重复读、幻读。
+			III. 优点：较好的性能和较低的开销。
+			IV. 适用场景：大多数应用程序，数据一致性要求适中。
+		c. 可重複讀(Repetable Read)
+			I. 在同一个事务内，保证多次读取数据的一致性，避免不可重复读。
+			II. 可能会出现的问题：幻读。
+			III. 优点：更高的隔离性，适度的性能开销。
+			IV. 适用场景：银行系统等需要较高数据一致性的场景。
+		d. 可序列化(Serialiable)
+			I. 提供最高的隔离级别，确保事务按某种顺序执行，避免所有并发问题（脏读、不可重复读、幻读）。
+			II. 可能会出现的问题：由于严格的隔离，可能导致较多的事务冲突和锁争用，性能开销最大。
+			III. 优点：最严格的数据一致性保证。
+			IV. 适用场景：需要最高数据一致性的应用，如金融交易系统。
 
-	F. 二階段鎖
+	F. 二阶段锁协议（2PL)  ----> 二阶段锁协议是一种常见的并发控制协议，用于确保事务的可序列化。它分为两个阶段:
 	reference:
 	https://zhuanlan.zhihu.com/p/133823461
 	https://www.twblogs.net/a/5d407451bd9eee51fbf99a58
 	https://www.itread01.com/articles/1476768602.html
+		a. 基本定義:
+			I. 在"一個事務"裏面，分爲加鎖(lock)階段和解鎖(unlock)階段,也即所有的lock操作都在unlock操作之
+		b. 基本內容:
+			I. 扩展阶段（Growing Phase）：
+				🤔. 事务在此阶段可以获取锁（读锁和写锁），但不能释放任何锁。
+				🤔. 当事务需要访问某个数据项时，它必须首先获取该数据项的相应锁。
+			II. 收缩阶段（Shrinking Phase）：
+				🤔. 事务在此阶段只能释放锁，不能获取新锁。
+				🤔. 当事务释放第一个锁后，进入收缩阶段。
 
-	G. deadlock(死鎖)
+	F-2. 嚴格兩階段鎖定法
+		a. 基本定義:
+			I. 在"一個事務"中只有提交(commit)或者回滾(rollback)時是解鎖階段，
+		 b. 基本鎖定機制
+			I. 每一個資料項都有附屬一個鎖（Lock），有三種可能值
+				🤔. SHARED_LOCKED（分享鎖定 ）:讀取資料項前 ---> 可讀, 不可寫
+				🤔. EXCLUSIVE_LOCKED（獨佔鎖定 ）：寫入資料項前 ---> 不可讀, 不可寫
+				🤔. UNLOCKED （沒有鎖定 )：資料項處理完畢後  ---> 可讀, 可寫
+			II. 遵守基本鎖定機制
+				🤔. 運算動作執行完後並不馬上解除相關資料項的鎖定，而是到最後COMMIT或ABORT時才一起解除
+
+	G. deadlock(死鎖) ----> 在二階段鎖, 或是嚴格二階段鎖機制之下, 可能產生的不良機制問題
 		a. 發生機制:
 			I. Mutual Exclusion:
 				🤔. 一個resource一次只能被一個process用
