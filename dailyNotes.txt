@@ -10839,3 +10839,83 @@ https://www.twblogs.net/a/5d4d2121bd9eee5327fc5040
 
 2024/5/3
 1. 資料庫刷題(主要看了複習了distributed database, cluster index, mongodb...等等概念
+
+
+2024/5/17
+1. 研究java, python
+
+2. java中的(try, catch)其功能等價於python的(try, except), java的(throw), 功能等價於(raise, exception), 可以總結如下: try except是為了錯誤發生時, 讓程序繼續運行, 但是raise exception是讓我們自己設定程序發生錯誤的時機並終止程序運行.  這兩個功能是必定會用到的, 因為很多時候我們會希望程序在運作時即使有error仍然要繼續, 例如開啟檔案, 但是檔案讀取有問題, 我們不會希望程序因此中止, 這時(try, except)便派上用場.
+
+3. python的super()功能精神, 以下假設
+	class A:
+		AMethod
+
+	class B(A):
+		BMethod
+
+	class C(B, A):
+		CMethod
+
+	class D(C):
+		DMethod
+		# 想要在D中調用父類C可以如下
+		C.Cmethod
+		# 也可以
+		super(D).XMethod  # D的父類自然就是C
+		# 重點是super()是按照MRO來尋找"父類", 所以她不必侷限於只能使用D, 你可以帶入C
+		super(C).XMethod  # 他會按照MRO尋找C的父纇
+	# 你可以知道super()不只能找當前類的父類, 他不只是能找到當前類的父類, 他還能找到父類的父類, 父類的父類的父類...以此類推(當然, 父類的順序是根據MRO)
+
+4. "Polymorphism", 這個名詞在python和java是一樣的概念, 其實很簡單, 就是表示B, C, D分別繼承了A, 當然也繼承了A的method, 這些method可以在B, C, D中自己實作自己的想要的, 很多時候為了架構的清楚以及一擴張性, 會把A設定成"abstract class", 及A只能宣告method, 不能定義method. 詳細可以參考C3school, 以及以下的reference:
+	https://www.learncodewithmike.com/2020/01/python-polymorphism.html
+
+5. python魔術方法...通常長成__XXX__(), 他們都是python預先定義字.  魔术方法（或称特殊方法）确实都是定义在类里面的。这些方法通常用于实现类的某些内置行为，使自定义类能够与Python内置功能和操作更好地集成。这些魔术方法的命名格式是 __methodname__，其中 methodname 是描述方法用途的单词。常見的魔術方法你要會:
+reference:
+https://www.zhihu.com/column/p/26488074
+
+	1. __init__(), "在創建instance"之後立刻被調用, 負責instance初始化, 別跟__new__()搞混
+	2. __new__(), "在你要要創建instance的時候, instance還沒被創建之前"被立刻調用, 他的功能就是負責創建instance!!! 所以通常你會返回一個object, 他跟__init__, 一個負責創建後, 一個負責創建前, 可以讓你更好處理instance創建前後的邏輯
+	3. __str__(), __repr__(), 以下有個reference, 說明的很清楚, 你為何需要__str__()!! __str__()和__repr__()區別在哪:
+		https://www.delftstack.com/zh-tw/howto/python/__str__-vs-__repr__-in-python/
+
+		一般情況下不建議自定義__repr__()
+	4. __del__(), object在清除前所執行的內容
+
+6. 關於java的public class, reference:
+	https://zhuanlan.zhihu.com/p/134383859
+
+7. about vim's color, here's the setting you can reference from:
+	https://linuxhandbook.com/vim-color-schemes/
+
+8. 
+
+
+2024/5/19
+1. About javascript, What is the difference between "let" and "var" key word?? They seems both are for creating variables then what's the difference?? Here's a reference talk about this! "let" is for "block", but "var" is for function, here's the reference:
+	https://realdennis.medium.com/%E9%96%92%E8%81%8A-var%E8%88%87let%E7%9A%84%E6%87%B6%E4%BA%BA%E5%8C%85-javascript-b5a3f40ee28d
+
+
+2. In javascript, what's the difference between "==" and "===", here's a reference talks about this:
+	https://stackoverflow.com/questions/523643/difference-between-and-in-javascript
+
+3. 
+
+
+2024/5/20
+1. 關於Euler"七橋問題"和"一筆畫問題"的整理, reference:
+	https://zh.wikipedia.org/wiki/%E4%B8%80%E7%AC%94%E7%94%BB%E9%97%AE%E9%A2%98
+
+2. 關於數據的分散程度, skewness, 這個概念挺有趣的, 有空可以研究一下.
+	https://en.wikipedia.org/wiki/Skewness
+
+
+2024/6/8
+1. 複習了一下python的mutable objects的概念和相關的pass by value 和 pass by reference. Python比較特別一點, 你在傳參的時候, mutable object會採用pass by reference(其實是pass by reference object, 但大致概念其實一樣), 若為immutable object則是採用pass by value. python還有一點很特別的是, 所有的"變數"都是object, 如果改變數是immutable(例如int, string...等等), 你若是改了該變數的value, 你print該變數, 你會發現他的value的確改了, 但是你若print他的記憶體address(用id() function), 會發現該變數的address也改了, 等於是他其實創了一個新的object來表示改變之後的變數, 而原本用來表示該變數的舊object其實保留了下來, 這舊object會由python的記憶體機制處理.
+
+2. c語言只能pass by value, 若想要pass by reference必須用指標pointer. 但是c++不但有pass by value, 還支援pass by reference, 只要用int testFunct(int &testVar){} 即能使用, 很方便. "&"本身是取address的符號, 在這裡的用法其實是很直觀的.
+
+
+3. 關於web開發中, 後端獲取前端的request, 如何獲取某個tag的value?? 通常都是採用依賴name, 而不是依賴id, here's some reference talks about this:
+https://stackoverflow.com/questions/32858667/get-value-of-input-element-with-id-or-name
+
+4. 在開發web的過程中, 需要"項目管理"工具, 不是只要有包或庫管理工具就夠了(例如pip of python或npm of javascrip), 你還需要管理項目版本, 項目的自動導入依賴等等很多東西, 在php中有赫赫有名的composer, 項目的設定都寫在composer.json裡面. Python中有模仿composer的poetry, 項目審定寫在.toml檔案裡. 

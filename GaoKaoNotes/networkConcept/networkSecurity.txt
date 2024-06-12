@@ -161,7 +161,8 @@ https://ithelp.ithome.com.tw/articles/10202316
 		b. 釣魚攻擊（Phishing Attacks）：這種攻擊方式通常通過電子郵件、短信或社交媒體等途徑來進行，黑客偽裝成合法的機構或個人，試圖誘導用戶提供個人敏感信息，如用戶名、密碼、信用卡信息等。
 		c. DDoS攻擊（Distributed Denial of Service Attacks）：這種攻擊方式旨在使目標系統或網站無法正常運行，黑客通過大量的流量或請求向目標系統發動攻擊，從而使其服務不可用。
 			I. UDP Flood： 攻击者发送大量UDP数据包到目标系统，消耗其带宽和处理能力。
-			II. SYN Flood： 攻击者发送大量TCP连接请求（SYN）到目标系统，但不完整地建立连接，导致目标系统资源耗尽。
+			II. SYN Flood： 攻击者发送大量TCP连接请求（SYN）到目标系统, 目標系統回復SYN-ACK, 但是攻擊者不回復最後一個動作, 也就是發送ACK, 就卡在那，大量這樣不完整地建立连接請求，會导致目标系统资源耗尽。
+
 			III. HTTP Flood： 攻击者发送大量HTTP请求到目标服务器，消耗其处理资源。
 			IV. ICMP Flood： 攻击者发送大量ICMP Echo请求（ping），导致目标系统耗尽处理资源。
 			V. Slowloris： 攻击者利用服务器对每个连接保持开放状态的特性，发送大量慢速的、未完成的HTTP请求，占用服务器资源。

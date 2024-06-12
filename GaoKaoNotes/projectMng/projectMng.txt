@@ -93,6 +93,13 @@
 
 				🤔. 使用技術:
 					😄. IPC(進程間同訊, Inner process communication)
+					reference:
+					https://morosedog.gitlab.io/technology-20200229-tech-6/
+					https://baike.sogou.com/v7857011.htm
+					https://stackoverflow.com/questions/2161674/is-there-a-difference-between-rpc-and-ipc
+					https://www.zhihu.com/tardis/zm/art/426303359?source_id=1005
+					https://www.zhihu.com/question/41609070
+
 						😄. 概念:
 							😄. 進程之間通訊是有限制的
 							😄. IPC就是要想辦法突破
@@ -106,6 +113,8 @@
 							😄. 套接字(socket)
 							😄. 消息傳遞(messsage passing)
 								😄. RPC(remote process call) --- *被廣泛使用
+									😄. 首先RPC是在一個正在記憶體中執行的function調用另一個正在另一個記憶體區塊執行中的function的技術, 他是IPC(Inter-Process Communication, 進程間通訊)的實作, 由於進程間通訊有限制, 所以需要IPC, 而RPC便是其最廣泛的實作, 被廣泛運用在分散式系統
+								
 				🤔. 實際範例:
 					😄. 幾乎所有雲服務(cloud services)
 

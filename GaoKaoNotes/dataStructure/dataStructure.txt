@@ -330,7 +330,7 @@
 		b. 右子樹所有Node鍵値均大於Root鍵値
 		c. 左、右子樹亦是Binary Search Tree
 
-	B. 建立:
+	B. 建立(Insertion):
 		a. 準備一段資料, 例如array
 		b. 將array的首個資料當作root
 		c. 接著按照binary search tree定義依序填入
@@ -351,10 +351,18 @@
 	D. 插入(insert)
 		a. 最壞情況O(n)
 		b. 平均情況O(log n)
+		c. 方法: 沒什麼好講的, 照BST定義
 
 	E. 刪除(delete)
 		a. 最壞情況O(n)
 		b. 平均情況O(log n)
+		c. 方法:
+			I. 删除的节点是叶节点（没有子节点）：
+				🤔. 直接删除该节点，不需要进行额外的调整。
+			II. 删除的节点有一个子节点：
+				🤔. 用该节点的子节点替代它。
+			III. 删除的节点有两个子节点：
+				🤔. 找到该节点的前驱或后继节点，用前驱或后继节点的值替换该节点的值，然后删除前驱或后继节点。前驱节点是左子树中的最大节点，后继节点是右子树中的最小节点。
 
 	F. 排序(sort), BST也可以用於排序(但資料必須先建立成BST)
 		a. 用inorder traversal, 即可得到"由小到大"的排序結果
@@ -706,7 +714,7 @@
 		a. 我們知道binary search tree越是balance, 平均search效率就越高: log(n)--->事實上是最高了...
 		b. 但我們在建構binary search tree的時候, 不見得會得到一顆平衡的樹, 我們需要些辦法獲得平衡的BST
 		
-	B. 常見的算法(方法), 大部分都使用了"旋轉(rotate)"的操作:
+	B. 常見的算法(方法), 大部分都使用了"旋轉(rotate)"的操作:  每次insert都需要log(n)複雜度+1個rotate: O(log(n)
 		a. AVL tree(AVL是人名縮寫) 
 			I. 定義:
 				🤔. 為一顆binary search tree, 且height 平衡(balance)
@@ -748,7 +756,12 @@
 					😄. 若發生不平衡的插入值不再以上3個值之內, 則此插入值重插
 				🤔. 調整的時候會平衡所有子node, 不會對父node造成任何影響, 所以理論上, 你只需要選轉一次即可(重要概念!!考過!)
 
-			IIIII. 高度-最少節點數定理
+			V. remove node:
+			reference:  --->以下有很清楚的說明, 就是移植不斷往下平衡
+			https://www.cs.emory.edu/~cheung/Courses/253/Syllabus/Trees/AVL-delete.html
+				🤔. 從AVL樹中刪除，可以通過把要刪除的節點向下旋轉成一個葉子節點，接著直接移除這個葉子節點來完成。因為在旋轉成葉子節點期間最多有log n個節點被旋轉，而每次AVL旋轉耗費固定的時間，所以刪除處理在整體上耗費O(log n) 時間。
+
+			VI. 高度-最少節點數定理
 				🤔. 建立高度h的AVL tree, 最少需要多少節點?
 					😄. 答: S(h) = S(h-1) + S(h-2) + 1, 原理如下:
 						😄. 首先, AVL tree的高度為h, 則任意node的左右子樹應為一個高度為h-1, 另一個高度為h-2, 這是最少節點的時候必定符合的
@@ -778,7 +791,23 @@
 		reference:
 		https://tigercosmos.xyz/post/2019/11/algorithm/red-black-tree/
 		https://www.youtube.com/watch?v=UaLIHuR1t8Q
-
+			I. 定義:	
+				🤔. root必為黑
+				🤔. root到葉節點的任意路徑不能出現連續兩個紅
+				🤔. 從root到任意只有一個children的節點, 其路徑上的黑色節點數量必定彼此相同
+			II. Insertion
+				🤔. 若為空, 則插入黑色節點為root
+				🤔. 不為空, 一律插入紅色節點
+					😄. 若該紅色節點的parent為黑, 則ok
+					😄. 若該紅色節點的parent為紅, 違反紅黑樹定義, 需要調整
+						😄. 若該節點的parent的sibling為紅
+							😄. 首先我們為了讓紅不要連續, 我們把parent紅轉黑, 
+							😄. 因為此時parent的sibling也為紅, 則為了使定義第三點成立, parent的sibling也要轉黑, 黑色數量才會對
+							😄. 但是此時parent和parent silbing兩個分支都多了一個黑色節點, 這表示與其他非這兩分支的分支比較起來, 多了黑色數量, 這與第三點定義又矛盾了, 為了修復, 你必需在把這兩個parent的parent顏色也改變, 才能確保符合定三點定義(如果改變過程又出現RR連續, 你重複相同操作步驟一路刷到root)
+						😄. 若該節點的parent的sibling為黑或為空, 則該節點rotate且轉黑
+							😄. 首先, 因為我們一樣為了讓紅色不要連續, 把parent紅轉黑, 
+								😄. 此時若parent的sibling為空, 則表示你無法藉由改變parent的sibling的顏色來使結構滿足定義三, 此時唯一的辦法就是使用rotate, 一樣大擺右, 小擺左, 中間擺中間, 接下來依照定義自由發揮了吧. 
+								😄. 此時若parent的sibling為黑, 則表示你依舊無法藉由改變parent的sibling的顏色來使結構滿足定義三, 因為parent的sibling本來就是黑色, 你改成紅色反而讓黑色數量減少了, 而parent改成黑色後自己的分支黑色數量增多, 所以違反定義三.   此時唯一的辦法就是使用rotate, 一樣大擺右, 小擺左, 中間擺中間, 接下來依照定義自由發揮了吧. 
 		e. 加權平衡樹(weighted balanced tree)
 
 
@@ -812,6 +841,8 @@
 		a. 就是m=3(你如果m=2就變成balanced B.S.T), 根據定義任意node的degree介於2到3
 
 	C. 操作
+	reference:  below is a very good example talks about how to insert and delete
+	https://www.tutorialspoint.com/data_structures_algorithms/b_trees.htm
 		a. Insert:
 			I. 過程可能會遇到node裡面key數量超過m-1的狀況(overflow), 需要"split"
 				🤔. split的辦法:

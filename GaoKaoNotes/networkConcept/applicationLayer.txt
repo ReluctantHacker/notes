@@ -81,10 +81,66 @@
 
 
 |#############################################################################################################|
-2. 郵件相關 
-	A. SMTP
-	B. POP3
-	C. IMAP
+2. 電子郵件相關 ----> 雖然現在通訊軟體十分發達, 但是正式的電子文書通訊都還是透過電子郵件居多, 所以要會 
+reference:
+https://zhuanlan.zhihu.com/p/141472142
+https://kknews.cc/code/a4k2k5g.html
+	A. 傳統電子郵件架構組成
+		a. 用户代理(User Agents)  ----> 就像我们常常使用的邮箱客户端，我们能直接接触的部分
+			I. 允许用户阅读,回复,转发,保存,编辑邮件消息
+			II. 例如:Outlook, foxmail等
+			III. 发送, 接收邮件消息到/从服务器
+			IV. 运行邮件协议
+		b. 邮件服务器(Mail Server) 
+			I. 邮箱mailbox 存放用户接收的邮件消息
+			II. 外出报文队列outgoing message queue
+			III. 运行邮件协议
+		c. 邮件协议
+			I. 分类
+				🤔. 邮件传输协议  ---> 传输邮件消息到服务器
+					😄. SMTP(簡單郵件傳輸協議, Simple Mail Transfer Protocol) ----> 基於TCP
+						😄. 基本設定
+							😄. 客户使用TCP来可靠传输邮件消息到服务器
+							😄. 端口号25
+							😄. 直接传送: 发送服务器到接收服务器
+							😄. 传输的3个阶段
+							😄. 握手 (问候)
+							😄. 邮件消息的传输
+							😄. 结束
+						😄. 基本傳輸流程
+							😄. Alice使用用户代理编写邮件消息(给bob@someschool.edu的)
+							😄. Alice的用户代理发送邮件消息 到她的邮件服务器;邮件消息存放在邮件消息队列
+							😄. Alice邮件服务器的SMTP客户端发起建立一个到Bob的邮件服务器的SMTP服务器端的TCP连接,经过应用层握手.
+							😄. SMTP客户在这个TCP连接上发送Alice的邮件消息
+							😄. Bob服务器存放邮件消息存到 Bob的邮箱
+							😄. Bob调用他的用户代理读邮件消息
+							
+				🤔. 邮件接收协议 ---> 从服务器获取邮件消息
+				reference:
+				https://www.cloudflare.com/zh-tw/learning/email-security/what-is-imap/
+					😄. POP3 (Post Office Protocol 3)  --->從server抓郵件消息到本地, 並刪除server上的對應郵件數據
+						😄. 基本設定
+							😄. POP: Post Office Protocol 邮局协议[RFC 1939]
+							😄. 110端口号
+							😄. 身份认证 (代理 <-->服务器) 并下载邮件消息
+							😄. IMAP: Internet Message Access Protocol [RFC 3501]
+							😄. 143端口
+							😄. 更多功能特征 (更复杂!)
+							😄. 允许用户像对待本地邮箱那样操纵远程邮箱的邮件
+							😄. HTTP: Hotmail , Yahoo! Mail, etc.
+						😄. 基本性質
+							😄. 預設情況下，電子郵件只能從下載電子郵件的裝置存取。
+							😄. 下載後，除非另有設定，否則電子郵件將從伺服器中刪除。
+							😄. 電子郵件可離線存取，但只能在下載電子郵件的裝置上存取。
+							😄. 預設情況下，電子郵件會下載到裝置，因此訊息可能需要更長的時間才能載入。
+							😄. POP3 可節省電子郵件伺服器儲存空間，因為電子郵件會自動從伺服器刪除。
+					😄. IMAP (Internet Message Access protocol) --->不會抓取郵件到本地
+						😄. 基本性質
+							😄. 使用者可以從任何裝置存取其電子郵件。	
+							😄. 伺服器儲存電子郵件；IMAP 充當伺服器和用戶端之間的中繼。	
+							😄. 電子郵件無法離線存取。	
+							😄. 在使用者點擊之前，不會下載電子郵件的內文，但主旨行和寄件者名稱會迅速出現在電子郵件用戶端中。	
+							😄. IMAP 需要更多的伺服器空間，因為電子郵件不會自動從伺服器中刪除。	
 
 
 |#############################################################################################################|
@@ -101,6 +157,8 @@
 	A. DNS(Domain name system)  ---->建立在UDP之上	
 	reference:
 	https://www.stockfeel.com.tw/dns-%E4%BC%BA%E6%9C%8D%E5%99%A8%E6%98%AF%E4%BB%80%E9%BA%BC%EF%BC%9F%E5%A6%82%E4%BD%95%E9%81%8B%E7%94%A8%EF%BC%9F/
+	https://www.zhihu.com/question/34826522
+	https://www.cloudflare.com/zh-cn/learning/dns/what-is-recursive-dns/
 		a. 目的:
 			I. 解析domain name(例如: google.com) 和IP之間的對應關係, 因為router只認IP, 所以需要DNS
 
@@ -118,6 +176,14 @@
 			III. CNAME紀錄(Canonical Name 紀錄)
 				🤔. 說穿了就是別名, 例如test.com指向IP=1.1.1.1, 而test.com的CNAME有testC1.com, testC2.com, testC3.com, 這三個CNAME都指向test.com. 他們三個本身不需要指向1.1.1.1, 只要指向test.com就好. 當你IP要改的時候, 別名自然也全部一起跟著變動
 
+		d. Zone(區域)和Zone files, 和zone Transfer:  --->太麻煩了...參考chatgpt的問答吧...懶得再寫筆記了
+		reference:
+		http://dns-learning.twnic.net.tw/bind/intro6.html
+
+			I. 定義: 通常表示在同一台dns server中紀錄某domain涵蓋的所有dns紀錄的統稱(包含NS, A CNAME等等), 這太抽象了, 我們直接看範例
+			II. 範例: 通常root DNS server, 會有像是.com, .net, .org之類頂級domain name DNS server的IP紀錄(通常root DNS server只會紀錄這些NS, 而不會記錄任何A紀錄). 假設使用者如果對"www.example.com"做request, 附近的DNS server沒有該url的IP紀錄, 則會先去root去問, root DNS server不知道"www.example.com"所對應的IP, 但她知道記錄了xxxxx.com的對應IP的server的IP是多少, 他會回傳該IP給使用者, 使用者會在對此IP進行request, 也就是對example.com進行request. 
+
+
 	B. DHCP(Dynamic host configuration protocol, 動態主機配置協議)  ---> 基於UDP
 		a. IP 地址分配： DHCP 負責自動分配 IP 地址給網路上的客戶端設備。這使得管理員無需手動配置每個設備的 IP 地址，大大簡化了網路管理的工作。通常情况下，如果你在家中或小型辦公室等環境下設置網絡，路由器或無線路由器通常已經內建了DHCP伺服器功能。這表示你不需要額外安裝DHCP伺服器，因為路由器本身就扮演了這個角色。当你将三台电脑连接到路由器时，它们将会向路由器发送DHCP请求，并从路由器获取IP地址和其他网络配置信息。但如果你正在搭建一个更大的网络环境，比如企業网络，那么可能会有专门的DHCP服务器。在这种情况下，你可能需要设置和管理独立的DHCP服务器来为网络上的所有设备提供IP地址和其他配置信息。
 
@@ -131,7 +197,7 @@
 
 		f. 安全性： DHCP 伺服器可以設置安全功能，如 MAC 地址過濾、IP 地址綁定等，以確保僅授權的設備可以獲取 DHCP 配置信息，從而防止未授權的設備入侵網路。
 	
-		g. 基本步驟:
+		g. 基本步驟: (口訣: 發提請確更(或dorar)
 			I. 发现（Discover）： 客户端通过广播消息向网络中的所有DHCP服务器发送请求，以查找可用的DHCP服务器。
 
 			II. 提供（Offer）： DHCP服务器收到客户端的发现消息后，会向其发送包含IP地址和其他配置信息的提供消息。

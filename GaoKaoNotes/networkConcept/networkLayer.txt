@@ -77,13 +77,67 @@
 |#############################################################################################################|
 2. IP 封包(packet), 以下是組成, 照順序
 	A. header:
-		a. 東西太多了, 跳過一些
-		b. source IP address:
+		a. Version  
+			I. 功能: 標識 IP 協議版本，IPv4 封包中這個字段的值是 4, IPv6則為6。
+			II. 長度: 4 bit
+		b. Header Length(IHL頭部長度)
+			I. 功能: 標示header占用多少空間
+			II. 長度: 4 bit
+		c. Type of Service(TOS, 服務類型) 
+			I. 功能: 指定封包的優先級和服務質量 (QoS)，可以包括區分服務和擁塞通知等。
+			II. 長度: 1 Byte
+		d. Total Length(總長度)： 
+			I. 功能: 封包總長度(頭部+數據), 最大值是2^16=65535
+			II. 長度: 2 Byte
+		e. Identification(標籤):  ---> 與分片(fragmentation)有關
+			I. 用於將分片的封包重新組裝
+			II. 長度: 2 Byte 
+		f. Flags(標籤)  ---> 與分片(fragmentation)有關
+			I. 功能: 控制和標識封包的分片，包括未來使用 (Reserved)、不分片 (DF) 和更多分片 (MF)。
+			II. 長度: 3 bit
+		g. Fragment Offset:  ---> 與分片(fragmentation)有關
+			I. 功能: 指示分片相對於原始封包的偏移量，單位是 8 字節。
+			II. 長度: 13 bit
+		h. Time to live(TTL, 生存時間)
+			I. 功能：限制封包在網絡中的存活時間，每經過一個路由器減少 1，到達 0 時封包被丟棄。
+			II. 長度：1 byte 
+		i. Protocol:
+			I. 功能: 指出封包中數據部分所使用的協議，例如 TCP (6) 或 UDP (17)。
+			II. 長度：1 byte
+		j. Header Checksum (頭部校驗和)：
+			I. 功能：用於檢查頭部的完整性和錯誤。
+			II. 長度：2 byte
+
+		c. source IP address:
 			I. 4 byte
 		c. destination IP address
 			I. 4 byte
 
 	B. data: 包含其他層的內容
+
+	C. fragmentation
+		a. 定義: 通常其他上層的協議(例如TCP, UDP, 不管...)會把大的數據分割成小的, 但是有可能在某些情況下, 分割出來的大小仍舊比IP層規定的還要大(例如ethernet規定, MTU是1500 bytes), 這個時候就要由IP協議進行分割
+		b. fragmentation數據傳輸時候需要使用到的head:
+			I. Identification (標識)：所有分片的這個字段值相同，用來標識它們是屬於同一個原始 IP 封包。
+			II. Flags (標誌)：其中的一位標誌（More Fragments, MF）指示是否有更多的分片。如果是最後一個分片，這位會被設置為 0。
+			III. Fragment Offset (分片偏移)：指示該分片在原始封包中的位置，單位是 8 字節。
+		c. 實際可能的範例,  假設一個原始 IP 封包的總長度是 4000 字節，而網絡的 MTU 是 1500 字節，這意味著需要分成幾個分片來傳輸：
+			I. 第一個分片：
+				🤔. IP 頭部（20 字節）
+				🤔. 數據部分（1480 字節）
+				🤔. Fragment Offset = 0
+				🤔. More Fragments (MF) = 1
+			II. 第二個分片：
+				🤔. IP 頭部（20 字節）
+				🤔. 數據部分（1480 字節）
+				🤔. Fragment Offset = 1480 / 8 = 185
+				🤔. More Fragments (MF) = 1
+			III. 第三個分片：
+				🤔. IP 頭部（20 字節）
+				🤔. 數據部分（1040 字節）
+				🤔. Fragment Offset = 2960 / 8 = 370
+				🤔. More Fragments (MF) = 0
+			IV. 當這些分片到達接收端時，接收端的 IP 層會根據Identification, Fragment Offsets, More Fragments標頭, 將封包重新組合. 重組過程中，接收端會將數據部分按正確的偏移量拼接起來，直到所有分片都到達並重組為完整的原始封包。  需要注意的是, IP並在乎封包的"順序"(那是TCP在管的), 所以雖然fragmentation把分片的順序考量到了, 但那只針對分片, 與其他常態的封包沒有關係, 不要誤會
 
 
 |#############################################################################################################|
