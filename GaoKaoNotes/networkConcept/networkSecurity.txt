@@ -69,7 +69,7 @@ https://kknews.cc/zh-tw/tech/azkm2q6.amp
 		b. 佈署:
 		reference:
 		https://fptcloud.com/wp-content/uploads/2022/03/IDS-IPS-la-gi-.jpg
-			I. 主要採用"直路佈署", 就是直接在防火牆後面接一個IPS, 之後IPS可能接switch, switch在接其他主機
+			I. 由於她的主動性與防火牆類似, 因此佈署方式也與防火牆類似, 主要採用"直路佈署", 就是直接在防火牆後面接一個IPS, 之後IPS可能接switch, switch在接其他主機
 
 	D. WAF(Web application firewall)
 		a. 定義和功能:
@@ -127,7 +127,7 @@ https://ithelp.ithome.com.tw/articles/10202316
 			
 
 	B. 功能
-		a. 遠端安全性: 由於使用了加密 數據, 確保了數據傳輸過程的隱密性, 使用者可以透過在Internet建立tunnel傳輸私密數據(或者是企業組織的私密數據), 別人沒有機會得知數據內容.
+		a. 遠端安全性: 由於使用了加密(通常採用AES算法, 乃非對稱加密) 數據, 確保了數據傳輸過程的隱密性, 使用者可以透過在Internet建立tunnel傳輸私密數據(或者是企業組織的私密數據), 別人沒有機會得知數據內容.
 
 		b. 隱私保護: 我們在一般的私人網路, 想要連線到互聯網Internet, 需透過gateway, 一般IP地址會經過轉換, , 外網的人不會知道你在私人網路內的IP地址, VPN是一樣的模式, 我們連線到VPN, 若是想要外網的內容, 數據會統一由VPN的gateway發出, 外網不會知道你的真實IP地址(但VPN內部是知道的, 所以只要該VPN有保留數據, 真的要查還是有機會查到的)
 			I. 所謂翻牆其實就是利用了這個原理, 若有一個使用者其所在網路被限制訪問特定的外網, 此時若有VPN服務器公司提供VPN服務, 此VPN本身沒有被"牆"擋住, 那使用者便可連線到該VPN, 透過VPN連到欲訪問的外網.
@@ -185,7 +185,7 @@ https://ithelp.ithome.com.tw/articles/10202316
 
 	
 |#############################################################################################################|
-7. IPSEC(Internet protocol security)   ---- 一套通訊協定(多個協定組成), 通常用於VPN, IPSEC與IP都屬網路層(使用時可選擇一個)
+7. IPSEC(Internet protocol security)   ---- 一套通訊協定(多個協定組成), 通常用於VPN, IPSEC與IP都屬網路層(使用時可選擇一個)  ---->提供CIA中的C和I
 reference:
 https://www.cloudflare.com/zh-tw/learning/network-layer/what-is-ipsec/
 	A. 重要性:
@@ -196,11 +196,11 @@ https://www.cloudflare.com/zh-tw/learning/network-layer/what-is-ipsec/
 		a. 是一種用於保護網際網路通信安全性的協議套件。它提供了對 IP 網絡上的數據進行加密和身份驗證的標準化機制，從而確保數據在傳輸過程中的機密性、完整性和可用性(CIA, confidentiality, integrity, authenticity)。
 
 		b. 包含幾個主要協定(protocol):
-			I. 驗證標頭(AH, Authentication Header):
+			I. 驗證標頭(AH, Authentication Header): --->提供CIA中的I
 				🤔. 身份驗證（Authentication）： AH 使用加密哈希函數對 IP 數據包的部分內容進行計算，生成一個摘要，稱為消息摘要碼（Message Digest）。此摘要碼用於驗證數據包的真實性，確保它沒有在傳輸過程中被修改或竄改。
 				🤔. 完整性保護（Integrity Protection）： AH 通過在數據包的頭部和有效載荷（Payload）中添加驗證信息，來保護數據包的完整性。這樣，接收方就可以驗證數據包在傳輸過程中是否被修改。
 
-			II. Encapsulating Security Payload (ESP)
+			II. Encapsulating Security Payload (ESP)  --->提供CIA中的C和I
 				🤔. 加密（Encryption）： ESP 使用對稱密鑰加密算法對整個 IP 數據包進行加密，從而保護數據的機密性，防止攻擊者對數據的窺視和竊聽。
 				🤔. 身份驗證（Authentication）： ESP 也可以提供對 IP 數據包的身份驗證，類似於 AH，但是它通常與加密一起使用，以確保數據包的完整性和真實性。 
 				🤔. 完整性保護（Integrity Protection）： ESP 通常包含一個完整性校驗值（Integrity Check Value），用於驗證數據包在傳輸過程中是否被修改。這提供了對數據完整性的保護。
@@ -220,7 +220,7 @@ https://www.cloudflare.com/zh-tw/learning/network-layer/what-is-ipsec/
 
 
 |#############################################################################################################|
-8. MACSEC   --->就是MAC的安全版
+8. MACSEC   --->就是MAC的安全版  --->提供CIA中的C和I
 	A. MACsec从以下几个方面保障了用户业务数据在局域网中的安全传输：
 		a. 数据加密：MACsec使用AES-CMAC算法加密。发送方对数据进行加密，数据以密文的形式在局域网链路上传输，接收方对接收的加密数据解密后再进行其他处理。
 		b. 完整性校验：接收方对接收的数据进行完整性校验，以判定数据是否被篡改。发送方根据整个数据报文和加密算法计算出完整性校验值ICV(Integrity Check Value)，附加在报文后，接收方收到报文后根据除去ICV部分的数据报文和相同的加密算法计算出ICV，同报文中的ICV比较。若二者相同，则认为报文完整，校验通过；否则，丢弃报文。

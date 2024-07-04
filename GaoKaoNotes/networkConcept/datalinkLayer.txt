@@ -44,6 +44,9 @@
 			V. 若有一個node連接多個node的情況, 則可以使用point-to-multipoint協議
 	C. 從LAN到WAN
 		a. 由於LAN主要使用ethernet或wifi, 數據從LAN到WAN勢必在鏈路層協議要有轉換, 不同鏈路層協議之間的轉換是通過每個路由器或交換設備在進入和離開不同網段時進行封裝和解封裝來實現的(同行是自動的), 通常這個過程不會影響到IP/TCP或以上數據包的內容, 
+		b. 例如通常跨國或是跨洲(之間可能是用各種router連結, 所以很多router也是用wan), 都適用wan的協議, 
+		c. wan的協議還有個很重要的特點, 就是他們的frame裡面沒有mac address! 也就是說她們主要是看上層協議(IP/TCP)的IP, 
+		d. 也可以說wan主要依賴router, lan主要依賴switch
 
 
 	C. Bluetooth
@@ -132,10 +135,15 @@ https://www.zhihu.com/question/289026686
 |#############################################################################################################|
 5. 錯誤控制(errorControl)
 	A. 錯誤偵測(Error Detection)
-		a. 同位元檢查(parity check)
+		a. 同位元檢查(或稱奇偶校驗, parity check)
+		reference:
+		https://zh.wikipedia.org/zh-tw/%E5%A5%87%E5%81%B6%E6%A0%A1%E9%AA%8C%E4%BD%8D
+			I. 大原則, 若收發雙方共同決定用偶校驗, 則表示要讓驗證數據維持偶數個1. 若是奇校驗, 則表示要讓驗證數據維持奇數個1, 
+			II. .例如, 若相約用偶校驗, 則數據XXXXXXXX內有偶數個1則後面補0, 讓他維持偶數個1, 若有奇數個1則補1讓他變成偶數個1.   奇校驗則同樣的方式, 只是變成奇數
 		b. 檢查集(Check sum, CS)
-		c. 循環多餘碼檢查法(Cycle Redundancy Check, CRC), 一般都是用這個
-		d. ECC(Error correction code)
+		c. 循環多餘碼檢查法(Cycle Redundancy Check, CRC), ethernet一般都是用這個
+			I. 其實就是採用module 2除法, 把原始數據用模二除法, 得到的餘數接續在數據後端(注意其實是相加在數據後端), 實際實作的情況就是把模二除法的結果放在FCS(Frame check sequence)這個ethernet frame header.
+		d. ECC(Error correction code)  --->主要是hamming code, 比較複雜
 		reference:
 		https://gordonfang-85054.medium.com/%E6%BC%A2%E6%98%8E%E7%A2%BC%E4%BB%8B%E7%B4%B9-hamming-code-intro-1c6669f0cff0
 

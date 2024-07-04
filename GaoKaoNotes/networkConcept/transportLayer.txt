@@ -160,7 +160,7 @@
 			V. sliding windows其實涵蓋了部分"確認應答"機制
 			
 		c. 錯誤控制
-			I. 奇偶較驗
+			I. 奇偶較驗(parity check)
 			II. checksum  --- **TCP使用
 				reference:
 				https://www.geeksforgeeks.org/calculation-of-tcp-checksum/
