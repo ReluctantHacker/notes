@@ -51,6 +51,10 @@ A. 統計學的三大本質
 							😄. 公設2(歸一化)： P(S) = 1
 
 							😄. 公設3(可加性)： 假設 A、B、C …為樣本空間S中的一組事件，且他們之間倆倆互斥(disjoint, 就是集合概念的互斥)，則事件連集的機率必等於分別事件的機率加總。
+					🤔. 樣本空間(sample space)
+						😄. "樣本空間"和"母體(population)"的概念有點類似, 但並不一樣. 母體是所有東西的集合, 它包含了"分布"的概念, 例如母體中有香蕉3根, 蘋果2顆, 茄子1條, 則母體是{香蕉, 香蕉, 香蕉, 蘋果, 蘋果, 茄子}. 母體包含了"分布"的概. 但樣本空間則不包含分布的概念, 只有分類的集合. 例如剛才的例子中樣本空間會是{香蕉, 蘋果, 茄子}, 沒有分布的概念在裏頭. 以下是一些比較和參考:
+							https://math.stackexchange.com/questions/1660038/populations-and-sample-spaces
+							https://stats.stackexchange.com/questions/175027/what-is-the-difference-between-sample-space-and-population#:~:text=The%20population%20is%20the%20set%20of%20all%20units,your%20random%20process%20picks%20a%20person%2C%20John%20Smith.
 					🤔. 處理連續機率
 						😄. 由於
 
