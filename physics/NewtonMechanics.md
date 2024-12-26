@@ -15,22 +15,22 @@
     * **Gravitational force is inversely proportional to the square of the distance between the objects.**
       * Newton chose an inverse square laws because it fits Kepler's law of Planetary motion. Here's how it is:
         * For a uniform circular orbit of radius r, the acceleration is 
-        * $$
+          $$
           a = \omega^2r, \omega = {2\pi \over T}, --> (A)
           $$
         * where T is the orbital period. Comparing eq. (A) with Kepler's third law
-        * $$
+          $$
           T^2 \propto r^3,  --> (B)
           $$
         * We can conclude that gravitational acceleration 
-        * $$
+          $$
           a \propto r^(-2)  --> (C)
           $$
         * So a is proportional to the inverse square distance r. [reference](https://physics.stackexchange.com/questions/128245/how-was-newton-able-to-guess-that-gravitational-force-is-inversely-proportional)
     * **Gravitational force is directly proportional to the masses of the objects.**
       * The idea is that if two objects attract each other, the force between them must be related to a certain "property" of the objects. This property is called "gravitational mass" (this newly hypothesized property is not the same as inertial mass, though for convenience we call it mass. Later, it will be proven that they are the same because gravitational force is equivalent to inertial force, as per Einstein's principle of equivalence in General Relativity. But here, we initially consider them as different properties). In fact, even in Newton's time, it was observed that when measuring gravity using devices like balances, gravitational mass was proportional to inertial mass. However, Newton did not delve deeply into their essence. 
     * Combining these two principles below, we get: 
-      * $$
+        $$
         F = GMm \over (r^2) 
         $$
 
