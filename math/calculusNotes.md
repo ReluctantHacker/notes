@@ -383,7 +383,7 @@ Proof of General Binomial theorem
 ---------------------------------
 Newton didn't prove his General Binomial Theorem. I searched a lot resource talks about this, but didn't find a good way without using calculus. Since Newton use Binomial theorem to confirm calculus, we can't use calculus to comfirm Binomial theorem or it could be circular. [Here](https://math.stackexchange.com/questions/1010877/binomial-theorem-proof-for-rational-index-without-calculus)'s a guy declare that he used Bernoulli inequality to prove General Binomial theorem without any idea of calculus. It's interesting but I don't think it's simple and intuitive enough. So I find [another way](https://www.quora.com/Can-you-prove-derivative-of-x-n-nx-n-1-for-all-real-values-of-n-without-using-either-binomial-theorem-or-taking-natural-log-of-both-sides).
 
-Here's the idea, if you can prove that $d(x^n) = nx^(n-1)$ is true when n is integer then you can use **chain rule** to prove it's also true when n is any rational number. First, we prove chain rule is true, it's easy:
+Here's the idea, if you can prove that $dx^n = nx^{n-1}$ is true when n is integer then you can use **chain rule** to prove it's also true when n is any rational number. First, we prove chain rule is true, it's easy:
 
 ```math
 \dfrac{dz}{dx} = \dfrac{dz}{dy} \dfrac{dy}{dx}
@@ -398,25 +398,25 @@ y^n = x^m
 For n and m are both integers, we differentiate both sides using the chain rule. 
 
 ```math
-\dfrac{d(y^n)}{dx} = \dfrac{d(x^m)}{dx} =
+\dfrac{dy^n}{dx} = \dfrac{dx^m}{dx} =
 ```
 ```math
-\dfrac{d(y^n)}{dy} = \dfrac{dy}{dx} =
+\dfrac{dy^n}{dy} = \dfrac{dy}{dx} =
 ```
 ```math
-n y^(n-1) \dfrac{dy}{dx} = m x^(m-1)
+n y^{n-1} \dfrac{dy}{dx} = m x^{m-1}
 ```
 
 Apparently
 
 ```math
-\dfrac{dy}{dx} = \dfrac{m}{n} y^-\left( n-1 \right) x^(m-1) =
+\dfrac{dy}{dx} = \dfrac{m}{n} y^{-\left( n-1 \right)} x^{m-1} =
 ```
 ```math
-\dfrac{m}{n} x^-m x^\dfrac{m}{n} x^(m-1) = 
+\dfrac{m}{n} x^{-m} x^{\dfrac{m}{n}} x^{m-1} = 
 ```
 ```math
-\dfrac{m}{n} x^{\dfrac{m}{n}-1}
+\dfrac{m}{n} x^{\left( \dfrac{m}{n}-1 \right)}
 ```
 
 At this point, we've proved it. Now what about 
