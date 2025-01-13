@@ -399,7 +399,11 @@ For n and m are both integers, we differentiate both sides using the chain rule.
 
 ```math
 \dfrac{d(y^n)}{dx} = \dfrac{d(x^m)}{dx} =
+```
+```math
 \dfrac{d(y^n)}{dy} = \dfrac{dy}{dx} =
+```
+```math
 n y^(n-1) \dfrac{dy}{dx} = m x^(m-1)
 ```
 
@@ -407,7 +411,11 @@ Apparently
 
 ```math
 \dfrac{dy}{dx} = \dfrac{m}{n} y^-\left( n-1 \right) x^(m-1) =
+```
+```math
 \dfrac{m}{n} x^-m x^\dfrac{m}{n} x^(m-1) = 
+```
+```math
 \dfrac{m}{n} x^{\dfrac{m}{n}-1}
 ```
 
