@@ -418,8 +418,8 @@ Apparently
 ```math
 \dfrac{m}{n} \cdot x^{\left( \dfrac{m}{n}-1 \right)}
 ```
+For irrational powers we use the fundamental theorem of calculus twice. The above gives the rule for integrating rational powers (except  $x^{-1}$). The derivative for an irrational power must be the reverse of integration for an irrational power. Integrals are better behaved than derivatives and we can use the squeeze theorem to trap an irrational power between two rational powers. Then use the fundamental theorem of calculus again.
 
-At this point, we've proved it. Now what about 
 
 
 One thing to keep in mind is that Calculus is nothing more than an updated version of the Method of Exhuastion, but now it specifically deal with **Functions**. People have played algebra, geometry, and arithmetic for a long time. In 17th centuries, science was born and started to join the game. Many math problems were being researched again, like finding area of a shape, finding the length of curve or volume of some solid body. Most of them were written in algebraic expressions and equations. So a problem may like this in that time: How do we computer the area under a unit circle curve which is express as $\sqrt{1-x^2}$ under first quadrant of cartesian coordinates? We can use the Method of Exhaustion, take n number of small rectangles under the curve, and when n increases the more accurate the area we computer.   The term "Function" is created by Lebniz in 1694
