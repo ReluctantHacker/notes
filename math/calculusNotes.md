@@ -379,7 +379,7 @@ rx^{r-1}
 
 With this result we can deal with any polylnomial.
 
-Proof of General Binomial theorem
+Differentiate Real number Power
 ---------------------------------
 Newton didn't prove his General Binomial Theorem. I searched a lot resource talks about this, but didn't find a good way without using calculus. Since Newton use Binomial theorem to confirm calculus, we can't use calculus to comfirm Binomial theorem or it could be circular. [Here](https://math.stackexchange.com/questions/1010877/binomial-theorem-proof-for-rational-index-without-calculus)'s a guy declare that he used Bernoulli inequality to prove General Binomial theorem without any idea of calculus. It's interesting but I don't think it's simple and intuitive enough. So I find [another way](https://www.quora.com/Can-you-prove-derivative-of-x-n-nx-n-1-for-all-real-values-of-n-without-using-either-binomial-theorem-or-taking-natural-log-of-both-sides).
 
@@ -420,11 +420,12 @@ Apparently
 ```
 For irrational powers we use the fundamental theorem of calculus twice. The above gives the rule for integrating rational powers (except  $x^{-1}$). The derivative for an irrational power must be the reverse of integration for an irrational power. Integrals are better behaved than derivatives and we can use the squeeze theorem to trap an irrational power between two rational powers. Then use the fundamental theorem of calculus again.
 
+Definition:
+-----------
 
+One thing to keep in mind is that Calculus is nothing more than an updated version of the Method of Exhuastion, but now it specifically deal with **Functions**. People have played algebra, geometry, and arithmetic for a long time. In 17th centuries, many math problems were being researched again, like finding area of a shape, finding the length of curve or volume of some solid body. Most of them were written in algebraic expressions and equations. So a problem may like this in that time: How do we computer the area under a unit circle curve which is express as $\sqrt{1-x^2}$ under first quadrant of cartesian coordinates? We can use the Method of Exhaustion, take n number of small rectangles under the curve, and when n increases the more accurate the area we computer.  By the way, the term "Function" is created by Lebniz in 1694.
 
-One thing to keep in mind is that Calculus is nothing more than an updated version of the Method of Exhuastion, but now it specifically deal with **Functions**. People have played algebra, geometry, and arithmetic for a long time. In 17th centuries, science was born and started to join the game. Many math problems were being researched again, like finding area of a shape, finding the length of curve or volume of some solid body. Most of them were written in algebraic expressions and equations. So a problem may like this in that time: How do we computer the area under a unit circle curve which is express as $\sqrt{1-x^2}$ under first quadrant of cartesian coordinates? We can use the Method of Exhaustion, take n number of small rectangles under the curve, and when n increases the more accurate the area we computer.   The term "Function" is created by Lebniz in 1694
-
-
+# Chapter 2: Definition of Infinity
 
 Reference:
 ----------
