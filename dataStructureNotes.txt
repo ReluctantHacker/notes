@@ -1,0 +1,57 @@
+1. "程序函數"與"數學函數"不一樣的地方在於"數學函數"是一個x輸入, f(x)輸出, 而"程序函數"則是"一系列邏輯操作", 不見得要有輸入或輸出, 應該把"程序函數"當成"完成一個小任務"邏輯功能塊
+
+2. 所有程序函數的"操作步驟"數量, 必定可以寫成f(n)的形式, 其中n是程序函數的某個特質. 而f(n)輸入n後得到f(n)即是操作步驟數量, 由於假設CPU對每個步驟所花時間一樣, 所以函數操作步驟數量即是函數所花時間, 也即是時間複雜度, 除了loop以外, 所有的程序操作全部都是單一步驟, 他們的時間複雜度全部都是O(1), 所以我們討論時間複雜度只要看loop即可, 或者我們也可說所有的function都是由"單一步驟"和loop組成, 單一步驟沒什麼好說的, 所以我們重點都放在loop的操作步驟. 首先loop可以組合出任何f(n)的步驟, 如下
+	for(int i=1; i<n; i++) {
+		// do something
+	} // 操作n次
+	
+	for(int i=1; i<n^2; i++) {
+		// do something
+	} // 操作n^2次
+
+	for(int i=1; i<log(n); i++) {
+		// do something
+	} // 操作log(n)次
+
+	for(int i=1; i<sin(n); i++) {
+		// do something
+	} // 操作sin(n)次, 當然實際上sin(n)退化為1, 但就那麼個意思, 你懂得
+
+	以上的方式是直接調整loop上限, 較為顯然, 還有一種方式是調整i的增長
+
+	for(int i=1; i<n; i*=2) {
+		// do something
+	} // 操作log_2(n)次
+	實際上這個方法可以寫成數學式, 比較好理解, 2^(操作次數)=n, 則(操作次數)=log_2(n), i實際上是for迴圈的遞迴項, 此範例中i = (上一個i)*2, 此遞迴可以轉成close form即2^(當下操作到底幾次). 並不是所有的遞迴都有close form, 所以如果
+
+	A. 當我們在比較f(n), g(n)的步驟次數的時候, 往往是談論當n->infinity的情況, 此情況等於是在討論f(n)及g(n)的發散速率, 而發散速率可用微分計算, 所以f(n), g(n)誰發散更快, 即討論f'(n)與g'(n)誰更大.
+
+	B. 羅畢達法則, 通常情況下f(n)及g(n)在n->infinity的時候可能會是未定式, 這個時候可使用羅畢達法則, 若lim_x->c f(x)/g(x)為未定式, 即f(x)和g(x)都為0, 或都為infinity, 則羅畢達法則lim_x->c f(x)/g(x) = lim_x->c f'(x)/g'(x). 當f(x)和g(x)都趨近0, 羅畢達法則很容易理解, 因為在x=0的時候, 兩者都為0, 也就是說f(dx)=f=df, g(dx)=g=dg, 這畫圖就知道. 而若f(x), g(x)都趨近infinity, 這個時候......
+
+	C. 要找到f(n)必須要有辦法將遞迴公式化為"cloesd form", 有一個問題會自然產生, 所有的遞迴都有closed form?  當然有, 所謂的數學function就是輸入一個值獲得一個對應值, 那一個recursence relation本來就符合function的定義(只是他不是連續的, 是離散函數), 所一問題其實變成了, 我們可否把recursense relation變成我們熟悉的函數的組合(sin, cos, exp, 次方等等)?? 要討論這個問題, 我們必須要討論何謂"代數algebra", 要把"algebra"說清楚, 在原始時代只有"Arithmetic(算數)", Arithemtic其實就是數字之間互相運算, 而algebra則是把Arithemtic的數字變成變數進行運算, algebraic operations操作為"加", "減", "乘", "除", "次方", "開方". 這些代數運算（Algebraic operations）具有一種"代數結構(抽象代數討論了各種代數結構, 在此不多做描述)", 簡而言之, 所有"代數運算式"構成一個集合(例如x, x+1, x^2+1, x+y, x^2+y等等等), 這些代數運算式經過algebraic operation的操作後仍舊在該集合中, 這叫做"封閉性(closure)", 而sin這個函數操作不屬於這個集合, 或說他不在這個集合範圍內, 他超越了...(當然你可以把sin加入這個集合然侯定義一些新的運算, 建構一個新的"代數結構", 但我們這裡不這樣做, 因為我們希望用基本代數結構"拼湊"出sin函數), 要講清楚這件事情必須再提一個概念:"超越數(Transcendental number)". 一個數只要它不是任何一個有理係數代數方程式的根，它即是"超越數"(pi, e等常數都是). 反之則是"代數數(algebraic number)". 這其實也表明了任何代數數經過任何有限次數的Algebraic operation都無法拼湊出"超越數", 因為不在一個集合裡面. 例如pi是無法用任何代數數經過有限次algebraic operations拼湊出來的. 這樣的情況直接延伸到"函數", 任何函數若無法用有限的"代數函數"表達, 則其為"超越函數(Transendetal function)", 換句話說，超越函數就是「超出」代數函數範圍的函數，也就是說函數不能表示為自變數與常數之間有限次的加、減、乘、除和開方。 sin()就是典型的超越函數, 因為他無法通過有限的代數函數拼湊表示. 最早提出超越數概念的人為歐拉. 
+		現在回到recursion relation的問題, 有了以上概念, 很快我們就知道, 是否所有recursion relation(本身是個函數f(n)), 有沒有辦法通過n, n^2, exp(n), sin(n)等等函數拼湊出來? 答案當然是否, 肯定不是所有recursion relation都能用基本函數拼湊出來, 因為可能不再一個代數結構中. 只有"線性遞迴"確定能夠如此, 且有具體方法, 線性遞迴的定義簡單來說就是遞迴項不能有次方, 開方或特殊函數, 例如a_n+a_(n-1)是線性, 但是a_n+(a_(n-1))^2不是線性, sin(a_n)+a_(n-1)也不是, 線性遞迴的詳細定義可以參考以下reference:
+		https://web.math.sinica.edu.tw/media/pdf/d334/33404.pdf
+		其他參考:
+		https://www.reddit.com/r/math/comments/11vkk8/do_all_recursive_sequences_have_an_explicit_form/
+		線性遞迴的解法可參考以下(和線性微分方程的解法非常相像, 都是找"根", 似乎因為都是同樣的代數結構?? 線性代數本身算是符合基本代數運算嗎? 非線性代數不合和基本代數運算?)
+		https://math.stackexchange.com/questions/4146222/closed-form-expression-for-a-recursive-formula
+		再次回到迴圈的遞迴時間複雜度問題 
+		for(int i=1; i<n; i*=2) {
+			// do something
+		} // 操作log_2(n)次
+		這個例子中, 由於i=(前一個i)*2, 這個是線性遞迴, 根=2, 所以f(m)=a*2^m, 帶入(m=1, i=1)則f(m)=2^m. 又2^m=n, 則m=log_2(n), 所以操作次數即是log_2(n)
+
+
+構造O(sin(n)):
+	https://www.reddit.com/r/algorithms/comments/6i3pwo/does_anyone_know_an_algorithm_with_a_periodic/
+
+
+3. 有sequential order(排列順序)的數據結構
+	A. array, array是一段連續內存空間, 又由於是連續記憶體, 所以各元素取值速度相同, 簡單而言array[1]和array[3]取值速度一樣, 這是"底層電路廣播原理", 時間複雜度為O(1), 詳細可以參考電腦電路科學筆記. array[3]只是array[0]的地址+3個單位地址位移得到, 這個計算只有一個操作(計算機中乘法不會比加法慢多少), 而有了地址就直接可以取得值(電路廣播原理). array的insert和delete需要O(n)的時間複雜度, 這裡的insert是指假設在array[3]的地方插入, 你要把array[3]之後的元素都往後移動一格, delete則是全部往前移動一格.   array是一段"連續的記憶體空間", 這意味著其實整個Process的記憶體空間是一個array, 整個stack是一個array, 整個heap也是一個array. 我們一般靜態宣告array後, array大小不能改, 型別不能改, 這跟所有其他使用stack的靜態變數是一樣的. 動態宣告array則可以中途改變大小(其實就是把可用的"連續空間"申請放大而已). 但須要注意的是"動態"申請的大小, 無法用sizeof()獲取, 這是因為stack會幫你記住固定大小, 但是heap不會幫你記住, 你要在程序中自己用變數去紀錄. 還有heap內變數存放不一定連續, 例如heap_array1和heap_array2的地址不一定連續, 這是為了作業系統方便調整邊界, 且為了防止相撞, heap array的起始位置可能會動態調整, 這一點與stack 很不相同.(詳細可以參考cLanguageNotes.txt)
+
+	B. linked list, 一開始指宣告頭節點(Header node), 節點中包含"值"和指向下一個node的地址, 這樣由每個Node串聯起來了list即是linked list, 優點是動態, 要用多少node自己可中途創建, 且插入和刪除某node時間複雜度為O(1), 例如要在第三個node和第四個node之間插入一個node, 只需把node3指向新node, 然後新node指向node4, 但前提是你已經知道node 3的地址. 你要訪問特定node, 例如node3, 你需要從header開始(因為我們只會紀錄header的地址), 往後找, 直到遇到node3, 訪問特定node的時間複雜度為O(n). 如果你不知道node3的地址卻要插入node3(或刪除node3), 必須先查找, 這樣總共的時間複雜度依然是O(n)
+
+	結語: array和linked list是電腦中最基本的資料結構, 幾乎所有其他資料結構都是由array和linked list實現的. 首先說穿了, array就是一段連續記憶體, 你可以對其進行O(1)時間的取值. 而linked list則是一種"節點指向結構", 他不依賴連續的記憶體片段, 而是利用指向來達到資料接續的效果. 兩者的底層實作在c語言中尤為明顯, array本來就是c語言的原始語法之一, 而linked list則是建立在pointer的語法基礎上, 通常用"struct"來建構linked list的節點(包含數值及next節點的地址).
+--------------------------------------------
+	C. stack. 先進後出的有order資料結構, 通常會用array或linked list其中一種實現.  stack的應用非常多, 包含作業系統對stack memory的實現, infix, postfix, prefix expression, 	
+
