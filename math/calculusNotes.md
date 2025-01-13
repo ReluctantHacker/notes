@@ -152,7 +152,7 @@ formulas but always as ratios. This is true about nearly all such mathematical r
 until the end of the seventeenth century. For example the area of a triangle is one half
 of the area of the parallelogram that contains it. The volume of a pyramid is one third
 of the box that contains it. The area of a piece of a parabola is two thirds of the
-rectangle that contains it. The area of the circle is π/4 of the square that contains it.
+rectangle that contains it. The area of the circle is ?/4 of the square that contains it.
 These examples were all known by the second century BC. Alhazen and Wallis's works followed the same tradition, but within a new way.
 
 
@@ -381,10 +381,16 @@ With this result we can deal with any polylnomial.
 
 Proof of General Binomial theorem
 ---------------------------------
-Although Newton didn't prove that, there's actually some ways to prove. One of them is using Bernoulli's inequality.
+Newton didn't prove his General Binomial Theorem. I searched a lot resource talks about this, but didn't find a good way without using calculus. Since Newton use Binomial theorem to confirm calculus, we can't use calculus to comfirm Binomial theorem or it could be circular. [Here](https://math.stackexchange.com/questions/1010877/binomial-theorem-proof-for-rational-index-without-calculus)'s a guy declare that he used Bernoulli inequality to prove General Binomial theorem without any idea of calculus. It's interesting but I don't think it's simple and intuitive enough. So I find [another way](https://www.quora.com/Can-you-prove-derivative-of-x-n-nx-n-1-for-all-real-values-of-n-without-using-either-binomial-theorem-or-taking-natural-log-of-both-sides).
+
+Here's the idea, if you can prove that $d(x^n) = nx^(n-1)$ is true when n is integer then you can use **chain rule** to prove it's also true when n is any rational number. First, we prove chain rule is true, it's easy:
+
 ```math
-\left( 1+x \right)^r \ge= 1+rx, \text{ when }  r\in N, r \ge 0, x \ge -2
+\dfrac{dz}{dx} = \dfrac{dz}{dy} \dfrac{dy}{dx}
 ```
+
+Now with chain rule, we can have that 
+
 
 One thing to keep in mind is that Calculus is nothing more than an updated version of the Method of Exhuastion, but now it specifically deal with **Functions**. People have played algebra, geometry, and arithmetic for a long time. In 17th centuries, science was born and started to join the game. Many math problems were being researched again, like finding area of a shape, finding the length of curve or volume of some solid body. Most of them were written in algebraic expressions and equations. So a problem may like this in that time: How do we computer the area under a unit circle curve which is express as $\sqrt{1-x^2}$ under first quadrant of cartesian coordinates? We can use the Method of Exhaustion, take n number of small rectangles under the curve, and when n increases the more accurate the area we computer.   The term "Function" is created by Lebniz in 1694
 
@@ -394,4 +400,6 @@ Reference:
 ----------
 [Wallis Table](https://www.quadrivium.info/GGB/WallisTable.html)<br>
 [Proof of Binomial theorem](https://math.stackexchange.com/questions/1010877/binomial-theorem-proof-for-rational-index-without-calculus)
+[Proof_differentiation_without_Binomial_theorem](https://www.quora.com/Can-you-prove-derivative-of-x-n-nx-n-1-for-all-real-values-of-n-without-using-either-binomial-theorem-or-taking-natural-log-of-both-sides)
+
 
