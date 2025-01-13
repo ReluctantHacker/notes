@@ -404,19 +404,19 @@ For n and m are both integers, we differentiate both sides using the chain rule.
 \dfrac{dy^n}{dy} = \dfrac{dy}{dx} =
 ```
 ```math
-n y^{n-1} \dfrac{dy}{dx} = m x^{m-1}
+n \cdot y^{n-1} \cdot \dfrac{dy}{dx} = m \cdot x^{m-1}
 ```
 
 Apparently
 
 ```math
-\dfrac{dy}{dx} = \dfrac{m}{n} y^{-\left( n-1 \right)} x^{m-1} =
+\dfrac{dy}{dx} = \dfrac{m}{n} \cdot y^{-\left( n-1 \right)} \cdot x^{m-1} =
 ```
 ```math
-\dfrac{m}{n} x^{-m} x^{\dfrac{m}{n}} x^{m-1} = 
+\dfrac{m}{n} \cdot x^{-m} \cdot x^{\dfrac{m}{n}} \cdot x^{m-1} = 
 ```
 ```math
-\dfrac{m}{n} x^{\left( \dfrac{m}{n}-1 \right)}
+\dfrac{m}{n} \cdot x^{\left( \dfrac{m}{n}-1 \right)}
 ```
 
 At this point, we've proved it. Now what about 
