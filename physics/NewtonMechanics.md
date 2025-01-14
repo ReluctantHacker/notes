@@ -50,15 +50,38 @@ Combining these two principles above, we write the expression:
 F = {GMm \over {r^2}}
 ```
 
-# Physics quantity
-It's easy to discuss a physical problem with time and distance like there's no problem. However, time is actually a very tricky concept. To completely comprehend the idea behind time, we suppose we are in microscopic world, and we have no ideas about force, time, distance and any other physical laws. 
+# Time
+It's easy to discuss a physical problem with time like there's no problem. However, time is actually very tricky concepts. To completely comprehend the idea behind it, we need to suppose we are in microscopic world, and we have no ideas about force, time, distance and any other physical laws. 
 
-Now, we observed a particle moving across the view, it's natural to define **Event** as particle's position. Event has order, like event A happens first and event B happens latter. With this order of events, it's natural to define **time** as the order of happening of events. 
+Now, we observed a particle moving across our sight view, it's natural to define a certain **Event** as that particle's position relative to you(observer) in certain moment. And because every events has order of happening, like event A happens first and event B happens latter. With this order of events, it's natural to define **time** as the **order of happening of events**. 
 
-In particle moving case, the position of the particle is the event. For example position $p_0 = \left( x_0, y_0, z_0 \right)$ happened earlier than $p_1 = \left( x_1, y_1, z_1 \right)$ which happened earlier than $p_2 = \left( x_2h
+This is actually the idea Einstein told about in special theory of relativity.
 
-Suppose we take time range $t\left(p_1\right)-t\left(p_0\right)$ as an unit to meansure other time range, it's easily to conclude that time range $t\left(p_2\right)-t\left(p_0\right)$ is much longer than $t\left(p_1\right)- t\left(p_0\right)$. But it's hard to use $p_1$ to measure other events which is not start from 
+For example position $p_0 = \left( x_0, y_0, z_0 \right)$ happened earlier than $p_1 = \left( x_1, y_1, z_1 \right)$ which happened earlier than $p_2 = \left( x_2, y_2, z_2\right)$
 
+Suppose we take time range $t\left(p_1\right)-t\left(p_0\right)$ as an unit to meansure other time range, it's easily to conclude that time range $t\left(p_2\right)-t\left(p_0\right)$ is much longer than $t\left(p_1\right)- t\left(p_0\right)$. And, of course, $p_3, p_4, p_5, p_6...$. However, this partcile is go away, and never come back, so we can't use this particle's events to re-measure other particle's event.
+
+Then what kinda motion that a particle have allows us to measure other particle's time range? The answer is **circular motion** or more precisely **periodic motion**. Be careful, at this point, we still have no idea about any physical laws, we just observe that there exist some kinda motion that is periodic, it would go around and around. 
+
+Now here's the thing that blows your mind. We directly DEFINE a period of this kinda circular motion a unit of time. We can use this unit of time to measure any time range of events. Intuitively reasonable, right? The blowing mind part is that it's natural to rise a philisophical question, how do we know every period that time passed of that circular motion is the same? 
+
+Well, the answer is WE DON'T KNOW. We can only believe that it's true. There's no other way to make sure because that's what we choose what time is. This is what we called physical law! You can't prove law, you just believe it and believe that it works every position every time.
+
+> [!NOTE]
+> Of course, no one use this time definition as law, because we all follow the same path as Newton gave us. However, we should suppose to realize that, even though it's not obvious, they're equivalent. 
+
+Still in the same microscopic world, we've observed that a circular motion happens when there're two identical particles attract each other. This is actually Kepler's Planet Motion. And it follows Newton's Gravitational Law. 
+
+At this point, we can finally connect Newton's law and the definition of time.
+```math
+T = 2\pi\sqrt{\dfrac{r^3}{GM}}
+```
+where $r$ is the radius of a perfect circular orbit.
+
+At this point, we can easily see that if we beleive that Newton's laws are true, then the period time of circular motion must be maintain the same. Inversely, if we believe period time of circular motion remains the same, then we must admit that Newton's laws are true.
+
+# Space
+Still in the same microscopic world,  
 
 
 # Noether's theorem
