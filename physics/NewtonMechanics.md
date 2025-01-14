@@ -15,30 +15,39 @@ The second law, $F = ma = {dP \over dt}$, indicates that without force, there is
 Assuming **spatial symmetry**(including translational symmetry, rotational symmetry) holds, and consider basic particles A and B. Suppose they are the same type of particle (homogeneity), they will have identical properties with different states of motion. If particle A exerts an attractive force on particle B, then particle B must exert an equal and opposite force on particle A due to their identical properties and adherence to spatial symmetry (this mutual attraction has no primary or secondary; both are active participants). This result is equivalent to the statement of third law. Finally, the macroscopic world is composed of microscopic particles, thus Every macroscopic objects must follow the third law. Therefore, we can conclude conservation of momentum is equivalent to the third law (if spatial symmetry and particle homogeneity hold) which implies the second laws is equivalent to the third law.
 
 # Newton's law of Universal Gravitation
-Newton realized that the motion of celestial bodies and the falling of an apple are governed by the same law. The law is described as follows:
+Newton realized that the motion of celestial bodies and the falling of an apple are governed by the same law. By some studies and obvervation he concludes that
+
 > [!NOTE]
-> **Gravitational force** is inversely proportional to the square of the distance between the objects.
+> Gravitational force is inversely proportional to the square of the distance between the objects.
 
-**Gravitational force is inversely proportional to the square of the distance between the objects.**
-    * Newton chose an inverse square laws because it fits Kepler's law of Planetary motion. Here's how it is:
-      * For a uniform circular orbit of radius r, the acceleration is 
-          $$
-          a = \omega^2r, \omega = {2\pi \over T}, --> (A)
-          $$
-        * where T is the orbital period. Comparing eq. (A) with Kepler's third law
-          $$
-          T^2 \propto r^3,  --> (B)
-          $$
-        * We can conclude that gravitational acceleration 
-          $$
-          a \propto r^{-2}  --> (C)
-          $$
-        * So a is proportional to the inverse square distance r. [reference](https://physics.stackexchange.com/questions/128245/how-was-newton-able-to-guess-that-gravitational-force-is-inversely-proportional)
-    * **Gravitational force is directly proportional to the masses of the objects.**
-      * The idea is that if two objects attract each other, the force between them must be related to a certain "property" of the objects. This property is called "gravitational mass" (this newly hypothesized property is not the same as inertial mass, though for convenience we call it mass. Later, it will be proven that they are the same because gravitational force is equivalent to inertial force, as per Einstein's principle of equivalence in General Relativity. But here, we initially consider them as different properties). In fact, even in Newton's time, it was observed that when measuring gravity using devices like balances, gravitational mass was proportional to inertial mass. However, Newton did not delve deeply into their essence. 
-    * Combining these two principles below, we get: 
-        $$
-        F = {GMm \over {r^2}}
-        $$
+Newton chose an inverse square laws because it fits Kepler's law of Planetary motion. 
 
-# Chapter_4. The Math
+For a uniform circular orbit of radius r, the acceleration is 
+```math
+a = \omega^2r, \omega = {2\pi \over T}, --> (A)
+```
+where T is the orbital period. Comparing eq. (A) with Kepler's third law
+```math
+T^2 \propto r^3,  --> (B)
+```
+We can conclude that gravitational acceleration 
+```math
+a \propto r^{-2}  --> (C)
+```
+So a is proportional to the inverse square distance r. [reference](https://physics.stackexchange.com/questions/128245/how-was-newton-able-to-guess-that-gravitational-force-is-inversely-proportional)
+
+> [!NOTE]
+> Gravitational force is directly proportional to the masses of the objects.
+
+The idea is that if two objects attract each other, the force between them must be related to a certain "property" of the objects. This property is called "gravitational mass" (this newly hypothesized property is not the same as inertial mass, though for convenience we call it mass. Later, it will be proven that they are the same because gravitational force is equivalent to inertial force, as per Einstein's principle of equivalence in General Relativity. But here, we initially consider them as different properties). In fact, even in Newton's time, it was observed that when measuring gravity using devices like balances, gravitational mass was proportional to inertial mass. However, Newton did not delve deeply into their essence. 
+
+Combining these two principles above, we write the expression: 
+```math
+F = {GMm \over {r^2}}
+```
+
+
+
+
+> [!NOTE]
+> Lagrangian mechanics is naturally more suitable for applications in relativistic theories, whereas Hamiltonian mechanics naturally allows for a simpler way to go from a classical theory to a quantum theory (i.e. quantization). 
