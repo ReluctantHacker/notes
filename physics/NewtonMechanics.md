@@ -16,8 +16,8 @@ Assuming **spatial symmetry**(including translational symmetry, rotational symme
 
 # Newton's law of Universal Gravitation
 Newton realized that the motion of celestial bodies and the falling of an apple are governed by the same law. The law is described as follows:
-< [!NOTE]
-< **Gravitational force** is inversely proportional to the square of the distance between the objects.
+> [!NOTE]
+> **Gravitational force** is inversely proportional to the square of the distance between the objects.
 
 **Gravitational force is inversely proportional to the square of the distance between the objects.**
     * Newton chose an inverse square laws because it fits Kepler's law of Planetary motion. Here's how it is:
