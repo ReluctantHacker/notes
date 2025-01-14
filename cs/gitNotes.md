@@ -114,7 +114,7 @@ git fetch -all
 git pull origin branName
 ```
 
-- **show history**: this command would show the history that you modified before that can be checkout. very useful. Here's some reference: https://www.atlassian.com/git/tutorials/rewriting-history/git-reflog 
+- **show history**: this command would show the history that you modified before that can be checkout. very useful. Here's a [reference](https://www.atlassian.com/git/tutorials/rewriting-history/git-reflog)
 ```
 git reflog
 ```
