@@ -59,7 +59,7 @@ This is actually the idea Einstein told about in special theory of relativity.
 
 For example position $p_0 = \left( x_0, y_0, z_0 \right)$ happened earlier than $p_1 = \left( x_1, y_1, z_1 \right)$ which happened earlier than $p_2 = \left( x_2, y_2, z_2\right)$
 
-Suppose we take time range $t\left(p_1\right)-t\left(p_0\right)$ as an unit to meansure other time range, it's easily to conclude that time range $t\left(p_2\right)-t\left(p_0\right)$ is much longer than $t\left(p_1\right)- t\left(p_0\right)$. And, of course, $p_3, p_4, p_5, p_6...$. However, this partcile is go away, and never come back, so we can't use this particle's events to re-measure other particle's event.
+Suppose we take time range $t\left(p_1\right)-t\left(p_0\right)$ as an unit to meansure other time range, it's easily to conclude that time range $t\left(p_2\right)-t\left(p_0\right)$ is much longer than $t\left(p_1\right)- t\left(p_0\right)$. And, of course, $p_3$, $p_4$, $p_5$, $p_6$... However, this partcile is go away, and never come back, so we can't use this particle's events to re-measure other particle's event.
 
 Then what kinda motion that a particle have allows us to measure other particle's time range? The answer is **circular motion** or more precisely **periodic motion**. Be careful, at this point, we still have no idea about any physical laws, we just observe that there exist some kinda motion that is periodic, it would go around and around. 
 
