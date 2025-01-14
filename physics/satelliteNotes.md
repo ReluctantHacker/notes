@@ -53,9 +53,11 @@ Satellites are for some tasks or jobs when it's better doing at very high place 
     * **Jason-3**: Monitors sea surface height and ocean circulation.
 
 # Satellite's Orbit
-Satellite's orbit follows physics, which is **Kepler's Planet Motion** here.(We don't use relativity here because most satellites's speed is small enough compare to speed of light.) 
+Satellite's orbit follows physics, which is **Kepler's Planet Motion** here.(We don't use relativity here because most satellites's speed is small enough compare to speed of light.)
 
-In Space Engineering/Celestial Mechanics, people use **Orbit Elements** to uniquely identify a specific orbit. These elements are considered in two-body systems using a Kepler orbit.
+Generally, after launch, a satellite should and would keep their own orbit the same. This is physics, and also is the goal of satellite. Every satellite has their own certain task. The stable orbit is good for tracking and maintain the task.
+
+To describe their stable orbit, in Space Engineering/Celestial Mechanics, people use **Orbit Elements** to uniquely identify a specific orbit. These elements are considered in two-body systems using a Kepler orbit.
 
 Keplerian elements
 ------------------
@@ -135,6 +137,13 @@ In the earlier, satellite's signal usually using low frequency(mostly L-band) be
 </p>
 
 Figure_4
+
+# Receiving Station, Satellite Dish
+Satellite dish on receiving station is just like telescope, it need to point to the object on the sky to receive the signal. And because the satellite is a small target on sky, you need to very accurately track the satellite. It's kinda like you use telescope to observe a star. The star is so small that it would easly out of the view zone if there's small direction off. Satellite dish follow the same condition, it is just like telescope use visible light, satellite dish use other range of EM. 1 degree off may cause 3db loss of signal.
+
+Of course, Receiving Station can't magically know where the satellite is, it use orbit parameters of that satellite gave by satellite company. Satellite company would keep tracking the position of their own satellites whose motion are ruled by physical law.
+
+
 
 # Reference
 [How much can a satellite see earth?](https://www.wtamu.edu/~cbaird/sq/2013/05/10/since-one-satellite-can-see-half-of-the-earth-why-do-we-need-more-than-two-satellites-in-a-given-network/)
