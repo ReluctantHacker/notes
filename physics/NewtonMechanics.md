@@ -6,7 +6,8 @@ Before Newton, there is no definition of "force". The definition of force is whe
 * **Second Law**: Define $F = ma = {dP \over dt}$
 * **Third Law**: Every action (force) in nature there is an equal and opposite reaction
 
-The above three laws are actually equivalent to each others and are all equivalent to **conversation of momentum**. This is how the whole logic is:
+> [!NOTE]
+> Newton's three laws are actually equivalent to each others and are all equivalent to **conversation of momentum**. 
 
 The Law of Inertia states that no force no acceleration and vice versa, which is exactly the same argument $F = ma$. Therefore, the first law is equivalent to the second law.
 
@@ -22,19 +23,22 @@ Newton realized that the motion of celestial bodies and the falling of an apple 
 
 Newton chose an inverse square laws because it fits Kepler's law of Planetary motion. 
 
-For a uniform circular orbit of radius r, the acceleration is 
+For a uniform circular orbit of radius r, Newton's know the acceleration is 
 ```math
-a = \omega^2r, \omega = {2\pi \over T}, --> (A)
+a = \omega^2r
 ```
-where T is the orbital period. Comparing eq. (A) with Kepler's third law
+As Kepler's law says, we can have following
 ```math
-T^2 \propto r^3,  --> (B)
+\omega = {2\pi \over T}
 ```
-We can conclude that gravitational acceleration 
 ```math
-a \propto r^{-2}  --> (C)
+T^2 \propto r^3
 ```
-So a is proportional to the inverse square distance r. [reference](https://physics.stackexchange.com/questions/128245/how-was-newton-able-to-guess-that-gravitational-force-is-inversely-proportional)
+Now, we can conclude that gravitational acceleration is
+```math
+a \propto r^{-2}
+```
+which is the inverse square rule. [reference](https://physics.stackexchange.com/questions/128245/how-was-newton-able-to-guess-that-gravitational-force-is-inversely-proportional)
 
 > [!NOTE]
 > Gravitational force is directly proportional to the masses of the objects.
@@ -46,7 +50,23 @@ Combining these two principles above, we write the expression:
 F = {GMm \over {r^2}}
 ```
 
+# Physics quantity
+It's easy to discuss a physical problem with time and distance like there's no problem. However, time is actually a very tricky concept. To completely comprehend the idea behind time, we suppose we are in microscopic world, and we have no ideas about force, time, distance and any other physical laws. 
 
+Now, we observed a particle moving across the view, it's natural to define **Event** as particle's position. Event has order, like event A happens first and event B happens latter. With this order of events, it's natural to define **time** as the order of happening of events. 
+
+In particle moving case, the position of the particle is the event. For example position $p_0 = \left( x_0, y_0, z_0 \right)$ happened earlier than $p_1 = \left( x_1, y_1, z_1 \right)$ which happened earlier than $p_2 = \left( x_2h
+
+Suppose we take time range $t\left(p_1\right)-t\left(p_0\right)$ as an unit to meansure other time range, it's easily to conclude that time range $t\left(p_2\right)-t\left(p_0\right)$ is much longer than $t\left(p_1\right)- t\left(p_0\right)$. But it's hard to use $p_1$ to measure other events which is not start from 
+
+
+
+# Noether's theorem
+
+We have already discuss about conservation of momentum. However, it's not the end, there's some deeper idea about momentum.
+
+
+# Momentum, Energy and Work
 
 
 > [!NOTE]
