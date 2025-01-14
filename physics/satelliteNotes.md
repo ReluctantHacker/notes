@@ -110,13 +110,31 @@ Generally, Satellites use directional signal(beam), the antennas in it would foc
 
 Figure_2
 
-A spot beam's coverage on earth we called it **footprint**. A footprint area is sometimes the same as so called **receiving zone**, the difference is that receiving zone is term in perspective of recevier, footprint is a term in perspective of satellite.
+A spot beam's coverage on earth we called it **footprint**. A footprint area is actually the same thing as so called **receiving zone**, the difference is that receiving zone is term in perspective of recevier, footprint is a term in perspective of satellite.
 
 <p align="center">
   <img src="./images/satelliteNotes_figure_3.png"/>
 </p>
 
 Figure_3
+
+The receiver would get the satellite signal area as a circular-like area. However, from satellite's view point, the area it covers is actually a "track" because satellites is flying cross the earth like Figure_3 shows.
+
+# Signal Frequency
+In the earlier, satellite's signal usually using low frequency(mostly L-band) becacuse of good ionospheric penetration, atmospheric propgation. But low frequency means low bandwidth which means low data capacity. Modern designs tend to use higher frequency. Here's the spectrum satellites use:
+  * **L-band(1-2GHz)**
+  * **S-band(2-4GHz)**
+  * **C-band(4-8GHz)**
+  * **X-band(8-12GHz)**
+  * **Ku-band(12-18GHz)**
+  * **K-band(18-26GHz)**
+  * **Ka-band(26-40GHz)**
+
+<p align="center">
+  <img src="./images/satelliteNotes_figure_4.jpg"/>
+</p>
+
+Figure_4
 
 # Reference
 [How much can a satellite see earth?](https://www.wtamu.edu/~cbaird/sq/2013/05/10/since-one-satellite-can-see-half-of-the-earth-why-do-we-need-more-than-two-satellites-in-a-given-network/)
