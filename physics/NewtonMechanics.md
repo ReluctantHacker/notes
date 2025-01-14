@@ -65,7 +65,10 @@ Then what kinda motion that a particle have allows us to measure other particle'
 
 Now here's the thing that blows your mind. We directly DEFINE a period of this kinda circular motion a unit of time. We can use this unit of time to measure any time range of events. Intuitively reasonable, right? The blowing mind part is that it's natural to rise a philisophical question, how do we know every period that time passed of that circular motion is the same? 
 
-Well, the answer is WE DON'T KNOW. We can only believe that it's true. There's no other way to make sure because that's what we choose what time is. This is what we called physical law! You can't prove law, you just believe it and believe that it works every position every time.
+> [!NOTE]
+> We can compare it to another circular motion. And if they have fixed ratio, we can say that in the reference of a certain circular motion, this circular motion's period fixed. However, it is not enough, because one can always argues that the reference circular motion also needs to be comfirmed.
+
+Well, the answer is WE DON'T KNOW. We can only BELEIVE that it's true. Or more precisely we DEFINE that it is fixed so we can use it as our reference. There's no other way to make sure because that's what we choose what time is. This is what we called physical law! You can't prove law, you just believe it and believe that it works every position every time.
 
 > [!NOTE]
 > Of course, no one use this time definition as law, because we all follow the same path as Newton gave us. However, we should suppose to realize that, even though it's not obvious, they're equivalent. 
@@ -81,7 +84,21 @@ where $r$ is the radius of a perfect circular orbit.
 At this point, we can easily see that if we beleive that Newton's laws are true, then the period time of circular motion must be maintain the same. Inversely, if we believe period time of circular motion remains the same, then we must admit that Newton's laws are true.
 
 # Space
-Still in the same microscopic world,  
+Still in the same microscopic world, when we want to discuss space, it's pretty much similar trick, WE NEED REFERENCE. We can't just declare the distance length between two particles(or two positions), we need comparison. In modern case, we usually use reference frame.
+
+Just like time, Here's also a blowing your mind philisophical question, how do we know if the length of two points or two particles maintains the same? For example a ruler, how do we know the ruler's length maintains? It's not a nonsense question. As I said, when we talk about space, everything need reference or so called comparison. What should we compare to to confirm that a ruler keep the same length? If we reference a ruler to a reference frame. It seems to work, but how can we be sure that reference frame maintained? 
+
+> [!NOTE]
+> Again! Just like time, you can compare a ruler to another reference frame(could be a bigger ruler or something) to declare if that ruler maintains the same length under that reference frame but this not enough because one can always argue that the reference frame also needs to be comfirmed.
+
+It turns out, as time turns out similarly, we can only BELIEVE a ruler keep it's length. Or more precisely we DEFINE a ruler's length fixed so we can used it as reference.
+
+# Absolute space time
+Intuitively, we may think that the universe has an absolute reference frame which can be used to compare to any motion. 
+
+We know that position is relative, obviously. And speed is relative, as two observers could not tell which one of them is truely moving. 
+
+However, the acceleration isn't relative, accoding to Newton's argument. Newton use his famous water bucket as example to explain the idea. But I just simplify the situation.
 
 
 # Noether's theorem
