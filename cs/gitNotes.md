@@ -140,6 +140,7 @@ git remote set-url origin https://<token>@github.com/<username>/<repoName>.git
 you can also directly add token when you clone the repo
 ```
 git clone https://<username>:<token>@github.com/<username>/<repoName>.git
+```
 
 - **Change current branch name**:
 ```
