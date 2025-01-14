@@ -102,7 +102,7 @@ Satellite's signal is not sphereical wave or omnidirection because of several re
   * **User density**
   * **Cost and complexity**
 
-Generally, Satellites use directional signal(beam), the antennas in it would focus the signal into a specific area or range of directions, creating what we call a "spot beam."
+Generally, Satellites use directional signal(beam), the antennas in it would focus the signal into a specific area or range of directions, creating what we call a **spot beam**.
 
 <p align="center">
   <img src="./images/satelliteNotes_figure_2.png"/>
@@ -110,6 +110,13 @@ Generally, Satellites use directional signal(beam), the antennas in it would foc
 
 Figure_2
 
+A spot beam's coverage on earth we called it **footprint**. A footprint area is sometimes the same as so called **receiving zone**, the difference is that receiving zone is term in perspective of recevier, footprint is a term in perspective of satellite.
+
+<p align="center">
+  <img src="./images/satelliteNotes_figure_3.png"/>
+</p>
+
+Figure_3
 
 # Reference
 [How much can a satellite see earth?](https://www.wtamu.edu/~cbaird/sq/2013/05/10/since-one-satellite-can-see-half-of-the-earth-why-do-we-need-more-than-two-satellites-in-a-given-network/)
