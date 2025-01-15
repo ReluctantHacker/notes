@@ -68,7 +68,7 @@ Now here's the thing that blows your mind. We directly DEFINE a period of this k
 > [!NOTE]
 > We can compare it to another circular motion. And if they have fixed ratio, we can say that in the reference of a certain circular motion, this circular motion's period fixed. However, it is not enough, because one can always argues that the reference circular motion also needs to be comfirmed.
 
-Well, the answer is WE DON'T KNOW. We can only BELEIVE that it's true. Or more precisely we DEFINE that it is fixed so we can use it as our reference. There's no other way to make sure because that's what we choose what time is. This is what we called physical law! You can't prove law, you just believe it and believe that it works every position every time.
+Well, the answer is WE DON'T KNOW. We can only BELEIVE that it's true. Or more precisely we DEFINE that it is fixed so we can use it as our reference. There's no other way to make sure because that's what we choose what time is. This is what we called physical law! You can't prove law, you just believe it and believe that it works every position any time.
 
 > [!NOTE]
 > Of course, no one use this time definition as law, because we all follow the same path as Newton gave us. However, we should suppose to realize that, even though it's not obvious, they're equivalent. 
@@ -191,7 +191,7 @@ where
 \Delta E = \dfrac{1}{2} \cdot \dfrac{P^2}{m} = \dfrac{1}{2}mv^2
 ```
 
-At this point, the whole arguments actually means that we have two quantity to use to describe how much an object is moving:
+At this point, the whole arguments actually means that we have two ways to describe how much an object is moving:
   * **$\Delta t = \dfrac{\Delta P}{F}$**: How much time do we need to stop an object if we perform a force $F$ on it.
   * **$\Delta s = \dfrac{\Delta E}{F}$**: How much distance does the object go until it stop if we perform a force $F$ on it.
 
@@ -209,10 +209,18 @@ which can be also written as
 \Delta P \cdot \Delta s = \Delta E \cdot \Delta t
 ```
 
+In quantum mechanics, this is the conjugate variables for uncertainty principle.
 
+The concept of $\Delta s = \dfrac{\Delta E}{F}$ is very important because we would discuss a lot things based on objects position. The difference of the position is the distance. So energy would be the quantity of an object about how much that object moving in different position.
 
 # Noether's theorem and Conservation law
-Newton's three law is based on conservationo of momentum which is based on **symmetric of convervative force** 
+We know that Newton's three laws is based on conservation of momentum which is based on **symmetric of conservative force(vector field)**. [reference](https://zh.wikipedia.org/zh-tw/%E4%BF%9D%E5%AE%88%E5%90%91%E9%87%8F%E5%9C%BA)
+
+Conservative force means that the force a particle perform to others should be maintains everywhere anytime. More precisely, if there's another particle attracted by it, the force(relative value and direction) being performed on should be always the same anywhere and anytime.
+
+In short: Force is a function of position only.
+
+This would derive two results. First, total work perform between two position doesn't matter with path the object goes. Second, 
 
 
 if the particles is performed by **convervative force** which means the work is not relative to the path.
