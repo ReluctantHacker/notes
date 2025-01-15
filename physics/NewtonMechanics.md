@@ -172,19 +172,18 @@ We know the distance an objects go from stop if perform uniform force(therefore 
 
 Mathematically, we suppose there is a "how much moving-related" quantity $E$ that if two objects with same value of this quantity, then the distance these two objects goes until stop would be the same if we perform the same force on them.
 
-The distance $\Delta s$, is also initial speed($\display \dfrac{P}{m}$) plus final speed($0$) and multiply time it spend($\display \dfrac{P}{F}$) and over 2.
+The distance $\Delta s$, is also initial speed $\dfrac{P}{m}$ plus final speed $0$ and multiply time it spend $\display \dfrac{P}{F}$ and over 2.
 ```math
 \Delta s = \dfrac{1}{2}\cdot a\cdot t^2 = 
 ```
 ```math
-\dfrac{1}{2} \cdot \left(\dfrac{P}{m} + 0\right) \cdot \dfrac{P}{F}
+\dfrac{1}{2} \cdot \left(\dfrac{P}{m} + 0\right) \cdot \dfrac{P}{F} = 
 ```
-
-
-
 ```math
-\Delta s = \dfrac{1}{2} \cdot \dfrac{F}{m_1} \cdot {t_1}^2 = \dfrac{1}{2} \cdot \dfrac{F}{m_2} \cdot {t_2}^2
+\dfrac{1}{2} \cdot \dfrac{P^2}{m \cdot F}
 ```
+
+
 
 We define another property: if two objects performed same force on it go same distance until stop(may spend different time), then they have same **kinetic energy** or difference of **work**.
 ```math
