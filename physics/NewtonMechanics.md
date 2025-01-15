@@ -43,7 +43,7 @@ which is the inverse square rule. [reference](https://physics.stackexchange.com/
 > [!NOTE]
 > Gravitational force is directly proportional to the masses of the objects.
 
-The idea is that if two objects attract each other, the force between them must be related to a certain "property" of the objects. This property is called "gravitational mass" (this newly hypothesized property is not the same as inertial mass, though for convenience we call it mass. Later, it will be proven that they are the same because gravitational force is equivalent to inertial force, as per Einstein's principle of equivalence in General Relativity. But here, we initially consider them as different properties). In fact, even in Newton's time, it was observed that when measuring gravity using devices like balances, gravitational mass was proportional to inertial mass. However, Newton did not delve deeply into their essence. 
+The idea is that if two objects attract each other, the force between them must be related to a certain "property" of the objects. This property is called **gravitational mass** (this newly hypothesized property is not the same as **inertial mass**, though for convenience we call it mass. Later, it will be proven that they are the same because gravitational force is equivalent to inertial force, as per Einstein's principle of equivalence in General Relativity. But here, we initially consider them as different properties). In fact, even in Newton's time, it was observed that when measuring gravity using devices like balances, gravitational mass was proportional to inertial mass. Newton did infer that they are the same but didn't delve deeply into their essence. 
 
 Combining these two principles above, we write the expression: 
 ```math
@@ -89,9 +89,9 @@ Still in the same microscopic world, when we want to discuss space, it's pretty 
 Just like time, Here's also a blowing your mind philisophical question, how do we know if the length of two points or two particles maintains the same? For example a ruler, how do we know the ruler's length maintains? It's not a nonsense question. As I said, when we talk about space, everything need reference or so called comparison. What should we compare to to confirm that a ruler keep the same length? If we reference a ruler to a reference frame. It seems to work, but how can we be sure that reference frame maintained? 
 
 > [!NOTE]
-> Again! Just like time, you can compare a ruler to another reference frame(could be a bigger ruler or something) to declare if that ruler maintains the same length under that reference frame but this not enough because one can always argue that the reference frame also needs to be comfirmed.
+> Again! Just like time, you can compare a ruler to another reference frame(could be a bigger ruler or something) to declare if that ruler maintains the same length under that reference frame but this is not enough because one can always argue that the reference frame also needs to be comfirmed.
 
-It turns out, as time turns out similarly, we can only BELIEVE a ruler keep it's length. Or more precisely we DEFINE a ruler's length fixed so we can used it as reference.
+It turns out, as time turns out similarly, we can only BELIEVE a ruler keep it's length. Or more precisely we DEFINE a ruler's length is fixed so we can used it as reference.
 
 # Absolute/Relative space time
 Intuitively, we may think that the universe has an absolute reference frame which can be used to compare to any motion. 
@@ -115,17 +115,43 @@ You don't know the absolute statical length of a spring because there's no absol
 > [!NOTE]
 > Human beings feel acceleration and do observe the phenomona of acceleration(like water incline). So intuitively, we think acceleration is absolute. But it is just an illusion. We live on earth, earth's acceleration field(gravitation field) is so natural to us that we all think the state of water or spring on earth is the absolute statical. We thought the statical phenamona on earth is the absolute statical. But it's not true. Since, of course, earth is not the center of the universe.
 
+# Mass, Momentum, Kinetic Energy and Work
+How can we define how much an object is moving? Speed alone is not enough to tell the whole story because we know that two objects with same speed may need different time to be stoped if we perform the same continuous force.
+
+On the other hand, different static objects need different force to accelerate to same speed. 
+
+> [!NOTE]
+> We define **mass** as how hard a object gains acceleration(negative or positive). If an object has a larger mass then we need more force to give it to make it gains the same acceleration as the smaller mass one.
+
+However, the concept of force is based on mass. So the argument here is circular. Like force defines mass and mass also defines force. This is not valid. In fact, the only valid way we can define force is by gravitational law. 
+
+We've already argue about gravitational mass and inertial mass are the same thing in modern sense. And gravitational force is equivalent to acceleration force, you can't tell if you're in a gravitational field or in normal acceleration field.
+
+In fact, in Newton's age, people had started using gravitational force measuring mass long ago. 
+
+> [!NOTE]
+> To get things clear, suppose we are in the same microscopic world, two particles $P_1$ and $P_2$ attracts each other by the law of gravitation. Suppose we don't know anything about inverse square rule, we just observed that $P_2$ performs an acceleration $a_2$ toward $P_1$, and also, $P_1$ performs another acceleration $a_1$ toward $P_2$. We define mass as a property that makes $a_1 \cdot m_1 = a_2 \cdot m_2$. 
+
+
+
+
+
+
+
 
 
 
 
 
 # Noether's theorem
+Newton's three law is based on conservationo of momentum which is based on **symmetric of convervative force** 
 
-We have already discuss about conservation of momentum. However, it's not the end, there's some deeper idea about momentum.
+
+if the particles is performed by **convervative force** which means the work is not relative to the path.
+
+We've already discuss about conservation of momentum. However, it's not the end, there's some deeper idea about momentum.
 
 
-# Momentum, Energy and Work
 
 
 > [!NOTE]
