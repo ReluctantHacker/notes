@@ -115,13 +115,11 @@ You don't know the absolute statical length of a spring because there's no absol
 > [!NOTE]
 > Human beings feel acceleration and do observe the phenomona of acceleration(like water incline). So intuitively, we think acceleration is absolute. But it is just an illusion. We live on earth, earth's acceleration field(gravitation field) is so natural to us that we all think the state of water or spring on earth is the absolute statical. We thought the statical phenamona on earth is the absolute statical. But it's not true. Since, of course, earth is not the center of the universe.
 
-# Mass, Momentum, Kinetic Energy and Work
-How can we define how much an object is moving? Speed alone is not enough to tell the whole story because we know that two objects with same speed may need different time to be stoped if we perform the same continuous force.
-
-On the other hand, different static objects need different force to accelerate to same speed. 
+# Mass and Force
+We know that Different objects may need different force to accelerate to the same speed. 
 
 > [!NOTE]
-> We define **mass** as how hard a object gains acceleration(negative or positive). If an object has a larger mass then we need more force to give it to make it gains the same acceleration as the smaller mass one.
+> We define **mass** as how hard an object gains acceleration(negative or positive). If an object has a larger mass then we need more force to give it to make it gains the same acceleration as the smaller mass one.
 
 However, the concept of force is based on mass. So the argument here is circular. Like force defines mass and mass also defines force. This is not valid. In fact, the only valid way we can define force is by gravitational law. 
 
@@ -132,8 +130,14 @@ In fact, in Newton's age, people had started using gravitational force measuring
 > [!NOTE]
 > To get things clear, suppose we are in the same microscopic world, two particles $P_1$ and $P_2$ attracts each other by the law of gravitation. Suppose we don't know anything about inverse square rule, we just observed that $P_2$ performs an acceleration $a_2$ toward $P_1$, and also, $P_1$ performs another acceleration $a_1$ toward $P_2$. We define mass as a property that makes $a_1 \cdot m_1 = a_2 \cdot m_2$. 
 
+Finally we define force as $F = m \cdot a$, totally from gravitational law.
+
+# Momentum, Kinetic Energy and Work
+How can we define how much an object is moving? Speed alone is not enough to tell the whole story because we know that two objects with same speed may need different time to be stoped if we perform the same continuous force.
 
 
+
+With mass and acceleration, we can 
 
 
 
