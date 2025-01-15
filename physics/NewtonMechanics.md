@@ -190,7 +190,7 @@ where $\Delta E = \dfrac{1}{2} \cdot \dfrac{P^2}{m} = \dfrac{1}{2}mv^2$
 
 At this point, the whole arguments actually means that we have two quantity to use to describe how much an object is moving:
   * **$\Delta t = \dfrac{\Delta P}{F}$**: How much time do we need to stop an object if we perform a force $F$ on it.
-  * **$\Delta s = \dfrac{\Delta P}{F}$**: How much distance does the object go until it stop if we perform a force $F$ on it.
+  * **$\Delta s = \dfrac{\Delta E}{F}$**: How much distance does the object go until it stop if we perform a force $F$ on it.
 
 
 Of course, at this point, a force we perform on an object, we can rewrite it as 
