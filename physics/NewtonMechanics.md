@@ -145,10 +145,8 @@ And easily we can derive that
 Intuitively, this mean we need perform $-F$ force to an object that have momentum $\Delta P$ for $\Delta t$ time to stop it.
 
 So, if two objects have same momentum, even though they have different speed, as we perform the same force on them, the time we spend to stop them would be the same.
-> [NOTE!]
->
 ```math
-\Delta t = \dfrac{\Delta P}{F}  = \dfrac{m_1 \cdot \dfrac{P}{m_1}}{F} = \dfrac{m_2 \cdot \dfrac{P}{m_2}}{F}
+\Delta t = \dfrac{\Delta P}{F}
 ```
 >
 
@@ -175,7 +173,7 @@ We know the distance an objects go from stop if perform uniform force(therefore 
 
 Mathematically, we suppose there is a "how much moving-related" quantity $E$ that if two objects with same value of this quantity, then the distance these two objects goes until stop would be the same if we perform the same force on them.
 
-The distance $\Delta s$, is also initial speed $\dfrac{P}{m}$ plus final speed $0$ and multiply time it spend $\display \dfrac{P}{F}$ and over 2.
+To find this quantity, let us rewrite distance $\Delta s$, as initial speed $\dfrac{P}{m}$ plus final speed $0$ and multiply time it spend $\display \dfrac{P}{F}$ and over 2.
 ```math
 \Delta s = \dfrac{1}{2}\cdot a\cdot t^2 = 
 ```
@@ -185,7 +183,10 @@ The distance $\Delta s$, is also initial speed $\dfrac{P}{m}$ plus final speed $
 ```math
 \dfrac{1}{2} \cdot \dfrac{P^2}{m \cdot F}
 ```
-
+At this point, obviously, We find the $E$
+```math
+\Delta s = \left(\dfrac{1}{2}\cdot\dfrac{P^2}{m}\right) \cdot \dfrac{1}{F} = \dfrac{\Delta E}{F}
+```
 
 
 We define another property: if two objects performed same force on it go same distance until stop(may spend different time), then they have same **kinetic energy** or difference of **work**.
