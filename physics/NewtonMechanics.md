@@ -150,11 +150,9 @@ However, here is, in this circumstance, even thought the time we spend is the sa
 
 There is no magic behind, the reason is that the **initial speed** of them are different and the acceleration are also different because of different masses. So the distance doesn't have to be the same.
 ```math
-\Delta P = F \cdot \Delta t = 
+\Delta P = F \cdot \Delta t = m_1 \cdot v_1 = m_2 \cdot v_2
 ```
-```math
-m_1 \cdot v_1 = m_2 \cdot v_2
-```
+And accelerations are:
 ```math
 a_1 = \dfrac{F}{m_1}
 ```
@@ -167,6 +165,11 @@ With this result, it seems like momentum is not enough to describe the property 
 We know the distance an objects go from stop if perform uniform force(therefore uniform acceleration) is 
 ```math
 \Delta s = \dfrac{1}{2}\cdot a\cdot t^2
+```
+
+We can easily say that two objects with different mass and different initial speed, may have same distance to stop if we perform same force on them.
+```math
+\Delta s = \dfrac{1}{2} \cdot \dfrac{F}{m_1} \cdot {t_1}^2 = \dfrac{1}{2} \cdot \dfrac{F}{m_2} \cdot {t_2}^2
 ```
 
 We define another property: if two objects performed same force on it go same distance until stop(may spend different time), then they have same **kinetic energy** or difference of **work**.
