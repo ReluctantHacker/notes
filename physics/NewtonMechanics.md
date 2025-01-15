@@ -146,7 +146,7 @@ Intuitively, this mean we need perform $-F$ force to an object that have momentu
 
 So, if two objects have same momentum, even though they have different speed, as we perform the same force on them, the time we spend to stop them would be the same.
 ```math
-\Delta t = \dfrac{\Delta P}{F}  = \dfrac{m_1 \cdot \dfrac{P}{m_1}}{F} = \dfrac{m_2 \cdot \dfrac{P}{m_2}}
+\Delta t = \dfrac{\Delta P}{F}  = \dfrac{m_1 \cdot \dfrac{P}{m_1}}{F} = \dfrac{m_2 \cdot \dfrac{P}{m_2}}{F}
 ```
 
 However, in this circumstance, even thought the time we spend is the same, the distance they go until stop may be different.
