@@ -137,7 +137,7 @@ How can we define how much an object is moving? Speed alone is not enough to tel
 
 A natural definition of this "how much" would be directly the product of two properties of motion, speed and mass, which is the momentum $P = m \cdot v$.
 
-And easily we can see that $\Delta P=F \cdot \Delta t
+And easily we can see that $\Delta P=F \cdot \Delta t$
 
 With mass and acceleration, we can 
 
