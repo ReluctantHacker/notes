@@ -135,7 +135,9 @@ Finally we define force as $F = m \cdot a$, totally from gravitational law.
 # Momentum, Kinetic Energy and Work
 How can we define how much an object is moving? Speed alone is not enough to tell the whole story because we know that two objects with same speed may need different time to be stoped if we perform the same continuous force.
 
+A natural definition of this "how much" would be directly the product of two properties of motion, speed and mass, which is the momentum $P = m \cdot v$.
 
+And easily we can see that $\Delta P=F \cdot \Delta t
 
 With mass and acceleration, we can 
 
