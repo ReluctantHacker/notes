@@ -186,7 +186,10 @@ At this point, obviously, We find the $E$
 ```math
 \Delta s = \left(\dfrac{1}{2}\cdot\dfrac{P^2}{m}\right) \cdot \dfrac{1}{F} = \dfrac{\Delta E}{F}
 ```
-where $\Delta E = \dfrac{1}{2} \cdot \dfrac{P^2}{m} = \dfrac{1}{2}mv^2$
+where 
+```math
+\Delta E = \dfrac{1}{2} \cdot \dfrac{P^2}{m} = \dfrac{1}{2}mv^2
+```
 
 At this point, the whole arguments actually means that we have two quantity to use to describe how much an object is moving:
   * **$\Delta t = \dfrac{\Delta P}{F}$**: How much time do we need to stop an object if we perform a force $F$ on it.
