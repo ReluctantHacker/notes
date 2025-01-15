@@ -96,7 +96,7 @@ It turns out, as time turns out similarly, we can only BELIEVE a ruler keep it's
 # Absolute/Relative space time
 Intuitively, we may think that the universe has an absolute reference frame which can be used to compare to any motion. 
 
-We know that position is relative, obviously. And speed is also relative, as two observers could not tell which one of them is truely moving. 
+We know that position is relative, obviously. And speed is also relative, as two observers could not tell which one of them is truely moving inertially. 
 
 However, the acceleration doesn't seem relative. 
 
@@ -108,12 +108,12 @@ No! The conclusion is wrong.  There is a huge flaw in his argument about the con
 
 In fact, acceleration is also relative because we still can't tell which one actually accelerates, both observers can say they are the one perform acceleration. In the water cup experiment, inertial observer indeed doesn't see the water incline. However, he can argue that all the observers are in an **acceleration field** which perform horizontal directional acceleration to all the objects around. This acceleration field makes all the water incline but he accelerates to an inverse direction, which cancel the force that should make his water perform incline. So he is the one accelerates.
 
-We can change this thought experiement to another platform. Let's suppose there are two identical springs, they are moving away from each other with an acceleration. One spring has a longer stretch length. Can we say the longer one perform the acceleration? No! Because the shorter spring can always argue that he is the one perform acceleration with inversely directional pushing force which makes it contract shorter. 
+We can change this thought experiement to another platform. Let's suppose there are two identical springs, they are moving away from each other with an acceleration. One spring has a longer stretch length. Can we say the longer one perform the acceleration? No! Because the shorter spring can always argue that he is the one perform acceleration with inversely directional pushing force which makes it contract shorter compare to the longer one. 
 
 You don't know the absolute statical length of a spring because there's no absolute statical reference frame. Every spring can argue that he is the statical one with statical length.
 
 > [!NOTE]
-> Human being feels acceleration and do observes the phenomona of acceleration(like water incline). So intuitively, we think acceleration is absolute. But it is just an illusion. We live on earth, earth's acceleration field(gravitation field) is so natural to us that we all think the state of water or spring on earth is the absolute statical. We thought the statical phenamona on earth is the absolute statical. But it's not true. Since, of course, earth is the center of the universe.
+> Human beings feel acceleration and do observe the phenomona of acceleration(like water incline). So intuitively, we think acceleration is absolute. But it is just an illusion. We live on earth, earth's acceleration field(gravitation field) is so natural to us that we all think the state of water or spring on earth is the absolute statical. We thought the statical phenamona on earth is the absolute statical. But it's not true. Since, of course, earth is not the center of the universe.
 
 
 
