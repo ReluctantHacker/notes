@@ -146,22 +146,40 @@ Intuitively, this mean we need perform $-F$ force to an object that have momentu
 
 So, if two objects have same momentum, even though they have different speed, as we perform the same force on them, the time we spend to stop them would be the same.
 
-However, here is another interesting fact, that is, in this circumstance, even thought the time we spend is the same, the distance they go until stop may be different.
+However, here is, in this circumstance, even thought the time we spend is the same, the distance they go until stop may be different.
 
-The reason is that the **initial speed** of them are different and the acceleration are also different because of different masses.
+There is no magic behind, the reason is that the **initial speed** of them are different and the acceleration are also different because of different masses. So the distance doesn't have to be the same.
+```math
+\Delta P = F \cdot \Delta t = 
+```
+```math
+m_1 \cdot v_1 = m_2 \cdot v_2
+```
+```math
+a_1 = \dfrac{F}{m_1}
+```
+```math
+a_2 = \dfrac{F}{m_2}
+```
 
-So it seems like momentum is not enough to describe the property about "how much" an object is moving.
+With this result, it seems like momentum is not enough to describe the property about "how much" an object is moving.
+
+We know the distance an objects go from stop if perform uniform force(therefore uniform acceleration) is 
+```math
+\Delta s = \dfrac{1}{2}\cdot a\cdot t^2
+```
 
 We define another property: if two objects performed same force on it go same distance until stop(may spend different time), then they have same **kinetic energy** or difference of **work**.
 ```math
 \Delta E = F \cdot \Delta s
 ```
 
-We know the distance an objects go from stop if perform uniform acceleration is 
 ```math
-\Delta s = \dfrac{1}{2}\cdot a\cdot t^2
+F = \dfrac{\Delta P}{\Delta t}
 ```
-
+```math
+= \dfrac{\Delta E}{\Delta s}
+```
 
 
 
