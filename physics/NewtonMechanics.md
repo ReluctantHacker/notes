@@ -148,7 +148,6 @@ So, if two objects have same momentum, even though they have different speed, as
 ```math
 \Delta t = \dfrac{\Delta P}{F}
 ```
->
 
 However, in this circumstance, even thought the time we spend is the same, the distance they go until stop may be different.
 
@@ -187,6 +186,7 @@ At this point, obviously, We find the $E$
 ```math
 \Delta s = \left(\dfrac{1}{2}\cdot\dfrac{P^2}{m}\right) \cdot \dfrac{1}{F} = \dfrac{\Delta E}{F}
 ```
+where $\Delta E = \dfrac{1}{2} \cdot \dfrac{P^2}{m} = \dfrac{1}{2}mv^2$
 
 
 We define another property: if two objects performed same force on it go same distance until stop(may spend different time), then they have same **kinetic energy** or difference of **work**.
@@ -205,10 +205,7 @@ F = \dfrac{\Delta P}{\Delta t}
 
 
 
-
-
-
-# Noether's theorem
+# Noether's theorem and Conservation law
 Newton's three law is based on conservationo of momentum which is based on **symmetric of convervative force** 
 
 
