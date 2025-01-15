@@ -145,8 +145,11 @@ And easily we can derive that
 Intuitively, this mean we need perform $-F$ force to an object that have momentum $\Delta P$ for $\Delta t$ time to stop it.
 
 So, if two objects have same momentum, even though they have different speed, as we perform the same force on them, the time we spend to stop them would be the same.
+```math
+\Delta t = \dfrac{\Delta P}{F}  = \dfrac{m_1 \cdot \dfrac{P}{m_1}}{F} = \dfrac{m_2 \cdot \dfrac{P}{m_2}}
+```
 
-However, here is, in this circumstance, even thought the time we spend is the same, the distance they go until stop may be different.
+However, in this circumstance, even thought the time we spend is the same, the distance they go until stop may be different.
 
 There is no magic behind, the reason is that the **initial speed** of them are different and the acceleration are also different because of different masses. So the distance doesn't have to be the same.
 ```math
@@ -166,6 +169,10 @@ We know the distance an objects go from stop if perform uniform force(therefore 
 ```math
 \Delta s = \dfrac{1}{2}\cdot a\cdot t^2
 ```
+
+Mathematically, is there a quantity the we 
+
+we noticed that if we perform same force on two objects with different mass, speed or momentum, the distance they stop may be the same.
 
 We can easily say that two objects with different mass and different initial speed, may have same distance to stop if we perform same force on them.
 ```math
