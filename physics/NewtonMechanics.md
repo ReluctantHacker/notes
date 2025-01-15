@@ -137,9 +137,30 @@ How can we define how much an object is moving? Speed alone is not enough to tel
 
 A natural definition of this "how much" would be directly the product of two properties of motion, speed and mass, which is the momentum $P = m \cdot v$.
 
-And easily we can see that $\Delta P=F \cdot \Delta t$
+And easily we can derive that 
+```math
+\Delta P=F \cdot \Delta t
+```
 
-With mass and acceleration, we can 
+Intuitively, this mean we need perform $-F$ force to an object that have momentum $\Delta P$ for $\Delta t$ time to stop it.
+
+So, if two objects have same momentum, even though they have different speed, as we perform the same force on them, the time we spend to stop them would be the same.
+
+However, here is another interesting fact, that is, in this circumstance, even thought the time we spend is the same, the distance they go until stop may be different.
+
+The reason is that the **initial speed** of them are different and the acceleration are also different because of different masses.
+
+So it seems like momentum is not enough to describe the property about "how much" an object is moving.
+
+We define another property: if two objects performed same force on it go same distance until stop(may spend different time), then they have same **kinetic energy** or difference of **work**.
+```math
+\Delta E = F \cdot \Delta s
+```
+
+We know the distance an objects go from stop if perform uniform acceleration is 
+```math
+\Delta s = \dfrac{1}{2}\cdot a\cdot t^2
+```
 
 
 
