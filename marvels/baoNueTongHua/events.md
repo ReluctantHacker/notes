@@ -1,8 +1,23 @@
+# Main lines Events
+* **Princess kidnapping**
+* **The AI debate in starlink company**
+* **The forth president election**
+* **Ark Empire restoration**
+* **The rise of red-party and Cyberdyne company**
+* **The War of Liberation**
+
 # Princess kidnaping
 Yan got kidnapping, being raped and turtured by forgivens. Police save her but she hurt very badly. They send her to best hospital and treat by doctor Kerpee but Kerpee failed because the government policies and law. Kerpee feels really guily and quit the medicine job and decide particpate politics. This criminal case raise the anger of Noahian. Hou-Yong highly doubt that The green-party government handle this case behind the scene but he doesn't have proof and finally he decided to participate into politics. And so as Kerpee, he doesn't want to be a doctor . 
+  * **ch1**: Yan is rich, famous, but lonely, friendless because pepole hate her. In the independent day, Songling secretely take her to watch firecraft and give her mother's AI software created by starlink company through her own political interference. 
+  * **ch2**: Yan got kidnapped in underroom by one of the slave in Jiang house. The seven dwarfs live in a very poor and violent environments, they want money but can't got common agreement about the money. One of the seven hates Yan, but one of them is good heart and protect Yan. And finally let yan has change to use broken cell phone to call signal to song.
+  * **ch3**: Newbie police-man Chenlong caught underage high school girl Baixue ride bicycle with bad friends. Chenlong take Baixue to police station but whole station is busy for Baiyan's disappeance, no one care about them. Baixue want to find her sister by own herself so she escaped by doing some messy in station. Chenlong chase after her.
+  * **ch4**: Song call Houyong and Starlink company about Yan's disppear, and starlink use AI to search all the monitor and finally found out the last scene of Yan. They send many cops to arrest criminal but fight happens and police failed because green-party tell them stop this made Houyong really angry.  
+  * **ch5**: Yuee go to  Yutu got mocked about her appearance. She decide to get plastic surgery Yan's disappear got a more noticed. The famous actress Yuee please fans to help to find the missing girl.
+  
 
 # The AI debate in starlink company.
 Elon want to build AGI, However, people are afraid of it. A lotta people go to street and protest, most of them support green-party which is highly not support AI, and declare AI rob the jobs originally belongs to people. So Elon turns to support blue-party. Eventually, starlink got hacked, and a lotta important data lose, the main system got destroyed. The company got heavy impact from revenue no.1 to no.2 and need some time to get recovererd. Finally, The starlink's AGI failed. GuanYin the best AI engineer leave company. 
+  * **ch1**: Baju lose his job because of AI. He hates Blue-party and big tech company. So he decide to become a internet youtuber famous. Failed at begining but successful in the end. 
 
 # The forth president election
 The white-party builded by Kerpee has gain more and more supporters from green-party and became an import third super-power in the country. However, the white-party still very fragile. And Kerpee need to fight green and blue at the same time. So Kerpee hired HuangLiang. HuangLiang recommend Kerpee to coopreate with blue-party. However, the cooperation turns out fails due to green-party's alienating plans to depart blue and white. Eventually, Green-party wins the election once again.
@@ -14,4 +29,4 @@ BaiXue and her "teacher" try to rebuild empire. they gather secondian people, an
 After election, green-party started to kill white-party, and the anger to secondian getting more and more. However, there appears a split in the party. Miaozuo think green-party doesn't care about people and support big company too much. He get more and more supporter and finally become the leader of green-party, He used some political law and trick to let Cyberdyne company reluctantly become "green-party-belonged-company" and change party's name to red-party. Although he is not president but is the most powerful man in the world.
 
 # The War of Liberation
-Miaozuo use trick to own the country, let a lotta people angry and protest in front of the president house, Maozuo call the Cyberdyne's killing robots do a masacre to protesting people which started the wars. The resistance gathers people underline and construct the resistance army. Miaozuo called the war "The war of Liberation". The war used a lotta of AI robot, and finally the war start to turn into man vs machine. Machien doesn't follow the order by human anymore. machines are superior than human being and finally. There are only two human beings one male and female left. And they restart the human evolution process.
+Miaozuo use trick to own the country, let a lotta people angry and protest in front of the president house, Maozuo call the Cyberdyne's killing robots do a masacre to protesting people which started the wars. The resistance gathers people underline and construct the resistance army. Miaozuo called the war "The war of Liberation". The war used a lotta of AI robot, and finally the war start to turn into man vs machine which leads by Sina(Yangjian's assistant orignally). Machien doesn't follow the order by human anymore. Machines are superior than human being and finally win the war. There are only two human beings one male and female left. And AI Alice(Guanyin and Monqi's assistant) help them restart the human evolution process.
