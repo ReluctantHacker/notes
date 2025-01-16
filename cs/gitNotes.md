@@ -104,12 +104,13 @@ git merge branchName
 git clone https://github.com/githubAccount/repoName.git
 ```
 
-- **Updates local repo**: updates your local repo with all of the latest changes from a remote repo but doesn’t make any changes to your local workspace. The benefit of the git fetch vs git pull is that a fetch enables you to continue editing files in your local working directory without having to merge your code with updates from the remote repo. With a git fetch, you can finish editing files locally, commit your files and then do a git merge to synchronize your updates with the fetched files. This brings you up to date with the updates the fetch pulled down from the remote machine.
+- **Updates local repo**: Git fetch would create local remote master branch "origin/master"(if you fetch master). It means in your local git repo, there would be two branches "local/master" and "origin/master"(remote one). Your current state would still be in local/master. That's why you won't see any change in your files after fetch. When you done the change of your files, you can merge local/master between remote/master. If you using "pull" to get remote commits and find some error about "branch divergent", it's highly because your local has been committed without pull firsts so the local branch would diverge with remote one. In this situation pull won't merge itself, you need to use fetch first, and then merge.
 ```
-git fetch -all
+git fetch origin
+git merge origin/branchName (mostly master)
 ```
 
-- **Updates local and merge**: You should definitely understand the difference between "clone", "fetch" and "pull", here's some reference you have to check it out: [reference_1](https://stackoverflow.com/questions/3620633/what-is-the-difference-between-pull-and-clone-in-git), [reference_2](https://stackoverflow.com/questions/292357/what-is-the-difference-between-git-pull-and-git-fetch), [refernece_3](https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/Git-pull-vs-fetch-Whats-the-difference)
+- **Updates local and merge**: You should definitely understand the difference between "clone", "fetch" and "pull", here's some reference you have to check it out: [reference_1](https://stackoverflow.com/questions/3620633/what-is-the-difference-between-pull-and-clone-in-git), [reference_2](https://stackoverflow.com/questions/292357/what-is-the-difference-between-git-pull-and-git-fetch), [refernece_3](https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/Git-pull-vs-fetch-Whats-the-difference). Basically, "pull" is basically "fetch + merge". However, "pull" doesn't work, when the local/master and origin/master(remote one) are divergent with each others. In this time, you should use "git fetch origin" instead.
 ```
 git pull origin branName
 ```
