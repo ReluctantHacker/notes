@@ -57,9 +57,19 @@ git show HEAD
 git branch branchName
 ```
 
+- **Create branch method 2: This would create branch and go that branch
+```
+git check -b branchName
+```
+
 - **Switch branch**:
 ```
 git checkout branchName
+```
+
+- **Visualizing branch topology**: Here's a [reference](https://stackoverflow.com/questions/1838873/visualizing-branch-topology-in-git) talk about this.
+```
+git log --graph --decorate --oneline
 ```
 
 - **Show uncommited/untracked files**:
