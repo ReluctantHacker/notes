@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "schedule-app"
+version = "0.1.0"
+description = "A simple schedule web app --author ReluctantHacker --dependency fastapi"
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+uvicorn = {extras = ["standard"], version = "^0.34.0"}
+fastapi = "^0.115.8"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
