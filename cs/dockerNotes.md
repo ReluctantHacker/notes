@@ -1,4 +1,9 @@
-docker command commands
+Docker command commands
+-----------------------
+- **Simple start up**: With docker-compose.yaml and Dockcerfile, you can use docker-compose command to create and images and corresponding container. This command below would automatically create and run the container. "-p" option is short for "--project-name" option, which you can specify the project name or if without this option, docker would automatically use current folder as your image's names and container project name.
+```
+docker-compose -p project_name up -d
+```
 
 1. docker run -itd -p xxxx:xxxx --name=container_name image_name		||| for running container
 2. docker exec -ti -u root container_name bash					||| for running bash from current host terminal 
