@@ -1,6 +1,6 @@
 Docker command commands
 -----------------------
-- **Simple start up**: With docker-compose.yaml and Dockcerfile, you can use docker-compose command to create and images and corresponding container. This command below would automatically create and run the container. "-p" option is short for "--project-name" option, which you can specify the project name or if without this option, docker would automatically use current folder as your image's names and container project name.
+- **Simple start up**: With docker-compose.yaml and Dockcerfile, you can use docker-compose command to create and images and corresponding container. This command below would automatically create and run the container. "-p" option is short for "--project-name" option, which you can specify the project name or if without this option, docker would automatically use "current folder" as your image name's prefix, for example the current folder name is "test_folder", the service name in your docker-compose is "test_service", then the image's name would be "test_folder_test_service". If you want to replace "test_folder" you can use "--project-name" option.
 ```
 docker-compose -p project_name up -d
 ```
