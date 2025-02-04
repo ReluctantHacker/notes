@@ -10919,3 +10919,7 @@ https://www.zhihu.com/column/p/26488074
 https://stackoverflow.com/questions/32858667/get-value-of-input-element-with-id-or-name
 
 4. 在開發web的過程中, 需要"項目管理"工具, 不是只要有包或庫管理工具就夠了(例如pip of python或npm of javascrip), 你還需要管理項目版本, 項目的自動導入依賴等等很多東西, 在php中有赫赫有名的composer, 項目的設定都寫在composer.json裡面. Python中有模仿composer的poetry, 項目審定寫在.toml檔案裡. 
+
+
+2025/02/4
+1. Copilot終端app如果沒有登入的情況下, 想要刪除history, 必須去setting>copilot>advanced setting>reset. 他才會把終端資料清除.
