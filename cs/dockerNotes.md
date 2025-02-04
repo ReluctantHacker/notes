@@ -5,7 +5,7 @@ Docker command commands
 docker-compose -p project_name up -d
 ```
 
-- **Without cache**: Sometimes you would need if you don't want docker remember the previous build. This command below would create image without previous memory.
+- **Without cache**: Sometimes you would need if you don't want docker remember the previous build. This command below would create image without previous memory. And then you can use "docker-compose up -d" to start and run the container.
 ```docker-compose -p project_name build --no-cache
 ```
 
