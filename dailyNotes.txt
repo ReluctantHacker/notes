@@ -11770,3 +11770,5 @@ docker-compose up -d
 
 2025/02/4
 1. Copilot終端app如果沒有登入的情況下, 想要刪除history, 必須去setting>copilot>advanced setting>reset. 他才會把終端資料清除.
+
+2. python的poetry會問你要不要package-mode(把專案打包成package)
