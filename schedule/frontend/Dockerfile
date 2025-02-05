@@ -13,12 +13,20 @@ RUN npm install
 # Copy the project files
 COPY ./app /app
 
+# the code below is for production
 # Build the React app
-RUN npm run build
+#RUN npm run build
 
 # Install serve to serve the production build
-RUN npm install -g serve
+#RUN npm install -g serve
 
 # Command to serve the app
-CMD ["serve", "-s", "build", "-l", "3000"]
+#CMD ["serve", "-s", "build", "-l", "3000"]
 
+
+# the code below is for development
+# Install react-scripts globally for npm start
+RUN npm install -g react-scripts
+
+# Command to start the development server with hot reloading
+CMD ["npm", "start"]

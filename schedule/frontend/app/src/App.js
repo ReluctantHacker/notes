@@ -1,19 +1,45 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import './App.css';
 
 function App() {
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
-  const [subjectRatio, setSubjectRatio] = useState({
-    math: 3,
-    physics: 5,
-    computer_science: 2,
-    rest: 1,
-  });
+  const [subjectRatio, setSubjectRatio] = useState([]);
   const [schedule, setSchedule] = useState(null);
+  const [currentDate, setCurrentDate] = useState('');
+  const [currentPeriod, setCurrentPeriod] = useState('');
 
-  const handleChange = (e) => {
+  useEffect(() => {
+    const now = new Date();
+    const date = now.toISOString().split('T')[0].replace(/-/g, ''); // Format: YYYYMMDD
+    setCurrentDate(date);
+
+    const hours = now.getHours();
+    let period = '';
+    if (hours >= 6 && hours < 12) {
+      period = 'morning';
+    } else if (hours >= 12 && hours < 18) {
+      period = 'afternoon';
+    } else {
+      period = 'evening';
+    }
+    setCurrentPeriod(period);
+  }, []);
+
+  const handleChange = (index, e) => {
     const { name, value } = e.target;
-    setSubjectRatio((prev) => ({ ...prev, [name]: Number(value) }));
+    const newSubjectRatio = [...subjectRatio];
+    newSubjectRatio[index] = { ...newSubjectRatio[index], [name]: value };
+    setSubjectRatio(newSubjectRatio);
+  };
+
+  const addSubject = () => {
+    setSubjectRatio([...subjectRatio, { subject: '', ratio: 1 }]);
+  };
+
+  const removeSubject = (index) => {
+    const newSubjectRatio = subjectRatio.filter((_, i) => i !== index);
+    setSubjectRatio(newSubjectRatio);
   };
 
   const handleSubmit = async (e) => {
@@ -33,8 +59,18 @@ function App() {
     setSchedule(result);
   };
 
+  const handleLoad = async () => {
+    const response = await fetch('http://localhost:8000/get_schedule/');
+    if (response.ok) {
+      const result = await response.json();
+      setSchedule(result);
+    } else {
+      alert("No schedule found!");
+    }
+  };
+
   return (
-    <div>
+    <div className="app-container">
       <h1>Schedule App</h1>
       <form onSubmit={handleSubmit}>
         <div>
@@ -45,28 +81,42 @@ function App() {
           <label>End Date:</label>
           <input type="text" value={endDate} onChange={(e) => setEndDate(e.target.value)} />
         </div>
-        <div>
-          <label>Math:</label>
-          <input type="number" name="math" value={subjectRatio.math} onChange={handleChange} />
-        </div>
-        <div>
-          <label>Physics:</label>
-          <input type="number" name="physics" value={subjectRatio.physics} onChange={handleChange} />
-        </div>
-        <div>
-          <label>Computer Science:</label>
-          <input type="number" name="computer_science" value={subjectRatio.computer_science} onChange={handleChange} />
-        </div>
-        <div>
-          <label>Rest:</label>
-          <input type="number" name="rest" value={subjectRatio.rest} onChange={handleChange} />
-        </div>
+        {subjectRatio.map((subject, index) => (
+          <div key={index}>
+            <label>Subject:</label>
+            <input type="text" name="subject" value={subject.subject} onChange={(e) => handleChange(index, e)} />
+            <label>Ratio:</label>
+            <input type="number" name="ratio" value={subject.ratio} onChange={(e) => handleChange(index, e)} />
+            <button type="button" onClick={() => removeSubject(index)}>Remove</button>
+          </div>
+        ))}
+        <button type="button" onClick={addSubject}>Add Subject</button>
         <button type="submit">Create Schedule</button>
       </form>
+      <button onClick={handleLoad}>Load Schedule</button>
       {schedule && (
-        <div>
+        <div className="schedule-container">
           <h2>Generated Schedule:</h2>
-          <pre>{JSON.stringify(schedule, null, 2)}</pre>
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Morning</th>
+                <th>Afternoon</th>
+                <th>Evening</th>
+              </tr>
+            </thead>
+            <tbody>
+              {Object.keys(schedule).map(date => (
+                <tr key={date}>
+                  <td>{date}</td>
+                  <td className={currentDate === date && currentPeriod === 'morning' ? 'highlight' : ''}>{schedule[date].morning}</td>
+                  <td className={currentDate === date && currentPeriod === 'afternoon' ? 'highlight' : ''}>{schedule[date].afternoon}</td>
+                  <td className={currentDate === date && currentPeriod === 'evening' ? 'highlight' : ''}>{schedule[date].evening}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       )}
     </div>
