@@ -52,3 +52,23 @@ use docker command below for both frontend and backend(They are separated, so yo
 ```
 docker-compose -p schedule_app up -d
 ```
+
+# Recent ratio
+```
+computerScience - 5
+dataStructure - 6
+database - 5
+networkConcept - 5
+projectMng - 3
+
+programming - 5
+hacking - 3
+
+physics - 7
+math - 7
+
+art - 5
+fiction - 6
+
+exercise - 3
+```
