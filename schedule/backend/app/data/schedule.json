@@ -1,727 +1,722 @@
 {
-  "20250205": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "physics"
-  },
   "20250206": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "physics"
+    "morning": "math",
+    "afternoon": "database",
+    "evening": "fiction"
   },
   "20250207": {
-    "morning": "physics",
-    "afternoon": "physics",
+    "morning": "math",
+    "afternoon": "programming",
     "evening": "physics"
   },
   "20250208": {
-    "morning": "math",
-    "afternoon": "physics",
-    "evening": "physics"
+    "morning": "programming",
+    "afternoon": "rest",
+    "evening": "exercise"
   },
   "20250209": {
-    "morning": "math",
-    "afternoon": "physics",
-    "evening": "math"
+    "morning": "hacking",
+    "afternoon": "computerScience",
+    "evening": "physics"
   },
   "20250210": {
-    "morning": "physics",
-    "afternoon": "physics",
+    "morning": "hacking",
+    "afternoon": "database",
     "evening": "math"
   },
   "20250211": {
-    "morning": "physics",
-    "afternoon": "math",
-    "evening": "physics"
+    "morning": "computerScience",
+    "afternoon": "exercise",
+    "evening": "math"
   },
   "20250212": {
-    "morning": "physics",
-    "afternoon": "math",
-    "evening": "math"
+    "morning": "computerScience",
+    "afternoon": "computerScience",
+    "evening": "art"
   },
   "20250213": {
-    "morning": "math",
-    "afternoon": "physics",
-    "evening": "physics"
-  },
-  "20250214": {
-    "morning": "math",
-    "afternoon": "math",
-    "evening": "physics"
-  },
-  "20250215": {
-    "morning": "math",
-    "afternoon": "math",
+    "morning": "dataStructure",
+    "afternoon": "dataStructure",
     "evening": "math"
   },
-  "20250216": {
-    "morning": "math",
+  "20250214": {
+    "morning": "exercise",
+    "afternoon": "exercise",
+    "evening": "art"
+  },
+  "20250215": {
+    "morning": "database",
     "afternoon": "physics",
-    "evening": "physics"
+    "evening": "art"
+  },
+  "20250216": {
+    "morning": "networkConcept",
+    "afternoon": "math",
+    "evening": "hacking"
   },
   "20250217": {
-    "morning": "physics",
-    "afternoon": "math",
+    "morning": "fiction",
+    "afternoon": "physics",
     "evening": "math"
   },
   "20250218": {
-    "morning": "math",
+    "morning": "programming",
     "afternoon": "math",
-    "evening": "physics"
+    "evening": "fiction"
   },
   "20250219": {
-    "morning": "physics",
-    "afternoon": "math",
-    "evening": "physics"
+    "morning": "fiction",
+    "afternoon": "hacking",
+    "evening": "hacking"
   },
   "20250220": {
-    "morning": "math",
-    "afternoon": "physics",
-    "evening": "math"
+    "morning": "projectMng",
+    "afternoon": "networkConcept",
+    "evening": "networkConcept"
   },
   "20250221": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "physics"
+    "morning": "networkConcept",
+    "afternoon": "fiction",
+    "evening": "hacking"
   },
   "20250222": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "math"
+    "morning": "computerScience",
+    "afternoon": "dataStructure",
+    "evening": "networkConcept"
   },
   "20250223": {
-    "morning": "math",
-    "afternoon": "physics",
-    "evening": "physics"
+    "morning": "art",
+    "afternoon": "programming",
+    "evening": "rest"
   },
   "20250224": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "math"
+    "morning": "math",
+    "afternoon": "networkConcept",
+    "evening": "hacking"
   },
   "20250225": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "math"
+    "morning": "fiction",
+    "afternoon": "dataStructure",
+    "evening": "fiction"
   },
   "20250226": {
-    "morning": "physics",
+    "morning": "database",
     "afternoon": "math",
-    "evening": "physics"
+    "evening": "fiction"
   },
   "20250227": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "physics"
+    "morning": "dataStructure",
+    "afternoon": "math",
+    "evening": "projectMng"
   },
   "20250228": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "math"
+    "morning": "computerScience",
+    "afternoon": "art",
+    "evening": "fiction"
   },
   "20250301": {
-    "morning": "physics",
+    "morning": "fiction",
     "afternoon": "physics",
     "evening": "physics"
   },
   "20250302": {
-    "morning": "physics",
-    "afternoon": "math",
-    "evening": "physics"
+    "morning": "projectMng",
+    "afternoon": "exercise",
+    "evening": "programming"
   },
   "20250303": {
-    "morning": "math",
+    "morning": "physics",
     "afternoon": "math",
-    "evening": "math"
+    "evening": "hacking"
   },
   "20250304": {
-    "morning": "math",
-    "afternoon": "physics",
-    "evening": "physics"
+    "morning": "projectMng",
+    "afternoon": "networkConcept",
+    "evening": "exercise"
   },
   "20250305": {
-    "morning": "physics",
-    "afternoon": "math",
-    "evening": "math"
+    "morning": "exercise",
+    "afternoon": "networkConcept",
+    "evening": "computerScience"
   },
   "20250306": {
-    "morning": "physics",
-    "afternoon": "math",
-    "evening": "math"
+    "morning": "hacking",
+    "afternoon": "database",
+    "evening": "rest"
   },
   "20250307": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "math"
+    "morning": "computerScience",
+    "afternoon": "computerScience",
+    "evening": "art"
   },
   "20250308": {
     "morning": "physics",
-    "afternoon": "physics",
-    "evening": "physics"
+    "afternoon": "dataStructure",
+    "evening": "computerScience"
   },
   "20250309": {
-    "morning": "math",
-    "afternoon": "physics",
-    "evening": "physics"
+    "morning": "rest",
+    "afternoon": "programming",
+    "evening": "dataStructure"
   },
   "20250310": {
-    "morning": "math",
+    "morning": "projectMng",
     "afternoon": "physics",
-    "evening": "math"
+    "evening": "networkConcept"
   },
   "20250311": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "math"
+    "morning": "art",
+    "afternoon": "database",
+    "evening": "programming"
   },
   "20250312": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "physics"
+    "morning": "art",
+    "afternoon": "networkConcept",
+    "evening": "fiction"
   },
   "20250313": {
-    "morning": "physics",
+    "morning": "programming",
+    "afternoon": "physics",
+    "evening": "dataStructure"
+  },
+  "20250314": {
+    "morning": "dataStructure",
+    "afternoon": "networkConcept",
+    "evening": "database"
+  },
+  "20250315": {
+    "morning": "computerScience",
     "afternoon": "physics",
     "evening": "math"
   },
-  "20250314": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "physics"
-  },
-  "20250315": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "physics"
-  },
   "20250316": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "physics"
+    "morning": "fiction",
+    "afternoon": "fiction",
+    "evening": "dataStructure"
   },
   "20250317": {
-    "morning": "physics",
-    "afternoon": "math",
-    "evening": "physics"
+    "morning": "hacking",
+    "afternoon": "dataStructure",
+    "evening": "exercise"
   },
   "20250318": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "physics"
+    "morning": "art",
+    "afternoon": "exercise",
+    "evening": "exercise"
   },
   "20250319": {
-    "morning": "physics",
-    "afternoon": "physics",
+    "morning": "art",
+    "afternoon": "projectMng",
     "evening": "math"
   },
   "20250320": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "math"
+    "morning": "math",
+    "afternoon": "projectMng",
+    "evening": "exercise"
   },
   "20250321": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "math"
+    "morning": "programming",
+    "afternoon": "programming",
+    "evening": "art"
   },
   "20250322": {
-    "morning": "math",
-    "afternoon": "math",
-    "evening": "math"
+    "morning": "hacking",
+    "afternoon": "art",
+    "evening": "database"
   },
   "20250323": {
-    "morning": "physics",
-    "afternoon": "math",
-    "evening": "physics"
+    "morning": "projectMng",
+    "afternoon": "projectMng",
+    "evening": "computerScience"
   },
   "20250324": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "physics"
+    "morning": "computerScience",
+    "afternoon": "fiction",
+    "evening": "fiction"
   },
   "20250325": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "math"
+    "morning": "networkConcept",
+    "afternoon": "programming",
+    "evening": "exercise"
   },
   "20250326": {
-    "morning": "physics",
+    "morning": "math",
     "afternoon": "math",
-    "evening": "math"
+    "evening": "rest"
   },
   "20250327": {
-    "morning": "math",
-    "afternoon": "physics",
-    "evening": "physics"
+    "morning": "database",
+    "afternoon": "programming",
+    "evening": "rest"
   },
   "20250328": {
-    "morning": "math",
-    "afternoon": "math",
-    "evening": "math"
+    "morning": "dataStructure",
+    "afternoon": "hacking",
+    "evening": "physics"
   },
   "20250329": {
-    "morning": "physics",
-    "afternoon": "math",
-    "evening": "math"
+    "morning": "database",
+    "afternoon": "physics",
+    "evening": "computerScience"
   },
   "20250330": {
-    "morning": "physics",
-    "afternoon": "math",
-    "evening": "physics"
+    "morning": "exercise",
+    "afternoon": "exercise",
+    "evening": "art"
   },
   "20250331": {
-    "morning": "math",
-    "afternoon": "physics",
-    "evening": "math"
+    "morning": "programming",
+    "afternoon": "hacking",
+    "evening": "physics"
   },
   "20250401": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "math"
+    "morning": "art",
+    "afternoon": "projectMng",
+    "evening": "physics"
   },
   "20250402": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "physics"
+    "morning": "math",
+    "afternoon": "fiction",
+    "evening": "dataStructure"
   },
   "20250403": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "physics"
+    "morning": "math",
+    "afternoon": "networkConcept",
+    "evening": "art"
   },
   "20250404": {
-    "morning": "physics",
-    "afternoon": "math",
-    "evening": "math"
+    "morning": "art",
+    "afternoon": "computerScience",
+    "evening": "fiction"
   },
   "20250405": {
-    "morning": "math",
+    "morning": "networkConcept",
     "afternoon": "physics",
-    "evening": "physics"
+    "evening": "dataStructure"
   },
   "20250406": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "physics"
-  },
-  "20250407": {
-    "morning": "physics",
-    "afternoon": "math",
+    "morning": "art",
+    "afternoon": "computerScience",
     "evening": "math"
   },
-  "20250408": {
-    "morning": "physics",
+  "20250407": {
+    "morning": "networkConcept",
     "afternoon": "physics",
-    "evening": "physics"
+    "evening": "fiction"
+  },
+  "20250408": {
+    "morning": "art",
+    "afternoon": "physics",
+    "evening": "fiction"
   },
   "20250409": {
-    "morning": "physics",
-    "afternoon": "physics",
+    "morning": "database",
+    "afternoon": "dataStructure",
     "evening": "physics"
   },
   "20250410": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "physics"
+    "morning": "math",
+    "afternoon": "database",
+    "evening": "database"
   },
   "20250411": {
-    "morning": "math",
-    "afternoon": "physics",
-    "evening": "physics"
+    "morning": "programming",
+    "afternoon": "rest",
+    "evening": "fiction"
   },
   "20250412": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "math"
+    "morning": "dataStructure",
+    "afternoon": "dataStructure",
+    "evening": "fiction"
   },
   "20250413": {
-    "morning": "math",
-    "afternoon": "math",
+    "morning": "database",
+    "afternoon": "programming",
     "evening": "physics"
   },
   "20250414": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "physics"
+    "morning": "math",
+    "afternoon": "fiction",
+    "evening": "dataStructure"
   },
   "20250415": {
-    "morning": "math",
-    "afternoon": "physics",
-    "evening": "physics"
+    "morning": "database",
+    "afternoon": "networkConcept",
+    "evening": "math"
   },
   "20250416": {
-    "morning": "physics",
-    "afternoon": "math",
-    "evening": "physics"
+    "morning": "dataStructure",
+    "afternoon": "database",
+    "evening": "computerScience"
   },
   "20250417": {
-    "morning": "math",
-    "afternoon": "math",
-    "evening": "physics"
+    "morning": "fiction",
+    "afternoon": "fiction",
+    "evening": "networkConcept"
   },
   "20250418": {
-    "morning": "physics",
-    "afternoon": "math",
-    "evening": "physics"
+    "morning": "fiction",
+    "afternoon": "fiction",
+    "evening": "math"
   },
   "20250419": {
-    "morning": "physics",
-    "afternoon": "math",
-    "evening": "physics"
+    "morning": "art",
+    "afternoon": "dataStructure",
+    "evening": "dataStructure"
   },
   "20250420": {
-    "morning": "physics",
-    "afternoon": "physics",
+    "morning": "exercise",
+    "afternoon": "dataStructure",
     "evening": "physics"
   },
   "20250421": {
-    "morning": "math",
-    "afternoon": "physics",
-    "evening": "physics"
+    "morning": "physics",
+    "afternoon": "database",
+    "evening": "programming"
   },
   "20250422": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "physics"
+    "morning": "hacking",
+    "afternoon": "database",
+    "evening": "math"
   },
   "20250423": {
-    "morning": "physics",
-    "afternoon": "math",
-    "evening": "physics"
+    "morning": "dataStructure",
+    "afternoon": "art",
+    "evening": "hacking"
   },
   "20250424": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "physics"
+    "morning": "math",
+    "afternoon": "computerScience",
+    "evening": "exercise"
   },
   "20250425": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "math"
+    "morning": "computerScience",
+    "afternoon": "math",
+    "evening": "computerScience"
   },
   "20250426": {
-    "morning": "physics",
-    "afternoon": "math",
-    "evening": "math"
+    "morning": "math",
+    "afternoon": "programming",
+    "evening": "art"
   },
   "20250427": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "physics"
+    "morning": "art",
+    "afternoon": "database",
+    "evening": "database"
   },
   "20250428": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "math"
+    "morning": "math",
+    "afternoon": "networkConcept",
+    "evening": "database"
   },
   "20250429": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "physics"
+    "morning": "fiction",
+    "afternoon": "database",
+    "evening": "computerScience"
   },
   "20250430": {
-    "morning": "math",
-    "afternoon": "physics",
+    "morning": "networkConcept",
+    "afternoon": "computerScience",
     "evening": "physics"
   },
   "20250501": {
-    "morning": "math",
-    "afternoon": "physics",
-    "evening": "physics"
-  },
-  "20250502": {
-    "morning": "math",
-    "afternoon": "math",
-    "evening": "physics"
-  },
-  "20250503": {
-    "morning": "physics",
-    "afternoon": "math",
-    "evening": "physics"
-  },
-  "20250504": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "physics"
-  },
-  "20250505": {
-    "morning": "math",
-    "afternoon": "physics",
-    "evening": "physics"
-  },
-  "20250506": {
-    "morning": "physics",
-    "afternoon": "math",
+    "morning": "dataStructure",
+    "afternoon": "dataStructure",
     "evening": "math"
   },
-  "20250507": {
-    "morning": "physics",
+  "20250502": {
+    "morning": "fiction",
+    "afternoon": "hacking",
+    "evening": "dataStructure"
+  },
+  "20250503": {
+    "morning": "dataStructure",
+    "afternoon": "projectMng",
+    "evening": "fiction"
+  },
+  "20250504": {
+    "morning": "rest",
+    "afternoon": "programming",
+    "evening": "rest"
+  },
+  "20250505": {
+    "morning": "networkConcept",
     "afternoon": "physics",
-    "evening": "physics"
+    "evening": "math"
+  },
+  "20250506": {
+    "morning": "art",
+    "afternoon": "rest",
+    "evening": "networkConcept"
+  },
+  "20250507": {
+    "morning": "computerScience",
+    "afternoon": "math",
+    "evening": "art"
   },
   "20250508": {
-    "morning": "math",
+    "morning": "programming",
     "afternoon": "physics",
-    "evening": "physics"
+    "evening": "hacking"
   },
   "20250509": {
     "morning": "physics",
-    "afternoon": "physics",
-    "evening": "physics"
+    "afternoon": "fiction",
+    "evening": "dataStructure"
   },
   "20250510": {
     "morning": "math",
-    "afternoon": "physics",
-    "evening": "math"
+    "afternoon": "fiction",
+    "evening": "hacking"
   },
   "20250511": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "math"
+    "morning": "programming",
+    "afternoon": "projectMng",
+    "evening": "physics"
   },
   "20250512": {
-    "morning": "math",
+    "morning": "database",
     "afternoon": "math",
-    "evening": "physics"
+    "evening": "programming"
   },
   "20250513": {
     "morning": "physics",
-    "afternoon": "physics",
+    "afternoon": "fiction",
     "evening": "math"
   },
   "20250514": {
     "morning": "physics",
-    "afternoon": "physics",
-    "evening": "physics"
+    "afternoon": "programming",
+    "evening": "computerScience"
   },
   "20250515": {
-    "morning": "physics",
-    "afternoon": "math",
-    "evening": "physics"
+    "morning": "math",
+    "afternoon": "dataStructure",
+    "evening": "networkConcept"
   },
   "20250516": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "physics"
+    "morning": "programming",
+    "afternoon": "networkConcept",
+    "evening": "dataStructure"
   },
   "20250517": {
-    "morning": "math",
-    "afternoon": "math",
-    "evening": "physics"
+    "morning": "networkConcept",
+    "afternoon": "programming",
+    "evening": "fiction"
   },
   "20250518": {
-    "morning": "physics",
+    "morning": "art",
     "afternoon": "physics",
-    "evening": "physics"
+    "evening": "computerScience"
   },
   "20250519": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "physics"
+    "morning": "math",
+    "afternoon": "networkConcept",
+    "evening": "art"
   },
   "20250520": {
     "morning": "physics",
-    "afternoon": "physics",
-    "evening": "math"
+    "afternoon": "art",
+    "evening": "networkConcept"
   },
   "20250521": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "math"
+    "morning": "computerScience",
+    "afternoon": "dataStructure",
+    "evening": "networkConcept"
   },
   "20250522": {
     "morning": "physics",
-    "afternoon": "math",
-    "evening": "physics"
+    "afternoon": "computerScience",
+    "evening": "projectMng"
   },
   "20250523": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "physics"
+    "morning": "rest",
+    "afternoon": "rest",
+    "evening": "projectMng"
   },
   "20250524": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "math"
+    "morning": "database",
+    "afternoon": "programming",
+    "evening": "art"
   },
   "20250525": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "physics"
+    "morning": "fiction",
+    "afternoon": "networkConcept",
+    "evening": "database"
   },
   "20250526": {
-    "morning": "physics",
+    "morning": "exercise",
     "afternoon": "physics",
-    "evening": "math"
+    "evening": "dataStructure"
   },
   "20250527": {
     "morning": "math",
-    "afternoon": "math",
+    "afternoon": "programming",
     "evening": "physics"
   },
   "20250528": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "physics"
+    "morning": "art",
+    "afternoon": "exercise",
+    "evening": "fiction"
   },
   "20250529": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "math"
+    "morning": "networkConcept",
+    "afternoon": "projectMng",
+    "evening": "physics"
   },
   "20250530": {
-    "morning": "math",
+    "morning": "networkConcept",
     "afternoon": "physics",
-    "evening": "physics"
+    "evening": "projectMng"
   },
   "20250531": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "physics"
+    "morning": "math",
+    "afternoon": "dataStructure",
+    "evening": "programming"
   },
   "20250601": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "math"
+    "morning": "computerScience",
+    "afternoon": "computerScience",
+    "evening": "database"
   },
   "20250602": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "math"
+    "morning": "math",
+    "afternoon": "dataStructure",
+    "evening": "dataStructure"
   },
   "20250603": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "physics"
+    "morning": "networkConcept",
+    "afternoon": "computerScience",
+    "evening": "math"
   },
   "20250604": {
-    "morning": "math",
-    "afternoon": "physics",
-    "evening": "physics"
+    "morning": "fiction",
+    "afternoon": "computerScience",
+    "evening": "hacking"
   },
   "20250605": {
     "morning": "physics",
     "afternoon": "physics",
-    "evening": "physics"
+    "evening": "programming"
   },
   "20250606": {
-    "morning": "math",
-    "afternoon": "physics",
-    "evening": "physics"
+    "morning": "database",
+    "afternoon": "art",
+    "evening": "dataStructure"
   },
   "20250607": {
-    "morning": "math",
-    "afternoon": "math",
+    "morning": "fiction",
+    "afternoon": "physics",
     "evening": "physics"
   },
   "20250608": {
-    "morning": "physics",
-    "afternoon": "math",
-    "evening": "math"
+    "morning": "database",
+    "afternoon": "database",
+    "evening": "dataStructure"
   },
   "20250609": {
-    "morning": "physics",
-    "afternoon": "math",
-    "evening": "math"
-  },
-  "20250610": {
-    "morning": "physics",
-    "afternoon": "math",
-    "evening": "math"
-  },
-  "20250611": {
-    "morning": "math",
-    "afternoon": "physics",
-    "evening": "math"
-  },
-  "20250612": {
-    "morning": "physics",
+    "morning": "projectMng",
     "afternoon": "physics",
     "evening": "physics"
   },
+  "20250610": {
+    "morning": "fiction",
+    "afternoon": "computerScience",
+    "evening": "physics"
+  },
+  "20250611": {
+    "morning": "database",
+    "afternoon": "computerScience",
+    "evening": "physics"
+  },
+  "20250612": {
+    "morning": "art",
+    "afternoon": "database",
+    "evening": "dataStructure"
+  },
   "20250613": {
-    "morning": "physics",
-    "afternoon": "math",
+    "morning": "programming",
+    "afternoon": "fiction",
     "evening": "physics"
   },
   "20250614": {
-    "morning": "math",
-    "afternoon": "physics",
-    "evening": "math"
+    "morning": "exercise",
+    "afternoon": "art",
+    "evening": "art"
   },
   "20250615": {
-    "morning": "physics",
+    "morning": "math",
     "afternoon": "physics",
     "evening": "physics"
   },
   "20250616": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "physics"
+    "morning": "math",
+    "afternoon": "programming",
+    "evening": "programming"
   },
   "20250617": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "physics"
+    "morning": "dataStructure",
+    "afternoon": "networkConcept",
+    "evening": "dataStructure"
   },
   "20250618": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "physics"
+    "morning": "math",
+    "afternoon": "math",
+    "evening": "programming"
   },
   "20250619": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "math"
+    "morning": "programming",
+    "afternoon": "computerScience",
+    "evening": "art"
   },
   "20250620": {
-    "morning": "physics",
-    "afternoon": "math",
-    "evening": "math"
+    "morning": "database",
+    "afternoon": "fiction",
+    "evening": "exercise"
   },
   "20250621": {
-    "morning": "math",
-    "afternoon": "physics",
-    "evening": "math"
+    "morning": "programming",
+    "afternoon": "math",
+    "evening": "projectMng"
   },
   "20250622": {
-    "morning": "physics",
-    "afternoon": "math",
-    "evening": "physics"
+    "morning": "fiction",
+    "afternoon": "database",
+    "evening": "projectMng"
   },
   "20250623": {
-    "morning": "math",
-    "afternoon": "physics",
-    "evening": "math"
+    "morning": "computerScience",
+    "afternoon": "hacking",
+    "evening": "networkConcept"
   },
   "20250624": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "physics"
+    "morning": "database",
+    "afternoon": "projectMng",
+    "evening": "math"
   },
   "20250625": {
-    "morning": "physics",
-    "afternoon": "math",
-    "evening": "physics"
+    "morning": "database",
+    "afternoon": "art",
+    "evening": "math"
   },
   "20250626": {
-    "morning": "math",
-    "afternoon": "math",
-    "evening": "physics"
+    "morning": "exercise",
+    "afternoon": "physics",
+    "evening": "projectMng"
   },
   "20250627": {
-    "morning": "math",
-    "afternoon": "math",
+    "morning": "programming",
+    "afternoon": "fiction",
     "evening": "math"
   },
   "20250628": {
-    "morning": "physics",
-    "afternoon": "physics",
-    "evening": "physics"
+    "morning": "dataStructure",
+    "afternoon": "hacking",
+    "evening": "networkConcept"
   },
   "20250629": {
-    "morning": "math",
-    "afternoon": "math",
-    "evening": "math"
+    "morning": "networkConcept",
+    "afternoon": "physics",
+    "evening": "dataStructure"
   }
 }
