@@ -9,7 +9,25 @@ Before we start, there's some important mathematical terms we should know:
 
 Expected value is derived from Population and Sample. So the only two basic concept ideas are Population and Sample. All the other theories or ideas are came from those two basic concepts.
 
-First we are gonna discuss about is, What is random? Or more specifically, what is the nature of "random"?
+Before we go further, there's one thing that we need to comfirm or "define", that is **Random**. Yeah! Because probability is based on random events. We can't go further if we have no definition of random.
+
+> [!NOTE]
+> Randomness is **Unpredictability** of a sequence. Give you a sequence of numbers(or events) and you have no way to predict what the next number in the sequence will be, then the sequence is random.
+
+But wait! If we have 99% for sure of next number in the sequence will be, can we say it's random? Yeah...but apparently it's not that random compare to for example only 1% for sure of next number would be, right? 99% for sure! We can say it's almost predictable. So we can't just say some sequence is random, we also need to define how **The Degree of Randomness**.
+
+Something is random if it is based on a set of possible events and it cannot be predicted which event will take place. The degree of randomness of a random event increases with the number of possible events in the set. So it is reasonable to say that the outcome of a throw of a six sided die is more random than the outcome of a cointoss.
+
+So the degree of randomness must be highly relavent with the number of possible events $n$. 
+
+The answer is that **Entropy** is the definition we want(This is also what Shannon thought). In a uniform distribution over $n$ outcomes, the entropy is $log\left(n\right)$. A distribution with higher entropy is considered more random.
+
+The $log$ is for 
+
+
+degree of randomness(Entropy)
+degree of freedom [reference](https://www.zhihu.com/question/26720278)
+
 
 
 Binomial distribution
