@@ -231,7 +231,7 @@ Let's look at **Energy Conservation**. Energy Conservation is because **Time tra
 
 Now, suppose relative potential field of two particles change by time. easily we can have this below:
 ```math
-\delta V = \int dV\left(x, t\right) =
+\Delta V = \int dV\left(x, t\right) =
 ```
 ```math
 \int \dfrac{\partial V}{\partial x}dx + \dfrac{\partial V}{\partial t}dt =
@@ -243,13 +243,13 @@ Now, suppose relative potential field of two particles change by time. easily we
 and we know that:
 
 ```math
-\delta K = - \int \dfrac{\partial x}{\partial x}dx
+\Delta K = - \int \dfrac{\partial x}{\partial x}dx
 ```
 
 The kinetic energy here is using **partial integral** which not a formal term in math but we indeed use it sometimes. In this case, it's perfectly used here. According to above formula, we have
 
 ```math
-\delta K + \delta V = \int \dfrac{\partial V}{\partial t}dt
+\Delta K + \Delta V = \int \dfrac{\partial V}{\partial t}dt
 ```
 
 
