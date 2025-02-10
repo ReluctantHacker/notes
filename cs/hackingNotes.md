@@ -10,7 +10,7 @@ When the programming running on a certain function in text, that variables in fu
 
 Actually stack has a single block of memory stored the address in text it coming from. And this makes hacker has chance to rewrite that block of memory to a fake address(usually somewhere in the stack), and cheat computer that it has already come back to text to run the remain program but it actually still running in stack. And when that stack has malicious mechine code that hacker input, then attack is successful executing.
 
-But of course, this technique is obsolete. A lotta modern defended techs which are default built in operating systems nowaday would not let this happen, like **Non-executable stack/heap** which basically let the stack region can't be executable. This automatically killed technique of classic buffer overflow attack. You need to use advanced version of buffer overflow to conquer this called **Return-Oriented Programming** which we are gonna talk about latter.
+But of course, this technique is obsolete. A lotta modern defended techs which are default built in operating systems nowaday would not let this happen, like **Non-executable stack/heap(NX, in short)** which basically let the stack region can't be executable. This automatically killed technique of classic buffer overflow attack. You need to use advanced version of buffer overflow to conquer this called **Return-Oriented Programming** which we are gonna talk about latter.
 
 The modern operating system also use **Address space layout randomization** which we are also gonna talk about latter. 
 
@@ -39,4 +39,12 @@ This is not direct attacking method. However, it may be a potential security pro
 
 Return-Oriented Programming(ROP) 
 --------------------------------
-This technique is basically the advanced version of buffer overflow attack. The classic attack insert malicious machine code from attackers themself into stack(or heap). However, this ROP, attackers won't insert anything, they directly use some useful machine codes that has already existed in program itself. [reference](https://secureteam.co.uk/articles/how-return-oriented-programming-exploits-work/)
+This technique is basically the advanced version of buffer overflow attack to overcome the NX. The classic attacking insert malicious machine code by attackers themself into stack(or heap). In ROP, attackers directly use some useful machine codes(we call Gadget here) that has already existed in program rather than use self coded inserted malicious machine code. [reference](https://secureteam.co.uk/articles/how-return-oriented-programming-exploits-work/)
+
+The first exploit of this kind attack is by using libc which is well known and usually linked by other programs. The memory of libc's subroutine probably has already been studied over and over agin. People may already know the memory of every functions. For example attacker can directly return address of system() function(in libc) which can start up a shell. And since libc is executable area, it doesn't violate the rule of NX.
+
+This attack is called **Return-to-libc** which is the precursor of ROP and first implemented in 1997. 
+
+In 2002, **Address Space Layout Randomisation(ASLR)** was introduced and became a standard. ASLR randomly arranges the address space positions of key data areas of a process so an attacker does not know which addresses to inject into the call stack in order to abuse libc or other known software libraries including the system Kernel. The introduction of ASLR and changes to many system libraries like libc that made it harder to abuse their functions spurred new research and in 2007 the Return-Oriented Programming technique was first demonstrated.
+
+ROP Uses a sequence(or chain) of gadgets to perform arbitrary operations, providing greater control and flexibility. It can bypass more advanced defenses.
