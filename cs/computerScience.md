@@ -8,7 +8,7 @@ The physical implementation of an adder is based on the design of electric circu
 When we collect many adders parallel, then we can do multi-bit calculation. For example, 0101+0001=0110, using 4 adders to do 4 bit addition, every adder represent a bit. The output is 4 bit long, too. 
 
 # Semicondutor
-Because modern computer's calculation unit is full of transistors which is made with semiconductor, we have to talk about it.
+Because modern computer's calculation unit is full of transistors which are generally made with semiconductor, we have to talk about it.
 
 Basically, a semiconductor is just an insulator whose energy gap is small enough that there are "some" carriers in the higher band at room temperatures on planet Earth. When the input voltage is high enough, it would act just like normal conductor. 
 
@@ -22,24 +22,28 @@ Metals can't form junctions and their conductivity is not tunable via an applied
 The conductability is because of the outside orbit of the atom. Metals are big atoms. The top layer of electrons is very far away from their core, so they are only losely bound to it. This is called **delocalized electron** which means that electron is not tied to any specific atom or bond. 
 
 > [!NOTE]
-> There's a term in physics called **Free Electron** which also means that electrons has no restriction by any atom. The delocalized electron emphasis that the electron is not restricted by any atom. free electron, on the other hand, emphasis that the electron is free to move. However, generally in consequence, they are talking about the same thing.
+> There's a term in physics called **Free Electron** which also means that electrons has no restriction by any atom. The difference is that **delocalized electron** emphasis that the electron is not restricted by any atom. **Free electron**, on the other hand, emphasis that the electron is free to move. However, generally in consequence, they are talking about the same thing.
 
 The outer electrons are basically as close to the neighouring atoms as they are to their original owner wich makes them able to just hop over with very little energy (the original atom wants to stay neutral so it will grab another losely bound electron from another neigbour). [reference](https://www.reddit.com/r/explainlikeimfive/comments/pyhqtf/eli5_why_do_metals_have_free_electrons/)
 
-Or, in other words, we can say that when atoms are close enough, their outer electron orbitals would overlap with each other, allowing the electrons to move freely between atoms. This overlap is what creates the "sea" of electrons in metals, contributing to their high conductivity.
+Or, in other words, we can say that when atoms are close enough, their outer electron orbitals would overlap with each other, allowing the electrons to move freely between atoms. This overlap is what creates the "sea" of electrons in metal lattice, contributing to their high conductivity.
 
 The origin of the band theory is based on the consequence of quantum mechanical interactions within electrons of atoms in proximity to each other. [reference](https://www.quora.com/What-is-the-origin-of-the-formation-of-a-band-gap-in-the-band-structure-of-some-materials)
 
+Question(I am not 100% sure, need to be clarified)
+------------------------------------------------
+If the distance between atoms is close enough, every outside shell's electron would be delocalized, which means electrons would be free.
 
-Question(I have not solved yet)
------------------------
-if the distance between atoms is close enough, every outside shell's electron would be delocalized, right? which means electrons would be free?
+This might be basic ground idea or at least relevent of superconductor which performed in low temperature makes the distance bewteem atoms get small.
 
-Is this the basic ground idea of superconductor which need low temperature which makes the distance bewteem atoms get small?
+Anyway, if the delocalized electrons are caused by the distance between atoms, that means we can make everything conductor if we give enough pressure on them. Like hydrogen become conductor when pressure is really high in Jupiter. 
 
+In 1935, physicists Eugene Wigner and Hillard Bell Huntington predicted that under an immense pressure of around 25 GPa (250,000 atm; 3,600,000 psi), hydrogen would display metallic properties: instead of discrete H2 molecules (which consist of two electrons bound between two protons), a bulk phase would form with a solid lattice of protons and the electrons delocalized throughout. Since then, producing metallic hydrogen in the laboratory has been described as "the holy grail of high-pressure physics". [reference](https://en.wikipedia.org/wiki/Metallic_hydrogen)
 
 # Transistor
-All the electric elements are very tiny, integrated on chips today. Transistors are the most important of them. It is made with semiconductor which is insulator when the eletric current is small but a conductor when electric current is high enough. 
+All the electric elements are very tiny, integrated on chips today. Transistors are the most important of them. It is made with semiconductor which is insulator when the eletric voltage is low but a conductor when electric voltage is high enough. 
+
+
 
 A transistor has three terminals:
   * **Emmiter**:
@@ -50,7 +54,7 @@ A transistor has three terminals:
 Modern CPU mainly constructured with 3 important part: 
   * **CU(Control Unit)**: CPU is the brain of a computer, CU is the brain of a CPU. It send tasks and control ALU and register. 
   * **ALU(Arithemtic Logic Unit)**: Doing the actual calculation. The input of ALU is controlled by CU. And the calculation result will send back to CU through output or "flags". 
-  * **Register**:  Registers are often compared with RAM because except for the speed, they are pretty much doing the same thing. To truly understand the difference, you have to know a concept called [Memory Hierarchy](https://shihyu.github.io/books/ch17s05.html). According to accessing speed, from fast to slow(also from expensive to cheap), there are four layers of Memory Hierarchy: Register(CPU), cache(CPU), Memory(RAM), Hard Disk(including SSD). Regardless the costs, the reason why not all used registers is that CPU is very small 
+  * **Register**:  Registers are often compared with RAM because except for the speed, they are pretty much doing the same thing. To truly understand the difference, you have to know a concept called [Memory Hierarchy](https://shihyu.github.io/books/ch17s05.html). According to accessing speed, from fast to slow(also from expensive to cheap), there are four layers of Memory Hierarchy: Register(CPU), cache(CPU), Memory(RAM), Hard Disk(including SSD). Regardless the costs, the reason why not all used registers is that CPU is very small.   Register use flip-flop electric disign, normal RAM unit using transistor plus a capacitor design which is simpler but more slower because of capacitor generally need time to charge.
 
 
 
