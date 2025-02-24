@@ -14,18 +14,16 @@ Before we go further, there's one thing that we need to comfirm or "define", tha
 > [!NOTE]
 > Randomness is **Unpredictability** of a sequence. Give you a sequence of numbers(or events) and you have no way to predict what the next number in the sequence will be, then the sequence is random.
 
-But wait! If we have 99% for sure of next number in the sequence will be, can we say it's random? Yeah...but apparently it's not that random compare to for example only 1% for sure of next number would be, right? 99% for sure! We can say it's almost predictable. So we can't just say some sequence is random, we also need to define how **The Degree of Randomness**.
+But wait! If we have 99% for sure of next number in the sequence will be, can we say it's random? Yeah...but apparently it's not that random compare to for example only 1% for sure of next number would be, right? 99% for sure! We can say it's almost predictable. So we can't just say a sequence is random, we also need to define what is **Degree of Randomness**.
 
 Something is random if it is based on a set of possible events and it cannot be predicted which event will take place. The degree of randomness of a random event increases with the number of possible events in the set. So it is reasonable to say that the outcome of a throw of a six sided die is more random than the outcome of a cointoss.
 
-So the degree of randomness must be highly relavent with the number of possible events $n$. 
+So the degree of randomness must be highly relavent with the number of possible events $n$. However, $n$ is not very suitable for definition of degree of randomness because when it comes to $n=1$, the degree of randomness should be $0$, not $1$. And moreover, XXXX.
 
-The answer is that **Entropy** is the definition we want(This is also what Shannon thought). In a uniform distribution over $n$ outcomes, the entropy is $log\left(n\right)$. A distribution with higher entropy is considered more random.
+A more natural definition would be **chosing times**. For example, if there is only $1$ event, then the chosing time would be only 0. If there are $2$ events, then the chosing time would be 1 time. If there ar $4$ events, then the chosing time would be 2 times which means you should chose from two events and then chose from two events again. So the chosing time, or so called the divergent time of the random tree should be the definition of degree of randomness we want, not the number of the branches in a node on the random tree.
 
-The $log$ is for 
+This is exactly the definition of **Entropy**, which is also the basic idea of Shannon's data theory. In a uniform distribution over $n$ outcomes, the entropy is $log\left(n\right)$. A distribution with higher entropy is considered more random.
 
-
-degree of randomness(Entropy)
 degree of freedom [reference](https://www.zhihu.com/question/26720278)
 
 
