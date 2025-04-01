@@ -11775,3 +11775,8 @@ docker-compose up -d
 1. Copilot終端app如果沒有登入的情況下, 想要刪除history, 必須去setting>copilot>advanced setting>reset. 他才會把終端資料清除.
 
 2. python的poetry會問你要不要package-mode(把專案打包成package)
+
+
+2025/4/1
+1. what is "Internet Information Services(IIS)" in windows?? It's actually a built-in web server in windows, especially for ASP.NET(one of the subframeworks of .NET framework) applications. It's kinda like Apache HTTP Server for Linux-based envrionments(of course can be for windows, too). 
+	So "Internet Information Services(IIS) Manager" is actually the GUI control panel for managing the IIS web server on Windows.
