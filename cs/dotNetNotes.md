@@ -1,0 +1,28 @@
+# Basic idea
+- .net is a framework that supports(mainly) programming languages including C#, F#, Visual Basic(.NET).  
+- .net framework also includes some subframeworks(Those frameworks all can be for C#, F# and VB.NET) 
+  - **Windows Forms(WinForms)**: 
+    - **purpose**: Building traditional desktop applications with graphical user interfaces (GUIs). Drag-and-drop UI design: Simplifies layout creation in Visual Studio.
+    - **properties**: 
+      - Event-driven: Relies heavily on events triggered by user actions (e.g., button clicks).
+      - Drag-and-drop UI design: Simplifies layout creation in Visual Studio.
+    - **structure**:
+      - Applications are organized around "Forms" (e.g., Form1) where GUI elements like buttons, textboxes, etc., are placed.
+      - Code-behind files manage event handlers and business logic.
+  - **Windows Presentation Foundation(WPF)**:
+    - **purpose**: Creating visually sophisticated and modern desktop applications.
+    - **properties**:
+      - XAML-based: Uses XML-like markup (XAML) to define UI elements.
+      - Data binding: Easily binds UI components to data sources.
+      - Supports animations and vector graphics.
+    - **structure**: 
+      - Separation of concerns with XAML files (UI design) and code-behind files (logic).
+      - Uses "MVVM" (Model-View-ViewModel) design pattern for better code organization. 
+  - **ASP.NET**:
+    - **purpose**: Developing web applications and APIs.
+    - **properties**: 
+      - Supports dynamic web pages and backend services.
+      - Offers variations like ASP.NET WebForms, MVC, and Core.
+    - **structure**:
+      - MVC Pattern: Model (data), View (UI), Controller (business logic).
+      - Organized into separate folders for controllers, models, and views.
