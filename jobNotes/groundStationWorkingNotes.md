@@ -3,6 +3,6 @@
   - csrsr資料庫:
 
 # Database Connection methods
-  - Oracle 使用TNS
+  - Oracle 使用TNS(設定檔案在tnsnames.ora)
   - MySQL使用.my.cnf
   - SQL Server使用ODBC
