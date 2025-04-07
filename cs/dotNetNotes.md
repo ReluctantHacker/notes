@@ -27,5 +27,6 @@
       - MVC Pattern: Model (data), View (UI), Controller (business logic).
       - Organized into separate folders for controllers, models, and views.
 
-# WinsForm
+# WinsForm(VB.net)
 - When you create vb.net's WinsForms, it won't see Main() anywhere in your project files. It doesn't means that vb.net not needing Main(). It is because, when you build the project, the function is automatically created, compiled, and executed. Its source code isn't stored in the project, and that's why you can't see it unless you explicitly add your own  function
+- Every Function(return something) and sub(not return something) must be written in a Class or Module in VB.NET. However, in Classic VB language, a function or sub can directly excute without capture in a Class or Module. Generally speaking, VB.NET isn't compatible to classic VB, they are very similar but also different. You can say that they are different langauge. You can't run VB code in VB.net env.
