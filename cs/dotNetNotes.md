@@ -1,6 +1,6 @@
 # Basic idea
 - .net is a framework that supports(mainly) programming languages including C#, F#, Visual Basic(.NET).  
-- .net framework also includes some subframeworks(Those frameworks all can be for C#, F# and VB.NET) 
+- .net framework also includes some subframeworks(Those subframeworks all can be developed by C#, F# and VB.NET, actually C# is the most famous and popular language of three of them.) 
   - **Windows Forms(WinForms)**: 
     - **purpose**: Building traditional desktop applications with graphical user interfaces (GUIs). Drag-and-drop UI design: Simplifies layout creation in Visual Studio.
     - **properties**: 
@@ -10,7 +10,7 @@
       - Applications are organized around "Forms" (e.g., Form1) where GUI elements like buttons, textboxes, etc., are placed.
       - Code-behind files manage event handlers and business logic.
   - **Windows Presentation Foundation(WPF)**:
-    - **purpose**: Creating visually sophisticated and modern desktop applications.
+    - **purpose**: Creating visually sophisticated and modern desktop applications. You can think that **WPF is the updated version of WinForms**, the difference is that WinForms is for something application that more simple and doesn't need beautiful UI. However, they can both us drag-and-drop to create graphical user interface.
     - **properties**:
       - XAML-based: Uses XML-like markup (XAML) to define UI elements.
       - Data binding: Easily binds UI components to data sources.
@@ -19,10 +19,13 @@
       - Separation of concerns with XAML files (UI design) and code-behind files (logic).
       - Uses "MVVM" (Model-View-ViewModel) design pattern for better code organization. 
   - **ASP.NET**:
-    - **purpose**: Developing web applications and APIs.
+    - **purpose**: Developing web applications and APIs. It's very similar to php's Laravel or python's Django
     - **properties**: 
       - Supports dynamic web pages and backend services.
       - Offers variations like ASP.NET WebForms, MVC, and Core.
     - **structure**:
       - MVC Pattern: Model (data), View (UI), Controller (business logic).
       - Organized into separate folders for controllers, models, and views.
+
+# WinsForm
+- When you create vb.net's WinsForms, it won't see Main() anywhere in your project files. It doesn't means that vb.net not needing Main(). It is because, when you build the project, the function is automatically created, compiled, and executed. Its source code isn't stored in the project, and that's why you can't see it unless you explicitly add your own  function
