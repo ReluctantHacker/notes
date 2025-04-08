@@ -32,5 +32,5 @@
 - Every Function(return something) and sub(not return something) must be written in a Class or Module in VB.NET. However, in Classic VB language, a function or sub can directly excute without capture in a Class or Module. Generally speaking, VB.NET isn't compatible to classic VB, they are very similar but also different. You can say that they are different Language but kinda similar. You can't run VB code in VB.net env.
 - VB(classic) is no longer actively maintained and unsupported as of April 8, 2008.
 - In Microsoft Office softwares, VBA(vb application, a sub class of VB) is embedded. In LibreOffice, Python is embedded(There's also "LibreOffice Basic" embedded which is Apparently a imitation to VBA).
-- "Import" statement is only exist in VB.net because VB.net work with **Namespace**, Classic VB doesn't. 
+- "Import" statement is only exist in VB.net because VB.net work with **Namespace**, Classic VB doesn't.  "Import" statement is pretty much like the "import" statement in python, or namespace concept in c++, their main goal is the same.
 - "Module" is pretty much similar as an instance of a class. The key difference is that a class can and should create an instance to be used. But Module is for directly used. You can imagine that a module is some kinda instance of a class, not exactly the same, but act pretty much similar.
