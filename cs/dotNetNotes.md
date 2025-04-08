@@ -34,3 +34,4 @@
 - In Microsoft Office softwares, VBA(vb application, a sub class of VB) is embedded. In LibreOffice, Python is embedded(There's also "LibreOffice Basic" embedded which is Apparently a imitation to VBA).
 - "Import" statement is only exist in VB.net because VB.net work with **Namespace**, Classic VB doesn't.  "Import" statement is pretty much like the "import" statement in python, or namespace concept in c++, their main goal is the same.
 - "Module" is pretty much similar as an instance of a class. The key difference is that a class can and should create an instance to be used. But Module is for directly used. You can imagine that a module is some kinda instance of a class, not exactly the same, but act pretty much similar.
+- VB.NET can accept both uppercase and lowercase keywords, which means for example "Dim", "DiM", "DIM", "dim", all can work
