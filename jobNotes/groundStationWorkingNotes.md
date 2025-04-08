@@ -6,3 +6,6 @@
   - Oracle 使用TNS(設定檔案在tnsnames.ora)
   - MySQL使用.my.cnf
   - SQL Server使用ODBC
+
+# 國家太空中心檔案
+  - 國家太空中心(台灣的)本來叫做NSPO, 20230101後改為TASA, 所以你看舊的VB排程的code裡面只有NSPO, 但是較新的VB排程code只有TASA
