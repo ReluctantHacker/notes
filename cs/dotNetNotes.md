@@ -35,3 +35,27 @@
 - "Import" statement is only exist in VB.net because VB.net work with **Namespace**, Classic VB doesn't.  "Import" statement is pretty much like the "import" statement in python, or namespace concept in c++, their main goal is the same.
 - "Module" is pretty much similar as an instance of a class. The key difference is that a class can and should create an instance to be used. But Module is for directly used. You can imagine that a module is some kinda instance of a class, not exactly the same, but act pretty much similar.
 - VB.NET can accept both uppercase and lowercase keywords, which means for example "Dim", "DiM", "DIM", "dim", all can work
+
+# DataSet(.xml, .xsd)
+- XML(Extensible Markup Language) is a versatile markup language designed for carrying and storing data. It allows users to define their custom tags, making it highly flexible. XML is often used for data interchange between different systems, enabling the sharing of structured information.  HTML and XML are both descendants of an earlier markup language called SGML (Standard Generalized Markup Language). SGML is a complicated set of rules that define document structures. XML is a subset of SGML that does the same thing, using fewer rules. Since XML is a less-complicated derivative of SGML, XML is more easily implemented on large networks such as the Internet. **The primary role of XML is to define data.** [reference](https://www.geeksforgeeks.org/html-vs-xml/) [reference2](https://stackoverflow.com/questions/46325526/what-is-the-relationship-between-xml-and-html). Here's an simple example of a data that is write in XML file
+```XML
+<Employee>
+    <ID>101</ID>
+    <Name>John Doe</Name>
+    <Position>Developer</Position>
+</Employee>
+```
+- XSD(XML Schema Definition), It is a language type that define the format and structure of XML data. Here's an example of XSD file. You can see that XML doesn't define and restrict how many element an employee tag should have. ID, Name, Position. You can add something like "birthday" or what anything you want. No restriction. But with XSD it would define it. And decide datatype like int or string. You can say that XML file is just a data record without any structure. with XSD. The data would like database's table's record which is with structure(schema).
+```XSD
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Employee">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ID" type="xs:int"/>
+                <xs:element name="Name" type="xs:string"/>
+                <xs:element name="Position" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
+```
