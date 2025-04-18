@@ -39,6 +39,55 @@
   - S.Azm(把太陽當成衛星, 其方位角)
   - S.Elv(把太陽當成衛星, 其仰角)
 
+# TLE(Two Line Element)
+TLE範例
+```
+SCD 1                   ← 衛星名稱（可選）
+1 22490U 93009B   25107.73936666  .00000668  00000+0  13238-3 0  9998
+2 22490  24.9706 313.8488 0041960 316.2733  89.0875 14.45820228699475
+```
+## Line 1解釋
+  - 1  --->	行號：表示這是 TLE 的第 1 行
+  - 22490 ---> Catalog Number（衛星編號）
+  - U ---> 衛星分類（U = Unclassified，非機密）
+  - 93009B ---> 國際設計編號：Launch year 1993 + launch number 009 + piece B
+  - 25107.73936666 ---> Epoch：軌道數據的時間（"第 107 天的小數年" = 2025 年第 107 天的某個時刻）
+  - .00000668 ---> First Time Derivative of Mean Motion（平均運動的一階導數，軌道衰減率）
+  - 00000+0	---> Second Time Derivative of Mean Motion（通常為 0）
+  - 13238-3	---> BSTAR drag term（大氣阻力係數，估算空氣阻力影響）
+  - 0 ---> type（軌道模型類型，通常是 0）
+  - 9998 ---> Checksum（校驗碼）
+## Line 2解釋
+  - 2 ---> 行號：這是 TLE 的第 2 行
+  - 22490 ---> 再次是衛星編號
+  - 24.9706	---> Inclination (°)：軌道傾角（赤道夾角）
+  - 313.8488 ---> RAAN：升交點赤經（Right Ascension of the Ascending Node）
+  - 0041960	---> Eccentricity：軌道離心率（要加上小數點 → 0.0041960）
+  - 316.2733 ---> Argument of Perigee（近地點幅角）
+  - 89.0875	---> Mean Anomaly（平均近點角）
+  - 14.45820228	---> Mean Motion：該衛星每天繞地球的圈數（大概可推算軌道週期）
+  - 699475 ---> Orbit Number：自發射以來的週期編號（或部分 TLE 編碼計數器）
+### Mean Motion, Orbit Number
+  為何Mean Motion和orbit number的數字是連在一起的, 中間沒有空格? 格式規定就是這樣設計的。這兩個欄位沒有中間空格分隔，而是透過「欄位位置」來區分。
+  例如這一行：
+```
+2 22490  24.9706 313.8488 0041960 316.2733  89.0875 14.45820228699475
+```
+  最後面的數字是14.45820228699475, 但其實要按照欄位位置拆解成兩個參數, 
+  - 14.45820228	---> 第 53 到 63 欄位（共 11 個字元）	Mean Motion
+  - 699475 ---> 第 64 到 68 欄位（共 5 個字元）	Orbit Number, 最後的5是較驗碼
+  TLE 原始設計是在 punch card 時代來的，所以是非常講究欄位位置的。
+
+  而Orbit Number所代表的意思是**該衛星自發射以來完成繞行地球的總圈數，到目前這筆資料的 epoch（時間點）為止。** 也就是說：第一次上太空是 1, 第二圈變 2, 每繞完地球一圈就加 1, TLE 每更新一次，這個數字通常會更新（只要有繞新的一圈）
+
+  那Orbit Number一天會變幾次? 這就是Mean Motion —— 這個數字告訴你**衛星每天繞地球幾圈**
+  例如FORMASA-5的Mean Motion是14.50780028(就算14吧), 也就是一天平均繞地球大概14圈. 假設現在你在ReceiveForm/dayliyReceForm/2025-04/ReceiveForm_20250418.html這個檔案裡看到以下數據
+```
+NO.	Sat./Orbit.	Begin time ~ End time	信號接收狀況	QL	VCDU	ICR(csrsr)	ICR(others)	Comment
+ 01.	 FS5/40503	 02:51:15 ~ 02:59:38	  A1  A2	  N/A	 	  N/A	  N/A	 
+ 02.	 FS5/40510	 13:51:26 ~ 13:56:49	  A1  A2	  N/A	 	  N/A	  N/A	
+``` 
+  你可以大概驗算一下, orbit number從40503到40510的變化兩是否符合mean motion, 首先上午的排程時間是2:51, 下午的排程時間是13:51, 也就是說差了11小時, 大概是半天的時間, 而mean motion大概是14圈, 14乘(1/2)等於7圈, 也就是orbit number大概差7圈, 演算大致正確
 
 
 
