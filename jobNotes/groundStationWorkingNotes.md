@@ -23,4 +23,18 @@
       - HDR2(140.115.109.130), 用來解調, 只有2個channel
       - HDR3(140.115.109.151), 用來解調, 有3個channel
     - vb程式排程電腦(140.115.109.42), 在前排電腦的好像第二個位置吧, 基本主要功能就是拿來執行VB排程程式
- 
+
+
+# 衛星接收技術, 常見英文術語
+  - Azimuth(azm, 即平面上的"方位", 方位角)
+<p align="center">
+  <img src="Azimuth.png"/>
+</p>
+  - Elevation(elv, 即仰角)
+<p align="center">
+  <img src="Example-of-an-Elevation-mask-along-the-azimuth.png"/>
+</p>
+
+
+
+
