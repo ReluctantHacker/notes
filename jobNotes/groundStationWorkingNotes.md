@@ -25,7 +25,8 @@
     - vb程式排程電腦(140.115.109.42), 在前排電腦的好像第二個位置吧, 基本主要功能就是拿來執行VB排程程式
 
 
-# 衛星接收技術, 常見英文術語
+# Orbitron中, 有關衛星接收技術常見英文術語 
+  [reference](https://tieba.baidu.com/p/771066249)
   - Azimuth(azm, 即平面上的"方位", 方位角)
 <p align="center">
   <img src="Azimuth.png"/>
@@ -34,6 +35,9 @@
 <p align="center">
   <img src="Example-of-an-Elevation-mask-along-the-azimuth.png"/>
 </p>
+  - Range(接受站與衛星距離, 通常單位為公里)
+  - S.Azm(把太陽當成衛星, 其方位角)
+  - S.Elv(把太陽當成衛星, 其仰角)
 
 
 
