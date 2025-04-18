@@ -3,3 +3,6 @@
 
 2025/4/11
 1. 目前正在看Form1.vb的code, 目前看到downloadTLE()是在做甚麼功能, 為何Button1_Click()會要使用downloadTLE()
+
+2025/4/18
+1. 目前正在處理PHR1A_AosLos()函數的理解與優化, 該函數的目的是要把A.txt的預測排程時間(Aos, Los), 加上從TLE檔案中獲得軌道參數, 軌道參數的獲取從getOrbitNum()得到
