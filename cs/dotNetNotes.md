@@ -27,14 +27,14 @@
       - MVC Pattern: Model (data), View (UI), Controller (business logic).
       - Organized into separate folders for controllers, models, and views.
 
-# WinsForm(VB.net)
+# VB.net
 - When you create vb.net's WinsForms, it won't see Main() anywhere in your project files. It doesn't means that vb.net not needing Main(). It is because, when you build the project, the function is automatically created, compiled, and executed. Its source code isn't stored in the project, and that's why you can't see it unless you explicitly add your own  function
 - Every Function(return something) and sub(not return something) must be written in a Class or Module in VB.NET. However, in Classic VB language, a function or sub can directly excute without capture in a Class or Module. Generally speaking, VB.NET isn't compatible to classic VB, they are very similar but also different. You can say that they are different Language but kinda similar. You can't run VB code in VB.net env.
 - VB(classic) is no longer actively maintained and unsupported as of April 8, 2008.
 - In Microsoft Office softwares, VBA(vb application, a sub class of VB) is embedded. In LibreOffice, Python is embedded(There's also "LibreOffice Basic" embedded which is Apparently a imitation to VBA).
 - "Import" statement is only exist in VB.net because VB.net work with **Namespace**, Classic VB doesn't.  "Import" statement is pretty much like the "import" statement in python, or namespace concept in c++, their main goal is the same.
 - "Module" is pretty much similar as an instance of a class. The key difference is that a class can and should create an instance to be used. But Module is for directly used. You can imagine that a module is some kinda instance of a class, not exactly the same, but act pretty much similar.
-- VB.NET can accept both uppercase and lowercase keywords, which means for example "Dim", "DiM", "DIM", "dim", all can work
+- VB.NET can accept both uppercase and lowercase keywords and any variable name, which means for example "Dim", "DiM", "DIM", "dim", are all the same to VB.net. And so as any variables like for example "Dim File as String", The compiler would take "File", "file", "FILE", "filE" all the same!. Visual Basic is a **total-case-insensitive-syntax** language since Classic VB.
 
 # DataSet(.xml, .xsd)
 - XML(Extensible Markup Language) is a versatile markup language designed for carrying and storing data. It allows users to define their custom tags, making it highly flexible. XML is often used for data interchange between different systems, enabling the sharing of structured information.  HTML and XML are both descendants of an earlier markup language called SGML (Standard Generalized Markup Language). SGML is a complicated set of rules that define document structures. XML is a subset of SGML that does the same thing, using fewer rules. Since XML is a less-complicated derivative of SGML, XML is more easily implemented on large networks such as the Internet. **The primary role of XML is to define data.** [reference](https://www.geeksforgeeks.org/html-vs-xml/) [reference2](https://stackoverflow.com/questions/46325526/what-is-the-relationship-between-xml-and-html). Here's an simple example of a data that is write in XML file
