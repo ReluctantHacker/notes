@@ -38,12 +38,16 @@
 			recursiveFunc()
 
 |#############################################################################################################|
-4. array
-	A. first dimensional array
-	B. second dimensional array
-		沒考過
-	C. third dimensional array
-		沒考過
+4. array 
+	A. 定義:
+		a. array內的元素同type
+		b. 元素間占用的記憶體是連續的
+	B. 不同維度:
+		a. first dimensional array
+		b. second dimensional array
+			a. 其實沒甚麼好講的, 有一點比較需要注意的是, c語言存儲array是採用"列為主(row-major, 就是你熟悉的)", 有些程序語言採用的"欄為主(column-major)", 以下有個比較清楚的說明:
+			https://ithelp.ithome.com.tw/articles/10333963?sc=pt
+		c. third dimensional array
 
 |#############################################################################################################|
 5. linked list
@@ -313,13 +317,15 @@
 		d. 給(preorder和postorder)排序結果, 回推binary tree
 			I. 可能有很多種結果, 故無法
 
-		e. 計算B.T node 總數, count()
+		e. **空標記法**: 此法和以上的普通標記規則不大相同, 假設ABC為前序排序, 空標記法的規則明確說明B必定是A的左子節點, C必定為B的左子節點, 這點與普通標記法不同. 普通標記法之下ABC排序, B不一定是A的左子節點.  另外, 在空標記的規則之下, 可以(且必定)唯一決定樹的樣子, 例如ABC是可以唯一決定的, 例如更複雜的ABC##D#E(其中#為空節點), 直接按照規則嘗試建構樹則可知道.
+
+		f. 計算B.T node 總數, count()
 			I. 採用recursive
 
-		f. 計算B.T 高度, height()
+		g. 計算B.T 高度, height()
 			I. 採用recursive
 
-		g. B.T每一node左右子tree交換, swap()
+		h. B.T每一node左右子tree交換, swap()
 			I. 採用recursive
 
 		
@@ -750,18 +756,23 @@
 					😄. 翻譯成人話: height(左子tree) - height(右子tree) < -1
 					😄. 且height(右子tree的左子tree) < height(左子tree的右子tree)
 
-			IIII. 調整不平衡的算法, 採用旋轉的方法:
+			IIII. 調整不平衡的算法, 採用旋轉的方法:  ----> 快速公式(適用AVL tree)
 				🤔. 其實你根本不用管是哪種不平衡, 只要記住以下
 					😄. 最大的值擺在R_child, 最小的值擺在L_child, 中間值擺在root
 					😄. 若發生不平衡的插入值不再以上3個值之內, 則此插入值重插
 				🤔. 調整的時候會平衡所有子node, 不會對父node造成任何影響, 所以理論上, 你只需要選轉一次即可(重要概念!!考過!)
 
-			V. remove node:
+			V. 旋轉詳細說明:   ----> AVL解題時用之前的快速公式即可, 但以下的概念還是十分有用, 要會
+			reference: 以下有個比較清晰的參考說明:
+			https://simpletechtalks.com/avl-tree-self-balancing-rotations-right-left-rotation-explained/
+				🤔. 若發生RL不平衡, 則在先從較低level的開始調整, L不平衡的部分的連線元素, 進行順時針旋轉(稱之為右旋right rotation), 然後對剩餘L不平衡的部分(較高level)的連線元素, 進行逆時針旋轉(稱之為左旋left rotation).  發生LR不平衡, 則倒過來做. 若發生RR不平衡則只需對高level元素做left rotation.  LL不平衡則只需對高level做right rotation
+
+			VI. remove node:
 			reference:  --->以下有很清楚的說明, 就是移植不斷往下平衡
 			https://www.cs.emory.edu/~cheung/Courses/253/Syllabus/Trees/AVL-delete.html
 				🤔. 從AVL樹中刪除，可以通過把要刪除的節點向下旋轉成一個葉子節點，接著直接移除這個葉子節點來完成。因為在旋轉成葉子節點期間最多有log n個節點被旋轉，而每次AVL旋轉耗費固定的時間，所以刪除處理在整體上耗費O(log n) 時間。
 
-			VI. 高度-最少節點數定理
+			VII. 高度-最少節點數定理
 				🤔. 建立高度h的AVL tree, 最少需要多少節點?
 					😄. 答: S(h) = S(h-1) + S(h-2) + 1, 原理如下:
 						😄. 首先, AVL tree的高度為h, 則任意node的左右子樹應為一個高度為h-1, 另一個高度為h-2, 這是最少節點的時候必定符合的
@@ -806,7 +817,7 @@
 							😄. 但是此時parent和parent silbing兩個分支都多了一個黑色節點, 這表示與其他非這兩分支的分支比較起來, 多了黑色數量, 這與第三點定義又矛盾了, 為了修復, 你必需在把這兩個parent的parent顏色也改變, 才能確保符合定三點定義(如果改變過程又出現RR連續, 你重複相同操作步驟一路刷到root)
 						😄. 若該節點的parent的sibling為黑或為空, 則該節點rotate且轉黑
 							😄. 首先, 因為我們一樣為了讓紅色不要連續, 把parent紅轉黑, 
-								😄. 此時若parent的sibling為空, 則表示你無法藉由改變parent的sibling的顏色來使結構滿足定義三, 此時唯一的辦法就是使用rotate, 一樣大擺右, 小擺左, 中間擺中間, 接下來依照定義自由發揮了吧. 
+								😄. 此時若parent的sibling為空, 則表示你無法藉由改變parent的sibling的顏色來使結構滿足定義三, 此時唯一的辦法就是使用rotate, 一樣大擺右, 小擺左, 中間擺中間, 接下來依照定義自由發揮了吧. (或利用AVL tree的概念RL不平衡就用R旋轉+L旋轉)
 								😄. 此時若parent的sibling為黑, 則表示你依舊無法藉由改變parent的sibling的顏色來使結構滿足定義三, 因為parent的sibling本來就是黑色, 你改成紅色反而讓黑色數量減少了, 而parent改成黑色後自己的分支黑色數量增多, 所以違反定義三.   此時唯一的辦法就是使用rotate, 一樣大擺右, 小擺左, 中間擺中間, 接下來依照定義自由發揮了吧. 
 		e. 加權平衡樹(weighted balanced tree)
 
@@ -867,6 +878,7 @@
 				🤔. x在非leaf node:
 					😄.  以x的右子樹中之最小鍵値取代x；或
 					😄.  以x的左子樹中之最大鍵値取代x
+					😄. 左右子樹都沒人可以借, 則x的parent和他所有的chilren combine.
 
 	D. 應用
 		a. 資料庫索引(index)
