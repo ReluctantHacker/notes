@@ -387,7 +387,7 @@
 		b. 將binary trees們的root建立link
 		c. 以第一顆tree的root為新root
 
-	C. 其實Tree(多元)化binary tree本質與Forest化Binary tree是在做一樣的事情, 因為Tree化binary tree的過程, 實際上就是把每個節點的子樹集合化成一個binary tree, 然後遞迴到root去. 多做幾個範例就可以體會到其精神.
+	C. 其實Tree(多元)化binary tree本質與Forest化Binary tree是在做一樣的事情, 因為Tree化binary tree的過程, 實際上就是把每個節點的子樹集合化成一個binary tree, 然後遞迴到root去. 多做幾個範例就可以體會到其精神. 其實很多實際結構都類似Tree(多元), 這些多元tree其實後來都用二元tree的方式去處理了. 所以數學上tree化binary tree是很重要的
 
 
 |#############################################################################################################|
