@@ -3,7 +3,7 @@
   - csrsr資料庫:
 
 # Database Connection methods
-  - Oracle 使用TNS(設定檔案在tnsnames.ora). 需要注意的是, oracle 相較於Mysql及sql server有個特別的地方, 就是你用不同的使用者登入同一個資料庫, 你會發現data tables完全不同, 這是正常的, 因為oracle的設計就是一個user對應一個schema. 在Mysql 和sql server中, 不同使用者登入同一個資料庫, 會看到一樣的data tables, 頂多權限不同. 目前測試環境有兩組帳號密碼: csrsr/csrsr123@140.115.109.204:1521/csrsrdb 以及 soss/csrsr123@140.115.109.204:1521/csrsrdb 兩個帳號登入後, 看到的table list不會一樣. soss 是專門給排程用的
+  - Oracle 使用TNS(設定檔案在tnsnames.ora). 需要注意的是, oracle 相較於Mysql及sql server有個特別的地方, 就是你用不同的使用者登入同一個資料庫, 你會發現data tables完全不同, 這是正常的, 因為oracle的設計就是一個user對應一個schema. 在Mysql 和sql server中, 不同使用者登入同一個資料庫, 會看到一樣的data tables, 頂多權限不同. 目前測試環境有兩組帳號密碼: csrsr/csrsr123@140.115.109.204:1521/csrsrdb 以及 soss/csrsr123@140.115.109.204:1521/csrsrdb 兩個帳號登入後, 看到的table list不會一樣. soss 帳號是專門給排程用的. 然後database query gui我覺得dbeaver很不錯.
   - MySQL使用.my.cnf
   - SQL Server使用ODBC
 
