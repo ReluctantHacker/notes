@@ -535,6 +535,10 @@
 
 # Chapter_30. 如何對segmentation fault進行debug?(編譯器如果麼有告訴你哪一段代碼segmentation fault)??
 
+# Chatper_31. (NULL)及('\0')
+  * ## NULL就是所謂的"空指標常量", 簡單來說它是一個記憶體位址, 但指向nothing(或者不指向任何東西)
+  * ## '\0'是"空字元", 這個東西其實與ascii有些關係, 由於大部分的compiler用ascii(或UTF-8, 兼容ascii), 而ascii是由0到127的數字編碼來表示"字符(也就是char)", 而第一個編碼就是0, 他不代表任何東西, 即是所謂空字元, 也即是c語言中的'\0'. '\0'這個東西在c語言中string裡面, 就是結束string的符號, 一個string, 例如char testStr[3]="ABC", 則該testStr的結束字元就是'\0'. 在printf()函數中, printf("%s")會自動將'\0'考慮進去, 所以可以成功print出string. 但一般情況下, 如果要打印char的array(其實也是字串), 不使用prinf("%s")的情況下, 必須要將'\0'考慮進去, 才會在char array終止時知道該終止.
+
 
 
 # 額外筆記:
