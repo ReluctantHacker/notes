@@ -11781,5 +11781,8 @@ docker-compose up -d
 1. what is "Internet Information Services(IIS)" in windows?? It's actually a built-in web server in windows, especially for ASP.NET(one of the subframeworks of .NET framework) applications. It's kinda like Apache HTTP Server for Linux-based envrionments(of course can be for windows, too). 
 	So "Internet Information Services(IIS) Manager" is actually the GUI control panel for managing the IIS web server on Windows.
 
-2024/4/7
+2025/4/7
 1. I was studying about what is "namespace" in VB.net. And what is "namespace" in C++ language. It seems like namespace in c++ is the same idea as python's module(which you can use "import" statement to include into recent file.
+
+2025/5/29
+1.  "ISO 8601"  is most used and popular datetime data type that is used in internet technology, You should definitely at least understand or know the basic of it.
