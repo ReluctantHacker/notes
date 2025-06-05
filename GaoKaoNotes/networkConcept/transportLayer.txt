@@ -94,7 +94,7 @@
 					😄. 此數據結構包含了該連線的各種參數, 序號, 確認號, 窗口大小, 超時計數器等
 
 		
-	C. segment序列號(sequence number)計算規則, (基本採用Byte order的方式)
+	C. segment序列號(sequence number)計算規則, (基本採用Byte order的方式, 就是以byte為最基本單位)
 	reference:
 	https://madpackets.com/2018/04/25/tcp-sequence-and-acknowledgement-numbers-explained/
 	https://zhuanlan.zhihu.com/p/439614017
@@ -103,11 +103,16 @@
 			II. B傳送給A的B_segment, 也應有seq_num, ack_num, len(segment長度)
 			III. A傳送的A_segment應基於A前一次收到B的B_segment, 
 				🤔. A_seqment.ack_num= B_seqment.seq_num + B_seqment.len
-		b. 範例: 
+		b1. 範例1(每一個包的數據大小不一定一樣!! 本來就是不一定一樣, 別搞錯.): 
 			I. A   ---------seq_num=1, ack_num=1, len=10------------>  B
 			II. A   <---------seq_num=1, ack_num=11, len=33------------  B
 			III. A   ---------seq_num=11, ack_num=34, len=12------------>  B
 			IV. A   <---------seq_num=34, ack_num=33, len=13------------  B
+		b2. 範例2(每一個包的數據大小不一定一樣, 以下只是舉例剛好一樣), 此範例可以看到A持續傳送一陣子packet給B, B才回A一個packet, 這是因為B可能沒有那麼多資料要給A, 在此情況更像一個接收者, 這便是cumulative ack (In real life, this may happens in like Computer A is uploading a file to Computer B (like a client sending a large POST request to a server)):
+			I. A   ---------seq_num=1, ack_num=1, len=100------------>  B
+			II. A   ---------seq_num=101, ack_num=1, len=100------------>  B
+			III. A   ---------seq_num=201, ack_num=1, len=100------------>  B
+			IV. A   <---------seq_num=1, ack_num=301, len=13------------  B
 
 		c. 確認(ack)優化(TCP採用一些確認的聰明方法, 來減少網路流量, 以下兩種機制+sliding windows構成了tcp的flow control):
 			I. Piggybacked Acknowledgement（搭便车确认）：
