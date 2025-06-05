@@ -51,7 +51,7 @@
 
 	B. linked list, 一開始指宣告頭節點(Header node), 節點中包含"值"和指向下一個node的地址, 這樣由每個Node串聯起來了list即是linked list, 優點是動態, 要用多少node自己可中途創建, 且插入和刪除某node時間複雜度為O(1), 例如要在第三個node和第四個node之間插入一個node, 只需把node3指向新node, 然後新node指向node4, 但前提是你已經知道node 3的地址. 你要訪問特定node, 例如node3, 你需要從header開始(因為我們只會紀錄header的地址), 往後找, 直到遇到node3, 訪問特定node的時間複雜度為O(n). 如果你不知道node3的地址卻要插入node3(或刪除node3), 必須先查找, 這樣總共的時間複雜度依然是O(n)
 
-	結語: array和linked list是電腦中最基本的資料結構, 幾乎所有其他資料結構都是由array和linked list實現的. 首先說穿了, array就是一段連續記憶體, 你可以對其進行O(1)時間的取值. 而linked list則是一種"節點指向結構", 他不依賴連續的記憶體片段, 而是利用指向來達到資料接續的效果. 兩者的底層實作在c語言中尤為明顯, array本來就是c語言的原始語法之一, 而linked list則是建立在pointer的語法基礎上, 通常用"struct"來建構linked list的節點(包含數值及next節點的地址).
+	結語: array和linked list是電腦中最基本的資料結構, 幾乎所有其他資料結構都是由array和linked list實現的. 首先說穿了, array就是一段連續記憶體, 你可以對其進行O(1)時間的取值. 而linked list則是一種"節點指向結構", 他不依賴連續的記憶體片段, 而是利用指向來達到資料接續的效果. 兩者的底層實作在c語言中尤為明顯, array本來就是c語言的原始語法之一, 而linked list則是建立在pointer的語法基礎上, 通常用"struct"來建構linked list的節點(包含數值及next節點的地址). 需要稍微再提到的是, 這不是因為它們是唯一的資料結構，而是因為**電腦底層的記憶體是「線性連續的位址空間」**. **電腦記憶體本質是類似「array」的線性模型**. **「pointer（指標）」則是用來模擬「任意連結」，也就是 linked list 的本質。**.   因此，所有資料結構最終都必須映射（map）到這兩種形式之一來存放於實體記憶體中. 從實作角度來說, array + linked list 已經完備了所有資料結構的實現. array、linked list 或兩者的混合，構建出任何你想要的資料結構。就像使用積木一樣。 但從抽象層次或效能角度來說：不一定夠, 因為例如有些結構需要特殊的索引規則來維持結構.
 --------------------------------------------
 	C. stack. 先進後出的有order資料結構, 通常會用array或linked list其中一種實現.  stack的應用非常多, 包含作業系統對stack memory的實現, infix, postfix, prefix expression, 	
 
