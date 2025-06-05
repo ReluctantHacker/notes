@@ -112,6 +112,7 @@
 		c. 確認(ack)優化(TCP採用一些確認的聰明方法, 來減少網路流量, 以下兩種機制+sliding windows構成了tcp的flow control):
 			I. Piggybacked Acknowledgement（搭便车确认）：
 				🤔. A傳送封包給B時, 順便在封包夾帶ack, 此ack表示上次從B收到的封包到哪裡了, 此做法把ack和要傳送數據一起發送了, 減少了流量浪費
+				🤔. 其實簡單來說就是TCP為了節省流量, 不會只發送純ack包, 而是把ack和數據弄成一包
 			II. Cumulative Acknowledgement（累积确认）：
 				🤔. 接收方會累積一定數量的封包後再回覆ack, 也就是批量回復ack, 減少ack的數量
 			III. premature timeout
