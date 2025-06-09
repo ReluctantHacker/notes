@@ -66,7 +66,7 @@
 	D. Doubly linked list
 		a. node裡面有*next也有*previous, 可以想像成singly linked list的高級版, 這樣便能同時知道這個node前後, 可以雙向回推, 更方便, 一般情況我們說linked list都是singly linked list
 		b. stack 只需使用singly linked list, 因為stack只需操作一邊
-		c. queue若不使用, 則需要用loop去找到數地的原數, loop會耗費效率, 在此使用doubly是更好的選擇(雖然會增加記憶體空間)
+		c. queue若不使用, 則需要用loop去找到數地的原數, loop會耗費效率, 在此使用doubly是更好的選擇(雖然會增加記憶體空間).  !!!!!   wait! I thought queue need doubly linked list. But now, I see that it doesn't! Because, first, insertion doesn't need any loop. Second, remove from front or rear, one of them needs loop. But hey, I can choose the one that doesn't need loop as the remove side of the queue! So queue doesn't need doubly linked list, either!
 	
 |#############################################################################################################|
 6. stack
