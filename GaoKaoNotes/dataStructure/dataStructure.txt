@@ -63,6 +63,8 @@
 		a. linked list其實可以看做是one branch tree, 也就是每個node都只有一個分支的tree
 		b. tree的基本單位是node, linked list也是
 		c. linked list與array是電腦裡面最基本的兩個資料結構, 兩者建構了其他的資料結構(在電腦實務科學上是這樣的, 因為記憶體的問題)
+	D. Doubly linked list
+		a. node裡面有*next也有*previous, 可以想像成singly linked list的高級版, 這樣便能同時知道這個node前後, 可以雙向回推, 更方便, 一般情況我們說linked list都是singly linked list
 	
 |#############################################################################################################|
 6. stack
