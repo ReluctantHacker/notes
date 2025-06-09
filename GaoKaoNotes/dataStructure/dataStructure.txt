@@ -65,6 +65,8 @@
 		c. linked list與array是電腦裡面最基本的兩個資料結構, 兩者建構了其他的資料結構(在電腦實務科學上是這樣的, 因為記憶體的問題)
 	D. Doubly linked list
 		a. node裡面有*next也有*previous, 可以想像成singly linked list的高級版, 這樣便能同時知道這個node前後, 可以雙向回推, 更方便, 一般情況我們說linked list都是singly linked list
+		b. stack 只需使用singly linked list, 因為stack只需操作一邊
+		c. queue若不使用, 則需要用loop去找到數地的原數, loop會耗費效率, 在此使用doubly是更好的選擇(雖然會增加記憶體空間)
 	
 |#############################################################################################################|
 6. stack
