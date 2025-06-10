@@ -181,9 +181,12 @@
 	B. double ended queue(雙邊佇列)
 		a. 性質:
 			I. 兩端都可以自由插入或刪除(一般佇列是一端增, 一端刪)
+			II. stack進出都同一邊. 而queue一邊進, 一邊出. Double Ended Queue (Deque) allows insertion and deletion on both sides. So, it is a combination of both Stack and Queue. 雖然命名為double ended queue, 但概念上也可叫做double ended stack. 他能模擬stack, 也能模擬queue, 且能做到兩者做不到的事.
 			
 		b. 實作:
-			I. linked list可以輕易辦到
+			I. linked-list, 假設使用singly linked list, 由於singly linked list只支援單邊不用loop移除元素, 兩邊都要能移除元素的話, 一定有一邊要用loop, 為了效能, doubly linked list最適合實作.
+			II. array, 
+		c. 
 
 	C. double ended priority queue(雙邊優先佇列)
 		a. 性質:
