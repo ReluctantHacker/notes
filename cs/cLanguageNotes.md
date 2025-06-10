@@ -411,6 +411,7 @@
   * while 循環適用於在進入循環之前不知道確切的循環次數，但需要在每次迭代之前檢查條件的情況。它更加靈活，可以處理基於動態條件的循環。
   * do while循環與 while 循環類似，但它會至少執行一次循環體，然後再檢查條件，這在需要先執行後檢查的情況下特別有用.  
   * 理論上這三種迴圈方式可以互相實現, 同時存在只是為了提高代碼的可讀性, 由於loop是時常使用到的程序技巧, 這是方便programmer. 需要注意的是c語言中do是搭配while一起使用的, 不能獨立運作, 因為do 語句是用來表示循環體應該至少執行一次，而 while 語句則提供了繼續執行循環的條件.
+  * 有一點需要特別注意的是, c語言裡面, for (initialization; condition; iteration)並非強制, 你可以使用for (initialization; condition; )或for (initialization; ; iteration)或...甚至for (; ; )全空, 你只要在for{}內或外把initialization即condition或iteration完成即可!!! 而且, 有趣的是 for (; condition; )與while(condition)是完全一樣的! for (; condition; )完全可以替代while(condition), 但是while的存在是方便閱讀.
 
 
 # Chapter_25. malloc()
