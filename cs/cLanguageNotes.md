@@ -570,3 +570,6 @@
 
   * ## 2.
     * [reference](https://www.quora.com/Does-static-memory-allocation-work-without-an-OS-in-embedded-systems)
+
+  * ## 3.
+    * if (cond1) {} else if (cond2) {} else if (cond3) {}....在low-level-coding中if的order是會影響效率的, 因為if這些東西都要從上到下刷過一次, 所以如果cond1為true, 則不會跑cond2(即使cond2等於cond1), 相反的如果是cond2為true, 則cond1就等於白白判斷了一次, 浪費了速度, 所以cond2出現的頻率和cond1出現的頻率要當做他們的先後的order考量
