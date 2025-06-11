@@ -416,6 +416,7 @@
 
 # Chapter_25. malloc()
   * 動態記憶體分配函數, 需要注意的是, malloc不是c語言的關鍵字, 以上提到的所有c語言用法都是c語言關鍵字, 但malloc()是來自#include <stdlib.h>, 你不引用stdlib是用不了malloc的. 但有個問題是, stdlib本身也是c語言寫成, 而純c語言沒有可以控制動態記憶體的語句, 那malloc是如何實現的?? 其實是這樣的malloc來自stdlib, 而stdlib則是調用"操作系統"提供的頭文件(linux提供unistd.h中的brk和sbrk和mmap函數, windows提供windows.h中VirtualAlloc和HeapAlloc等函數)所提供的動態記憶體分配功能. 但是!! linux操作系統本身也是c語言寫的, 那brk等等動態記憶體調用功能又是如何實現的? 因為c語言本身沒有支援動態記憶體分配, 那brk等等功能是如何實現的? 下一個筆記free standing中會有關鍵說明. 先明白一件重要的事實, 所謂動態記憶體和靜態記憶體, 並不是ram原有的性質, ram就是物理記憶體, 他沒有動態靜態之分, 是作業系統"實現"的, 事實上"virtual memory(虛擬記憶體)", "頁表(page)", "區(zone)", "heap", "stack", 這些東西都是由linux kernel利用程序邏輯實做出來的(c語言), 他們都是虛擬的, 是邏輯結構, 而非實體結構(可以查看linux關於記憶體管理的筆記). 
+  * malloc有個特性, operating system若不想給malloc記憶體空間則malloc 返回NULL, 若是在embedded system則是看是否還有剩餘heap memory可用, 若無則返回NULL
   * 補充注意: 的是heap內部對變數的記憶體分配不一定是連續的, 意味著假設宣告兩個動態陣列heap_array1, heap_array2, 他們可能分別在heap中的不同段, 不是連續在一起的, 這是作業系統設計用來方便調整大小, 而又由於為了避免兩個array增長後出現碰撞的情形, 作業系統會動態調整heap_array的起始地址, 你只要使用realloc()就會發現起始地址有可能會改變. 而array中所有的數據都要跟著移動, 這也是heap比較慢的原因之一, 因為有額外計算.
   * reference: 
     * [reference_1](https://www.cnblogs.com/lyxtech/articles/15187081.html)
