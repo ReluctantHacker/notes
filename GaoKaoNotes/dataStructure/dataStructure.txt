@@ -146,7 +146,8 @@
 			IV. front, rear的初始化皆為-1, enqueue則rear++, dequeue則front++
 			V. 當rear到最後一個位置時, 若front不是-1, 表示表示假滿, 把整個queue元素往左移動(front+1)格
 
-		b. Cicular Array:
+		b. Cicular Array(circular queue, circular buffer):
+		reference: https://en.wikipedia.org/wiki/Circular_buffer
 			I. 一個array, 長度依需求
 			II. 一個int front, 紀錄front的位置
 			III. 一個int rear, 紀錄rear的位置
