@@ -76,3 +76,9 @@ let g:airline_left_alt_sep = ''
 let g:airline_theme='simple'
 " set airline showing items,  without branch in the list, it was not loading the branch
 let g:airline_extensions = ['branch', 'tabline'] 
+
+"----------Additional Setting----------
+set tabstop=4 " when the char is "tab" it would show 4 space
+set shiftwidth=4 " when the char is change line,it would show 4 space
+set expandtab " this is make tab as 4 space char, those three setting is very important to make your text file clean with tab and space
+
