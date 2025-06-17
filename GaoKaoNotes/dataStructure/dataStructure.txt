@@ -175,6 +175,7 @@
 			I. 不一定First in First out(FIFO)
 			II. enqueue任意元素(權值)
 			III. dequeue最大/最小 權值的元素
+            IV. 看起來, priority queue 與queue沒有任何關係, 他們insert和remove性質完全不同, 若是稱作priority stack似乎也說得過去, 我認為這個命名不是特別精準
 
 		b. 操作:
 			I. 利用heap tree(簡稱heap), 
