@@ -71,7 +71,8 @@
 	reference:
 	https://www.geeksforgeeks.org/linked-list-in-c/
     https://stackoverflow.com/questions/11867362/circular-queue-and-circular-linked-list
-        a. circular linked list 可以用於建立double ended queue(他與circular array是平級概念), 且能無限制增長空間, 但同樣的無法像circular array一樣以O(1)的速度鎖定元素位置, 必須一路找下去. 記住linked nodes和array是電腦科學最基本的兩個data structure.
+        a. circular linked list 可以用於建立double ended queue(他與circular array是平級概念), 且能無限制增長空間, 但同樣的無法像circular array一樣以O(1)的速度鎖定元素位置, 必須一路找下去. 記住linked nodes和array是電腦科學最基本的兩個data structure.  *我後來認為這樣的說法有點問題, 應該要說circular linked list可以用來實作queue, 而不是說他用來實作circular queue, 因為circular queue本身是指他是一個queue, 但記憶體的實作採用circular array的方式, 所以其實circular queue 就是queue, 只是強調了他用的記憶體實現方式而已
+
 	
 |#############################################################################################################|
 6. stack
