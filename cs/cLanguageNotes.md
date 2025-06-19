@@ -69,6 +69,15 @@
 			  printf("(&(b[1]))[1]: %d\n", (&(b[1]))[1]);
             }
           ```
+  * ## 6. array宣告
+    * array的宣告其實就是像編譯器要求一段連續記憶體, **僅此而已**, 所以理論上你的array完全不必非得是built-in的資料類型(int, char, float...etc), 你可以使用typedef建立一個type, 然後宣告一個該type的array, 例如以下
+      * ```c
+        typedef struct {
+            int id;
+            char name[50];
+        } Student;
+        Student class[30];  // An array of 30 Student structs
+        ```
 
 # Chapter_3. c語言, 變數型別的修飾詞(need to keep in mind):
   * ## 3A.存儲類型說明符（Storage Class Specifiers）
