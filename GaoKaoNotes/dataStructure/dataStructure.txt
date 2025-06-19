@@ -186,7 +186,7 @@
 			ps: heap和heap sort大有關係!!!!
 
 			II. heap實作:
-				🤔. 通常採用array的方式建構heap tree(不同於一般binary tree通常採用linked list)
+				🤔. 通常採用array的方式建構heap tree(不同於一般binary tree通常採用linked list), 這是因為heap 是complete binary tree, perfectly fit into arrays. 但不是不能採用node, 你仍需要會node的方法
 
 	B. double ended queue(雙邊佇列)
 		a. 性質:
