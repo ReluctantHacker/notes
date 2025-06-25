@@ -194,8 +194,9 @@
                 🤔. 若是採用heap, 則enqueue要O(log(n)) 這是採用下到上的bubble up insertion.    dequeue也要O(log(n)), 採用heapify向下法, 這是樹狀結構的必然結果. heap的dequeue比基本array法有優勢.
             IV. Floyd's heap construction algorithm:
                 🤔. 一個一個enqueue的時候通常採用bubble up的algorithm, 其單一耗時需O(log(n)), 建立n個元素的heap需要O(log(1) + log(2) + log(3) + log(4) + log(5)...) = O(log(n!)) = O(nlog(n). 
-                🤔. Floyd's algorithm是一種一次把所有n個元素建立成heap的算法, 只需耗時O(n). 但他是一次性完成的, 一個一個就不行了
-                🤔. 
+                🤔. Floyd's algorithm是一種一次把所有n個元素建立成heap的算法, 只需耗時O(n). 但他是一次性完成的, 一個一個就不行了. 以下是一個Floyd's algorithm之所以為O(n)的解釋, 很神奇
+                🤔. 此法只適用把heap初始化的時候, 若需要之後再加入元素, 此法就不行了
+
 
 	B. double ended queue(雙邊佇列)
 		a. 性質:
