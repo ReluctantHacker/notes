@@ -69,6 +69,15 @@
 			  printf("(&(b[1]))[1]: %d\n", (&(b[1]))[1]);
             }
           ```
+  * ## 6. array宣告
+    * array的宣告其實就是像編譯器要求一段連續記憶體, **僅此而已**, 所以理論上你的array完全不必非得是built-in的資料類型(int, char, float...etc), 你可以使用typedef建立一個type, 然後宣告一個該type的array, 例如以下
+      * ```c
+        typedef struct {
+            int id;
+            char name[50];
+        } Student;
+        Student class[30];  // An array of 30 Student structs
+        ```
 
 # Chapter_3. c語言, 變數型別的修飾詞(need to keep in mind):
   * ## 3A.存儲類型說明符（Storage Class Specifiers）
@@ -407,14 +416,16 @@
   * union某種程度上是為了實現一個記憶空間可以使用不同型態的變數(c語言本來不行, 即使兩種不同變數型態占用相同大小, 仍舊不行, 因為c語言遵守嚴格類型檢查). 在上面範例中當data.str被指定後, data.i與data.f就失效了. 而union 的大小是它的所有成員中最大的那一個。這樣可以確保無論你訪問哪個成員，都有足夠的內存空間
 
 # Chapter_24. for, while, do...while, 三種迴圈用法
-  * for 循環通常用於需要明確初始化、條件檢查和更新語句的情況。它的結構清晰，適合有固定次數的循環。
-  * while 循環適用於在進入循環之前不知道確切的循環次數，但需要在每次迭代之前檢查條件的情況。它更加靈活，可以處理基於動態條件的循環。
+  * for 循環通常用於需要明確初始化、條件檢查和更新語句的情況。它的結構清晰，適合有固定次數的循環。簡單而言for的形式為for (initialization; condition; iteration) {}, initialization是主使化, 是在第一個loop尚未開始前會完成, condition則是每一個loop開始前執行, iteration則是每次loop完成後執行! 這三個的執行時間點要清楚, 才能活用for loop
+  * while 循環適用於在進入循環之前不知道確切的循環次數，但需要在每次迭代之前檢查條件的情況。它更加靈活，可以處理基於動態條件的循環。  while的形式為while (condition)他的執行較for簡單, 事實上他是for的一個子集, condition在每次loop是執行.
   * do while循環與 while 循環類似，但它會至少執行一次循環體，然後再檢查條件，這在需要先執行後檢查的情況下特別有用.  
   * 理論上這三種迴圈方式可以互相實現, 同時存在只是為了提高代碼的可讀性, 由於loop是時常使用到的程序技巧, 這是方便programmer. 需要注意的是c語言中do是搭配while一起使用的, 不能獨立運作, 因為do 語句是用來表示循環體應該至少執行一次，而 while 語句則提供了繼續執行循環的條件.
+  * 有一點需要特別注意的是, c語言裡面, for (initialization; condition; iteration)並非強制, 你可以使用for (initialization; condition; )或for (initialization; ; iteration)或...甚至for (; ; )全空, 你只要在for{}內或外把initialization即condition或iteration完成即可!!! 而且, 有趣的是 for (; condition; )與while(condition)是完全一樣的! for (; condition; )完全可以替代while(condition), 但是while的存在是方便閱讀.
 
 
 # Chapter_25. malloc()
   * 動態記憶體分配函數, 需要注意的是, malloc不是c語言的關鍵字, 以上提到的所有c語言用法都是c語言關鍵字, 但malloc()是來自#include <stdlib.h>, 你不引用stdlib是用不了malloc的. 但有個問題是, stdlib本身也是c語言寫成, 而純c語言沒有可以控制動態記憶體的語句, 那malloc是如何實現的?? 其實是這樣的malloc來自stdlib, 而stdlib則是調用"操作系統"提供的頭文件(linux提供unistd.h中的brk和sbrk和mmap函數, windows提供windows.h中VirtualAlloc和HeapAlloc等函數)所提供的動態記憶體分配功能. 但是!! linux操作系統本身也是c語言寫的, 那brk等等動態記憶體調用功能又是如何實現的? 因為c語言本身沒有支援動態記憶體分配, 那brk等等功能是如何實現的? 下一個筆記free standing中會有關鍵說明. 先明白一件重要的事實, 所謂動態記憶體和靜態記憶體, 並不是ram原有的性質, ram就是物理記憶體, 他沒有動態靜態之分, 是作業系統"實現"的, 事實上"virtual memory(虛擬記憶體)", "頁表(page)", "區(zone)", "heap", "stack", 這些東西都是由linux kernel利用程序邏輯實做出來的(c語言), 他們都是虛擬的, 是邏輯結構, 而非實體結構(可以查看linux關於記憶體管理的筆記). 
+  * malloc有個特性, operating system若不想給malloc記憶體空間則malloc 返回NULL, 若是在embedded system則是看是否還有剩餘heap memory可用, 若無則返回NULL
   * 補充注意: 的是heap內部對變數的記憶體分配不一定是連續的, 意味著假設宣告兩個動態陣列heap_array1, heap_array2, 他們可能分別在heap中的不同段, 不是連續在一起的, 這是作業系統設計用來方便調整大小, 而又由於為了避免兩個array增長後出現碰撞的情形, 作業系統會動態調整heap_array的起始地址, 你只要使用realloc()就會發現起始地址有可能會改變. 而array中所有的數據都要跟著移動, 這也是heap比較慢的原因之一, 因為有額外計算.
   * reference: 
     * [reference_1](https://www.cnblogs.com/lyxtech/articles/15187081.html)
@@ -568,3 +579,6 @@
 
   * ## 2.
     * [reference](https://www.quora.com/Does-static-memory-allocation-work-without-an-OS-in-embedded-systems)
+
+  * ## 3.
+    * if (cond1) {} else if (cond2) {} else if (cond3) {}....在low-level-coding中if的order是會影響效率的, 因為if這些東西都要從上到下刷過一次, 所以如果cond1為true, 則不會跑cond2(即使cond2等於cond1), 相反的如果是cond2為true, 則cond1就等於白白判斷了一次, 浪費了速度, 所以cond2出現的頻率和cond1出現的頻率要當做他們的先後的order考量

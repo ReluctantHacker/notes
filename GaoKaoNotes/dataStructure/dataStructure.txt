@@ -67,6 +67,13 @@
 		a. node裡面有*next也有*previous, 可以想像成singly linked list的高級版, 這樣便能同時知道這個node前後, 可以雙向回推, 更方便, 一般情況我們說linked list都是singly linked list
 		b. stack 只需使用singly linked list, 因為stack只需操作一邊
 		c. queue若不使用, 則需要用loop去找到數地的原數, loop會耗費效率, 在此使用doubly是更好的選擇(雖然會增加記憶體空間).  !!!!!   wait! I thought queue need doubly linked list. But now, I see that it doesn't! Because, first, insertion doesn't need any loop. Second, remove from front or rear, one of them needs loop. But hey, I can choose the one that doesn't need loop as the remove side of the queue! So queue doesn't need doubly linked list, either!
+	E. Circular linked list
+	reference:
+	https://www.geeksforgeeks.org/linked-list-in-c/
+    https://stackoverflow.com/questions/11867362/circular-queue-and-circular-linked-list
+        a. circular linked list 可以用於建立double ended queue(他與circular array是平級概念), 且能無限制增長空間, 但同樣的無法像circular array一樣以O(1)的速度鎖定元素位置, 必須一路找下去. 記住linked nodes和array是電腦科學最基本的兩個data structure.  *我後來認為這樣的說法有點問題, 應該要說circular linked list可以用來實作queue, 而不是說他用來實作circular queue, 因為circular queue本身是指他是一個queue, 但記憶體的實作採用circular array的方式, 所以其實circular queue 就是queue, 只是強調了他用的記憶體實現方式而已
+        b. Doubly circular linked list, 就好像doubly linked list可以用來實現double ended queue一樣, doubly circular linked list可以用來實現circular double eneded queue
+
 	
 |#############################################################################################################|
 6. stack
@@ -143,11 +150,13 @@
 			IV. front, rear的初始化皆為-1, enqueue則rear++, dequeue則front++
 			V. 當rear到最後一個位置時, 若front不是-1, 表示表示假滿, 把整個queue元素往左移動(front+1)格
 
-		b. Cicular Array:
+		b. Cicular Array(circular queue, circular buffer):
+		reference: https://en.wikipedia.org/wiki/Circular_buffer
 			I. 一個array, 長度依需求
 			II. 一個int front, 紀錄front的位置
 			III. 一個int rear, 紀錄rear的位置
 			IV. front, rear的初始化皆為0, enqueue則rear=(rear+1)%n, dequeue則front=(front+1)%n. 詳細方法請參考講義或是程序實作
+			V. circular method有分n-1及full-n法, n-1就是整個array有n個位置, 但只會用到n-1個位置, 此法是理論上速度最快的, 因為邏輯最為簡單, n法則是全部位置都用到, 但速度可能會較慢. 在底層世界(例如作業系統層級, linux等), 為了效率都會使用n-1法, 而"一個記憶體的位置"通常沒那麼貴, 是可以接受犧牲. 這部分是與chat-gpt討論的結果
 
 	C. linked list實作:
 		a. 實作要點:
@@ -166,9 +175,10 @@
 			I. 不一定First in First out(FIFO)
 			II. enqueue任意元素(權值)
 			III. dequeue最大/最小 權值的元素
+            IV. 看起來, priority queue 與queue沒有任何關係, 他們insert和remove性質完全不同, 若是稱作priority stack似乎也說得過去, 我認為這個命名不是特別精準
 
 		b. 操作:
-			I. 利用heap tree(簡稱heap), 
+			I. 利用heap tree(簡稱heap, 是min-heap或max-heap其中一種), 
 				🤔. 定義
 					😄. 為一complete binary tree(故必定平衡)
 					😄. 父node必定比子node大(max heap, 反之則為min heap), 
@@ -176,14 +186,30 @@
 			ps: heap和heap sort大有關係!!!!
 
 			II. heap實作:
-				🤔. 通常採用array的方式建構heap tree(不同於一般binary tree通常採用linked list)
+				🤔. 通常採用array的方式建構heap tree(不同於一般binary tree通常採用linked list), 這是因為heap 是complete binary tree, perfectly fit into arrays. 但不是不能採用node, 你仍需要會node的方法
+                🤔. heapify有從上到下(移除最頂元素, 注意, 只能移除最頂元素!)及下到上(插入元素至最後位置)通常都是. 上到下的heapify會取最後一個元素至最頂的空缺, 這是為了使heap保持complete, 而下到上heapfiy只需往上比較parent, 直到比不贏為止.
+
+            III. heap的優勢:
+                🤔. 要實現priority queue 不一定非要heap, 有一個最直接的辦法, 就是enqueue的時候直接把數據照array的次序丟入, 這個enqueue只需O(1), 但是dequeue的時候, 需要一個for從array中選出最大(或最小)拿出, 然後在整組挪移, 需要O(n)
+                🤔. 若是採用heap, 則enqueue要O(log(n)) 這是採用下到上的bubble up insertion.    dequeue也要O(log(n)), 採用heapify向下法, 這是樹狀結構的必然結果. heap的dequeue比基本array法有優勢.
+            IV. Floyd's heap construction algorithm:
+                🤔. 一個一個enqueue的時候通常採用bubble up的algorithm, 其單一耗時需O(log(n)), 建立n個元素的heap需要O(log(1) + log(2) + log(3) + log(4) + log(5)...) = O(log(n!)) = O(nlog(n). 
+                🤔. Floyd's algorithm是一種一次把所有n個元素建立成heap的算法, 只需耗時O(n). 但他是一次性完成的, 一個一個就不行了. 以下是一個Floyd's algorithm之所以為O(n)的解釋, 很神奇
+                https://stackoverflow.com/questions/9755721/how-can-building-a-heap-be-on-time-complexity
+                    而且他其實就是一個等差-等比級數, 而等差-等比級數若n->infinity則其趨近於常數, 此稱之為Gabriel's staircase, 這使得最終耗時為O(n)
+                https://en.wikipedia.org/wiki/Arithmetico-geometric_sequence
+                🤔. 此法只適用把heap初始化的時候, 若需要之後再加入元素, 此法就不行了
+
 
 	B. double ended queue(雙邊佇列)
 		a. 性質:
 			I. 兩端都可以自由插入或刪除(一般佇列是一端增, 一端刪)
+			II. stack進出都同一邊. 而queue一邊進, 一邊出. Double Ended Queue (Deque) allows insertion and deletion on both sides. So, it is a combination of both Stack and Queue. 雖然命名為double ended queue, 但概念上也可叫做double ended stack. 他能模擬stack, 也能模擬queue, 且能做到兩者做不到的事.
 			
 		b. 實作:
-			I. linked list可以輕易辦到
+			I. linked-list, 假設使用singly linked list, 由於singly linked list只支援單邊不用loop移除元素, 兩邊都要能移除元素的話, 一定有一邊要用loop, 為了效能, doubly linked list最適合實作.
+			II. array, 
+		c. 
 
 	C. double ended priority queue(雙邊優先佇列)
 		a. 性質:
@@ -290,6 +316,8 @@
 					😄. left child node(c語言可用指標)
 					😄. right child node(c語言可用指標)
 				🤔. root代表了這棵樹
+		c. Tree Serialization(包含a提到的array法), 還有常見的empty symbol preorder Method, 
+				🤔. 由於tree是二元以上的, 而serialiation本身是把二元的數據注入一元的資料格式中, 這種做法與數學上的高維用低微表示有關, 可以研究一下
 			
 	 
 |#############################################################################################################|
