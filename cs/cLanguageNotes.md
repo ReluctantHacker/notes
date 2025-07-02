@@ -47,6 +47,7 @@
     * 在需要取得該array某些特性的時候, 例如取得size時候使用sizeof(), 或是取得地址使用&array的時候, 會將"首個元素地址"以外的size參數或者類型納入. 但需要注意的是, 在函數傳參的時候, 例如int testFunc(int *arr){}, array會退化為第一個元素的地址, 即便使用double pointer, int testFunc(int **arr){}也無法獲得size. 只有在struct中, array的從外獲取可以保留array特性, 例如typedef struct arr{int array[5];} arr, 在函數中int testFunc(arr *testArr){testArr->array};函數testFunc()可以獲得array的完整特性(包含size).
   * ## 4. 用來表示地址的變數
     * 也就是pointer, 有類型區別, int地址與char地址是不同類型, 而array地址同樣有自己的類型, 這個array類型包含了"首個元素地址", "大小", "元素類型", 而array的首個元素同樣有自己的類型, 包含了"自己的類型", "大小(例如整數佔據4byte), 我們會用首個byte的地址來表示該變數pointer地址, 所以你會發現array的第一個元素與array本身的地址"表示方式"一樣, 但你要清楚知道pointer有類型區別, array的地址數值上與array首個元素地址相同, 但所指的東西其實不是一樣的, array的第一個元素是屬於array的其中一員, 類似array是一個班級, 而首個元素是班級裡班長. 還需要再清楚說明一個概念, 例如整數占了4 bytes(也就是2^32次方bit), 現代計算機, 記憶體一般一個地址表示一個byte, 這是內存最小單位. 而一個整數的pointer, 有4 bytes, 卻是使用4個中的第一個來表示該整數pointer. 那如果有個變數類型占了6個bytes或是8個Bytes或是其他數量的bytes,你必須記錄"大小"來區分他是甚麼類型, 尤其array, array同樣用他的第一個byte來表示他的地址, 與array用他的第一個byte來表示他的地址
+    * pointer的形式和大小不管類型, 均同, 也就是說int*, char*, any_struct*的size和表示方式均一樣.
   * ## 5. 地址的取值方式(其實隱含array的本質)
     * 假設有個pointer指標, 宣告int *a, 則pointer指標變數a你有兩種取值方式, 
       * 第一種: 就是直接使用*a, "*"本身就是取值的意思, 你在宣告的時候int *a, 其實即是a取值後指向int, 所以a是一個存放int變數地址的指標. 
