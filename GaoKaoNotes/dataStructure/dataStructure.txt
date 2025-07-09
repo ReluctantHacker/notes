@@ -150,13 +150,14 @@
 			IV. front, rear的初始化皆為-1, enqueue則rear++, dequeue則front++
 			V. 當rear到最後一個位置時, 若front不是-1, 表示表示假滿, 把整個queue元素往左移動(front+1)格
 
-		b. Cicular Array(circular queue, circular buffer):
+		b. Circular Array(circular queue, circular buffer):
 		reference: https://en.wikipedia.org/wiki/Circular_buffer
 			I. 一個array, 長度依需求
 			II. 一個int front, 紀錄front的位置
 			III. 一個int rear, 紀錄rear的位置
 			IV. front, rear的初始化皆為0, enqueue則rear=(rear+1)%n, dequeue則front=(front+1)%n. 詳細方法請參考講義或是程序實作
 			V. circular method有分n-1及full-n法, n-1就是整個array有n個位置, 但只會用到n-1個位置, 此法是理論上速度最快的, 因為邏輯最為簡單, n法則是全部位置都用到, 但速度可能會較慢. 在底層世界(例如作業系統層級, linux等), 為了效率都會使用n-1法, 而"一個記憶體的位置"通常沒那麼貴, 是可以接受犧牲. 這部分是與chat-gpt討論的結果
+            VI. Round-Robin(是使用circular循環概念的很知名的例子), 例如假設有A, B, C三件事情要做, 則算法會A->B->C->A->B->C->A.....每次做的循環輪到某件事都會占用特定資源時間, 直到A, B, C都做完. 這其實就是CPU與process的運作一樣的算法, 目的就是要使A, B, C看起來是同步執行的. 這便是Round-Robin
 
 	C. linked list實作:
 		a. 實作要點:
