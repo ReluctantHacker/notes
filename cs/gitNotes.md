@@ -163,7 +163,10 @@ git branch -m newBranchName
 git gc --prune=now
 ```
 
-- **Here's a website that can analysis and count the number of lines in a project in github
+- **Here's a website that can analysis and count the lines of code in a project in github call "ghloc", it is also a free project in github
 ```
 https://ghloc.vercel.app/
+```
+```
+https://github.com/subtle-byte/ghloc
 ```
