@@ -87,7 +87,9 @@
     * **static**：
       * **靜態局部變數**：跨函數調用保留值。
       * **靜態全局變數/函數**：僅在本文件內可見。
-    * **extern**：外部變數或函數，在其他文件中定義。
+      * 從抽象層面來說, static是讓變數丟到data segment(包含global variable和static variable)裡面, 但只有該local可見, 而static會讓function只在該file(把file本身當成一個local)可見, function本來就在text segmentation裡面.  
+      * 我某個時候曾經認為static是讓變數壽命往上跳一層記憶體level但是可見度不變, 然後extern其實就告訴compiler該變數是在外面一層定義的變數, 但其實不是, static是把變數丟到data segment, 然後, 但可見度保持不變.  由於global variable和static variable都在data segment裡面, 這個區分就要研究linker的原理才能比較懂了
+    * **extern**：外部變數或函數，他告訴compiler, 該變數或函數在其他文件中定義, 以免compilerr找不到.
 
   * ## 3B. 型別修飾符（Type Qualifiers）
     * **const**：常量，不可修改。
@@ -176,7 +178,8 @@
           gcc -c main.s -o main.o
           ```
       * 結果: 生成目標文件 main.o, 這一步驟將匯編語言文件轉成bin文件.
-  * ## 5D. 鏈接(linking): 
+  * ## 5D. 鏈接(linking, linker): 
+    * 由於現帶compiler通常把linking過程包起來了, 所以不太引人注目, 其實非常重要, 一定要會. compiler是把.c變成.o.  而linker是把所有.o和lib連接起來變成執行檔.
 
 # Chapter_6. 進階編譯
   * Chapter_5中提到的是一個過度簡化的範例, 方便理解基礎概念, 實際上所需編譯的文件可能十分多, 並且文件之間關係複雜, 單純只用gcc十分難以處裡, 你需要一個script來有效率的執行gcc, 這個其實就是Makefile以及make了(事實上絕大多數稍有規模的專案都會使用make及Makefile). Makefile實際上就是指揮編譯器如何編譯的script(txt文件), 而make則是執行Makefile的指令(與gcc相互獨立不隸屬), Makefile中可以指定所需使用的編譯器(最常使用的就是gcc). 以下是一個Makefile的簡單範例[討論參考](https://stackoverflow.com/questions/768373/what-is-the-difference-between-make-and-gcc):
