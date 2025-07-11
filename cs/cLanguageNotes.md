@@ -260,7 +260,7 @@
           printf("show teacher alice's age: %d\n", alice_p->age);
       }
       ````
-    * 需要注意的是struct內定義元素, 是無法進行初始化的, 也就是說struct {int testValue = 1;} 這樣做是違法的, 只能struct {int testValue;} 然後事後再進行元素賦值
+    * 需要注意的是struct內定義元素, 是無法進行初始化的, 也就是說struct {int testValue = 1;} 這樣做是違法的, 只能struct {int testValue;} 然後事後再進行元素賦值. 這個概念有點像是, 使用struct宣告某instance後, 記憶體給了該instance, 才能宣告該instance內的element(賦予記憶體), 但如果你在instance尚未宣告前, 嘗試給內部element記憶體是不可行的. 當然這個只是很粗略的一種"推比", 實際上這應該是語法故事這樣設計的. Structure is a data type. You don't give values to a data type. You give values to instances/objects of data types. [reference](https://stackoverflow.com/questions/13716913/default-value-for-struct-member-in-c)
 
 # Chapter_10. enum關鍵字
   * **enum**, 即是"enumeration(枚舉)", 這關鍵字是一個"類型"宣告, 與int, char是一夥的, 他的定義語法比較特別, 其他語言似乎沒有這類的東西, 且聽我慢慢解釋, 理論上他是有用且有意義的, 簡單舉例來說enum day {sunday, monday.....};你宣告了day這個enum變數, 則day的數值只能能是sunday, monday.....它裡面所類舉的"枚舉常數", sunday, monday...他們的作用與宏(macro, #define)是一樣的, 不指定數值的話, 默認是從0, 1, 2, 3的值開始賦予(也就是sunday=0, monday=1....). 與宏不同的是, "枚舉常量"會受作用域(scope)的限制, 這增加了靈活度. 而由於day受到"枚舉常量"限制(只能是枚舉常量中的其中一個值), day避免了被賦予超過範圍值的可能性, 這是一種安全上的優勢. 需要注意的是day被"枚舉常量"限制, 但是"枚舉常量"本身沒有被其他變數使用限制, 也就是你完全可以新增一個變數int testVar=Sunday; 只要scope允許就好. 以上我提到的枚舉常量限制只是c語言理論上如此, 實際上我使用編譯去測試, 發現編譯器對garbage value沒有限制, 只對使用其他enum變數的常量做出限制, 例如
