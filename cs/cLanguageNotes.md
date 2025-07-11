@@ -87,7 +87,7 @@
     * **static**：
       * **靜態局部變數**：跨函數調用保留值。
       * **靜態全局變數/函數**：僅在本文件內可見。
-      * 從抽象層面來說, static是讓變數丟到data segment(包含global variable和static variable)裡面, 但只有該local可見, 而static會讓function只在該file(把file本身當成一個local)可見, function本來就在text segmentation裡面.  
+      * 從抽象層面來說, static是讓變數丟到data segment(包含global variable和static variable)裡面, 但只有該local可見, 而static會讓function只在該file(把file本身當成一個local)可見, function則本來就在text segmentation裡面.  
       * 我某個時候曾經認為static是讓變數壽命往上跳一層記憶體level但是可見度不變, 然後extern其實就告訴compiler該變數是在外面一層定義的變數, 但其實不是, static是把變數丟到data segment, 然後, 但可見度保持不變.  由於global variable和static variable都在data segment裡面, 這個區分就要研究linker的原理才能比較懂了
     * **extern**：外部變數或函數，他告訴compiler, 該變數或函數在其他文件中定義, 以免compilerr找不到.
 
