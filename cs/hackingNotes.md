@@ -48,3 +48,9 @@ This attack is called **Return-to-libc** which is the precursor of ROP and first
 In 2002, **Address Space Layout Randomisation(ASLR)** was introduced and became a standard. ASLR randomly arranges the address space positions of key data areas of a process so an attacker does not know which addresses to inject into the call stack in order to abuse libc or other known software libraries including the system Kernel. The introduction of ASLR and changes to many system libraries like libc that made it harder to abuse their functions spurred new research and in 2007 the Return-Oriented Programming technique was first demonstrated.
 
 ROP Uses a sequence(or chain) of gadgets to perform arbitrary operations, providing greater control and flexibility. It can bypass more advanced defenses.
+
+# Binary Exploitation
+
+What is Binary Exploitation
+---------------------------
+Interacting with the compiled program in a way that takes advantage of its flaws to get what we want. The memory leak attack is one of Binary Exploitation. Here's a website are all about Binary exploitation attacking training [website](pwnable.tw). 
