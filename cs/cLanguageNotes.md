@@ -573,7 +573,7 @@
 
 # Chapter_33. Debugger
   * ## GDB(GNU Debugger): GDB is the most famous tool for low-level debugging and for reverse engineering and binary exploitation. Generally, if any compiled exe(not just c language!) need debugged, then the exe file itself has to contains "debug symbol(or metadata)". So, a developer would have to exe files, one is for "release", one is for "debug" which contains debug symbols. It's not just c language, in visual studio(VB) it also have release exe and debug exe. If the exe has debug symbols in it, then GDB can debug it. Without debug symbols, GDB can't debug it in default way, it would become some assembly analizer or reverse engineering tool.
-    * normally GDB is run start from main()(use "break main"), but you can also break certain function(use "break test_function"). It wound run the program and then stop at the line when it encounters the function you break. And after finishing the function, It would back the line the function at, and then go next line. like if divide() is run in line-100, and then break divide() and finish it. Debugger would go to line-101. That's the basic of how it works.
+    * normally GDB is run start from main()(use "break main"), but you can also break certain function(use "break test_function"). It wound run the program and then stop at the line when it encounters the function you break. And after finishing the function, It would back the line the function at, and then go next line. like if divide() is run in line-100, and then break divide() and finish it. Debugger would go to line-101. That's the basic of how it works. [Why you should learn dgb](https://www.reddit.com/r/linux/comments/3tsukn/why_should_i_learn_gdb/)
 
 
 # Additional Notes:
