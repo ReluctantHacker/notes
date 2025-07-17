@@ -571,7 +571,10 @@
 	printf("Show b: %d\n", b); // Show b: 1
 ```
 
-# 額外筆記:
+# Chapter_33. Debugger
+  * ## GDB(GNU Debugger): GDB is the most famous tool for low-level debugging and for reverse engineering and binary exploitation. Generally, if any compiled exe(not just c language!) need debugged, then the exe file itself has to contains "debug symbol(or metadata)". So, a developer would have to exe files, one is for "release", one is for "debug" which contains debug symbols. It's not just c language, in visual studio(VB) it also have release exe and debug exe. If the exe has debug symbols in it, then GDB can debug it. Without debug symbols, GDB can't debug it in default way, it would become some assembly analizer or reverse engineering tool.
+
+# Additional Notes:
   * ## 1. 
     * ```c
 	  // 只要有一個不為0則執行
