@@ -6,3 +6,8 @@ The core actions of assembly (or the CPU instruction set, or what the CPU does) 
 Since assembly is the readable form of CPU instruction sets, assembly and CPU machine code are directly correlated. We can easily compile assembly and also disassemble the compiled machine code back into assembly, which is called "disassembly." This is a very common technique in debugging and reverse engineering.
 
 Learning assembly will give you a deeper understanding of how compilers and programming languages operate. Moreover, low-level embedded systems (usually using ARM architecture) also utilize assembly.
+
+# Assembler directives
+Assembler directives are part of assembly language. The main usage is for "memory allocation". We know that everything that need calculated in computers are cpu instruction sets. The cpu instruciton sets can allocate memory in a very basic logic. Operation system is built by those cpu instruction sets and have implement more complicated but efficient memory managements method called "virtual memory".
+
+Assembler directives is a script that can guide the assembler/linker how memory should be allocated and used. It would not be as the final assmbly machine code but solve by operating system for memory allocation and usage.
