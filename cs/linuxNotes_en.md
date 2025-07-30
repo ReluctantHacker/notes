@@ -106,3 +106,7 @@
   * Every process has at least one thread.[reference_1](https://www.reddit.com/r/explainlikeimfive/comments/35qw88/eli5_what_is_a_thread_in_a_processor/)
 
 # Chapter_6. system call
+
+# Chapter7. Executable file (ELF file format)
+  * Everything executable is ELF file format including executable libraries like libc.so. ELF file format for linux is just like exe file format for windows. They are both CPU instructions set. The differences is that exe file format is for windows operating system's kernel api and system call, elf file format is for linux 
+
