@@ -30,16 +30,26 @@ A modern x86 CPU exposes a set of register “views” on a common register file
   - `ESI` (Source Index)  
   - `EDI` (Destination Index)
 - The Register names below is for 32-bit. In x86 architecture, the register naming reflects the evolution of CPU bit-width. Here's the rule below:
-  - AX: 16-bit: Original Accumulator Register
-  - EAX: 32-bit: Extended Version for x86
-  - RAX: 64-bit: Extended Again for x86-64
-  
+  - `AL`: 8-bit: lowest byte of ax (and of rax!)
+  - `AX`: 16-bit: Original Accumulator Register
+  - `EAX`: 32-bit: Extended Version for x86
+  - `RAX`: 64-bit: Extended Again for x86-64
+  - On a 64-bit CPU, there's only one physical RAX register, but the architecture allows access to smaller portions of it using legacy names: EAX, AX, and AL. These are not separate registers — they’re aliases for portions of RAX, preserved for compatibility and convenience.
+    - EAX accesses the lower 32 bits of RAX
+    - AX accesses the lower 16 bits
+    - AL accesses the lower 8 bits
+  - For example, a 64-bit data value fits perfectly into RAX. But if you later store an 8-bit value into AL, it will overwrite the lowest byte of RAX, potentially corrupting the original 64-bit data.
+So while this layered access provides flexibility, it's crucial to avoid unintended overwrites when mixing register sizes.
+
 
 ## Control Registers  
 - `CR0`, `CR2`, `CR3`, `CR4` (paging, protection control)
 
 ## Segment Registers  
 - `CS`, `DS`, `ES`, `FS`, `GS`, `SS` (segment selectors in protected mode)
+
+## Flags Registers
+- `ZF`, `CF`, `SF`, `OF`
 
 ---
 
@@ -96,3 +106,31 @@ A modern x86 CPU exposes a set of register “views” on a common register file
 - **x87 FPU**: `FLD`, `FSTP`, `FADD`, `FSTENV`, …  
 - **MMX**: `MOVQ`, `PADD`, `PSUB`, …  
 - **SSE/AVX**: `MOVAPS`, `ADDPS`, `MULPD`, `VADDPS`, …
+
+# Assembly System calls tables
+All the syscalls are listed in /usr/include/asm/unistd.h, together with their numbers(the value to put in EAX before you call int 80h). Here's a [reference](https://www.tutorialspoint.com/assembly_programming/assembly_system_calls.htm) talks about this. For example 
+```
+syscall_table[1] = sys_write
+syscall_table[60] = sys_exit
+```
+And for example, 32-bit linux, EAX=4 for sys_write. And 64-bit linux, RAX=1 for sys_write. Both 32-bit and 64-bit use AX as the sys-called number. However they have different syscall tables.
+
+# Assembly loop
+The loop in Assembly is using "jump to memory address". This concept is based on the truth that in low-level machine code, cpu actually execute instructions stored in memory. So jump to a instruction memory address would make loop possible if some condition is matches. Kinda like this below:
+```
+instruction_1
+instruction_2
+instruction_3
+...
+.loop:
+instruction_10
+instruction_11
+instruction_12
+instruction_13
+jmp .loop
+```
+Here are some common instructions that is needed to implement loop:
+- JMP: jump to some memory address
+- CMP: set the flags that je (and other conditional jumps) rely on, especially the zero flags registers(ZF)
+- JE: if flags register  ZF = 1
+- JNE: if flags register ZF = 0
