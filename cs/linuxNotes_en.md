@@ -108,5 +108,5 @@
 # Chapter_6. system call
 
 # Chapter7. Executable file (ELF file format)
-  * Everything executable is ELF file format including executable libraries like libc.so. ELF file format for linux is just like exe file format for windows. They are both CPU instructions set. The differences is that exe file format is for windows operating system's kernel api and system call, elf file format is for linux 
+  * Everything executable is ELF file format including executable libraries like libc.so. ELF file format for linux is just like exe file format for windows. They are both CPU instructions set. The differences is that exe file format is for windows operating system's kernel api and system call, elf file format is for linux. In vim or other text editors, it's very hard to read executable files as instructions sets, you would probably need some other reverse engineering tools.
 
