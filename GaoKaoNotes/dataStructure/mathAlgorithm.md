@@ -24,3 +24,9 @@ However, of course, this algorithm is not very efficiency and it takes O(n^0.5) 
 
 ## Sieve of Eratosthenes
 Erastosthenes is an ancient greek dude(around 200 BC), friend of Archimedes, the first one who found the size of earth(and he knows that earth is round) by using shadows in different location at the same time. He also find the most efficient way to find primes in a given range, we call his method "Sieve of Eratosthenes". The algorithm you can read it from wikipedia. The time complexity is O(n log log(n)). If we use traivl division method to find primes in a given range, the time complexity should be O(n n^(0.5)) which is slower if you using differential method to find the speed.
+
+# Find square root
+In modern cpu, there are often sqrt instructions, so called hardware square root, most of them are faster and more precise than software square root. Here is a [reference](https://www.reddit.com/r/embedded/comments/16l6drt/why_hardware_inverse_square_root_is_still_faster/) discussed this. 
+
+# Others
+[reference](https://www.youtube.com/watch?v=g1r3iLejTw0)
