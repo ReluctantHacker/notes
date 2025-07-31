@@ -135,5 +135,19 @@ Here are some common instructions that is needed to implement loop:
 - JE: if flags register  ZF = 1
 - JNE: if flags register ZF = 0
 
+# Assembly value and address
+When we declare a algrebra variable for example
+```
+section .data
+    value dd 42     ; define a 32-bit value
+```
+We are actually define value as an address and that address spaces store the value 42. Just like in c language, the value is actually the pointer. If you want to get the value of the pointer, you should use
+```
+section .text
+    mov eax, value  ; eax = address of 'value'
+    mov eax, [value]    ; eax = 42
+```
+"[]" is like "\*" in c language.
+
 # Assembly vs Python vs C
 Here's a [reference](https://www.youtube.com/watch?v=3PcIJKd1PKU) talks about this.
