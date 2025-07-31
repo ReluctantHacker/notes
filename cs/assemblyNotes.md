@@ -102,10 +102,21 @@ So while this layered access provides flexibility, it's crucial to avoid uninten
 - **Control regs**: `MOV CRx, r`, `MOV r, CRx`  
 - **Debug regs**: `MOV DRx, r`, `MOV r, DRx`
 
-## 9. Floating‑Point & SIMD
-- **x87 FPU**: `FLD`, `FSTP`, `FADD`, `FSTENV`, …  
-- **MMX**: `MOVQ`, `PADD`, `PSUB`, …  
-- **SSE/AVX**: `MOVAPS`, `ADDPS`, `MULPD`, `VADDPS`, …
+## 9. Floating-Point & SIMD
+- **x87 FPU** (stack-based):
+  - Data ops:    `FLD`, `FSTP`, `FST`, …
+  - Arithmetic:  `FADD`, `FSUB`, `FMUL`, `FDIV`, **`FSQRT`**  
+  - Control:     `FSTENV`, `FLDCW`, `FNSTCW`, …
+- **MMX** (integer SIMD):
+  - `MOVQ`, `PADD`, `PSUB`, `PMULHW`, …
+- **SSE / SSE2 / SSE3 / SSSE3 / SSE4.x** (XMM-based):
+  - Scalar FP:   `ADDSS`/`ADDSD`, `SUBSS`/`SUBSD`, `MULSS`/`MULSD`, `DIVSS`/`DIVSD`, **`SQRTSS`**/​**`SQRTSD`**
+  - Packed FP:   `ADDPS`/`ADDPD`, `SUBPS`/`SUBPD`, `MULPS`/`MULPD`, `DIVPS`/`DIVPD`, **`SQRTPS`**/​**`SQRTPD`**
+  - Approximate recip-sqrt: `RSQRTSS`, `RSQRTPS`
+- **AVX / AVX2 / AVX-512** (YMM/ZMM registers):
+  - Vector FP:   `VADDPS`/`VADDPD`, `VSUBPS`/`VSUBPD`, …, **`VSQRTPS`**/​**`VSQRTPD`**, **`VSQRTSS`**/​**`VSQRTSD`**
+  - Fast approximate: `VRSQRTPS`, `VRSQRTSS`, plus refinement helpers like `VRECPE`/`VRECPS`
+You can see that Floating-point instructions has "sqrt"! Intuitively, I thought instructions only need basic arithmetic instructions and it did in the beginning of cpu history. However, cpu designers include sqrt into instructions sets because doing sqrt in hardware is much faster and more precise than any software routine. 
 
 # Assembly System calls tables
 All the syscalls are listed in /usr/include/asm/unistd.h, together with their numbers(the value to put in EAX before you call int 80h). Here's a [reference](https://www.tutorialspoint.com/assembly_programming/assembly_system_calls.htm) talks about this. For example 
