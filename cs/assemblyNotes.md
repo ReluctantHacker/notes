@@ -134,3 +134,6 @@ Here are some common instructions that is needed to implement loop:
 - CMP: set the flags that je (and other conditional jumps) rely on, especially the zero flags registers(ZF)
 - JE: if flags register  ZF = 1
 - JNE: if flags register ZF = 0
+
+# Assembly vs Python vs C
+Here's a [reference](https://www.youtube.com/watch?v=3PcIJKd1PKU) talks about this.
