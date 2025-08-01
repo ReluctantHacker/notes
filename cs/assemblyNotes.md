@@ -116,7 +116,8 @@ So while this layered access provides flexibility, it's crucial to avoid uninten
 - **AVX / AVX2 / AVX-512** (YMM/ZMM registers):
   - Vector FP:   `VADDPS`/`VADDPD`, `VSUBPS`/`VSUBPD`, …, **`VSQRTPS`**/​**`VSQRTPD`**, **`VSQRTSS`**/​**`VSQRTSD`**
   - Fast approximate: `VRSQRTPS`, `VRSQRTSS`, plus refinement helpers like `VRECPE`/`VRECPS`
-You can see that Floating-point instructions has "sqrt"! Intuitively, I thought instructions only need basic arithmetic instructions and it did in the beginning of cpu history. However, cpu designers include sqrt into instructions sets because doing sqrt in hardware is much faster and more precise than any software routine. 
+You can see that Floating-point instructions has "sqrt(square root)"! Intuitively, I thought instructions only need basic arithmetic instructions and it did in the beginning of cpu history. However, cpu designers include sqrt into instructions sets because doing sqrt in hardware is much faster and more precise than any software routine.  Here's a [reference talks about hardware circuit square root implement](https://zhuanlan.zhihu.com/p/358795190). Here's another trivial [reference talks about how division hardare](https://www.zhihu.com/question/55707696).
+Floating point numbers is also very important concept in cpu. Here's a [reference talks about this](https://www.youtube.com/watch?v=f4ekifyijIg)
 
 # Assembly System calls tables
 All the syscalls are listed in /usr/include/asm/unistd.h, together with their numbers(the value to put in EAX before you call int 80h). Here's a [reference](https://www.tutorialspoint.com/assembly_programming/assembly_system_calls.htm) talks about this. For example 
