@@ -70,5 +70,5 @@ Modern CPU mainly constructured with 3 important part:
 [reference](https://blog.codylab.com/how-cpu-works/)
 
 # CPU Algorithm Instructions and their hardware implements
-[reference](https://www.zhihu.com/question/55707696)
+[計算機CPU除法實現reference](https://www.zhihu.com/question/55707696)
 
