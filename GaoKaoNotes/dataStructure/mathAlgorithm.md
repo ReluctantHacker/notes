@@ -27,6 +27,27 @@ Erastosthenes is an ancient greek dude(around 200 BC), friend of Archimedes, the
 
 # Find square root
 In modern cpu, there are often sqrt instructions, so called hardware square root, most of them are faster and more precise than software square root. Here is a [reference](https://www.reddit.com/r/embedded/comments/16l6drt/why_hardware_inverse_square_root_is_still_faster/) discussed this. 
+## Binary search algorithm
+```
+float sqrt(float n) {
+    float low = 0;
+    float high = n;
+    float mid;
+    float tolerance = 0.000001;
+
+    while (high-low > tolerance) {
+        mid = (high+low) / 2;
+        if (mid*mid > n) {
+            high = mid;
+        } else if (mid*mid < n) {
+            low = mid;
+        } else {
+            return mid;
+        }
+    }
+    return mid;
+}
+```
 
 # Others
 [reference](https://www.youtube.com/watch?v=g1r3iLejTw0)
