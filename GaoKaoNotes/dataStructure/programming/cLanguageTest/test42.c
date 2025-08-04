@@ -1,5 +1,5 @@
 // this is inspired by the test42.c code provided by copilot. When we do the round-robin scheduling, we don't actually need flag at all, here's the code below
-// this is a practice for round-robin scheduling algorithm with non-continuous method without flag
+// this is a practice for round-robin scheduling algorithm with non-continuous method without flag(simplest one)
 #include <stdio.h>
 #include <stdlib.h>
 
