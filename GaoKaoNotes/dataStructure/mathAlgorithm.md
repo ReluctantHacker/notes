@@ -1,6 +1,6 @@
 # Find prime
 ## Trial division algorithm
-This Algorithm is saying that all the factors of a number n must be complementary with another factor. So there must be half of all of the factors are smaller(or squal to) than n^(0.5). Another half of all are bigger(or euqal to) than n^(0.5). The simple logic is like below:
+This Algorithm which is first described by Fibonacci in 1202 and is saying that all the factors of a number n must be complementary with another factor. So there must be half of all of the factors are smaller(or squal to) than n^(0.5). Another half of all are bigger(or euqal to) than n^(0.5). The simple logic is like below:
 ```
 for
 a * b = n
