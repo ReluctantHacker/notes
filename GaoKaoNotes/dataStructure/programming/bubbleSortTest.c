@@ -4,7 +4,7 @@
 
 void bubbleSort(int arr[], int size) {
 	int temp;
-	int swaped = 0;
+	int swaped = 0; // this line is a wrong!! the swaped shouldn't be here because it should set to 0 every loop or it would be 1 since it encounter swap
 	for (int i = 0; i < size - 1; i++) {
 		for (int j = 0; j < size - i - 1; j++) {
 			showArr(arr, size);
