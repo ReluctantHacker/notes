@@ -1,151 +1,111 @@
-// this is a practice for double ended queue with circular array method
+// this is a practice for double ended queue with circular array algorithm
 #include <stdio.h>
 #include <stdlib.h>
 
-#define ARRAY_LEN 6
+#define array_length 7
 
-typedef struct deque {
-    int head;                    // index just before first element
-    int tail;                    // index of last element
-    int data[ARRAY_LEN];
-} deque;
+typedef struct queue {
+    int head;
+    int rear;
+    int array[array_length];
+} queue;
 
-// initialize to empty
-void init_deque(deque *d) {
-    d->head = 0;
-    d->tail = 0;
-}
-
-// is empty?
-int is_empty(deque *d) {
-    return d->head == d->tail;
-}
-
-// is full?  (one slot must remain empty to distinguish full vs empty)
-int is_full(deque *d) {
-    return ((d->tail + 1) % ARRAY_LEN) == d->head;
-}
-
-// insert at end (back)
-void push_back(deque *d, int v) {
-    if (is_full(d)) {
-        printf("deque is full, cannot push_back(%d)\n", v);
+void rear_enqueue(queue *que, int enValue) {
+    que->rear = (que->rear + 1) % array_length;
+    if (que->rear == que->head) {
+        printf("the queue is already full\n");
+        que->rear = (que->rear - 1 + array_length) % array_length;
         return;
     }
-    d->tail = (d->tail + 1) % ARRAY_LEN;
-    d->data[d->tail] = v;
+    (que->array)[que->rear] = enValue;
+    return;
 }
 
-// insert at front
-void push_front(deque *d, int v) {
-    if (is_full(d)) {
-        printf("deque is full, cannot push_front(%d)\n", v);
+void head_enqueue(queue *que, int enValue) {
+    int input_head = que->head; // because the head would be always empty so the the enValue should be in the head+1 slot position
+    que->head = (que->head - 1 + array_length) % array_length;
+    if (que->head == que->rear) {
+        printf("the queue is already full\n");
+        que->head = (que->head + 1) % array_length;
         return;
     }
-    // move head backwards
-    d->data[d->head] = v;
-    d->head = (d->head - 1 + ARRAY_LEN) % ARRAY_LEN;
+    (que->array)[input_head] = enValue;
+    return;
 }
 
-// remove from front
-void pop_front(deque *d) {
-    if (is_empty(d)) {
-        printf("deque is empty, cannot pop_front()\n");
+void head_dequeue(queue *que) {
+    if (que->head == que->rear) {
+        printf("the queue is already empty\n");
         return;
     }
-    // head points one before the first, so advance head
-    d->head = (d->head + 1) % ARRAY_LEN;
+    que->head = (que->head + 1) % array_length;
+    return;
 }
 
-// remove from back
-void pop_back(deque *d) {
-    if (is_empty(d)) {
-        printf("deque is empty, cannot pop_back()\n");
+void rear_dequeue(queue *que) {
+    if (que->rear == que->head ) {
+        printf("the queue is already empty\n");
         return;
     }
-    // just move tail backward
-    d->tail = (d->tail - 1 + ARRAY_LEN) % ARRAY_LEN;
-}
+    que->rear = (que->rear - 1 + array_length) % array_length;
+    return;
+} 
 
-// print contents from front → back
-void show_deque(deque *d) {
-    if (is_empty(d)) {
-        printf("deque is empty\n");
+void show(queue *que) {
+    if (que->head == que->rear) {
+        printf("the queue is empty\n");
         return;
     }
-    int idx = (d->head + 1) % ARRAY_LEN;
-    while (1) {
-        printf("%d ", d->data[idx]);
-        if (idx == d->tail) break;
-        idx = (idx + 1) % ARRAY_LEN;
+    int i = que->head;
+    while (i != que->rear) {
+        i = (i + 1) % array_length;
+        printf("%d->", (que->array)[i]);
     }
     printf("\n");
+    return;
 }
 
 int main() {
-    /*
-    deque d;
-    init_deque(&d);
+    queue *test_queue = (queue *)malloc(sizeof(queue));
 
-    push_back(&d, 10);
-    push_back(&d, 20);
-    push_front(&d, 5);
-    push_back(&d, 30);
-    show_deque(&d);    // should print: 5 10 20 30
+    // initialization
+    test_queue->head = 0;
+    test_queue->rear = 0;
 
-    pop_front(&d);
-    show_deque(&d);    // 10 20 30
+    // implement
+    rear_enqueue(test_queue, 3);
+    show(test_queue);
+    head_enqueue(test_queue, 11);
+    show(test_queue);
+    rear_enqueue(test_queue, 7);
+    show(test_queue);
+    head_enqueue(test_queue, 1);
+    show(test_queue);
+    rear_enqueue(test_queue, 10);
+    show(test_queue);
+    head_enqueue(test_queue, 9);
+    show(test_queue);
 
-    pop_back(&d);
-    show_deque(&d);    // 10 20
+    head_dequeue(test_queue);
+    show(test_queue);
+    rear_dequeue(test_queue);
+    show(test_queue);
+    head_dequeue(test_queue);
+    show(test_queue);
+    rear_dequeue(test_queue);
+    show(test_queue);
+    rear_dequeue(test_queue);
+    show(test_queue);
+    head_dequeue(test_queue);
+    show(test_queue);
 
-    // fill to capacity
-    push_back(&d, 40);
-    push_front(&d, 1);
-    push_back(&d, 50); // now full
-    show_deque(&d);    // 1 10 20 40 50
-
-    // attempting one more should error
-    push_back(&d, 60);
-    */
-    deque d;
-    init_deque(&d);
-    push_back(&d, 10);
-    show_deque(&d);
-    push_back(&d, 20);
-    show_deque(&d);
-    push_back(&d, 10);
-    show_deque(&d);
-    push_back(&d, 20);
-    show_deque(&d);
-    push_back(&d, 10);
-    show_deque(&d);
-    push_back(&d, 20);
-    show_deque(&d);
-
-    pop_front(&d);
-    show_deque(&d);
-    pop_front(&d);
-    show_deque(&d);
-    pop_front(&d);
-    show_deque(&d);
-    pop_front(&d);
-    show_deque(&d);
-    pop_front(&d);
-    show_deque(&d);
-    pop_front(&d);
-    show_deque(&d);
-
-    push_front(&d, 31);
-    show_deque(&d);
-    push_front(&d, 32);
-    show_deque(&d);
-    push_front(&d, 33);
-    show_deque(&d);
-    push_front(&d, 34);
-    show_deque(&d);
+    head_enqueue(test_queue, 14);
+    show(test_queue);
+    rear_enqueue(test_queue, 13);
+    show(test_queue);
+    head_enqueue(test_queue, 23);
+    show(test_queue);
 
     return 0;
 }
-
 
