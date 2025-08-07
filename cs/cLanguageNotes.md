@@ -79,6 +79,63 @@
         } Student;
         Student class[30];  // An array of 30 Student structs
         ```
+  * ## 7. function 作為argument
+    * 	A函數的名稱在c code裡面是"指向A函數的指針"
+		所以...
+      * ```c
+		int resultFunct(XXXXXXX) {
+		}
+		
+		int main() {
+			resultFunct(testFunct);
+		}
+        ```
+		我們在resultfunct裡面傳遞的testFunct, 實際上是testFunct的指針.
+    * 函數作為傳遞參數時, 遵守
+      * ```c
+        int resultFunct(int funct()) {
+            // test
+        }
+        ```
+        參數"int funct()"表示funct是個函數且值(返回值)指向int, 以下有個完全等價的寫法, 
+      * ```c
+        int resultFunct(int (*funct)()) {
+            // test
+        }
+        ```
+        之所以兩種寫法等價的原因在於一開始所說的, 函數名稱即是指向A函數的指針, 所以int (*funct)()能行, 但實際上有點多此一舉了. 而且在知道[函數名稱 == 該函數指針], 很容易可以想到以下的代碼
+      * ```c
+        #include <stdio.h>
+
+        int test() {
+            printf("hello, world\n");
+        }
+
+        int main() {
+            (&test)();
+            test();
+            return 0;
+        }
+        ```
+        (&test)(); test();這兩寫法是完全等價的, 但同樣, (&test)()實際上多此一舉了. 話雖如此, 但是實際上(int (*funct)())是推薦的寫法, [這裡](https://stackoverflow.com/questions/18669853/c-ways-to-pass-function-as-argument-to-function)有提到為何.
+      * ```c
+        int test() {
+            printf("hello, world\n");
+            return 0;
+        }
+
+        int (*f)() = test;
+        int g() = test; // fail!
+
+        int main() {
+            f();
+            g(); // fail!
+        }
+        ```
+
+        g()在宣告的時候, 似乎不會自動給予指針
+
+
 
 # Chapter_3. c語言, 變數型別的修飾詞(need to keep in mind):
   * ## 3A.存儲類型說明符（Storage Class Specifiers）
