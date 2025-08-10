@@ -318,7 +318,7 @@
 					😄. left child node(c語言可用指標)
 					😄. right child node(c語言可用指標)
 				🤔. root代表了這棵樹
-		c. Tree Serialization(包含a提到的array法), 還有常見的empty symbol preorder Method, 
+		c. Tree Serialization(包含a提到的array法, 其實就是把complete tree灌入array中, 空的地方補#或null, 此法又叫做level-order), 還有常見的empty symbol preorder(其實還有postorder) Method, 
 				🤔. 由於tree是二元以上的, 而serialiation本身是把二元的數據注入一元的資料格式中, 這種做法與數學上的高維用低微表示有關, 可以研究一下
 			
 	 
