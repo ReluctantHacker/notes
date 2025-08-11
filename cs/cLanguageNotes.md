@@ -106,7 +106,17 @@
         size_t len = strlen(testString);
         printf("length: %zu\n", len);  // outputs 5
         ```
-        它的原理其實特別簡單, strlen() computes the length of the null-terminated string by scanning characters until it finds '\0'. 這也是多虧了'\0'在string中的設計. 
+        它的原理其實特別簡單, strlen() computes the length of the null-terminated string by scanning characters until it finds '\0'. 這也是多虧了'\0'在string中的設計. 但也因為如此strlen並非取得char array的長度, 單純只是取得字串的長度, 以下有個範例清楚說明了差異:
+        ```
+        char testString[5] = "hello";
+        printf("%ld\n", sizeof(testString)/sizeof(char)); // 5
+
+        testString[2] = '\0';
+        printf("%ld\n", sizeof(testString)/sizeof(char)); // 5
+
+        printf("%ld\n", strlen(testString)); // 2
+        ```
+
         還有另一中情形, 如果換成int的話呢? int array沒有'\0'的設計
         ```c
         int testArrA[arr_length] = {5, 4, 3, 2, 1};
