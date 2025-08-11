@@ -8,9 +8,13 @@ Since assembly is the readable form of CPU instruction sets, assembly and CPU ma
 Learning assembly will give you a deeper understanding of how compilers and programming languages operate. Moreover, low-level embedded systems (usually using ARM architecture) also utilize assembly.
 
 # Assembler directives
-Assembler directives are part of assembly language. The main usage is for "memory allocation". We know that everything that need calculated in computers are cpu instruction sets. The cpu instruciton sets can allocate memory in a very basic logic. Operation system is built by those cpu instruction sets and have implement more complicated but efficient memory managements method called "virtual memory".
+Assembler directives are part of assembly language. The main usage is for "memory allocation". We know that everything that need calculated in computers are cpu instruction sets. The cpu instruciton sets can allocate memory in a very basic logic. Operation system is built by those cpu instruction sets and have implement more complicated but efficient memory managements method called "virtual memory". So in modern assembly code you may frequently see the code using operating system call to complete something, it's pretty convinent.
 
-Assembler directives is a script that can guide the assembler/linker how memory should be allocated and used. It would not be as the final assmbly machine code but solve by operating system for memory allocation and usage.
+Assembler directives is a script that can guide the assembler/linker how memory should be allocated and used. It would not be as the final assmbly machine code. For example 
+```
+ORG 0x1000
+```
+you are telling the assembler software "The next machine instruction or data you emit should be assigned address 0x1000 in the output file." Of course, this step definitely need cpu instructions be done. actually every assembler directive need cpu instructions to complete. It is very like an editor composed by a sets of cpu instructions to edit "the final instructions executable file".
 
 # Registers [tutorial](https://www.tutorialspoint.com/assembly_programming/assembly_registers.htm)
 A modern x86 CPU exposes a set of register “views” on a common register file. Physically they’re identical, but the ISA gives them conventional roles:
