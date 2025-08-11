@@ -1,4 +1,4 @@
-// tree building by preorder empty symbol method
+// this is a practice for preorder serialization to node structure tree
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -39,10 +39,8 @@ void inorderShow(node *root) {
 int main() {
 	char *testTree = "AB#CD#EF##";
 	node *root = treeBuild(&testTree);
-	printf("preorder show: \n");
 	preorderShow(root);
-	printf("\n-----------\n");
-	printf("inorder show: \n");
+	printf("\n-------------\n");
 	inorderShow(root);
 	return 0;
 }
