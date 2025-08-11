@@ -70,7 +70,7 @@
 			  printf("(&(b[1]))[1]: %d\n", (&(b[1]))[1]);
             }
           ```
-  * ## 6. array宣告
+  * ## 6. array宣告及初始化
     * array的宣告其實就是像編譯器要求一段連續記憶體, **僅此而已**, 所以理論上你的array完全不必非得是built-in的資料類型(int, char, float...etc), 你可以使用typedef建立一個type, 然後宣告一個該type的array, 例如以下
       * ```c
         typedef struct {
@@ -79,6 +79,17 @@
         } Student;
         Student class[30];  // An array of 30 Student structs
         ```
+        array關鍵在於必須知道甚麼記憶體的範圍被該array給使用了, 在靜態初始化中, 會自動給出array的特定範圍標記, 例如:
+      * ```c
+        int testArr[10];
+        int testArr2[5] = {5, 4, 3, 2, 1};
+        ```
+        以上兩種都合理, 有一種情況的宣告比較容易讓人搞混
+        ```c
+        int *testArr = someArrAddress;
+        char *testArr2 = "Hello";
+        ```
+        以上兩行代碼都是pointer變數的宣告, 不是array的宣告, 這要搞清楚, "int *testVar"這件事情本身沒有涵蓋多少記憶體範圍的任何資訊, 單純只是宣告指標變數. char *testArr2 = "hello"之所以可以使用的原因在於"hello"本身會自動轉換成一個char array且回傳首元素指標, 因此是可行的語法. 如果你想要用int *testArr = {5, 4, 3, 2, 1};這就不對了, 因為再次強調int *testArr本身只是宣告一個指標變數, 指標變數無法被指定成多個值組合, 除非{5, 4, 3, 2, 1}本身自動被轉化成int array, 但c語言並沒有支援這樣做.
   * ## 7. function 作為argument
     * 	A函數的名稱在c code裡面是"指向A函數的指針"
 		所以...
