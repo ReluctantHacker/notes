@@ -642,6 +642,25 @@ gcc -g example.c -o example_debug
 gdb ./example_debug
 ```
 
+# Chapter_34 if statement 
+  * ## 1. if statement is very simple, most of time there's no problem. But there's one condition you should know, that is inside if statement you can do "assignment", for example, you can do something like this:
+    * ```c
+      if (a = someValue)
+      ```
+      However, this is almost always a mistake. It assigns someValue to a, then check if a is non-zero. If someValue is 0, the condition is false. If someValue is non-zero, the condition is true. It's one kinda a shorthand. However, highly misleads people. There's another condition which is sometimes used in real case intentionally for shorthand
+    * ```c
+      if ((a = someFunct) > someValue)
+      ```
+      This is actually equal to 
+      ```c
+      a = someFunct();
+      if (a > someValue)
+      ```
+
+    
+      
+    
+
 
 # Additional Notes:
   * ## 1. 
