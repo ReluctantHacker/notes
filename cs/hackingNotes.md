@@ -54,3 +54,7 @@ ROP Uses a sequence(or chain) of gadgets to perform arbitrary operations, provid
 What is Binary Exploitation
 ---------------------------
 Interacting with the compiled program in a way that takes advantage of its flaws to get what we want. The memory leak attack is one of Binary Exploitation. Here's a website are all about Binary exploitation attacking training [website](pwnable.tw). 
+
+
+# What programming language?
+[reference](https://www.reddit.com/r/hacking/comments/zsoe2x/i_see_a_lot_of_hacking_tutorials_recommending/)

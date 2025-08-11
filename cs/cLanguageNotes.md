@@ -90,6 +90,35 @@
         char *testArr2 = "Hello";
         ```
         以上兩行代碼都是pointer變數的宣告, 不是array的宣告, 這要搞清楚, "int *testVar"這件事情本身沒有涵蓋多少記憶體範圍的任何資訊, 單純只是宣告指標變數. char *testArr2 = "hello"之所以可以使用的原因在於"hello"本身會自動轉換成一個char array且回傳首元素指標, 因此是可行的語法. 如果你想要用int *testArr = {5, 4, 3, 2, 1};這就不對了, 因為再次強調int *testArr本身只是宣告一個指標變數, 指標變數無法被指定成多個值組合, 除非{5, 4, 3, 2, 1}本身自動被轉化成int array, 但c語言並沒有支援這樣做.
+        以下有另一個範例, 清楚表現了指標和array變數差別
+        ```c
+        char *testString = "hello";
+        char testString2[5] = "hello";
+        printf("size: %ld\n", sizeof(testString)/sizeof(char)); // size: 8
+
+        printf("size: %ld\n", sizeof(testString2)/sizeof(char)); // size: 5 
+        return 0;
+        ```
+        你會發現testString只是指標而已, 故而無法sizeof去得出第一個array大小, 如果想要得到第一個array的大小, 你可以使用如下的方式
+        ```c
+        #include <string.h>
+
+        size_t len = strlen(testString);
+        printf("length: %zu\n", len);  // outputs 5
+        ```
+        它的原理其實特別簡單, strlen() computes the length of the null-terminated string by scanning characters until it finds '\0'. 這也是多虧了'\0'在string中的設計. 
+        還有另一中情形, 如果換成int的話呢? int array沒有'\0'的設計
+        ```c
+        int testArrA[arr_length] = {5, 4, 3, 2, 1};
+        int *testArrB = testArrA;
+        printf("size: %ld\n", sizeof(testArrA)/sizeof(int)); // size: 5
+        printf("size: %ld\n", sizeof(testArrB)/sizeof(int)); // size: 2
+        ```
+        It's not possible that 
+        So, how do you get the length or the end of the int array?
+        You must store the length explicitly somewhere — C does not automatically store or track the length of arrays when using pointers. Especially that c int has no sentinel('\0' in char), this is caused by some historical and efficient reasons.
+
+
   * ## 7. function 作為argument
     * 	A函數的名稱在c code裡面是"指向A函數的指針"
 		所以...

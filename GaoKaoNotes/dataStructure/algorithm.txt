@@ -166,20 +166,21 @@
 
 	B. 線性搜索(Linear Search)  --- time complexity: O(n)
 		a. 有分2種:
-			I. Non-Sential:
+			I. Non-Sentinel:
 				for (int i = 0; i < length; i++) {
 				    if (array[i] == elementToSearch) {
 					return i; // I found the position of the element requested
 				    }
 				}
 
-			II. Sential:
-				// a的最後面插入element元素(不然如果a裡面沒有element, while會停不下來)
+			II. Sentinel:
+				// a的最後面插入elementToSearch元素(不然如果a裡面沒有elementToSearch, while會停不下來)
+                a[length-1] = elementToSearch;
 				while(a[i] != elementToSearch) {
     				i++;
 				}
 
-				🤔. sential 的方法少了"i<length"的判斷所需花費的時間, 因此在array很大的時候, 省下約一半的時間
+				🤔. Sentinel的方法少了"i<length"的判斷所需花費的時間, 因此在array很大的時候, 省下約一半的時間, 可以說是用一個位置的空間換取了倍數的時間.
 
 	C. 二元搜索(Binary Search)  ----> 需要已經排列好
 	reference:
