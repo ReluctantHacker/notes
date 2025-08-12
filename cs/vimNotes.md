@@ -6,3 +6,5 @@ set tabstop=4 " when the char is "tab" it would show 4 space
 set shiftwidth=4 " when the char is change line,it would show 4 space
 set expandtab " this is make tab as 4 space char, those three setting is very important to make your text file clean with tab and space
 ```
+
+- in Vim, in selection mode(shift-v), if you type "u", you can turn every char into lower case. If you type "U", you can turn every char into upper case. If you type "~", you can toggle every char's case.
