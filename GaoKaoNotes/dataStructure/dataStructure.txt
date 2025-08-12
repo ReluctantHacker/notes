@@ -324,12 +324,12 @@
 	 
 |#############################################################################################################|
 11. Binary Tree Traversal(操作上幾乎都使用recursive)
-	A. breadth first(廣度優先) Traversal  -----> sibling 先走
+	A. breadth first(廣度優先) Traversal  -----> sibling 先走, 通常需要使用queue
 		a. 由左到右
 		b. 再由上到下
 		c. 簡單來說就是同一level的先處理完再處理下一個level
 
-	B. Depth first(深度優先) Traversal  ----> 子node先走, 這本身就包含recursive的概念, 因為把子node當作root進行重複操作, 
+	B. Depth first(深度優先) Traversal  ----> 子node先走, 這本身就包含recursive的概念, 因為把子node當作root進行重複操作, 通常需要使用stack
 		a. 前序(preorder, DLR) Traversal, preorderTrav()
 			I. 採用recursive
 			II. time complexity: O(n)
