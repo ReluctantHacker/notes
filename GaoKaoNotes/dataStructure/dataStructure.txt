@@ -366,6 +366,27 @@
 		h. B.T每一node左右子tree交換, swap()
 			I. 採用recursive
 
+    C. Traversal的用處, 前面大致提到traversal的用處, 兩種traverasal(DFS, BFS), 這邊總結, 其實traveral的目的主要有以下
+        a. Serialization(turning the tree into a sequence/string)
+            I. preorder Serialization (DFS)
+            II. inorder Serialization (DFS)
+            III. postorder Serialization (DFS)
+            IV. level-order Serialization (BFS)
+        b. Searching
+            I. finding a value 
+        c. Calcualting
+            I. sum
+                🤔. DFS(preorder, inorder, or postorder)    
+            II. height
+                🤔. DFS(postorder)    
+            III. min/max/etc
+                🤔. DFS(any order)
+        d. Modifying
+            I. updating the value or deleting nodes
+        e. Building output
+            I. printing the node sin human-readable order
+        
+
 		
 |#############################################################################################################|
 12. Binary search tree
