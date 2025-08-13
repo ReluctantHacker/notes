@@ -328,6 +328,20 @@
 		a. 由左到右
 		b. 再由上到下
 		c. 簡單來說就是同一level的先處理完再處理下一個level
+        d. breadth-first與queue(first in first out)的關聯, 以下是一個很好的範例:
+            I. (root) 
+                A
+               / \
+              B   C
+             / \
+            D   E
+            II. 以上範例利用一個queue, 訪問過程如下
+                🤔. Start:  [A]
+                🤔. Visit A → enqueue B, C →  [B, C]
+                🤔. Visit B → enqueue D, E →  [C, D, E]
+                🤔. Visit C → (no children) → [D, E]
+                🤔. Visit D → (no children) → [E]
+                🤔. Visit E → (no children) → []
 
 	B. Depth first(深度優先) Traversal  ----> 子node先走, 這本身就包含recursive的概念, 因為把子node當作root進行重複操作, 通常需要使用stack, 以下的order通常implicitly(隱含)的使用stack的概念, 而非直接, 這是因為recursion(遞迴)的操作本身就simulate stack了(recursion naturally simulates DFS), 因為depth-first simulate "first in last out", 其實就是stack的概念.
 		a. 前序(preorder, DLR) Traversal, preorderTrav()
