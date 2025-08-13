@@ -324,8 +324,8 @@
 	 
 |#############################################################################################################|
 11. Binary Tree Traversal(操作上幾乎都使用recursive)
-	A. breadth first(廣度優先) Traversal  -----> sibling 先走, 通常需要使用queue(explicitly顯然使用, 因為recursive無法simulate queueu, in short recursion can't naturally simulates BFS). 需要使用queue的原因是因為breadth-first本身其實simulate "first in first out", 其實就是queue的概念
-		a. 由左到右
+	A. breadth first(廣度優先) Traversal(其實就是level-order traversal)  -----> sibling 先走, 通常需要使用queue(explicitly顯然使用, 因為recursive無法simulate queueu, in short recursion can't naturally simulates BFS). 需要使用queue的原因是因為breadth-first本身其實simulate "first in first out", 其實就是queue的概念
+		a. 由左到右(其實也可以設定成由右到左, 這叫做reverse level-order traversal or zigzag traversal, 只是比較少用)
 		b. 再由上到下
 		c. 簡單來說就是同一level的先處理完再處理下一個level
         d. breadth-first與queue(first in first out)的關聯, 以下是一個很好的範例:
