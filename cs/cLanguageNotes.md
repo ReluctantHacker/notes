@@ -128,6 +128,13 @@
         So, how do you get the length or the end of the int array?
         You must store the length explicitly somewhere — C does not automatically store or track the length of arrays when using pointers. Especially that c int has no sentinel('\0' in char), this is caused by some historical and efficient reasons.
 
+    * array的初始化有個常見的方式, 那就是指定自動將所有值指定成0, 例如以下
+      * ```c
+        int testArr[arr_length] = {0}; // set the 0 to first element, and other element automatically be 0
+        int testArr[arr_length] = {1}; // set the 1 to first element, and other element automatically be 0
+        // no matter what the first value you can set what you want, but the other value would automatcally be 0
+        ```
+        This is useful,because sometimes we always want a array to initialzation but not random value
 
   * ## 7. function 作為argument
     * 	A函數的名稱在c code裡面是"指向A函數的指針"
