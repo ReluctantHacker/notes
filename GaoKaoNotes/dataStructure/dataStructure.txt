@@ -324,12 +324,12 @@
 	 
 |#############################################################################################################|
 11. Binary Tree Traversal(操作上幾乎都使用recursive)
-	A. breadth first(廣度優先) Traversal  -----> sibling 先走, 通常需要使用queue(explicitly顯然使用, 因為recursive無法simulate queueu, in short recursion can't naturally simulates BFS).
+	A. breadth first(廣度優先) Traversal  -----> sibling 先走, 通常需要使用queue(explicitly顯然使用, 因為recursive無法simulate queueu, in short recursion can't naturally simulates BFS). 需要使用queue的原因是因為breadth-first本身其實simulate "first in first out", 其實就是queue的概念
 		a. 由左到右
 		b. 再由上到下
 		c. 簡單來說就是同一level的先處理完再處理下一個level
 
-	B. Depth first(深度優先) Traversal  ----> 子node先走, 這本身就包含recursive的概念, 因為把子node當作root進行重複操作, 通常需要使用stack, 以下的order通常implicitly(隱含)的使用stack的概念, 而非直接, 這是因為recursion(遞迴)的操作本身就simulate stack了(recursion naturally simulates DFS).
+	B. Depth first(深度優先) Traversal  ----> 子node先走, 這本身就包含recursive的概念, 因為把子node當作root進行重複操作, 通常需要使用stack, 以下的order通常implicitly(隱含)的使用stack的概念, 而非直接, 這是因為recursion(遞迴)的操作本身就simulate stack了(recursion naturally simulates DFS), 因為depth-first simulate "first in last out", 其實就是stack的概念.
 		a. 前序(preorder, DLR) Traversal, preorderTrav()
 			I. 採用recursive
 			II. time complexity: O(n)
