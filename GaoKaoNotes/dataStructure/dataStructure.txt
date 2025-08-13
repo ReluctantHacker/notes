@@ -342,6 +342,20 @@
                         😂. To remember where to return when you finish a branch, you still need FILO memory (stack), whether explicit or via recursion.
 
                     😂. Your example — level 1’s first → level 2’s first → level 3’s first — is just preorder DFS. You’re doing “visit now, then go deeper,” but the backtracking still requires a stack to hold the unfinished siblings. The only time DFS wouldn’t be “FILO” is if you somehow forbid backtracking entirely (which wouldn’t be DFS anymore — you’d just be walking one chain).
+                    😂. Here's a more precise explanation, suppose we have preorder function code like below:
+                    ```c
+                        preorder(root) {
+                            show();
+                            preorder(root->left_child);
+                            preorder(root->right_child);
+                        }
+                    ```
+                        😂. show() runs right away — nothing is on the call stack for it when it finishes, because it’s just a simple function call in the current frame. 
+                        😂. preorder(root->left_child) is called.
+                            😂. This is a new function call → pushes a new frame onto the call stack.
+                            😂. It will finish completely before you ever start preorder(root->right_child). 
+                        😂. preorder(root->right_child) is not executed yet.
+                            😂. The fact that this line of code is still pending means the current function frame remains on the stack until root->right_child traversal is done.
 
 		b. 中序(inorder, LDR) Traversal, inorderTrav()
 			I. 採用recursive
