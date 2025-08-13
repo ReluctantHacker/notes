@@ -333,6 +333,15 @@
 		a. 前序(preorder, DLR) Traversal, preorderTrav()
 			I. 採用recursive
 			II. time complexity: O(n)
+            III. 一個問題:
+                🤔. In preorder, if it's depth-first, but i first deal with the level-1's first element, and then level-2's first element, and then level-3's first element, it's still a depth-first. However, it seems like it's not "first in last out" any more, because it deal with the element it encounter first. In this situation stack still fit?
+                    😂. the answer is Yes. Here's why: Even if you process (do some work on) a node immediately when you encounter it, DFS is still controlled by the “path-first” structure, meaning:
+
+                        😂. You go down one branch as far as possible before moving sideways to other branches.
+
+                        😂. To remember where to return when you finish a branch, you still need FILO memory (stack), whether explicit or via recursion.
+
+                    😂. Your example — level 1’s first → level 2’s first → level 3’s first — is just preorder DFS. You’re doing “visit now, then go deeper,” but the backtracking still requires a stack to hold the unfinished siblings. The only time DFS wouldn’t be “FILO” is if you somehow forbid backtracking entirely (which wouldn’t be DFS anymore — you’d just be walking one chain).
 
 		b. 中序(inorder, LDR) Traversal, inorderTrav()
 			I. 採用recursive
