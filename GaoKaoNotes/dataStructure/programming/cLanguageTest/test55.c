@@ -60,6 +60,4 @@ int main() {
 	preorderShow(root);
 	inorderShow(root);
 	return 0;
-
-
 }

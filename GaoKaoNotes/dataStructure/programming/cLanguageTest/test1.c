@@ -1,4 +1,4 @@
-// this is a practice for preorder serialization to node structure tree
+// this is a practice for preorder serialization to node structure tree(of course, it's depth-first)
 #include <stdio.h>
 #include <stdlib.h>
 
