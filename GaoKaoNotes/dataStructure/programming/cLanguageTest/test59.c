@@ -23,7 +23,7 @@ int GCD_iter(int a, int b) {
         a = temp;
     }
 
-    while ((a%b)!=0) {
+    while (a%b) {
         int temp = a;
         a = b;
         b = temp%b;
