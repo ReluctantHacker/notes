@@ -45,8 +45,17 @@
 	B. 不同維度:
 		a. first dimensional array
 		b. second dimensional array
-			a. 其實沒甚麼好講的, 有一點比較需要注意的是, c語言存儲array是採用"列為主(row-major, 就是你熟悉的)", 有些程序語言採用的"欄為主(column-major)", 以下有個比較清楚的說明:
+			I. 其實沒甚麼好講的, 有一點比較需要注意的是, c語言(其實大部分流行的語言包含c++, python, java, C#, Go, Rust)存儲array是採用"列為主(row-major, 就是你熟悉的)", 有些程序語言採用的"欄為主(column-major)", 以下有個比較清楚的說明:
 			https://ithelp.ithome.com.tw/articles/10333963?sc=pt
+            II. c語言2d-array, 記憶體是連續的, 也就是第一個row的結尾記憶體位置下一個記憶體位置就是第二個row的第一個元素. 這實際上是比較直觀的方式
+            III. c語言實際上並沒有2d-array的資料結構, 而是使用array of array或者**arr(指標的指標)去simulate 2d array, 以下兩種辦法介紹
+                🤔. int arr[ROWS][COLS];其變數名稱arr會decay成int (*)[COLS], 這並不是**arr, 他是一個pointer of an array, 實際上, 當你使用void testFunct(int (*arr)[Cols]) {}的時候, arr實際上就是每一個row的第一個元素的地址.
+                🤔. 使用int **arr的時候, 我們會定義, malloc()的使用是獨立的, 第一次使用malloc所返回的值不一定會和第二次返回的值連續, 所以arr[1], arr[2], arr[3]...不一定連續. 一下是c語言範例, 注意**arr的二維array模擬, 具有每個row不一定需要等長的自由特性, 且由於使用dynamic memory, 其每row大小可以自由調整
+                    🤔. int **arr = (int **)malloc(RowNum*sizeof(int *));
+                    🤔. for (int i=0; i<RowNum; i++) {
+                            arr[i] = (int *)malloc(ColNum*sizeof(int));
+                        }
+
 		c. third dimensional array
 
 |#############################################################################################################|
