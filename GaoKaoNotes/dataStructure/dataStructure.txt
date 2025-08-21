@@ -41,16 +41,17 @@
             II. 那些問題可計算, 哪些不可計算(可計算性理論computability theory, 演算法)
                 🤔. 以下有三個等價定義:
                     😂. 存在一個圖靈機(或等價機)M, 對任意輸入x, M在有限步驟後停機, 並輸出f(x)
-                    😂. μ-遞迴函數定義(μ-recursive functions)
+                    😂. μ-遞迴函數定義(μ-recursive functions, 也稱作general recurisve functions)
                         😂. f 屬於由以下基礎函數透過組合（composition）、原始遞迴（primitive recursion）、μ-算子（最小化算子）所生成的集合：
                             😂. 零函數Z(x) = 0, 零函數是常數函數f(x) = C的特例
-                            😂. 後繼函數S(x) = x+1, 其實就是輸入一個自然數, 輸出其下一個自然數, 看起來像廢話, 但其實它有用在有名的"定義自然數的皮亞諾公理"中
+                            😂. successor function後繼函數S(x) = x+1, 其實就是輸入一個自然數, 輸出其下一個自然數, 看起來像廢話, 但其實它有用在有名的"定義自然數的皮亞諾公理"中, 用以定義自然數的order和結構
                                 👍. 皮亞若的5個公理(自然數的公理系統, 以下是非形式化論述):
                                     👌. 0是自然數；
                                     👌. 每一個確定的自然數a，都有一個確定的後繼數S(a)=a', a' 也是自然數；這裡S()是後繼函數, 注意這裡"尚未"定義S(x) = x+1, S()只表示後繼而已, 沒有給出運算
                                     👌. 對於每個自然數b、c，b=c若且唯若b的後繼數=c的後繼數；
                                     👌. 0不是任何自然數的後繼數；
                                     👌. 任意關於自然數的命題，如果證明：它對自然數0是真的，且假定它對自然數a為真時，可以證明對a' 也真。那麼，命題對所有自然數都真。
+u
                                 👍. peano公理只定義了order, 起點, 唯一性, 歸納性質, 並沒有運算性質, 運算性質是由peano Arithmetic(PA)定義, 其實只是peano公里加上加法公里and乘法公理
                                     👌. 加法公理: 
                                         🥵. x+0=x,
@@ -58,12 +59,30 @@
                                     👌. 乘法公理: 
                                         🥵. x⋅0=0,
                                         🥵. x⋅S(y)=x⋅y+x 
-                            😂. 投影函數U_i^x(x1, x2..., xn) = xi
+                            😂. 投影函數U_i^x(x1, x2..., xn) = xi, 概念非常之簡單, 他與幾何學中的投影求分量有一點點類似但更加廢話, 他其實就是輸入很多值x1, x2..., xn, 函數會輸出某個輸入值, 例如x2, 就只是挑出一個., 例如P^3_2(x1, x2, x3) = x2
+                        😂. μ-遞迴中的μ-算子(原始遞迴前面已經提過, 這裡跳過), 有了μ-算子後(加上前面的條件), 即是μ-遞迴函數(包含所有圖靈可計算函數), 簡單來說"原始遞迴函數"+"μ算子"="μ遞迴函數"(大抵上), 與圖靈可計算函數等價.
+                            😂. 找最小且符合不等式(或等式)條件的y(也就是前面提到的遞迴參數), 例如:
+                                👍. f()=μy[10−y2≤0]=4 
+                            😂. 直覺就是從0開始逐個檢查, 找到第一個滿足條件的y
+                            😂. μ-算子讓函數可以「無限搜尋直到找到解」，這是原始遞歸無法做到的，因此 μ-遞迴函數集合更大，與圖靈可計算函數等價。
+                            😂. 更直觀和精確的來說, 原始遞迴函數g(y), 即輸入y得出g(y), 而μ-算子則是利用g(y), 他實際上就是y=0, y=1, y=2...y=n帶入g(y)直到g(y)到達某個值而停下, 這個操作本身就μ-算子, 而這個操作無法由原始遞迴函數本身自己建構出來, 他是一個獨立運算子, 所以"擴展"了原始遞迴函數, 這個"擴展"的概念在數學上的其他地方隨處可見
+                            😂. 需要注意的是原始遞迴本身也可以用μ-算子表達! 這裡別誤解了, 如果你設計的條件 剛好只有一個解，而且立刻在某個確定的 y 就出現，那 μ 算子就等同於直接「返回那個確定值」。在這種情況下，它就退化成一個原始遞歸函數的寫法。簡單來說μ算子是non-primitive recursive的必要條件, 但μ算子成立不代表其必定是non-primitive recursive(也因此你不能簡單說只要證明ackermann function能用μ算子表達則他就是non-primive recursive)
+
                     😂. λ-演算定義 (λ-definability), f可以在λ-演算裡被定義  
                 🤔. 直觀來說, 有以下兩點:
                     😂. 有限步驟
                     😂. 步驟明確(即演算法)
             III. 計算複雜性理論, 其實就是那些甚麼大O理論之類的
+        c. Knuth’s up-arrow notation(是一種hyperoperation, 詳細可參考en.wikipedia, 只使用在有限數, 無限理論不適用, 因為該符號不會讓數超越該finite realm)
+            I. the single arrow ↑ represents exponentiation (iterated multiplication)
+                🤔. 2↑4 = H_3(2, 4) = 2x(2x(2x2)) = 2^4 = 16
+            II. the double arrow ↑↑ represents tetration (iterated expoentiation)
+                🤔. 2↑↑4 = H_4(2, 4) = 2↑(2↑(2↑2)) = 2^16 = 65536
+            III. the triple arrow ↑↑↑ represents pentation (iterated tetration)
+                🤔. 2↑↑↑4 = H_5(2, 4) = 2↑↑(2↑↑(2↑↑2))
+
+        d. Ackermann函數, 沒有直接使用μ算子, 但仍可以透過μ算子建構, 因為μ算子可以用來模擬間接遞迴. 要證明ackermann函數為non-primitive的話, 策略就是: 證明沒有任何原始遞迴函數是ackermann函數. 也可以證明任意primitive函數的漲勢必定被Ackermann壓住, 有點類似我們討論數列發散的時候的漲勢(有些數列的漲勢會壓制某些數列)的那種情況, 這裡有一些關於證明的討論[https://math.stackexchange.com/questions/1228666/the-ackermanns-function-grows-faster-than-any-primitive-recursive-function]
+        
             
 	F. Tower of Hanoi
 	G. Permutation
