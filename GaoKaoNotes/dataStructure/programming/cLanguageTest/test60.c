@@ -39,6 +39,17 @@ int bin_coef_iter_2(int n, int k) {
     return arr[k];
 }
 
+int bin_coef_iter_2_improved(int n, int k) {
+    int *arr = (int *)malloc(sizeof(int)*(n+1));
+    // initialization of *arr
+    for (int i=0; i<=n; i++) arr[i] = 1;
+    for (int i=1; i<=n; i++) {
+        for (int j=i-1; j>0; j--) {
+            arr[j] = arr[j-1] + arr[j];
+        }
+    }
+    return arr[k];
+}
 
 int main() {
     printf("%d\n", bin_coef_rec(5, 3));

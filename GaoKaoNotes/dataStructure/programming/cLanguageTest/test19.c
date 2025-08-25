@@ -15,6 +15,7 @@ typedef struct queue {
 void enqueue(queue *que, int insert_value) {
 	node *new_rear = (node *)malloc(sizeof(node));
 	new_rear->value = insert_value;
+    new_rear->next = NULL;
 	if (que->rear == NULL) {
 		que->head = que->rear = new_rear;
 		return;
@@ -33,6 +34,7 @@ void dequeue(queue *que) {
 	que->head = que->head->next;
 	if (que->head == NULL) que->rear = NULL;
 	free(temp_head);
+    return;
 }
 
 void show(queue *que) {
