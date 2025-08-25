@@ -19,11 +19,24 @@
 |#############################################################################################################|
 3. Recursive Algorithm(basic)
 	A. Factorial
+        a. 一般正常的factorial recursive版本很簡單, 但是有種迴圈概念叫做"tail recursive", 這不是只針對factorial的用法, 所有的遞迴都有機會實現(我只是方便講, 所以放在開頭的factorial一起說). 一般的recursion函數呼叫, 通常呼叫完後還會做一些事情, 所以就會發生從一開始迴圈開頭進入到深層迴圈之後, 又從深層跑回淺層把尚未完成的工作完成, 簡單來說就是stack的概念, stack保留了一開始的東西, 完成深層之後再返回到淺層, 也就是他實際上"來回". 而tail recursive就是希望只有"來"或者"回". 從數學上來講, tail-recursive不會比較快, 但是物理上來講他會比較節省記憶體, 因為不需要stack了, 雖然是遞迴, 但是在下次呼叫recursive之前已經結束當前函數的所有工作, 所以不需要stack去存(變成stack永遠只需要一個level就夠了), 物理結構上已經有點向for迴圈了. 但需要注意的是, 許多語言的編譯器(例如c語言的gcc), 不會特地去幫你優化tail recursive, 也就是說他不會因為你是tail recursive就幫你把不用的stack省出來, 而是依舊會堆疊上去, 所以記憶體沒有比較省. (並非所有recursive都能化為tail)
+            I. non-tail recursive version of recursive factorial:
+                🤔. int factorialRec(int n) {
+                        if (n==1 || n==0) return 1;
+                        return factorialRec(n-1)*n; // 這裡可以看到factorialRec(n-1)呼叫之後(先進入函數下一層了)還乘上n, 所以stack要把未處理完的事情記下來
+                    }
+            II. tail recursive version of recursive factorial:
+                🤔. int factorial_tail(int n, int acc) {
+                        if (n == 0) return acc;
+                        return factorial_tail(n - 1, acc * n); // Tail call 這裡呼叫完沒有做其他事情了, stack不需要保留未處理完的事情
+                    }
+
+
 	B. Fibonacci Number
 	C. Greatest Common Divisor(GCD)
 	D. Binomial Coefficient
 	E. Ackerman's Function
-        a. 需要提到一個概念叫做"原始遞迴函數(primitive recursive functions)", 符合以下兩個規則(vector_x是指很多變數x1, x2, x3, x4...任意數量, 推進遞迴的參數只有y, 相當於最簡單的遞迴中的n變數. 我們一般遇到的遞迴都沒有x(或者說x是常數), 只有y(也就是n), 實際上較為複雜的遞迴也會有x
+        a. 需要提到一個概念叫做"原始遞迴函數(primitive recursive functions)", 符合以下兩個規則(vector_x是指很多變數x1, x2, x3, x4...任意數量, 推進遞迴的參數只有y, 相當於最簡單的遞迴中的n變數. 我們一般遇到的遞迴都沒有x(或者說x是常數), 只有y(也就是n), 實際上較為複雜的遞迴也會有x.(其實我們遇到大部分的遞迴問題都是原始遞迴, 例如之前提到的所有遞迴問題, factorial, fibonacci等等)
             I. f(vector_x, 0) = g(vector_x)
             II. f(vector_x, y+1) = h(vector_x, y, f(vector_x, y)) 
             III. 範例(加法遞迴), 這個實際上就是第y+1項等於y項+1:
@@ -82,6 +95,28 @@ u
                 🤔. 2↑↑↑4 = H_5(2, 4) = 2↑↑(2↑↑(2↑↑2))
 
         d. Ackermann函數, 沒有直接使用μ算子, 但仍可以透過μ算子建構, 因為μ算子可以用來模擬間接遞迴. 要證明ackermann函數為non-primitive的話, 策略就是: 證明沒有任何原始遞迴函數是ackermann函數. 也可以證明任意primitive函數的漲勢必定被Ackermann壓住, 有點類似我們討論數列發散的時候的漲勢(有些數列的漲勢會壓制某些數列)的那種情況, 這裡有一些關於證明的討論[https://math.stackexchange.com/questions/1228666/the-ackermanns-function-grows-faster-than-any-primitive-recursive-function]
+        e. Ackermann函數的性質, 與超越性的證明:
+            I. 基本上m每+1, 增長速度生一個層級, 可以當成n是序列增長, m則是序列階級增長了
+                🤔. A(0, 0) = n+1
+                🤔. A(1, n) = 2+(n+3)-3
+                🤔. A(2, n) = 2*(n+3)-3
+                🤔. A(3, n) = 2↑(n+3)-3
+                🤔. A(4, n) = 2↑↑(n+3)-3
+                🤔. A(5, n) = 2↑↑↑(n+3)-3
+                🤔. A(6, n) = 2↑↑↑↑(n+3)-3
+                🤔. A(m, n) = 2(↑^(m-2))(n+3)-3
+            II. Grzegorczyk hierarchy(primitive recursive 的增速層級), 這東西是原始遞迴的速度分級
+            III. 每個PR都被固定在某個A(m, )的速率之中, 但Ackermann本身m是個變數, m本身加一速率往上跳一個階級. 所以可以得出由於ackermann的速率階級不是固定的, 而primtive的速率階級是固定的, 所以ackermann必定不是primitive
+        f. 巢狀遞迴(nested recursion), 直白定義就是遞迴參數本身是遞迴函數的輸出(類似泛函數的概念, 及函數的函數), ackermann就是一種巢狀遞迴
+            I. 基本定義和說明
+                🤔. 普通遞迴: f(n) = g(f(n-1), n)
+                    😂. 例如: f(n) = 2*f(n-1)+1
+                🤔. 巢狀遞迴: f(n) = g(f(f(n-1), f(n-1), n)
+                    😂. 例如: f(n) = 2*f(f(n-1))+f(n-1)+1
+            II. "巢狀迴圈(nested loop)"是甚麼, 名詞很像?
+                🤔, 巢狀迴圈其實就是for裡面在一個for, 就是寫代碼很常見的多層迴圈而已, 只是給這種情形一個名詞而已
+            III. 以下有個關於各種形式遞迴(線性遞迴, 二元遞迴,等等一堆有的沒的說明)
+                🤔. https://medium.com/learn-or-die/recursion-%E9%81%9E%E8%BF%B4-%E4%B8%8D%E5%90%8C%E9%A1%9E%E5%9E%8B%E7%9A%84%E9%81%9E%E8%BF%B4-659ab2f53466
         
             
 	F. Tower of Hanoi

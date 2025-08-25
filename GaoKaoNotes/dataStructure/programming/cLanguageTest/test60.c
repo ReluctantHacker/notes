@@ -23,8 +23,26 @@ int bin_coef_iter(int n, int i) {
 }
 
 
+// this iterative method below is using pascal's recursive idea, you have to at least, remember the previous level's element value to make this method works. It only use one array because deeper level always are constructed by previous level
+int bin_coef_iter_2(int n, int k) {
+    int *arr = (int *)malloc(sizeof(int)*n);
+    // initialization of arr
+    for (int i=0; i<n; i++) arr[i] = 0;
+
+    arr[0] = 1;
+    for (int i=1; i<=n; i++) {
+        // update from right to left to avoid over writing needed values
+        for (int j=i; j>0; j--) {
+            arr[j] = arr[j-1] + arr[j];
+        }
+    }
+    return arr[k];
+}
+
+
 int main() {
     printf("%d\n", bin_coef_rec(5, 3));
     printf("%d\n", bin_coef_iter(5, 3));
+    printf("%d\n", bin_coef_iter_2(5, 3));
     return 0;
 }
