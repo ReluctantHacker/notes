@@ -596,7 +596,7 @@ u
 	A. 無向圖(undirected graph)
 		a. G=(V, E), V=vertex, E=edge
 		b. E通常表示(vi, vj), 其中vi, vj為兩相鄰vertex
-		b. (vi, vj) != (vj, vi)
+		c. (vi, vj) == (vj, vi)
 
 	B. 有向圖(directed graph)
 		a. G=(V, E), V=vertex, E=edge
