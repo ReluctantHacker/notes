@@ -727,7 +727,22 @@ gdb ./example_debug
       a = someFunct();
       if (a > someValue)
       ```
-
+# chapter 35 bool datatype
+  * ## 1. keyword "_Bool" had invented in c99, you can use it as just like "int", "char", but here's another way to use it as by 
+    * ```c
+      #include <stdbool.h>
+      ```
+      under the library hood, it's actually doing this below:
+      ```c
+      #define bool _Bool
+      #define true 1
+      #define false 0
+      ```
+      you can use "bool" to replace _Bool to make your more readable and expressive like this below:
+      ```c
+      bool is_ready = true;  // Easier to understand than _Bool is_ready = 1;
+      ```
+  * ## 2. bool doesn't use 1 bit but 1 byte, the reason is that the smallest controllable(addressable) memory unit is 1 byte in most modern computer system and hardware architectures. For example, CPU and memory systems are optimized to read and write in chunks of 8 bits (1 byte). Addressing individual bits would require more complex circuitry and slow down performance. Of course there are exceptions like - Bit-addressable microcontrollers iin some embedded systems. In short,  1 byte unit of addressable memory is because of cpu design.  In the end, so bool doesn't have any memory advantage.
     
       
     
