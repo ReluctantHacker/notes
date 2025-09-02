@@ -269,7 +269,24 @@ If space symmetry is not hold, then two particles would have different kinetic e
 
 The above arguments of Noether's theorem is rough, if we want to know deeper, we must learn Langrange Mechanics.
 
-# Langrange Mechanics
+# Lagrange Mechanics
+The core idea in Lagrange Mechanics is **least action principle** which describe the rule that every real path is the stationary path(least action path). I had tried to comprehend and derive least action principle from geometry method but failed, however, the logic of algebraic method to lead to the truth about least action principle is surpisely way more elegant and simple. 
+
+> [NOTE!]
+> First of all, we need to have an idea: Least action principle is an mathematical equivalent-reconstruction of Newton's $F=ma$.
+
+Every math function which can be written as $y\left(z\right)=\dfrac(ad^2 x)(dz)$ must can be written as Euler-Lagrange equation's forms
+
+```math
+y\left(z\right) = \dfrac(ad^2x)(dz)
+```
+As Euler-Lagrange equation's form
+```math
+\dfrac(d)(dx)\dfrac(\partial L)(\partial x')-\dfrac(\partial L)(\partial x) = ax''\left(z\right)-y(z)=0
+```
+
+
+
 An object must take its path to go. This is nothing special here. However, we have field here, field decide how an object's path should be. We can compare imaginary paths in field with the true path by mathematical method.
 
 In conservative field, or kinetic energy field, we should easily derive a **speed field**. The study of the speed field should be the same as study of kinetic field if mass is constant. So for convinence, we first discuss speed field.
