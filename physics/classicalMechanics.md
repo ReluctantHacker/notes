@@ -301,7 +301,9 @@ S[x] = \int {L\left(x, x', t \right) dt}
 \delta S = 0 => \dfrac{d}{dt} \dfrac{\partial L}{\partial x'} - \dfrac{\partial L}{\partial x} = 0
 ```
 
-This mean that if function can be turn into Euler-Lagrange equation's form. That means it must be a problem of calculus of variation problem. which is the stationary problem.
+This mean that if function can be turn into Euler-Lagrange equation's form. That means it must be a problem of calculus of variation problem which is the stationary problem(or least action problem in special case).
+
+So the connection between Newton's mechanics and stationary action principle is that $F=ma" can be turn into Euler-Lagrange equation's form, so means it must be a problem of a stationary action problem.
 
 An object must take its path to go. This is nothing special here. However, we have field here, field decide how an object's path should be. We can compare imaginary paths in field with the true path by mathematical method.
 
