@@ -50,6 +50,7 @@ int GCD_rec_ultimate(int a, int b) {
     return b?GCD_rec_ultimate(b, a%b):a; // prevent calculate a%b twice, this is because b is the result of a%b, so it should work
 }
 
+// the iterative method is totoally the same logic as recursive one, notice, it use "b" as if statement
 int GCD_iter_ultimate(int a, int b) {
     while (b) { // prevent calculate a%b twice
         int temp = b;
