@@ -275,14 +275,14 @@ The core idea in Lagrange Mechanics is **least action principle** which describe
 > [NOTE!]
 > First of all, we need to have an idea: Least action principle is an mathematical equivalent-reconstruction of Newton's $F=ma$.
 
-Every math function which can be written as $y\left(z\right)=\dfrac(ad^2 x)(dz)$ must can be written as Euler-Lagrange equation's forms
+Every math function which can be written as $y\left(z\right)=\dfrac{ad^2 x}{dz}$ must can be written as Euler-Lagrange equation's forms
 
 ```math
-y\left(z\right) = \dfrac(ad^2x)(dz)
+y\left(z\right) = \dfrac{ad^2x}{dz}
 ```
 As Euler-Lagrange equation's form
 ```math
-\dfrac(d)(dx)\dfrac(\partial L)(\partial x')-\dfrac(\partial L)(\partial x) = ax''\left(z\right)-y(z)=0
+\dfrac{d}{dx}\dfrac{\partial L}{\partial x'}-\dfrac{\partial L}{\partial x} = ax''\left(z\right)-y(z)=0
 ```
 
 
