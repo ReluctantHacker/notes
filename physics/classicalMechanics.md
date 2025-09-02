@@ -282,7 +282,11 @@ y\left(z\right) = \dfrac{ad^2x}{dz}
 ```
 As Euler-Lagrange equation's form
 ```math
-\dfrac{d}{dx}\dfrac{\partial L}{\partial x'}-\dfrac{\partial L}{\partial x} = ax''\left(z\right)-y(z)=0
+\dfrac{d}{dz}\dfrac{\partial L}{\partial x'}-\dfrac{\partial L}{\partial x} = ax''\left(z\right)-y(z)=0
+```
+for Lagrangian
+```math
+L\left(x, x', z)\right=\dfrac{a}{2}\left(x'\right)^2-xf\left(z\right)
 ```
 
 
