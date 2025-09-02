@@ -292,7 +292,7 @@ L\left(x, x', z\right)=\dfrac{a}{2}\left(x'\right)^2-xf\left(z\right)
 And now, here's the key concept. 
 
 > [NOTE!]
-> Euler-Lagrange equation is the necessary condition of calculus of variations problem
+> Euler-Lagrange equation is the necessary condition of calculus of variations problem. Noticed Euler-Lagrange equation is just for Newton's force formula, it can for any form of math equation as long as the form holds 
 
 ```math
 S[x] = \int {L\left(x, x', t \right) dt}
@@ -301,9 +301,64 @@ S[x] = \int {L\left(x, x', t \right) dt}
 \delta S = 0 => \dfrac{d}{dt} \dfrac{\partial L}{\partial x'} - \dfrac{\partial L}{\partial x} = 0
 ```
 
-This mean that if function can be turn into Euler-Lagrange equation's form. That means it must be a problem of calculus of variation problem which is the stationary problem(or least action problem in special case).
+This mean that if a function can be turn into Euler-Lagrange equation's form. That means it must be a problem of calculus of variation problem which is the stationary problem(or least action problem in special case). And of course, $F\left(x\right)=-\dfrac{dV}{dx}=ma=mx''\left(t\right)$ is the same form as the example above, so it must can be turn into Euler-Lagrange's equation form.
+```math
+L\left(x, x'\right) = \dfrac{1}{2}m\left(x'\right)^2-V\left(x\right)
+```
+so 
+```math
+\dfrac{d}{dt}\dfrac{\partial L}{\partial x'}-\dfrac{\partial L}{\partial x}
+```
 
-So the connection between Newton's mechanics and stationary action principle is that $F=ma" can be turn into Euler-Lagrange equation's form, so means it must be a problem of a stationary action problem.
+So the connection between Newton's mechanics and stationary action principle is that $F=ma" can be turn into Euler-Lagrange equation's form, means it must be a problem of a stationary action problem. This is the whole logic chain.
+
+Now, we know that $F=ma$ can be turned into Euler-Lagrange equation's form with Lagrangian $L=T-V". However, a natural question arises, is Euler-Lagrange equation's form with $L=T-V" the only way that $F=ma$ can be turned into?
+
+The answer is NO. 
+
+Because 
+```math
+L'=L+\dfrac{d}{dt}f\left(x, t\right)
+```
+$L'$ would still holds in Euler-Lagrange equation, as you can take into equation and you would find the extra term cancel itself.
+
+Another question arises, is $L'=L+\dfrac{d}{dt}f\left(x, t\right)$ gives whole possible Lagrangian? 
+
+The answer is still No.
+
+The $\dfrac{d}{dt}f\left(x, t\right)$ only guarantee that when you know certain form of L(for example L=T-V), then the equivalence class of all other valid forms is exactly
+```math
+L'=L+\dfrac{d}{dt}f\left(x, t\right)
+```
+However, we can prove that the lagrangian of class of $L'=L+\dfrac{d}{dt}f\left(x, t\right)$ is the only class when F=F(x) by supposing Lagrangian should be like this below if Euler-Lagrange equation would reduce to Newton's law which is $mx''=F\left(x\right)$
+```math
+L\left(x, x'\right)=\dfrac{1}{2}M\left(x\right)x'^2+A\left(x\right)x'+B\left(x\right)
+``` 
+The reason the terms can't be something like $xx'^2$ or $x'^3$ is because the Lagrangian should reduce to $F=ma$, the exotic terms can't make it except for the linear ones. You can try calculate yourself and you'll get why.
+
+## Generalized force
+Generalized force $Q_i$ is as below:
+```math
+\dfrac{d}{dt}\dfrac{\partial L}{\partial (q_i)'} - \dfrac{\partial L}{\partial q_i} = Q_i
+```
+
+Before we explains this, we need to distinguish another idea: Abstract generalized force.
+
+In Newton's law, we have 
+```math
+mx''=F\left(x, x', t\right)
+```
+
+Suppose we have any second-order ODE. We can rewrite it as 
+
+
+
+
+
+
+
+
+
 
 An object must take its path to go. This is nothing special here. However, we have field here, field decide how an object's path should be. We can compare imaginary paths in field with the true path by mathematical method.
 
