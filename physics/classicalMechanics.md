@@ -284,12 +284,24 @@ As Euler-Lagrange equation's form
 ```math
 \dfrac{d}{dz}\dfrac{\partial L}{\partial x'}-\dfrac{\partial L}{\partial x} = ax''\left(z\right)-y(z)=0
 ```
-for Lagrangian
+when Lagrangian is
 ```math
 L\left(x, x', z\right)=\dfrac{a}{2}\left(x'\right)^2-xf\left(z\right)
 ```
 
+And now, here's the key concept. 
 
+> [NOTE!]
+> Euler-Lagrange equation is the necessary condition of calculus of variations problem
+
+```math
+S[x] = \int {L\left(x, x', t \right) dt}
+```
+```math
+\delta S = 0 => \dfrac{d}{dt} \dfrac{\partial L}{\partial x'} - \dfrac{\partial L}{\partial x} = 0
+```
+
+This mean that if function can be turn into Euler-Lagrange equation's form. That means it must be a problem of calculus of variation problem. which is the stationary problem.
 
 An object must take its path to go. This is nothing special here. However, we have field here, field decide how an object's path should be. We can compare imaginary paths in field with the true path by mathematical method.
 
