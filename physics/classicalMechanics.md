@@ -362,7 +362,7 @@ F_i=\dfrac{dV(q_i)}{dq_i}
 ```
 if there's no external generlized force(in generalized coordinates, of course), Euler-Lagrange equation is 0 as we already known
 ```math
-\dfrac{d}{dt} \ddfrac{\partial L}{\partial q_i} - \dfrac{\partial L}{\partial q_i} = 
+\dfrac{d}{dt} \dfrac{\partial L}{\partial q_i} - \dfrac{\partial L}{\partial q_i} = 
 ```
 ```math
 \dfrac{d}{dt} \dfrac{\partial L}{\partial q_i} - \dfrac{\partial V\left(q_i\right)}{\partial q_i} =
@@ -382,7 +382,7 @@ p_i = \dfrac{\partial L}{\partial (q_i)'}
 
 The first term which is about momentum actually came from kinetic energy which is the real energy the system gains, and the second term is the force that potential energy provide, but this doesn't have to be fully gained by system except for the conservative system. So if we got $Q_i$ when first term minuse second term 
 ```math
-\dfrac{d}{dt} \ddfrac{\partial L}{\partial q_i} - \dfrac{\partial L}{\partial q_i} = Q_i
+\dfrac{d}{dt} \dfrac{\partial L}{\partial q_i} - \dfrac{\partial L}{\partial q_i} = Q_i
 ```
 if $Q_i$ is netaive, that means first is potential energy only partly converts to kinetic energy probably caused by fictions, damping or resistance. If $Q_i$ is positive means there's extra external force injects energy into the system.
 
@@ -456,7 +456,7 @@ where $n\left(\overrightarrow{r}\right)$ is the defraction index and $ds$ is the
 
 The similarity is not coincident, it's because it is a special case of Maupertuis's principle. Light doesn't have mass but it has momentum. According to quantum mechanics, we know a photon's momentum is
 ```math
-P_photon = \dfrac{h}{\lambda_0} = \dfrac{h\nu}{c}
+P_(photon) = \dfrac{h}{\lambda_0} = \dfrac{h\nu}{c}
 ```
 where $\lambda_0$ is the vacuum wavelength.
 
@@ -466,15 +466,15 @@ We know that frequency $\nu$ doesn't change when light going to another medium b
 ```
 and then we take this into photon's momentum
 ```math
-P_photon = \dfrac{h}{\lambda} = n\dfrac{h}{\lambda_0}
+P_(photon) = \dfrac{h}{\lambda} = n\dfrac{h}{\lambda_0}
 ```
 So apparently, 
 ```math
-P_photon \propto n
+P_(photon) \propto n
 ```
 and then we take Maupertuis's principle
 ```math
-[S] = \int {\overrightarrow{P_photon} ds} = 0
+[S] = \int {\overrightarrow{P_(photon)} ds} = 0
 ```
 And because $\dfrac{h}{\lambda_0}$ is constant, we get the fermat's principle
 ```math
