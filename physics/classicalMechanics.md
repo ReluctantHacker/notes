@@ -401,7 +401,85 @@ Q_i (q_i)' = 0
 ```
 -> The system is purely conservative, energy is just exchanged between T and V.
 
+## Maupertuis's principle (Euler's version of least action principle)
+As we told before, Least action principle is actually find the path that makes summation of action the extreme value, it's a problem of variation of calculus.
+```math
+S[x] = \int {L\left(x, x', t \right) dt}
+```
+Maupertuis found this problem another version of variation of calculus. 
+```math
+S[x] = \int {\vec{P} \dot \vec{dq}}
+```
+Of course, P is generalized momentum, and q is generalized coordinates infinitesimal distance.
+```math
+P_k = \dfrac{\partial L}{\partial (q_k)'}
+```
 
+This result is easily can be derive from Lagrangian version:
+```math
+S[x] = \int {L\left(x, x', t \right) dt} = 
+```
+```math
+\int {\left(T-V\right) dt} = 
+```
+```math
+\int {\left(T-\left(E-T\right)\right) dt} =
+```
+```math
+\int {2T dt}
+```
+Because this is a least action problem so we can cancel constant 2 and according from the truth that 
+```math
+P ds = T dt
+```
+we get 
+```math
+S[x] = \int {P ds}
+```
+In multiple dimensions, finally
+```math
+S[x] = \int {\vec{P} \dot \vec{dq}}
+```
+
+Euler found this a little bit latter, so he didn't argue for the authority. 
+
+If mass m is constant, we can also write the formula as
+```math
+S[x] = \int {\vec{v} \dot \vec{dq}}
+```
+
+At this point, you can see it's very similar as famous Fermat's principle
+```math
+S[x] = \int {n\left(\vec{r}\right) ds} = 0
+```
+where $n\left(\vec{r}\right)$ is the defraction index and $ds$ is the path length it takes. 
+
+The similarity is not coincident, it's because it is a special case of Maupertuis's principle. Light doesn't have mass but it has momentum. According to quantum mechanics, we know a photon's momentum is
+```math
+P_photon = \dfrac{h}{\lambda_0} = \dfrac{h\mhu}{c}
+```
+where $\lambda_0$ is the vacuum wavelength.
+
+We know that frequency $\mhu$ doesn't change when light going to another medium but only change it's wavelength, so apparently
+```math
+\lambda = \dfrac{\lambda_0}{n}
+```
+and then we take this into photon's momentum
+```math
+P_photon = \dfrac{h}{\lambda} = n\dfrac{h}{\lambda_0}
+```
+So apparently, 
+```math
+P_photon \propto n
+```
+and then we take Maupertuis's principle
+```math
+[S] = \int {\vec{P_photon} ds} = 0
+```
+And because $\dfrac{h}{\lambda_0}$ is constant, we get the fermat's principle
+```math
+[S] = \int {n \dfrac{h}{\lambda_0}} = \int {n ds} = 0
+```
 
 
 
