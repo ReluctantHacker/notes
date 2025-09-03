@@ -289,10 +289,11 @@ when Lagrangian is
 L\left(x, x', z\right)=\dfrac{a}{2}\left(x'\right)^2-xf\left(z\right)
 ```
 
+## Hamilton's Principle
 And now, here's the key concept. 
 
 > [NOTE!]
-> Euler-Lagrange equation is the necessary condition of calculus of variations problem. Noticed Euler-Lagrange equation is just for Newton's force formula, it can for any form of math equation as long as the form holds 
+> Euler-Lagrange equation is the necessary condition of calculus of variations problem. Noticed Euler-Lagrange equation is just for Newton's force formula, it can for any form of math equation as long as the form holds
 
 ```math
 S[x] = \int {L\left(x, x', t \right) dt}
@@ -300,6 +301,7 @@ S[x] = \int {L\left(x, x', t \right) dt}
 ```math
 \delta S = 0 => \dfrac{d}{dt} \dfrac{\partial L}{\partial x'} - \dfrac{\partial L}{\partial x} = 0
 ```
+This is called **Hamilton's Principle**.
 
 This mean that if a function can be turn into Euler-Lagrange equation's form. That means it must be a problem of calculus of variation problem which is the stationary problem(or least action problem in special case). And of course, $F\left(x\right)=-\dfrac{dV}{dx}=ma=mx''\left(t\right)$ is the same form as the example above, so it must can be turn into Euler-Lagrange's equation form.
 ```math
@@ -481,7 +483,56 @@ And because $\dfrac{h}{\lambda_0}$ is constant, we get the fermat's principle
 [S] = \int {n \dfrac{h}{\lambda_0} ds} = \int {n ds} = 0
 ```
 
-So we can finally conclude that Fermat's Principle is a special case of Maupertuis's Principle
+So finally, it turns out that Fermat's Principle is a special case of Maupertuis's Principle. The derivation is valid! but it's hard to find any discussion of this on internet because people aren't that smart as I am.
+
+However, there's one thing you need to be very careful here. Maupertuis's Principle is based on one truth that is total energy $E=T+V$ is constant. Remember that
+```math
+L=T-V=T-(E-T)=2T-E
+```
+When $E$ is constant then we can get
+```math
+[S] = \int {2T dt}
+```
+which can be turned into Maupertuis's Principle. This means Maupertuis's Principle is just a special case of Hamilton's Principle which doesn't restrict that total energy has to be constant.
+
+And remember that total energy is constant must happens in conservative system, and non-conservative systems holds non-constant total energy because of extra or external force would inject or remove energy to system.
+
+> [NOTE!]
+> So we can conclude that Maupertuis's Principle only works in conservative system
+
+And we know that Fermat's principle is just a special case of Maupertuis's Principle, this gaurantee that photon's total energy must be constant. And it's also obviously because photon's energy only depends on frequency $\nu$ which doesn't change when that photon goes through different medium with different refraction index.
+
+# Hamilton's Mechanics
+We know Lagrangian $L = L(q, q', t)$ and it follows the Euler-Lagrange equation which is a 2nd-order differential equation
+```math
+\dfrac{d}{dt} \dfrac{\partial L}{\partial q'} - \dfrac{\partial L}{\partial q} = 0
+```
+
+And Hamiltonian is Legendre transformation of Lagrangian
+```math
+H\left(q, p\right) = \sum_i {p_i(q_i)'-L\left(q, q'\right)
+```
+follows Hamilton's two 1st-order differential equations
+```math
+\dfrac {\partial H}{\partial \overrightarrow{p}} = \overrightarrow{q}'
+```
+```math
+\dfrac {\partial H}{\partial q} = \overrightarrow{p}'
+```
+$\overrightarrow{p}$ here of course, is the generalized momentum $\dfrac{\partial L}{\partial \overrightarrow{q}'
+```
+
+Technically, Hamilton's Mechanics just turns Lagrange's Mechanics' one 2nd-order differential equation to two 1st-order differential euqations. Two mechanics are totally equivalent to each other.
+
+Naturally, here rises a common question. Why do we even need Hamilton's Mechanics if we already have Lagrange mechanics if they are the equivalent? The reason is that Hamilton's Mechanics can describe things in a more neat way in some situations.
+
+In Lagrange Mechanics, we use Configuration space which include (q, q', t), Configuration space gives the information about system's position. In Hamilton's Mechanics, we use **phase space** include (q, p, t) which gives the full state of the system including position and the momentum, it's already tell whole story
+
+
+
+
+
+
 
 
 
