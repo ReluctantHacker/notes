@@ -456,11 +456,11 @@ where $n\left(\vec{r}\right)$ is the defraction index and $ds$ is the path lengt
 
 The similarity is not coincident, it's because it is a special case of Maupertuis's principle. Light doesn't have mass but it has momentum. According to quantum mechanics, we know a photon's momentum is
 ```math
-P_photon = \dfrac{h}{\lambda_0} = \dfrac{h\mhu}{c}
+P_photon = \dfrac{h}{\lambda_0} = \dfrac{h\mu}{c}
 ```
 where $\lambda_0$ is the vacuum wavelength.
 
-We know that frequency $\mhu$ doesn't change when light going to another medium but only change it's wavelength, so apparently
+We know that frequency $\mu$ doesn't change when light going to another medium but only change it's wavelength, so apparently
 ```math
 \lambda = \dfrac{\lambda_0}{n}
 ```
