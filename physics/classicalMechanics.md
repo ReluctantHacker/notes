@@ -362,7 +362,7 @@ F_i=\dfrac{dV(q_i)}{dq_i}
 ```
 if there's no external generlized force(in generalized coordinates, of course), Euler-Lagrange equation is 0 as we already known
 ```math
-\draf{d}{dt} \dfraf{\partial L}{\partial q_i} - \dfrac{\partial L}{\partial q_i} = 
+\dfrac{d}{dt} \dfraf{\partial L}{\partial q_i} - \dfrac{\partial L}{\partial q_i} = 
 ```
 ```math
 \dfrac{d}{dt} \dfrac{\partial L}{\partial q_i} - \dfrac{\partial V\left(q_i\right)}{\partial q_i} =
@@ -382,7 +382,7 @@ p_i = \dfrac{\partial L}{\partial (q_i)'}
 
 The first term which is about momentum actually came from kinetic energy which is the real energy the system gains, and the second term is the force that potential energy provide, but this doesn't have to be fully gained by system except for the conservative system. So if we got $Q_i$ when first term minuse second term 
 ```math
-\draf{d}{dt} \dfraf{\partial L}{\partial q_i} - \dfrac{\partial L}{\partial q_i} = Q_i
+\dfrac{d}{dt} \dfraf{\partial L}{\partial q_i} - \dfrac{\partial L}{\partial q_i} = Q_i
 ```
 if $Q_i$ is netaive, that means first is potential energy only partly converts to kinetic energy probably caused by fictions, damping or resistance. If $Q_i$ is positive means there's extra external force injects energy into the system.
 
@@ -408,7 +408,7 @@ S[x] = \int {L\left(x, x', t \right) dt}
 ```
 Maupertuis found this problem another version of variation of calculus. 
 ```math
-S[x] = \int {\vec{P} \dot \vec{dq}}
+S[x] = \int {\overrightarrow{P} \dot \overrightarrow{dq}}
 ```
 Of course, P is generalized momentum, and q is generalized coordinates infinitesimal distance.
 ```math
@@ -445,14 +445,14 @@ Euler found this a little bit latter, so he didn't argue for the authority.
 
 If mass m is constant, we can also write the formula as
 ```math
-S[x] = \int {\vec{v} \dot \vec{dq}}
+S[x] = \int {\overrightarrow{v} \dot \overrightarrow{dq}}
 ```
 
 At this point, you can see it's very similar as famous Fermat's principle
 ```math
-S[x] = \int {n\left(\vec{r}\right) ds} = 0
+S[x] = \int {n\left(\overrightarrow{r}\right) ds} = 0
 ```
-where $n\left(\vec{r}\right)$ is the defraction index and $ds$ is the path length it takes. 
+where $n\left(\overrightarrow{r}\right)$ is the defraction index and $ds$ is the path length it takes. 
 
 The similarity is not coincident, it's because it is a special case of Maupertuis's principle. Light doesn't have mass but it has momentum. According to quantum mechanics, we know a photon's momentum is
 ```math
@@ -474,7 +474,7 @@ P_photon \propto n
 ```
 and then we take Maupertuis's principle
 ```math
-[S] = \int {\vec{P_photon} ds} = 0
+[S] = \int {\overrightarrow{P_photon} ds} = 0
 ```
 And because $\dfrac{h}{\lambda_0}$ is constant, we get the fermat's principle
 ```math
