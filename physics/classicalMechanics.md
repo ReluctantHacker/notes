@@ -408,7 +408,7 @@ S[x] = \int {L\left(x, x', t \right) dt}
 ```
 Maupertuis found this problem another version of variation of calculus. 
 ```math
-S[x] = \int {\overrightarrow{P} \dot \overrightarrow{dq}}
+S[x] = \int {\overrightarrow{P} \cdot \overrightarrow{dq}}
 ```
 Of course, P is generalized momentum, and q is generalized coordinates infinitesimal distance.
 ```math
@@ -438,14 +438,14 @@ S[x] = \int {P ds}
 ```
 In multiple dimensions, finally
 ```math
-S[x] = \int {\overrightarrow{P} \dot \overrightarrow{dq}}
+S[x] = \int {\overrightarrow{P} \cdot \overrightarrow{dq}}
 ```
 
 Euler found this a little bit latter, so he didn't argue for the authority. 
 
 If mass m is constant, we can also write the formula as
 ```math
-S[x] = \int {\overrightarrow{v} \dot \overrightarrow{dq}}
+S[x] = \int {\overrightarrow{v} \cdot \overrightarrow{dq}}
 ```
 
 At this point, you can see it's very similar as famous Fermat's principle
