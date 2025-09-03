@@ -478,8 +478,10 @@ and then we take Maupertuis's principle
 ```
 And because $\dfrac{h}{\lambda_0}$ is constant, we get the fermat's principle
 ```math
-[S] = \int {n \dfrac{h}{\lambda_0}} = \int {n ds} = 0
+[S] = \int {n \dfrac{h}{\lambda_0} ds} = \int {n ds} = 0
 ```
+
+So we can finally conclude that Fermat's Principle is a special case of Maupertuis's Principle
 
 
 
