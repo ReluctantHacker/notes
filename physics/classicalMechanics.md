@@ -456,7 +456,7 @@ where $n\left(\overrightarrow{r}\right)$ is the defraction index and $ds$ is the
 
 The similarity is not coincident, it's because it is a special case of Maupertuis's principle. Light doesn't have mass but it has momentum. According to quantum mechanics, we know a photon's momentum is
 ```math
-P_(photon) = \dfrac{h}{\lambda_0} = \dfrac{h\nu}{c}
+P_{photon} = \dfrac{h}{\lambda_0} = \dfrac{h\nu}{c}
 ```
 where $\lambda_0$ is the vacuum wavelength.
 
@@ -466,15 +466,15 @@ We know that frequency $\nu$ doesn't change when light going to another medium b
 ```
 and then we take this into photon's momentum
 ```math
-P_(photon) = \dfrac{h}{\lambda} = n\dfrac{h}{\lambda_0}
+P_{photon} = \dfrac{h}{\lambda} = n\dfrac{h}{\lambda_0}
 ```
 So apparently, 
 ```math
-P_(photon) \propto n
+P_{photon} \propto n
 ```
 and then we take Maupertuis's principle
 ```math
-[S] = \int {\overrightarrow{P_(photon)} ds} = 0
+[S] = \int {\overrightarrow{P_{photon}} ds} = 0
 ```
 And because $\dfrac{h}{\lambda_0}$ is constant, we get the fermat's principle
 ```math
