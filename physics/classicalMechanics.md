@@ -534,6 +534,33 @@ In Hamilton Mechanics, we have this(where $H$ is Hamiltonian)
 ```math
 S = \int {\left(pdq-H\left(q, p, t\right)dt\right)} = \int {\left(pdq-Hdt\right)}
 ```
+Hamiltonian is just Legendre Transformation of Lagrangian
+```math
+H\left(q, p, t\right) = pq'-L\left(q, q', t\right)
+```
+of course, all the p is generalized momentum $p=\dfrac{\partial L}{\partial q'}$
+
+Hamilton mechanics doesn't give any better solution for solving dynamic problem, the key idea it provides is **conjugate** variables which is $P$ is conjugate to $q$, and $H$ is conjugate to $t$. We have already talk about this conjuage ideas before but in a simplied sense which is like below:
+```math
+Fdt = \delta P
+Fds = \delta T
+```
+->
+```math
+F=\dfrac{\delta P}{dt}
+F=\dfrac{\delta T}{ds}
+```
+->
+```math
+\dfrac{\delta P}{dt}=\dfrac{\delta T}{ds}
+```
+->
+```math
+\delta P ds = \delta T dt
+```
+
+
+
 
 
 In Lagrange Mechanics, we use **Configuration Space** which includes $\left(\overrightarrow{q}\right)$, Configuration space only gives the information about system's position. In Hamilton's Mechanics, we use **phase space** which includes $\left(q, p, t\right)$ which gives the full state of the system including position and the momentum. Phase space is more complete to tell what's going on to the system
