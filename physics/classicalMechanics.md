@@ -510,7 +510,7 @@ We know Lagrangian $L = L(q, q', t)$ and it follows the Euler-Lagrange equation 
 
 And Hamiltonian is Legendre transformation of Lagrangian
 ```math
-H\left(q, p\right) = \sum_i {p_i(q_i)'-L\left(q, q'\right)
+H\left(q, p\right) = \sum_i {p_i(q_i)'-L\left(q, q'\right)}
 ```
 follows Hamilton's two 1st-order differential equations
 ```math
