@@ -519,14 +519,27 @@ follows Hamilton's two 1st-order differential equations
 ```math
 \dfrac {\partial H}{\partial q} = \overrightarrow{p}'
 ```
-$\overrightarrow{p}$ here of course, is the generalized momentum $\dfrac{\partial L}{\partial \overrightarrow{q}'
-```
+$\overrightarrow{p}$ here of course, is the generalized momentum $\dfrac{\partial L}{\partial \overrightarrow{q}'$
+
 
 Technically, Hamilton's Mechanics just turns Lagrange's Mechanics' one 2nd-order differential equation to two 1st-order differential euqations. Two mechanics are totally equivalent to each other.
 
 Naturally, here rises a common question. Why do we even need Hamilton's Mechanics if we already have Lagrange mechanics if they are the equivalent? The reason is that Hamilton's Mechanics can describe things in a more neat way in some situations.
 
-In Lagrange Mechanics, we use Configuration space which include (q, q', t), Configuration space gives the information about system's position. In Hamilton's Mechanics, we use **phase space** include (q, p, t) which gives the full state of the system including position and the momentum, it's already tell whole story
+In Lagrange Mechanics, we have this(where $L$ is Lagrangian)
+```math
+S = \int {L\left(q, q', t\right) dt}
+```
+In Hamilton Mechanics, we have this(where $H$ is Hamiltonian)
+```math
+S = \int {\left(pdq-H\left(q, p, t\right)dt\right)} = \int {\left(pdq-Hdt\right)}
+```
+
+
+In Lagrange Mechanics, we use **Configuration Space** which includes $\left(\overrightarrow{q}\right)$, Configuration space only gives the information about system's position. In Hamilton's Mechanics, we use **phase space** which includes $\left(q, p, t\right)$ which gives the full state of the system including position and the momentum. Phase space is more complete to tell what's going on to the system
+
+
+
 
 
 
