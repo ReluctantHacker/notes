@@ -542,21 +542,21 @@ of course, all the p is generalized momentum $p=\dfrac{\partial L}{\partial q'}$
 
 Hamilton mechanics doesn't give any better solution for solving dynamic problem, the key idea it provides is **conjugate** variables which is $P$ is conjugate to $q$, and $H$ is conjugate to $t$. We have already talk about this conjuage ideas before but in a simplied sense which is like below:
 ```math
-Fdt = \delta P
-Fds = \delta T
+Fdt = \Delta P
+Fds = \Delta T
 ```
 ->
 ```math
-F=\dfrac{\delta P}{dt}
-F=\dfrac{\delta T}{ds}
+F=\dfrac{\Delta P}{dt}
+F=\dfrac{\Delta T}{ds}
 ```
 ->
 ```math
-\dfrac{\delta P}{dt}=\dfrac{\delta T}{ds}
+\dfrac{\Delta P}{dt}=\dfrac{\Delta T}{ds}
 ```
 ->
 ```math
-\delta P ds = \delta T dt
+\Delta P ds = \Delta T dt
 ```
 
 
