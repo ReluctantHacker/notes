@@ -132,7 +132,7 @@ u
 		def recursiveFunc():
 			doSomething()
 			recursiveFunc()
-    I. Recursive functions都只有一個stack來回call, 即使用iterative的方式實作可能用到兩個stack來完成, 但recursive functions在底層呼叫都只有一個stack!! 這個概念很重要, 他表示
+    I. Recursive functions都只有一個stack來回call, 即使用iterative的方式實作可能用到兩個stack來完成, 但recursive functions在底層呼叫都只有一個stack!! 這個概念很重要, 因為若recursive method只需一個stack則iterative methods必定可以用一個stack實現(但可能不明顯)
 
 |#############################################################################################################|
 4. array 
