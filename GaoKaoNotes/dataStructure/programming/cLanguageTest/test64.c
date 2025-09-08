@@ -153,6 +153,8 @@ void preorderShow_iter4(node *root) {
         if (top>-1) {
             current = stk[top--];
             current = current->right_child;
+            // or you can directly doing this:
+            // current = stk[top--]->right_child;
             continue;
         }
         break;
@@ -212,6 +214,10 @@ void inorderShow_iter3(node *root) {
             current = stk[top--];
             printf("%c->", current->value);
             current = current->right_child;
+            /* or you can directly write something like this:
+               printf("%c->", stk[top]->value);
+               current = stk[top--]->right_child;
+            */
             continue;
         }
         break;
