@@ -17,7 +17,7 @@
 		a. f ∈ ω(g)  ---   order(f)>order(g)  ---  lim f(x)/g(x) = ∞ , x->∞
 
 |#############################################################################################################|
-3. Recursive Algorithm(basic)
+3. Recursive Algorithm(basic), 遞迴問題的closed form(公式解, 請參考algorithm.txt筆記)
 	A. Factorial
         a. 一般正常的factorial recursive版本很簡單, 但是有種迴圈概念叫做"tail recursive", 這不是只針對factorial的用法, 所有的遞迴都有機會實現(我只是方便講, 所以放在開頭的factorial一起說). 一般的recursion函數呼叫, 通常呼叫完後還會做一些事情, 所以就會發生從一開始迴圈開頭進入到深層迴圈之後, 又從深層跑回淺層把尚未完成的工作完成, 簡單來說就是stack的概念, stack保留了一開始的東西, 完成深層之後再返回到淺層, 也就是他實際上"來回". 而tail recursive就是希望只有"來"或者"回". 從數學上來講, tail-recursive不會比較快, 但是物理上來講他會比較節省記憶體, 因為不需要stack了, 雖然是遞迴, 但是在下次呼叫recursive之前已經結束當前函數的所有工作, 所以不需要stack去存(變成stack永遠只需要一個level就夠了), 物理結構上已經有點向for迴圈了. 但需要注意的是, 許多語言的編譯器(例如c語言的gcc), 不會特地去幫你優化tail recursive, 也就是說他不會因為你是tail recursive就幫你把不用的stack省出來, 而是依舊會堆疊上去, 所以記憶體沒有比較省. (並非所有recursive都能化為tail)
             I. non-tail recursive version of recursive factorial:
@@ -120,7 +120,20 @@ u
         
             
 	F. Tower of Hanoi
+        a. 解釋:
+            I. 1-levels,  1
+            II. 2-layels,  1*2 + 1 = 3 = 4-1 = 2^2-1
+            III. 3-levels,  3*2 + 1 = 7 = 8-1 = 2^3-1
+            IV. 4-levels, 7*2 + 1 = 15 = 16-1 = 2^4-1
+            V. n-levels, 2^n-1
+            VI. so H(n) = 2^n-1 
+            VII. or H(n) = H(n-1)*2+1
+            VIII. 原理基本上就是A柱最底層先不動, 把其他上面的先挪到其中B柱子(花費步驟H(n-1)), 然後再把最底層移動到C柱子(花費步驟1), 接著再把B柱子的所有移動到C柱子(花費步驟H(n-1)), 所以總共花費步驟2*H(n-1)+1
+
 	G. Permutation
+        a. 數學中的P(5, 3) = 5!/2!, 五個挑三個出來排列即是5*4*3=5!/2!, 因為是排列所以排列循序有差(combination沒差所以多除以3!, C(5, 3) = 5!/(2!*3!) )
+        b. Combination的係數就是二項式係數, 前面提過了, 而permutation的遞迴規律是
+            I. P(n, i) = P(n
 
 	H. Recursive算法的大原則如下: 
 	method_A: 由child到father進行運算, 也就是由所有leaf一路算回root (例子: binary tree的所有相關算法幾乎都是)
