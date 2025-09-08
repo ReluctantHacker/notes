@@ -138,7 +138,7 @@ void preorderShow_iter3(node *root) {
     return;
 }
 
-void preorderShow_iter4(node *node) {
+void preorderShow_iter4(node *root) {
     node *stk[100];
     int top = -1;
     node *current = root;
@@ -155,10 +155,12 @@ void preorderShow_iter4(node *node) {
             current = current->right_child;
             continue;
         }
+        break;
     }
     return;
 }
 
+// this inorderShow iterative doesn't work, it seems like it's hard to do it without current variable
 void inorderShow_iter(node *root) {
     if (root==NULL) return;
     node *stk[100];
@@ -175,7 +177,7 @@ void inorderShow_iter(node *root) {
 }
 
 // more intuitive way
-void inorderShow_iter_2(node* root) {
+void inorderShow_iter2(node* root) {
     node* stk[100];
     int top = -1;
     node* current = root;
@@ -190,6 +192,31 @@ void inorderShow_iter_2(node* root) {
             current = current->right_child;
         }
     }
+    return;
+}
+
+// a more clean way
+void inorderShow_iter3(node *root) {
+    if (root==NULL) return;
+    node *stk[100];
+    int top = -1;
+    node *current = root;
+
+    while (1) {
+        if (current) {
+            stk[++top] = current;
+            current = current->left_child;
+            continue;
+        }
+        if (top>-1) {
+            current = stk[top--];
+            printf("%c->", current->value);
+            current = current->right_child;
+            continue;
+        }
+        break;
+    }
+    return;
 }
 
 int main() {
@@ -212,8 +239,14 @@ int main() {
 	printf("\n------preorderShow_iter3-------\n");
 	preorderShow_iter3(root);
 
-	printf("\n-------------\n");
+	printf("\n------inorderShow_iter1-------\n");
 	inorderShow_iter(root);
+
+	printf("\n------inorderShow_iter2-------\n");
+	inorderShow_iter2(root);
+
+	printf("\n------inorderShow_iter3-------\n");
+	inorderShow_iter3(root);
 	return 0;
 }
 
