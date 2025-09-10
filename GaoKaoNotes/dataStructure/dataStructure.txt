@@ -35,6 +35,9 @@
 	B. Fibonacci Number
 	C. Greatest Common Divisor(GCD)
 	D. Binomial Coefficient
+        a. C(5, 3) = C(4, 2) + C(4, 3)
+        b. 甲乙丙丁戊選3人組隊, 幾種組法?
+            I. 其實背後的直觀解釋就是若甲必定是3人中的一員的祖法數加上甲必定不是3人中一員的組法數等於五人中選三人組法數
 	E. Ackerman's Function
         a. 需要提到一個概念叫做"原始遞迴函數(primitive recursive functions)", 符合以下兩個規則(vector_x是指很多變數x1, x2, x3, x4...任意數量, 推進遞迴的參數只有y, 相當於最簡單的遞迴中的n變數. 我們一般遇到的遞迴都沒有x(或者說x是常數), 只有y(也就是n), 實際上較為複雜的遞迴也會有x.(其實我們遇到大部分的遞迴問題都是原始遞迴, 例如之前提到的所有遞迴問題, factorial, fibonacci等等)
             I. f(vector_x, 0) = g(vector_x)
@@ -132,8 +135,11 @@ u
 
 	G. Permutation
         a. 數學中的P(5, 3) = 5!/2!, 五個挑三個出來排列即是5*4*3=5!/2!, 因為是排列所以排列循序有差(combination沒差所以多除以3!, C(5, 3) = 5!/(2!*3!) )
-        b. Combination的係數就是二項式係數, 前面提過了, 而permutation的遞迴規律是
-            I. P(n, i) = P(n
+        b. Combination的係數就是二項式係數, 前面提過遞迴的原理, 而permutation的遞迴規律是
+            I. P(n, i) = P(n-1, i)+i*P(n-1, i-1)
+            II. 它的原理與combination的原理基本差不多, 例如甲乙丙丁戊選3個出來排列, P(5, 3)=P(4, 3)+3*P(4, 2)實際上就是甲沒有被選中的排列數為P(4, 3), 和甲必定被選中的排列數為3*P(4, 2), 後者是先把甲踢出, 只選兩個所以是P(4, 2)然後再把甲加回來排列(這樣必定有甲), 所以是3*P(4, 2), 因為甲可以排在3個位置.
+        c. 將排列列出!
+            I. 
 
 	H. Recursive算法的大原則如下: 
 	method_A: 由child到father進行運算, 也就是由所有leaf一路算回root (例子: binary tree的所有相關算法幾乎都是)

@@ -138,6 +138,10 @@ void preorderShow_iter3(node *root) {
     return;
 }
 
+
+// 先把root進stk, 進入的時候就直接print值, current是不會重複的, 因為當current為0時就會直接進到parent_node->right_child(等於是進到右兄弟node去), 如果右兄弟node為0, 則會繼續進到parent的右兄弟(而不會進到parent), 而parent的右兄弟必定沒有走過, 因為如果走過的話, stk[top--]->right_child會保證返回該node時進入該node的右兄弟, 也就是parent的右兄弟的右兄弟. 所以可以歸納為, 若是stk[++top]的時候走過的node, 在stk[top--]->right_child的時候必定不會走. 反正你必須看current, current就是當下所在.
+// 簡單來說當current為NULL時, 按照preorder的邏輯, ,current必定要進右兄弟, 這是因為若current為NULL, 假設他本身是left_child, 則進入右兄弟, 若本身是right_child, 則進入parent的右兄弟, 以下算法完美展現這個邏輯
+
 void preorderShow_iter4(node *root) {
     node *stk[100];
     int top = -1;

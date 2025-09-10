@@ -112,6 +112,7 @@ void postorderShow_iter(node *root) {
 // in any recursive function, there's only 1 stack is being used. In this method, it's not obvious how the logic of the code works. 
 // But the logic is actually very simple, it memorizes the the root and then check if root->right_child has been visited or not, if root->right_child has been visited then it means root->left_child must already been visited. which means root itself can be print(or pop) out now
 // it doesn't matter about if current is root->left_child or root->right_child, it only cares about root->right_child is existed and visited or not, that's the key point. And if root->right_child has already visited or it doesnt' existed, it means it can already print out root (because if root->left_child is done and also root->right_child is done then it's turn of root itself)
+// 若stk[top]->right_child有值但stk[top]->right_child已經訪問過了(即是等於lastVisited)則代表stk[top]可以closed了
 void postorderShow_iter2(node *root) {
     node *stk[100];
     int top = -1;
