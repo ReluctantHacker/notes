@@ -138,10 +138,20 @@ u
         b. Combination的係數就是二項式係數, 前面提過遞迴的原理, 而permutation的遞迴規律是
             I. P(n, i) = P(n-1, i)+i*P(n-1, i-1)
             II. 它的原理與combination的原理基本差不多, 例如甲乙丙丁戊選3個出來排列, P(5, 3)=P(4, 3)+3*P(4, 2)實際上就是甲沒有被選中的排列數為P(4, 3), 和甲必定被選中的排列數為3*P(4, 2), 後者是先把甲踢出, 只選兩個所以是P(4, 2)然後再把甲加回來排列(這樣必定有甲), 所以是3*P(4, 2), 因為甲可以排在3個位置.
-        c. 將排列列出!
-            I. 
 
-	H. Recursive算法的大原則如下: 
+    H. Backtracking problem(the basic idea of backtracking is finding all the path of a decision tree, by going deeper from root to deeper leaf and hit the dead end and go back, the problem must be representable as a decision tree, even if you don't draw it explicitly)
+        a. Permutation(所有可能排列列出, 或存取)
+            I. backtracking of permutation很tricky, 他的原理是, 假設有[a, b, c, d], 我需要去記哪個元素已經被填入了
+                🤔. 首先a, b, c 照循序填入path, 當然這些元素全部被記錄已填入used[]裡面, 然後固定a, b, c, 把剩餘的填入(也就是最後的d)
+                🤔. 把c拿掉(當然c也從used[]裡面false掉, 取消紀錄), 然後a, b固定, 然後在原本c的位置(也就是第三個位置)填入c的下一個元素(也就是d), 由於d已經被使用, 所以最後一個元素很自然填入c
+            II. 算法採用for迴圈是很自然, 因為for迴圈是從頭經歷到尾把所有元素輪一遍
+            III. 詳細的原理筆記可以另外參考coding的筆記, 用coding的方式把算法講清楚
+        b. combination(所有組合可能列出, 或存取)
+        c. N-Queens
+        d. Sudoku Solver
+        e. Maze Solving
+
+	I. Recursive算法的大原則如下: 
 	method_A: 由child到father進行運算, 也就是由所有leaf一路算回root (例子: binary tree的所有相關算法幾乎都是)
 		def recursiveFunc():
 			recursiveFunc()
@@ -151,7 +161,7 @@ u
 		def recursiveFunc():
 			doSomething()
 			recursiveFunc()
-    I. Recursive functions都只有一個stack來回call, 即使用iterative的方式實作可能用到兩個stack來完成, 但recursive functions在底層呼叫都只有一個stack!! 這個概念很重要, 因為若recursive method只需一個stack則iterative methods必定可以用一個stack實現(但可能不明顯)
+    J. Recursive functions都只有一個stack來回call, 即使用iterative的方式實作可能用到兩個stack來完成, 但recursive functions在底層呼叫都只有一個stack!! 這個概念很重要, 因為若recursive method只需一個stack則iterative methods必定可以用一個stack實現(但可能不明顯)
 
 |#############################################################################################################|
 4. array 
