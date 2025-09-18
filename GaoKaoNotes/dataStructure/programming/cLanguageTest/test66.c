@@ -37,4 +37,3 @@ int main() {
     permute(nums);
     return 0;
 }
-
