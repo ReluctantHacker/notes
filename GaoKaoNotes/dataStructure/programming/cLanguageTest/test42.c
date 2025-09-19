@@ -34,3 +34,32 @@ int main() {
     return 0;
 }
 
+
+/* the code below can be simplified as below:
+#include <stdio.h>
+#include <stdlib.h>
+
+#define task_num 3
+#define quantum 1
+
+void scheduling(int *tasks) {
+    int done = 0;
+    int i = 0;
+    while (done<3) {
+        if (tasks[i]) {
+            printf("task_%d\n", i);
+            tasks[i] -= quantum;
+            if (!tasks[i]) done++;
+        }
+        i = (i+1)%task_num;
+    }
+    return;
+}
+
+
+int main() {
+    int tasks[task_num] = {3, 2, 3};
+    scheduling(tasks);
+    return 0;
+}
+*/
