@@ -150,6 +150,25 @@ u
                     😂. 把c拿掉(當然c也從used[]裡面false掉, 取消紀錄), 然後a, b固定, 然後在原本c的位置(也就是第三個位置)填入c的下一個元素(也就是d), 由於d已經被使用, 所以最後一個元素很自然填入c
                 🤔. swap()法(有回朔的動作), O(n!) 
             IV. Permuation還有heap's algorithm法, 但這個方法不是backtracking, 因為他沒有回朔的動作, 而是直接利用產出的permutation去組合下一個可能組合, 不會重複, 也因此swap的次數較少, complexity, O(n!)
+            V. Lehmer code(給每一個排列unique編碼, 其實就等於給一個permutation一個unique的id, 用來代表這個permutation):
+                🤔. 編碼規則:
+                    😂. For each position, how many elements to the right are smaller than this one? (這個規則可以保證每一種permutation的編碼是不重複的)
+                🤔. 性質:
+                    😂. factorial numbers system(n=3的排列範例與其對應的lehmer code和factorial value), Factorial Value Calculation那個欄位其實就是Cantor's expansion
+                        | Permutation | Lehmer Code (L\[i]) | Factorial Value Calculation | Factorial Value (ID) |
+| ----------- | ------------------- | --------------------------- | -------------------- |
+| `[1,2,3]`   | `[0,0,0]`           | `0*2! + 0*1! + 0*0!`        | `0`                  |
+| `[1,3,2]`   | `[0,1,0]`           | `0*2! + 1*1! + 0*0!`        | `1`                  |
+| `[2,1,3]`   | `[1,0,0]`           | `1*2! + 0*1! + 0*0!`        | `2`                  |
+| `[2,3,1]`   | `[1,1,0]`           | `1*2! + 1*1! + 0*0!`        | `3`                  |
+| `[3,1,2]`   | `[2,0,0]`           | `2*2! + 0*1! + 0*0!`        | `4`                  |
+| `[3,2,1]`   | `[2,1,0]`           | `2*2! + 1*1! + 0*0!`        | `5`                  |
+                    😂. Lehmer code和factorial規則所生成的Factorial Value會為連續自然數(因此不重複), 這是他的數學性質, 很剛好可以用來作為permutation的編碼(Lehmer code本身對一個排列也是唯一的)
+                    😂. 當然存在其他編碼方式, 但Almost all ranking/unranking algorithms are either directly Lehmer code or a slight variation of it. It's the most famous and widely used method for assigning a unique ID to each permutation
+                    😂. Lehmer code需要排列的元素有序(order), 例如自然數有序, 英文字母有序等等, 如果排列的東西沒有序, 你必須自己給那些元素定義序才能使用Lehmer code
+                    😂. Lehmer code的結構簡單高效(efficient), 同時還是reversible(可以從factorial value 唯一逆向推回Lehmer code)
+                
+                
         b. combination(所有組合可能列出, 或存取)
         c. N-Queens
         d. Sudoku Solver
