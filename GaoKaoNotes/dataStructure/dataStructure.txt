@@ -144,12 +144,13 @@ u
             I. backtracking of permutation很tricky, 
             II. 算法採用for迴圈是很自然, 因為for迴圈是從頭經歷到尾把所有元素輪一遍
             III. 詳細的原理筆記可以另外參考coding的筆記, 用coding的方式把算法講清楚
-                🤔, used[]法(有回朔的動作), O(n!)
+                🤔, used[]法(有回朔的動作), O(n*n!)
                     😂. 他的原理是, 假設有[a, b, c, d], 我需要去記哪個元素已經被填入了
                     😂. 首先a, b, c 照循序填入path, 當然這些元素全部被記錄已填入used[]裡面, 然後固定a, b, c, 把剩餘的填入(也就是最後的d)
                     😂. 把c拿掉(當然c也從used[]裡面false掉, 取消紀錄), 然後a, b固定, 然後在原本c的位置(也就是第三個位置)填入c的下一個元素(也就是d), 由於d已經被使用, 所以最後一個元素很自然填入c
-                🤔. swap()法(有回朔的動作), O(n!) 
-            IV. Permuation還有heap's algorithm法, 但這個方法不是backtracking, 因為他沒有回朔的動作, 而是直接利用產出的permutation去組合下一個可能組合, 不會重複, 也因此swap的次數較少, complexity, O(n!)
+                🤔. swap()法(有回朔的動作), O(n*n!) 
+            IV. Heap's algorithm, O(n!)
+                🤔. 但這個方法不是backtracking, 因為他沒有回朔的動作, 而是直接利用產出的permutation去組合下一個可能組合, 不會重複, 也因此swap的次數較少, complexity, O(n!). 他仍然是recursive的, 詳細可以參考programming的實作筆記, 他的有兩個rule規則, 反覆在遞迴層切換的時候切換兩規則
             V. Lehmer code(給每一個排列unique編碼, 其實就等於給一個permutation一個unique的id, 用來代表這個permutation):
                 🤔. 編碼規則:
                     😂. For each position, how many elements to the right are smaller than this one? (這個規則可以保證每一種permutation的編碼是不重複的)
@@ -167,6 +168,20 @@ u
                     😂. 當然存在其他編碼方式, 但Almost all ranking/unranking algorithms are either directly Lehmer code or a slight variation of it. It's the most famous and widely used method for assigning a unique ID to each permutation
                     😂. Lehmer code需要排列的元素有序(order), 例如自然數有序, 英文字母有序等等, 如果排列的東西沒有序, 你必須自己給那些元素定義序才能使用Lehmer code
                     😂. Lehmer code的結構簡單高效(efficient), 同時還是reversible(可以從factorial value 唯一逆向推回Lehmer code)
+            VI. Steinhaus–Johnson–Trotter (SJT) algorithm, O(n*n!)
+                🤔. 規則如下:
+                    😂. 假設序列{1, 2, 3, ...n}
+                    😂. 給每一個元素設定一個方向性質(之後要swap的方向), 通常初始化的時候, 設定所有元素向左(<)方向 
+                    😂. 一個元素是可移動的若
+                        🥵. 該元素不是在邊緣位置
+                        🥵. 該元素比移動方向的鄰居(adjacent element)數值要大
+                    😂. 每次swap的時候都swap"最大可移動元素"和其移動方向的鄰居
+                    😂. swap完之後, 將所有比剛才swap的元素還要大的元素的方向全部reverse
+                    😂. 重複步驟直到沒有可移動元素存在, 演算結束
+                🤔. 性質:
+                    😂. 每一次swap都會產生unique的排列, 所以與heap's algorithm一樣, 不會有重複的情況出現 
+                    😂. 由於每一次的swap都需要尋找最大可移動元素, 此處是較為耗費算力的
+                    
                 
                 
         b. combination(所有組合可能列出, 或存取)
