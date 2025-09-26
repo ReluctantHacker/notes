@@ -1,4 +1,4 @@
-// permutation with Steinhaus–Johnson–Trotter algorithm
+// permutation with Steinhaus–Johnson–Trotter algorithm, or i call it "largest mobile swap method"
 #include <stdio.h>
 #include <stdlib.h>
 
