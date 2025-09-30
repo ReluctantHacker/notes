@@ -181,7 +181,26 @@ u
                 🤔. 性質:
                     😂. 每一次swap都會產生unique的排列, 所以與heap's algorithm一樣, 不會有重複的情況出現 
                     😂. 由於每一次的swap都需要尋找最大可移動元素, 此處是較為耗費算力的
-                    
+                🤔. 好處
+                    😂. 雖然沒有算力上的好處, 但是它的置換本身是"連續"的, 這個連續概念可以參考gray code筆記, 簡單來說SJT每次置換都是最小改變, 這個可以用來模擬一些"連續"性的問題, 這個是其他permutation algorithm沒有的特性
+                    😂. SJT與gray code和hamiltonian path有關, 這些特性在數學應用上很重要
+                🤔. 相關概念:
+                    😂. Hamiltonian Path
+                        🥵. a path visiting every vertex exactly once in a graph. Gray code is one kind of a special case of Hamiltonian path.
+                    😂. Gray Code
+                        🥵. 參考engineering-Others的筆記 
+                🤔. 進階概念
+                    😂. 可以把SJT的所有組合當做一個graph, 例如{1, 2, 3}, 可以組合出[1, 2, 3], [1, 3, 2], [2, 1, 3], [3, 1, 2], [2, 3, 1], [3, 2, 1], 共6個vertices, Now connect them with edges if one can be obtained by swapping adjacent numbers:
+                         123
+                        /   \
+                      132   213
+                       |     |
+                      312   231
+                        \   /
+                         321
+                    😂. 其中##6 vertices = 6 permutations. ##Each edge = an adjacent swap.
+                    😂. The SJT algorithm gives one Hamiltonian path through this graph. For n=3, it’s: 123 → 132 → 312 → 321 → 231 → 213.  
+                    😂. That path visits all 6 permutations exactly once, following only edges. That’s why we say: SJT constructs a Hamiltonian path in the permutation graph.
                 
                 
         b. combination(所有組合可能列出, 或存取)
@@ -804,7 +823,56 @@ u
 			
 			II. for 有向圖(directed graph)
 				🤔. 與無向圖幾乎一模一樣
-	
+    I. 稀疏矩陣(Sparse Matrix) & 稠密矩陣(Dense Matrix) 
+        a. 概念: graph其實就是vertex與vertex之間的連接與否資訊的集合, 雖然抽象表示不同, 但他們的數學本質與一個二維n*n-matrix其實是一樣的(元素值為0或1), 所以要研究的話, 可以從這種矩陣去研究
+        b. 所謂稀疏矩陣, 就是指矩陣大部分的元素都是0, 少部分有數值
+            I. "稀疏"只是個主觀的形容詞, 沒有嚴格的定義, 但稀疏度(Sparsity = 1-k/N 若給定一個n*m矩陣, N即為n*m, 而k是非0元素), 通常一個稀疏矩陣表示一個稀疏的資料, 大部分時候, 我們都會避免直接用一個n*n的矩陣去實作他, 因為這樣會浪費計算資源去計算一大堆0, 我們會採用特殊的資料結構去處理
+                🤔. COO(Coordinate List), the simplest way deal with sparse matrix
+                    😂. Example:
+                        0 0 5
+                        0 0 3
+                        2 0 0
+	                😂. COO representation
+                        😂. row = [0, 1, 2], row indices of nonzeros
+                        😂. col = [2, 2, 0], column indices of nonzeros
+                        😂. data = [5, 3, 2], the nonzero values
+                    😂. 由於一個非0資料會占用3個空間(包含一個row, 一個col, 一個data), 所以假設有k個非0值, 將會占用3k個空間, 使用COO若想要達到節省空間浪費的效果, 必須在3k<N(也就是3k<n*m)的情況下
+                🤔. CSR(Compressed Sparse Row), basically an improved or refined version of COO
+                    😂. The basic idea is that storing the row index for every single nonzero is wasteful, because rows are ordered anyway. Let’s compress it. Here's another example below that would show what's going on in this method:
+                        10  0  0  0  0 
+                         0 20  0 30  0
+                        40  0 50 60  0
+                         0  0  0  0 70
+                    😂. CSR representation, the col and data are the same representation as COO, only raw_ptr is a compressed version of raw in COO
+                        😂. row_ptr = [0, 1, 3, 6, 7]
+                        😂. col = [0, 1, 3, 0, 2, 3, 4]
+                        😂. data = [10, 20, 30, 40, 50, 60, 70]
+                    😂. row_ptr is bascially the compressed version of COO row = [0, 1, 1, 2, 2, 2, 3] which is apparently repeat some data by orders
+                        😂. row_ptr actually means(a way to compressed repeatly data)
+                            😂. row_ptr[0] = 0, row_ptr[1] = 1 means 0 starts from [0] ends before [1], 
+                            😂. row_ptr[1] = 1, row_ptr[2] = 3 means 1 starts from [1] ends before [3], 
+                            😂. row_ptr[2] = 3, row_ptr[3] = 6 means 2 starts from [3] ends before [6], 
+                            😂. row_ptr[3] = 6, row_ptr[4] = 7 means 3 starts from [6] ends before [7], 
+                    😂. If there's a gap between row, which means some row has no non-zero values, for example:
+                        10  0  0  0  0 
+                         0 20  0 30  0
+                         0  0  0  0  0  ---> empty row
+                         0  0 40  0 50
+                        😂. COO representation would be as below:
+                            😂. row = [0, 1, 1, 3, 3]
+                            😂. col = [0, 1, 3, 2, 4]
+                            😂. val = [10, 20, 30, 40, 50]
+                        😂. CSR representation would be as below:
+                            😂. row_ptr = [0, 1, 3, 3, 5]   (length = n_rows+1 = 5)
+                            😂. col_ind = [0, 1, 3, 2, 4]
+                            😂. val = [10, 20, 30, 40, 50]
+                            😂. explanation:
+                                😂. Row 0 → from row_ptr[0]=0 to row_ptr[1]=1 → 1 element (col=0, val=10).
+                                😂. Row 1 → from row_ptr[1]=1 to row_ptr[2]=3 → 2 elements (col=1,3; val=20,30).
+                                😂. Row 2 → from row_ptr[2]=3 to row_ptr[3]=3 → empty row (no nonzeros). because 3-3 = 0
+                                😂. Row 3 → from row_ptr[3]=3 to row_ptr[4]=5 → 2 elements (col=2,4; val=40,50).
+                    😂. So generally, CSR should be more space-efficient than COO
+                🤔. CSC(Compressed Sparse Column), CSC (Compressed Sparse Column) is the column-oriented twin of CSR. The idea is the same as CSR. Just the compressed array changes from row to column
 
 
 |#############################################################################################################|

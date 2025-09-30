@@ -17,9 +17,24 @@ For Hamiltonian Path, Edges can be skipped; not all edges need to be used. Hamil
 Let's focus on Eulerian Paths in this part. The most famous and also the first graph problem in history is **Euler’s Seven Bridges of Königsberg problem**. The problem is actually one-stroke problem(一筆畫問題) which is finding Eulerian path in an **Eulerian graph**. The one-stroke problem, or Eulerian path, is really about how the edges at each vertex must be used in pairs. In a connected graph, every time you travel into a vertex, you must also leave it by a different edge, which naturally forms an in–out pair. Because of this pairing requirement, a vertex can only support traversal without repeating edges if its degree is even: each entering edge is matched with an exiting edge. If a vertex has an odd degree, there will always be one “unpaired” edge left over, which means you would either get stuck inside the graph or be unable to start properly. The only exceptions are the starting and ending vertices of the path. The start vertex doesn't need a in-degree which makes it ok to be odd degrees, and the end vertex doesn't need a out-degree which also makes it ok to be odd degrees. Thus, the conclusion is that a connected graph admits an Eulerian circuit if all vertices have even degree, and it admits an Eulerian path (but not a circuit) if exactly two vertices have odd degree. If more than two vertices are odd, then such a traversal is impossible.
 
 #### Euler's method to find an Eulerian path
+It seems like Euler didn't provide an algorithm at least not in the modern sense. I can't find one from internet. So you need to learn two algorithms below
 #### Hierholzer’s algorithm to find an Eulerian path
 I also call it **Splice(拼接) method**. 
-First of all, choose a vertex to start, and choose an unused edge. And then 
+First of all, choose a vertex to start, and choose an unused edge. The precise algorithm rule is like below:
+ - Start anywhere: Pick any vertex with unused edges as your starting point
+ - Follow unused edges arbitrarily until you return to the starting vertex. This forms a cycle(first cycle here)
+ - Pick a vertex that has unused edges
+ - Start a new cycle
+ - Splice the new cycle into the original cycle
+ - Repeat the process until all the edges are used
+
+Here's a simple example, {A, B, C}, two edges between A and B, and two edges between B and C:
+ 1. Start at A, go A->B->A. First cycle closed.
+ 2. There are still unused edges(B->C edges)
+ 3. Pick vertex B (on existing cycle) that has unused edges.
+ 4. Start a new cycle: B->C->B
+ 5. Splice into original cycle: A->B->C->B->A. Eulerian circuit completed.
+#### Fleury’s Algorithm
 ### Hamiltonian paths and cycles
 
 ## Graph Data Representations
