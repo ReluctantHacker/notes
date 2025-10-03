@@ -21,9 +21,9 @@ It seems like Euler didn't provide an algorithm at least not in the modern sense
 #### Hierholzer’s algorithm to find an Eulerian path
 I also call it **Splice(拼接) method**. 
 First of all, choose a vertex to start, and choose an unused edge. The precise algorithm rule is like below:
- - Start anywhere: Pick any vertex with unused edges as your starting point
- - Follow unused edges arbitrarily until you return to the starting vertex. This forms a cycle(first cycle here)
- - Pick a vertex that has unused edges
+ - Start anywhere: Pick any vertex with unused edges as your starting point.
+ - Follow unused edges of current vertex(if you A->B, then B is the current vertex) arbitrarily and go and go until you return to the starting vertex. This forms a cycle(first cycle here)
+ - Pick a vertex that has unused edges in the present cycle
  - Start a new cycle
  - Splice the new cycle into the original cycle
  - Repeat the process until all the edges are used
@@ -34,6 +34,69 @@ Here's a simple example, {A, B, C}, two edges between A and B, and two edges bet
  3. Pick vertex B (on existing cycle) that has unused edges.
  4. Start a new cycle: B->C->B
  5. Splice into original cycle: A->B->C->B->A. Eulerian circuit completed.
+
+However, in real implementation. "Splicing" idea is too juggling and complicated to implement(especially in c language). Fortunately, you can implicit splicing idea by using stack explicitly, the idea is exactly **backtracking** which you can get the details in data structure notes. The backtracking idea is that, when you are in the current vertex and you want to choose next unused edge to go, if there's no more unused edges to use in the current vertex, that means the current vertex is the end of the final path! (Because you have no way to go, so it has to be the end). In this moment, you can take the current vertex out and take it as the end of the path, and then go back to the previous vertex, and find if that vertex has unused edges or not, again and again. This is exactly what stack is doing. Here's an example demonstrates the situation, if the graph has vertices {0, 1, 2, 3}, edges {(0, 1), (1, 2), (2, 0), (0, 3), (3, 0)}, This graph must have an Eulerian circuit(because all the vertex has even degrees), let's run stack-based Hierholzer step by step and find the final Eulerian path:
+ 0. Initialization
+    - stack = [0]
+    - path = []
+ 1. Step 1
+    - stack top: 0
+    - use edge (0, 1), unused edges left: {(1, 2), (2, 0), (0, 3), (3, 0)}
+    - stack = [0, 1]
+    - path = []
+ 2. Step 2
+    - Stack top: 1
+    - use edge (1, 2), unused edges left: {(2, 0), (0, 3), (3, 0)}
+    - stack = [0, 1, 2]
+    - path = []
+ 3. Step 3
+    - Stack top: 2
+    - use edge (2, 0), unused edges left: {(0, 3), (3, 0)}
+    - stack = [0, 1, 2, 0]
+    - path = []
+ 4. Step 4
+    - Stack top: 3
+    - use edge (0, 3), unused edges left: {(3, 0)}
+    - stack = [0, 1, 2, 0, 3]
+    - path = []
+ 5. Step 5
+    - Stack top: 4
+    - use edge (3, 0), unused edges left: {}
+    - stack = [0, 1, 2, 0, 3, 0]
+    - path = []
+ 6. Step 6
+    - Stack top: 5 
+    - current vertex 0 has no unused edges, so backtracking
+    - stack [0, 1, 2, 0, 3]
+    - path = [0]
+ 7. Step 7
+    - Stack top: 4
+    - current vertex 3 has no unused edges, so backtracking
+    - stack [0, 1, 2, 0]
+    - path = [0, 3]
+ 8. Step 8
+    - Stack top:3 
+    - current vertex 0 has no unused edges, so backtracking
+    - stack [0, 1, 2]
+    - path = [0, 3, 0]
+ 9. Step 9
+    - Stack top: 2 
+    - current vertex 2 has no unused edges, so backtracking
+    - stack [0, 1]
+    - path = [0, 3, 0, 2]
+ 10. Step 10
+    - Stack top: 1
+    - current vertex 1 has no unused edges, so backtracking
+    - stack [0]
+    - path = [0, 3, 0, 2, 1]
+ 11. Step 11
+    - Stack top: 0
+    - current vertex 0 has no unused edges, so backtracking
+    - stack []
+    - path = [0, 3, 0, 2, 1, 0] ---> the final result would reverse: [0, 1, 2, 0, 3, 0]
+
+Here's another situation you may consider about. Suppoes at some point you are at vertex B, with two unused edges: one to A, one to C. Suppose both A and C are dead end which means both of them has no unused edges. In this situation if you use Hierholzer's algorithm, you would meet a problem. Suppose you choose B-A first and the final path would [A], and then you backtracking to B and choose C, the final path would be [A, C, B]. You reverse it to get [B, C, A]. However, apparently there's no such path C->A in the original graph, so what's wrong here? If you take the graph only as vertices {A, B, C} and edges {(B-A), (B-C)}. You would find that it's an two odd-degrees vertices graph. So if you start Hierholzer's algorithm you should not choose B as the start vertex, but A or C, or you would definitely get wrong result. It turns out that when you meet the situation at some point at vertex B and with two unused edges, one to A, one to C. If both A and C are dead end it means either the graph has no Eulerian path or You start from the wrong vertices. The rules we mentioned before, is that, if two odd-degrees vertices then we use one of the odd-degrees vertex as the starting vertex. If all are even-degrees vertex, and you can choose any of them as the starting vertex. If after determine the graph has Eulerian path and we choose the right starting vertex and then use Hierholzer's algorithm, the considered situation we discussed about just now won't happen.
+
 #### Fleury’s Algorithm
 ### Hamiltonian paths and cycles
 

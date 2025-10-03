@@ -192,6 +192,16 @@
         ```
 
         g()在宣告的時候, 似乎不會自動給予指針
+  * ## 8. array的使用經驗, 以上兩種conditions
+    1. array would create and be done totally inside a function and won't be returned, this is always used in the case that array only used for the process of some calculation but not for the result. 
+    2. array would be returned(only dynamics ones). There are two sub cases in this condition. 
+       First is that we initialize an array outside the function and put that array and length inside to function to calculate and return the final array result, this case mostly used in the scenario that the array has apparently specific initial values and we need to manufacture it like sorting algorithm.
+       The second sub case is that array may not need to initialized but directly created by the function, this mostly used in scenario that we need to input some data and calculate that data into the final array we want. In this case, one thing that we need to consider about is the size of array, because the function return array without knowing the size of it. So you need to create a variable outside the function to memorize the size of array. The common and smart way to do this is like 
+        ```c
+        size_t *out_len;
+        char *read_file(const char *filename, size_t *out_len);
+        ```
+       By input the pointer of the variable out_len, out_len can directly memorize the what happened inside the function with dynamically changes without returning. This is smart and common way, you need to know this.
 
 
 

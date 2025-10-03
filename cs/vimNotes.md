@@ -8,3 +8,14 @@ set expandtab " this is make tab as 4 space char, those three setting is very im
 ```
 
 - in Vim, in selection mode(shift-v), if you type "u", you can turn every char into lower case. If you type "U", you can turn every char into upper case. If you type "~", you can toggle every char's case.
+
+- in Vim, if you want to search a "text" through current folder with some extension file name like for example ".c" file extension. you can use the command below:
+```
+:vimgrep /search_text/ **/*c
+```
+And when you want to preview all the search result you can use command:
+```
+:copen
+```
+
+This is very useful, you should definitely need to learn it up.
