@@ -1,4 +1,4 @@
-// Find one of the Eulerian paths by Hierholzer's algortihm
+// Find one of the Eulerian paths by Hierholzer's algortihm without reverse! You should definitely add reverse function to the code
 #include <stdio.h>
 #include <stdlib.h>
 

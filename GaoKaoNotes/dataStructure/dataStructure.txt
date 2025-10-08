@@ -760,7 +760,7 @@ u
 				🤔. e = total_sum(indegree) = total_sum(outdegree)  (某點的入, 必定是某點的出!, 有入必有出)
 				🤔. 從以上公式可以知道, 想要算總e, 只要算總indegree 或是 總 outdegree即可
 
-	H. 資料結構(數學)如何表示graph?
+	H. 資料結構(數學)如何表示graph? (以下的兩種資料結構均可用於tree, 因為tree本身也是一種graph, 只是通常一個n-node-tree的每個node只能與child_node連結而無法與sibling_node連結, 這導致tree總共只會有n-1個edge, 這是浪費所以通常不這樣用, 而graph的結構最多可以有n^2個edges)
 		a. Adjacency Matrix(相鄰矩陣)
 			I. for 無向圖(undirected graph)
 				🤔. 此matrix為n*n, 縱向表n個nodes, 橫向也表n個nodes, 有link就1, 沒link就0
@@ -892,7 +892,7 @@ u
 		b. 實作方法, 由於DFT有"recursive"的概念在其中(子node當作新root), 故可用stack來保存走訪中的vertex
 			I. 選擇一個起始vertex vi, push到stack中
 			II. 若stack不為空
-				🤔. 從stack中pop()出top, 視為已拜訪
+				🤔. 從stack中pop()出top, 視為已拜訪(#####stack有可能重複push入相同的vertex, 因為該vertex如果還沒被visited, 並且與多個其他vertex相連, 是有可能重複push進stack的, 我們在pop的過程中, 如果該vertex此時已經被visited, 必須直接pop, 然後跳過這個vertex, 進入下一個vertex(不需要再從去從這個vertex找其他相連的vertex#####)
 				🤔. top相接的所有flag=0的vertex都push進stack  ---> 重複執行
 				🤔. 若所有vertex都被拜訪過, 而stack仍不為空, 則stack清空
 			III. 若stack為空, 則traversal 結束
@@ -910,7 +910,7 @@ u
 		b. 實作方法, 使用"queue"來保存走訪中的vertex, 同樣是recursive
 			I. 選擇一個起始vertex vi, enqueue到queue中
 			II. 若queue不為空
-				🤔. 從queue中dequeue()出front, 視為已拜訪
+				🤔. 從queue中dequeue()出front, 視為已拜訪(BFS比DFS特別的地方在於, queue不會有重複的vertex出現, 所以可以把queue的最大長度設定為vertex的數量, 這是因為)
 				🤔. front相接的所有flag=0的vertex都enqueue進queue---> 重複執行
 			III. 若queue為空, 則traversal 結束
 			IIII. BFT的順序不unique, 除非你自己設定按照某種排列

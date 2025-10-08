@@ -11,11 +11,12 @@ set expandtab " this is make tab as 4 space char, those three setting is very im
 
 - in Vim, if you want to search a "text" through current folder with some extension file name like for example ".c" file extension. you can use the command below:
 ```
-:vimgrep /search_text/ **/*c
+:vimgrep /search_text/ **/*.c
 ```
 And when you want to preview all the search result you can use command:
 ```
 :copen
 ```
+The 'c' in copen is so call Quickfix list which is a special feature stores locations of errors, research results, or other files locations. 
 
-This is very useful, you should definitely need to learn it up.
+This vimgrep is very useful, you should definitely need to learn it up. The "**" in the beginning means All subdirectories(including current directory). And the "*.c" means all the files ended with ".c". If you want something text starts with text "main", for example, you can use "**/main*". If you want the text is in between the name you can use "**/*test*.py You see the pattern now.
