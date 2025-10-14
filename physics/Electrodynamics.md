@@ -60,6 +60,14 @@ This shows that the field is a superposition of:
  - a linear field: $\( -\frac{C}{3} \mathbf{r} \)$
  - an inverse square field: $\( \frac{A}{r^2} \hat{\mathbf{r}} \)$
 
+If you take the third condition into the solution now, which let the E goes to 0 when r goes infinity, you get that C must be 0. 
+
+This is directly saying that 
+```math
+\nabla \cdot \mathbf{E} = 0
+```
+
+
 which means the field is conservative, and that E vanishes at infinity. This curl additional condition(conservative condition) plus Gauss's law uniquely lead to Coulomb’s law (inverse-square). Without that curl condition, Gauss’s law alone would allow infinitely many possible E fields.
 
 
