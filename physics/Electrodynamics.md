@@ -96,3 +96,7 @@ Originally from the Ampere's circuital law:
 ```math
 \oint_{\mathcal{C}} \mathbf{B} \cdot d\mathbf{l} = \mu_0 I_{\text{enc}}
 ```
+or
+```math
+\nabla \times \mathbf{B} = \mu_0 \mathbf{J}
+```
