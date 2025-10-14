@@ -23,7 +23,7 @@ Generally, electrodynamics including four major laws which are **electrostatics(
 ## Electrostatics
 Gauss's law for electricity describe the integral of enclosed surface of electric flux would. Or in derivative form, divergence of electric filed would be proportional to the charge density. It's very common to compare Coulomb's law of point electric charge. And you can easily check if Gauss's law is correct by integraling Coulomb's law through some enclused surface. However, there's one thing you need to know which is that Coulomb's law is not equavalent to Gauss's law. Because, in fact, Coulomb's law is not the only field that can satisify Gauss's law. Gauss's law only constrains the divergence of the electric field
 ```math
-\nabla \cdot \mathbf{E} &= \frac{\rho}{\varepsilon_0}
+\nabla \cdot \mathbf{E} = \frac{\rho}{\varepsilon_0}
 ```
 But it says nothing about curl of it ($\nabla \times mathbf{E}$)
 
