@@ -39,13 +39,26 @@ And E vanishes at infinity.
 
 These three conditions uniquely lead to Coulomb's law (inverse-rule).
 
-You can solve the differential equations yourself like below show
+You can solve the differential equations yourself like below and check if the conditions really lead to Coulomb's law 
 ```math
 \begin{cases}
 \nabla \cdot \mathbf{E} = \dfrac{\rho}{\varepsilon_0}, & \text{(Gauss's law)} \\[2mm]
 \nabla \times \mathbf{E} = 0, & \text{(Electrostatic, conservative field)}
 \end{cases}
 ```
+In 3D, the general solution to this Poisson equation is:
+```math
+\phi(\mathbf{r}) = \frac{C}{6} r^2 + \frac{A}{r} + B
+```
+
+Therefore, the electric field is:
+```math
+\mathbf{E}(\mathbf{r}) = -\nabla \phi(\mathbf{r}) = -\left( \frac{C}{3} \mathbf{r} - \frac{A}{r^3} \mathbf{r} \right)
+= -\frac{C}{3} \mathbf{r} + \frac{A}{r^3} \mathbf{r}
+```
+This shows that the field is a superposition of:
+ - a linear field: $\( -\frac{C}{3} \mathbf{r} \)$
+ - an inverse square field: $\( \frac{A}{r^2} \hat{\mathbf{r}} \)$
 
 which means the field is conservative, and that E vanishes at infinity. This curl additional condition(conservative condition) plus Gauss's law uniquely lead to Coulomb’s law (inverse-square). Without that curl condition, Gauss’s law alone would allow infinitely many possible E fields.
 
