@@ -4,5 +4,5 @@ Generally, electrodynamics including four major laws which are **electrostatics(
 Follow the Gauss's law for electricity. 
 Differential Form:
 ```math
-\nabla \cdot \mathbg{E} = \dfrac{\rho}{\epsilon_0}
+\nabla \cdot E = \dfrac{\rho}{\epsilon_0}
 ```
