@@ -66,6 +66,25 @@ This is directly saying that
 ```math
 \nabla \cdot \mathbf{E} = 0
 ```
+But wait! isn't this result contradicts the first initial condition we took which is Gauss's law says?
+```math
+\nabla \cdot \mathbf{E} = \dfrac{\rho}{\varepsilon_0}
+```
+
+The key point is that 
+```math
+\nabla \cdot \mathbf{E} = 0
+```
+says divergence of E is 0 everywhere EXCEPT for the origin position. 
+
+The reason is that $\( \frac{A}{r^2} \hat{\mathbf{r}} \)$ is undefine when r goes 0. [referece](https://www.zhihu.com/question/585245995?utm_division=hot_list_page) The math is telling you this. And from Gauss's law, there is another important thing you should know about which is that $\rho$ is the density of charge which means it doesn't have to be uniformly distributed, it is totally okay to concentrate at some point! The math force all the charge in the origin(because there's only the place can have density of charge according to the result of the solution), so a more complete conclusion should like this:
+```math
+\nabla \cdot \mathbf{E} = \frac{q}{\varepsilon_0} \delta(\mathbf{r})
+```
+The result using the famous Dirac delta function. Dirac delta function is not a function stricly by definition according to math which claims that a function can only deal with finite values. However, delta function is 0 everywhere but infinity at a point which is violate the definition. If we directly use delta function, something wrong would happen because we can't deal with infinity. So to avoid this, the integral definition of delta functions comes and saying:
+```math
+\int_{-\infty}^{\infty} f(x) \delta(x) \, dx = f(0)
+```
 
 
 which means the field is conservative, and that E vanishes at infinity. This curl additional condition(conservative condition) plus Gauss's law uniquely lead to Coulomb’s law (inverse-square). Without that curl condition, Gauss’s law alone would allow infinitely many possible E fields.
