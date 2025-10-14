@@ -89,3 +89,10 @@ The result using the famous Dirac delta function. Dirac delta function is not a 
 ```
 
 ## Magnetostatics
+Magnetostatics and Electrostatics are math-structurally the same. You should get the structurally same result. The only difference is that there's no magnetic monopole so we don't have magnetic charge.
+
+## Electrodynamics
+Originally from the Ampere's circuital law:
+```math
+\oint_{\mathcal{C}} \mathbf{B} \cdot d\mathbf{l} = \mu_0 I_{\text{enc}}
+```
