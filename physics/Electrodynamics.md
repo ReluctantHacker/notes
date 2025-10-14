@@ -27,13 +27,13 @@ Gauss's law for electricity describe the integral of enclosed surface of electri
 ```
 But it says nothing about curl of it 
 ```math
-\nabla \times mathbf{E}
+\nabla \times \mathbf{E}
 ```
 Different vector fields with the same divergence could satisfy Gauss’s law but have different forms.
 
 In electrostatics, would also assume the conservative condition:
 ```math
-\nabla \times mathbf{E} = 0
+\nabla \times \mathbf{E} = 0
 ```
 And E vanishes at infinity.
 
