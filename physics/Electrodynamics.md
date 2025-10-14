@@ -25,5 +25,28 @@ Gauss's law for electricity describe the integral of enclosed surface of electri
 ```math
 \nabla \cdot \mathbf{E} = \frac{\rho}{\varepsilon_0}
 ```
-But it says nothing about curl of it ($\nabla \times mathbf{E}$)
+But it says nothing about curl of it 
+```math
+\nabla \times mathbf{E}
+```
+Different vector fields with the same divergence could satisfy Gauss’s law but have different forms.
+
+In electrostatics, would also assume the conservative condition:
+```math
+\nabla \times mathbf{E} = 0
+```
+And E vanishes at infinity.
+
+These three conditions uniquely lead to Coulomb's law (inverse-rule).
+
+You can solve the differential equations yourself like below show
+```math
+\begin{cases}
+\nabla \cdot \mathbf{E} = \dfrac{\rho}{\varepsilon_0}, & \text{(Gauss's law)} \\[2mm]
+\nabla \times \mathbf{E} = 0, & \text{(Electrostatic, conservative field)}
+\end{cases}
+```
+
+which means the field is conservative, and that E vanishes at infinity. This curl additional condition(conservative condition) plus Gauss's law uniquely lead to Coulomb’s law (inverse-square). Without that curl condition, Gauss’s law alone would allow infinitely many possible E fields.
+
 
