@@ -29,15 +29,15 @@ But it says nothing about curl of it
 ```math
 \nabla \times \mathbf{E}
 ```
-Different vector fields with the same divergence could satisfy Gauss’s law but have different forms.
+Different vector fields with the same divergence could satisfy Gauss’s law but have different forms(Gauss's law is more general than Coulomb's law).
 
-In electrostatics, would also assume the conservative condition:
+In electrostatics, if we also assume the conservative condition:
 ```math
 \nabla \times \mathbf{E} = 0
 ```
-And E vanishes at infinity.
+And E vanishes at infinity which is the boundary condition.
 
-These three conditions uniquely lead to Coulomb's law (inverse-rule).
+Gauss's law, conservative condition and boundary condition, these three conditions uniquely lead to Coulomb's law (inverse-square-rule).
 
 You can solve the differential equations yourself like below and check if the conditions really lead to Coulomb's law 
 ```math
@@ -81,12 +81,11 @@ The reason is that $\( \frac{A}{r^2} \hat{\mathbf{r}} \)$ is undefine when r goe
 ```math
 \nabla \cdot \mathbf{E} = \frac{q}{\varepsilon_0} \delta(\mathbf{r})
 ```
+So there's no contradiction here, the result saying that divergence is 0 everywhere except the one point that is undefine, and that point must have all the charge.
+
 The result using the famous Dirac delta function. Dirac delta function is not a function stricly by definition according to math which claims that a function can only deal with finite values. However, delta function is 0 everywhere but infinity at a point which is violate the definition. If we directly use delta function, something wrong would happen because we can't deal with infinity. So to avoid this, the integral definition of delta functions comes and saying:
 ```math
 \int_{-\infty}^{\infty} f(x) \delta(x) \, dx = f(0)
 ```
 
-
-which means the field is conservative, and that E vanishes at infinity. This curl additional condition(conservative condition) plus Gauss's law uniquely lead to Coulomb’s law (inverse-square). Without that curl condition, Gauss’s law alone would allow infinitely many possible E fields.
-
-
+## Magnetostatics
