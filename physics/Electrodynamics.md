@@ -135,7 +135,7 @@ F_{wire} = IL \times B
 
 In the end, we get this:
 ```math
-F = q\(e+v \times B\)
+F = q\left(e+v \times B\right)
 ```
 
 We can't explain this from Maxwell's equations. Because Maxwell's equations don't tell how charge would move under magnetic field(We have already know how charge would move under electric field by the definition of the field itself). Also, the magnetic field should move magnetic charge by it's definition(but of course, we haven't find such things yet).
