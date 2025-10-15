@@ -146,11 +146,11 @@ Basically, you can turn Maxwell's equations to standard form of **wave equation*
 ```
 
 Where:
-- \( u(\mathbf{r}, t) \) is the wave function (e.g., displacement, pressure, field component)
-- \( \nabla^2 \) is the Laplacian operator:
+- $\( u(\mathbf{r}, t) \)$ is the wave function (e.g., displacement, pressure, field component)
+- $\( \nabla^2 \)$ is the Laplacian operator:
 
 ```math
 \nabla^2 = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}
 ```
-- \( v \) is the wave speed in the medium
+- $\( v \)$ is the wave speed in the medium
 
