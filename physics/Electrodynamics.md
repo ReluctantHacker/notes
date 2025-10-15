@@ -175,19 +175,18 @@ Where:
 
 
 
-Assume fields depend only on \(x\) and \(t\), and take the nonzero components
-\[
+Assume fields depend only on $x$ and $t$, and take the nonzero components
+```math
 E_y(x,t),\qquad B_z(x,t),
-\]
-so the wave propagates along \(+x\) and the fields are transverse.
+```
+so the wave propagates along $+x$ and the fields are transverse.
 
 Start from the relevant Maxwell curl equations in vacuum (no sources, no currents):
-\[
+```math
 \nabla\times\mathbf{E} = -\frac{\partial\mathbf{B}}{\partial t},\qquad
 \nabla\times\mathbf{B} = \mu_0\epsilon_0\frac{\partial\mathbf{E}}{\partial t}.
-\]
-
-With our assumption (dependence only on \(x\), only \(E_y\) and \(B_z\) nonzero),
+```
+With our assumption (dependence only on $x$, only $E_y$ and $B_z$ nonzero),
 the nontrivial component equations reduce to
 \begin{align}
 \frac{\partial E_y}{\partial x} &= -\frac{\partial B_z}{\partial t}, \tag{Faraday}\\[6pt]
@@ -195,41 +194,40 @@ the nontrivial component equations reduce to
 \end{align}
 
 (Equivalently written)
-\[
+```math
 \frac{\partial B_z}{\partial x} = -\mu_0\epsilon_0\frac{\partial E_y}{\partial t}.
-\]
-
+```
 ---
 
-## Eliminate \(B_z\) and get the wave equation for \(E_y\)
+## Eliminate $B_z$ and get the wave equation for $E_y$
 
-Differentiate the Faraday equation with respect to \(x\):
-\[
+Differentiate the Faraday equation with respect to $x$:
+```math
 \frac{\partial^2 E_y}{\partial x^2}
 = -\frac{\partial}{\partial x}\!\left(\frac{\partial B_z}{\partial t}\right).
-\]
+```
 
 Swap the order of derivatives on the RHS (mixed partials commute):
-\[
+```math
 \frac{\partial^2 E_y}{\partial x^2}
 = -\frac{\partial}{\partial t}\!\left(\frac{\partial B_z}{\partial x}\right).
-\]
+```
 
 Now substitute \(\displaystyle \frac{\partial B_z}{\partial x} = -\mu_0\epsilon_0\frac{\partial E_y}{\partial t}\):
-\[
+```math
 \frac{\partial^2 E_y}{\partial x^2}
 = -\frac{\partial}{\partial t}\!\left(-\mu_0\epsilon_0\frac{\partial E_y}{\partial t}\right)
 = \mu_0\epsilon_0\frac{\partial^2 E_y}{\partial t^2}.
-\]
+```
 
-Thus we obtain the 1D wave equation for \(E_y\):
-\[
+Thus we obtain the 1D wave equation for $E_y$:
+```math
 \boxed{\ \frac{\partial^2 E_y}{\partial x^2} = \mu_0\epsilon_0\,\frac{\partial^2 E_y}{\partial t^2}\ }
-\]
+```
 or equivalently
-\[
+```math
 \frac{\partial^2 E_y}{\partial x^2} = \frac{1}{c^2}\frac{\partial^2 E_y}{\partial t^2},
 \qquad c=\frac{1}{\sqrt{\mu_0\epsilon_0}}.
-\]
+```
 
 ---
