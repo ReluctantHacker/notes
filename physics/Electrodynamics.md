@@ -142,9 +142,9 @@ We can't explain this from Maxwell's equations. Because Maxwell's equations don'
 
 So **Maxwell's equations** Plus **Lorentz force law** make the story completely.
 
-Here's two important things need to be considered about which are 
+Here's two important things need to be comprehended about which are 
  - both fields and it's generated field exist simultaneously, they are not one thing, they are two things! So if we have a E field and it's generated B field, Both E field and B field would produce Lorentz force.
- - Although we often say that a "changing electric field generates a magnetic field," in reality, the electric field (E) and its associated magnetic field (B) are **synchronized** and form a **self-consistent solution of Maxwell's equations**. The changing E field does not independently generate a new B field, nor does B generate a new E field in a sequential way; instead, they are **paired and co-evolving**, following the curl relations in Maxwell's equations. This concept will be explained in more detail in the discussion of electromagnetic waves.
+ - Although we often say that a "changing electric field generates a magnetic field," but, the electric field (E) and its associated magnetic field (B) are **synchronized** and form a **self-consistent solution of Maxwell's equations**. This is because Maxwell's equations strictly tell the paired-relationships between E field and it's conjugate B field. Don't miss understand what Maxwell's equations say. The changing E field does not independently generate a new B field, nor does B generate a new E field in a sequential way; instead, they are **paired and co-evolving**, following the curl relations in Maxwell's equations. This concept will be explained in more detail in the discussion of electromagnetic waves.
 
 # ElectroMagnetic field, wave
 Basically, you can turn Maxwell's equations to standard form of **wave equation** in three dimensions:
@@ -203,7 +203,7 @@ the nontrivial component equations reduce to
 ```
 ---
 
-## Eliminate $B_z$ and get the wave equation for $E_y$
+### Eliminate $B_z$ and get the wave equation for $E_y$
 
 Differentiate the Faraday equation with respect to $x$:
 ```math
@@ -236,4 +236,16 @@ or equivalently
 
 ---
 
+You shouldn't be too surprised with this result if you truely understand what happened actually. The Maxwell's equations are paired-relationships between E field and B field, they have already implies the wave equations.
 
+## General 3D (coordinate-free) wave equation
+Start from Faraday and take curl:
+```math
+\nabla\times(\nabla\times\mathbf{E})=-\frac{\partial}{\partial t}(\nabla\times\mathbf{B})
+= -\mu_0\epsilon_0\frac{\partial^2\mathbf{E}}{\partial t^2}.
+```
+Use the identity $\nabla\times(\nabla\times\mathbf{E})=\nabla(\nabla\cdot\mathbf{E})-\nabla^2\mathbf{E}$.
+In vacuum $\nabla\cdot\mathbf{E}=0$, hence
+```math
+\nabla^2\mathbf{E}=\mu_0\epsilon_0\frac{\partial^2\mathbf{E}}{\partial t^2}.
+```
