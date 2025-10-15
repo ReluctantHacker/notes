@@ -146,7 +146,7 @@ Basically, you can turn Maxwell's equations to standard form of **wave equation*
 ```
 
 Where:
-- $u(\mathbf{r}, t) $ is the wave function (e.g., displacement, pressure, field component)
+- $u\(\mathbf{r}, t\)$ is the wave function (e.g., displacement, pressure, field component)
 - $\nabla^2$ is the Laplacian operator:
 
 ```math
