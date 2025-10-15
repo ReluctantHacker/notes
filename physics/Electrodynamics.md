@@ -144,7 +144,6 @@ So **Maxwell's equations** Plus **Lorentz force law** make the story completely.
 
 Here's two important things need to be considered about which are 
  - both fields and it's generated field exist simultaneously, they are not one thing, they are two things! So if we have a E field and it's generated B field, Both E field and B field would produce Lorentz force.
- - Although, we said "generated" field, but the E field and it's conjugate B field are synchronized with each other and follows the rules of Maxwell's equations. So if a changing E field generates a changing B field, that changing B field would not generate another E field, because they are synchronized by Maxwell's equations, they are paired of each other. This concept would be detailed in the discussion of EM wave.
  - Although we often say that a "changing electric field generates a magnetic field," in reality, the electric field (E) and its associated magnetic field (B) are **synchronized** and form a **self-consistent solution of Maxwell's equations**. The changing E field does not independently generate a new B field, nor does B generate a new E field in a sequential way; instead, they are **paired and co-evolving**, following the curl relations in Maxwell's equations. This concept will be explained in more detail in the discussion of electromagnetic waves.
 
 # ElectroMagnetic field, wave
