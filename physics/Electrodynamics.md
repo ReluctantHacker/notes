@@ -217,7 +217,7 @@ Swap the order of derivatives on the RHS (mixed partials commute):
 = -\frac{\partial}{\partial t}\!\left(\frac{\partial B_z}{\partial x}\right).
 ```
 
-Now substitute \(\displaystyle \frac{\partial B_z}{\partial x} = -\mu_0\epsilon_0\frac{\partial E_y}{\partial t}\):
+Now substitute $\displaystyle \frac{\partial B_z}{\partial x} = -\mu_0\epsilon_0\frac{\partial E_y}{\partial t}$:
 ```math
 \frac{\partial^2 E_y}{\partial x^2}
 = -\frac{\partial}{\partial t}\!\left(-\mu_0\epsilon_0\frac{\partial E_y}{\partial t}\right)
