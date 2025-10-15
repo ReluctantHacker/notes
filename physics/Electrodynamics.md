@@ -1,21 +1,23 @@
 # Maxwell's equations
-Generally, electrodynamics including four major laws which are **electrostatics(靜電)**, **magnetostatics(靜磁)**, **electrodynamics(動電生磁)**, **magnetodynamics(動磁生電)** 
+Generally, electrodynamics including four major laws which are **electrostatics(À¹q)**, **magnetostatics(ÀºÏ**, **electrodynamics(°ʹq¥ͺÏ**, **magnetodynamics(°ʺϥ͹q)** 
 ```math
 \begin{aligned}
 \nabla \cdot \mathbf{E} &= \frac{\rho}{\varepsilon_0} &&\text{(Gauss's Law for Electricity)} \\[6pt]
 \nabla \cdot \mathbf{B} &= 0 &&\text{(Gauss's Law for Magnetism)} \\[6pt]
 \nabla \times \mathbf{E} &= -\,\frac{\partial \mathbf{B}}{\partial t} &&\text{(Faraday's Law of Induction)} \\[6pt]
-\nabla \times \mathbf{B} &= \mu_0 \mathbf{J} + \mu_0 \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t} &&\text{(Ampère–Maxwell Law)}
+\nabla \times \mathbf{B} &= \mu_0 \mathbf{J} + \mu_0 \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t} &&\text{(Ampere¡VMaxwell Law)}
 \end{aligned}
 ```
 
 **Integral Form**
 
 ```math
+\begin{aligned}
 \oint \mathbf{E} \cdot d\mathbf{A} &= \frac{Q_{\text{enclosed}}}{\varepsilon_0} &&\text{(Gauss's Law for Electricity)} \\[6pt]
 \oint \mathbf{B} \cdot d\mathbf{A} &= 0 &&\text{(Gauss's Law for Magnetism)} \\[6pt]
 \oint \mathbf{E} \cdot d\mathbf{l} &= -\,\frac{d}{dt} \int \mathbf{B} \cdot d\mathbf{A} &&\text{(Faraday's Law of Induction)} \\[6pt]
-\oint \mathbf{B} \cdot d\mathbf{l} &= \mu_0 I_{\text{enclosed}} + \mu_0 \varepsilon_0 \frac{d}{dt} \int \mathbf{E} \cdot d\mathbf{A} &&\text{(Ampère–Maxwell Law)}
+\oint \mathbf{B} \cdot d\mathbf{l} &= \mu_0 I_{\text{enclosed}} + \mu_0 \varepsilon_0 \frac{d}{dt} \int \mathbf{E} \cdot d\mathbf{A} &&\text{(Ampere¡VMaxwell Law)}
+\end{aligned}
 ```
 
 ## Electrostatics
@@ -27,7 +29,7 @@ But it says nothing about curl of it
 ```math
 \nabla \times \mathbf{E}
 ```
-Different vector fields with the same divergence could satisfy Gauss’s law but have different forms(Gauss's law is more general than Coulomb's law).
+Different vector fields with the same divergence could satisfy Gauss¡¦s law but have different forms(Gauss's law is more general than Coulomb's law).
 
 In electrostatics, if we also assume the conservative condition:
 ```math
@@ -125,7 +127,7 @@ People may think that the field itself already told how the charge should move. 
 F = qE
 ```
 
-But here's other thing. From experiments by Ampère, Biot–Savart, and others:
+But here's other thing. From experiments by Ampere, Biot¡VSavart, and others:
  - A wire carry current $I$ in a magnetic field $B$ experiences a force:
 ```math
 F_{wire} = IL \times B
@@ -189,7 +191,7 @@ the nontrivial component equations reduce to
 ```math
 \begin{align}
 \frac{\partial E_y}{\partial x} &= -\frac{\partial B_z}{\partial t}, \tag{Faraday}\\[6pt]
--\,\frac{\partial B_z}{\partial x} &= \mu_0\epsilon_0\frac{\partial E_y}{\partial t}. \tag{Ampère–Maxwell (y-component)}
+-\,\frac{\partial B_z}{\partial x} &= \mu_0\epsilon_0\frac{\partial E_y}{\partial t}. \tag{Ampere¡VMaxwell (y-component)}
 \end{align}
 ```
 
@@ -231,3 +233,5 @@ or equivalently
 ```
 
 ---
+
+
