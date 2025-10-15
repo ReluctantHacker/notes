@@ -190,6 +190,8 @@ With our assumption (dependence only on $x$, only $E_y$ and $B_z$ nonzero),
 the nontrivial component equations reduce to
 ```math
 \frac{\partial E_y}{\partial x} = -\frac{\partial B_z}{\partial t} \quad \text{(Faraday)}
+```
+```math
 \frac{\partial B_z}{\partial x} = -\mu_0 \epsilon_0 \frac{\partial E_y}{\partial t} \quad \text{(Ampère-Maxwell y-component)}
 ```
 
