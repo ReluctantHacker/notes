@@ -154,3 +154,15 @@ Where:
 ```
 - $v$ is the wave speed in the medium
 
+For one dimensional wave equation:
+```math
+\frac{\partial^2 u(x, t)}{\partial x^2} = \frac{1}{v^2} \frac{\partial^2 u(x, t)}{\partial t^2}
+```
+And the general solution for it is:
+```math
+u(x, t) = f(x - vt) + g(x + vt)
+```
+Where:
+- \( f \) is a wave traveling to the right
+- \( g \) is a wave traveling to the left
+
