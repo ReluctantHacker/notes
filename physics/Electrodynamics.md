@@ -172,9 +172,9 @@ Where:
 - g() is a wave traveling to the left
 
 
+For simplicity, we start derivation for the situation that the wave traverse in only one direction
 
-
-
+## Specific propagation direction
 Assume fields depend only on $x$ and $t$, and take the nonzero components
 ```math
 E_y(x,t),\qquad B_z(x,t),
