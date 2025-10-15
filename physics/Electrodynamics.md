@@ -171,3 +171,65 @@ Where:
 - f() is a wave traveling to the right
 - g() is a wave traveling to the left
 
+
+
+
+
+Assume fields depend only on \(x\) and \(t\), and take the nonzero components
+\[
+E_y(x,t),\qquad B_z(x,t),
+\]
+so the wave propagates along \(+x\) and the fields are transverse.
+
+Start from the relevant Maxwell curl equations in vacuum (no sources, no currents):
+\[
+\nabla\times\mathbf{E} = -\frac{\partial\mathbf{B}}{\partial t},\qquad
+\nabla\times\mathbf{B} = \mu_0\epsilon_0\frac{\partial\mathbf{E}}{\partial t}.
+\]
+
+With our assumption (dependence only on \(x\), only \(E_y\) and \(B_z\) nonzero),
+the nontrivial component equations reduce to
+\begin{align}
+\frac{\partial E_y}{\partial x} &= -\frac{\partial B_z}{\partial t}, \tag{Faraday}\\[6pt]
+-\,\frac{\partial B_z}{\partial x} &= \mu_0\epsilon_0\frac{\partial E_y}{\partial t}. \tag{Ampère–Maxwell (y-component)}
+\end{align}
+
+(Equivalently written)
+\[
+\frac{\partial B_z}{\partial x} = -\mu_0\epsilon_0\frac{\partial E_y}{\partial t}.
+\]
+
+---
+
+## Eliminate \(B_z\) and get the wave equation for \(E_y\)
+
+Differentiate the Faraday equation with respect to \(x\):
+\[
+\frac{\partial^2 E_y}{\partial x^2}
+= -\frac{\partial}{\partial x}\!\left(\frac{\partial B_z}{\partial t}\right).
+\]
+
+Swap the order of derivatives on the RHS (mixed partials commute):
+\[
+\frac{\partial^2 E_y}{\partial x^2}
+= -\frac{\partial}{\partial t}\!\left(\frac{\partial B_z}{\partial x}\right).
+\]
+
+Now substitute \(\displaystyle \frac{\partial B_z}{\partial x} = -\mu_0\epsilon_0\frac{\partial E_y}{\partial t}\):
+\[
+\frac{\partial^2 E_y}{\partial x^2}
+= -\frac{\partial}{\partial t}\!\left(-\mu_0\epsilon_0\frac{\partial E_y}{\partial t}\right)
+= \mu_0\epsilon_0\frac{\partial^2 E_y}{\partial t^2}.
+\]
+
+Thus we obtain the 1D wave equation for \(E_y\):
+\[
+\boxed{\ \frac{\partial^2 E_y}{\partial x^2} = \mu_0\epsilon_0\,\frac{\partial^2 E_y}{\partial t^2}\ }
+\]
+or equivalently
+\[
+\frac{\partial^2 E_y}{\partial x^2} = \frac{1}{c^2}\frac{\partial^2 E_y}{\partial t^2},
+\qquad c=\frac{1}{\sqrt{\mu_0\epsilon_0}}.
+\]
+
+---
