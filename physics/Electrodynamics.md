@@ -249,3 +249,8 @@ In vacuum $\nabla\cdot\mathbf{E}=0$, hence
 ```math
 \nabla^2\mathbf{E}=\mu_0\epsilon_0\frac{\partial^2\mathbf{E}}{\partial t^2}.
 ```
+
+# Relativity
+Einstein's thought experiment, he imagined a very simple situation:
+> There is a straight conductor (wire loop) and a magnet.
+> You move one relative to the other.
