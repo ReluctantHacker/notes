@@ -250,7 +250,21 @@ In vacuum $\nabla\cdot\mathbf{E}=0$, hence
 \nabla^2\mathbf{E}=\mu_0\epsilon_0\frac{\partial^2\mathbf{E}}{\partial t^2}.
 ```
 
+Before Maxwell, people knew about electric and magnetic forces, but they thought of them as instantaneous actions at a distance, just like Newton’s gravity.
+No one imagined that changes in electric or magnetic fields would travel through space at a finite speed — and even more shockingly, that speed would turn out to be the speed of light
+
 # Relativity
+In 1865, Maxwell found that his equations predict electromagnetic waves in vacuum traveling at speed of light.
+
+However, he did notice that his theory gave a fixed wave speed.
+
+In this sense, Maxwell's equations are naturally Relativistic. Although, Maxwell's equations doesn't really show speed of reference frames. But if you consider deeply, the key point is that, if we take $\epislon$ and $\hmu$ are invariant under different reference frames which makes speed of light invariant
+
+
 Einstein's thought experiment, he imagined a very simple situation:
 > There is a straight conductor (wire loop) and a magnet.
 > You move one relative to the other.
+
+Two cases here
+ - Magnet moves, wire loop at rest --> Paired Electric field induced follow by Faraday's law.
+ - Magnet at rest, wire loop moves --> No changing magnetic field, but charges moving in magnetic field, the induced electric field follow by Lorentz Force law.
