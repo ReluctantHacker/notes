@@ -106,7 +106,7 @@ or
 
 You can use Biot-Savart law to derive Ampere's law. However, structurally similar like electrostatics, Ampere's law is more general than Biot-Savart law, Biot-Savart law is a special case of Ampere's law, you need additional conditions for Ampere's law to derive Biot-Savart law back. It's like Biot-Savart law coresponding to Coulomb's law and Ampere's law corresponding to Gauss's law.
 
-According to the symmetric structure of electrocity and magntism, if change of magnetic field would create electric field, then change of electric field should also create magnetic field. This idea let Maxwell modify Ampere's law as Ampere-Maxwell law. 
+According to the symmetric structure of electrocity and magntism, if change of magnetic field would generate electric field, then change of electric field should also generate magnetic field. This idea let Maxwell modify Ampere's law as Ampere-Maxwell law. 
 
 However, there's no magnetic charge or so called magnetic monopole which means there no magnetic current, so in magnetodynamics, Faraday's law doesn't need to be modified to include the idea of magnetic current generating electric field.
 
@@ -142,7 +142,10 @@ We can't explain this from Maxwell's equations. Because Maxwell's equations don'
 
 So **Maxwell's equations** Plus **Lorentz force law** make the story completely.
 
-Here's one another thing need to be considered about which is that both field and it's generated field exist simultaneously, they are not one thing, they are two things! So if we have a E field and it's generated B field, Both E field and B field would produce Lorentz force. 
+Here's two important things need to be considered about which are 
+ - both fields and it's generated field exist simultaneously, they are not one thing, they are two things! So if we have a E field and it's generated B field, Both E field and B field would produce Lorentz force.
+ - Although, we said "generated" field, but the E field and it's conjugate B field are synchronized with each other and follows the rules of Maxwell's equations. So if a changing E field generates a changing B field, that changing B field would not generate another E field, because they are synchronized by Maxwell's equations, they are paired of each other. This concept would be detailed in the discussion of EM wave.
+ - Although we often say that a "changing electric field generates a magnetic field," in reality, the electric field (E) and its associated magnetic field (B) are **synchronized** and form a **self-consistent solution of Maxwell's equations**. The changing E field does not independently generate a new B field, nor does B generate a new E field in a sequential way; instead, they are **paired and co-evolving**, following the curl relations in Maxwell's equations. This concept will be explained in more detail in the discussion of electromagnetic waves.
 
 # ElectroMagnetic field, wave
 Basically, you can turn Maxwell's equations to standard form of **wave equation** in three dimensions:
