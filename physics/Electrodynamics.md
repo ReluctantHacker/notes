@@ -188,10 +188,12 @@ Start from the relevant Maxwell curl equations in vacuum (no sources, no current
 ```
 With our assumption (dependence only on $x$, only $E_y$ and $B_z$ nonzero),
 the nontrivial component equations reduce to
+```math
 \begin{align}
 \frac{\partial E_y}{\partial x} &= -\frac{\partial B_z}{\partial t}, \tag{Faraday}\\[6pt]
 -\,\frac{\partial B_z}{\partial x} &= \mu_0\epsilon_0\frac{\partial E_y}{\partial t}. \tag{Ampère–Maxwell (y-component)}
 \end{align}
+```
 
 (Equivalently written)
 ```math
