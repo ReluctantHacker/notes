@@ -163,6 +163,6 @@ And the general solution for it is:
 u(x, t) = f(x - vt) + g(x + vt)
 ```
 Where:
-- \( f \) is a wave traveling to the right
-- \( g \) is a wave traveling to the left
+- f() is a wave traveling to the right
+- g() is a wave traveling to the left
 
