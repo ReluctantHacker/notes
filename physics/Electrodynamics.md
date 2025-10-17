@@ -254,10 +254,6 @@ Before Maxwell, people knew about electric and magnetic forces, but they thought
 No one imagined that changes in electric or magnetic fields would travel through space at a finite speed — and even more shockingly, that speed would turn out to be the speed of light
 
 # Relativity
-In 1865, Maxwell found that his equations predict electromagnetic waves in vacuum traveling at speed of light. However, he build his theory based on the absolute reference frame **ether**. Although, Maxwell's equations doesn't really show speed of reference frames, but if you consider deeply, the key point is that, if we take $\epislon$ and $\hmu$ invariant under different reference frames which makes speed of light fixed. Of course, Maxwell believed ether, so he would treat those two constants not invariant under different reference. But now everybody know the truth is those two constants doesn't change. In this sense, Maxwell's equations are naturally Relativistic by taking $\espislon% and %\hmu$ fixed. 
-
-
-
 In 1865, Maxwell found that his equations predict electromagnetic waves in vacuum traveling at the speed of light. However, he built his theory based on the existence of an absolute reference frame — the **ether**. 
 
 Although Maxwell’s equations themselves do not explicitly involve reference frames, the key point is that the speed of light is determined by the constants:
