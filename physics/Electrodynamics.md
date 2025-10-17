@@ -257,6 +257,21 @@ No one imagined that changes in electric or magnetic fields would travel through
 In 1865, Maxwell found that his equations predict electromagnetic waves in vacuum traveling at speed of light. However, he build his theory based on the absolute reference frame **ether**. Although, Maxwell's equations doesn't really show speed of reference frames, but if you consider deeply, the key point is that, if we take $\epislon$ and $\hmu$ invariant under different reference frames which makes speed of light fixed. Of course, Maxwell believed ether, so he would treat those two constants not invariant under different reference. But now everybody know the truth is those two constants doesn't change. In this sense, Maxwell's equations are naturally Relativistic by taking $\espislon% and %\hmu$ fixed. 
 
 
+
+In 1865, Maxwell found that his equations predict electromagnetic waves in vacuum traveling at the speed of light. However, he built his theory based on the existence of an absolute reference frame — the **ether**. 
+
+Although Maxwell’s equations themselves do not explicitly involve reference frames, the key point is that the speed of light is determined by the constants:
+```math
+c = \frac{1}{\sqrt{\varepsilon_0 \mu_0}}.
+```
+
+If we take $\varepsilon_0$ and $\mu_0$ to be invariant under changes of inertial reference frames, then the speed of light must also be invariant. 
+
+Of course, Maxwell believed in the ether, so he would have considered these constants as properties of that medium, not as universal invariants. 
+
+Today we know that $\varepsilon_0$ and $\mu_0$ are indeed invariant constants of spacetime itself. In this sense, Maxwell’s equations are **naturally relativistic** — they already contain the structure that later became the foundation of special relativity.
+
+
 Einstein's thought experiment, he imagined a very simple situation:
 > There is a straight conductor (wire loop) and a magnet.
 > You move one relative to the other.
