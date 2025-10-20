@@ -66,14 +66,22 @@ Basically, compression and tension is the result of bending moment. A slab is a 
 ```math
 M = \int_A{\sigma y dA}
 ```
-Similarly, for shear:
+Similarly, for shear force:
 ```math
 V = \int_A{\tau dA}
 ```
  - $\tau$ is shear stress at a point
  - $dA$ is the area of the slice over which shear acts
 
+The different part is that V is not moment but a force.
 
+We have already told how bending force is caused by the weight of the load. The shear force is exactly caused by the weigt of the load too! 
 
+In fact, bending force and shear force are just two different angles of view to describing how weight load got supported. If we have a load on the slab, the shear force we analysis would be caused by the columns and position that handle the load.
+
+In the other hand, bending force is supporting the load through bending moment. Shear and bending are just two different ways to explain how the load getting support by different physical point of view. We can have the relation below:
+```math
+V\(x\) = \dfrac{dM\(x\)}{dx}
+```
 
 However, Shear force is different from bending force.
