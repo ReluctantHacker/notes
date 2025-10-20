@@ -41,11 +41,11 @@ According to this definition, bending force $\sigma$ would be positive above the
 Before we talk more detailed about bending force, we need to clarify three elementary forces.
 [reference](https://mechanicalc.com/reference/beam-analysis)
 
-### Compression
+### Compression(bending force)
 A pair of equal and opposite forces pushing toward each other along the same line. (so the body is being squeezed). Calculuted by $\sigma$ which is a **stress** which is force per area.
-### Tension
+### Tension(bending force)
 A pair of equal and opposite forces pulling away from each other along the same line. (so the body is being pulled apart). Calculated by $\sigma$ which is a **stress** which is force per area.
-### Shear
+### Shear(shear force)
 A pair of equal and opposite forces acting parallel but not collinear (i.e. along different lines in parallel planes). (so the body tends to slide one layer over the other). It's also a stress which is force per area.
 
 <p align="center">
