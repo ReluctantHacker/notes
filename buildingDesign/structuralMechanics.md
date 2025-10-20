@@ -81,7 +81,7 @@ In fact, bending force and shear force are just two different angles of view to 
 
 In the other hand, bending force is supporting the load through bending moment. Shear and bending are just two different ways to explain how the load getting support by different physical point of view. We can have the relation below:
 ```math
-V\(x\) = \dfrac{dM\(x\)}{dx}
+V\left(x\right) = \dfrac{dM\left(x\right)}{dx}
 ```
 
 However, Shear force is different from bending force.
