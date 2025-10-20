@@ -30,5 +30,5 @@ In the classical **Euler-Bernoulli Beam theory**(the standard model used in basi
 
 At this point, a natural definition of the bending force on any position of a slab(a 3d-solid horizontal bar) is 
 ```math
-\sigma = \dfrac{M /cdot y}{I}
+\sigma = \dfrac{M \cdot y}{I}
 ```
