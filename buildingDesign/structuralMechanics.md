@@ -62,10 +62,16 @@ A pair of equal and opposite forces acting parallel but not collinear (i.e. alon
 
 [reference](https://www.youtube.com/watch?v=CVno4aJjMuc)
 
-Basically, compression and tension is the result of bending moment. A slab is a 3 dimensional bar, the position on it would have different bending force which may be compression or tension. If we integral all the area with tension(or compression), we get moment of bending:
+Basically, compression and tension is the result of bending moment. A slab is a 3 dimensional bar, the position on it would have different bending force which may be compression or tension. If we integral all the area with tension(or compression) across the section, we get moment of bending:
 ```math
 M = \int_A{\sigma y dA}
 ```
+Similarly, for shear:
+```math
+V = \int_A{\tau dA}
+```
+ - $\tau$ is shear stress at a point
+ - $dA$ is the area of the slice over which shear acts
 
 
 
