@@ -32,3 +32,25 @@ At this point, a natural definition of the bending force on any position of a sl
 ```math
 \sigma = \dfrac{M \cdot y}{I}
 ```
+Before we talk more detailed about bending force, we need to introduce three elementary forces.
+[reference](https://mechanicalc.com/reference/beam-analysis)
+
+### Compression
+A pair of equal and opposite forces pushing toward each other along the same line. (so the body is being squeezed)
+### Tension
+A pair of equal and opposite forces pulling away from each other along the same line. (so the body is being pulled apart)
+### Shear
+A pair of equal and opposite forces acting parallel but not collinear (i.e. along different lines in parallel planes). (so the body tends to slide one layer over the other)
+
+<p align="center">
+  <img src="./images/structuralMechanics_figure_1.png"/>
+</p>
+
+<p align="center">
+  <img src="./images/structuralMechanics_figure_2.jpg"/>
+</p>
+
+<p align="center">
+  <img src="./images/structuralMechanics_figure_3.png"/>
+</p>
+[reference](https://www.youtube.com/watch?v=CVno4aJjMuc)
