@@ -32,15 +32,21 @@ At this point, a natural definition of the bending force on any position of a sl
 ```math
 \sigma = \dfrac{M \cdot y}{I}
 ```
-Before we talk more detailed about bending force, we need to introduce three elementary forces.
+ - M is the bending moment, roughly the rotational torque of the slab caused by the load.
+ - y is the distance of the position's axis(fiber) and the central axis
+ - I is the moment of inertia of cross-section. This parameter is paired to M, means how well the cross-section can resist bending. Like rotational inertia.
+
+According to this definition, bending force $\sigma$ would be positive above the central axis, and negative under the central axis which is the **compression** and **tension**. (The positive or negative would based on the reference choose. So it could be negative above and positive down but the idea is the same)
+
+Before we talk more detailed about bending force, we need to clarify three elementary forces.
 [reference](https://mechanicalc.com/reference/beam-analysis)
 
 ### Compression
-A pair of equal and opposite forces pushing toward each other along the same line. (so the body is being squeezed)
+A pair of equal and opposite forces pushing toward each other along the same line. (so the body is being squeezed). Calculuted by $\sigma$ which is a **stress** which is force per area.
 ### Tension
-A pair of equal and opposite forces pulling away from each other along the same line. (so the body is being pulled apart)
+A pair of equal and opposite forces pulling away from each other along the same line. (so the body is being pulled apart). Calculated by $\sigma$ which is a **stress** which is force per area.
 ### Shear
-A pair of equal and opposite forces acting parallel but not collinear (i.e. along different lines in parallel planes). (so the body tends to slide one layer over the other)
+A pair of equal and opposite forces acting parallel but not collinear (i.e. along different lines in parallel planes). (so the body tends to slide one layer over the other). It's also a stress which is force per area.
 
 <p align="center">
   <img src="./images/structuralMechanics_figure_1.png"/>
@@ -53,4 +59,15 @@ A pair of equal and opposite forces acting parallel but not collinear (i.e. alon
 <p align="center">
   <img src="./images/structuralMechanics_figure_3.png"/>
 </p>
+
 [reference](https://www.youtube.com/watch?v=CVno4aJjMuc)
+
+Basically, compression and tension is the result of bending moment. A slab is a 3 dimensional bar, the position on it would have different bending force which may be compression or tension. If we integral all the area with tension(or compression), we get moment of bending:
+```math
+M = \int_A{\sigma y dA}
+```
+
+
+
+
+However, Shear force is different from bending force.
