@@ -15,7 +15,7 @@ A beam is a smart compromise that saves material and still strengthens the slab.
 
 Since a slab bends, and we want the space below it to be free for living or walking, we cannot just keep adding columns. Another idea is to make the slab thicker so it can tolerate more bending. That would work, but in modern buildings this would make the structure unnecessarily heavy and wasteful. Instead of thickening the entire slab, we only thicken the edges where the bending is most critical. In 3D, the slab is a floor, and the local thickening along its edges is exactly what we call a beam. A beam is therefore literally the slab’s “reinforced edge” that controls bending without filling the space below with columns or making the whole slab massive.
 
-## Bending force
+## Bending force and shear force
 We have now discussed the basic structural elements but didn't have a strong concepts about how we precisely decide what is a material bending really is. We need to define what bending force of a slab or floor is.
 
 Intuitively, the bending situation is that a slab bar which have some weighted load on it would be pressed on the top and stretch under the bottom part. In short, the top would tend to get shorter and the bottom would tend to get longer(You can imagine this by bending a solid metal bar by your hands).
@@ -83,5 +83,29 @@ In the other hand, bending force is supporting the load through bending moment. 
 ```math
 V\left(x\right) = \dfrac{dM\left(x\right)}{dx}
 ```
+This means shear force is the derivative of the bending moment.
 
-However, Shear force is different from bending force.
+If we totally ignore material properies including material strength, deformation limits and failure modes(like cracking, yielding, buckling). Then shear force and bending moment are just different mathematical expressions of how a structure internally balances external loads. You can derive one from the other, so they are interchangeable in terms of describing the internal response.
+
+However, in real world, material often tolerate bending better than shear. Shear stress and bending stress act in different directions and affect different failure modes. If we want a more save and precise design of building, we need to consider both factors.
+
+We often use **shear force and bending moment diagram** which is build on the mathematical truth that bending and shear, one can be derived from the other, assuming the loading conditions are known.
+
+The diagram is useful because, mainly, we design building structure by using shear and moment diagram to consider what material is suitable to use for the reasons that some material is better at some critical points in different shear-moment situation.
+
+Roughly, a designer start his design from some artistic concept including building shape, column placement and spacing and open spaces, curves, cantilevers, etc. These choices express aesthetic, cultural, or functional ideas. And then the designer of course need to translate the vision ideas into something that can physically stand. For example, where loads will be applied, how forces will travel through the structure and what kind of structural system fits the shape(eg., frame, shell, truss). And then use shear and moment diagram to analysis critical point of internal force, understand how the structure will respond to gravity, wind, earthquakes, etc and detrmine where the structure needs to be strongest. Finally based on all of that, the choose the materials.
+
+## Torsion(扭力)
+We have already talk about **Compression**, **Tension**, **Shear**. (bending is just a combination of compression and tension). These three forces and the fourth one **Torsion** are the **Four Fundamental Internal Forces in Structural Mechanics**. 
+
+<p align="center">
+  <img src="./images/structuralMechanics_figure_4.jpg"/>
+</p>
+
+Almost every other kind of internal force or stress pattern in a structure can be understood as a combination or variation of these four. For examples:
+ - Bending: Tension+Compresion(Top compresses, bottom stretches)
+ - Buckling: Compression+Geometry(Instability under axial load)
+ - Fatigue: Repeated Tension/Compression/Shear(Damage over time)
+ - Torsional Shear: Shear+Rotation(Shear stress from twisting)
+ - Thermal Stress: Tension/Compression(Caused by temperature change)
+ - Combined Loading: Mix of all(Real-world loads often involve multiple)
