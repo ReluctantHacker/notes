@@ -93,7 +93,21 @@ We often use **shear force and bending moment diagram** which is build on the ma
 
 The diagram is useful because, mainly, we design building structure by using shear and moment diagram to consider what material is suitable to use for the reasons that some material is better at some critical points in different shear-moment situation.
 
-Roughly, a designer start his design from some artistic concept including building shape, column placement and spacing and open spaces, curves, cantilevers, etc. These choices express aesthetic, cultural, or functional ideas. And then the designer of course need to translate the vision ideas into something that can physically stand. For example, where loads will be applied, how forces will travel through the structure and what kind of structural system fits the shape(eg., frame, shell, truss). And then use shear and moment diagram to analysis critical point of internal force, understand how the structure will respond to gravity, wind, earthquakes, etc and detrmine where the structure needs to be strongest. Finally based on all of that, the choose the materials.
+Roughly, a designer starts his design from some artistic concept including building shape, column placement and spacing and open spaces, curves, cantilevers, etc. These choices express aesthetic, cultural, or functional ideas. And then the designer of course need to translate the vision ideas into something that can physically stand. For example, where loads will be applied, how forces will travel through the structure and what kind of structural system fits the shape(eg., frame, shell, truss). And then use shear and moment diagram to analysis critical point of internal force, understand how the structure will respond to gravity, wind, earthquakes, etc and detrmine where the structure needs to be strongest. Finally based on all of that, the choose the materials.
+
+# Static Mechanics
+Before we go further and deeper about structure, we need to stop and notice one thing. Everything we've discussed by now is **Static Mechanics** which is mostly the basic structure problem may need to be considered. However, you have to understand deeply about what statics really is to be a good physicists and philosphist. 
+
+Statics Mechanics discusses about systems that are force balance which means there's no net force that make system moving. For example, if we have a man pushing a wall, there's nothing moving, so it's static mechanics. The pushing force from the man canceled by the force reversely push back by the wall.
+
+However! There's one thing we need to think deeply. In Newton's law we know that $F=ma=\dfrac{dP}{dt}$. However, there's no acceleration or momentum in a so call force balanced system. There's actually no real force existed in statics mechanics at all. All the force is **imaginary force** help us analize the structure of the system.
+
+But if we place a force senor in between, it does sense a force value. So what's going on here? 
+
+Again, physics comes. We can imagine one scenario, suppose we have two identical particles that have pushing force on a third particle in the middle between them. The force on the third particle is 0 because it's in the middle between two particles. But if you sligtly move the third particle to for example a little closer to the first particle, immediately it would accelerate back to the middle point and it would have force on it. This is apparently because of unbalance. The more you move the third particle from middle point, the more accelerate it would gains to go back to the middle point. That is exaclty what is going on to the statics. The force is keep pushing.
+
+
+## Pure bending (bending without shear)
 
 ## Torsion(扭力)
 We have already talk about **Compression**, **Tension**, **Shear**. (bending is just a combination of compression and tension). These three forces and the fourth one **Torsion** are the **Four Fundamental Internal Forces in Structural Mechanics**. 
@@ -109,3 +123,7 @@ Almost every other kind of internal force or stress pattern in a structure can b
  - Torsional Shear: Shear+Rotation(Shear stress from twisting)
  - Thermal Stress: Tension/Compression(Caused by temperature change)
  - Combined Loading: Mix of all(Real-world loads often involve multiple)
+
+
+
+
