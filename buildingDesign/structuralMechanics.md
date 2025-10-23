@@ -96,16 +96,50 @@ The diagram is useful because, mainly, we design building structure by using she
 Roughly, a designer starts his design from some artistic concept including building shape, column placement and spacing and open spaces, curves, cantilevers, etc. These choices express aesthetic, cultural, or functional ideas. And then the designer of course need to translate the vision ideas into something that can physically stand. For example, where loads will be applied, how forces will travel through the structure and what kind of structural system fits the shape(eg., frame, shell, truss). And then use shear and moment diagram to analysis critical point of internal force, understand how the structure will respond to gravity, wind, earthquakes, etc and detrmine where the structure needs to be strongest. Finally based on all of that, the choose the materials.
 
 # Static Mechanics
-Before we go further and deeper about structure, we need to stop and notice one thing. Everything we've discussed by now is **Static Mechanics** which is mostly the basic structure problem may need to be considered. However, you have to understand deeply about what statics really is to be a good physicists and philosphist. 
+Before diving deeper into structural analysis, it's important to pause and reflect on a fundamental concept: everything we've discussed so far falls under Static Mechanics. This field deals with systems in equilibrium—where forces cancel out and no motion occurs. While it may seem basic, truly understanding statics is essential for becoming a thoughtful physicist or even a philosophical thinker.
 
-Statics Mechanics discusses about systems that are force balance which means there's no net force that make system moving. For example, if we have a man pushing a wall, there's nothing moving, so it's static mechanics. The pushing force from the man canceled by the force reversely push back by the wall.
+Static mechanics studies systems where all forces are balanced, meaning the net force is zero and the system remains stationary. For example, imagine a man pushing against a wall. Nothing moves, so we consider this a static situation. The force exerted by the man is counteracted by an equal and opposite force from the wall.
 
-However! There's one thing we need to think deeply. In Newton's law we know that $F=ma=\dfrac{dP}{dt}$. However, there's no acceleration or momentum in a so call force balanced system. There's actually no real force existed in statics mechanics at all. All the force is **imaginary force** help us analize the structure of the system.
+However, here’s things get interesting. According to Newton’s second law, $F=ma=\dfrac{dP}{dt}$ a statically balanced system, there’s no acceleration and no change in momentum. So, does force really exist in such a system?
 
-But if we place a force senor in between, it does sense a force value. So what's going on here? 
+No. In fact, the forces we talk about in statics are just conceptual tools. They help us analyze and understand the structure, but they don’t cause motion. You could say these are imaginary forces, useful for modeling but not physically true.
 
-Again, physics comes. We can imagine one scenario, suppose we have two identical particles that have pushing force on a third particle in the middle between them. The force on the third particle is 0 because it's in the middle between two particles. But if you sligtly move the third particle to for example a little closer to the first particle, immediately it would accelerate back to the middle point and it would have force on it. This is apparently because of unbalance. The more you move the third particle from middle point, the more accelerate it would gains to go back to the middle point. That is exaclty what is going on to the statics. The force is keep pushing.
+But What About Force Sensors?
 
+If you place a force sensor between two objects in a static system, it does register a force. Why?
+
+Let’s imagine three particles: two outer particles push on a middle one. If the middle particle is exactly centered, it experiences no net force. But if it shifts slightly toward one side, it accelerates back toward the center. This shows that even in balance, position matters, a tiny displacement leads to a restoring force(real force because of acceleration).
+
+This is the essence of static balance: forces arise from potential energy gradients due to particle positions. The same applies to the man pushing the wall—if his hand moves slightly away, it will be pulled back due immediateyl gain of acceleration back to wall.
+
+Consider a line of wooden blocks forming a train, with the last block pushing against a wall. Between each block, no acceleration no force. But if you try to pull one block slightly away, it will accelerate back toward the wall whic produce force. The force sensor placed between blocks shows a value not because there's a constant force, but because inserting the sensor changes the spacing, causing a temporary imbalance and then real forces produce to make sensor's physical structure disturbed(like a spring get streched or compressed) which can be a measurable value of force. The system then adjusts until a new equilibrium is reached.
+
+On a microscopic level, this is about particles adjusting their positions to minimize potential energy—restoring balance.
+
+Now, a deeper question: if a particle experiences two equal and opposite forces, do those forces truly exist?
+
+The answer is no, at least not in the traditional sense. Force is defined by acceleration. If there's no acceleration, there's no net force. Talking about "two forces on an object" is misleading—what matters is the net force, which determines motion.
+
+Traditionally, we say an object can have multiple forces acting on it, and we sum them to get the "net force," which determines acceleration via Newton’s second law:
+```math
+F_{net}=ma
+```
+But this is not a fundamental truth, it's a mathematical abstraction. In reality, an object doesn’t experience multiple forces. It only responds to one interaction, which manifests as acceleration. So the idea of “net force” is just a convenient way to describe the outcome of a system, not a real physical entity.
+
+If we accept that force is defined by acceleration, then only one force can exist on an object at a time, the one that causes that acceleration. Talking about “two forces” or “balancing forces” is misleading. There is no such thing as “net” force, there is only force, and it arises from the geometry and interaction of particles.
+
+All physical systems are made of particles, and what we perceive as force is actually the result of microscopic geometry—the spatial arrangement of particles and their potential energy relationships. When particles are displaced from equilibrium, they experience restoring acceleration. These accelerations produce what we call "forces", but they are not standalone entities, they are emergent effects of geometry and energy gradients.
+
+So instead of thinking in terms of forces being applied or summed, we should think in terms of how particle configurations create tendencies to move. The structure itself—how particles are arranged and constrained—is what determines whether motion occurs or not.
+
+In this view, statics is not about forces being balanced, but about particles being in geometrical equilibrium. The system doesn’t “have forces” acting on it—it simply exists in a configuration where no particle has a reason to move.
+
+# Force flow
+Although we say that there's no force in statics mechanics, but we still need to think in solid structure physics, how everything is balanced. 
+
+We still take the blocks train examples. If you put sensor in every position between all blocks, all of them would get same force value. So apparently, the equilibrium is "generally" effect. But how a force pushing from one side cause all the position in structure balanced at the same force? It's because of the reverse force by Newton's third law. 
+
+In microscopic view, Newton's third law is because of identical particles doing exactly same interation to each other but with different direction. 
 
 ## Pure bending (bending without shear)
 
