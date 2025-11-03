@@ -135,15 +135,49 @@ So instead of thinking in terms of forces being applied or summed, we should thi
 In this view, statics is not about forces being balanced, but about particles being in geometrical equilibrium. The system doesn’t “have forces” acting on it—it simply exists in a configuration where no particle has a reason to move.
 
 # Force flow
-Although we say that there's no force in statics mechanics, but we still need to think in solid structure physics, how everything is balanced. 
+Although we say that there’s no force in static mechanics, we still need to understand how everything stays balanced in solid structures.
 
-We still take the blocks train examples. If you put sensor in every position between all blocks, all of them would get same force value. So apparently, the equilibrium is "generally" effect. But how a force pushing from one side cause all the position in structure balanced at the same force? It's because of the reverse force by Newton's third law. 
+Let’s return to the wooden block train example. If you place a sensor between every pair of blocks, each sensor would show the same force value. This suggests that equilibrium is a distributed effect. But how does a force applied at one end result in the same force being measured throughout the structure?
 
-In microscopic view, Newton's third law is because of identical particles doing exactly same interation to each other but with different direction. 
+It’s due to Newton’s third law—every action has an equal and opposite reaction.
+
+
+## Microscopic View
+At the particle level, Newton’s third law arises because identical particles interact symmetrically—they exert equal and opposite forces on each other. In a balanced structure made of many identical particles, the force required to move any single particle by a certain distance is the same throughout the structure. This is because the bond strength and spacing are uniform.
+
+## Macroscopic View
+In the block train, each contact surface between blocks is identical. When you try to separate two blocks, the distance you create between them generates a force. Since the geometry and material properties are the same at every contact point, the force-distance relationship is consistent across the structure.
+This is how force "flows" through a static system—not as a moving entity, but as a pattern of resistance that emerges from uniform geometry and interactions.
+
+
+## Non-uniform force distribution and again the force flow
+However, even in static systems, the internal forces don't have to be uniformly distributed throughout the structure. A simple example is a ceiling that hangs a spring, which holds a weight. That weight, in turn, hangs another spring which hangs another weight. In this setup, the force in the upper spring is smaller than the force in the lower spring, yet the entire system remains in equilibrium. This difference arises due to boundary conditions — the constraints that can be applied anywhere in the system.
+
+In static mechanics, true equilibrium is only possible when external forces or boundary conditions are present. For example, consider three identical particles arranged in a line: A — B — C. Suppose particle B is exactly between A and C, and all particles interact via the same force law. In this case, B can remain static due to equal and opposite forces from A and C. However, particles A and C will experience unbalanced forces pushing them outward, causing motion unless external forces or constraints hold them in place.
+
+Boundary conditions are crucial because they allow non-uniform force distributions to exist in equilibrium. For instance, if the force between A and B is different from the force between B and C, the system can still be balanced — as long as external constraints adjust the position of B to maintain equilibrium.
+
+This kind of situation is very common in microscopic structures constructed by non-uniform particles which are not identical between each other.
+
+Let's talk about force flow more deeply. Suppose we have a solid bar which is fixed to a wall at one end, and you push on the other end. What happens?
+
+ - The force you apply at the free end of the bar creates internal stress within the bar.
+ - This stress is transmitted through the material toward the fixed end.
+ - The wall, being the boundary constraint, provides the reaction force that balances the force you applied.
+
+The force "flows" from the point of application toward the boundary, because the boundary is what ultimately resists the motion and maintains equilibrium.
+
+When a system is in static equilibrium, there must be at least one boundary condition — a constraint that prevents motion. One way to identify which part of the system acts as a boundary is to mentally remove the point you suspect is constrained and imagine what would happen.
+
+Take the example of a solid bar fixed to a wall: if you remove the wall, the bar would no longer stay in place — if you push one end of it, it would move. This tells us that the wall is the boundary condition that keeps the system static. The same reasoning can be applied to any static structure.
+
+# Advanced elements
+Now, we have the statics mechanics and force flow concepts, we can then have an idea which is that if something is pushing something by a force, but nothing's moving, then balanced force must go through the whole solid structure. It's not like just we push one end of a bar by a force, the only forced point is the end side of the bar, but every position in bar have the force. The things we got to discuss is what direction of the force is flowing.
 
 ## Pure bending (bending without shear)
+The directly example is a screw
 
-## Torsion(扭力)
+## Torsion
 We have already talk about **Compression**, **Tension**, **Shear**. (bending is just a combination of compression and tension). These three forces and the fourth one **Torsion** are the **Four Fundamental Internal Forces in Structural Mechanics**. 
 
 <p align="center">
@@ -161,3 +195,36 @@ Almost every other kind of internal force or stress pattern in a structure can b
 
 
 
+
+# 中華民國建築流程
+## 勘驗
+勘驗指的是由主管建築機關（如直轄市或縣市政府）派員，對建築工程的特定施工階段進行現場查驗。這些查驗通常包括：
+
+ - 放樣勘驗：建築物放樣後、挖掘基礎前。
+ - 基礎勘驗：基礎土方挖掘後、澆置混凝土前。
+ - 配筋勘驗：鋼筋混凝土構造樓板或屋頂配筋完畢後。
+ - 鋼骨勘驗：鋼骨結構組立完成後。
+ - 屋架勘驗：屋架豎立後、蓋屋面之前。
+
+每一個階段都由申請方（通常是承造人與監造人)提出申請(含勘驗時間), 主管機關收到申請後再安排勘驗人員於勘驗時間到場.
+
+## 放樣
+放樣簡單來說就是在還沒建起來的時候, 在整地上畫線或標記建築結構的一些重要參考點, 放樣勘驗的目的就是政府派人檢查到底畫線畫的準不準, 因為之後要依照放樣實際施工.(有誤差容許範圍)
+
+**高程測量**是測量該地的地面相對於某點的高度, 而非建築物完工的高度. 建築高度無法放樣.
+
+## 水平線繪製
+簡單來說, 假設我正在蓋二樓, 通常施工人員會在一根柱子(或垂直結構)上畫上高度水平線, 來表示二樓的位置. 且水平線繪製符合:
+1. 柱子必須垂直地板
+2. 肯定不能只有一條水平線, 而是依照地板最終的幾何圖樣, 決定在那些柱子(或牆壁)畫出水平線, 否則參考系不夠, 精準度會有問題
+
+柱子一開始可能只是鋼筋, 還沒有灌水泥, 許多情況下都是鋼筋先都架好在全部一起灌水泥, 所以也很可能一樓鋼筋綁好後直接開始綁二樓鋼筋, 如此以來, 工人也會在鋼筋上畫水平線
+
+## 鋼筋工程
+目前大部分的鋼筋仍舊是人力綁起來的, 這不是指鋼筋是由人力彎曲的, 而是指用鐵絲將交錯的鋼筋綁緊. 實際上, 通常不會於施工現場彎鋼筋, 大部分是在工廠彎好了, 在運到施工現場給工人"組裝". 
+
+例如假設一個最簡單的情況, 有10條直線鋼筋, 我們要用這十條鋼筋做一個地板(二樓)結構, 用5條平行在下, 然後另外5條垂直擺放在原先5條之上, 然後用鐵絲把交叉處全部綑綁. 這就是施工工人在做的事情.
+
+還有另一個例子, 簡單柱子鋼筋的做法, 用垂直鋼筋幾條立起來(鋼筋之間都互相平行), 形成矩形橫切面, 然後再用彎成矩形的鋼筋套在外面, 每隔一段垂直高度就套一個. 垂直的鋼筋在此稱作"主筋", 而外圍套上去的矩形鋼筋稱為"箍筋".
+
+箍筋的作用是防止主筋出現角度偏移, 用鐵絲綁緊箍筋與主筋的交叉處, 提結構整合性.(注意! 鐵絲本身不承受主要結構力, 如壓力, 拉力, 剪力, 這些力是由鋼筋與混凝土共同承擔的。鐵絲的強度只需要足以在施工過程中維持鋼筋位置即可. 事實上, 鐵絲的作用在水泥上去後, 其實就沒用了, 只是未上水泥前, 防止鋼筋位移的臨時手段, 一旦混凝土澆置並硬化，整個鋼筋籠就會被混凝土包覆並鎖定，鐵絲的結構功能就結束了)
