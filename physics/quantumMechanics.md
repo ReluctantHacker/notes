@@ -65,7 +65,19 @@ More specifically, instantaneous energy density $U\left(x, t\right)$
 u(x, t) = \epsilon_0 E(x, t)^2
 ```
 
-This tells the energy denesity at specific point of space and time! which is telling how many photons at specific point of space and time!
+This tells the energy density at specific point of space and time! which is telling how many **photons density(photons per space) at specific point of space and time!
+
+Now if we know the total number $N(t)$ of photons at a specific time $t$. We can have
+```math
+N(t) = \int{u(x, t) dx} = \int{E(x, t)^2 dx}
+```
+
+The pattern of matter wave should be the same as light, so we can have matter wave function $\Psi(x, t)$.
+```math
+N(t) = \int{\Psi(x, t)^2 dx}
+```
+
+
 
 
 
