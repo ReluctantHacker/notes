@@ -52,7 +52,7 @@ Electromagnetic wave itself is indeed a wave but it has no matter-meaning at all
 
 Although, electromagnetic wave itself has no matter-meaning to iteslf. The square of it has! 
 
-The classical electrodynamics tells us that the intersity $I = \dfrac{1}{2}\epislon_0cE^2$ which is the energy per time per area of the wave itself.
+The classical electrodynamics tells us that the intersity $I = \dfrac{1}{2}\epsilon_0cE^2$ which is the energy per time per area of the wave itself.
 
 We also know that one photon's energy is:
 ```math
