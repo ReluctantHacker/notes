@@ -62,7 +62,7 @@ So this means $E^2$ is proportional to how many photons per time per area.
 
 More specifically, instantaneous energy density $U\left(x, t\right)$
 ```math
-\u(x, t) = \epsilon_0 E(x, t)^2
+u(x, t) = \epsilon_0 E(x, t)^2
 ```
 
 This tells the energy denesity at specific point of space and time! which is telling how many photons at specific point of space and time!
@@ -86,7 +86,7 @@ c=\nu \lambda
 \omega=2\pi\nu
 ```
 ```math
-k=\dfrac{2\pi}{\lamda}
+k=\dfrac{2\pi}{\lambda}
 ```
 
 which can let this result:
