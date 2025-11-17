@@ -1,11 +1,11 @@
 # Intuition
 The wave function is the most important idea of quantum mechanics. The story is roughly start from the two properties of light which is photon. People found that light have matter property(like particle, photoelectronic effect) and wave property(through some earlier experiments). The wave properties had been now for many years then. The surprising thing is the matter property or also known as the particle property which is spread widely because of Issac Newton but been abandon through 19th century. Anyway, We have two important results of particle-wave relationship below:
 ```math 
-E=h\hnu
+E=h\nu
 P=\dfrac{h}{\lambda}
 ```
 ## Plank
-The first quantum idea was from Plank's black body radiation problem. He assumed that the energy can only be quantized which is exactly $E=h\hnu$ and perfectly fit the black radiation experiment result.
+The first quantum idea was from Plank's black body radiation problem. He assumed that the energy can only be quantized which is exactly $E=h\nu$ and perfectly fit the black radiation experiment result.
 
 ## Einstein
 Later, Einstein totally used Plank's formula in photoelectronic effect problem and it perfectly match the experiment results.
@@ -54,13 +54,13 @@ The classical electrodynamics tells us that the intersity $I = \dfrac{1}{2}\epis
 
 We also know that one photon's energy is:
 ```math
-E=h\hnu
+E=h\nu
 ```
 So this means $E^2$ is proportional to how many photons per time per area. 
 
-More specifically, instantaneous energy density $\hmu\left(x, t\right)$
+More specifically, instantaneous energy density $\mu\left(x, t\right)$
 ```math
-\hmu\left(x, t\right) = \epsilon_0 E\left(x, t\right)^2
+\mu\left(x, t\right) = \epsilon_0 E\left(x, t\right)^2
 ```
 
 This tells the energy denesity at specific point of space and time! which is telling how many photons at specific point of space and time!
@@ -70,14 +70,14 @@ This tells the energy denesity at specific point of space and time! which is tel
 
 According to matter-wave relationships:
 ```math
-E=h\hnu
+E=h\nu
 P=\dfrac{h}{\lambda}
 ```
 
 we know three things below:
 ```math
-c=\hnu \lambda
-\omega=2\pi\hnu
+c=\nu \lambda
+\omega=2\pi\nu
 k=\dfrac{2\pi}{\lamda}
 ```
 
