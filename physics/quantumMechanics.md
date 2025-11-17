@@ -1,7 +1,7 @@
 # Intuition
 The wave function is the most important idea of quantum mechanics. The story is roughly start from the two properties of light which is photon. People found that light have matter property(like particle, photoelectronic effect) and wave property(through some earlier experiments). The wave properties had been now for many years then. The surprising thing is the matter property or also known as the particle property which is spread widely because of Issac Newton but been abandon through 19th century. Anyway, We have two important results of particle-wave relationship below:
 ```math 
-E=h\nu
+E=h\nu \\
 P=\dfrac{h}{\lambda}
 ```
 ## Plank
