@@ -33,14 +33,14 @@ He assumed that if electron's matter-wave relationship is the same as photon's o
 
 What is the meaning of light wave as we known? We know that the electromagnetic wave is like below
 ```math
-E(x, t) = e^(kx - \omega t)
+E(x, t) = e^{(kx - \omega t)}
 ```
 
 the E means electric field.
 
 Schrodinger assumed that matter wave should be the same form which is like below:
 ```math
-\Phi(x, t) = e^(kx-\omega t)
+\Phi(x, t) = e^{(kx-\omega t)}
 ```
 
 But what does this mean?
@@ -62,7 +62,7 @@ So this means $E^2$ is proportional to how many photons per time per area.
 
 More specifically, instantaneous energy density $\mu\left(x, t\right)$
 ```math
-\mu\left(x, t\right) = \epsilon_0 E\left(x, t\right)^2
+\Mu(x, t) = \epsilon_0 E(x, t)^2
 ```
 
 This tells the energy denesity at specific point of space and time! which is telling how many photons at specific point of space and time!
@@ -99,5 +99,5 @@ P=\dfrac{hk}{2\pi}
 
 which can let this result:
 ```math
-\Phi(x, t) = e^(kx - \omega t)
+\Phi(x, t) = e^{(kx - \omega t)}
 ```
