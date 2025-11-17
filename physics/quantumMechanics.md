@@ -1,83 +1,91 @@
 # Intuition
-The wave function is the most important idea of quantum mechanics. The story is roughly start from the two properties of light which is photon. People found that light have matter property(like particle, photoelectronic effect) and wave property(through some earlier experiments). The wave properties had been now for many years then. The surprising thing is the matter property or also known as the particle property which is spread widely because of Issac Newton but been abandon through 19th century. Anyway, We have two important results of particle-wave relationship below:
+The wave function is the most important concept in quantum mechanics. The story begins with the dual nature of light — specifically, the photon. Experiments revealed that light exhibits both particle-like properties (e.g., the photoelectric effect) and wave-like properties (e.g., interference and diffraction). The wave nature of light had been known for many years, but the particle nature — widely accepted since Isaac Newton — was largely abandoned during the 19th century.
+Eventually, two key relationships emerged that connect the particle and wave aspects of light:
 ```math 
 E=h\nu
 ```
 ```math
 P=\dfrac{h}{\lambda}
 ```
+
 ## Plank
-The first quantum idea was from Plank's black body radiation problem. He assumed that the energy can only be quantized which is exactly $E=h\nu$ and perfectly fit the black radiation experiment result.
+The first quantum idea came from Planck’s solution to the blackbody radiation problem. He proposed that energy is quantized, leading to the formula $E=h\nu$ , which perfectly matched experimental results.
 
 ## Einstein
-Later, Einstein totally used Plank's formula in photoelectronic effect problem and it perfectly match the experiment results.
+Later, Einstein applied Planck’s formula to the photoelectric effect and found that it also matched experimental observations. This reinforced the idea that light behaves as particles — photons — under certain conditions.
 
 ## Bohr
-After that, Plank's constant got used again by Bohr to construct his beautiful model of hydrogen atom by using the idea of quantized orbits. 
+After that, Plank's constant got used again by Bohr construct his elegant model of the hydrogen atom by using the concept of quantized orbits.
 
-People was getting realized that something continuous distributed in their thought is actually quantized.
+People began to realize that phenomena previously thought to be continuous were actually quantized.
 
-Bohr's model has some sincere problems. But the one and most important one is that why electron stand still circular around the nuclear without falling because of contiunous radiation by electron's circular motion?
+However, Bohr's model had some sincere problems. One and most important one is that: From the model, the electron should fall into nuclear due to continuous radiation emitting from its circular motion(acceleration)?
 
-## Debrogile
-Bohr's model was still a classical motion of electron. Debrogile realized this and push way more farther to get that if electron is a wave, then there's no such radiation because of circular motion.
+## de Brogli
+Bohr’s model still treated the electron as a classical particle. De Broglie took a bold step forward: if the electron is a wave, then it wouldn’t radiate energy in circular motion — just like a standing wave.
 
-But if electron is a wave, what's the form this wave should be like? Photon! He thought.
+But what kind of wave should the electron be? De Broglie reasoned: like a photon!
 
-He assumed that electron's matter-wave relationship is the same as photon's one, the orbits of Bohr's model are just standing waves.
+He proposed that the electron’s wave-particle relationship mirrors that of the photon, and that Bohr’s quantized orbits are simply standing waves.
 
-## Shrodinger
-But what is the meaning of this so called wave actually is? Same as the form of light! Shrodinger thought.
+## Schrödinger
+But what does this “wave” actually mean?
+Mirror the light! Schrödinger thought.
 
 He assumed that if electron's matter-wave relationship is the same as photon's one, then the wave should mean the same.
 
-What is the meaning of light wave as we known? We know that the electromagnetic wave is like below
+First of all, we take a look, what is the meaning of light wave as we known? We know that generally, a electromagnetic wave is like below
 ```math
 E(x, t) = e^{(kx - \omega t)}
 ```
 
-the E means electric field.
+E is electric field.
 
-Schrodinger assumed that matter wave should be the same form which is like below:
+Matter wave should have same form:
 ```math
 \Phi(x, t) = e^{(kx-\omega t)}
 ```
 
-But what does this mean?
+But what does $\Phi(x, t)$ mean, physically?
 
-Electromagnetic wave itself is indeed a wave but it has no matter-meaning at all, it doesn't tell anything about what the photons(which is the electromagnetic wave's particle form) does.(Noticed one electromagnetic wave doesn't mean it is one photon)
+An electromagnetic wave itself is indeed a wave but it has no matter-meaning at all, it doesn't tell anything about what behavior(which is the electromagnetic wave's particle form) of photons.(Notice! One electromagnetic wave does not necessarily correspond to one photon)
 
 > [!NOTE] 
-> There's also another thing. Photon(electromagnetic wave) itself wouldn't interact with any other photon.(even though it would interact with electrical particles, but they are not photons). So matter wave, according to the assumptions for the similarity of photon and matter, shouldn't interact with other matter(Although it should interact with other thing, but it's not matter, and we only focus on matter now)
+> Photons (electromagnetic waves) do not interact with each other directly. While they interact with charged particles, they do not interact with other photons. By analogy, matter waves — if modeled after photons — should not interact with other matter either. (Though they may interact with other entities, we focus here only on matter-matter interaction.)
 
-Although, electromagnetic wave itself has no matter-meaning to iteslf. The square of it has! 
+Although the electromagnetic wave itself doesn’t carry particle meaning, its square does.
 
-The classical electrodynamics tells us that the intersity $I = \dfrac{1}{2}\epsilon_0cE^2$ which is the energy per time per area of the wave itself.
+Classical electrodynamics tells us that the intensity of a wave is:
+```math
+I = \dfrac{1}{2} \epsilon_0 c E^2
+```
 
-We also know that one photon's energy is:
+This represents energy per time per area
+
+We also know the energy of a single photon is:
 ```math
 E=h\nu
 ```
-So this means $E^2$ is proportional to how many photons per time per area. 
+So $E^2$ is proportional to the **number of photons per time per area**. 
 
-More specifically, instantaneous energy density $U\left(x, t\right)$
+More specifically, the instantaneous energy density is:
 ```math
 u(x, t) = \epsilon_0 E(x, t)^2
 ```
 
-This tells the energy density at specific point of space and time! which is telling how many **photons density(photons per space) at specific point of space and time!
+This gives the energy density at a specific point in space and time — essentially telling us the photon density (photons per unit space) at that space-time point.
 
-Now if we know the total number $N(t)$ of photons at a specific time $t$. We can have
+If we know the total number $N(t)$ of photons at a specific time $t$. We can have
 ```math
 N(t) = \int{u(x, t) dx} = \int{E(x, t)^2 dx}
 ```
 
-The pattern of matter wave should be the same as light, so we can have matter wave function $\Psi(x, t)$.
+If the matter wave behaves as light, we can define a matter wave function $\Psi (x,t)$, and write:
 ```math
 N(t) = \int{\Psi(x, t)^2 dx}
 ```
 
-
+Now, the interesting part is that the total number N(t) can be one! This is not wrong at all, it is because we have ...
 
 
 
