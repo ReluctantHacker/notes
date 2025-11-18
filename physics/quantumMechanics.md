@@ -91,7 +91,7 @@ In statistical mechanics, we often deal with average quantities. For example, if
 
 For Schrödinger, He was trying to describe the behavior of a single particle. So naturally he normalizes the wave function.
 ```math
-\int {\abs{\Psi(x, t)}^2 dx = 1}
+\int {\left|{\Psi(x, t)}^2 dx = 1\right|}
 ```
 
 
