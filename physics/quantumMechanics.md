@@ -119,5 +119,5 @@ P=\dfrac{hk}{2\pi}
 
 which can let this result:
 ```math
-\Phi(x, t) = e^{(kx - \omega t)}
+\Psi(x, t) = e^{(kx - \omega t)}
 ```
