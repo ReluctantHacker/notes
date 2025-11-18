@@ -85,8 +85,14 @@ If the matter wave behaves as light, we can define a matter wave function $\Psi 
 N(t) = \int{\Psi(x, t)^2 dx}
 ```
 
-Now, the interesting part is that the total number N(t) can be one! This is not wrong at all, it is because we have ...
+Now, the interesting part is that the total number N(t) can be one! This is nothing wrong here, when we talk about particle density, we're referring to a statistical average — not a literal count of particles at a point. So something like "0.5 particles per space per time", you're describing a rate or density, not an actual half-particle.
 
+In statistical mechanics, we often deal with average quantities. For example, if 5 particles pass through a surface every 10 seconds, the average rate is 0.5 particles per second.
+
+For Schrödinger, He was trying to describe the behavior of a single particle. So naturally he normalizes the wave function.
+```math
+\int {\abs{\Psi(x, t)}^2 dx = 1}
+```
 
 
 
