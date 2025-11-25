@@ -36,8 +36,11 @@ He assumed that if electron's matter-wave relationship is the same as photon's o
 
 First of all, we take a look, what is the meaning of light wave as we known? We know that generally, a electromagnetic wave is like below
 ```math
-E(x, t) = e^{(kx - \omega t)}
+E(x, t) = e^{-i(kx - \omega t)}
 ```
+
+> [!NOTE] 
+> We use complex number here. For if you forget what complex number deeply mean, I'll bring your memory back here. First, we have rational number, and then find irrational number which can't be build by rational number. This makes number system expands. This is the definition of real number which can build number line. The reason that number line can be built by real number is that real number geometric can be build by any other real number. So we can conclude that real number is geometric existed number. But here's more, when we solve some algebraic problem, we would find some solution has $\sqrt{-1}$. Intuitively, we would not admit such number exists because we can't build such $\sqrt{-1}$ by any other real number(geometric number) because we can't geometrically find a number in geometric space that has square value of -1. However, again, math is not science(it's a subset of math), we can define what basic axioms is anyway we want as long as the logic derivation keeps.  And it can get and then expands to real number and then expands to complex number. We can say that real number is mostly the number including x^(y). 
 
 E is electric field.
 
@@ -93,7 +96,10 @@ For Schrödinger, He was trying to describe the behavior of a single particle. S
 ```math
 \int {\left|\Psi(x, t)\right|^2 dx = 1}
 ```
+$\left|\Psi(x, t)\right|$ this is the famous probability density.
 
+
+Now we have the meaning of the wave function, we are going to find the equation of motion.
 
 
 According to matter-wave relationships:
@@ -123,7 +129,26 @@ E=\dfrac{h\omega}{2\pi}
 P=\dfrac{hk}{2\pi}
 ```
 
-which can let this result:
+So if we want to get momentum from wave function, theoritically we can just differentiate it by x
 ```math
-\Psi(x, t) = e^{(kx - \omega t)}
+\dfrac{\partial\Psi(x, t)}{\partial x} = 
+```
+```math
+\dfrac{\partial e^{(kx - \omega t)}}{\partial x} = 
+```
+```math
+k e^{(kx - \omega t) =  
+```
+```math
+\dfrac{2\pi P}{h} e^{(kx - \omega t)}
+```
+
+Suppose we have a operator call $\hat{P}$ for
+```math
+P \Psi(x, t) = \hat{P} \Psi(x, t)
+```
+
+Apparently,
+```math
+\hat{P} = \dfrac{h}{2\pi}\dfrac{\partial}{\partial x}
 ```
