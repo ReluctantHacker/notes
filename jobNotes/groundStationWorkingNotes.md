@@ -95,4 +95,8 @@ NO.	Sat./Orbit.	Begin time ~ End time	信號接收狀況	QL	VCDU	ICR(csrsr)	ICR(
   你可以大概驗算一下, orbit number從40503到40510的變化兩是否符合mean motion, 首先上午的排程時間是2:51, 下午的排程時間是13:51, 也就是說差了11小時, 大概是半天的時間, 而mean motion大概是14圈, 14乘(1/2)等於7圈, 也就是orbit number大概差7圈, 演算大致正確
 
 
-
+# 常用設備帳/密
+ - 140.115.109.158(NAS): srsl/srsl123
+ - 140.115.109.130(HDR2): cortex/cortex, cortexadmin/cortexadmin
+ - 140.115.109.151(HDR3): cortex/cortex, cortexadmin/cortexadmin
+ - 140.115.109.163(HDR1): cortex/cortex, cortexadmin/cortexadmin
