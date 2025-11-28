@@ -10,4 +10,5 @@ Windows file system mostly uses NTFS which "a file" is actually a "file entry in
 - dir /r → shows all the file entries plus any alternate data streams (ADS) attached to them. This is the only way to see those hidden streams in a directory listing.
 - dir /s → recursively shows all file entries (and their streams if combined with /r) in the current folder and all subfolders.
 
-
+## Zone Identifier
+most files download from internet or get from other computer would have this data stream. When an Application open the file, it would read the Zone.Identifier too. Some Application would block the file because Identifier, Some won't. For example, images with identifier is ok to open. But Visual studio wouldn't allow you to compile the code with identifier. (roughly)
