@@ -1,5 +1,5 @@
 /* There are 2 basic rules below:
-1. There can be only 1 public class and it's name should be the name of the file name
+1. There can be only 1 public class and it's name should be the name of the file name(This also means an important thing which is that java treats a file like a class, public class specifically. Not strictly but mostly does). So roughly, you can see a file is a class.
 2. Everything should be in a class
 */
 public class basic {  // public class randomName {  ----> this also works but not recommended at all.// 
