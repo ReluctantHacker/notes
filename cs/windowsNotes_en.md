@@ -12,3 +12,7 @@ Windows file system mostly uses NTFS which "a file" is actually a "file entry in
 
 ## Zone Identifier
 most files download from internet or get from other computer would have this data stream. When an Application open the file, it would read the Zone.Identifier too. Some Application would block the file because Identifier, Some won't. For example, images with identifier is ok to open. But Visual studio wouldn't allow you to compile the code with identifier. (roughly)
+
+# Linux Subsystem
+- If you have already install ubuntu subsystem. You can use windows command line easily to connect to ubuntu. Just type "ubuntu" in command line.
+- It's also very easy to go windows command line in ubuntu terminal, just type "cmd.exe" and then you can directly go there.
