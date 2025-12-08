@@ -1,4 +1,5 @@
 # basic rule
+[basic reference tutorial](https://www.youtube.com/watch?v=GlGpSQsS8uc)
 ## namespace
 A namespace can have many classes? right? the idea is pretty much like a module. So what's the difference?
 
