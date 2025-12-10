@@ -59,6 +59,13 @@ Generally, after launch, a satellite should and would keep their own orbit the s
 
 To describe their stable orbit, in Space Engineering/Celestial Mechanics, people use **Orbit Elements** to uniquely identify a specific orbit. These elements are considered in two-body systems using a Kepler orbit.
 
+# Satellite's Orbit type
+## LEO(Low Earth Orbit)
+Today, most satellites are actually in LEO whose orbit is much closer to Earth (160-2,000km), move quickly, and provide low-latency communication but require large constellations. Best for fast, low-latency internet and detailed Earth imaging, but needs hundreds or thousands of satellites together to work.
+## GEO(Geostationary Earth Orbit)
+The orbit is much higher(35,786km), appear fixed over one spot, and cover wide areas but with higher latency. The distance of 35,786km is a fixed number because of the law of gravity. In this high of distance, the circular speed is the same as 
+## Geosynchronous Satellite
+
 Keplerian elements
 ------------------
 The traditional orbital elements are the six Keplerian elements. 
@@ -143,6 +150,11 @@ Satellite dish on receiving station is just like telescope, it need to point to 
 
 Of course, Receiving Station can't magically know where the satellite is, it use orbit parameters of that satellite gave by satellite company. Satellite company would keep tracking the position of their own satellites whose motion are ruled by physical law.
 
+# How a satellite antenna works, generally?
+## Axises of Antenna
+[x/y Antenna example](https://www.youtube.com/watch?v=NTM8705T4DQ)
+### One axis
+In one axis, A one‑axis antenna can only rotate around a single axis of motion. That means it has one degree of freedom. The simplest mounts, they’re limited in coverage.
 
 
 # Reference

@@ -2,6 +2,11 @@
   - soss資料庫: 專門放排程紀錄的資料庫, 他把從以前至今所有的排程紀錄都存入了, 並且會依照orbitron的軌道預測(輸出後在匯入soss)後10天的排程, 但那只是大致預測, 實際上的接收排程要依照接收的實際排程, VB排程程式會把當日的正確排程輸進soss資料庫, 並把多餘的排程紀錄(orbitron自動生成)從資料庫刪除. Orbitron的軌道參數現在會擋IP央大的IP, 所以要透過其他方式(我之前是透過VPN)繞過.  以下是接收站按照soss資料庫的排程紀錄用web前端列出接收排程: [接收排程](http://140.115.109.136/Web/Schedule/Default.aspx)
   - csrsr資料庫:
 
+  - AOS_TIME: Acquisition of signal time, 表示開始有訊號(不是資料)的時間. 其實就是接收器開始可以看到衛星的時間
+  - LOS_TIME: Loss of signal time, 表示失去信號的時間, 其實就是接收器無法看到衛星的時間
+  - BR_TIME: Begin Reception, 真正衛星放資料的時間
+  - ER_TIME: End Reception, 真正衛星停止放資料的時間
+
 # Database Connection methods
   - Oracle 使用TNS(設定檔案在tnsnames.ora). 需要注意的是, oracle 相較於Mysql及sql server有個特別的地方, 就是你用不同的使用者登入同一個資料庫, 你會發現data tables完全不同, 這是正常的, 因為oracle的設計就是一個user對應一個schema. 在Mysql 和sql server中, 不同使用者登入同一個資料庫, 會看到一樣的data tables, 頂多權限不同. 目前測試環境有兩組帳號密碼: 
     - csrsr/csrsr123@140.115.109.204:1521/csrsrdb 
@@ -10,6 +15,9 @@
     - soss/csrsr123@140.115.109.103:1521/csrsrdb
   - MySQL使用.my.cnf
   - SQL Server使用ODBC
+
+# 以些重要的可能會使用到的數據
+ - BER(Bit error rate): Measures the accuracy of data transmission in any digital communication system. It's used in satellite signal links. But it's also not just for satellite receiving, but also wireless networks, Fiber-optic communication, a lot. It's universal metric in digital communications, not just satellites.  Mostly, it's influenced by, **Noise and interface**, **Signal-to-Noise-ratio(SNR)**, **Modulation and coding**, **Error correction techniques**. It has a deely relationship with modulations(QPSK, 16-QAM, etc)
 
 # 國家太空中心檔案
   - 國家太空中心(台灣的)本來叫做NSPO, 20230101後改為TASA, 所以你看舊的VB排程的code裡面只有NSPO, 但是較新的VB排程code只有TASA.  目前TASA的FS5接收檔與PHR和SPOT都不同, 採用PBK_FILENAME_yyyymmdd_A_TASA.TXT和PBK_FILENAME_yyyymmdd_B_TASA.TXT, 兩種檔案結構完全一樣, 之所以分AB, 很可能是怕檔案互相覆蓋, 因為你觀察會發現, 一個PBK檔案, 只會有某天的一個時段的接收, 而不會有該天的兩個時段, 例如2025/119-14:42:34~14:47:37, 則該檔案不會出現再同一天其他時段的接收紀錄, 例如2025/119-02:54:21~02:59:53是不會出現的, 但是可以出現2025/120-的某時段紀錄
