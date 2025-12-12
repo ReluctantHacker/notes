@@ -16,8 +16,22 @@
   - MySQL使用.my.cnf
   - SQL Server使用ODBC
 
-# 以些重要的可能會使用到的數據
- - BER(Bit error rate): Measures the accuracy of data transmission in any digital communication system. It's used in satellite signal links. But it's also not just for satellite receiving, but also wireless networks, Fiber-optic communication, a lot. It's universal metric in digital communications, not just satellites.  Mostly, it's influenced by, **Noise and interface**, **Signal-to-Noise-ratio(SNR)**, **Modulation and coding**, **Error correction techniques**. It has a deely relationship with modulations(QPSK, 16-QAM, etc)
+# 以些重要的可能會使用到的名詞
+ - BER(Bit error rate): Measures the accuracy of data transmission in any digital communication system. It's used in satellite signal links. But it's also not just for satellite receiving, but also wireless networks, Fiber-optic communication, a lot. It's universal metric in digital communications, not just satellites.  Mostly, it's influenced by, **Noise and interface**, **Signal-to-Noise-ratio(SNR)**, **Modulation and coding**, **Error correction techniques**. It has a deely relationship with modulations(QPSK, 16-QAM, etc). It's very often to encounter this value when you are correcting the receiving precision or accuracy.
+ - ACU(Antenna Control Unit): Which is the equipment (hardware + control software) responsible for:
+    - Pointer the antnenna toward the satellite
+    - Tracking the satellite as it moves (especially for LEO satellites)
+    - Controlling azimuth/elevation motors
+    - Using TLE or sensor feedback to keep the antenna aligned
+    - Handling auto-tracking, 
+    - stow(to put something away neatly and securely in its proper place. for antenna, it means, move the antenna to a safe, parked position)
+    - calibration(similar as "align" but in english, the meanings are still difference), for examples:
+        1. Calibrate a scale → adjust it so “0 kg” is really 0 kg.
+        2. Calibrate a thermometer → make sure its temperature reading is accurate.
+        3. Calibrate a camera → tune settings so colors or focus are correct.
+        4. Calibrate your expectations → adjust your thinking so it matches reality. (Metaphorical use)
+        5. limits, and safety interlocks
+        6. Communicating with other systems (RF equipment, receivers, scheduling software)
 
 # 國家太空中心檔案
   - 國家太空中心(台灣的)本來叫做NSPO, 20230101後改為TASA, 所以你看舊的VB排程的code裡面只有NSPO, 但是較新的VB排程code只有TASA.  目前TASA的FS5接收檔與PHR和SPOT都不同, 採用PBK_FILENAME_yyyymmdd_A_TASA.TXT和PBK_FILENAME_yyyymmdd_B_TASA.TXT, 兩種檔案結構完全一樣, 之所以分AB, 很可能是怕檔案互相覆蓋, 因為你觀察會發現, 一個PBK檔案, 只會有某天的一個時段的接收, 而不會有該天的兩個時段, 例如2025/119-14:42:34~14:47:37, 則該檔案不會出現再同一天其他時段的接收紀錄, 例如2025/119-02:54:21~02:59:53是不會出現的, 但是可以出現2025/120-的某時段紀錄

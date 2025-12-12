@@ -63,7 +63,8 @@ To describe their stable orbit, in Space Engineering/Celestial Mechanics, people
 ## LEO(Low Earth Orbit)
 Today, most satellites are actually in LEO whose orbit is much closer to Earth (160-2,000km), move quickly, and provide low-latency communication but require large constellations. Best for fast, low-latency internet and detailed Earth imaging, but needs hundreds or thousands of satellites together to work.
 ## GEO(Geostationary Earth Orbit)
-The orbit is much higher(35,786km), appear fixed over one spot, and cover wide areas but with higher latency. The distance of 35,786km is a fixed number because of the law of gravity. In this high of distance, the circular speed is the same as 
+The orbit is much higher(35,786km), appear fixed over one spot, and cover wide areas but with higher latency. The distance of 35,786km is a fixed number because of the law of gravity. In this high of distance, the circular speed is conincidently match the rotational speed of earth. 
+According to the law of gravity, the orbital radius uniquely determines the orbital speed, so the speed of satellites(or any object) determined by it's distance from earth if their orbital is circular(ellipitacal is similiar situation). 
 ## Geosynchronous Satellite
 
 Keplerian elements

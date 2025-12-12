@@ -1,0 +1,1 @@
+## [Here's a reference talks about how to design recident living building in taiwan](http://power.lifebook.com.tw/Videos/tabid/3038/ProdID/2886/Default.aspx), this reference also teach some basic electric power design knowledge.
