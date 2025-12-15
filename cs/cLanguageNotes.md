@@ -346,6 +346,18 @@
 	    // 主要功能是替換文本
 		#define pi 3.14
         ```
+
+      * ```c
+        #include <stdio.h>
+        #include <stdlib.h>
+        #define KEY testVar // The "value" here is the replacement text testVar.
+
+        int main() {
+            int testVar = 3;
+            printf("%d\n", KEY); // would print 3, because "KEY" would subsittue to "testVar"
+            return 0;
+        }
+        ```
     * 無值宏如下:
       * ```c
 	    // 主要功能是作為"開關", 
