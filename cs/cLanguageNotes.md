@@ -440,7 +440,39 @@
   * 要徹底理解volatile的作用, 必須要把寄存器(register)和內存的關係理解清楚. 首先register和ram都是記憶體(memory), 記憶體分層叫做memory hierarchy, register是最快的記憶體, 是CPU中的一個重要部件, 用來與CPU中ALU和CU組隊處理計算的一員, 他的主要工作是用來暫存"ALU"所要處理的數據, ram則是在CPU之外的記憶體, 他是用來臨時存放"CPU"所要處理的數據. 如果你直接寫匯編語言, 你就會發現, 其實匯編語言主要在做的事就是把RAM的數據放到register, 經過計算後再把register的數據放回ram. 而c語言compiling的過程會生成匯編, 你可以清楚發現編譯器有時候會做些優化, 在明知變數不會改變的情況下, 省去一些把重複讀取ram或是放數據進ram的指令動作, 用以提升效能(因為ram慢), volatile就是告訴compiler不要做這些動作, 因為變數可能在讀取ram後或放入ram前改變.
 
 # Chapter_13. const"型別修飾符" 
-  * 建立並使變數變成唯讀, 一方面保護數據被修改, 一方面增加代碼可讀性
+  * 建立並使變數變成唯讀, 一方面保護數據被修改, 一方面增加代碼可讀性, 範例如下
+    * ```c
+      #include <stdio.h>
+      #include <stdlib.h>
+
+      int main() {
+          int a = 1;
+          int b = 2;
+          const int c = a; // it's totally okay to write as "int const c", use const to emphasis c is a constant.
+          printf("%d\n", c);
+          c = b; // would fail
+          printf("%d\n", c); // would fail
+          return 0;
+      }
+      ```
+    需要注意const的語意次序, 例如假設要宣告const 的pointer變數, 你需要用const去強調該變數是不變的, 所以範例如下
+    * ```c
+      #include <stdio.h>
+      #include <stdlib.h>
+
+      int main() {
+          int a = 1;
+          int b = 2;
+          int* const c = &a; // the c should be const
+          printf("%d->", *c);
+          c = &b; // would fail
+          printf("%d->", *c); // would fail
+          return 0;
+      }
+      ```
+
+
+
 
 # Chapter 14. restrict"型別修飾符" 
   * 專門用在pointer的, 他與volatile都與編譯器的"優化"有關. 簡單來說假設宣告變數restrict int *a; 則a所指向的地址只能由a記錄, 意思是假設a = 0x1234, 則int *b不能等於0x1234, 除了a以外, 其他pointer變數不能指向與a相同的地址. 假設不使用restrict, 編譯器會默認, 指針a和指針b可能指向同一個地址, 這樣操作a, b的讀寫時, 指令的順序變得很重要, 因為如果一個指針寫入數據，另一個指針讀取數據，編譯器必須保證讀取操作發生在寫入操作之後，否則會導致數據不一致. 如果編譯器不知道指針是否指向同一個位置，它可能需要在每次使用指針時都進行內存訪問，以確保最新的數據被讀取。這樣就無法將數據保存在寄存器中，從而影響性能. 舉例來說, 循環優化(就是迴圈優化, 讓重複性高的動作能減少一些計算資源)可以透過迴圈代碼的修改(優化效果有限), 也可以在編譯的步驟進行優化, 例如範例: 
