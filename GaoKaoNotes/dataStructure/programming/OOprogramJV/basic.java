@@ -3,7 +3,7 @@
 2. Everything should be in a class
 */
 public class basic {  // public class randomName {  ----> this also works but not recommended at all.// 
-	// public使此method在該class或instance以外皆可讀, void使得該method不須建立instance即可以用
+	// public使此method在該class或instance以外皆可讀, static使得該method不須建立instance即可以用
 	public static void main(String[] args) {   
 		System.out.println("hello, world.");
 	}
