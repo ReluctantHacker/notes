@@ -117,6 +117,12 @@ https://kknews.cc/code/a4k2k5g.html
 							😄. SMTP客户在这个TCP连接上发送Alice的邮件消息
 							😄. Bob服务器存放邮件消息存到 Bob的邮箱
 							😄. Bob调用他的用户代理读邮件消息
+                            😂. 當然實際上在現在的網路, 你要能正常收發還需要讓你的mail網域有certificate(例如TLS安全性認證或是有效DNS的建立), 簡單來說, 情況如下:
+                                🫡. alice@AliceCompany.com(without certificate) -> bob@BobCompany.com, automatically take alice's mail as garbage or even block the mail because certificate missing
+
+                                🫡. alice@AliceCompany.com -> gmail(certificate) -> bob@BobCompany.com, take the mail because gmail(using this as third party) has good certificate
+
+                                🫡. alice@AliceCompany.com(with certificate) -> bob@BobCompany.com, accept!
 							
 				🤔. 邮件接收协议 ---> 从服务器获取邮件消息
 				reference:
