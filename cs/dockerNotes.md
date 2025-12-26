@@ -51,4 +51,11 @@ C:\Users\user>wsl --list --verbose
 
 It means there are two linux subsystem handled and run through WSL. The * symbol means the default one which you would see if you type "wsl" in command line", it would automatically go into the default one's terminal. 
 
-So now, docker-desktop is the one linux subsystem that runs Docker! If you want to see some docker log, settings, configs, you need to go that one linux.
+So now, docker-desktop is the one linux subsystem that runs Docker! If you want to see some docker log, settings, configs, you need to go that one linux:
+```
+wsl -d docker-desktop
+```
+"-d" means **distribution**, of course you can type this below to go to dev subsystem if you want but you can directly type "wsl" if it's already the default one:
+```
+wsl -d Ubuntu
+```
