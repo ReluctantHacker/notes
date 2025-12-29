@@ -59,3 +59,98 @@ wsl -d docker-desktop
 ```
 wsl -d Ubuntu
 ```
+
+
+# Docker container's log
+I don't know why but sometimes a docker container's log grows monstrously fast (like using gitlab container). I can find container's log file in path "C:\Users\user\AppData\Local\Docker\wsl\disk\docker-data.vhdx". And I can view the files inside through 7-zip and see something like "094e2b2ec792f4e58b8b59a3bef08861274f933379848ddc02d1ed4b6c31d8b2/094e2b2ec792f4e58b8b59a3bef08861274f933379848ddc02d1ed4b6c31d8b2-json.log"  The file is very huge which is what we need to truncate(or remove)
+
+And I find that it is in the path of 
+```
+Adocker --list
+```
+```
+C:\Users\user>wsl --list
+Windows Subsystem for Linux Distributions:
+Ubuntu (Default)
+docker-desktop
+
+C:\Users\user>wsl -d docker-desktop
+docker-desktop:/tmp/docker-desktop-root/run/desktop/mnt/host/c/Users/user# cd ..
+docker-desktop:/tmp/docker-desktop-root/run/desktop/mnt/host/c/Users# cd ..
+docker-desktop:/tmp/docker-desktop-root/run/desktop/mnt/host/c# cd ..
+docker-desktop:/tmp/docker-desktop-root/run/desktop/mnt/host# cd
+c/     d/     f/     wsl/   wslg/
+docker-desktop:/tmp/docker-desktop-root/run/desktop/mnt/host# cd ..
+docker-desktop:/tmp/docker-desktop-root/run/desktop/mnt# ls -al
+total 12
+drwxr-xr-x    4 root     root          4096 Jul  8 01:33 .
+drwxr-xr-x    3 root     root            80 Dec 29 08:39 ..
+drwxr-xr-x    5 root     root          4096 Jul  8 01:33 docker-desktop-disk
+drwxr-xr-x    7 root     root          4096 Jul  8 01:33 host
+docker-desktop:/tmp/docker-desktop-root/run/desktop/mnt# cd docker-desktop-disk/
+docker-desktop:/tmp/docker-desktop-root/run/desktop/mnt/docker-desktop-disk# ls -al
+total 32
+drwxr-xr-x    5 root     root          4096 Jul  8 01:33 .
+drwxr-xr-x    4 root     root          4096 Jul  8 01:33 ..
+drwxr-xr-x   10 root     root          4096 Jul  8 01:33 data
+drwxr-xr-x    3 root     root          4096 Jul  8 01:33 isocache
+drwx------    2 root     root         16384 Jul  8 01:33 lost+found
+docker-desktop:/tmp/docker-desktop-root/run/desktop/mnt/docker-desktop-disk# cd data
+docker-desktop:/tmp/docker-desktop-root/run/desktop/mnt/docker-desktop-disk/data# ls -al
+total 44
+drwxr-xr-x   10 root     root          4096 Jul  8 01:33 .
+drwxr-xr-x    5 root     root          4096 Jul  8 01:33 ..
+drwxr-xr-x    3 root     root          4096 Jul  8 01:33 cni
+drwxr-xr-x    2 root     root          4096 Jul  8 01:33 containerd
+drwx--x--x    3 root     root          4096 Jul  8 01:33 desktop-containerd
+drwx--x---   13 root     root          4096 Dec 29 08:39 docker
+lrwxrwxrwx    1 root     root            10 Jul  8 01:33 dpkg -> /dpkg.orig
+drwxr-xr-x    2 root     root          4096 Jul  8 01:33 kubeadm
+drwxr-xr-x    2 root     root          4096 Jul  8 01:33 kubelet-plugins
+-rw-r--r--    1 root     root            33 Jul  8 01:33 machine-id
+drwxr-xr-x    4 root     root          4096 Jul  8 01:33 nfs
+drwxr-xr-x    3 root     root          4096 Jul  8 01:33 wasm
+docker-desktop:/tmp/docker-desktop-root/run/desktop/mnt/docker-desktop-disk/data# cd desktop-containerd/
+docker-desktop:/tmp/docker-desktop-root/run/desktop/mnt/docker-desktop-disk/data/desktop-containerd# cd ..
+docker-desktop:/tmp/docker-desktop-root/run/desktop/mnt/docker-desktop-disk/data# cd docker
+docker-desktop:/tmp/docker-desktop-root/run/desktop/mnt/docker-desktop-disk/data/docker# ls -al
+total 56
+drwx--x---   13 root     root          4096 Dec 29 08:39 .
+drwxr-xr-x   10 root     root          4096 Jul  8 01:33 ..
+drwx--x--x    4 root     root          4096 Jul  8 08:41 buildkit
+drwx--x---    3 root     root          4096 Dec 23 05:56 containers
+-rw-------    1 root     root            36 Jul  8 01:33 engine-id
+drwx------    3 root     root          4096 Jul  8 01:33 image
+drwxr-x---    3 root     root          4096 Jul  8 01:33 network
+drwx--x---   14 root     root          4096 Dec 29 08:39 overlay2
+drwx------    3 root     root          4096 Jul  8 01:33 plugins
+drwx------    2 root     root          4096 Dec 29 08:39 runtimes
+drwxr-xr-x    2 root     root          4096 Jul  8 01:33 stats
+drwx------    2 root     root          4096 Jul  8 01:33 swarm
+drwx------    2 root     root          4096 Dec 29 09:09 tmp
+drwx-----x    2 root     root          4096 Dec 29 08:39 volumes
+docker-desktop:/tmp/docker-desktop-root/run/desktop/mnt/docker-desktop-disk/data/docker# cd containers
+docker-desktop:/tmp/docker-desktop-root/run/desktop/mnt/docker-desktop-disk/data/docker/containers# ls -al
+total 12
+drwx--x---    3 root     root          4096 Dec 23 05:56 .
+drwx--x---   13 root     root          4096 Dec 29 08:39 ..
+drwx--x---    4 root     root          4096 Dec 29 08:39 094e2b2ec792f4e58b8b59a3bef08861274f933379848ddc02d1ed4b6c31d8b2
+docker-desktop:/tmp/docker-desktop-root/run/desktop/mnt/docker-desktop-disk/data/docker/containers# cd 094e2b2ec792f4e58b8b59a3bef08861274f933379848ddc02d1e
+d4b6c31d8b2/
+docker-desktop:/tmp/docker-desktop-root/run/desktop/mnt/docker-desktop-disk/data/docker/containers/094e2b2ec792f4e58b8b59a3bef08861274f933379848ddc02d1ed4b6c31d8b2# ls -al
+total 10828
+drwx--x---    4 root     root          4096 Dec 29 08:39 .
+drwx--x---    3 root     root          4096 Dec 23 05:56 ..
+-rw-r-----    1 root     root      11015743 Dec 29 09:16 094e2b2ec792f4e58b8b59a3bef08861274f933379848ddc02d1ed4b6c31d8b2-json.log
+drwx------    2 root     root          4096 Dec 23 05:56 checkpoints
+-rw-------    1 root     root         30584 Dec 29 08:39 config.v2.json
+-rw-------    1 root     root          2089 Dec 29 08:39 hostconfig.json
+-rw-r--r--    1 root     root            19 Dec 29 08:39 hostname
+-rw-r--r--    1 root     root           187 Dec 29 08:39 hosts
+drwx--x---    2 root     root          4096 Dec 23 05:56 mounts
+-rw-r--r--    1 root     root           306 Dec 29 08:39 resolv.conf
+-rw-r--r--    1 root     root            71 Dec 29 08:39 resolv.conf.hash
+docker-desktop:/tmp/docker-desktop-root/run/desktop/mnt/docker-desktop-disk/data/docker/containers/094e2b2ec792f4e58b8b59a3bef08861274f933379848ddc02d1ed4b6c31d8b2#
+```
+
+Truncate the log file, and the disk used would get down!
