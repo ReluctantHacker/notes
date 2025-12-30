@@ -152,5 +152,7 @@ drwx--x---    2 root     root          4096 Dec 23 05:56 mounts
 -rw-r--r--    1 root     root            71 Dec 29 08:39 resolv.conf.hash
 docker-desktop:/tmp/docker-desktop-root/run/desktop/mnt/docker-desktop-disk/data/docker/containers/094e2b2ec792f4e58b8b59a3bef08861274f933379848ddc02d1ed4b6c31d8b2#
 ```
-
 Truncate the log file, and the disk used would get down!
+```
+sudo truncate -s 0 094e2b2ec792f4e58b8b59a3bef08861274f933379848ddc02d1ed4b6c31d8b2-json.log
+```
