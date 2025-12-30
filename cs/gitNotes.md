@@ -170,3 +170,10 @@ https://ghloc.vercel.app/
 ```
 https://github.com/subtle-byte/ghloc
 ```
+
+# Gitlab and Github
+If you use docker to build a gitlab locally, you would see that it uses Nginx as reverse proxy for control the flows to many services include redis, gitlab rails(this one provides the frontend web gui and backend bussiness logic api. which is developed based on **ruby on rails** which is a monolithic apps which means it's not backend-frontend-separated but bundled together), gitlab workhouse, postgreSQL, sidekiq, gitaly. 
+
+The nginx is on the same containers as those bunch of services. The reasons is that nginx is used to direct the data flows to the goal services.
+
+Github used to developed by ruby on rails too which means it's monolithic websites too. But as it grows larger it started to invoke frontend-backend-separated method, and turn into GO languages and other solutions.
