@@ -73,7 +73,14 @@
 
 
 		e. HTTPS:
-			I. HTTP 使用明文傳輸，安全性較低，而 HTTPS 使用 SSL/TLS 加密通信，安全性較高。HTTPS 的 URL 以 "https://" 開頭，通常用於安全敏感的場景，如網上銀行、購物網站等
+			I. HTTP 使用明文傳輸，安全性較低，而 HTTPS 使用 SSL/TLS 加密通信(其實現在絕大多數都是TLS, 他算是SSL的升級版, 但因為一些歷史因素, 你會看到有些人仍然會講SSL)，安全性較高。HTTPS 的 URL 以 "https://" 開頭，通常用於安全敏感的場景，如網上銀行、購物網站等
+            II. TLS的認證其實這樣的
+                🤔. Client: 因為一個web server不可能自己宣布自己是可trusted的, 所以他必須要有第三方的可信任權威機構背書. 而通常這些第三方權威機構(general verified, 即安全性受到大部分認可的, 例如DigiCert, GoDaddy, Entrust)都會預設存放在client端的電腦, 讓client能夠自動認識權威certificates. 這些certificates我們叫做root certificates, 而電腦中存放他們的地方叫做root certificate store. 不同的作業系統的root certificate store會有所不同.
+                🤔. Server: Server端需要有一個server certificate, 這個server certifiate必須要由一個CA 簽署, 但注意給server certificate 簽署的CA不一定是client裡面的root CA certificate, 而可能是其他的certificate, 他會去追蹤這個certificate由甚麼certificate所簽屬的, 一直追查到最底層, 看是不是client裡面root CA certificates的其中之一個. 是則pass, 否則fail. 如果該server certificate直接就是由client 裡面的root CA其中之一所簽屬的, 則pass.
+            III. (不會考)有個小工具叫做mkcert
+                🤔. 使用"mkcert -install"的時候, 會在本機建立一個CA, 並把該CA certificate加到本機的root certificate stores裡面. 如此一來你可以使用這個本機CA去簽屬任何server certificate. 當你在本機架設server並用這個CA去簽屬server certificate, 則其他client若要瀏覽你的server, 他必須要把你的那個簽署用的CA加入他們自己的root CA certificate裡面, 這樣client的電腦就會把這個CA當成是一個general verified的(即使他其實只有你自己verified而已).
+                🤔.  "mkcert ip"這個指令其實就是用"mkcert -install"所產生的CA給這個ip的server certificate簽名. "mkcert -install"只會產生唯一一個用來簽名用的CA, 也就是說他不會生成不同的CA, 他只能有一個, 你如果執行兩次"mkcert -install"他會去偵測之前舊有的CA, 如果已經有了就不會產生新的, 如果沒有則產生. (mkcert故意設計成這樣的)
+                🤔. client連線到server的時候, 如果那個server的簽名認證certificate不再client 的store中, 瀏覽器並不會跳出自動加入到root certificate store的提示. 必須由管理員手動安裝
 
 		f. 登入認證機制
 			I. session
