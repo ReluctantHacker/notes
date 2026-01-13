@@ -66,6 +66,8 @@
 					|192.168.1.59:80-----|--219.152.168.222:9201 |
 					|192.168.1.59:4465---|--219.152.168.222:9202 |
 					|____________________|_______________________|
+                🤔. Inbound(進來), Outbound(出去):
+                    😂. NAPT只有Outbound(由nated network內部發出request)的時候會在nat server(gateway)建立及記錄mapping, 所以內網(nated network)可以獲得外部真實IP(實際上你在request的時候就必須要有真實的IP才能發出了, 而在response裡面當然也會有真實IP回傳), 但是Inbound(外部對內部發起request, 他只需要知道你的網關IP, 而不需知道你的實際內網IP), nat server不會主動建立mapping, 所以這個時候內網不會獲得外部真實IP. 簡單來說, 你如果是一台nated內部的電腦, 你對google.com請求, 則你收到的response會攜帶外部真實IP, 但是如果你的nated電腦想當作server讓外面的電腦request過來, 則你不會看到外面的電腦真實IP, 只會看到nat server(gateway)的IP. 這樣的設計其實是nat的歷史原因, 因為nat一開始就是主要是設計成讓nated內網對外部請求, 而不是讓外網對內部請求. 隨著越來越多的server建置在nat後面, Inbound的需求大量增加(一開始主要是outbound), 而許多server需要真實的client ip. 業界並沒有建立一個新的protocol 去取代NAT, 而是建立許多扶助的application-level protocol, 例如proxy headers(把真實的IP加入application的headers裡面, 必須在nat之外或是nat的網關完成), STUN等等
 
 			II. 優點:		
 				🤔. 真正解決了IPv4不足的問題
