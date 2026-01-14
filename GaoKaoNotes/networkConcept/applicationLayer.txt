@@ -226,6 +226,9 @@ https://kknews.cc/code/a4k2k5g.html
 						NS紀錄--->b.gtld-servers.net
 						A紀錄--->example.net
 					}
+        e. hosts
+            I. On Windows (and most operating systems, Linux, Mac are pretty much the same), the HOSTS file acts as a local DNS override. When you type a hostname (like localhost, example.com, or myserver), Windows checks the HOSTS file before asking DNS servers. So for example, if you ping localhost, and if hosts file has a mapping like "127.0.0.1 localhost", it would take localhost as 127.0.0.1(it sometimes defaultly is, though). This is very useful. 
+            
 					
 					
 						

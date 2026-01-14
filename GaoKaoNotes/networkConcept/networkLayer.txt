@@ -38,10 +38,27 @@
 			II. Class B：172.16.0.0 到 172.31.255.255（172.16.0.0/12）
 			III. Class C：192.168.0.0 到 192.168.255.255（192.168.0.0/16）
 
+    C. IPv6(IPv4沒什麼好說的)
+        a. Written as 8 groups of 4 hexadecimal digits(which is 128 bits long, which is 2^96 times more address we can use than IPv4), separated by colons
+            I. basic form: xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx
+            II. a simple example: 2001:0db8:0000:0000:0000:0000:0000:0001
+        b. Leading zeros omission(省略開頭的0), 這個縮寫是可解析的(recognizable), 網路解析系統是有支援這樣縮寫的:
+            I. 2001:0db8:0000:0000:0000:0000:0000:0001 → 2001:db8:0:0:0:0:0:1
+        c. Consecutive zeros
+            I. You can replace one sequence of consecutive zero blocks with "::" but "::" can only appear once per address.
+            II. 2001:db8:0:0:0:0:0:1 → 2001:db8::1
+        d. 2001:0db8:0000:0000:0000:0000:0000:0001, 2001:db8:0:0:0:0:0:1, 2001:db8::1 . Three of them can all be recognized in network system.
+
+        c. "::" looks like it hides important structure. But in IPv6, it’s actually unambiguous because every full IPv6 address always has exactly 8 blocks. The :: simply expands to as many zero blocks as needed to reach 8 total. That’s the key.
+        
+        d. 由於IPv6在設計時沒有考慮兼容IPv4, 所以過度緩慢, 目前主要依靠 双协议栈、隧道技术、NAT64來與IPv4共存. referece: https://zhuanlan.zhihu.com/p/348842754
+
+        f. 目前大部分的智慧手機都有global IPv6  - Starts with 2000::/3 (e.g., 2001:db8::…, 2400:…, etc.). These are gloablly unique and routable. 如果你看到IPv6以Starts with fe80::/10, 則表示only valid on local link, not routable. 你可以自行查看你自己的手機(不過你通常無法ping到, 會被擋).
+
 			
 
 
-	B. NAT(Network Address Translation):
+	D. NAT(Network Address Translation):
 		a. basic NAT
 			I. 靜態NAT
 				🤔. 方法:
@@ -83,6 +100,10 @@
 
 		e. 重要應用:
 			I. 解決了IPv4地址不夠的問題(NAPT)
+
+        f. IPv6
+            I. Technically, IPv6 doesn’t need NAT. Also, NAT is designed for IPv4 in the sense of inbound and outbound with translation. although, IPv6 automatically created in NAT network for most virtual machine, It doesn't actually join the game and it won't get translate, You can use IPv6 inside NAT network of course, but it is just technically only in the NAT network. In short, the IPv6 in NAT network is not global. 
+            II. Since most companies or agencies, use NAT network, So when you use computers, It has high probabiilty that your computer has no global IPv6, only local one. And this makes IPv6 becomes a joke somehow.
 
 
 |#############################################################################################################|

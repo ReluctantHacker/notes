@@ -174,6 +174,11 @@ https://github.com/subtle-byte/ghloc
 # Gitlab and Github
 If you use docker to build a gitlab locally, you would see that it uses Nginx as reverse proxy for control the flows to many services include redis, gitlab rails(this one provides the frontend web gui and backend bussiness logic api. which is developed based on **ruby on rails** which is a monolithic apps which means it's not backend-frontend-separated but bundled together), gitlab workhouse, postgreSQL, sidekiq, gitaly. 
 
-The nginx is on the same containers as those bunch of services. The reasons is that nginx is used to direct the data flows to the goal services. But one things you need to notice is that nginx here is not a reverse proxy but a web server. Technically and architecturally, you actually need two nginxes(or another proxy server that handle data flow outside NAT)! It's not redundant.
+The nginx is on the same containers as those bunch of services. The reasons is that nginx is used to direct the data flows to the goal services. But one things you need to notice is that nginx here is not a reverse proxy but a web server. Technically and architecturally, you actually need two nginxes, one is inside docker NAT one is out of it to read real data(or another proxy server that handle data flow outside NAT)! It's not redundant.
 
 Github used to developed by ruby on rails too which means it's monolithic websites too. But as it grows larger it started to invoke frontend-backend-separated method, and turn into GO languages and other solutions.
+
+## CI/CD of Gitlab or Github
+Gitlab/Github needs two things to completely CI/CD. One is "runner", Two is building tool. The runner is used to execute pipeline(.gitlab-ci.yml which may include "test", "build", "deploy") which is a plan script whose main goal is using the building tool(for compiling source code) to make the final production execution files and throw it to production env. Like for dotnet projects, you need "dotnet build" which is included in Visual Studio. Or like gcc for c projects. 
+
+The runner would use building tools to do CI/CD according to pipeline. Basically, you don't need to install building tool because you probably already have it, but, you would need to install the runner in development env(local machine) or destination production env(production machine) except you are using it cloudly.
