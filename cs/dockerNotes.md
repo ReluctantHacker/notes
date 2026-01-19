@@ -156,3 +156,24 @@ Truncate the log file, and the disk used would get down!
 ```
 sudo truncate -s 0 094e2b2ec792f4e58b8b59a3bef08861274f933379848ddc02d1ed4b6c31d8b2-json.log
 ```
+
+# Port forwarding via vsock(Hyper-V socket)
+In Windows, we probably would use WSL2 to start up a docker container. In the beginning, I thought the network structure is like: 
+```
+WINDOWS_NETWORK(Layer1)-WSL2_NETWORK(Layer2)-DOCKER_NETWORK(Layer3)
+```
+But this idea is wrong, there's no such thing called layer 1, layer 2, layer 3. All the networks is relative to each other. If you are in one network, and then you can connect the machines in that network, that's all!
+
+There is another misunderstood that made me very confused in the first place. I thought if I request something from windows host to docker container, the data flow is like:
+```
+Windows_host_machine->WSL2_machine->docker_container_machine
+```
+
+But this is not true, either. The WSL2 machine is not an intermediate machines between windows host and docker container machine. In short, the data from windows is directly pass to docker container through the ports! 
+
+For example, if your docker-compose.yaml has a setting like "ports: 8080:3000". It means the data packet directly send from windows host machine's port 8080 to docker container machine's 3000 port without go through any machine. That means WSL2 machine won't capture any data packet(If you use tcpdump or tshark like tools, it's indeed true). 
+
+
+This is not a rare technique, thisis actually widely used, just usually under different names, and often so deep in the system that people don't notice it. We often called this **Bypassing the network stack with a direct IPC transport** or more concretely **Socket-like communication over non-IP transports**. WSL2 uses vsock, bu that's just one instance.
+
+Well, for conclusion, if you want to capture data packets between windows host and docker container, you won't get anything if you're in WSL2 machine.
