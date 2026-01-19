@@ -163,13 +163,31 @@ git branch -m newBranchName
 git gc --prune=now
 ```
 
-- **Here's a website that can analysis and count the lines of code in a project in github call "ghloc", it is also a free project in github
+- **Here's a website that can analysis and count the lines of code** in a project in github call "ghloc", it is also a free project in github
 ```
 https://ghloc.vercel.app/
 ```
 ```
 https://github.com/subtle-byte/ghloc
 ```
+
+- **Changing commit information**: If you accidently use the wrong user name or email to commit the history, you can use this method to change it. But of course, you need administrator permission to do this
+```
+git reset --hard
+```
+The command above would reset your working directory to the last commit which means anything you change in the repo that has not been committed yet would be abandoned. And then run the commands below:
+```
+git filter-branch --env-filter '
+CORRECT_NAME="jeffrey"
+CORRECT_EMAIL="wujiaqi@ncu.edu.tw"
+
+export GIT_COMMITTER_NAME="$CORRECT_NAME"
+export GIT_COMMITTER_EMAIL="$CORRECT_EMAIL"
+export GIT_AUTHOR_NAME="$CORRECT_NAME"
+export GIT_AUTHOR_EMAIL="$CORRECT_EMAIL"
+' -- --all
+```
+And then push the repo, you will get a reset commit name and email.
 
 # Gitlab and Github
 If you use docker to build a gitlab locally, you would see that it uses Nginx as reverse proxy for control the flows to many services include redis, gitlab rails(this one provides the frontend web gui and backend bussiness logic api. which is developed based on **ruby on rails** which is a monolithic apps which means it's not backend-frontend-separated but bundled together), gitlab workhouse, postgreSQL, sidekiq, gitaly. 
