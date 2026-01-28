@@ -58,3 +58,13 @@ Interacting with the compiled program in a way that takes advantage of its flaws
 
 # What programming language?
 [reference](https://www.reddit.com/r/hacking/comments/zsoe2x/i_see_a_lot_of_hacking_tutorials_recommending/)
+
+
+# Data packets analysis
+When you using wireshark, you would see **hex dump** on the right-down panel. The left part is just hex data, and the right part is the translation of hex data to ASCII code. The reason for this is that data payload may contains some pure text data with ASCII, so it defaulty use this. But of couse, the datas nowaday are usually encrypted, so it's more and more seldom that we can read the readable thing on that anymore. 
+
+By the way, if the hex dump part shows "...", it means ascii code of that data unit is like controlling ascii code, like NULL, BEL, ESC..., etc.
+
+You can use vim ":%!xxd" to view files as hex dump view. and use ":%!xxd -r" to change back.
+
+
