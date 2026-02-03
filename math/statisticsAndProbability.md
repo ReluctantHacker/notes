@@ -30,8 +30,22 @@ degree of freedom [reference](https://www.zhihu.com/question/26720278)
 
 Binomial distribution
 ---------------------
-Two outcome values of samples
+Two outcome values of samples. Suppose we are flapping a coin by N times, and want to know how many times it shows head or tails. Suppose we N=3, then there are {head, head}, {head, tail}, {tail, head}, {tail, tail}, 4 combinations(all combinations has the same possibility to shows). {head, tail} and {tail, head}, those two combinations represents 1 head result, so 1 head result has two combinations and this tells that 1 head result is two times possible than 2 heads result or 2 tails result.
 
+Suppose we have P combinations of k heads result for flapping n times, we can write it as 
+``` math
+P(k) = C^n_k p^k q^(n-k) = \dfrac{n!}{k!(n-k)!}
+```
+q = 1-p. 
+
+Take logs (because factorials are nasty):
+```math
+ln P = ln(n!)-ln(k!)-ln(n-k)!+kln(p)+(n-k)ln(q)
+```
+
+Using Stirling formula
+```
+n! = \sqrt{2\pi n} \dfrac{n}{e}
 
 Multinomial distribution
 ------------------------
@@ -43,4 +57,12 @@ Why randomness generates "distribution"? The randomness should be totally unpred
 > [!NOTE]
 > The following notes is possibly wrong! Just read but dont' take it too seriously! ------>  The essence of randomness is "unpredictability (uncertainty)". It is impossible to predict what "event" will occur at a certain time and place. This is what we call randomness. However, the reason why there are "patterns" in randomness is that we impose some restrictions on it. For example, if we limit the possible "events" to a few types at a certain time and place, such as rolling a dice where the outcomes are only 1, 2, ...6, this is called "restricting the range of events". This restriction creates boundaries for randomness, leading to "patterns" and "distributions", which are certain "rules" of randomness. But if "randomness" itself has no restrictions, then the events that occur at any time and place are completely without boundaries, meaning any event can happen. Thus, there would be no "patterns", "distributions", or "rules". This is complete randomness—completely unpredictable randomness.
 
+Normal distribution
+-------------------
 
+
+Random walk
+-----------
+**Random walk** is the reason behind **Diffusion** of particles system. And random walk also makes things very clear that we do need the idea of **standard deviation**. I actually had no idea why we need standard deviation until I learned random walk and matter wave of quantum mechanics.
+
+Suppose we are flapping coin again by N times and notes the result for head means +1, tail means -1. All the possible combination like {+1, -1, +1, .........}, of course, when N comes to infinity,  

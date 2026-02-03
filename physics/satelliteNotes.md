@@ -130,6 +130,26 @@ Figure_3
 
 The receiver would get the satellite signal area as a circular-like area. However, from satellite's view point, the area it covers is actually a "track" because satellites is flying cross the earth like Figure_3 shows.
 
+# Earth Coverage Beam
+This is actually the earth area that a satellite can "see". The edge of the beam is actually the tangent line to earth. And this idea is relative, for the satellite, it's all the area that it can see, for the observers on earth, it is also the area, that observers can see on the sky. Geomestrically, view of the satellite and view of observer are same thing, just different relative reference frame. This means if satellite can see the observer then the observer can see the satellite, vice versa, if the satellite can not see the observer then the observer can't see the satellite according to geometry.
+
+The Figure
+<p align="center">
+  <img src="./images/satelliteNotes_figure_5.png"/>
+</p>
+
+Earth Coverage Beam is used in Most GNSS(GPS/Galileo/BeiDou), LEO(for science, atmosphere science, remote sensing) or some Amatuer satellites(like CubeSat).
+
+Some modern LEO doesn't use it like Starlink/OneWeb/Kuiper because they need point to point with high data flow.
+
+# Polarization
+EM wave has polarization. Linear, circular or ellipse. The satellites emit their signals with polarization. Antennas would have their receiving polarization as well, and it should be setup on feed. For antennas with two axis like X/Y-Antenna or Az/EL-Antenna, they are enough to let their view to any angle in 3D. However, the problem is that the feed's polarization may not be fitted when antenna rotating with receiving signal because feed would spin simultaneously as well. 
+
+You can imagine that antenna receiver's polarization as a ellipse hole, and only the same shape of ellipse thing with right angle can go through it, even the shape is fitted but got fail without right angle(of course circle can handle all ellipse, so it's an exception)
+
+So, in this situation, some antennas would have **Train** axis to handle this. The train is actually just an axis to make feed spin to let the receiving ellipse to the right angle(or at least, do the best as it can)
+
+
 # Signal Frequency
 In the earlier, satellite's signal usually using low frequency(mostly L-band) becacuse of good ionospheric penetration, atmospheric propgation. But low frequency means low bandwidth which means low data capacity. Modern designs tend to use higher frequency. Here's the spectrum satellites use:
   * **L-band(1-2GHz)**
@@ -155,7 +175,7 @@ Of course, Receiving Station can't magically know where the satellite is, it use
 ## Axises of Antenna
 [x/y Antenna example](https://www.youtube.com/watch?v=NTM8705T4DQ)
 ### One axis
-In one axis, A one‑axis antenna can only rotate around a single axis of motion. That means it has one degree of freedom. The simplest mounts, they’re limited in coverage.
+In one axis, An one‑axis antenna can only rotate around a single axis of motion. That means it has one degree of freedom. The simplest mounts, they’re limited in coverage.
 
 
 # Reference
