@@ -28,24 +28,45 @@ degree of freedom [reference](https://www.zhihu.com/question/26720278)
 
 
 
-Binomial distribution
+Binomial distribution to Normal distribution
 ---------------------
 Two outcome values of samples. Suppose we are flapping a coin by N times, and want to know how many times it shows head or tails. Suppose we N=3, then there are {head, head}, {head, tail}, {tail, head}, {tail, tail}, 4 combinations(all combinations has the same possibility to shows). {head, tail} and {tail, head}, those two combinations represents 1 head result, so 1 head result has two combinations and this tells that 1 head result is two times possible than 2 heads result or 2 tails result.
 
 Suppose we have P combinations of k heads result for flapping n times, we can write it as 
 ``` math
-P(k) = C^n_k p^k q^(n-k) = \dfrac{n!}{k!(n-k)!}
-```
-q = 1-p. 
-
-Take logs (because factorials are nasty):
-```math
-ln P = ln(n!)-ln(k!)-ln(n-k)!+kln(p)+(n-k)ln(q)
+P(k) = C^n_k p^k q^{n-k} = \dfrac{n!}{k!(n-k)!}
 ```
 
-Using Stirling formula
+When n goes to infinity, we can have that P(k) would converge to normal distribution. This truth classically prove by **Stirlin formula**. Classically, Stirlin formula was proved by **Wallis formula** which wasn't proved by Wallis himself but only for a guess. We can use calculus to prove Stirlin formula but be careful, classically Newton didn't prove calculus but only take a guess. The real proof you can check my calculus note.
+
+The Stirlin formula:
+``` math
+ln n! = \Sigma_{k=1}^{n} ln k \approx \integral_{1}^{n} ln x dx
 ```
-n! = \sqrt{2\pi n} \dfrac{n}{e}
+
+The more inituitively method is using Guass's method. Suppose 
+``` math
+lim_{n->\infty)} P(n, k) = f(k)
+```
+
+We want to prove that f is the normal distribution. Suppose, we have f(k) number of combinations if k times of head happens. And we have f(h) number of combinations if h times of head happens. Suppose we do the two round, the first round is f(k) and second round is f(h). Then what is the number of combinations of those two round together? 
+
+Apparently, according to the combination theory, the total combination number of those two rounds would be 
+``` math
+f(k)f(h)
+```
+
+Now, we have one thing need to be proved or argue, f(k)f(h) is circular symmetry which means f(k)f(h) is the same if k^2+h^2 keep the value. In short, we need to prove this below:
+``` math
+f(k)f(h) = g(k^2+h^2) = g(r^2)
+```
+
+
+P(n, k) * P(n, h) = n! / k!(n-k)! * n! / h!(n-h)! = (n!^2) / k!h!(n-k)!(n-h)!
+
+This is not natural because f(k)f(h) doesn't imply it is circular symmetry.
+
+
 
 Multinomial distribution
 ------------------------
