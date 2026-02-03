@@ -41,7 +41,7 @@ When n goes to infinity, we can have that P(k) would converge to normal distribu
 
 The Stirlin formula:
 ``` math
-ln n! = \Sigma_{k=1}^{n} ln k \approx \integral_{1}^{n} ln x dx
+\ln(n!) = \sum_{k=1}^{n} \ln(k) \approx \int_{1}^{n} \ln(x) dx
 ```
 
 The more inituitively method is using Guass's method. Suppose 
