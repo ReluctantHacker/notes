@@ -8,7 +8,7 @@ You can easily prove that
 f(\alpha + \beta) = f(\alpha) f(\beta)
 ```
 
-And this means that, this is **uniqueness theorem** which is very usual in solving equations or functions.
+And this means that, this is **uniqueness theorem** which is widely used in solving equations or function, and it means if a solution fit, then it is the only solution.
 ``` math
 f(\theta) = A e^{\zeta \theta}
 ```
