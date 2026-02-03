@@ -44,7 +44,9 @@ The Stirlin formula:
 \ln(n!) = \sum_{k=1}^{n} \ln(k) \approx \int_{1}^{n} \ln(x) dx = \Big[x \ln(x) - x \Big]_{1}^{n} = n \ln(n) - n + 1
 ```
 
-The more inituitively method is using Guass's method. Suppose 
+
+I have heard one thing that you can use 2d circular symmetry to prove normal distribution. However, it's actually WRONG!
+Suppose 
 ``` math
 lim_{n->\infty)} P(n, k) = f(k)
 ```
@@ -61,10 +63,7 @@ Now, we have one thing need to be proved or argue, f(k)f(h) is circular symmetry
 f(k)f(h) = g(k^2+h^2) = g(r^2)
 ```
 
-
-P(n, k) * P(n, h) = n! / k!(n-k)! * n! / h!(n-h)! = (n!^2) / k!h!(n-k)!(n-h)!
-
-This is not natural because f(k)f(h) doesn't imply it is circular symmetry.
+This is not natural because f(k)f(h) doesn't imply it is circular symmetry. It turns out that you still need the form of f() which is proved by Stirlin formula. You can use Stirlin formula confidentially because you don't need Wallis formula to prove that, you can use calculus which is proved by myself to prove it and you can check out the calculus note.
 
 
 
