@@ -81,10 +81,12 @@ However, here's one more thing that we need to solve here. The entropy of a macr
 \lim_{N->\infty} \ln (C(N, k)) = \infty
 ```
 
-The method we are gonna use to solve this called **Normalization** which you may encounter when dealing with wave function in quantum mechanics. Mathematically, they are doing the same thing. Normalization can remove scale and make thing finite without affect the structure of the distribution. All we need to do is dividing the entropy by N.
+The method we are gonna use to solve this called **Normalization** which you may encounter when dealing with wave function in quantum mechanics. Mathematically, they are doing the same thing. Normalization can remove scale and make thing finite without affect the structure of the distribution. All we need to do is dividing the entropy by N. The total entropy would be
 ``` math
-\dfrac{\ln (C(N, k))}{N} = \dfrac{\ln (e^N)}{N} = \dfrac{N \ln(e)}{N} = \ln(e)
+\dfrac{\ln (e^N)}{N} = \dfrac{N \ln(e)}{N} = \ln(e)
 ```
+
+You see the scale is getting removed. And if total entropy is under control, then entropy of macrostate must under control.
 
 
 
@@ -119,3 +121,107 @@ The Stirlin formula:
 ``` math
 \ln(n!) = \sum_{k=1}^{n} \ln(k) \approx \int_{1}^{n} \ln(x) dx = \Big[x \ln(x) - x \Big]_{1}^{n} = n \ln(n) - n + 1
 ```
+
+
+
+
+temp2
+-----
+Example of variable scaling (the first case):
+``` math
+y = f(x) = x^2
+u = x/2
+y = f(u) = u^2
+```
+
+this is rescaling the x-axis(compress/stretch horizontally)
+
+
+If we draw f(u) based on x, we would find the graph of f(u) is a wider version of graph of f(x), but the structure is exactly the same. 
+
+In fact, graph of f(x) based on x and graph of f(u) based on u are exactly the same graph, of course, if we set unit x and unit u same length in viewable graph(but they are not the same length, because u=x/2)
+
+Example of variable scaling ( the second case):
+In the first case, 
+``` math
+y = f(x) = x^2
+u = x/2
+y = f(u) = u^2
+```
+
+f(x) and f(u) are DIFFERENT! They are not the same thing but looks exactly the same according to their coordinate.
+
+However, here's another situation that is 
+``` math
+y = f(x) = x^2
+u = x/2
+```
+
+and we put u into f(x) to get
+``` math
+y = f(2u) = 4u^2
+```
+the graph looks scaling according to both coordinates but they are actually describing the same thing!
+
+<p align="center">
+  <img src="./images/statisticsAndProbability_figure_1.png"/>
+</p>
+
+
+
+
+
+
+
+
+
+Now, let's turn back to derivation of normal distribution with Entropy. You don't have to use entropy to derive normal distribution. However, it would be more clear and intuitive.
+
+Normally people won't use total entropy(except for thermodynamics) as a context of Entropy but use **entropy per trial** which is (total_entropy/N) as Entropy in context, especially in Statistics.
+
+The idea of (total_entropy/N) is actually **Normalization**. It makes the result finite when N goes to infinity. And it also removing the scale. 
+
+what does "Scale removing" do?
+
+Because number of total Microstates is 2^N for binomial distribution. Entropy of that is just taking log, so
+
+``` math
+S = ln (2^N) = N ln(2)
+```
+
+So s is independent of N anymore.(And it's finite now)
+``` math
+s = S/N = ln(2)
+```
+
+The normalization idea would be encountered again when dealing with wave function in quantum mechanics. 
+
+(You have heard of **Renormalization** in quantum field theory, they have the same spirit mathematically but with different image. You would study this in future.)
+
+However, of course, we won't get anything with (total_entropy/N) because we want got the distribution of binomial when N goes to infinity. So we actually want to know what C(N, k)/N is, which is the probability density(distribution density here) which should be **normal distribution**.
+
+Again we take log of it, which is making it to entropy, so we can't avoid dealing with factorial.
+``` math
+ ln(C(N, k))/N
+```
+
+This is also a normalization of entropy but especially for a single microstate when k=k.
+
+Wait...what we are doing now? why use "ln" here? 
+
+The reason of this is that we want to know C(N, k)/N but it's really hard to deal with factorial when N goes to infinity. So we log it to get easier dealing with the problem(and using Stirlin formula). And log of microstates is naturally the so called Entropy! So when we log microstates, we are dealing with Entropy actually.
+
+
+Okay, now, let's turn back. 
+``` math
+ln(C(N, k))/N
+```
+The thing above is not good enough, we have already turned the y-axis to finite, but haven't turned the x-axis to finite. Take a good look of k. The value of k is 0~N. And it could go to infinity when N goes to infinity. To avoid dealing infinity with x-axis, we need to normalize x axis as well to remove 
+scale and making thing finite. The easiest way is just use transformation below and take it back into
+
+``` math
+p = k/N
+```
+
+This is pretty much doing the same thing as u=x/2 of the second case. Structurally the same. The different part is that N is not constant and it can go to infinity.
+
