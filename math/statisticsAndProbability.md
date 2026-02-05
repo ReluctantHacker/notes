@@ -37,15 +37,10 @@ Suppose we have P combinations of k heads result for flapping n times, we can wr
 P(k) = C^n_k p^k q^{n-k} = \dfrac{n!}{k!(n-k)!}
 ```
 
-When n goes to infinity, we can have that P(k) would converge to normal distribution. This truth classically prove by **Stirlin formula**. Classically, Stirlin formula was proved by **Wallis formula** which wasn't proved by Wallis himself but only for a guess. We can use calculus to prove Stirlin formula but be careful, classically Newton didn't prove calculus but only take a guess. The real proof you can check my calculus note.
-
-The Stirlin formula:
-``` math
-\ln(n!) = \sum_{k=1}^{n} \ln(k) \approx \int_{1}^{n} \ln(x) dx = \Big[x \ln(x) - x \Big]_{1}^{n} = n \ln(n) - n + 1
-```
+When n goes to infinity, we can have that P(k) would converge to normal distribution. This truth classically prove by **Stirlin formula**. Classically, Stirlin formula was proved by **Wallis formula** which wasn't proved by Wallis himself but only for a guess. So in the first place, I didn't want to use Stirling formula because I don't know how to prove it. 
 
 
-I have heard one thing that you can use 2d circular symmetry to prove normal distribution. However, it's actually WRONG!
+I have heard that one can use 2d circular symmetry to prove normal distribution. However, it's actually WRONG!
 Suppose 
 ``` math
 lim_{n->\infty)} P(n, k) = f(k)
@@ -63,7 +58,30 @@ Now, we have one thing need to be proved or argue, f(k)f(h) is circular symmetry
 f(k)f(h) = g(k^2+h^2) = g(r^2)
 ```
 
-This is not natural because f(k)f(h) doesn't imply it is circular symmetry. It turns out that you still need the form of f() which is proved by Stirlin formula. You can use Stirlin formula confidentially because you don't need Wallis formula to prove that, you can use calculus which is proved by myself to prove it and you can check out the calculus note.
+You may think uh~~ this is apparent~ NO! This is not natural at all. Because f(k)f(h) doesn't imply it is circular symmetry. It turns out that you still need the form of f() which is proved by Stirlin formula. But it's actually okay because you can use Stirlin formula confidentially because you don't actually need Wallis formula to prove that, you can use calculus which is proved by myself to prove it and you can check out the calculus note.
+
+So, now everything turns back, we want to find the distribution of 
+``` math
+C(N, k) = \dfrac{N!}{k!(N-k)!}
+```
+
+However, we can't deal with this directly because factorial would be really hard to handle when N goes to infinity. So we take log of it and using stirlin formula to avoid factorial. 
+``` math
+\ln (C(N, k))
+```
+
+And the magic begins here.
+
+We've already talk about Entropy before, when we want to define what Randomness is, we take log of number of microstates or combinations and we get the Entropy. So Entropy is basically just log of combinations. In thermodynamics, when we talks about entropy, we always talk about **TOTAL ENTROPY** of the system which means it counts all the combinations(microstates). 
+
+But here, we are dealing entropy of a **Macrostate** for k. Actually in the information theory and statistics, "entropy" often refers to it rather than total entropy. This is okay and totally reasonable because, first of all, entropy is just a value to describe the randomness of some state, it doesn't have to total image, so it's okay to focus just on a macrostate. And second, the macrostate shows the distribution we want to know here! 
+
+However, here's one more thing that we need to solve here. The entropy of a macrostate would go to infinity if N goes infinity.
+``` math
+\lim_{N->\infty} \ln (C(N, k)) = \infty
+```
+
+
 
 
 
@@ -91,72 +109,9 @@ Suppose we are flapping coin again by N times and notes the result for head mean
 
 
 
-
-Temp
+temp
 ----
-Example of variable scaling example:
+The Stirlin formula:
 ``` math
-y = f(x) = x^2
-u = x/2
-y = f(u) = u^2
+\ln(n!) = \sum_{k=1}^{n} \ln(k) \approx \int_{1}^{n} \ln(x) dx = \Big[x \ln(x) - x \Big]_{1}^{n} = n \ln(n) - n + 1
 ```
-
-this is rescaling the x axis(compress/stretch horizontally)
-
-
-If we draw f(u) based on x, we would find the graph of f(u) is a wider version of graph of f(x), but the structure is exactly the same. 
-
-In fact, graph of f(x) based on x and graph of f(u) based on u are exactly the same graph, of course.
-
-
-
-
-
-Now, let's turn back to derivation of normal distribution with Entropy. You don't have to use entropy to derive normal distribution. However, it would be more clear and intuitive.
-
-Normally people won't use total entropy(except for thermodynamics) as a context of Entropy but use **entropy per trial** which is (total_entropy/N) as Entropy in context, especially in Statistics.
-
-The idea of (total_entropy/N) is actually **Normalization**. It makes the result finite when N goes to infinity. And it also removing the scale. 
-
-what does "Scale removing" do?
-
-Because number of total Microstates is 2^N for binomial distribution. Entropy of that is just taking log, so
-
-``` math
-S = ln (2^N) = N ln(2)
-```
-
-So s is independent of N anymore.(And it's finite now)
-``` math
-s = S/N = ln(2)
-```
-
-The normalization idea would be encountered again when dealing with wave function in quantum mechanics. 
-
-(You have heard of **Renormalization** in quantum field theory, they have the same spirit mathematically but with different image. You would study this in future.)
-
-However, of course, we won't get anything with (total_entropy/N) because we want got the distribution of binomial when N goes to infinity. So we actually want to know what C(N, k)/N is, which is the probability density(distribution density here) which should be **normal distribution**.
-
-Again we take log of it, which is making it to entropy, so we can't avoid dealing with factorial.
-``` math
- ln(C(N, k))/N
-```
-
-This is also a normalization of entropy but especially for a single microstate when k=k.
-
-Wait...what we are doing now? why use "ln" here? 
-
-The reason of this is that we want to know C(N, k)/N but it's really hard to deal with factorial when N goes to infinity. So we log it to get easier dealing with the problem(and using Stirlin formula). And log of microstates is naturally the so called Entropy! So when we log microstates, we are dealing with Entropy actually.
-
-
-Okay, now, let's turn back. 
-``` math
-ln(C(N, k))/N
-```
-The thing above is not good enough, we have already turned the y axis to finite, but haven't turned the x axis to finite. Take a good look of k. The value of k is 0~N. And it could go to infinity when N goes to infinity. To avoid dealing infinity with x axis, we need to normalize x axis as well to remove scale and making thing finite. The easiest way is just use
-
-``` math
-P = k/N
-```
-
-
