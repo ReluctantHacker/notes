@@ -81,6 +81,10 @@ However, here's one more thing that we need to solve here. The entropy of a macr
 \lim_{N->\infty} \ln (C(N, k)) = \infty
 ```
 
+The method we are gonna use to solve this called **Normalization** which you may encounter when dealing with wave function in quantum mechanics. Mathematically, they are doing the same thing. Normalization can remove scale and make thing finite without affect the structure of the distribution. All we need to do is dividing the entropy by N.
+``` math
+\dfrac{\ln (C(N, k))}{N} = \dfrac{\ln (e^N)}{N} = \dfrac{N \ln(e)}{N} = \ln(e)
+```
 
 
 
