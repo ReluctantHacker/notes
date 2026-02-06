@@ -67,7 +67,7 @@ C(N, k) = \dfrac{N!}{k!(N-k)!}
 
 However, we can't deal with this directly because factorial would be really hard to handle when N goes to infinity. So we take log of it and using stirlin formula to avoid factorial. 
 ``` math
-\ln (C(N, k))
+\ln (C(N, k)) = S(k)
 ```
 
 And the magic begins here.
@@ -81,14 +81,53 @@ However, here's one more thing that we need to solve here. The entropy of a macr
 \lim_{N->\infty} \ln (C(N, k)) = \infty
 ```
 
-The method we are gonna use to solve this called **Normalization** which you may encounter when dealing with wave function in quantum mechanics. Mathematically, they are doing the same thing. Normalization can remove scale and make thing finite without affect the structure of the distribution. All we need to do is dividing the entropy by N. The total entropy would be
+The method we are gonna use to solve this called **Normalization** which you may encounter when dealing with wave function in quantum mechanics. Mathematically, they are doing the same thing. Normalization can remove scale and make thing finite without affect the structure of the distribution. All we need to do is dividing the entropy by N. 
+
+For example, the total entropy would be
 ``` math
 \dfrac{\ln (e^N)}{N} = \dfrac{N \ln(e)}{N} = \ln(e)
 ```
 
 You see the scale is getting removed. And if total entropy is under control, then entropy of macrostate must under control.
 
+However, in here, we need the entropy of a macrostate, not total entropy. Entropy of a macrostate is special because it is a function of N and k, and k is related to N. If you use Stirlin formula to expand it, you'll find that you need two things to do to remove the scale of N. 
 
+The first is
+``` math
+\dfrac{\ln (C(N, k))}{N} = \dfrac{S(k)}{N} = s(k) = \ln(N) - \dfrac{k}{N} \ln(k) - \dfrac{N-k}{N} \ln(N-k)
+```
+
+This is normalization of the scale of the value of the entropy(y-axis), but this is not enough to cancel the effect of N(which means let the function independent to N) because k(x-axis) can go infinity when N goes infinity, so we still need one things to do, then second one
+``` math
+p = \dfrac{k}{N}
+k = pN
+s(k) = \dfrac{\ln (C(N, k))}{N} = 
+\dfrac{\ln (C(N, pN)){N} = H(p) = 
+-p\ln(p)-(1-P)\ln(1-p)
+```
+
+This is actually the famous Shannon entropy function H(p).
+
+One thing need to be noted is that p=k/N is actually doing scaling of x-axis. You may not really see what happens, but if I take two type of rescaling examples, you'll see. Suppose we have
+``` math
+y = f(x) = x^2
+u = x/2
+y = f(u) = u^2
+```
+
+f(x) and f(u) are DIFFERENT! They are not the same thing but structurely looks the same according to their own coordinate. If you draw f(u) based on x, we would find graph of f(u) is wider than graph of f(x). So f(u) is actually a rescaling result of f(x), vice versa.
+
+Here's another type of rescaling
+``` math
+y = f(x) = x^2
+u = x/2
+f(x) = f(2u) = g(u) = (2u)^2 = 4u^2
+```
+f(x) and g(u) are the same, they are describing the same thing but structurely different(rescaling of x-axis) under their own coordinate.
+
+<p align="center">
+  <img src="./images/statisticsAndProbability_figure_1.png"/>
+</p>
 
 
 Multinomial distribution
