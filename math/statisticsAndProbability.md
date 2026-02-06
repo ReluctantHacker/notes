@@ -115,6 +115,8 @@ s(k) = \dfrac{\ln (C(N, k))}{N} =
 
 This is actually the famous Shannon entropy function H(p).
 
+Be careful here, you've already use Stirling formula here, so it's already an approximate form.
+
 One thing need to be noted is that p=k/N is actually doing scaling of x-axis. You may not really see what happens, but if I take two type of rescaling examples, you'll see. Suppose we have
 ``` math
 y = f(x) = x^2
@@ -167,8 +169,9 @@ because the second term is independent with k, it doesn't influent about the str
 ``` math
 P(k) ~ e^{N H(p)}
 ```
+Again, notice here, this is actually approximate form, because you've already use Stirling formula.
 
-This is acutally a general form of the distribution, the game should be ended here. But here's one more step we need to go, because this is the discrete, we want to know what the distribution would converge when N goes to infinity.
+This is acutally a general form of the distribution for any N and k, the game is actually ended here. But if we push further, we want to know what the distribution would converge when N goes to infinity.
 
 ``` math
 \lim_{N->\infty} e^{N H(p)} = 
@@ -196,6 +199,8 @@ So
 ``` math
 H(p) \approx H(1/2) + \dfrac{1}{2}H''(1/2)(p-1/2)^2 = \ln 2 - 2(p-1/2)^2
 ```
+
+Something is Big wrong and  you have to take a note. Is that binomial distribution DOESN'T GLOBALLY converges to Gaussian distribution seemly. Only the peak point is!!! according to the theory from now. And the Copilots say the other part rather than peak should be used **large deviant**
 
 
 Multinomial distribution
