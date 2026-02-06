@@ -179,11 +179,23 @@ use Taylor expansion
 f(x) = \dfrac{f(x_0)}{0!} (x-x_0)^0 + \dfrac{f'(x_0)}{1!} (x-x_0)^1 + \dfrac{f''(x_0)}{2!} (x-x_0)^2 + ...
 ```
 
-for H(p), we take $$\mu$$ as the mean value(or expectation value) where should be the peak of the distribution.
+for H(p), we take $$p_0=\dfrac{1}{2}$$ where is peak of the distribution(middle of the distribution). This is nothing surprised, because we have already normalized the value of p=0~1. So the middle must be 1/2.
 ``` math
-H(p) = \dfrac{H(\mu)}{0!} (p-\mu)^0 + \dfrac{H'(\mu)}{1!} (p-\mu)^1 + \dfrac{H''(\mu)}{2!} (p-\mu)^2 + ...
+H(p) = \dfrac{H(p_0)}{0!} (p-p_0)^0 + \dfrac{H'(p_0)}{1!} (p-p_0)^1 + \dfrac{H''(p_0)}{2!} (p-p_0)^2 + ...
 ```
 
+And for
+``` math
+H'(1/2) = 0
+```
+``` math
+H''(1/2) = -4
+```
+
+So
+``` math
+H(p) \approx H(1/2) + \dfrac{1}{2}H''(1/2)(p-1/2)^2 = \ln 2 - 2(p-1/2)^2
+```
 
 
 Multinomial distribution
