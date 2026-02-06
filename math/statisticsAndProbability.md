@@ -100,10 +100,17 @@ The first is
 This is normalization of the scale of the value of the entropy(y-axis), but this is not enough to cancel the effect of N(which means let the function independent to N) because k(x-axis) can go infinity when N goes infinity, so we still need one things to do, then second one
 ``` math
 p = \dfrac{k}{N}
+```
+transform this into
+``` math
 k = pN
+```
+
+and plug in s(k)
+``` math
 s(k) = \dfrac{\ln (C(N, k))}{N} = 
 \dfrac{\ln (C(N, pN))}{N} = H(p) = 
--p\ln(p)-(1-P)\ln(1-p)
+-p\ln(p)-(1-p)\ln(1-p)
 ```
 
 This is actually the famous Shannon entropy function H(p).
@@ -129,6 +136,53 @@ f(x) and g(u) are the same, they are describing the same thing but structurely d
   <img src="./images/statisticsAndProbability_figure_1.png"/>
 </p>
 
+H(p) and s(k) are the same thing, they are describing the same thing but rescaling the x-axis.
+
+Now we know that:
+``` math
+s(k) = H(p) = \dfrac{\ln(C(N, k))}{N}
+```
+
+so 
+``` math
+N H(p) = \ln(C(N,k))
+```
+
+The probability density of binomial combinations should be
+``` math
+P(k) = \dfrac{C(N, k)}{2^N}
+```
+
+so
+``` math
+\ln(P(k)) = \ln(C(N, k)) - N \ln(2)
+```
+
+so
+``` math
+\ln(P(k)) = N H(p) - N \ln(2)
+```
+
+because the second term is independent with k, it doesn't influent about the structure of the distribution. So the distribution should be
+``` math
+P(k) ~ e^{N H(p)}
+```
+
+This is acutally a general form of the distribution, the game should be ended here. But here's one more step we need to go, because this is the discrete, we need to let N goes to infinity.
+
+``` math
+\lim_{N->\infty} e^{N H(p)} = 
+```
+
+use Taylor expansion
+``` math
+f(x) = \dfrac{f(x_0)}{0!} (x-x_0)^0 + \dfrac{f'(x_0)}{1!} (x-x_0)^1 + \dfrac{f''(x_0)}{2!} (x-x_0)^2 + ...
+```
+
+for H(p), we take $$\mu$$ as the mean value(or expectation value)
+
+
+
 
 Multinomial distribution
 ------------------------
@@ -153,114 +207,4 @@ Suppose we are flapping coin again by N times and notes the result for head mean
 
 
 
-
-temp
-----
-The Stirlin formula:
-``` math
-\ln(n!) = \sum_{k=1}^{n} \ln(k) \approx \int_{1}^{n} \ln(x) dx = \Big[x \ln(x) - x \Big]_{1}^{n} = n \ln(n) - n + 1
-```
-
-
-
-
-temp2
------
-Example of variable scaling (the first case):
-``` math
-y = f(x) = x^2
-u = x/2
-y = f(u) = u^2
-```
-
-this is rescaling the x-axis(compress/stretch horizontally)
-
-
-If we draw f(u) based on x, we would find the graph of f(u) is a wider version of graph of f(x), but the structure is exactly the same. 
-
-In fact, graph of f(x) based on x and graph of f(u) based on u are exactly the same graph, of course, if we set unit x and unit u same length in viewable graph(but they are not the same length, because u=x/2)
-
-Example of variable scaling ( the second case):
-In the first case, 
-``` math
-y = f(x) = x^2
-u = x/2
-y = f(u) = u^2
-```
-
-f(x) and f(u) are DIFFERENT! They are not the same thing but looks exactly the same according to their coordinate.
-
-However, here's another situation that is 
-``` math
-y = f(x) = x^2
-u = x/2
-```
-
-and we put u into f(x) to get
-``` math
-y = f(2u) = 4u^2
-```
-the graph looks scaling according to both coordinates but they are actually describing the same thing!
-
-<p align="center">
-  <img src="./images/statisticsAndProbability_figure_1.png"/>
-</p>
-
-
-
-
-
-
-
-
-
-Now, let's turn back to derivation of normal distribution with Entropy. You don't have to use entropy to derive normal distribution. However, it would be more clear and intuitive.
-
-Normally people won't use total entropy(except for thermodynamics) as a context of Entropy but use **entropy per trial** which is (total_entropy/N) as Entropy in context, especially in Statistics.
-
-The idea of (total_entropy/N) is actually **Normalization**. It makes the result finite when N goes to infinity. And it also removing the scale. 
-
-what does "Scale removing" do?
-
-Because number of total Microstates is 2^N for binomial distribution. Entropy of that is just taking log, so
-
-``` math
-S = ln (2^N) = N ln(2)
-```
-
-So s is independent of N anymore.(And it's finite now)
-``` math
-s = S/N = ln(2)
-```
-
-The normalization idea would be encountered again when dealing with wave function in quantum mechanics. 
-
-(You have heard of **Renormalization** in quantum field theory, they have the same spirit mathematically but with different image. You would study this in future.)
-
-However, of course, we won't get anything with (total_entropy/N) because we want got the distribution of binomial when N goes to infinity. So we actually want to know what C(N, k)/N is, which is the probability density(distribution density here) which should be **normal distribution**.
-
-Again we take log of it, which is making it to entropy, so we can't avoid dealing with factorial.
-``` math
- ln(C(N, k))/N
-```
-
-This is also a normalization of entropy but especially for a single microstate when k=k.
-
-Wait...what we are doing now? why use "ln" here? 
-
-The reason of this is that we want to know C(N, k)/N but it's really hard to deal with factorial when N goes to infinity. So we log it to get easier dealing with the problem(and using Stirlin formula). And log of microstates is naturally the so called Entropy! So when we log microstates, we are dealing with Entropy actually.
-
-
-Okay, now, let's turn back. 
-``` math
-ln(C(N, k))/N
-```
-The thing above is not good enough, we have already turned the y-axis to finite, but haven't turned the x-axis to finite. Take a good look of k. The value of k is 0~N. And it could go to infinity when N goes to infinity. To avoid dealing infinity with x-axis, we need to normalize x axis as well to remove 
-scale and making thing finite. The easiest way is just use transformation below and take it back into
-
-``` math
-p = k/N
-```
-
-This is pretty much doing the same thing as u=x/2 of the second case. Structurally the same. The different part is that N is not constant and it can go to infinity.
 
