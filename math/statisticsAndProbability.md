@@ -102,7 +102,7 @@ This is normalization of the scale of the value of the entropy(y-axis), but this
 p = \dfrac{k}{N}
 k = pN
 s(k) = \dfrac{\ln (C(N, k))}{N} = 
-\dfrac{\ln (C(N, pN)){N} = H(p) = 
+\dfrac{\ln (C(N, pN))}{N} = H(p) = 
 -p\ln(p)-(1-P)\ln(1-p)
 ```
 
