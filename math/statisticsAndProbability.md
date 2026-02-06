@@ -168,7 +168,7 @@ because the second term is independent with k, it doesn't influent about the str
 P(k) ~ e^{N H(p)}
 ```
 
-This is acutally a general form of the distribution, the game should be ended here. But here's one more step we need to go, because this is the discrete, we need to let N goes to infinity.
+This is acutally a general form of the distribution, the game should be ended here. But here's one more step we need to go, because this is the discrete, we want to know what the distribution would converge when N goes to infinity.
 
 ``` math
 \lim_{N->\infty} e^{N H(p)} = 
@@ -179,8 +179,10 @@ use Taylor expansion
 f(x) = \dfrac{f(x_0)}{0!} (x-x_0)^0 + \dfrac{f'(x_0)}{1!} (x-x_0)^1 + \dfrac{f''(x_0)}{2!} (x-x_0)^2 + ...
 ```
 
-for H(p), we take $$\mu$$ as the mean value(or expectation value)
-
+for H(p), we take $$\mu$$ as the mean value(or expectation value) where should be the peak of the distribution.
+``` math
+H(p) = \dfrac{H(\mu)}{0!} (p-\mu)^0 + \dfrac{H'(\mu)}{1!} (p-\mu)^1 + \dfrac{H''(\mu)}{2!} (p-\mu)^2 + ...
+```
 
 
 
