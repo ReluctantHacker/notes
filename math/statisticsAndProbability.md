@@ -167,7 +167,7 @@ so
 
 because the second term is independent with k, it doesn't influent about the structure of the distribution. So the distribution should be
 ``` math
-P(k) ~ e^{N H(p)}
+P(k) \approx e^{N H(p)}
 ```
 Again, notice here, this is actually approximate form, because you've already use Stirling formula.
 
