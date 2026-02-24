@@ -73,3 +73,11 @@ Transmission line losses depend on current, so lower current means lower losses.
 Again, suppose the load is fixed, we could have the summary below:
  - Low voltage + low resistance → high current → high losses
  - High voltage + high resistance → low current → low losses
+
+# Reference
+[some reference books? I am not sure if those things are useful or not.](https://github.com/tmhd99/power-electronics-studymaterials/blob/main/power%20electronics%20books/advanced-control-of-electrical-drives-and-power-electronic-conve-2017.pdf)
+[Power System Analysis Software? Seems not a a open-source free thing but it's an inspiration for me.](https://electrisim.com/)
+[Civil Engineering Drawing Sessional](https://www.aust.edu/lab_manuals/CE/CE%201100.pdf)
+[Civil Engineering Drawings: A Comprehensive Guide](https://worldcivilsociety.com/civil-engineering-drawings/)
+You need to study about the real case of Civil Engineering drawings.
+You also need to study about the 電力平面圖, 電力單線圖
