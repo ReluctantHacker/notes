@@ -13,16 +13,19 @@ Here's a [dude trying to DIY build a battery pack(management system)](https://ww
 
 Here's another [introduction](https://www.youtube.com/watch?v=q4wDa_m9-8E) talks about Battery Management System
 
-# Motor
+# Motor(Usually Servo motors)
 Mostly, for simple motors, we give powers to it, and it moves, without power, then it slow down because of friction. But for something that need accurate control system, we use **servo** motor(or servo system) which means the motors have feedback sensor that would tell the system the position and speed of it and system would make decision if the position or speed is right or not. If it is not right, then system would send command to rise the power of motor or low down of it to adjust the position or speed. Those servos are not just use in robotics but also used in industry robotic arm and satellite receiving antenna's rotational motor.
 
 # Engine
 Generally speaking, "engine" is any system that takes input energy or resources and produces useful output work. Such like game engine, search engine, combustion engine(mostly for vehicle). So, A motor is actually one kind of it, it's electricity input and rotational toque output.
 
 # Robotic design example
+Below is an old design from Boston Dynamics and it has an engine in structure which is not often because robot now generally used batteries.
 <p align="center">
   <img src="./images/robots_figure_1.png"/>
 </p>
+
+Most humanoid robot(or robot dog), the placement of the computer usually centralized in the torso, this is because offers space, protection, and balance.
 
 
 # Satellite
