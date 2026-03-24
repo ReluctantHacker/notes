@@ -29,7 +29,8 @@ degree of freedom [reference](https://www.zhihu.com/question/26720278)
 
 
 Binomial distribution to Normal distribution
----------------------
+--------------------------------------------
+# De Moivre-Laplace theorem
 Two outcome values of samples. Suppose we are flapping a coin by N times, and want to know how many times it shows head or tails. Suppose we N=3, then there are {head, head}, {head, tail}, {tail, head}, {tail, tail}, 4 combinations(all combinations has the same possibility to shows). {head, tail} and {tail, head}, those two combinations represents 1 head result, so 1 head result has two combinations and this tells that 1 head result is two times possible than 2 heads result or 2 tails result.
 
 Suppose we have P combinations of k heads result for flapping n times, we can write it as 
@@ -200,7 +201,10 @@ So
 H(p) \approx H(1/2) + \dfrac{1}{2}H''(1/2)(p-1/2)^2 = \ln 2 - 2(p-1/2)^2
 ```
 
-Something is Big wrong and  you have to take a note. Is that binomial distribution DOESN'T GLOBALLY converges to Gaussian distribution seemly. Only the peak point is!!! according to the theory from now. And the Copilots say the other part rather than peak should be used **large deviant**
+This is the famous De Moivre-Laplace theorem. However, noticed, according to the arguments we have now, binomial distribution DOESN'T GLOBALLY converges to Gaussian distribution. Only the peak point is! Other part rather than peak point is **large deviant**.
+
+# Central limit theorem
+In early 20th century, people like Paul Lévy and Lindeberg developed a more geneneral proof about the random variable convergence to normal distribution for all region, not just for central area. 
 
 
 Multinomial distribution
@@ -226,4 +230,70 @@ Suppose we are flapping coin again by N times and notes the result for head mean
 
 
 
+Information Theory
+------------------
+[Question]
+any compressing method mankind have came up with is not possible to turn a text size of like 10 bit to perfectly into like for example 4 bit. 40% down exactly for every text? The methods can only make sure it is compressed but can't guarantee that it compressed to a certain perentage? right? Do you understand what I am trying to say?
+
+[Answer]
+Yes — you’ve got the idea exactly.
+Compression methods can reduce size, but they can’t guarantee a fixed percentage reduction (like “always 40% smaller”) for every possible input. Here’s why:
+🔍 Why fixed-percentage compression isn’t possible
+- Information theory (Shannon’s source coding theorem)
+Compression works by exploiting redundancy. If the data has patterns, repetition, or predictable structure, you can encode it more efficiently.
+But if the data is already random or has no redundancy, you can’t shrink it further without losing information.
+- No free lunch
+If a method could guarantee “every 10 bits → 4 bits,” then you could apply it repeatedly and shrink any file to almost nothing. That would violate fundamental limits of information theory.
+- Variable results
+Real compression algorithms (gzip, zlib, LZ4, etc.) sometimes shrink text a lot (e.g., repetitive logs), sometimes only a little, and sometimes even make it slightly bigger (if the input is already random).
+📌 Example
+- Text: "aaaaaaaaaa" (10 characters) → Run-length encoding compresses to "a10" (3 characters). Huge savings.
+- Text: "qwertyuiop" (10 characters, no repetition) → Compression may not reduce size at all, might even add overhead.
+✅ Conclusion
+So yes, I understand what you’re saying:
+Compression cannot guarantee a fixed percentage reduction for all inputs. It only guarantees that on average or for certain types of data, the size will be smaller. The actual ratio depends entirely on the structure and redundancy of the input.
+
+[Question]
+So in short, any compression method is actually trying to recode the redundant part into a more efficient way. If there's no redundant part left, then there's no more thing to push to more efficient, right
+
+[Answer]
+Exactly — you’ve nailed the essence of compression.
+All compression methods are essentially re‑encoding redundancy into a more efficient representation. If there’s repetition, predictable structure, or patterns, you can store them in fewer bits. But once you’ve squeezed out all the redundancy, what remains is the “true information content,” and you can’t shrink that further without losing something.
+🔑 Key Points
+- Compression = exploiting redundancy
+Example: "aaaaaa" → "a6" (run‑length encoding).
+- No redundancy = no gain
+Example: "qwerty" (random letters) → compression may not reduce size at all.
+- Information theory limit
+Shannon’s theorem says you can’t compress arbitrary data below its entropy. If the data is already maximally random, it’s incompressible.
+- Why ratios vary
+That’s why you sometimes see huge savings (text logs, repeated patterns) and sometimes almost none (encrypted files, random data).
+So yes — once there’s no redundancy left, there’s nothing more to “push into a more efficient form.” That’s why compression ratios are input‑dependent, not fixed.
+
+Would you like me to illustrate this with a side‑by‑side example: one string that compresses very well and another that barely compresses, so you can see the difference in practice?
+
+[Question]
+But...can we even know the smallest size possible of an information? for example "aaaaaa", what is the most efficient size of it to compress
+
+[Answer]
+Yes — that’s exactly the right intuition.
+In information theory, the smallest possible size of a piece of information is determined by its entropy — basically, how much “true information” it contains once all redundancy is removed. Compression can only reduce data down to this limit, never below it.
+Example: "aaaaaa"
+- As raw text: 6 characters → 6 bytes (if ASCII).
+- But the actual information is just:
+- The symbol "a"
+- The count 6
+- So the most efficient representation is something like (a,6).
+- Depending on encoding, that might be just a few bytes (1 byte for the character + 1 byte for the count).
+So "aaaaaa" can be compressed from 6 bytes down to ~2 bytes. That’s the theoretical minimum for this string, because you need at least enough bits to say “the symbol is a” and “repeat it 6 times.”
+General Rule
+- Redundant data → can be compressed.
+- Random data → already at its entropy limit, can’t be compressed further.
+- Minimum size = number of bits required to uniquely describe the data’s structure and content.
+Why it matters
+This is why compression ratios vary:
+- "aaaaaa" shrinks a lot.
+- "abcdef" (all different letters) has no redundancy, so its most efficient representation is basically itself — no smaller.
+
+👉 So yes: once redundancy is gone, the smallest possible size is the entropy limit. For "aaaaaa", that’s essentially “one symbol + one count.”
 
