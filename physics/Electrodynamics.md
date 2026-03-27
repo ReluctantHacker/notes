@@ -277,7 +277,7 @@ $\phi$ can be written as $n\pi$ where if n is 0, 2, 4..., then the superposition
 
 Let's focus n between 0~2. Suppose n gradually grows from 0 to 2, the superposition is going from Constructive interference to Destructive interference.
 
-With those ideas in mind, let's go deeper. Suppose we have a superposition of two waves like below
+With those ideas in mind, let's go deeper. Suppose we have a superposition of two waves with different k like below
 ``` math
 y(x) = cos(k_1x) + cos(k_2x)
 ```
@@ -285,6 +285,10 @@ which can be written as below according to trig identity
 ``` math
 y(x) = 2cos\left(\dfrac{(k_1-k_2)x}{2}\right) cos\left(\dfrac{(k_1+k_2)x}{2}\right)
 ```
+
+Here's a site that you can perform an animation that shows envelope of two waves superposition: [reference](https://www.geogebra.org/m/yzgvgcqk?utm_source=chatgpt.com)
+
+The idea is like this, we chose a position that is totally Constructive interference, and because k1 not equal to k2, if we gradually move the position far from Constructive interference position, you would find that Constructive pattern gradually change to Destructive pattern. If k1 is very close to k2 the "envelope" image would be very apparent. 
 
 
 # Relativity
