@@ -262,7 +262,7 @@ y(x) = cos(kx)+cos(kx+\phi)
 ```
 do some math, and we can get
 ``` math
-y(x) = 2cos \dfrac{\phi}{2} cos\right(kx+\dfrac{\phi}{2}\left)
+y(x) = 2cos \dfrac{\phi}{2} cos\left(kx+\dfrac{\phi}{2}\right)
 ```
 
 # Relativity
