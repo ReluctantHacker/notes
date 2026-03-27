@@ -281,6 +281,10 @@ With those ideas in mind, let's go deeper. Suppose we have a superposition of tw
 ``` math
 y(x) = cos(k_1x) + cos(k_2x)
 ```
+which can be written as below according to trig identity
+``` math
+y(x) = 2cos\left(\dfrac{(k_1-k_2)x}{2}\right) cos\left(\dfrac{(k_1+k_2)x}{2}\right)
+```
 
 
 # Relativity
