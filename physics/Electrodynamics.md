@@ -253,6 +253,15 @@ In vacuum $\nabla\cdot\mathbf{E}=0$, hence
 Before Maxwell, people knew about electric and magnetic forces, but they thought of them as instantaneous actions at a distance, just like Newton’s gravity.
 No one imagined that changes in electric or magnetic fields would travel through space at a finite speed — and even more shockingly, that speed would turn out to be the speed of light
 
+## Wave theory, Superposition of waves, phase and grop velocity
+
+### Superposition of two waves
+Suppose we have two base waves. To simplify the situation, we first assume that every of two waves is the same, including frequency, amplitude, speed, except for the phase. And because the speed is the same, we can take the waves are static because the speed won't affect the discussion result.
+``` math
+y(x) = cos(kx)+cos(kx+\phi)
+```
+
+
 # Relativity
 In 1865, Maxwell found that his equations predict electromagnetic waves in vacuum traveling at the speed of light. However, he built his theory based on the existence of an absolute reference frame — the **ether**. 
 
