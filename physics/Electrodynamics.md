@@ -256,11 +256,14 @@ No one imagined that changes in electric or magnetic fields would travel through
 ## Wave theory, Superposition of waves, phase and grop velocity
 
 ### Superposition of two waves
-Suppose we have two base waves. To simplify the situation, we first assume that every of two waves is the same, including frequency, amplitude, speed, except for the phase. And because the speed is the same, we can take the waves are static because the speed won't affect the discussion result.
+Suppose we have two base waves. To simplify the situation, we first assume that every property of two waves is the same, including frequency, amplitude, speed, except for the phase. And because the speed is the same, we can suppose the waves are static because the speed won't affect the discussion result. So we can write
 ``` math
 y(x) = cos(kx)+cos(kx+\phi)
 ```
-
+do some math, and we can get
+``` math
+y(x) = 2cos \dfrac{\phi}{2} cos\right(kx+\dfrac{\phi}{2}\left)
+```
 
 # Relativity
 In 1865, Maxwell found that his equations predict electromagnetic waves in vacuum traveling at the speed of light. However, he built his theory based on the existence of an absolute reference frame — the **ether**. 
