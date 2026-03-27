@@ -260,10 +260,28 @@ Suppose we have two base waves. To simplify the situation, we first assume that 
 ``` math
 y(x) = cos(kx)+cos(kx+\phi)
 ```
-do some math, and we can get
+do some math with tri identity
+``` math
+cos(A)+cos(B) = 2cos\dfrac{A-B}{2}cos\dfrac{A+B}{2}
+```
+
+and we can get
 ``` math
 y(x) = 2cos \dfrac{\phi}{2} cos\left(kx+\dfrac{\phi}{2}\right)
 ```
+Technically, we can take $2cos(\phi/2)$ as the amplitude, and the wave itself is $cos(kx+\phi/2)$. In this case we get the final result the same wavenumber k as original, same "frequency" in space. 
+
+A more important thing we can get is, according to the trig identity $cos\dfrac{A+B}{2}$, the final phase of the superpositional wave should be the arithmetic mean of two original phases. And the amplitude of the wave is the difference of the phase.
+
+$\phi$ can be written as $n\pi$ where if n is 0, 2, 4..., then the superposition becomes **Constructive interference**, if n is 1, 3, 5..., then the superposition becomes **Destrcutive interference**. Notice here, the wave form is still the same, it just has different amplitude.
+
+Let's focus n between 0~2. Suppose n gradually grows from 0 to 2, the superposition is going from Constructive interference to Destructive interference.
+
+With those ideas in mind, let's go deeper. Suppose we have a superposition of two waves like below
+``` math
+y(x) = cos(k_1x) + cos(k_2x)
+```
+
 
 # Relativity
 In 1865, Maxwell found that his equations predict electromagnetic waves in vacuum traveling at the speed of light. However, he built his theory based on the existence of an absolute reference frame — the **ether**. 
