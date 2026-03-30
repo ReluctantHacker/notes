@@ -291,7 +291,7 @@ y(x) = 2cos\left(\dfrac{(k_1-k_2)x}{2}\right) cos\left(\dfrac{(k_1+k_2)x}{2}\rig
 
 Here's a site that you can perform an animation that shows envelope of two waves superposition: [reference](https://www.geogebra.org/m/yzgvgcqk?utm_source=chatgpt.com)
 
-If we take a good look at the first term there, we would see that, suppose $k_1-k_2$ is constant, and if we chose a position that is totally Constructive interference($(k_1-k_2)x$=0, for x=0), with k1 not equal to k2, if we gradually move the position far from Constructive interference position, you would find that Constructive pattern gradually change to Destructive pattern. If k1 is very close to k2 the "envelope" image would be very apparent. 
+If we take a good look at the first term there, we would see that, suppose $k_1-k_2$ is constant, and if we chose a position that is totally Constructive interference which means $(k_1-k_2)x$=0, for x=0, with k1 not equal to k2, if we gradually move the position far from Constructive interference position, you would find that Constructive pattern gradually change to Destructive pattern. If k1 is very close to k2 the "envelope" image would be very apparent. 
 
 
 # Relativity
