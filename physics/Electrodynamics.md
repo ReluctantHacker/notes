@@ -291,7 +291,12 @@ y(x) = 2cos\left(\dfrac{(k_1-k_2)x}{2}\right) cos\left(\dfrac{(k_1+k_2)x}{2}\rig
 
 Here's a site that you can perform an animation that shows envelope of two waves superposition: [reference](https://www.geogebra.org/m/yzgvgcqk?utm_source=chatgpt.com)
 
-If we take a good look at the first term there, we would see that, suppose $k_1-k_2$ is constant, and if we chose a position that is totally Constructive interference which means $(k_1-k_2)x$=0, for x=0, with k1 not equal to k2, if we gradually move the position far from Constructive interference position, you would find that Constructive pattern gradually change to Destructive pattern. If k1 is very close to k2 the "envelope" image would be very apparent. 
+If we take a good look at the first term there, we would see that, suppose $k_1-k_2$ is constant, and if we chose a position that is totally Constructive interference which means $(k_1-k_2)x$=0, for x=0, with k1 not equal to k2, if we gradually move the position far from Constructive interference position, you would find that Constructive pattern gradually change to Destructive pattern and then change back to Constructive again, around and around. And so, the oscillation pattern would go through some high oscillation to low oscillation to no oscillation and back to high oscilation again. If k1 is very close to k2, the "envelope" picture would be very apparent through the whole transmission of wave pass. 
+
+### group velocity and phase velocity and envelope
+There's one more interesting thing, theoretically, k1 and k2 can't be smaller than 0, so $(k_1-k_2)<(k_1+k_2)$, so the term $cos\left(\dfrac{(k_1-k_2)x}{2}\right)$ must have a lower frequency which means longer wavelength. And $cos\left(\dfrac{(k_1+k_2)x}{2}\right)$, on the other hand, would have a higher frequency which means shorter wavelength.
+
+Mathematically, we define **phase velocity** the velocity of relative peak(the small peak), and define **group velocity** the velocity the velocity of absolute peak(the big peak). In this case, We can say that $\dfrac{(\omega_1+\omega_2)}/{(\k_1+\k_2)}$ is the phase velocity
 
 
 # Relativity
