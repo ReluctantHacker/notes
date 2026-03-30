@@ -296,7 +296,7 @@ If we take a good look at the first term there, we would see that, suppose $k_1-
 ### group velocity and phase velocity and envelope
 There's one more interesting thing, theoretically, k1 and k2 can't be smaller than 0, so $(k_1-k_2)<(k_1+k_2)$, so the term $cos\left(\dfrac{(k_1-k_2)x}{2}\right)$ must have a lower frequency which means longer wavelength. And $cos\left(\dfrac{(k_1+k_2)x}{2}\right)$, on the other hand, would have a higher frequency which means shorter wavelength.
 
-Mathematically, we define **phase velocity** the velocity of relative peak(the small peak), and define **group velocity** the velocity the velocity of absolute peak(the big peak). In this case, We can say that $\dfrac{(\omega_1+\omega_2)}{(k_1+k_2)}$ is the phase velocity
+Mathematically, we define **phase velocity** the velocity of relative peak(the small peak), and define **group velocity** the velocity the velocity of absolute peak(the big peak). In this case, We can say that $\dfrac{(\omega_1+\omega_2)}{(k_1+k_2)}$ is the phase velocity, and $\dfrac{(\omega_1-\omega_2)}{(k_1-k_2)}$ 
 
 
 # Relativity
