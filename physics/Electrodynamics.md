@@ -256,7 +256,10 @@ No one imagined that changes in electric or magnetic fields would travel through
 ## Wave theory, Superposition of waves, phase and grop velocity
 
 ### Superposition of two waves
-Suppose we have two base waves. To simplify the situation, we first assume that every property of two waves is the same, including frequency, amplitude, speed, except for the phase. And because the speed is the same, we can suppose the waves are static because the speed won't affect the discussion result. So we can write
+
+The question is Why do we have an envelope when two waves overlap?
+
+Suppose we have two base waves, when you overlap both of them, no matter how different they are, there would be an envelope wave(with phase velocity and group velocity) finally. To simplify the situation, we first assume that every property of two waves is the same, including frequency, amplitude, speed, except for the phase. And because the speed is the same, we can suppose the waves are static because the speed won't affect the discussion result. So we can write
 ``` math
 y(x) = cos(kx)+cos(kx+\phi)
 ```
@@ -273,9 +276,9 @@ Technically, we can take $2cos(\phi/2)$ as the amplitude, and the wave itself is
 
 A more important thing we can get is, according to the trig identity $cos\dfrac{A+B}{2}$, the final phase of the superpositional wave should be the arithmetic mean of two original phases. And the amplitude of the wave is the difference of the phase.
 
-$\phi$ can be written as $n\pi$ where if n is 0, 2, 4..., then the superposition becomes **Constructive interference**, if n is 1, 3, 5..., then the superposition becomes **Destrcutive interference**. Notice here, the wave form is still the same, it just has different amplitude.
+$\phi$ can be written as $n\pi$ where if n is 0, 2, 4..., then the superposition becomes **Constructive interference**, if n is 1, 3, 5..., then the superposition becomes **Destrcutive interference**. Notice here, the wave structure is still the same, it just has different amplitude.
 
-Let's focus n between 0~2. Suppose n gradually grows from 0 to 2, the superposition is going from Constructive interference to Destructive interference.
+Now, let's focus n between 0~2(because n=n+2m, for m is any natural number). Suppose n gradually grows from 0 to 2, the superposition is going from Constructive interference to Destructive interference.
 
 With those ideas in mind, let's go deeper. Suppose we have a superposition of two waves with different k like below
 ``` math
@@ -288,7 +291,7 @@ y(x) = 2cos\left(\dfrac{(k_1-k_2)x}{2}\right) cos\left(\dfrac{(k_1+k_2)x}{2}\rig
 
 Here's a site that you can perform an animation that shows envelope of two waves superposition: [reference](https://www.geogebra.org/m/yzgvgcqk?utm_source=chatgpt.com)
 
-The idea is like this, we chose a position that is totally Constructive interference, and because k1 not equal to k2, if we gradually move the position far from Constructive interference position, you would find that Constructive pattern gradually change to Destructive pattern. If k1 is very close to k2 the "envelope" image would be very apparent. 
+If we take a good look at the first term there, we would see that, suppose $k_1-k_2$ is constant, and if we chose a position that is totally Constructive interference($(k_1-k_2)x$=0, for x=0), with k1 not equal to k2, if we gradually move the position far from Constructive interference position, you would find that Constructive pattern gradually change to Destructive pattern. If k1 is very close to k2 the "envelope" image would be very apparent. 
 
 
 # Relativity
