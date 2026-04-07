@@ -298,6 +298,15 @@ There's one more interesting thing, theoretically, k1 and k2 can't be smaller th
 
 Mathematically, we define **phase velocity** the velocity of relative peak(the small peak), and define **group velocity** the velocity of absolute peak(the big peak). In this case, We can say that $\dfrac{(\omega_1+\omega_2)}{(k_1+k_2)}$ is the phase velocity, and $\dfrac{(\omega_1-\omega_2)}{(k_1-k_2)}$ is the the group velocity
 
+### Fourier's theory
+## Fourier series
+Fourier series theory says that any well-defined continuous and periodic function(I am not gonna make it preciselly here) can be decomposite to the superposition of basic wave functions which are sine and cosine. One important thing here is that Fourier series is strictly a theory that deal with **periodic functions**. So for example, if you want to decomposite a function like $f(x)=x$ with Fourier series, that's not possible. It can only handle it if we give the function an "interval", and artificiallly make it periodic. In short, we need to make a non-periodic function to a periodic function. $f(x)=x$ should be like this
+``` math
+f(x) = x - T \cdot \left\lfloor \frac{x}{T} \right\rfloor
+```
+```math
+\text{For } T = 2\pi: \quad f(x) = x - 2\pi \cdot \left\lfloor \frac{x}{2\pi} \right\rfloor
+```
 
 # Relativity
 In 1865, Maxwell found that his equations predict electromagnetic waves in vacuum traveling at the speed of light. However, he built his theory based on the existence of an absolute reference frame — the **ether**. 
