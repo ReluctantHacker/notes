@@ -1,5 +1,5 @@
 # Maxwell's equations
-Generally, electrodynamics including four major laws which are **electrostatics(À¹q)**, **magnetostatics(ÀºÏ**, **electrodynamics(°ʹq¥ͺÏ**, **magnetodynamics(°ʺϥ͹q)** 
+Generally, electrodynamics including four major laws which are **electrostatics**, **magnetostatics**, **electrodynamics**, **magnetodynamics** 
 ```math
 \begin{aligned}
 \nabla \cdot \mathbf{E} &= \frac{\rho}{\varepsilon_0} &&\text{(Gauss's Law for Electricity)} \\[6pt]
