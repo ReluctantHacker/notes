@@ -256,14 +256,20 @@ No one imagined that changes in electric or magnetic fields would travel through
 ## Wave theory, Superposition of waves, phase and grop velocity
 
 ### Definition of a wave
-#### Medium
+A wave is a propagating dynamic disturbance (change from equilibrium) of one or more quantities.
+
+Notice here, the definition doesn't restrict the quantities. So that means the quantities can also be mass. And this rises a question: Can a particle moving along be count as a wave? for example, imagine that particle is a disturbance of the density of mass go through space and time.(I am not talk about quantum mechanics here) 
+
+For any logical aspects, if I want, it can indeed be interpreted as a wave.
+
+### Medium
 In Newton's era, people didn't believe that gravity can work without medium, so they imagined a medium called **aether**. The aether idea was even still dominating in Maxwell's era when he found electromagnetic wave. This is very reasonable because in classical senes, **everything is matter**. And transmission of energy and momentum is depends on contact by two matters. If we don't have medium then how does force and energy transfer? Even though the equations itself doesn't require aether mathematically, the aether was more of a physical interpretatoin layered on top.
 
 But in the modern sense, **everything is field**, and a field(including gravity field) is action at distance without any medium. This idea is nothing wrong because we are building the basic rule here, either everything is matter or everything is field. If something is matter but others is field, this could break the consistent of fundamental.
 
 But even though, the classical idea is helpful when we deal some classical problem, this help us intuitively understand what's going on.
 
-#### Linear wave
+### Linear wave
 Well, let's change back to the classical sense, when we talk about wave equation, we often talks about Linear, small amplitude waves which transmits energy & momentum without transfer matter. 
 ``` math
 \frac{\partial^2 u}{\partial t^2} = c^2 \frac{\partial^2 u}{\partial x^2}
