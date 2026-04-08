@@ -30,3 +30,7 @@ Most humanoid robot(or robot dog), the placement of the computer usually central
 
 # Satellite
 The process to build a satellite, [reference](https://www.youtube.com/watch?v=5voQfQOTem8)
+
+
+# Soft robot
+(介電彈性體)
