@@ -255,6 +255,22 @@ No one imagined that changes in electric or magnetic fields would travel through
 
 ## Wave theory, Superposition of waves, phase and grop velocity
 
+### Definition of a wave
+#### Medium
+In Newton's era, people didn't believe that gravity can work without medium, so they imagined a medium called **aether**. The aether idea was even still dominating in Maxwell's era when he found electromagnetic wave. This is very reasonable because in classical senes, **everything is matter**. And transmission of energy and momentum is depends on contact by two matters. If we don't have medium then how does force and energy transfer? Even though the equations itself doesn't require aether mathematically, the aether was more of a physical interpretatoin layered on top.
+
+But in the modern sense, **everything is field**, and a field(including gravity field) is action at distance without any medium. This idea is nothing wrong because we are building the basic rule here, either everything is matter or everything is field. If something is matter but others is field, this could break the consistent of fundamental.
+
+But even though, the classical idea is helpful when we deal some classical problem, this help us intuitively understand what's going on.
+
+#### Linear wave
+Well, let's change back to the classical sense, when we talk about wave equation, we often talks about Linear, small amplitude waves which transmits energy & momentum without transfer matter. 
+``` math
+\[
+\frac{\partial^2 u}{\partial t^2} = c^2 \frac{\partial^2 u}{\partial x^2}
+\]
+```
+
 ### Superposition of two waves
 
 The question is Why do we have an envelope when two waves overlap?
@@ -309,7 +325,7 @@ f(x) = x - T \cdot \left\lfloor \frac{x}{T} \right\rfloor
 ```
 
 # Relativity
-In 1865, Maxwell found that his equations predict electromagnetic waves in vacuum traveling at the speed of light. However, he built his theory based on the existence of an absolute reference frame — the **ether**. 
+In 1865, Maxwell found that his equations predict electromagnetic waves in vacuum traveling at the speed of light. However, he built his theory based on the existence of an absolute reference frame — the **aether**. 
 
 Although Maxwell’s equations themselves do not explicitly involve reference frames, the key point is that the speed of light is determined by the constants:
 ```math
