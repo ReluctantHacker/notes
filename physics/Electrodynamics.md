@@ -266,9 +266,7 @@ But even though, the classical idea is helpful when we deal some classical probl
 #### Linear wave
 Well, let's change back to the classical sense, when we talk about wave equation, we often talks about Linear, small amplitude waves which transmits energy & momentum without transfer matter. 
 ``` math
-\[
 \frac{\partial^2 u}{\partial t^2} = c^2 \frac{\partial^2 u}{\partial x^2}
-\]
 ```
 
 ### Superposition of two waves
