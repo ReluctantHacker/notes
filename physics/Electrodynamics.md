@@ -263,6 +263,16 @@ Notice here, the definition doesn't restrict the quantities. So that means the q
 
 Now, imagine a particle as a disturbance in mass density that propagates through space and time. From this perspective, I cannot think of a single reason why this could not be interpreted as a wave.
 
+For more precisely, If you define a mass density field M(x,t) with equilibrium M=0, then the particle corresponds to a localized disturbance (M=1 at its position). As the particle moves, this disturbance propagates through space and time. Each point in space experiences a temporary change from equilibrium as the particle passes.
+
+But the particle has to be moving or it would violate the definition which claims that a wave is propagating.
+
+Here I use the definition above but be careful, here's another statement from wikipedia:
+"While waves are ubiquitous features of physical systems, no single definition adequately describes the topic."
+(from Wikipedia)
+
+This also means a wave has no rigourous definition around there and when others discuss about waves, we always talk about it intuitively.
+
 
 ### Medium
 In Newton's era, people didn't believe that gravity can work without medium, so they imagined a medium called **aether**. The aether idea was even still dominating in Maxwell's era when he found electromagnetic wave. This is very reasonable because in classical senes, **everything is matter**. And transmission of energy and momentum is depends on contact by two matters. If we don't have medium then how does force and energy transfer? Even though the equations itself doesn't require aether mathematically, the aether was more of a physical interpretatoin layered on top.
