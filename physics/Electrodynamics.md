@@ -332,10 +332,14 @@ If we take a good look at the first term there, we would see that, suppose $k_1-
 ### group velocity and phase velocity and envelope
 There's one more interesting thing, theoretically, k1 and k2 can't be smaller than 0, so $(k_1-k_2)<(k_1+k_2)$, so the term $cos\left(\dfrac{(k_1-k_2)x}{2}\right)$ must have a lower frequency which means longer wavelength. And $cos\left(\dfrac{(k_1+k_2)x}{2}\right)$, on the other hand, would have a higher frequency which means shorter wavelength.
 
-Mathematically, we define **phase velocity** the velocity of relative peak(the small peak), and define **group velocity** the velocity of absolute peak(the big peak). In this case, We can say that $\dfrac{(\omega_1+\omega_2)}{(k_1+k_2)}$ is the phase velocity, and $\dfrac{(\omega_1-\omega_2)}{(k_1-k_2)}$ is the the group velocity
+Mathematically, we define **phase velocity** the velocity of relative peak(the small peak), and define **group velocity** the velocity of absolute peak(the big peak). In this case, We can say that $\dfrac{(\omega_1+\omega_2)}{(k_1+k_2)}$ is the phase velocity, and $\dfrac{(\omega_1-\omega_2)}{(k_1-k_2)}$ is the the group velocity. But notice here, strictly speaking, there's no group velocity and phase velocity in two waves cases, because it's discrete combination. We are gonna talk about continous version in Fourier's theory
 
 ### Fourier's theory
-## Fourier series
+``` math
+\psi(x,t) = \int_{-\infty}^{\infty} A(k) \, e^{i(kx - \omega(k)t)} \, dk.
+```
+
+#### Fourier series
 Fourier series theory says that any well-defined continuous and periodic function(I am not gonna make it preciselly here) can be decomposite to the superposition of basic wave functions which are sine and cosine. One important thing here is that Fourier series is strictly a theory that deal with **periodic functions**. So for example, if you want to decomposite a function like $f(x)=x$ with Fourier series, that's not possible. It can only handle it if we give the function an "interval", and artificiallly make it periodic. In short, we need to make a non-periodic function to a periodic function. $f(x)=x$ should be like this
 ``` math
 f(x) = x - T \cdot \left\lfloor \frac{x}{T} \right\rfloor
