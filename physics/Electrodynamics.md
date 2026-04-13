@@ -335,9 +335,9 @@ There's one more interesting thing, theoretically, k1 and k2 can't be smaller th
 Mathematically, we define **phase velocity** the velocity of relative peak(the small peak), and define **group velocity** the velocity of absolute peak(the big peak). In this case, We can say that $\dfrac{(\omega_1+\omega_2)}{(k_1+k_2)}$ is the phase velocity, and $\dfrac{(\omega_1-\omega_2)}{(k_1-k_2)}$ is the the group velocity. But notice here, strictly speaking, there's no group velocity and phase velocity in two waves cases, because it's discrete combination. We are gonna talk about continous version in Fourier's theory
 
 ### Fourier's theory
-For continuous waves combination, we can have 
+Suppose t=0(temporaily ignore t), for continuous waves combination, we can have 
 ``` math
-\psi(x,t) = \int_{-\infty}^{\infty} A(k) \, e^{i(kx - \omega(k)t)} \, dk.
+f(x) = \int_{-\infty}^{\infty} A(k) \, e^{i k x} \, dk.
 ```
 There's a trick here, assume the amplitude distribution $A(k)$ is peaked around a central wavenumber $k_0$.
 Define:
@@ -346,14 +346,14 @@ k = k_0 + \Delta k.
 ```
 Then:
 ``` math
-\psi(x,t) = \int_{-\infty}^{\infty} A(k_0 + \Delta k) \,
-e^{i[(k_0 + \Delta k)x - \omega(k_0 + \Delta k)t]} \, d(\Delta k).
+f(x) = \int_{-\infty}^{\infty} A(k_0 + \Delta k) \,
+e^{i (k_0 + \Delta k)x} \, d(\Delta k).
 ```
 
 Factor out the central oscillation:
 ``` math
-\psi(x,t) = e^{i(k_0 x - \omega_0 t)} \int_{-\infty}^{\infty}
-A(k_0 + \Delta k) \, e^{i[\Delta k \, x - (\omega(k_0 + \Delta k) - \omega_0)t]} \, d(\Delta k),
+f(x) = e^{i k_0 x} \int_{-\infty}^{\infty}
+A(k_0 + \Delta k) \, e^{i \Delta k \, x} \, d(\Delta k).
 ```
 where $\omega_0 = \omega(k_0)$.
 
