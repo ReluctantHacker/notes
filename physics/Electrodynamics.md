@@ -361,8 +361,7 @@ f(x) = e^{i k_0 x} \int_{-\infty}^{\infty}
 A(k) \, e^{i (k-k_0) x} \, d(k).
 ```
 
-
-where $\omega_0 = \omega(k_0)$.
+The term $e^{i k_0 x}$ is the so called **Carrier**. If you look at the example of superposition of two waves. There is a same carrier $cos\left(\dfrac{(k_1+k_2)x}{2}\right)$
 
 
 
