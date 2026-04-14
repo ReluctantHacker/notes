@@ -357,7 +357,7 @@ A(k_0 + \Delta k) \, e^{i \Delta k \, x} \, d(\Delta k).
 ```
 
 ``` math
-f(x) \about e^{i k_0 x} \int_{-\infty}^{\infty}
+f(x) \approx e^{i k_0 x} \int_{-\infty}^{\infty}
 A(k) \, e^{i (k-k_0) x} \, d(k).
 ```
 
