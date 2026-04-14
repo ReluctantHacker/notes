@@ -275,7 +275,7 @@ This also means a wave has no rigourous definition around there and when others 
 
 
 ### Medium
-In Newton's era, people didn't believe that gravity can work without medium, so they imagined a medium called **aether**. The aether idea was even still dominating in Maxwell's era when he found electromagnetic wave. This is very reasonable because in classical senes, **everything is matter**. And transmission of energy and momentum is depends on contact by two matters. If we don't have medium then how does force and energy transfer? Even though the equations itself doesn't require aether mathematically, the aether was more of a physical interpretatoin layered on top.
+In Newton's era, people didn't believe that gravity can work without medium, so they imagined a medium called **aether**. The aether idea was even still dominating in Maxwell's era when he found electromagnetic wave. This is very reasonable because in classical senes, **everything is matter**. And transmission of energy and momentum is depends on contact by two matters. If we don't have medium then how does force and energy transfer? Even though the equations itself doesn't require aether mathematically, the aether was more of a physical interpretation layered on top.
 
 But in the modern sense, **everything is field**, and a field(including gravity field) is action at distance without any medium. This idea is nothing wrong because we are building the basic rule here, either everything is matter or everything is field. If something is matter but others is field, this could break the consistent of fundamental.
 
@@ -355,6 +355,13 @@ Factor out the central oscillation:
 f(x) = e^{i k_0 x} \int_{-\infty}^{\infty}
 A(k_0 + \Delta k) \, e^{i \Delta k \, x} \, d(\Delta k).
 ```
+
+``` math
+f(x) \about e^{i k_0 x} \int_{-\infty}^{\infty}
+A(k) \, e^{i (k-k_0) x} \, d(k).
+```
+
+
 where $\omega_0 = \omega(k_0)$.
 
 
