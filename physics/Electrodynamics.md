@@ -2,9 +2,9 @@
 Generally, electrodynamics including four major laws which are **electrostatics**, **magnetostatics**, **electrodynamics**, **magnetodynamics** 
 ```math
 \begin{aligned}
-\nabla \cdot \mathbf{E} &= \frac{\rho}{\varepsilon_0} &&\text{(Gauss's Law for Electricity)} \``` math6pt]
-\nabla \cdot \mathbf{B} &= 0 &&\text{(Gauss's Law for Magnetism)} \``` math6pt]
-\nabla \times \mathbf{E} &= -\,\frac{\partial \mathbf{B}}{\partial t} &&\text{(Faraday's Law of Induction)} \``` math6pt]
+\nabla \cdot \mathbf{E} &= \frac{\rho}{\varepsilon_0} &&\text{(Gauss's Law for Electricity)} \\[6pt]
+\nabla \cdot \mathbf{B} &= 0 &&\text{(Gauss's Law for Magnetism)} \\[6pt]
+\nabla \times \mathbf{E} &= -\,\frac{\partial \mathbf{B}}{\partial t} &&\text{(Faraday's Law of Induction)} \\[6pt]
 \nabla \times \mathbf{B} &= \mu_0 \mathbf{J} + \mu_0 \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t} &&\text{(Ampere¡VMaxwell Law)}
 \end{aligned}
 ```
@@ -13,9 +13,9 @@ Generally, electrodynamics including four major laws which are **electrostatics*
 
 ```math
 \begin{aligned}
-\oint \mathbf{E} \cdot d\mathbf{A} &= \frac{Q_{\text{enclosed}}}{\varepsilon_0} &&\text{(Gauss's Law for Electricity)} \``` math6pt]
-\oint \mathbf{B} \cdot d\mathbf{A} &= 0 &&\text{(Gauss's Law for Magnetism)} \``` math6pt]
-\oint \mathbf{E} \cdot d\mathbf{l} &= -\,\frac{d}{dt} \int \mathbf{B} \cdot d\mathbf{A} &&\text{(Faraday's Law of Induction)} \``` math6pt]
+\oint \mathbf{E} \cdot d\mathbf{A} &= \frac{Q_{\text{enclosed}}}{\varepsilon_0} &&\text{(Gauss's Law for Electricity)} \\[6pt]
+\oint \mathbf{B} \cdot d\mathbf{A} &= 0 &&\text{(Gauss's Law for Magnetism)} \\[6pt]
+\oint \mathbf{E} \cdot d\mathbf{l} &= -\,\frac{d}{dt} \int \mathbf{B} \cdot d\mathbf{A} &&\text{(Faraday's Law of Induction)} \\[6pt]
 \oint \mathbf{B} \cdot d\mathbf{l} &= \mu_0 I_{\text{enclosed}} + \mu_0 \varepsilon_0 \frac{d}{dt} \int \mathbf{E} \cdot d\mathbf{A} &&\text{(Ampere¡VMaxwell Law)}
 \end{aligned}
 ```
@@ -42,7 +42,7 @@ Gauss's law, conservative condition and boundary condition, these three conditio
 You can solve the differential equations yourself like below and check if the conditions really lead to Coulomb's law 
 ```math
 \begin{cases}
-\nabla \cdot \mathbf{E} = \dfrac{\rho}{\varepsilon_0}, & \text{(Gauss's law)} \``` math2mm]
+\nabla \cdot \mathbf{E} = \dfrac{\rho}{\varepsilon_0}, & \text{(Gauss's law)} \\[2mm]
 \nabla \times \mathbf{E} = 0, & \text{(Electrostatic, conservative field)}
 \end{cases}
 ```
