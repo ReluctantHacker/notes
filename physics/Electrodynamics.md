@@ -2,9 +2,9 @@
 Generally, electrodynamics including four major laws which are **electrostatics**, **magnetostatics**, **electrodynamics**, **magnetodynamics** 
 ```math
 \begin{aligned}
-\nabla \cdot \mathbf{E} &= \frac{\rho}{\varepsilon_0} &&\text{(Gauss's Law for Electricity)} \\[6pt]
-\nabla \cdot \mathbf{B} &= 0 &&\text{(Gauss's Law for Magnetism)} \\[6pt]
-\nabla \times \mathbf{E} &= -\,\frac{\partial \mathbf{B}}{\partial t} &&\text{(Faraday's Law of Induction)} \\[6pt]
+\nabla \cdot \mathbf{E} &= \frac{\rho}{\varepsilon_0} &&\text{(Gauss's Law for Electricity)} \``` math6pt]
+\nabla \cdot \mathbf{B} &= 0 &&\text{(Gauss's Law for Magnetism)} \``` math6pt]
+\nabla \times \mathbf{E} &= -\,\frac{\partial \mathbf{B}}{\partial t} &&\text{(Faraday's Law of Induction)} \``` math6pt]
 \nabla \times \mathbf{B} &= \mu_0 \mathbf{J} + \mu_0 \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t} &&\text{(Ampere¡VMaxwell Law)}
 \end{aligned}
 ```
@@ -13,9 +13,9 @@ Generally, electrodynamics including four major laws which are **electrostatics*
 
 ```math
 \begin{aligned}
-\oint \mathbf{E} \cdot d\mathbf{A} &= \frac{Q_{\text{enclosed}}}{\varepsilon_0} &&\text{(Gauss's Law for Electricity)} \\[6pt]
-\oint \mathbf{B} \cdot d\mathbf{A} &= 0 &&\text{(Gauss's Law for Magnetism)} \\[6pt]
-\oint \mathbf{E} \cdot d\mathbf{l} &= -\,\frac{d}{dt} \int \mathbf{B} \cdot d\mathbf{A} &&\text{(Faraday's Law of Induction)} \\[6pt]
+\oint \mathbf{E} \cdot d\mathbf{A} &= \frac{Q_{\text{enclosed}}}{\varepsilon_0} &&\text{(Gauss's Law for Electricity)} \``` math6pt]
+\oint \mathbf{B} \cdot d\mathbf{A} &= 0 &&\text{(Gauss's Law for Magnetism)} \``` math6pt]
+\oint \mathbf{E} \cdot d\mathbf{l} &= -\,\frac{d}{dt} \int \mathbf{B} \cdot d\mathbf{A} &&\text{(Faraday's Law of Induction)} \``` math6pt]
 \oint \mathbf{B} \cdot d\mathbf{l} &= \mu_0 I_{\text{enclosed}} + \mu_0 \varepsilon_0 \frac{d}{dt} \int \mathbf{E} \cdot d\mathbf{A} &&\text{(Ampere¡VMaxwell Law)}
 \end{aligned}
 ```
@@ -42,7 +42,7 @@ Gauss's law, conservative condition and boundary condition, these three conditio
 You can solve the differential equations yourself like below and check if the conditions really lead to Coulomb's law 
 ```math
 \begin{cases}
-\nabla \cdot \mathbf{E} = \dfrac{\rho}{\varepsilon_0}, & \text{(Gauss's law)} \\[2mm]
+\nabla \cdot \mathbf{E} = \dfrac{\rho}{\varepsilon_0}, & \text{(Gauss's law)} \``` math2mm]
 \nabla \times \mathbf{E} = 0, & \text{(Electrostatic, conservative field)}
 \end{cases}
 ```
@@ -371,17 +371,76 @@ A(k) \, e^{i (k-k_0) x} \, d(k) =
 e^{i k_0 x} e^{-\dfrac{\sigma^2 x^2}{2}}
 ```
 
-This is so called Fourier Transformation, it means we take all the different k-components(plane waves) and combine them into a single function completely describes the wave in x-space. We can also change it back to the space of k like 
+This is so called **Fourier Transformation**, it means we take all the different k-components(plane waves) and combine them into a single function completely describes the wave in x-space. We can also change it back to the space of k like 
 ``` math
 A(k) = \dfrac{1}{2 \pi} \int_{-\infty}^{\infty} f(x) \, e^{(-ikx)} \, d(x)
 ```
 
-This takes the wave packet f(x) which is described in space x back in the spectrum A(k)
+This takes the wave packet f(x) which is described in space x back in the spectrum A(k) which describes how much of each sinusoidal component $e^{ikx}$ is present.
 
-We've already know that $e^{i k_0 x}$ is the carrier, mathematically, just like two waves case, the other part $E^{-\dfrac{\sigma^2 x^2}{2}}$ is the **Envelope** which has group velocity.
+We've already know that $e^{i k_0 x}$ is the carrier, mathematically, just like two waves case, the other part $E^{-\dfrac{\sigma^2 x^2}{2}}$ is the **Envelope** which has group velocity. Both A(k) and f(x) are both complete description of the same wave, but from two different perspectives.
+
+### Gaussian Distribution
+From probability theory, we know that Central limit theory is classically derived from random variables by an idea called **characteristic function**, this is actually using Fourier transformation. 
+
+To get Gaussian Distribution, first, assume that we have two variables $X$ and $Y$ and they follow the same probability density function $\rho()
+
+
+
+Define $Z = X + Y$.  
+The probability density of $Z$ is given by the convolution:
+``` math
+p_Z(z) = \int_{-\infty}^{\infty} p_X(x)\, p_Y(z-x)\, dx.
+```
+
+\subsection*{Characteristic Function of $Z$}
+By definition:
+``` math
+\varphi_Z(k) = \int_{-\infty}^{\infty} p_Z(z)\, e^{i k z}\, dz.
+```
+
+Substitute the convolution:
+``` math
+\varphi_Z(k) = \int_{-\infty}^{\infty} \left( \int_{-\infty}^{\infty} p_X(x)\, p_Y(z-x)\, dx \right) e^{i k z}\, dz.
+```
+
+\subsection*{Swap Integrals}
+``` math
+\varphi_Z(k) = \int_{-\infty}^{\infty} p_X(x) \left( \int_{-\infty}^{\infty} p_Y(z-x)\, e^{i k z}\, dz \right) dx.
+```
+
+\subsection*{Change of Variable}
+Inside the inner integral, set $y = z - x$ (with $dz = dy$ since $x$ is fixed):
+``` math
+\int_{-\infty}^{\infty} p_Y(z-x)\, e^{i k z}\, dz
+= \int_{-\infty}^{\infty} p_Y(y)\, e^{i k (y+x)}\, dy.
+```
+
+Factor out $e^{i k x}$:
+``` math
+= e^{i k x} \int_{-\infty}^{\infty} p_Y(y)\, e^{i k y}\, dy.
+```
+
+\subsection*{Recognize Characteristic Functions}
+The inner integral is $\varphi_Y(k)$.  
+Thus:
+``` math
+\varphi_Z(k) = \varphi_Y(k) \int_{-\infty}^{\infty} p_X(x)\, e^{i k x}\, dx.
+```
+
+The outer integral is $\varphi_X(k)$.
+
+subsection
+``` math
+\varphi_Z(k) = \varphi_X(k)\cdot \varphi_Y(k).
+```
+
+
+
+
 
 #### Fourier series
-Fourier series theory says that any well-defined continuous and periodic function(I am not gonna make it preciselly here) can be decomposite to the superposition of basic wave functions which are sine and cosine. One important thing here is that Fourier series is strictly a theory that deal with **periodic functions**. So for example, if you want to decomposite a function like $f(x)=x$ with Fourier series, that's not possible. It can only handle it if we give the function an "interval", and artificiallly make it periodic. In short, we need to make a non-periodic function to a periodic function. $f(x)=x$ should be like this
+Fourier series theory says that any well-defined continuous and periodic function(I am not gonna make it preciselly here) can be decomposite to the superposition of basic wave functions which are sine and cosine. One important thing here is that Fourier series is strictly a theory that deal with **periodic functions**. So for example, if you want to decomposite a function like $f(x)=x$ with Fourier series, that's not possible. It can only handle it if we give the function an "interval", and artificially make it periodic. In short, we need to make a non-periodic function to a periodic function. $f(x)=x$ should be like this
 ``` math
 f(x) = x - T \cdot \left\lfloor \frac{x}{T} \right\rfloor
 ```
