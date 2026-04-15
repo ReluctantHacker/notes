@@ -371,6 +371,14 @@ A(k) \, e^{i (k-k_0) x} \, d(k) =
 e^{i k_0 x} e^{-\dfrac{\sigma^2 x^2}{2}}
 ```
 
+This is so called Fourier Transformation, it means we take all the different k-components(plane waves) and combine them into a single function completely describes the wave in x-space. We can also change it back to the space of k like 
+``` math
+A(k) = \dfrac{1}{2 \pi} \int_{-\infty}^{\infty} f(x) \, e^{(-ikx)} \, d(x)
+```
+
+This takes the wave packet f(x) which is described in space x back in the spectrum A(k)
+
+We've already know that $e^{i k_0 x}$ is the carrier, mathematically, just like two waves case, the other part $E^{-\dfrac{\sigma^2 x^2}{2}}$ is the **Envelope** which has group velocity.
 
 #### Fourier series
 Fourier series theory says that any well-defined continuous and periodic function(I am not gonna make it preciselly here) can be decomposite to the superposition of basic wave functions which are sine and cosine. One important thing here is that Fourier series is strictly a theory that deal with **periodic functions**. So for example, if you want to decomposite a function like $f(x)=x$ with Fourier series, that's not possible. It can only handle it if we give the function an "interval", and artificiallly make it periodic. In short, we need to make a non-periodic function to a periodic function. $f(x)=x$ should be like this
