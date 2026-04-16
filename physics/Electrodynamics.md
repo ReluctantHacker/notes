@@ -438,6 +438,15 @@ subsection
 
 
 
+Let $X_1, X_2, \dots, X_n$ be i.i.d. random variables with mean $\mu$ and variance $\sigma^2 < \infty$.  
+Define the normalized sum:
+```math
+S_n = \frac{X_1 + X_2 + \cdots + X_n - n\mu}{\sqrt{n}\,\sigma}.
+```
+
+
+
+
 
 #### Fourier series
 Fourier series theory says that any well-defined continuous and periodic function(I am not gonna make it preciselly here) can be decomposite to the superposition of basic wave functions which are sine and cosine. One important thing here is that Fourier series is strictly a theory that deal with **periodic functions**. So for example, if you want to decomposite a function like $f(x)=x$ with Fourier series, that's not possible. It can only handle it if we give the function an "interval", and artificially make it periodic. In short, we need to make a non-periodic function to a periodic function. $f(x)=x$ should be like this
