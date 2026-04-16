@@ -463,7 +463,7 @@ Using Taylor expansion around $k=0$:
 \varphi_X(k) = 1 + i\mu k - \tfrac{1}{2}\sigma^2 k^2 + o(k^2).
 ```
 
-Substitute $k/(\sqrt{n}\sigma})$:
+Substitute $k/(\sqrt{n}\sigma)$:
 ``` math
 \varphi_X\!\left(\tfrac{k}{\sqrt{n}\,\sigma}\right) \approx 1 + i\mu \tfrac{k}{\sqrt{n}\,\sigma} - \tfrac{1}{2}\tfrac{k^2}{n} + o\!\left(\tfrac{1}{n}\right).
 ```
