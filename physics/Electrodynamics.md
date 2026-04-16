@@ -438,14 +438,50 @@ subsection
 
 
 
-Let $X_1, X_2, \dots, X_n$ be i.i.d. random variables with mean $\mu$ and variance $\sigma^2 < \infty$.  
+Using this idea, we can prove that random variables get Gaussian distribution. First, let $X_1, X_2, \dots, X_n$ be i.i.d. random variables with mean $\mu$ and variance $\sigma^2 < \infty$.  
 Define the normalized sum:
 ```math
 S_n = \frac{X_1 + X_2 + \cdots + X_n - n\mu}{\sqrt{n}\,\sigma}.
 ```
 
+By independence we achieve above, the characteristic function of the sum factorizes:
+```math
+\varphi_{X_1 + \cdots + X_n}(k) = \prod_{j=1}^n \varphi_{X_j}(k).
+```
+Since the $X_j$ are i.i.d., each has the same characteristic function :
+``` math
+\varphi_{X_1 + \cdots + X_n}(k) = \big(\varphi_X(k)\big)^n.
+```
 
+For $S_n$, we scale the argument:
+``` math
+\varphi_{S_n}(k) = \left[ \varphi_X\!\left(\tfrac{k}{\sqrt{n}\,\sigma}\right) \cdot e^{-i \mu \tfrac{k}{\sqrt{n}\,\sigma}} \right]^n.
+```
 
+Using Taylor expansion around $k=0$:
+``` math
+\varphi_X(k) = 1 + i\mu k - \tfrac{1}{2}\sigma^2 k^2 + o(k^2).
+```
+
+Substitute $k/(\sqrt{n}\sigma})$:
+``` math
+\varphi_X\!\left(\tfrac{k}{\sqrt{n}\,\sigma}\right) \approx 1 + i\mu \tfrac{k}{\sqrt{n}\,\sigma} - \tfrac{1}{2}\tfrac{k^2}{n} + o\!\left(\tfrac{1}{n}\right).
+```
+
+Multiplying by  cancels the linear term, leaving:
+``` math
+\varphi_X\!\left(\tfrac{k}{\sqrt{n}\,\sigma}\right) e^{-i \mu \tfrac{k}{\sqrt{n}\,\sigma}} \approx 1 - \tfrac{1}{2}\tfrac{k^2}{n} + o\!\left(\tfrac{1}{n}\right).
+```
+
+Raise to the $n$th power:
+``` math
+\varphi_{S_n}(k) \approx \left(1 - \tfrac{1}{2}\tfrac{k^2}{n}\right)^n.
+```
+
+As $n->\infty$:
+``` math
+\varphi_{S_n}(k) \to e^{-\tfrac{1}{2}k^2}.
+```
 
 
 #### Fourier series
