@@ -383,7 +383,7 @@ This takes the wave packet f(x) which is described in space x back in the spectr
 
 We've already know that $e^{i k_0 x}$ is the carrier, mathematically, just like two waves case, the other part $E^{-\dfrac{\sigma^2 x^2}{2}}$ is the **Envelope** which has group velocity. Both A(k) and f(x) are both complete description of the same wave, but from two different perspectives.
 
-However, notice here, I mentioned that the whole process is based on one truth that is everything centralized in $k_0$. But in reality, of course, it's can't be totally centralized around k0, it can only roughly centralized around k0. So the truth is that the so called group velocity and phase velocity are actually ranges, they're not a certain value, more specificially, these two velocity they're also distributions, it's just that the mean value may localize around k0.
+However, notice here, so far, I mentioned that the whole process is based on one truth that is everything centralized in $k_0$. But in reality, of course, it's can't be totally centralized around k0, it can only roughly centralized around k0. So the truth is that the so called group velocity and phase velocity are actually ranges, they're not certain values, more specificially, these two velocities they're also distributions, it's just that the mean value may localize around k0.
 
 ### Gaussian Distribution
 From probability theory, we know that Central limit theory is classically derived from random variables by an idea called **characteristic function**, this is actually using Fourier transformation. 
