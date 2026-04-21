@@ -335,7 +335,7 @@ Moreover, if you take a one more look, you'll find that a form of cos+cos can be
 ### group velocity and phase velocity and envelope
 There's one more interesting thing, theoretically, k1 and k2 can't be smaller than 0, so $(k_1-k_2)<(k_1+k_2)$, so the term $cos\left(\dfrac{(k_1-k_2)x}{2}\right)$ must have a lower frequency which means longer wavelength. And $cos\left(\dfrac{(k_1+k_2)x}{2}\right)$, on the other hand, would have a higher frequency which means shorter wavelength.
 
-Mathematically, we define **phase velocity** the velocity of relative peak(the small peak), and define **group velocity** the velocity of absolute peak(the big peak). In this case, We can say that $\dfrac{(\omega_1+\omega_2)}{(k_1+k_2)}$ is the phase velocity, and $\dfrac{(\omega_1-\omega_2)}{(k_1-k_2)}$ is the the group velocity. But notice here, strictly speaking, there's no group velocity and phase velocity in two waves cases, because it's discrete combination. We are gonna talk about continous version in Fourier's theory
+Mathematically, we define **phase velocity** the velocity of relative peak(the small peak), and define **group velocity** the velocity of absolute peak(the big peak). In this case, We can say that $\dfrac{(\omega_1+\omega_2)}{(k_1+k_2)}$ is the phase velocity, and $\dfrac{(\omega_1-\omega_2)}{(k_1-k_2)}$ is the the group velocity. But notice here, strictly speaking, there's no group velocity and phase velocity in two waves cases, because it's discrete combination. We will talk about continous version in Fourier's theory. 
 
 ### Fourier's theory
 Suppose t=0(temporaily ignore t), for continuous waves combination, we can have 
@@ -383,7 +383,19 @@ This takes the wave packet f(x) which is described in space x back in the spectr
 
 We've already know that $e^{i k_0 x}$ is the carrier, mathematically, just like two waves case, the other part $E^{-\dfrac{\sigma^2 x^2}{2}}$ is the **Envelope** which has group velocity. Both A(k) and f(x) are both complete description of the same wave, but from two different perspectives.
 
-However, notice here, so far, I mentioned that the whole process is based on one truth that is everything centralized in $k_0$. But in reality, of course, it's can't be totally centralized around k0, it can only roughly centralized around k0. So the truth is that the so called group velocity and phase velocity are actually ranges, they're not certain values, more specificially, these two velocities they're also distributions, it's just that the mean value may localize around k0.
+
+### Phase velocity and Group velocity again!
+So far, about Fourier's theory, I mentioned above, the whole process is based on one truth which is everything centralized around $k_0$ which is the peak value. Let's turn back to the 
+
+We have group velocity for continuous waves combination.
+``` math
+v_g = \left. \frac{d\omega}{dk} \right|_{k = k_0}.
+```
+
+and phase velocity:
+``` math
+v_p = \frac{\omega}{k}
+```
 
 ### Gaussian Distribution
 From probability theory, we know that Central limit theory is classically derived from random variables by an idea called **characteristic function**, this is actually using Fourier transformation. 
