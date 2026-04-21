@@ -329,6 +329,9 @@ Here's a site that you can perform an animation that shows envelope of two waves
 
 If we take a good look at the first term there, we would see that, suppose $k_1-k_2$ is constant, and if we chose a position that is totally Constructive interference which means $(k_1-k_2)x$=0, for x=0, with k1 not equal to k2, if we gradually move the position far from Constructive interference position, you would find that Constructive pattern gradually change to Destructive pattern and then change back to Constructive again, around and around. And so, the oscillation pattern would go through some high oscillation to low oscillation to no oscillation and back to high oscilation again. If k1 is very close to k2, the "envelope" picture would be very apparent through the whole transmission of wave pass. 
 
+Moreover, if you take a one more look, you'll find that a form of cos+cos can be turn into cosXcos, and vice versa. And this means that superposition of two base waves can always be viewed as an envelope plus carriers together, well, at least, roughly, though, in fact, you can't intuitively says it has an envelope and carriers when k1 and k2 is not close enough.
+
+
 ### group velocity and phase velocity and envelope
 There's one more interesting thing, theoretically, k1 and k2 can't be smaller than 0, so $(k_1-k_2)<(k_1+k_2)$, so the term $cos\left(\dfrac{(k_1-k_2)x}{2}\right)$ must have a lower frequency which means longer wavelength. And $cos\left(\dfrac{(k_1+k_2)x}{2}\right)$, on the other hand, would have a higher frequency which means shorter wavelength.
 
@@ -339,7 +342,7 @@ Suppose t=0(temporaily ignore t), for continuous waves combination, we can have
 ``` math
 f(x) = \int_{-\infty}^{\infty} A(k) \, e^{i k x} \, dk.
 ```
-There's a trick here, assume the amplitude distribution $A(k)$ is peaked around a central wavenumber $k_0$.
+There's a trick here, assume the amplitude distribution $A(k)$ is peaked around a central wavenumber $k_0$. (This narrowly concentrated is very important here, we'll explan this latter.)
 Define:
 ``` math
 k = k_0 + \Delta k.
@@ -379,6 +382,8 @@ A(k) = \dfrac{1}{2 \pi} \int_{-\infty}^{\infty} f(x) \, e^{(-ikx)} \, d(x)
 This takes the wave packet f(x) which is described in space x back in the spectrum A(k) which describes how much of each sinusoidal component $e^{ikx}$ is present.
 
 We've already know that $e^{i k_0 x}$ is the carrier, mathematically, just like two waves case, the other part $E^{-\dfrac{\sigma^2 x^2}{2}}$ is the **Envelope** which has group velocity. Both A(k) and f(x) are both complete description of the same wave, but from two different perspectives.
+
+However, notice here, I mentioned that the whole process is based on one truth that is everything centralized in $k_0$. But in reality, of course, it's can't be totally centralized around k0, it can only roughly centralized around k0. So the truth is that the so called group velocity and phase velocity are actually ranges, they're not a certain value, more specificially, these two velocity they're also distributions, it's just that the mean value may localize around k0.
 
 ### Gaussian Distribution
 From probability theory, we know that Central limit theory is classically derived from random variables by an idea called **characteristic function**, this is actually using Fourier transformation. 
