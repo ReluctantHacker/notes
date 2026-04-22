@@ -385,17 +385,23 @@ We've already know that $e^{i k_0 x}$ is the carrier, mathematically, just like 
 
 
 ### Phase velocity and Group velocity again!
-So far, about Fourier's theory, I mentioned above, the whole process is based on one truth which is everything centralized around $k_0$ which is the peak value. Let's turn back to the 
+So far, about Fourier's theory, I mentioned above, the whole process is based on one truth which is everything centralized around $k_0$ which is the peak value.
 
 We have group velocity for continuous waves combination.
 ``` math
 v_g = \left. \frac{d\omega}{dk} \right|_{k = k_0}.
 ```
+Notice here, the group velocity is defined at peak point which is k=k0. We can always define the peak, but if the wave distribution is not narrowly centralized at k0 enough, group velocity becomes meaningless physically.
 
 and phase velocity:
 ``` math
 v_p = \frac{\omega}{k}
 ```
+Phase velocity is not tied to any particular peak of the full wave packet. It is defined for each individual Fourier (base) wave. But in the narrow case, the spectrum is thought concentrated around k0, most relevant k are close to k0. Therefore:
+``` math
+v_p(k) \approx v_p(k_0)
+```
+In short, we can have a certain value of phase velocity in narrow case roughly.
 
 ### Gaussian Distribution
 From probability theory, we know that Central limit theory is classically derived from random variables by an idea called **characteristic function**, this is actually using Fourier transformation. 
