@@ -196,5 +196,9 @@
 # 脂肪
 脂肪是人體
 
-
+# 親緣係數（coefficient of relationship)
+Parent-offspring: r = 0.5
+Full siblings: r = 0.5
+Half-siblings or grandparent-grandchild: r = 0.25
+First cousins: r = 0.125 
 

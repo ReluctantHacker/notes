@@ -401,7 +401,24 @@ Phase velocity is not tied to any particular peak of the full wave packet. It is
 ``` math
 v_p(k) \approx v_p(k_0)
 ```
-In short, we can have a certain value of phase velocity in narrow case roughly.
+In short, we can have a certain value of phase velocity in narrow case roughly. But in the end, it is still an idea for each individual (base) wave.
+
+### Information theory
+In information theory, we have an idea called **signals** which often highly related to the idea of **uncertainty** and **entropy**. The change of entropy can be seen as the volume of signals. 
+
+But in a wave, how do we decide what is a signal?
+
+Well, Mathematically, a pure sine wave has a single frequency component (delta function in frequency domain). A signal has bandwidth — a range of frequencies. And reversely speaking is also true, if a wave carries any information at all, it must have non-zero bandwidth. This is a DEFINITION, not just an explanation. 
+
+However, notice here, when we say "A pure sine wave carries no information", we only mean "a sine wave that has existed for all past time, and will exist for all future time. Well, we can have an analogy for a coin that is flipped once, lands either heads or tails, and never moves again for all eternity. In short, a single pure sine wave is just a certain "state"
+
+Well, let's turn back to group velocity, again, in this sense, group velocity is the information speed. Initially it was thought that the group velocity coincided with the speed at which information traveled. However, it turns out that this speed can exceed the speed of light in some circumstances, causing confusion by an apparent conflict with the theory of relativity. That observation led to consideration of what constitutes a signal. [From wikipedia](https://en.wikipedia.org/wiki/Front_velocity)
+
+It turns out that **front velocity** is the real information theory. Before we really talk about the details of this speed, we need to distinguish other idea that is very similar, called **Wavefront** which is "a surface (or curve) where the wave has the same phase".
+
+The speed of wavefront whose name is very similar as front speed is basically phase velocity if you can define that. The front velocity is actually the speed of **signal front** or we can also call it **Sommerfeld front** which is named after Honors Arnold Sommerfeld, who first rigorously analyzed the causal leading edge of a switched-on electromagnetic wave.
+
+
 
 ### Gaussian Distribution
 From probability theory, we know that Central limit theory is classically derived from random variables by an idea called **characteristic function**, this is actually using Fourier transformation. 
