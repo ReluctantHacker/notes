@@ -403,6 +403,13 @@ v_p(k) \approx v_p(k_0)
 ```
 In short, we can have a certain value of phase velocity in narrow case roughly. But in the end, it is still an idea for each individual (base) wave.
 
+### White noise
+We have already talked about an idea called **peaked** which means the distribution of the wavenumbers is roughly close to normal distribution, therefore, we have a peak of the distribution. However, there comes a situation that we have no peak which means the distribution is flat(also continuous). We call this **White Noise**. 
+
+The white noise happens when the situation has no single source, and generally the power flucutation would cancel each other which makes the whole thing generally flat. In the case of something like there's a single source that is very strong, then it would have so called peaked. For example, the earth visible light environment. Because that the sun light is very powerful compare to other source on earth, and the sun wavenumber is peaked so that we would see visible light wavenumber of earth environment is peaked. Another example which is perfectly for white noise is sound environment on earth, because there's no a single powerful sound peak source of and the noise is roughly flat distribution from everywhere, so the sound environment is roughly white noise. 
+
+The white noise is sometimes useful when we want to do some "random" problem because the flat distribution is totally random.
+
 ### Information theory
 In information theory, we have an idea called **signals** which often highly related to the idea of **uncertainty** and **entropy**. The change of entropy can be seen as the volume of signals. 
 
