@@ -403,10 +403,14 @@ v_p(k) \approx v_p(k_0)
 ```
 In short, we can have a certain value of phase velocity in narrow case roughly. But in the end, it is still an idea for each individual (base) wave.
 
-### White noise
+### White Noise
 We have already talked about an idea called **peaked** which means the distribution of the wavenumbers is roughly close to normal distribution, therefore, we have a peak of the distribution. However, there comes a situation that we have no peak which means the distribution is flat(also continuous). We call this **White Noise**. 
 
-The white noise happens when the situation has no single source, and generally the power flucutation would cancel each other which makes the whole thing generally flat. In the case of something like there's a single source that is very strong, then it would have so called peaked. For example, the earth visible light environment. Because that the sun light is very powerful compare to other source on earth, and the sun wavenumber is peaked so that we would see visible light wavenumber of earth environment is peaked. Another example which is perfectly for white noise is sound environment on earth, because there's no a single powerful sound peak source of and the noise is roughly flat distribution from everywhere, so the sound environment is roughly white noise. 
+The white noise happens when the situation has no single source, and generally the power fluctuation would cancel each other which makes the whole thing generally flat. In the case of something like there's a single source that is very strong, then it is peaked. For example, the earth visible light environment is peaked but not white noise, because that the sun dominates the light sources reach us. Its radiation follows a blockbody spectrum with a clear peak around green wavelengths. That peak is so strong that it defines the overall distribution of visible light here on Earth. 
+
+If Earth had many independent, weaker light sources all contributing equally across the spectrum - like countless tiny emitters with no single one dominating - then the distribution might look closer to "white noise"(flat, no peak). For example, at night when the Sun is no longer flooding Earth with its dominant spectrum, then visible light environment becomes much less structured.
+
+Compare to other source on earth, and the sun wavenumber is peaked so that we would see visible light wavenumber of earth environment is peaked. Another example which is perfectly for white noise is sound environment on earth, because there's no a single powerful sound peak source of and the noise is roughly flat distribution from everywhere, so the sound environment is roughly white noise. 
 
 The white noise is sometimes useful when we want to do some "random" problem because the flat distribution is totally random.
 

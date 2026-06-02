@@ -26,6 +26,26 @@ This is exactly the definition of **Entropy**, which is also the basic idea of S
 
 degree of freedom [reference](https://www.zhihu.com/question/26720278)
 
+## Independence
+### Independence of events
+Formally
+``` math
+P(A \cap B) = P(A) \cdot P(B)
+```
+
+### Independence of random variables
+Formally
+``` math
+P(X \in A, Y \in B) = P(X \in A) \cdot P(Y \in B) \quad \forall A,B
+```
+
+### Convolution formula for sum of independent random variables
+Formally
+``` math
+f_Z(z) = \int_{-\infty}^{\infty} f_X(x) \, f_Y(z-x) \, dx
+\quad \text{where } Z = X+Y
+```
+
 
 
 Binomial distribution to Normal distribution
