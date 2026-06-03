@@ -30,7 +30,7 @@ degree of freedom [reference](https://www.zhihu.com/question/26720278)
 ### Random Variable
 The Gaussian isn’t "chosen" or "preferred" by humans; it emerges because of the **additivity of independent random variables**. To understand this idea, we have to firstly define what are **variables**. When we say random variable, we are defining it as a function that outputs numbers(usually real numbers)
 
-For example, a sample space:
+For example, a sample space of a die:
 ``` math
 \Omega = \{1, 2, 3, 4, 5, 6\}
 ```
@@ -43,6 +43,17 @@ X(\omega) = \omega, \quad \omega \in \Omega
 \text{Distribution: Uniform over } \{1,2,3,4,5,6\}, \; P(X=k) = \tfrac{1}{6}.
 ```
 
+We can also have alternative random variables on the same die which is Parity Random Variable:
+``` math
+Y(\omega) =
+\begin{cases}
+0 & \text{if } \omega \text{ is even} \\
+1 & \text{if } \omega \text{ is odd}
+\end{cases}
+```
+``` math
+\text{Distribution: Bernoulli with } p = \tfrac{1}{2}.
+```
 
 ### Independence of events
 Formally
