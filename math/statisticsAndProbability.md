@@ -56,16 +56,21 @@ Y(\omega) =
 ```
 
 ### Independence of events
-Formally
+Formally, when we say two events are independent of each other, we means this below:
 ``` math
 P(A \cap B) = P(A) \cdot P(B)
 ```
 
 ### Independence of random variables
-Formally
+Formally, when we say two variables are independent of each other, we means this below:
 ``` math
 P(X \in A, Y \in B) = P(X \in A) \cdot P(Y \in B) \quad \forall A,B
 ```
+
+## Gaussian Distribution
+Suppose we have two independent random variables X and Y. They are all real number, We want to prove that the distribution of Z=X+Y is Gaussian, we would need to use **Convolution** which is gonna introduced next part. 
+
+The idea of convolution is actually like rolling two dice and find the distribution of the sum(values 2-12). That's not Gaussian but it already has a bell-like shape. The convoluion is pretty much like but continuous version.
 
 ### Convolution formula for sum of independent random variables
 Formally
@@ -74,6 +79,14 @@ f_Z(z) = \int_{-\infty}^{\infty} f_X(x) \, f_Y(z-x) \, dx
 \quad \text{where } Z = X+Y
 ```
 
+The integral formula above is using the formula of independent of random variables. The idea is like below when we assume that X and Y are constant.
+``` math
+f(X, Y) = f(X)*f(Y)
+```
+
+But of course, Z would have many(infinity) combination of X and Y, so they are not constant after all, and also because they are real number, it's continuous, so we should use integral to finally find f(Z). This is also a chain process, because X and Y are also can be decomposited as combinations of two numbers. 
+
+Because Z, X, Y are all random variables which are number functions, so the addition formula case is reasonable here, 
 
 
 Binomial distribution to Normal distribution
