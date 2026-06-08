@@ -86,8 +86,42 @@ f(X, Y) = f(X)*f(Y)
 
 But of course, Z would have many(infinity) combination of X and Y, so they are not constant after all, and also because they are real number, it's continuous, so we should use integral to finally find f(Z). This is also a chain process, because X and Y are also can be decomposited as combinations of two numbers. 
 
-Because Z, X, Y are all random variables which are number functions, so the addition formula case is reasonable here, 
+In the example of dice rolling, we have value(2~12), and it's obviously that the middle value is about 6, 7 and so as the peak of the distribution. In the convolution, it's apparent that Z=0 is the most possible combination because its combination range is from -infinity to infinity. However, if you take a look for Z getting far away from Z=0, and you would see the combination number is getting smaller because X and Y need to be more extreme to match the situation.
 
+Now, there's a truth which is that **Gaussian is the only solution of the convolution integral formula with finite variance**. There are still other distributions like Cauchy distribution and Levi's distribution that can match into convolution integral formula, but they are just infinite variance. You can take Gaussian into convolution integral and see:
+
+``` math
+f_Z(z) = \int_{-\infty}^{\infty} f_X(x)\, f_Y(z-x)\, dx
+```
+
+``` math
+f_X(x) = \frac{1}{\sqrt{2\pi\sigma_X^2}} 
+\exp\!\left(-\frac{(x-\mu_X)^2}{2\sigma_X^2}\right), 
+\quad
+f_Y(y) = \frac{1}{\sqrt{2\pi\sigma_Y^2}} 
+\exp\!\left(-\frac{(y-\mu_Y)^2}{2\sigma_Y^2}\right)
+```
+
+``` math
+f_Z(z) = \int_{-\infty}^{\infty} 
+\frac{1}{\sqrt{2\pi\sigma_X^2}} 
+\exp\!\left(-\frac{(x-\mu_X)^2}{2\sigma_X^2}\right)
+\cdot
+\frac{1}{\sqrt{2\pi\sigma_Y^2}} 
+\exp\!\left(-\frac{(z-x-\mu_Y)^2}{2\sigma_Y^2}\right)
+\, dx
+```
+
+``` math
+\text{After completing the square in the exponent:}
+\quad
+f_Z(z) = \frac{1}{\sqrt{2\pi(\sigma_X^2+\sigma_Y^2)}} 
+\exp\!\left(-\frac{(z-(\mu_X+\mu_Y))^2}{2(\sigma_X^2+\sigma_Y^2)}\right)
+```
+
+``` math
+\therefore \quad Z \sim N(\mu_X+\mu_Y,\; \sigma_X^2+\sigma_Y^2).
+```
 
 Binomial distribution to Normal distribution
 --------------------------------------------
