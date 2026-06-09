@@ -123,7 +123,24 @@ f_Z(z) = \frac{1}{\sqrt{2\pi(\sigma_X^2+\sigma_Y^2)}}
 \therefore \quad Z \sim N(\mu_X+\mu_Y,\; \sigma_X^2+\sigma_Y^2).
 ```
 
-The other distributions like binomial or brabra...can transform into convolution problem you take at least "two independent random variables" and the distibution follows the same form as single independent random variable.
+The other distributions like binomial or brabra...can transform into convolution problem if you take at least "two independent random variables" and the distibution follows the same form as single independent random variable. You can take AI to show you what this actually proceed.
+
+In this point, Convolution is actually a key explanation why **Central Limit theorem** would work. Most classic, straightforward distribution problems that arise in probability and statistics can be transformed into convoluton problem and so you would always find Gaussian there. In those cases, convolution is the natural tool. 
+
+Like, for example, dice rolling problem, roughly speaking, you can throw "two" dice to naturally form convolution. 
+
+Here's another example, the binomial distribution itself comes from summing independent Bernoulli random variables. The distribution of the sum of two Bernoulli random variables is given by convolution.
+
+So convolution is the key that we can say that **Gaussian is natural** because Gaussian is one solution that match convolution integral formula and also variance finite.
+
+Gaussian is one of the solution of convolution and is the only one that can have finite variance, those two properties and count uniqueness idea in, we get Gaussian.
+
+### Characteristic Function
+Start from convolution integral formula. If we take this into the formula:
+``` math
+\varphi_X(t) = \mathbb{E}[e^{itX}] = \int_{-\infty}^{\infty} e^{itx} f_X(x)\, dx.
+```
+
 
 Binomial distribution to Normal distribution
 --------------------------------------------
