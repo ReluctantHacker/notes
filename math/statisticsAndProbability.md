@@ -68,11 +68,11 @@ P(X \in A, Y \in B) = P(X \in A) \cdot P(Y \in B) \quad \forall A,B
 ```
 
 ## Gaussian Distribution
-Suppose we have two independent random variables X and Y. They are all real number, We want to prove that the distribution of Z=X+Y is Gaussian, we would need to use **Convolution** which is gonna introduced next part. 
+Suppose we have two independent random variables X and Y. They are all real number, We **assume that the distribution of f(Z=X+Y) is the same form as the distribution of f(X) or f(Y)** which is Gaussian that we would find out. With this assumption we can use **Convolution** to build a formula.
 
-The idea of convolution is actually like rolling two dice and find the distribution of the sum(values 2-12). That's not Gaussian but it already has a bell-like shape. The convoluion is pretty much like but continuous version.
+The idea of convolution is actually like rolling two dice and find the distribution of the sum(values 2-12). This example is not Gaussian but already has a bell-like shape. The convoluion is pretty much the same thing but a continuous version.
 
-### Convolution formula for sum of independent random variables
+### Convolution formula for sum of independent random variables derive to Gaussian
 Formally
 ``` math
 f_Z(z) = \int_{-\infty}^{\infty} f_X(x) \, f_Y(z-x) \, dx
@@ -122,6 +122,8 @@ f_Z(z) = \frac{1}{\sqrt{2\pi(\sigma_X^2+\sigma_Y^2)}}
 ``` math
 \therefore \quad Z \sim N(\mu_X+\mu_Y,\; \sigma_X^2+\sigma_Y^2).
 ```
+
+The other distributions like binomial or brabra...can transform into convolution problem you take at least "two independent random variables" and the distibution follows the same form as single independent random variable.
 
 Binomial distribution to Normal distribution
 --------------------------------------------
