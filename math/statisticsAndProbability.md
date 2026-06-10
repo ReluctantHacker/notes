@@ -136,16 +136,22 @@ So convolution is the key that we can say that **Gaussian is natural** because G
 Gaussian is one of the solution of convolution and is the only one that can have finite variance, those two properties and count uniqueness idea in, we get Gaussian.
 
 ### Characteristic Function
-Start from convolution integral formula. If we take this into the formula:
+Start from convolution integral formula. If you define **Characteristic function** as below:
 ``` math
 \varphi_X(t) = \mathbb{E}[e^{itX}] = \int_{-\infty}^{\infty} e^{itx} f_X(x)\, dx.
 ```
+
+and take this into convolution integral formula, you'll get this relationship below:
 
 ``` math
 \varphi_Z(t) = \mathbb{E}[e^{it(X+Y)}]
 = \mathbb{E}[e^{itX} e^{itY}]
 = \mathbb{E}[e^{itX}] \cdot \mathbb{E}[e^{itY}]
 = \varphi_X(t)\, \varphi_Y(t).
+```
+
+``` math
+\varphi_Z(t) = \varphi_X(t)\, \varphi_Y(t).
 ```
 
 
