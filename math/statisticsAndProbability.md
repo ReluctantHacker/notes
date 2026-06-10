@@ -141,6 +141,13 @@ Start from convolution integral formula. If we take this into the formula:
 \varphi_X(t) = \mathbb{E}[e^{itX}] = \int_{-\infty}^{\infty} e^{itx} f_X(x)\, dx.
 ```
 
+``` math
+\varphi_Z(t) = \mathbb{E}[e^{it(X+Y)}]
+= \mathbb{E}[e^{itX} e^{itY}]
+= \mathbb{E}[e^{itX}] \cdot \mathbb{E}[e^{itY}]
+= \varphi_X(t)\, \varphi_Y(t).
+```
+
 
 Binomial distribution to Normal distribution
 --------------------------------------------
