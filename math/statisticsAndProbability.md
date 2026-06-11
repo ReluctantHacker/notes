@@ -88,7 +88,9 @@ But of course, Z would have many(infinity) combination of X and Y, so they are n
 
 In the example of dice rolling, we have value(2~12), and it's obviously that the middle value is about 6, 7 and so as the peak of the distribution. In the convolution, it's apparent that Z=0 is the most possible combination because its combination range is from -infinity to infinity. However, if you take a look for Z getting far away from Z=0, and you would see the combination number is getting smaller because X and Y need to be more extreme to match the situation.
 
-Now, there's a truth which is that **Gaussian is the only solution of the convolution integral formula with finite variance**. There are still other distributions like Cauchy distribution and Levi's distribution that can match into convolution integral formula, but they are just infinite variance. You can take Gaussian into convolution integral and see:
+Now, we have a family of distribution functions(**Cauchy**, **Levi**, **Gaussian**, etc) that can be the solution of the convolution integral formula, we call them **Stable**. But there's only one of them has finite variance, and that is Gaussian. The other all has infinite variance. 
+
+If you want to make sure if Gaussian is the solution, You can take Gaussian into convolution integral yourself, and see below:
 
 ``` math
 f_Z(z) = \int_{-\infty}^{\infty} f_X(x)\, f_Y(z-x)\, dx
@@ -187,7 +189,21 @@ are two different mathematical forms of the same underlying principle: the way i
 - The convolution is the density-space representation.
 - The multiplication rule is the Fourier/exponential representation.
 
-With this idea in mind, here comes something more mind blowing
+So now we have the conclusion, if the characteristic function has the form:
+``` math
+\phi(t) = \exp\!\left(-\gamma |t|^{\alpha} + i\delta t\right)
+```
+then the distribution is **stable**, because their Fourier transformation must be the solution of the convolution integral formula.
+
+- The term $i\delta t$ term is just a location shift, it moves the distribution along the axis but doesn't affect stability.
+
+- The parameter $\alpha \in (0, 2]$
+
+
+
+
+
+With this idea in mind, here comes something more mind blowing thing.
 
 Binomial distribution to Normal distribution
 --------------------------------------------
