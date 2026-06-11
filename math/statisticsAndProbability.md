@@ -136,7 +136,7 @@ So convolution is the key that we can say that **Gaussian is natural** because G
 Gaussian is one of the solution of convolution and is the only one that can have finite variance, those two properties and count uniqueness idea in, we get Gaussian.
 
 ### Characteristic Function
-Start from convolution integral formula. If you define **Characteristic function** as below:
+Start from convolution integral formula. If you define **Characteristic function** of a distribution of X as below:
 ``` math
 \varphi_X(t) = \mathbb{E}[e^{itX}] = \int_{-\infty}^{\infty} e^{itx} f_X(x)\, dx.
 ```
@@ -150,7 +150,7 @@ and take this into convolution integral formula, you'll get this relationship be
 = \varphi_X(t)\, \varphi_Y(t).
 ```
 
-Which is just this below:
+Which is just the characteristic relationship as below:
 
 ``` math
 \varphi_Z(t) = \varphi_X(t)\, \varphi_Y(t).
@@ -165,6 +165,29 @@ f(t) = \alpha e^(\beta t)
 ```
 which $\alpha$ and $\beta$ are just constant.
 
+This is not coincident because when we define:
+``` math
+\phi(t) = \exp\!\left(-\gamma |t|^{\alpha} + i\delta t\right)
+```
+by the exponential relationship, you'll naturally get the characteristic relationship
+``` math
+\varphi_Z(t) = \varphi_X(t)\, \varphi_Y(t).
+```
+
+It turns out that convolution integral in PDF domain
+``` math
+f_Z(z) = \int_{-\infty}^{\infty} f_X(x)\, f_Y(z-x)\, dx
+```
+and the multiplication law in the characteristic function domain
+``` math
+\varphi_Z(t) = \varphi_X(t)\, \varphi_Y(t).
+```
+are two different mathematical forms of the same underlying principle: the way independent random variables combine under addition. 
+
+- The convolution is the density-space representation.
+- The multiplication rule is the Fourier/exponential representation.
+
+With this idea in mind, here comes something more mind blowing
 
 Binomial distribution to Normal distribution
 --------------------------------------------
