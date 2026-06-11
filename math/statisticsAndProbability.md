@@ -193,17 +193,31 @@ So now we have the conclusion, if the characteristic function has the form:
 ``` math
 \phi(t) = \exp\!\left(-\gamma |t|^{\alpha} + i\delta t\right)
 ```
-then the distribution is **stable**, because their Fourier transformation must be the solution of the convolution integral formula.
+then the distribution is **stable** when $alpha \in (0, 2]$, because their Fourier transformation must be the solution of the convolution integral formula.
 
-- The term $i\delta t$ term is just a location shift, it moves the distribution along the axis but doesn't affect stability.
+The term $i\delta t$ term is just a location shift, it moves the distribution along the axis but doesn't affect stability. The parameter $\alpha$ controls the "type" of stable
 
-- The parameter $\alpha \in (0, 2]$
+- Gaussian when $alpha=2$
+- Cauchy when $alpha=1$
+- Levy when $alpha=0.5$
 
+Apparently Gaussian is on the edge of the range of $alpha$. That's one of the reason that it is the only stable solution that has finite variance. The other solution with $alpha < 2$ are all infinite variance.
 
+When we say "finite variance", it means the distribution vanished in tail effectively, or more specifically, the random variables somehow has a finite range.
 
+For example: 
+- Finite variance(Gaussian): If the underlying process has light tails (like measurement errors, heights of people, etc.), Variance is finite and meaningful.
 
+- Infinite variance: If the process has heavy tails (like financial returns, insurance claims, earthquake magnitudes, internet traffic spikes), the probability of extreme events decays too slowly. Mathematically, the variance diverges — it’s infinite.
 
-With this idea in mind, here comes something more mind blowing thing.
+Let's stop here for a minute. When we say that Gaussian($\alpha=2$) is normal, you have to know that it doesn't mean that Gaussian is mathematically more fundamental than infinite variance($\alpha<2$) distributions. **They are equally fundamental**.
+
+To explain this clearly, let's take an example, people height distribution. Well, a quesiton rises, can we analytically know or derive that in this case, it's finite variance or not?
+
+No! We can only "assume" it's finite variance through imperically observation when people height has obviously a finite range distribution.
+
+This truth is very important, because it means when we observe a distribution or so called random variable has no finite range(finite variance), then we should use other fundamental explanation for the distribution.
+
 
 Binomial distribution to Normal distribution
 --------------------------------------------
