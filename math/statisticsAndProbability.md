@@ -150,9 +150,20 @@ and take this into convolution integral formula, you'll get this relationship be
 = \varphi_X(t)\, \varphi_Y(t).
 ```
 
+Which is just this below:
+
 ``` math
 \varphi_Z(t) = \varphi_X(t)\, \varphi_Y(t).
 ```
+
+And when you take a good look at it, you'll find that, hey, it's the relationship of exponential! 
+``` math
+f(x+y) = f(x)f(y),
+```
+``` math
+f(t) = \alpha e^(\beta t)
+```
+which $\alpha$ and $\beta$ are just constant.
 
 
 Binomial distribution to Normal distribution
