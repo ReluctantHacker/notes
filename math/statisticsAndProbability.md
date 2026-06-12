@@ -214,10 +214,30 @@ Let's stop here for a minute. When we say that Gaussian($\alpha=2$) is normal, y
 
 To explain this clearly, let's take an example, people height distribution. Well, a quesiton rises, can we analytically know or derive that in this case, it's finite variance or not?
 
-No! We can only "assume" it's finite variance through imperically observation when people height has obviously a finite range distribution.
+No! We can only "assume" it's finite variance through imperically observation when people height has obviously a finite range distribution(and so assume it's Gaussian).
 
-This truth is very important, because it means when we observe a distribution or so called random variable has no finite range(finite variance), then we should use other fundamental explanation for the distribution.
+Well, moreover, in fact, empirically we can only say it's alpha "close to 2", not prove it’s exactly 2 except you assume it is.
 
+This truth is very important, because it means when we observe a distribution or so called random variable has no finite range(finite variance), then naturally there are some other fundamental distribtuions can match the situation($\alpha<2$). 
+
+In the real world, if we want to judge some case's distribtuion, the only way is through imperical method, so we will need enough data to imperically judge.
+
+You can assume there is a finite variance in distribution, but this assumption is kinda redundant because imperically, we can not be sure or prove that in real world, for example, people height value can be infinity or not. So we can only say that it is very close to Gaussian. 
+
+The distribution shape from $\alpha=2$ to $\alpha>0$ is a gradually changing process starts from Gaussian. Whole process is bell shaped but tails getting heavier.
+
+Another thing we need to consider about is the changing from finite variance to infinite variance. Again in people height example, suppose we have
+- Mean ($\mu$): 175 cm
+- Standard deviation ($\sigma$): 8 cm
+- Variance ($\sigma^2$): 64 cm^2
+
+And in real world, we know that $\alpha$ should not be perfectly 2. Well, let's suppose that $alpha=1.9999999999$, then of course, the shape of the distribution should look exactly the same as Gaussian but in case the variance suddenly becomes infinite. What's happening here?
+
+Well, it's actually nothing strange here, because we define variance as below:
+``` math
+\mathrm{Var}(X) = \mathbb{E}\big[(X - \mu)^2\big] 
+= \int_{-\infty}^{\infty} (x - \mu)^2 f(x)\, dx
+```
 
 Binomial distribution to Normal distribution
 --------------------------------------------
