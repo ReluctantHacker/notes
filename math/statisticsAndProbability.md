@@ -239,6 +239,10 @@ Well, it's actually nothing strange here, because we define variance as below:
 = \int_{-\infty}^{\infty} (x - \mu)^2 f(x)\, dx
 ```
 
+if alpha<2 then variance diverges. 
+
+However, here rises a question, why do we even define variance like this? [reference](https://www.zhihu.com/question/289899724) [reference2](https://www.zhihu.com/question/37031188)
+
 Binomial distribution to Normal distribution
 --------------------------------------------
 # De Moivre-Laplace theorem
