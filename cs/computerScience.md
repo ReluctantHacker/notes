@@ -8,9 +8,9 @@ The physical implementation of an adder is based on the design of electric circu
 When we collect many adders parallel, then we can do multi-bit calculation. For example, 0101+0001=0110, using 4 adders to do 4 bit addition, every adder represent a bit. The output is 4 bit long, too. 
 
 # Semicondutor
-Because modern computer's calculation unit is full of transistors which are generally made with semiconductor, we have to talk about it.
+Because a modern computer's calculation unit is full of transistors which are generally made with semiconductors, we have to talk about it.
 
-Basically, a semiconductor is just an insulator whose energy gap is small enough that there are "some" carriers in the higher band at room temperatures on planet Earth. When the input voltage is high enough, it would act just like normal conductor. 
+Basically, a semiconductor is just an insulator whose energy gap is small enough that there are "some" carriers in the higher band at room temperatures on planet Earth. When the input voltage is high enough, it acts just like normal conductor. 
 
 Unlike a metal, because semiconductors do have an energy gap, one can: 1) form junctions with built-in electric fields via doping allowing one to create situations of one-way flow or corridors of flow, and 2) in addition to doping, their conductivity can be varied over something like 10 orders of magnitude simply by applying an electric field which allows for the creation of a voltage-controlled switch. Thus we can create "wires" and "switches" of electricity in a single integrated chunk of material.
 
@@ -24,7 +24,7 @@ The conductability is because of the outside orbit of the atom. Metals are big a
 > [!NOTE]
 > There's a term in physics called **Free Electron** which also means that electrons has no restriction by any atom. The difference is that **delocalized electron** emphasis that the electron is not restricted by any atom. **Free electron**, on the other hand, emphasis that the electron is free to move. However, generally in consequence, they are talking about the same thing.
 
-The outer electrons are basically as close to the neighouring atoms as they are to their original owner wich makes them able to just hop over with very little energy (the original atom wants to stay neutral so it will grab another losely bound electron from another neigbour). [reference](https://www.reddit.com/r/explainlikeimfive/comments/pyhqtf/eli5_why_do_metals_have_free_electrons/)
+The outer electrons(**outer shell**, **most outside shell**, **valence shell**, three terms are saying the same thing) are basically as close to the neighouring atoms as they are to their original owner wich makes them able to just hop over with very little energy (the original atom wants to stay neutral so it will grab another losely bound electron from another neigbour). [reference](https://www.reddit.com/r/explainlikeimfive/comments/pyhqtf/eli5_why_do_metals_have_free_electrons/)
 
 Or, in other words, we can say that when atoms are close enough, their outer electron orbitals would overlap with each other, allowing the electrons to move freely between atoms. This overlap is what creates the "sea" of electrons in metal lattice, contributing to their high conductivity.
 

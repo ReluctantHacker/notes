@@ -137,7 +137,7 @@ So if we want to get momentum from wave function, theoritically we can just diff
 \dfrac{\partial e^{(kx - \omega t)}}{\partial x} = 
 ```
 ```math
-k e^{(kx - \omega t) =  
+k e^{(kx - \omega t)} =  
 ```
 ```math
 \dfrac{2\pi P}{h} e^{(kx - \omega t)}
