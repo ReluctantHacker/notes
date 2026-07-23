@@ -129,7 +129,7 @@ E=\dfrac{h\omega}{2\pi}
 P=\dfrac{hk}{2\pi}
 ```
 
-So if we want to get momentum from wave function, theoritically we can just differentiate it by x
+So we can see that energy E is just proportional property to omega. And P is just proportional property to k. so if we want to get momentum from wave function, theoritically we can just differentiate it by x, so that we can let k go appeared from exponential position down!
 ```math
 \dfrac{\partial\Psi(x, t)}{\partial x} = 
 ```
@@ -143,12 +143,17 @@ k e^{(kx - \omega t)} =
 \dfrac{2\pi P}{h} e^{(kx - \omega t)}
 ```
 
-Suppose we have a operator call $\hat{P}$ for
+And now naturally we can and should define an operator call $\hat{P}$ for "getting momentum"
 ```math
 P \Psi(x, t) = \hat{P} \Psi(x, t)
 ```
 
-Apparently,
+so Apparently,
 ```math
 \hat{P} = \dfrac{h}{2\pi}\dfrac{\partial}{\partial x}
+```
+
+And as for energy E, of course, from the same idea, we can get below:
+``` math
+\hat{E} = i\hbar \frac{\partial}{\partial t}
 ```
