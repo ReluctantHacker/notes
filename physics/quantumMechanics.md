@@ -150,10 +150,21 @@ P \Psi(x, t) = \hat{P} \Psi(x, t)
 
 so Apparently,
 ```math
-\hat{P} = \dfrac{h}{2\pi}\dfrac{\partial}{\partial x}
+\hat{P} = \dfrac{h}{2\pi}\dfrac{\partial}{\partial x} = i\hbar \frac{\partial}{\partial x}
 ```
 
 And as for energy E, of course, from the same idea, we can get below:
 ``` math
 \hat{E} = i\hbar \frac{\partial}{\partial t}
+```
+
+Now, the idea of Shrodinger is very easy, he just used Energy conservation:
+``` math
+E = K + V = \dfrac{P^2}{2m} + V
+```
+
+And then take the operators into the conservation equation, we can get shrodinger equation:
+``` math
+i\hbar \frac{\partial}{\partial t}\psi(x,t)
+= \left[ -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} + V(x) \right]\psi(x,t)
 ```
