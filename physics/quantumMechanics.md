@@ -30,7 +30,7 @@ He proposed that the electron’s wave-particle relationship mirrors that of the
 
 ## Schrödinger
 But what does this “wave” actually mean?
-Mirror the light! Schrödinger thought.
+Again, mirror the light! Schrödinger thought.
 
 He assumed that if electron's matter-wave relationship is the same as photon's one, then the wave should mean the same.
 
@@ -168,3 +168,29 @@ And then take the operators into the conservation equation, we can get shrodinge
 i\hbar \frac{\partial}{\partial t}\psi(x,t)
 = \left[ -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} + V(x) \right]\psi(x,t)
 ```
+
+## Wave Function Collapse
+Now we have define what the wave should look like and what laws it should follow by. Now here comes a problem, when we use experiment to observe the wave, the wave would **collapse** to a certain state(an eigen state) which means it's not superposition no more according to the experiment. If we have two particles entangle each other, because the collapse happened to the one whole wave function. Two particles should collapse at the same time because they are just the result of one whole wave function. 
+
+But if two particles are very distant, like thousands of light years away from each other. Then wouldn't that the sudden collapse between two particles violate the law of speed of light?
+
+For example, if observer_A who observes particle 甲 and observer_B who observes particle 乙 which entangles with 甲. And when observer_A observes 甲 as 1, observer_B observes 乙 as 0.
+
+Now we have to talk about two important ideas to keep going: 
+- **Reality**: things exist even without observing.
+- **Locality**: things constrained by spacetime which has a property that speed is limited(light speed)
+
+Here's an important thing. If something has reality, then it must have locality. Because special theory of relativity which declare locality is silently and defaultly based on Realism. And so if something has no reality, then it doesn't have to have locality anymore because it doesn't have to be stricted by relativity anymore.
+
+In Bohr argues that physics quantities is not reality which means they are all not certain, or more frighenly, not even exist, until you observe them. So of course, the concept of entangling particles collapse doesn't violate law of speed of light because the particles physics properties(including location, mass, brabra) not even exist, so we can't say that information transfer faster than speed of light, because we can't even locate the particles.
+
+In Einstein's idea. Everything is local which means everything needs space and time to travel(Everything). And we know that the limit of speed of light is a property of spacetime. So everything is constrainted by speed of light. He called this property **locality**.
+
+So When observer_A observes, 乙 immediate collapse. This is not local.
+
+Well, however, according to **Old Copenhagen Interpretation**, the probability is real random, but wave function is not real! It's just a math tool to describe this random probability. It means that **probability density**(wave function) is not a real physical quantity but just a math tool. And so, the idea of Collapse which based on wave function is not physical real, either. So it doesn't violate relativity(**locality**).
+
+Noticed here, When we talk about "real random probability", it means Bohr declares that random is real physics, not just math tool. In classical probability theory, everything is decided. It is just that we don't have enough information to decide it yet. But Bohr declares that matter random is real undecided. Which means you have no way to know the information, before revealing the result. Notice again, you can't declare that something is decided and also we can't find any information to decide it, because if so, then that thing is real undecided. For quantum mechanics matter wave, Born declare(or define it in quantum mechanics) that matter wave probability is real undecided, which means there's no way from any respect you can decide it before reveal. But he thinks that probability density(wave function) is fake(just a tool to describe real)
+
+More specifically, Again, back to the observers, when observer_A observes 乙 as 1, observer_B observes 乙 as 0. But observer_B has no idea who start the collapse. It means observer_B can't figure out it's him that starts collapse or observer_A start the collapse. For observer_B, the probability density of observing 乙 as 1 or 0 is no different than the situaton that collapse hasn't happen yet. So you see, no information transfering here! Observer_B receive nothing from Observer_乙, because he doesn't know anything from observer_Y.
+
