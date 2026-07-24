@@ -182,7 +182,7 @@ Now we have to talk about two important ideas to keep going:
 
 Here's an important thing. If something has reality, then it must have locality. Because special theory of relativity which declare locality is silently and defaultly based on Realism. And so if something has no reality, then it doesn't have to have locality anymore because it doesn't have to be stricted by relativity anymore.
 
-In Bohr argues that physics quantities is not reality which means they are all not certain, or more frighenly, not even exist, until you observe them. So of course, the concept of entangling particles collapse doesn't violate law of speed of light because the particles physics properties(including location, mass, brabra) not even exist, so we can't say that information transfer faster than speed of light, because we can't even locate the particles.
+In Bohr argues that physics quantities is not reality which means they are all not certain, or more frighenly, not even exist, until you observe them. So of course, the concept of entangling particles collapse doesn't violate the law of speed of light because the particles physics properties(including location, mass, brabra) not even exist, so we can't say that information transfer faster than speed of light, because we can't even locate the particles.
 
 In Einstein's idea. Everything is local which means everything needs space and time to travel(Everything). And we know that the limit of speed of light is a property of spacetime. So everything is constrainted by speed of light. He called this property **locality**.
 
