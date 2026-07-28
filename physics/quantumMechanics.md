@@ -170,15 +170,49 @@ i\hbar \frac{\partial}{\partial t}\psi(x,t)
 ```
 
 ## Wave Function Collapse
-Now we have define what the wave should look like and what laws it should follow by. Now here comes a problem, when we use experiment to observe the wave, the wave would **collapse** to a certain state(an eigen state) which means it's not superposition no more according to the experiment. If we have two particles entangle each other, because the collapse happened to the one whole wave function. Two particles should collapse at the same time because they are just the result of one whole wave function. 
+Now we have defined what the wave should look like and what laws it should follow by. Now here comes a problem, when we use experiment to observe the wave, the wave would **collapse** to a certain state(an eigen state) which means it's not superposition no more according to the experiment. 
 
-But if two particles are very distant, like thousands of light years away from each other. Then wouldn't that the sudden collapse between two particles violate the law of speed of light?
+## EPR paradox
+And the famouse Einstein-Bohr debate comes in. In Bohr's view, the theory is complete now, which means quantum mehanics already says everything. 
 
-For example, if observer_A who observes particle 甲 and observer_B who observes particle 乙 which entangles with 甲. And when observer_A observes 甲 as 1, observer_B observes 乙 as 0.
+But Einstein doesn't agree with that. How can that be true according to the classical ideas?
 
-Now we have to talk about two important ideas to keep going: 
+Now we have to talk about two important ideas to keep going what Einstein is trying to argue: 
 - **Reality**: things exist even without observing.
 - **Locality**: things constrained by spacetime which has a property that speed is limited(light speed)
+
+For Einstein, he thinks that physics should be reality! Which means the moon exists even without your observation. The reality property is what Einstein really cares about. However, in quantum mechanics, take a good notice, it doesn't tell anything real before collapsing! So of course, he think it must not complete.
+
+Einstein proposed EPR paper, he tried to use locality, which is powerfully true according to the authority of relativity, to argues that quantum mechanics has no complete reality. The argument is basically took a pair of entangled particles for example: 
+
+If observer_A who observes particle 甲 and observer_B who observes particle 乙 which entangles with 甲. And when observer_A observes 甲 as 1, observer_B observes 乙 as 0.
+
+If observer_A observes particle 甲, particle 乙 immediately got known. According to locality, particle 乙 doesn't got influenced by this obvervation, so particle 乙 must be an already existed reality. However, quantum mechanics can only give probability of the result and not the real reality. So quantum mechanics is not complete. There must be some hidden variables that can reveal the result with reality.
+
+Briefly, the EPR logic is like below:
+- Step 1: Suppose locality is true(甲 doesn't influenced 乙 immediately)
+- Step 2: Because Obvervation of 甲 can make sure the prediction of 乙, so 乙 must be pre-existed reality.
+- Step 3: Quantum mechanics doesn't give what existed before observation.
+- Step 4: Quantum mechanics can't predict something can be predicted(乙 is pre-existed), so quantum mechanics is not complete. 
+
+There's one more thing need to be mentioned, Einstein did define what reality really means, we call it **Criterion of Reality**: If, without in any way disturbing a system, we can predict with certainty (i.e., with probability equal to unity) the value of a physical quantity, then there exists an element of physical reality corresponding to this physical quantity.
+
+Briefly, this criterion means "certainly prediction is equivalent to pre-existed reality(粗略來說就是能預測即表示預存), vice versa"
+
+So particle 乙 is pre-existed, so a complete theory should be able to predict certainly of 乙 before even observing it. Quantum mechanics can not so it's not complete.
+
+The whole EPR is logically perfect, there's no flaw here. What Bohr can argue is the basic two axioms: Locality and Reality.
+
+Locality is based on relativity. There's nothing to reject. But Reality Criterion, Bohr says it is a wrong axiom in the first place. He thinks "prediction certainly" can't be seen as "pre-existed reality". This mean if you predict moon is there(and it is there) doesn't mean the moon is pre-existed.
+
+Well, in the end, they have different axioms:
+Einstein's Axioms:
+- locality
+- reality criterion
+Bohr's Axioms(only locality):
+- locality
+
+The debate is very important, because if Einstein's idea is right, then the universe is somehow certainly predicted, but if Bohr is right, that means the universe is really uncertainty.
 
 Here's an important thing. If something has reality, then it must have locality. Because special theory of relativity which declare locality is silently and defaultly based on Realism. And so if something has no reality, then it doesn't have to have locality anymore because it doesn't have to be stricted by relativity anymore.
 
@@ -194,3 +228,12 @@ Noticed here, When we talk about "real random probability", it means Bohr declar
 
 More specifically, Again, back to the observers, when observer_A observes 乙 as 1, observer_B observes 乙 as 0. But observer_B has no idea who start the collapse. It means observer_B can't figure out it's him that starts collapse or observer_A start the collapse. For observer_B, the probability density of observing 乙 as 1 or 0 is no different than the situaton that collapse hasn't happen yet. So you see, no information transfering here! Observer_B receive nothing from Observer_乙, because he doesn't know anything from observer_Y.
 
+
+
+
+
+
+
+If we have two particles entangle each other, because the collapse happened to the one whole wave function. Two particles should collapse at the same time because they are just the result of one whole wave function. 
+
+But if two particles are very distant, like thousands of light years away from each other. Then wouldn't that the sudden collapse between two particles violate the law of speed of light?
