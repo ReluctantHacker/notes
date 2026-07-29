@@ -195,17 +195,26 @@ Briefly, the EPR logic is like below:
 - Step 3: Quantum mechanics doesn't give what existed before observation.
 - Step 4: Quantum mechanics can't predict something can be predicted(乙 is pre-existed), so quantum mechanics is not complete. 
 
-There's one more thing need to be mentioned, Einstein did define what reality really means, we call it **Criterion of Reality**: If, without in any way disturbing a system, we can predict with certainty (i.e., with probability equal to unity) the value of a physical quantity, then there exists an element of physical reality corresponding to this physical quantity.
+There's one more thing need to be mentioned, Einstein did define what reality really means, we call it **Criterion of Reality**: If, without in any way disturbing(because it must travel under speed of light) a system, we can predict with certainty (i.e., with probability equal to unity) the value of a physical quantity, then there exists an element of physical reality corresponding to this physical quantity.
 
-Briefly, this criterion means "certainly prediction is equivalent to pre-existed reality(粗略來說就是能預測即表示預存), vice versa"
+Briefly, this criterion means "certainly prediction without outside disturbing is equivalent to pre-existed reality(粗略來說就是能預測即表示預存), vice versa"
 
 So particle 乙 is pre-existed, so a complete theory should be able to predict certainly of 乙 before even observing it. Quantum mechanics can not so it's not complete.
 
-The whole EPR is logically perfect, there's no flaw here. What Bohr can argue is the basic two axioms: Locality and Reality.
+The whole EPR is logically perfect. Bohr's argument for that, unforturnately is very weak and unclear and falling into circular argument. For example, A famouse One of his debates is with the idea on the EPR's reality Criterion has some flaw. He did admit that **disturbance**(relativity information transfer) doesn't happened to 乙, but influence from 甲 to 乙 does exist! So you can't say nothing indluced 乙.
 
-Locality is based on relativity. There's nothing to reject. But Reality Criterion, Bohr says it is a wrong axiom in the first place. He thinks "prediction certainly" can't be seen as "pre-existed reality". This mean if you predict moon is there(and it is there) doesn't mean the moon is pre-existed.
+This argument of Bohr is failed! Because he didn't explain and define what "influence" is. According to Einstein, any disturbance should include Bohr's so called influences.
 
-Well, in the end, they have different axioms:
+Well, actually, in logic, you have to admit one of two statement below.
+- admit that non-locality exists
+- deny that unobserved objects is objectively reality.
+
+Bohr didn't.
+
+
+Locality is based on relativity. There's nothing to reject. But Reality Criterion, Bohr says it is a wrong axiom in the first place. He thinks **prediction with certainty without disturbing** can't be seen as **pre-existing reality**. This mean if you can predict moon is there(and it is there) doesn't mean the moon is pre-existing.
+
+Well, in the end, in their philosophy worldview, they actually accept different axioms:
 Einstein's Axioms:
 - locality
 - reality criterion
