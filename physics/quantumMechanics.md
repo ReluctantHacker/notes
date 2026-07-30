@@ -205,12 +205,44 @@ The whole EPR is logically perfect. Bohr's argument for that, unforturnately is 
 
 This argument of Bohr is failed! Because he didn't explain and define what "influence" is. According to Einstein, any disturbance should include Bohr's so called influences.
 
-Well, actually, in logic, you have to admit one of two statement below.
+Well, actually, in logic, you have to agree one of two statements below is true to make QM complete.
 - admit that non-locality exists
-- deny that unobserved objects is objectively reality.
+- unobserved objects is objectively reality.
 
-Bohr didn't.
+This mean Locality or Reality, you have to abandon at least one of them to make QM complete.
 
+Bohr didn't. So his disprove didn't work actually, though he won in public opinion back then.
+
+So, in the end, EPR's logic is that you have to chose one of two philosphical structures below: 
+- locality+reality->QM_non-complete
+- QM_complete+(locality XOR reality)
+
+Copenhagen intepretation chose the second one. However, Einstein chose the first one and think that there must be some hidden variables should be put into QM to make it complete.
+
+Notice here, when we talk about **hidden variables**, we have to distinguish two below:
+- New basic physics law that human haven't discovered.
+- Math structure inside all physics laws that human have already discovered.
+
+Well, I think Einstein prefer the second one, because if he choses the first one, then the whole logic would be non-falsifiable. Because you can't argue something that is not even discovered or it's not science anymore.
+
+## Guide wave theory
+The most famouse hidden variable theory was first proposed by De-Broile, and constructed By Bohm, which is the famous Guide wave theory. Bohm did nothing special about the math structure, but give the theory a new way of viewpoint to make reality hold. So my point of view, I would call it a different interpretation. He sees two things as reality:
+- matter wave is a field with reality and it does something to particles. 
+- particle's position Q(t) is reality and continuous. (this is the hidden variable)
+
+See a matter wave a field is totally fine in both physics and math. Because a field is just a function F(x), as long as x is some space domain coordinate parameter. The key is the "reality".
+
+As long as we define Q(t) is reality. So velocity operator doing on wave function and then we get velocity, we should say this velocity is also reality.
+
+``` math
+\textbf{Velocity operator:}
+\qquad
+\hat{\mathbf v}
+=
+\frac{\hat{\mathbf p}}{m}
+=
+-\frac{i\hbar}{m}\nabla
+```
 
 Locality is based on relativity. There's nothing to reject. But Reality Criterion, Bohr says it is a wrong axiom in the first place. He thinks **prediction with certainty without disturbing** can't be seen as **pre-existing reality**. This mean if you can predict moon is there(and it is there) doesn't mean the moon is pre-existing.
 
