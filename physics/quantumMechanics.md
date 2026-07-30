@@ -256,7 +256,7 @@ As long as we define Q(t) is reality. So velocity operator doing on wave functio
 ``` math
 \textbf{Guidance equation:}
 \qquad
-\boxed{ \frac{d\mathbf Q}{dt} = \mathbf v(\mathbf Q,t) = \frac{\hbar}{m} \operatorname{Im} \left( \frac{\nabla\psi}{\psi} \right)_{\mathbf x=\mathbf Q}}
+\boxed{ \frac{d\mathbf Q}{dt} = \mathbf v(\mathbf Q,t) = \frac{\hbar}{m} \mathrm{Im} \left( \frac{\nabla\psi}{\psi} \right)_{\mathbf x=\mathbf Q}}
 ```
 
 Locality is based on relativity. There's nothing to reject. But Reality Criterion, Bohr says it is a wrong axiom in the first place. He thinks **prediction with certainty without disturbing** can't be seen as **pre-existing reality**. This mean if you can predict moon is there(and it is there) doesn't mean the moon is pre-existing.
