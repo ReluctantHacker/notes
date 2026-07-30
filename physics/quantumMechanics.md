@@ -244,7 +244,7 @@ As long as we define Q(t) is reality. So velocity operator doing on wave functio
 ``` math
 \textbf{Local velocity field:}
 \qquad
-\mathbf v(\mathbf x,t) = \frac{ \operatorname{Re} \left( \psi^*\hat{\mathbf v}\psi \right)}{|\psi|^2}
+\mathbf v(\mathbf x,t) = \frac{ \mathrm{Re} \left( \psi^*\hat{\mathbf v}\psi \right)}{|\psi|^2}
 ```
 
 Locality is based on relativity. There's nothing to reject. But Reality Criterion, Bohr says it is a wrong axiom in the first place. He thinks **prediction with certainty without disturbing** can't be seen as **pre-existing reality**. This mean if you can predict moon is there(and it is there) doesn't mean the moon is pre-existing.
