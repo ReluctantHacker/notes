@@ -289,6 +289,22 @@ when Lagrangian is
 L\left(x, x', z\right)=\dfrac{a}{2}\left(x'\right)^2-xy\left(z\right)
 ```
 
+It's very easy to expand the situation to 
+``` math
+y\left(x, z\right) = \dfrac{ad^2x}{dz}
+```
+
+All you need to do is:
+``` math
+V(x, z) = - \integral{F(x, z)dx}
+```
+
+And then Lagrangian:
+```math
+L\left(x, x', z\right)=\dfrac{a}{2}\left(x'\right)^2-V(x, z))
+```
+
+
 ## Hamilton's Principle
 And now, here's the key concept. 
 
