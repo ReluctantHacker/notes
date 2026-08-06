@@ -286,7 +286,7 @@ As Euler-Lagrange equation's form
 ```
 when Lagrangian is
 ```math
-L\left(x, x', z\right)=\dfrac{a}{2}\left(x'\right)^2-xf\left(z\right)
+L\left(x, x', z\right)=\dfrac{a}{2}\left(x'\right)^2-xy\left(z\right)
 ```
 
 ## Hamilton's Principle
