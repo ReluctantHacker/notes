@@ -296,7 +296,7 @@ y\left(x, z\right) = \dfrac{ad^2x}{dz}
 
 All you need to do is:
 ``` math
-V(x, z) = - \integral{F(x, z)dx}
+V(x, z) = - \int{F(x, z)dx}
 ```
 
 And then Lagrangian:
