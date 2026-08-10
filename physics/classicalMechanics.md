@@ -360,7 +360,7 @@ Generalized force $Q_i$ is as below:
 \dfrac{d}{dt}\dfrac{\partial L}{\partial (q_i)'} - \dfrac{\partial L}{\partial q_i} = Q_i
 ```
 Which is exactly the Euler-Lagrange equation but not equal to 0 but $Q_i$.
-Before we explains this, we need to distinguish another idea: Abstract generalized force.
+Before we explains this, we need to distinguish another idea: **Abstract generalized force** which is a more important idea than $Q_i$ which is not real generalized force but occupy the name for historical reasons.
 
 In Newton's law, we have 
 ```math
