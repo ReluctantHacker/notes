@@ -523,7 +523,7 @@ We have already mentioned about generalied momentum and it plays a very importan
 
 For Euler-Lagrange equation:
 ``` math
-\frac{d}{dt}\frac{\partial L}{\partial \dot q_i} - \frac{\partial L|{\partial q_i} = Q_i
+\frac{d}{dt}\frac{\partial L}{\partial \dot q_i} - \frac{\partial L}{\partial q_i} = Q_i
 ```
 
 with generalized momentum below
