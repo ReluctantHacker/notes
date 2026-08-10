@@ -360,7 +360,7 @@ Generalized force $Q_i$ is as below:
 \dfrac{d}{dt}\dfrac{\partial L}{\partial (q_i)'} - \dfrac{\partial L}{\partial q_i} = Q_i
 ```
 Which is exactly the Euler-Lagrange equation but not equal to 0 but $Q_i$.
-Before we explains this, we need to distinguish another idea: **Abstract generalized force** which is a more important idea than $Q_i$ which is not real generalized force but occupy the name for historical reasons. According to this, this abstract generalized force called **Generalized inertial force** to distinguish the historical one. We'll talk about this latter, right now, let us focus on the historical one.
+Before we explains this, we need to distinguish another idea: **Abstract generalized force** which is a more important idea than $Q_i$ which is not real generalized force but occupy the name for historical reasons. According to this, this abstract generalized force, I call it **Generalized S-force** to distinguish the historical one. We'll talk about this latter, right now, let us focus on the historical one.
 
 In Newton's law, we have 
 ```math
@@ -518,8 +518,8 @@ And remember that total energy is constant must happens in conservative system, 
 
 And we know that Fermat's principle is just a special case of Maupertuis's Principle, this gaurantee that photon's total energy must be constant. And it's also obviously because photon's energy only depends on frequency $\nu$ which doesn't change when that photon goes through different medium with different refraction index.
 
-# Generalized Momentum and Generalized Inertial Force
-We have already mentioned about generalied momentum and it plays a very important role in the theory. Another idea we mentioned but didn't talk about too much is **Generalized Inertial Force** which we would use $F_Gi$ as represented. Well, it turns out, it's actually a more fundamental idea than $Q_i$. Because with this idea, Newton's structure holds in generalized coordinate which is exactly the elegant structure we want.
+# Generalized Momentum and Generalized S-Force
+We have already mentioned about generalied momentum and it plays a very important role in the theory. Another idea we mentioned but didn't talk about too much is **Generalized S-Force** which we would use $F_s$ as represented. Well, it turns out, it's actually a more fundamental idea than $Q_i$. Because with this idea, Newton's structure holds in generalized coordinate which is exactly the elegant structure we want.
 
 For Euler-Lagrange equation:
 ``` math
@@ -531,12 +531,30 @@ with generalized momentum below
 p_i = \frac{\partial L}{\partial \dot q_i}
 ```
 
-We can have the Euler-Lagrange equation in terms of generalized momenteum
+``` math
+\boxed{
+F_{S,i}
+-
+\frac{\partial L}{\partial q_i}
+=
+Q_i
+}
+```
+
+We can have the Euler-Lagrange equation in terms of generalized momentum
 ``` math
 \frac{d}{dt} p_i - \frac{\partial L}{\partial q_I} = \dot p_i - \frac{\partial L}{\partial q_I} = Q_i
 ```
 
+Now if define Generalized s-force as below:
+``` math
+F_S = \frac{d}{dt} p_i
+```
 
+We can get **Generalized Newton Mechanics**
+``` math
+
+```
 
 # Hamilton's Mechanics
 We know Lagrangian $L = L(q, q', t)$ and it follows the Euler-Lagrange equation which is a 2nd-order differential equation
