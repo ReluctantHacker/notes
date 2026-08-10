@@ -533,7 +533,7 @@ p_i = \frac{\partial L}{\partial \dot q_i}
 
 We can have the Euler-Lagrange equation in terms of generalized momenteum
 ``` math
-\dot p_i - \frac{\partial L}{\partial q_I} = Q_i
+\frac{d}{dt} p_i - \frac{\partial L}{\partial q_I} = \dot p_i - \frac{\partial L}{\partial q_I} = Q_i
 ```
 
 
