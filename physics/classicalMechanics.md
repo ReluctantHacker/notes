@@ -518,6 +518,26 @@ And remember that total energy is constant must happens in conservative system, 
 
 And we know that Fermat's principle is just a special case of Maupertuis's Principle, this gaurantee that photon's total energy must be constant. And it's also obviously because photon's energy only depends on frequency $\nu$ which doesn't change when that photon goes through different medium with different refraction index.
 
+# Generalized Momentum and Generalized Inertial Force
+We have already mentioned about generalied momentum and it plays a very important role in the theory. Another idea we mentioned but didn't talk about too much is **Generalized Inertial Force** which we would use $F_Gi$ as represented. Well, it turns out, it's actually a more fundamental idea than $Q_i$. Because with this idea, Newton's structure holds in generalized coordinate which is exactly the elegant structure we want.
+
+For Euler-Lagrange equation:
+``` math
+\frac{d}{dt}\frac{\partial L}{\partial \dot q_i} - \frac{\partial L|{\partial q_i} = Q_i
+```
+
+with generalized momentum below
+``` math
+p_i = \frac{\partial L}{\partial \dot q_i}
+```
+
+We can have the Euler-Lagrange equation in terms of generalized momenteum
+``` math
+\dot p_i - \frac{\partial L}{\partial q_I} = Q_i
+```
+
+
+
 # Hamilton's Mechanics
 We know Lagrangian $L = L(q, q', t)$ and it follows the Euler-Lagrange equation which is a 2nd-order differential equation
 ```math
