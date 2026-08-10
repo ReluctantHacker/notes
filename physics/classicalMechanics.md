@@ -531,16 +531,6 @@ with generalized momentum below
 p_i = \frac{\partial L}{\partial \dot q_i}
 ```
 
-``` math
-\boxed{
-F_{S,i}
--
-\frac{\partial L}{\partial q_i}
-=
-Q_i
-}
-```
-
 We can have the Euler-Lagrange equation in terms of generalized momentum
 ``` math
 \frac{d}{dt} p_i - \frac{\partial L}{\partial q_I} = \dot p_i - \frac{\partial L}{\partial q_I} = Q_i
@@ -554,6 +544,16 @@ F_S = \frac{d}{dt} p_i
 We can get **Generalized Newton Mechanics**
 ``` math
 
+```
+
+``` math
+\boxed{
+F_{S,i}
+-
+\frac{\partial L}{\partial q_i}
+=
+Q_i
+}
 ```
 
 # Hamilton's Mechanics
