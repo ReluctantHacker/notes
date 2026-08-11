@@ -684,7 +684,7 @@ With generalized coordiates and total generalization
 
 
 > [!NOTE]
-> Shrodinger's quantum mechanics structurely use Lagrangian structure, Feymann's quantum field theory structurely use Hamiltonian structure.
+> Shrodinger's quantum mechanics structurely use Hamiltonian point of view, Feymann's quantum field theory structurely use Lagrangian point of views.
 
 
 
