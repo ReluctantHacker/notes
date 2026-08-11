@@ -542,9 +542,8 @@ We can have the Euler-Lagrange equation in terms of generalized momentum
 If we can suck Q_i into E-L-equation, which is people always tend to do to let the equation elegant again, the new E-L-equation=0 again after reforming.
 
 ``` math
-\frac{d}{dt} p_i - \frac{\partial L'}{\partial q_I} = \dot p_i - \frac{\partial L'}{\partial q_I} = Q_i
+\dot p_i - \frac{\partial L'}{\partial q_I} = 0
 ```
-
 
 Now if we define Generalized s-force as below:
 ``` math
@@ -553,9 +552,9 @@ F_S = \frac{d}{dt} p_i
 
 We can get **Generalized Newton Mechanics**
 ``` math
-\boxed{F_{S,i}-\frac{\partial L}{\partial q_i}=Q_i}
+\boxed{F_{S,i}-\frac{\partial L}{\partial q_i}=0}
 ```
-If we can suck Q_i into equation and reform the equation to make L generalized as $L_i$, we can 
+The structure of Newton mechanics would be view again more clearly in Hamilton mechanics.
 
 # Hamilton's Mechanics
 We know Lagrangian $L = L(q, q', t)$ and it follows the Euler-Lagrange equation which is a 2nd-order differential equation
@@ -579,7 +578,9 @@ $\overrightarrow{p}$ here of course, is the generalized momentum $\dfrac{\partia
 
 Technically, Hamilton's Mechanics just turns Lagrange's Mechanics' one 2nd-order differential equation to two 1st-order differential euqations. Two mechanics are totally equivalent to each other.
 
-Naturally, here rises a common question. Why do we even need Hamilton's Mechanics if we already have Lagrange mechanics if they are the equivalent? The reason is that Hamilton's Mechanics can describe things in a more neat way in some situations.
+Naturally, here rises a common question. Why do we even need Hamilton's Mechanics if we already have Lagrange mechanics if they are the equivalent? 
+
+The reason is that Hamilton's Mechanics can describe things in a more neat way in some situations.
 
 In Lagrange Mechanics, we have this(where $L$ is Lagrangian)
 ```math
@@ -595,7 +596,7 @@ H\left(q, p, t\right) = pq'-L\left(q, q', t\right)
 ```
 of course, all the p is generalized momentum $p=\dfrac{\partial L}{\partial q'}$
 
-Hamilton mechanics doesn't give any better solution for solving dynamic problem, the key idea it provides is **conjugate** variables which is $P$ is conjugate to $q$, and $H$ is conjugate to $t$. We have already talk about this conjuage ideas before but in a simplied sense which is like below:
+The key idea are two very important things, first, Hamilton capture the idea of **conjugate** variables which is $P$ is conjugate to $q$, and $H$ is conjugate to $t$. We have already talked about this conjuage ideas before but in a simplied sense which is like below:
 ```math
 Fdt = \Delta P
 Fds = \Delta T
@@ -613,6 +614,31 @@ F=\dfrac{\Delta T}{ds}
 ```math
 \Delta P ds = \Delta T dt
 ```
+
+It turns out that, Hamiltonian H is actually **Generalized Total Energy**. It makes the idea of total energy abstractly generalized with generalized coordiates. And together with generalized momentum, generalized force, generalized inertia, everything would be turn into Newton's Mechanics again!
+
+If you take a good look of Hamilton's equations, you would find that they are just Newton's mechanics but in the perspective from total energy.
+
+You can reform every variables into generalized form:
+- $H$: Generalized total energy, aka Hamiltonian
+- $M$: Generalized inertia
+- $p_i$: Generalized momentum
+- $T_i$: Generalized kinetic energy
+- $V_i$: Generalized potential
+- $F_s$: Generalized s-Force
+- $v_i$: Generalized velocity
+
+and then take all this into Hamilton equations, you would see that the whole math structure is the same as Newton's one.
+
+``` math
+\boxed{ H=\T_i+V_i(q_i)=\frac{p_i^2}{2M}+V_i(q_i) }
+```
+
+For Hamilton equation 1:
+``` math
+\boxed{ \frac{\partial H}{\partial p_i} = \frac{p_i}{M} = \dot q_i }
+```
+
 
 
 
