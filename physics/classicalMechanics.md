@@ -670,8 +670,17 @@ so
 T_i = \frac{1}{2} p_i \dot q_i = \frac{1}{2} M \dot q_i^2 = \frac{p_i^2}{2M}
 ```
 
+At this point, everything got clear. Three mechanics, Newton, Lagrange, Hamilton, they are playing the things as follow.
 
+Without generalized coordiates
+- Newton: Focus on $F=\dot p$
+- Lagrange: Focus on $L=T-V$ which can be treat as the primary part to deal with as calculus of variation.
+- Hamilton: Focus on $E=T+V$, total energy, and use total energy E to find conjugate variable, p and x.
 
+With generalized coordiates and total generalization
+- Newton: Focus on $F_S=\dot p_i$
+- Lagrange: Focus on $L'=T_i-V_i$ which again can be treat as the primary part to deal with as calculus of variation, it is just generalized version.
+- Hamilton: Focus on $H=T_i-V_i$ which is the generalized version of total energy, and use H to deal with the conjugate variables, $p_i$ and $q_i$.
 
 
 In Lagrange Mechanics, we use **Configuration Space** which includes $\left(\overrightarrow{q}\right)$, Configuration space only gives the information about system's position. In Hamilton's Mechanics, we use **phase space** which includes $\left(q, p, t\right)$ which gives the full state of the system including position and the momentum. Phase space is more complete to tell what's going on to the system
