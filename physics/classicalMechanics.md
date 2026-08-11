@@ -670,7 +670,7 @@ so
 T_i = \frac{1}{2} p_i \dot q_i = \frac{1}{2} M \dot q_i^2 = \frac{p_i^2}{2M}
 ```
 
-At this point, everything got clear. Three mechanics, Newton, Lagrange, Hamilton, they are playing the things as follow.
+At this point, everything got clear. Three mechanics, Newton, Lagrange, Hamilton, they are totally playing the same game but start with different point of view.
 
 Without generalized coordiates
 - Newton: Focus on $F=\dot p$
@@ -683,21 +683,42 @@ With generalized coordiates and total generalization
 - Hamilton: Focus on $H=T_i+V_i$ which is the generalized version of total energy, and use H to deal with the conjugate variables, $p_i$ and $q_i$.
 
 
+> [!NOTE]
+> Shrodinger's quantum mechanics structurely use Lagrangian structure, Feymann's quantum field theory structurely use Hamiltonian structure.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# random thoughts
 In Lagrange Mechanics, we use **Configuration Space** which includes $\left(\overrightarrow{q}\right)$, Configuration space only gives the information about system's position. In Hamilton's Mechanics, we use **phase space** which includes $\left(q, p, t\right)$ which gives the full state of the system including position and the momentum. Phase space is more complete to tell what's going on to the system
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 An object must take its path to go. This is nothing special here. However, we have field here, field decide how an object's path should be. We can compare imaginary paths in field with the true path by mathematical method.
 
