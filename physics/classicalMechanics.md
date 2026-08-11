@@ -667,7 +667,7 @@ p_i \dot q_i = 2T_i
 ```
 so
 ``` math
-T_i = \frac{1}{2} p_i \dot q_i = \frac{1}{2} M (\dot q_i)^2 = \frac{(p_i)^2}{2M}
+T_i = \frac{1}{2} p_i \dot q_i = \frac{1}{2} M (\dot q_i)^2 = \frac{p_i^2}{2M}
 ```
 
 
