@@ -641,8 +641,9 @@ For Hamilton equation 1:
 
 For Hamilton equation 2:
 ``` math
-\boxed{ \frac{\partial H}{\partial p_i} = \frac{p_i}{M} = \dot q_i }
+\boxed{ -\frac{\partial H}{\partial q_i} = -\frac{\partial V_i}{\partial q_i} = F_i = \frac{dp_i}{dt} }
 ```
+
 
 
 
