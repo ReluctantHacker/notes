@@ -573,7 +573,7 @@ follows Hamilton's two 1st-order differential equations
 ```math
 \dfrac {\partial H}{\partial q} = \dot {\vec{p}}
 ```
-$\overrightarrow{p}$ here of course, is the generalized momentum $\dfrac{\partial L}{\partial \dot {\vec{q}}$
+$\overrightarrow{p}$ here of course, is the generalized momentum $\dfrac{\partial L}{\partial \dot {\vec{q}}}$
 
 
 Technically, Hamilton's Mechanics just turns Lagrange's Mechanics' one 2nd-order differential equation to two 1st-order differential euqations. Two mechanics are totally equivalent to each other.
