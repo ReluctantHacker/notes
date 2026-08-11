@@ -631,7 +631,7 @@ You can reform every variables into generalized form:
 and then take all this into Hamilton equations, you would see that the whole math structure is the same as Newton's one.
 
 ``` math
-\boxed{ H=\T_i+V_i(q_i)=\frac{p_i^2}{2M}+V_i(q_i) }
+\boxed{ H=T_i+V_i(q_i)=\frac{p_i^2}{2M}+V_i(q_i) }
 ```
 
 For Hamilton equation 1:
