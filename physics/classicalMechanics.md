@@ -639,7 +639,10 @@ For Hamilton equation 1:
 \boxed{ \frac{\partial H}{\partial p_i} = \frac{p_i}{M} = \dot q_i }
 ```
 
-
+For Hamilton equation 2:
+``` math
+\boxed{ \frac{\partial H}{\partial p_i} = \frac{p_i}{M} = \dot q_i }
+```
 
 
 
