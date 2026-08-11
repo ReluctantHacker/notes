@@ -630,18 +630,35 @@ You can reform every variables into generalized form:
 
 and then take all this into Hamilton equations, you would see that the whole math structure is the same as Newton's one.
 
+
+Foe we know that Hamiltonian is generlaized total energy:
 ``` math
 \boxed{ H=T_i+V_i(q_i)=\frac{p_i^2}{2M}+V_i(q_i) }
 ```
 
-For Hamilton equation 1:
+We assume that here first, and you'll see why it has to be latter
+``` math
+T_i = \frac{p_i^2}{2M}
+```
+
+use generalized total energy idea into Hamilton equation 1:
 ``` math
 \boxed{ \frac{\partial H}{\partial p_i} = \frac{p_i}{M} = \dot q_i }
 ```
 
-For Hamilton equation 2:
+and into Hamilton equation 2:
 ``` math
 \boxed{ -\frac{\partial H}{\partial q_i} = -\frac{\partial V_i}{\partial q_i} = -\frac{\partial}{\partial q_i} \int{-F_S dp_i} = F_S = \frac{dp_i}{dt} }
+```
+
+You can see everything just turned back into Newton's structure again!
+
+
+Okay, so now, Naturally, have Hamiltonian have to be the form like $H=T_i+V_i$ with $T_i=\frac{p_i^2}{2M}$ ?
+
+Yes, if you want to make **Legrender Transformation** between Hamiltonian and Lagrangian holds! Which you want it because you want the structure keeps!
+``` math
+L=p_i\dot q_i - H = p_i\dot q_i - \left(T_i+V_i\right)=T_i-V_i
 ```
 
 
