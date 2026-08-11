@@ -557,23 +557,23 @@ We can get **Generalized Newton Mechanics**
 The structure of Newton mechanics would be view again more clearly in Hamilton mechanics.
 
 # Hamilton's Mechanics
-We know Lagrangian $L = L(q, q', t)$ and it follows the Euler-Lagrange equation which is a 2nd-order differential equation
+We know Lagrangian $L = L(q, \dot q, t)$ and it follows the Euler-Lagrange equation which is a 2nd-order differential equation
 ```math
-\dfrac{d}{dt} \dfrac{\partial L}{\partial q'} - \dfrac{\partial L}{\partial q} = 0
+\dfrac{d}{dt} \dfrac{\partial L}{\partial \dot q} - \dfrac{\partial L}{\partial q} = 0
 ```
 
 And Hamiltonian is Legendre transformation of Lagrangian
 ```math
-H\left(q, p\right) = \sum_i {p_i(q_i)'-L\left(q, q'\right)}
+H\left(q, p\right) = \sum_i {p_i \dot q_i -L\left(q, \dot q \right)}
 ```
 follows Hamilton's two 1st-order differential equations
 ```math
-\dfrac {\partial H}{\partial \overrightarrow{p}} = \overrightarrow{q}'
+\dfrac {\partial H}{\partial \overrightarrow{p}} = \dot \overrightarrow{q}
 ```
 ```math
-\dfrac {\partial H}{\partial q} = \overrightarrow{p}'
+\dfrac {\partial H}{\partial q} = \dot \overrightarrow{p}
 ```
-$\overrightarrow{p}$ here of course, is the generalized momentum $\dfrac{\partial L}{\partial \overrightarrow{q}'}$
+$\overrightarrow{p}$ here of course, is the generalized momentum $\dfrac{\partial L}{\partial \dot \overrightarrow{q}}$
 
 
 Technically, Hamilton's Mechanics just turns Lagrange's Mechanics' one 2nd-order differential equation to two 1st-order differential euqations. Two mechanics are totally equivalent to each other.
@@ -686,7 +686,7 @@ With generalized coordiates and total generalization
 > [!NOTE]
 > Shrodinger's quantum mechanics structurely use Hamiltonian point of view, Feymann's quantum field theory structurely use Lagrangian point of views.
 
-
+# Phase Space
 
 
 
