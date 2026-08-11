@@ -571,7 +571,7 @@ follows Hamilton's two 1st-order differential equations
 \dfrac {\partial H}{\partial {\vec{p}}} = \dot {\vec{q}}
 ```
 ```math
-\dfrac {\partial H}{\partial q} = \dot \overrightarrow{p}
+\dfrac {\partial H}{\partial q} = \dot {\vec{p}}
 ```
 $\overrightarrow{p}$ here of course, is the generalized momentum $\dfrac{\partial L}{\partial \dot \overrightarrow{q}}$
 
