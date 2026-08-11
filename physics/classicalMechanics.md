@@ -568,7 +568,7 @@ H\left(q, p\right) = \sum_i {p_i \dot q_i -L\left(q, \dot q \right)}
 ```
 follows Hamilton's two 1st-order differential equations
 ```math
-\dfrac {\partial H}{\partial \vec{p}} = \dot \vec{q}
+\dfrac {\partial H}{\partial {\vec{p}}} = \dot {\vec{q}}
 ```
 ```math
 \dfrac {\partial H}{\partial q} = \dot \overrightarrow{p}
