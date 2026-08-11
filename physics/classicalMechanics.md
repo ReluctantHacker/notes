@@ -536,25 +536,26 @@ We can have the Euler-Lagrange equation in terms of generalized momentum
 \frac{d}{dt} p_i - \frac{\partial L}{\partial q_I} = \dot p_i - \frac{\partial L}{\partial q_I} = Q_i
 ```
 
-Now if define Generalized s-force as below:
+> [!NOTE]
+> When we have E-L-equation=0, we always silently take and define $L=T-V$. But in general case, E-L-equation=$Q_i$, so people would always tend to make $Q_i$ sucked into equation to make E-L-equation=0 again! This is generalization, we would get a new L which is L'. When it comes to this, $L'=T-V$ doesn't have to hold. It should be $L'=Ti-Vi$, for Ti is generalized kinetic energy and Vi is generalized potential energy. Ti and Vi are very important ideas, too. We'll talk about this in Hamiltonian Mechanics.
+
+If we can suck Q_i into E-L-equation, which is people always tend to do to let the equation elegant again, the new E-L-equation=0 again after reforming.
+
+``` math
+\frac{d}{dt} p_i - \frac{\partial L'}{\partial q_I} = \dot p_i - \frac{\partial L'}{\partial q_I} = Q_i
+```
+
+
+Now if we define Generalized s-force as below:
 ``` math
 F_S = \frac{d}{dt} p_i
 ```
 
 We can get **Generalized Newton Mechanics**
 ``` math
-
+\boxed{F_{S,i}-\frac{\partial L}{\partial q_i}=Q_i}
 ```
-
-``` math
-\boxed{
-F_{S,i}
--
-\frac{\partial L}{\partial q_i}
-=
-Q_i
-}
-```
+If we can suck Q_i into equation and reform the equation to make L generalized as $L_i$, we can 
 
 # Hamilton's Mechanics
 We know Lagrangian $L = L(q, q', t)$ and it follows the Euler-Lagrange equation which is a 2nd-order differential equation
