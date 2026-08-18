@@ -260,9 +260,20 @@ As long as we define Q(t) is reality. So velocity operator doing on wave functio
 ```
 
 ## Decoherence
-This idea is very important, because it somehow replace "collapse" idea in modern physics. Most modern quantum interpretation use this idea as basic rule, like New Coppenhagen, multiple-universe, and other lot......
+This idea is very important, because it somehow replace "collapse" idea in modern physics. Most modern quantum interpretation use this idea as basic rule, like New Coppenhagen, multiple-universe, and other lot. 
 
-There are three common product symbol used in quantum mechanics when we treat wave functions as vectors
+Well, first of all, we are gonna talk about what is **Coherence**. Coherence is nothing special but just two wave have different phase, and when they superposite each other, they would have counstructive interference or destructive interference. 
+
+[!NOTE] 
+Remember, coherence is not a yes, or no, you can't say if they have coherence or not. You can only say how much coherence they have. In physics and math, it has a strict definition. But we are not gonna talk bout this here.
+
+The main core idea of decoherence is very simple, it's actually just ENTANGLEMENT that makes coherence gone(or tend to be less and less).
+
+Suppose, After the original wavefunctions $\Phi_A$ and $\Phi_B$ of systems A and B become entangled, A and B can no longer be discussed independently. The two systems form a new joint system with a joint wavefunction, and we must base our description on this combined system.
+
+The Decoherence theory just says that every system would finally interact and entangle with Environment(universe) and finally no coherence affect last when we observe system.
+
+There are three common product symbol used in quantum mechanics when we treat wave functions as vectors, we are gonna use these symbol latter.
 
 ``` math
 \boxed{|A\rangle \otimes |B\rangle=|A\rangle |B\rangle}
@@ -279,8 +290,29 @@ There are three common product symbol used in quantum mechanics when we treat wa
 \quad\text{outer product}
 ```
 
+Now, suppose we have a quantum system that has two possible result(two eigenstates):
+``` math
+|\psi\rangle
+=
+\frac{1}{\sqrt{2}}
+\left(
+|0\rangle + |1\rangle
+\right)
+```
 
+When the system entangles with environment: (It uses tensor product here. Obviously, it means combination of two vectors, very reasonable)
+``` math
+|\Psi\rangle
+=
+\frac{1}{\sqrt{2}}
+\left(
+|0\rangle |E_0\rangle
++
+|1\rangle |E_1\rangle
+\right)
+```
 
+Now, you can't say that $|0\rangle$ and $|1\rangle$ are eigenstates of the system any more. The eigenstates are $|0\rangle |E_0\rangle$ and $|1\rangle |E_1\rangle$
 
 
 # others temp notes
