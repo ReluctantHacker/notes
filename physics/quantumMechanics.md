@@ -259,6 +259,31 @@ As long as we define Q(t) is reality. So velocity operator doing on wave functio
 \boxed{ \frac{d\mathbf Q}{dt} = \mathbf v(\mathbf Q,t) = \frac{\hbar}{m} \mathrm{Im} \left( \frac{\nabla\psi}{\psi} \right)_{\mathbf x=\mathbf Q}}
 ```
 
+## Decoherence
+This idea is very important, because it somehow replace "collapse" idea in modern physics. Most modern quantum interpretation use this idea as basic rule, like New Coppenhagen, multiple-universe, and other lot......
+
+There are three common product symbol used in quantum mechanics when we treat wave functions as vectors
+
+``` math
+\boxed{|A\rangle \otimes |B\rangle}
+\quad\text{tensor product}
+```
+
+``` math
+\boxed{\langle A|B\rangle}
+\quad\text{inner product}
+```
+
+``` math
+\boxed{|A\rangle\langle B|}
+\quad\text{outer product}
+```
+
+
+
+
+
+# others temp notes
 Locality is based on relativity. There's nothing to reject. But Reality Criterion, Bohr says it is a wrong axiom in the first place. He thinks **prediction with certainty without disturbing** can't be seen as **pre-existing reality**. This mean if you can predict moon is there(and it is there) doesn't mean the moon is pre-existing.
 
 Well, in the end, in their philosophy worldview, they actually accept different axioms:
