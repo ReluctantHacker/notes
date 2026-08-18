@@ -265,7 +265,7 @@ This idea is very important, because it somehow replace "collapse" idea in moder
 There are three common product symbol used in quantum mechanics when we treat wave functions as vectors
 
 ``` math
-\boxed{|A\rangle \otimes |B\rangle}
+\boxed{|A\rangle \otimes |B\rangle=|A\rangle |B\rangle}
 \quad\text{tensor product}
 ```
 
