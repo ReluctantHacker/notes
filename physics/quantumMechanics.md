@@ -318,9 +318,20 @@ When you only focus on system S itself, you mathematically get this:
 ``` math
 \rho_S
 =
-\operatorname{Tr}_E
+\mathrm{Tr}_E
 \left(
 |\Psi\rangle\langle\Psi|
+\right)
+=
+\frac{1}{2}
+\left(
+|0\rangle\langle0|
++
+|1\rangle\langle1|
++
+\langle E_1|E_0\rangle |0\rangle\langle1|
++
+\langle E_0|E_1\rangle |1\rangle\langle0|
 \right)
 ```
 
