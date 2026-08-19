@@ -275,11 +275,12 @@ The Decoherence theory just says that every system would finally interact and en
 
 There are three common product symbol used in quantum mechanics when we treat wave functions as vectors, we are gonna use these symbol latter.
 
-- tensor product, this is just information combination of two vectors:
+- tensor product, this one is very important, it's the key idea of entanglement. Conceptually, tensor product $A \otimes B \in V \otimes W$ with $\boxed{A \in V,\qquad B \in W}$ for V and W are all themself own vector spaces:
 ``` math
 \boxed{|A\rangle \otimes |B\rangle=|A\rangle |B\rangle}
 \quad\text{tensor product}
 ```
+Moreover, basically, tensor product is just linear version of **Cartesian Product** which is a set theory product with a set output, for example A={1, 2}, B={3, 4}, then AXB is {(1, 3), (1, 4), (2, 3), (2, 4)}. The difference between () and {}, is that the first one is ordered. The tensor product of A and B(if take A and B as vectors), then the result is just (1*3, 1*4, 2*3, 2*4). Remember, it doesn't have to be in the form of matrices as long as you can make it label clearly which element is from A or B. Matrices is a more visually human-friendly represent things.
 
 - inner product, this is application of idea of projection, when you let a vector A do inner product with suppose, eigen vector $e_x$. Then the final value would be the projection length of vector A on the direction of $e_x$:
 ``` math
@@ -293,15 +294,38 @@ There are three common product symbol used in quantum mechanics when we treat wa
 \quad\text{outer product}
 ```
 
-Okay, because decoherence idea is based on entanglement, we have to understand what exactly entanglement is here.
-
-Mathematically, it actually means the combinational wave function of whole system which includes A system and B system cannot be written separately as:
+Okay, because decoherence idea is based on entanglement, we have to understand what exactly entanglement is here. Mathematically, it actually means the combinational wave function of whole system which includes A system and B system cannot be written separately with tensor product.
 ``` math
 \boxed{
 |\Psi_{AB}\rangle \neq |\Psi_A\rangle \otimes |\Psi_B\rangle
 }
 ```
+This means you cannot separately talk about $\phi_A$ and $\phi_B$. Because A and B mix each others. 
 
+But wait a second! How do we have entanglement? I mean what produces entanglement at first?
+
+Well, Suppose we have two system A and B, you can write Hamiltonian of combinational system as:
+``` math
+H = H_A+H_B
+```
+Because $H_A$ and $H_B$ are totally separated, so the final wave function of whole system can be written as this:
+``` math
+\boxed{
+|\Psi_{AB}\rangle = |\Psi_A\rangle \otimes |\Psi_B\rangle
+}
+```
+This means that $\Psi_A$ and $\Psi_B$ can be separately talked about. which mean you have two subsystems $\Psi_A$ and $\Psi_B$ without any problem.
+
+But now, if thre is interaction between two systems A and B, the situation becomes like
+``` math
+H = H_A+H_B+H_int
+```
+
+Mostly, we would write it as interaction potential
+``` math
+H = H_A+H_B+V_int(q_A, q_B)
+```
+If the interaction potential $V_int$ mixed so deep, so the resulting state cannot be expressed as a tensor product of A and B. We say that A and B are entangled with each other.
 
 
 
