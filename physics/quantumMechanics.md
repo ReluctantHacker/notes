@@ -314,6 +314,16 @@ When the system entangles with environment: (It uses tensor product here. Obviou
 
 Now, you can't say that $|0\rangle$ and $|1\rangle$ are eigenstates of the system any more. The eigenstates are $|0\rangle |E_0\rangle$ and $|1\rangle |E_1\rangle$
 
+When you only focus on system S itself, you mathematically get this:
+``` math
+\rho_S
+=
+\operatorname{Tr}_E
+\left(
+|\Psi\rangle\langle\Psi|
+\right)
+```
+
 
 # others temp notes
 Locality is based on relativity. There's nothing to reject. But Reality Criterion, Bohr says it is a wrong axiom in the first place. He thinks **prediction with certainty without disturbing** can't be seen as **pre-existing reality**. This mean if you can predict moon is there(and it is there) doesn't mean the moon is pre-existing.
