@@ -334,8 +334,22 @@ When you only focus on system S itself, you mathematically get this:
 \langle E_0|E_1\rangle |1\rangle\langle0|
 \right)
 ```
+Decoherence makes this:
+``` math
+\langle E_0|E_1\rangle \approx 0
+```
 
-
+so 
+``` math
+\rho_S
+\approx
+\frac{1}{2}
+\left(
+|0\rangle\langle0|
++
+|1\rangle\langle1|
+\right)
+```
 # others temp notes
 Locality is based on relativity. There's nothing to reject. But Reality Criterion, Bohr says it is a wrong axiom in the first place. He thinks **prediction with certainty without disturbing** can't be seen as **pre-existing reality**. This mean if you can predict moon is there(and it is there) doesn't mean the moon is pre-existing.
 
