@@ -275,20 +275,35 @@ The Decoherence theory just says that every system would finally interact and en
 
 There are three common product symbol used in quantum mechanics when we treat wave functions as vectors, we are gonna use these symbol latter.
 
+- tensor product, this is just information combination of two vectors:
 ``` math
 \boxed{|A\rangle \otimes |B\rangle=|A\rangle |B\rangle}
 \quad\text{tensor product}
 ```
 
+- inner product, this is application of idea of projection, when you let a vector A do inner product with suppose, eigen vector $e_x$. Then the final value would be the projection length of vector A on the direction of $e_x$:
 ``` math
 \boxed{\langle A|B\rangle}
 \quad\text{inner product}
 ```
 
+- outer product, It constructs a linear transformation which means the product result is not a value or a vector but an operator. The outer-production of A and B is an operator, acting on any vector X, takes the component of X along B and uses that scalar to scale the vecotr A. Carefully, this is not the same as the **cross product** we learned in middle school. In chinese math education, they often mixed the term "cross product" and "outer product" together, but they are not the same at all in term of English:
 ``` math
 \boxed{|A\rangle\langle B|}
 \quad\text{outer product}
 ```
+
+Okay, because decoherence idea is based on entanglement, we have to understand what exactly entanglement is here.
+
+Mathematically, it actually means the combinational wave function of whole system which includes A system and B system cannot be written separately as:
+``` math
+\boxed{
+|\Psi_{AB}\rangle \neq |\Psi_A\rangle \otimes |\Psi_B\rangle
+}
+```
+
+
+
 
 Now, suppose we have a quantum system that has two possible result(two eigenstates):
 ``` math
