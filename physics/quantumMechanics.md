@@ -280,7 +280,18 @@ There are three common product symbol used in quantum mechanics when we treat wa
 \boxed{|A\rangle \otimes |B\rangle=|A\rangle |B\rangle}
 \quad\text{tensor product}
 ```
-Moreover, basically, tensor product is just linear version of **Cartesian Product** which is a set theory product with a set output, for example A={1, 2}, B={3, 4}, then AXB is {(1, 3), (1, 4), (2, 3), (2, 4)}. The difference between () and {}, is that the first one is ordered. The tensor product of A and B(if take A and B as vectors), then the result is just (1*3, 1*4, 2*3, 2*4). Remember, it doesn't have to be in the form of matrices as long as you can make it label clearly which element is from A or B. Matrices is a more visually human-friendly represent things.
+Moreover, basically, tensor product is just linear version of **Cartesian Product** which is a set theory product with a set output, for example A={1, 2}, B={3, 4}, then AXB is {(1, 3), (1, 4), (2, 3), (2, 4)}. The difference between () and {}, is that the first one is ordered. The tensor product of A and B(if take A and B as vectors), then the result is just (1*3, 1*4, 2*3, 2*4). Remember, it doesn't have to be in the form of matrices as long as you can make it label clearly which element is from A or B. Matrices are just a more visually human-friendly represent things. Moreover again, if you turn linear algebra vectors point of view back to wavefunctions, you'll find that
+``` math
+\boxed{
+\Psi(x,y)=\psi_A(x)\psi_B(y)
+\iff
+|\Psi_{AB}\rangle
+=
+|\psi_A\rangle\otimes|\psi_B\rangle
+}
+```
+The left side and right side EQUIVALENTLY mean the same thing! And if $\Psi(x, y) \neq \psi_A(x)\psi_B(y)$ then it means the system entangled(we'll talk about entanglement latter soon). This is a necessary consequence of representing quantum states as vectors and the linear-algebraic structure of the tensor product.
+
 
 - inner product, this is application of idea of projection, when you let a vector A do inner product with suppose, eigen vector $e_x$. Then the final value would be the projection length of vector A on the direction of $e_x$:
 ``` math
@@ -300,7 +311,38 @@ Okay, because decoherence idea is based on entanglement, we have to understand w
 |\Psi_{AB}\rangle \neq |\Psi_A\rangle \otimes |\Psi_B\rangle
 }
 ```
-This means you cannot separately talk about $\phi_A$ and $\phi_B$. Because A and B mix each others. 
+This means you cannot separately talk about $\phi_A$ and $\phi_B$. Because A and B mix each others. Moreover, just like we've talked earlier, we know this:
+``` math
+\boxed{
+\Psi(x,y)=\psi_A(x)\psi_B(y)
+\iff
+|\Psi_{AB}\rangle
+=
+|\psi_A\rangle\otimes|\psi_B\rangle
+}
+```
+The reason we call A and B indepedently separated is pretty much the same idea as probability theory, they are actually mathematically same structure deep inside.
+``` math
+P(x, y) = P_A(x)P_B(y)
+```
+In this case, we call x, y are independently random variables.
+
+To get things deeper, we know this below
+``` math
+P(x or y) = P(x)+P(y)
+```
+``` math
+P(x and y) = P(x)*P(y)
+```
+Notice here, when you write down $P(x or y) = P(x)+P(y)$, you have already see A and B as **disjoint**, means A set and B set are totally counts into the problem. This mean if you have candy packages A and B, when you say "A or B", you have taken count all the candies in A and B together!
+
+Moreover, **or** in set theory is **Union** which is written as $A \cup B$. Foundamentally, **Addition** is to 'OR' as measurement is to existence—the '+' sign is just the numerical shadow cast by the logical '∪'. They are the same substance, expressed in different tongues.
+
+This idea is totally can be transfer into wave theory. When you have two waves superposite each other, you can see the situation as "or" mathematically structurely.
+
+This idea can be used in 'AND' logic as well! when you say "A and B", you are actually doing combination of A and B, which is naturally multiplication! Moreover, you can use Cartesian product to operate it! And finally goes to tensor product!
+
+
 
 But wait a second! How do we have entanglement? I mean what produces entanglement at first?
 
@@ -316,7 +358,7 @@ Because $H_A$ and $H_B$ are totally separated, so the final wave function of who
 ```
 This means that $\Psi_A$ and $\Psi_B$ can be separately talked about. which mean you have two subsystems $\Psi_A$ and $\Psi_B$ without any problem.
 
-But now, if thre is interaction between two systems A and B, the situation becomes like
+But now, if there is interaction between two systems A and B, the situation becomes like
 ``` math
 H = H_A+H_B+H_int
 ```
@@ -329,7 +371,7 @@ If the interaction potential $V_int$ mixed so deep, so the resulting state canno
 
 
 
-Now, suppose we have a quantum system that has two possible result(two eigenstates):
+Now, suppose we have a quantum system that has two possible results(two eigenstates):
 ``` math
 |\psi\rangle
 =
@@ -389,6 +431,9 @@ so
 |1\rangle\langle1|
 \right)
 ```
+
+
+
 # others temp notes
 Locality is based on relativity. There's nothing to reject. But Reality Criterion, Bohr says it is a wrong axiom in the first place. He thinks **prediction with certainty without disturbing** can't be seen as **pre-existing reality**. This mean if you can predict moon is there(and it is there) doesn't mean the moon is pre-existing.
 
