@@ -259,10 +259,10 @@ As long as we define Q(t) is reality. So velocity operator doing on wave functio
 \boxed{ \frac{d\mathbf Q}{dt} = \mathbf v(\mathbf Q,t) = \frac{\hbar}{m} \mathrm{Im} \left( \frac{\nabla\psi}{\psi} \right)_{\mathbf x=\mathbf Q}}
 ```
 
-## Decoherence
+## Decoherence (part 1)
 This idea is very important, because it somehow replace "collapse" idea in modern physics. Most modern quantum interpretation use this idea as basic rule, like New Coppenhagen, multiple-universe, and other lot. 
 
-Well, first of all, we are gonna talk about what is **Coherence**. Coherence is nothing special but just two wave have different phase, and when they superposite each other, they would have counstructive interference or destructive interference. 
+Well, first of all, we are gonna talk about what is **Coherence**. Roughly speaking, coherence is just phase difference between waves components in a big wave. Phenomentally, if a wave that has cohernnce, it would have counstructive interference or destructive interference. The details would be discussed latter in Decoherence part 3.
 
 [!NOTE] 
 Remember, coherence is not a yes, or no, you can't say if they have coherence or not. You can only say how much coherence they have. In physics and math, it has a strict definition. But we are not gonna talk bout this here.
@@ -340,11 +340,19 @@ Moreover, **or** in set theory is **Union** which is written as $A \cup B$. Foun
 
 This idea is totally can be transfer into wave theory. When you have two waves superposite each other, you can see the situation as "or" mathematically structurely.
 
-This idea can be used in 'AND' logic as well! when you say "A and B", you are actually doing combination of A and B, which is naturally multiplication! Moreover, you can use Cartesian product to operate it! And finally goes to tensor product!
+Similar idea can be used in 'AND' logic as well! when you say "A and B", you are actually doing combination of A and B in set theory, which is **Intersection** '∩', so as naturally "multiplication"! Moreover, you can use Cartesian product to operate it! 
+
+And this makes perfect sense that when we say that $\psi_A$ and $\psi_B$ are separately independent with each other, they can be written into a simple multiplication!
+``` math
+\Psi(x, y) = \psi_A(x) \psi_B(y)
+```
+The multiplication conlusion is not just for wave. It can be anything else! But, in here, we only talk about wave function here.
 
 
-
+## Decoherence(part 2)
 But wait a second! How do we have entanglement? I mean what produces entanglement at first?
+
+For now, we have already know what entanglement is, but exactly cause entanglement physically?
 
 Well, Suppose we have two system A and B, you can write Hamiltonian of combinational system as:
 ``` math
@@ -367,7 +375,20 @@ Mostly, we would write it as interaction potential
 ``` math
 H = H_A+H_B+V_int(q_A, q_B)
 ```
-If the interaction potential $V_int$ mixed so deep, so the resulting state cannot be expressed as a tensor product of A and B. We say that A and B are entangled with each other.
+If the interaction potential $V_int$ mixed so deep, so the resulting state cannot be expressed as $\Psi = \psi_A \otimes \psi_B$, naturally, it just causes the so called entanglement here.
+
+## Decoherence(part 3)
+We have ideas about entanglement and what causes entanglement. Now, we are gonna talk about how entanglement lower the value of coherence.
+
+When system S entangles with environment E. And you focus observation on S or E, you would see that the coherence is getting lower. This is called Decoherence as we know.
+
+We have roughly talked about coherence. Now, we are gonna define precisely about what **coherence** is. For example, the simplest situation:
+``` math
+|\psi\rangle=\frac{1}{\sqrt{2}}\left(|0\rangle+e^{i\phi}|1\rangle\right)
+```
+
+
+
 
 
 
