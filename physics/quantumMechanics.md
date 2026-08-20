@@ -262,7 +262,7 @@ As long as we define Q(t) is reality. So velocity operator doing on wave functio
 ## Decoherence (part 1)
 This idea is very important, because it somehow replace "collapse" idea in modern physics. Most modern quantum interpretation use this idea as basic rule, like New Coppenhagen, multiple-universe, and other lot. 
 
-Well, first of all, we are gonna talk about what is **Coherence**. Roughly speaking, coherence is just phase difference between waves components in a big wave. Phenomentally, if a wave that has cohernnce, it would have counstructive interference or destructive interference. The details would be discussed latter in Decoherence part 3.
+Well, first of all, we are gonna talk about what is **Coherence**. Roughly speaking, coherence is just "how stablized is the phase difference between waves components in a whole wave". In phenomenon, if a wave that has coherence, it would have some counstructive interference or destructive interference phenomenon. The details about coherence would be discussed latter in Decoherence part 3.
 
 [!NOTE] 
 Remember, coherence is not a yes, or no, you can't say if they have coherence or not. You can only say how much coherence they have. In physics and math, it has a strict definition. But we are not gonna talk bout this here.
@@ -382,11 +382,15 @@ We have ideas about entanglement and what causes entanglement. Now, we are gonna
 
 When system S entangles with environment E. And you focus observation on S or E, you would see that the coherence is getting lower. This is called Decoherence as we know.
 
-We have roughly talked about coherence. Now, we are gonna define precisely about what **coherence** is. For example, the simplest situation:
+We have roughly talked about coherence. Now, we are gonna define precisely about what **coherence** is. For example, the simplest situation, suppose we have two components of wave:
 ``` math
 |\psi\rangle=\frac{1}{\sqrt{2}}\left(|0\rangle+e^{i\phi}|1\rangle\right)
 ```
+If $\phi$ is constant, then it means the phase difference is stablized, we define it as coherence is 1 here which means perfect coherence.
 
+But of couse, we can have infinity components, so how do we represents the stablization of the phase difference here? It turns out, we use statisics. 
+
+Well, I came up with an obvious idea that uses standard deviation of all the possible phase difference
 
 
 
