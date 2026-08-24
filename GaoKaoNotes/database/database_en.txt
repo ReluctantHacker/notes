@@ -1,0 +1,708 @@
+|#############################################################################################################|
+## 1. Basic Types of Databases
+	A. Hierarchical
+		a. Tree structure
+		b. Example: file system(naturally a tree structure)
+	B. Network
+		b. Network structure; nodes can be interconnected
+	C. Relational
+		c. SQL-based; also the most widely used
+	D. Object-oriented
+		d. Uses the concept of classes in programming languages to store data
+
+|#############################################################################################################|
+## 2. Database Architectures
+	A. Standalone
+	B. Terminal-based (in abstract level, it's pretty much a special case of master-slave. But here's a difference you noticed, a so called terminal is just a machine that can operate the central machine and also display the computing result of central machine, but itself doesn't have ability to compute)
+	C. Master-slave (client-server)
+		a. The common architecture used in general applications
+	D. Distributed Database (A distributed database is a single logical database whose data and/or processing are distributed across multiple physical database nodes. Well actually, A distributed database is a subset or a specific specialization of a distributed system. For example, you cut a game into parts, and  installed them into different computers, like Computer A runs the Login/Authentication services; Computer B runs the Game World/Physics engine; Computer C runs the inventory/item database; Computer D runs the Chat sytem. But for remote players, they only see a single game. Traditionally, people distribute the data from different computers but not distribution of functions like the game example. But nowday, modern cloud database use function distribution as well.)
+		a. Consists of multiple database servers
+		b. When users access data, the data may come from different servers
+		c. Better efficiency and lower server workload, but more difficult to build
+		d. Transparency:
+			I. In a distributed system, **transparency** means that the system hides its internal details from users or applications, making it appear as a single, unified system. The goal is to simplify system usage and management so that users and applications can focus on functionality rather than underlying implementation details. Transparency usually includes(This classification isn't that important to users, but for developers, they are like some different problems that needs to be complished one by one. However, the idea of transparency is not just for distributed system, any normal system can use those ideas as well. It is just that they don't use those ideas that often.):
+
+				🤔. Access Transparency:
+					😄. Users do not need to care where data is stored or how it is accessed; they only need to use a unified interface to access the data.
+				🤔. Location Transparency:
+					😄. Users do not need to know the actual location of data or services; they can access them through unified naming. Even if the location changes, users are not affected.
+				🤔. Mobility Transparency:
+					😄. Users can move within the system without affecting their ability to access data or services. The system automatically handles resource movement and reconfiguration without user intervention.
+				🤔. Redirection Transparency:
+					😄. The system can automatically redirect requests to the most appropriate resource or service according to workload and resource availability.
+				🤔. Failure Transparency:
+					😄. The system can automatically handle failures and errors and provide recovery mechanisms, so users do not need to be aware of system failures or errors.
+
+	E. Difference between Distributed System and Cluster System
+		a. Cluster System ----> All hosts have a complete system, and they work on the same task simultaneously to achieve higher processing speed. **It's actually a subset concept of distributed system!**
+			I. A **Cluster System** is a system composed of multiple interconnected computers (nodes) that cooperate as a single unified system. Cluster systems are usually used to **improve system performance, availability, and fault tolerance**. Characteristics include:
+
+				🤔. Shared Storage: Cluster nodes usually share storage devices, so all nodes can access the same data.
+				🤔. Tight Coupling: Nodes usually communicate through high-speed networks (such as Gigabit Ethernet or InfiniBand), resulting in low communication latency.
+				🤔. Centralized Management: Cluster systems are usually coordinated by a centralized scheduler or cluster-management software.
+				🤔. Applications: High-performance computing (HPC), supercomputers, database clusters, Web server clusters, etc.
+
+		b. Distributed System ----> System components are distributed among different hosts and appear to single system to users.(This is the only definition, nothing more, the characters below are some common ones that actually in real applications, but they are not definitions, don't misunderstand it, it's Very important) The distributed system is everywhere nowaday. The common frontend and backend webs are one sort of it which makes our internet browsing experience mostly based on distributed system.
+			I. A **Distributed System** consists of multiple independent computers that cooperate through a network, while each computer remains an independent entity. **Distributed systems aim to provide scalability, fault tolerance, and geographical distribution.** Characteristics include:
+
+				🤔. Independent Nodes(only often): Each node is independent and can have its own storage and computing resources.
+				🤔. Loose Coupling(only often): Nodes communicate through networks such as the Internet, where latency is higher and less stable.
+				🤔. Decentralized Management(only often): Distributed systems generally do not have a single centralized management entity; nodes cooperate autonomously.
+				🤔. Applications(only often): Distributed file systems (such as Google File System), distributed databases (such as Cassandra and DynamoDB), content delivery networks (CDNs), etc. In fact, familiar Web development is also an example of a distributed system: the front end and back end are different components distributed across different hosts, with high cohesion within each component and low coupling between components (they do not depend heavily on each other and operate independently).
+
+		c. Main differences (call this a difference is weird! because cluster system is a subset of distributed system. We can only say in "often!" speaking, that's a very important conceptual distinguishment. I made wrong notes before, kinda lazy to modify everything.)
+			I. Coupling:
+				🤔. Cluster System: Tightly coupled; nodes have low communication latency and usually use high-speed networks.
+				🤔. Distributed System(often): Loosely coupled; nodes generally have higher communication latency and may communicate over wide-area networks.
+			II. Management:
+				🤔. Cluster System: Centrally managed and coordinated by a cluster-management system.
+				🤔. Distributed System(often): Decentralized management; nodes cooperate autonomously.
+			III. Storage:
+				🤔. Cluster System: Usually uses shared storage, with all nodes accessing the same data.
+				🤔. Distributed System(often): Nodes may have their own storage, and data is distributed across multiple nodes.
+			IV. Applications:
+				🤔. Cluster System: Suitable for high-performance computing and low-latency applications, such as HPC and database clusters.
+				🤔. Distributed System(often): Suitable for applications requiring scalability, geographical distribution, and fault tolerance, such as distributed databases and distributed file systems.
+			V. Fault tolerance:
+				🤔. Cluster System: Achieves high availability through redundancy and failover mechanisms.
+				🤔. Distributed System(often): Achieves fault tolerance and high availability through replication, sharding, and consistency protocols (such as Paxos and Raft).
+
+		d. Examples
+			I. Cluster System examples(because we know all cluster systems are also distributed system, so the examples below, of course, are all distributed systems):
+				🤔. Hadoop YARN Cluster: Used for distributed data processing, but essentially a cluster system because its nodes are tightly coupled and centrally managed.
+				🤔. Oracle RAC (Real Application Clusters): A highly available and high-performance database cluster system.
+			II. Distributed System examples:
+				🤔. Google File System (GFS): A distributed file system in which data is distributed across multiple nodes.
+				🤔. Apache Kafka: A distributed messaging system in which nodes communicate over a network and operate independently.
+
+		e. Summary(again this summary is wrong, but an often comparasion):
+			I. Although Cluster Systems and Distributed Systems both involve cooperation among multiple computers, they differ significantly in coupling, management, storage, and application scenarios. Understanding these differences helps in choosing the correct system architecture. Summary:
+
+				🤔. Cluster System
+					😄. High coupling: Nodes are tightly connected through high-speed networks and usually use specialized hardware and software for fast communication and coordination.
+					😄. Cooperative operation: Nodes need to cooperate to provide the overall system functionality. If one node fails, other nodes can usually take over its tasks, coordinated by cluster-management software.
+					😄. Shared resources: Nodes usually share storage and other resources, and all nodes can access the same storage devices.
+					😄. Cannot usually operate independently: A single node normally cannot perform the complete work of the whole system and depends on other nodes in the cluster.
+				🤔. Distributed System
+					😄. Low coupling: Nodes are connected through networks such as the Internet. Communication latency is generally higher and less stable. Nodes may be geographically distributed, even across different countries or regions.
+					😄. Independent operation: Each node is an independent entity and can autonomously perform its assigned tasks. It may continue operating even if other nodes fail.
+					😄. Independent resources: Each node has its own storage and computing resources. Data is distributed among multiple nodes, and each node can independently manage and store its own data.
+					😄. Decentralized management: Distributed systems generally do not have a single centralized management entity. Nodes coordinate through consistency protocols such as Paxos and Raft.
+				🤔. Another summary
+					😄. Cluster System emphasizes high performance, low latency, and tight cooperation among nodes. It is suitable for high-performance computing and applications requiring fast response.
+					😄. Distributed System emphasizes scalability, fault tolerance, and geographical distribution. It is suitable for large-scale, highly fault-tolerant, geographically distributed applications.
+					😄. A distributed system distributes different components of a system among different hosts, whereas a cluster system lets multiple hosts work together on the same task with essentially the same system capabilities. An intuitive analogy: a distributed system is like a company divided into several departments with different functions, while a cluster system is like combining several small companies with the same function to handle the same work together.
+
+	F. Cluster Database vs. Distributed Database: **Cluster database has nothing to do with cluster index — do not confuse them!**
+		a. Database Cluster
+			I. A Database Cluster consists of multiple database servers (nodes) working together to improve database performance, availability, and fault tolerance. Common characteristics:
+
+				🤔. High Availability: Redundancy and failover mechanisms ensure that the system can continue operating even if one node fails.
+				🤔. Load Balancing: Database queries and write requests are distributed among multiple nodes to spread the workload and improve overall performance.
+				🤔. Data Consistency: Synchronous or asynchronous replication is used to keep data consistent across nodes.
+				🤔. Common applications: OLTP (Online Transaction Processing) systems and systems requiring high availability and high throughput.
+		b. Distributed Database
+			I. A Distributed Database stores database data across multiple geographically separated servers or data centers for distributed storage and processing. Main characteristics:
+
+				🤔. Data Sharding: Data is divided into multiple fragments (shards), with each shard stored on a different server to achieve horizontal scalability.
+				🤔. Geographical Distribution: Data is distributed across different locations to reduce latency, improve access speed, or comply with data-sovereignty regulations.
+				🤔. Data Replication: Data is usually replicated across multiple nodes to improve availability and fault tolerance.
+				🤔. Common applications: OLAP (Online Analytical Processing), big-data processing, and geographically distributed applications.
+
+|#############################################################################################################|
+## 3. Basic Database Design Process
+	A. Requirements Analysis
+		a. Collect and analyze user requirements.
+		b. Determine the types, scope, and size of the data.
+		c. Define requirements for data integrity, consistency, and security.
+	B. Conceptual Design
+		a. Create an Entity-Relationship Diagram (ERD).
+		b. Determine constraints among entities, attributes, and relationships.
+		c. Design data normalization and denormalization.
+	C. Logical Model
+		a. Create relational schemas.
+		b. Define primary keys, foreign keys, and indexes.
+		c. Design data integrity constraints.
+	D. Physical Model
+		a. Select a database management system (e.g., MySQL, Oracle).
+		b. Create tables, views, and indexes.
+		c. Design data storage and query strategies.
+	E. Implementation and Testing
+		a. Import data.
+		b. Perform functional and performance testing.
+		c. Ensure data consistency and security.
+
+|#############################################################################################################|
+## 3. ER Model (ER Diagram)
+Reference:
+Complete explanation of graphical notation:
+https://www.conceptdraw.com/examples/erd-double-line
+Weak entity relationships, "total participation" and "partial participation":
+https://faculty.stust.edu.tw/~jehuang/oracle/ch2/2-1.htm
+Discussion:
+https://stackoverflow.com/questions/19781294/whats-the-difference-in-notation-for-total-participation-and-recursive-relation
+
+	A. Chen's Notation (concepts that are easy to forget or confuse)
+		a. Weak Entity
+			I. A weak entity must depend on another entity to exist. For example, in a student database, a "Student Parent" entity depends on the "Student" entity. If Student A is removed from the database, Student A's parent entity naturally no longer exists.
+			II. Represented by a double rectangle (an outer border).
+		b. Weak Relationship: The relationship between an entity and a weak entity is represented by a double diamond (an outer border); an ordinary relationship uses a normal diamond.
+
+		c. "Derived Attribute" means an attribute that can be derived from other attributes. For example, a zodiac sign can be derived from a person's date of birth. A derived attribute is represented by a "dashed ellipse."
+
+		d. "Multivalued Attribute" means an attribute that can have multiple values, such as a skill attribute that can contain several skills. A multivalued attribute is represented by a "double ellipse."
+
+		e. "Total Participation" and "Partial Participation"
+		reference:
+		https://faculty.stust.edu.tw/~jehuang/oracle/ch2/2-1.htm
+			I. Suppose entities A and B have a relationship R. If every instance of A must participate in R, then A has **total participation** in R, represented by a double line. If an instance does not have to participate in R, it has **partial participation**, represented by a single line. The same applies to B.
+			II. A weak entity C must depend on an entity D. In their relationship R, C must have total participation in R (while D does not necessarily have total participation). Therefore, in an ER diagram, a weak entity has at least one double line, and this double line points to the identifying relationship connecting it to its "owner" entity.
+
+	B. Crow's Foot
+
+	C. Three principles of ERD design:
+		a. Identify and list all entities.
+		b. Identify and list all attributes corresponding to each entity.
+		c. Identify all relationships among entities and list them.
+		d. Draw the ERD according to the list above.
+
+	D. Practical design examples:
+		https://medium.com/pierceshih/%E7%AD%86%E8%A8%98-%E5%AF%A6%E9%AB%94%E9%97%9C%E8%81%AF%E5%9C%96-87c3ecbc5ff0
+		https://www.mis.nsysu.edu.tw/db-book/pro_ch3.html
+
+	E. EER Model (Enhanced ER Model)
+	reference:
+	http://uml.org.cn/sjjm/Chapter10-4.pdf
+
+|#############################################################################################################|
+## 4. Database Design
+	A. Normalization
+	reference:
+	https://stackoverflow.com/questions/723998/what-are-database-normal-forms-and-can-you-give-examples/724032#724032
+		a. First Normal Form (1NF): Split fields that can be split, and do not have repeating data; in other words, a primary key is needed.
+			I. Every non-key attribute should be dependent on the key.
+		b. Second Normal Form (2NF): Attributes that are only partially dependent on the primary key must be separated.
+			I. Every non-key attribute should be dependent on the key and the whole key.
+		c. Third Normal Form (3NF): If an attribute is not directly dependent on the primary key, but depends on another attribute that is fully dependent on the primary key, that attribute should also be separated.
+			I. Every non-key attribute should be dependent on the key, the whole key, and nothing but the key.
+		d. BCNF ---> Every attribute (including non-key and key attributes) should be dependent on the key, the whole key, and nothing but the key.
+		reference:
+		The following explanation has an excellent example:
+		https://www.youtube.com/watch?v=VWnKUKH4tLg
+		Another explanation, but not very good (the example has problems!):
+		https://stackoverflow.com/questions/8437957/difference-between-3nf-and-bcnf-in-simple-terms-must-be-able-to-explain-to-an-8
+
+			I. "Candidate Keys" ---- A set of attributes that can uniquely determine a record (there may be multiple candidate keys). Candidate keys do not contain redundant attributes; candidate keys are a subset of superkeys.
+			II. "Superkeys" ---- A set of attributes that can uniquely determine a record (there may be many); redundant attributes are allowed.
+			III. "Functional Dependency" ---- Y depends on X, written as X -> Y. Remember! X -> Y means that once X is determined, Y is also determined. It does NOT mean that when X changes, Y must change! For example, a person's name depends on their ID number: once the ID number is determined, the name is determined. You cannot have ID = 1 and then have the name be either Wang or Mei; that would mean the name does not depend on the ID. I previously thought X -> Y meant "whenever X changes, Y must also change." That understanding is completely wrong!!! For example, different ID numbers can still belong to people with the same name. People can have the same full name. Therefore, that interpretation of dependency is incorrect!!!
+			IIII. "Closure" ---- This is also a set-theoretic concept. Suppose the elements of a set S remain within the set after an operation F; then S is closed under F. If S is not closed under an operation, we can usually find the smallest closed set containing S. This smallest closed set is called the closure of S (with respect to the operation).
+
+		e. Fourth Normal Form (4NF): "BCNF + remove all multivalued dependencies (MVDs)" ----> Multivalued dependency: In a relation R with at least three attributes, R(A,B,C), where the primary key is ABC, A corresponds to multiple values of B, A corresponds to multiple values of C, and B and C are independent.
+		The following explanation is very good. Its example of a relation satisfying BCNF but not 4NF is particularly useful:
+		https://en.wikipedia.org/wiki/Fourth_normal_form
+			I. Intuitive explanation of 4NF: If A and B have a one-to-many relationship, and A and C also have a one-to-many relationship, while B and C are independent, then they should be split (or separated) into two tables: (A, B) and (A, C).
+
+			II. A question I am curious about: A and B are 1-to-many, but B to A is also 1-to-many in the sense of the relationship viewed in the opposite direction. The same applies to A and C. In other words, they form a many-to-many relationship. How do we decide which side is the main decomposition target? Could I instead decompose into (B, A) and (B, C)?
+
+		f. Fifth Normal Form (5NF)
+
+		e. Finding Candidate Keys when Functional Dependencies are Known (remember: candidate keys are minimal subsets of superkeys; there may be many candidate keys. We can find superkeys and then identify the candidate keys)
+			🤔. Question 1:
+				R = {A, B, C, D, E}, functional dependencies: A->B, ED->A, BC->E. Candidate keys are {A, C, D}, {B, C, D}, {C, D, E}.
+
+				Solution:
+					The idea is simple if we proceed step by step.
+					First, find all superkeys without considering dependencies (which is only R itself):
+					{A, B, C, D, E}
+					Then find superkeys considering one dependency at a time:
+					{A, C, D, E} (remove B because A->B; B depends on A)
+					{B, C, D, E} (remove A because ED->A; A depends on ED)
+					{A, B, C, D} (remove E because BC->E; E depends on BC)
+					Then consider one additional dependency based on the results above:
+					{C, D, E} (starting from {A, C, D, E}, consider ED->A)
+					{B, C, D} (starting from {B, C, D, E}, consider BC->E)
+					{A, C, D} (starting from {A, B, C, D}, consider A->B)
+					No more attributes can be removed according to the dependencies. Therefore the superkeys are:
+					{A, B, C, D, E}, {A, C, D, E}, {B, C, D, E}, {A, B, C, D}, {C, D, E}, {B, C, D}, {A, C, D}
+					The candidate keys are the minimal subsets:
+					{C, D, E}, {B, C, D}, {A, C, D}
+
+			🤔. Question 2:
+				R = {A, B, C, D}, functional dependencies: D->B, AB->D, AB->C, C->A. Candidate keys are {C, D}, {A, B}, {B, C}, {A, D}.
+
+				Solution:
+					Use exactly the same method as in the previous question to find all superkeys:
+					{A, B, C, D}
+					{A, C, D} (according to D->B)
+					{A, B, C} (according to AB->D)
+					{A, B, D} (according to AB->C)
+					{B, C, D} (according to C->A)
+					{C, D} (according to D->B, C->A)
+					{A, B} (according to AB->D, AB->C)
+					{B, C} (according to AB->D, C->A)
+					{A, D} (according to AB->C, D->B)
+					{A, B} (according to AB->C, AB->D)
+					{C, D} (according to C->A, D->B)
+					After removing duplicates, the candidate keys are:
+					{C, D}, {A, B}, {B, C}, {A, D}
+
+		f. Decomposition
+			I. When decomposing a table, we want a **lossless join**, meaning that joining the decomposed tables does not lose any data. A lossless join is achieved when "when one table is decomposed into two tables, their common attributes form the primary key of at least one of the two tables!" (This is essentially the intuitive way decomposition is usually performed.) Lossless join can preserve data integrity, reduce data redundancy, prevent update anomalies, improve query performance, and enhance data independence.
+
+	B. Index
+		a. Basic explanation: Why can an index increase search speed? It is not difficult to understand. If data is stored in a database without any data structure, searching uses linear search, with time complexity O(n). If a B-Tree (balanced m-way search tree) index structure is used, the search complexity naturally improves to O(log(n)).
+
+		b. Disadvantage: Although indexes improve search efficiency, INSERT and UPDATE operations become slower because the index structure also needs to be maintained. Without an index, data can simply be inserted without worrying about maintaining the index structure.
+
+		c. Clustered Index, Non-clustered Index
+		reference:
+		https://www.youtube.com/watch?v=YuRO9-rOgv4
+			I. To understand the difference, we first need to know about B+ trees. Most database indexes actually use B+ trees (the B-Tree mentioned earlier was mainly for explanation; technically, B+ tree is more appropriate). B+ trees reduce tree height (improving search efficiency) by storing values in leaf nodes while other nodes store keys.
+			II. The ordering of a clustered index corresponds to the actual physical ordering of the data, whereas the ordering of a non-clustered index does not and cannot determine the physical ordering of the actual data. Therefore, a table can contain many non-clustered indexes but only one clustered index.
+			III. Clustered indexes make insertion slower but queries faster; non-clustered indexes make insertion faster but queries slower (although both are faster than having no index).
+
+|#############################################################################################################|
+## 5. Transaction
+No time left... Besides the lecture notes, remember to read:
+https://zhuanlan.zhihu.com/p/133823461
+	A. ACID (Atomicity, Consistency, Isolation, Durability)
+	reference:
+	https://lance.coderbridge.io/2021/04/24/short-what-is-acid/
+
+		a. Atomicity
+			I. A transaction is the smallest unit and cannot be further divided. Operations within a transaction either all succeed or all fail.
+		b. Consistency
+			I. The operations of a transaction must be consistent with the rules of the real world.
+		c. Isolation
+			I. Transactions are independent of each other and do not interfere with one another.
+		d. Durability
+			I. After a transaction commits, its results should be persistent.
+
+	B. Transaction Execution:
+		a. Conceptually, a transaction consists of several of the following five basic operations:
+			I. begin(T): indicates that transaction T begins execution.
+			II. read(X, x): reads data item X from disk into main-memory variable x.
+			III. write(x, X): writes main-memory variable x to disk data item X.
+			IV. commit(T): indicates that transaction T successfully ends.
+			V. abort(T): indicates that transaction T is rejected; all previous actions are rolled back.
+
+	C. Concurrent Transaction Processing (usually used for efficiency; transactions are not executed strictly in sequence)
+		a. Arbitrary interleaving (concurrency): If the same data is accessed, the following problems may occur:
+			I. The Lost Update Problem
+			II. The Dirty Read Problem
+			III. The Non-repeatable Read Problem
+			IV. The Phantom Problem
+			V. To avoid the above problems, transaction isolation is required.
+
+	D. Checkpoint Mechanism:
+	reference:
+	https://www.newton.com.tw/wiki/CheckPoint
+	http://debussy.im.nuu.edu.tw/sjchen/Database/Final/Ch09.pdf
+		1. commit (regardless of which transaction commits) writes the current history_log in the cache, including logs from all transactions, to the history_log on disk. A checkpoint writes both cached data and the cached history_log to disk. Therefore, a checkpoint updates both the disk history_log and the disk data area. Note that every database operation (insert, delete, query, update) affects data in the cache but does not affect the disk data area; only a checkpoint writes cached data to the disk data area.
+		2. When a crash occurs, the database system checks the disk history_log. If T1 has action records after the checkpoint and eventually committed, the system performs redo() for T1's actions after the checkpoint. If T2 has actions after the checkpoint but never committed, the system performs undo() for all of T2's actions recorded in the entire disk history_log, even if some of T2's actions occurred before the checkpoint. This is effectively equivalent to aborting T2. Remember that redo() and undo() operations are themselves recorded in the cached history_log, and when a new commit() occurs later, these undo() and redo() operations are also written to the disk history_log. Furthermore, undo() and redo() operate on the disk data area.
+
+	E. Isolation Levels ----> Used to solve problems that may occur during concurrent transaction processing
+		a. Read Uncommitted
+			I. Allows a transaction to read changes made by other uncommitted transactions.
+			II. Possible problems: Dirty Read, Non-repeatable Read, Phantom Read.
+			III. Advantage: Best performance and lowest overhead.
+			IV. Suitable for scenarios with relatively low consistency requirements.
+		b. Read Committed
+			I. Can only read changes committed by other transactions, preventing dirty reads.
+			II. Possible problems: Non-repeatable Read, Phantom Read.
+			III. Advantage: Good performance with relatively low overhead.
+			IV. Suitable for most applications with moderate consistency requirements.
+		c. Repeatable Read
+			I. Within the same transaction, repeated reads of the same data are guaranteed to be consistent, preventing non-repeatable reads.
+			II. Possible problem: Phantom Read.
+			III. Advantage: Higher isolation with moderate performance overhead.
+			IV. Suitable for systems such as banking systems that require relatively high data consistency.
+		d. Serializable
+			I. Provides the highest isolation level and ensures transactions execute in a serializable manner, avoiding dirty reads, non-repeatable reads, and phantom reads.
+			II. Possible problem: Strict isolation may cause more transaction conflicts and lock contention, resulting in the highest performance overhead.
+			III. Advantage: Strongest data consistency guarantee.
+			IV. Suitable for applications requiring the highest consistency, such as financial transaction systems.
+
+	F. Two-Phase Locking Protocol (2PL) ----> A common concurrency-control protocol used to ensure serializability. It has two phases:
+	reference:
+	https://zhuanlan.zhihu.com/p/133823461
+	https://www.twblogs.net/a/5d407451bd9eee51fbf99a58
+	https://www.itread01.com/articles/1476768602.html
+		a. Basic definition:
+			I. Within "!!!!!!ONE transaction (look at only one transaction, do not consider many transactions together)!!!!!!!", there is a lock phase and an unlock phase; all lock operations occur before unlock operations.
+		b. Basic content:
+			I. Growing Phase:
+				🤔. During this phase, a transaction can acquire locks (read locks and write locks), but cannot release any lock.
+				🤔. When a transaction needs to access a data item, it must first acquire the corresponding lock.
+			II. Shrinking Phase:
+				🤔. During this phase, a transaction can only release locks and cannot acquire new locks.
+				🤔. Once the transaction releases its first lock, it enters the shrinking phase.
+
+		c. Problems that may occur with 2PL:
+			I. If, in a transaction T1, I unlock a resource before committing (which is allowed under basic 2PL as long as all unlocking happens together), and then later abort T1, another transaction T2 may lock and access that resource between T1's unlock and abort. T2 may not know that T1 has aborted and may read a result that should not exist. This causes an error. Therefore, in practice, **Strict Two-Phase Locking (S2PL)** is commonly used.
+
+	F-2. Strict Two-Phase Locking (Strict 2PL)
+		a. Basic definition:
+			I. Within a transaction, the unlocking phase occurs only at COMMIT or ROLLBACK (ABORT).
+		 b. Basic locking mechanism
+			I. Every data item has an associated lock, with three possible states:
+				🤔. SHARED_LOCKED: Before reading a data item ---> readable, not writable
+				🤔. EXCLUSIVE_LOCKED: Before writing a data item ---> neither readable nor writable
+				🤔. UNLOCKED: After processing the data item ---> readable and writable
+			II. Follow the basic locking mechanism:
+				🤔. After an operation is completed, the corresponding lock is not released immediately; all locks are released together only at COMMIT or ABORT.
+
+	G. Deadlock ----> A problematic condition that may occur under 2PL or Strict 2PL
+		a. Conditions:
+			I. Mutual Exclusion:
+				🤔. A resource can be used by only one process at a time.
+
+			II. Hold and Wait:
+				🤔. A process holds at least one resource while waiting for resources held by other processes.
+
+			III. No Preemption:
+				🤔. A resource can only be released voluntarily by the process; it cannot be forcibly taken away.
+
+			IIII. Circular Wait:
+				🤔. Each process waits for a resource held by another process (e.g., P1 waits for P2, P2 waits for P3, P3 waits for P1). This also means a single process cannot have a deadlock.
+
+		b. Example:
+			I. Alice needs resources x and y; Bob also needs x and y.
+			II. Alice locks x; Bob locks y.
+			III. Alice waits for y to be unlocked.
+			IIII. Bob waits for x to be unlocked.
+
+		c. Solutions (in operating systems):
+			reference:
+			https://ithelp.ithome.com.tw/articles/10206472
+
+			I. Prevention
+				🤔. Thoroughly consider possible deadlocks during program design and prevent them by design; this can be complicated.
+			II. Avoidance
+				🤔. Resource-Allocation Graph (RAG) algorithm
+					😄. Use when each resource type has only one instance.
+				🤔. Banker's Algorithm
+					😄. Use when resource types may have multiple instances.
+			III. Detection: Allow deadlocks to occur, but detect and recover from them.
+				🤔. Single instance:
+					😄. Use the wait-for graph algorithm (similar to RAG).
+				🤔. Several instances:
+					🤔. Use a detection algorithm.
+			IIII. Ignore
+				🤔. When a deadlock occurs, the system directly interrupts a process.
+				🤔. Many operating systems use this approach because the first three methods consume resources, while directly interrupting a process may be more practical.
+
+		d. Solutions (in databases; very similar to operating systems):
+			I. Deadlock detection and rollback:
+				🤔. The DBMS periodically checks for deadlocks and rolls back one transaction to resolve the deadlock.
+			II. Deadlock timeout:
+				🤔. Set a timeout period; if a transaction remains deadlocked beyond that time, automatically terminate one transaction.
+			III. Optimize the database and queries:
+				🤔. Use reasonable database design, optimize indexes, and reduce the time transactions hold locks.
+			IIII. Use locking mechanisms:
+				🤔. Use the locking mechanisms provided by the DBMS to manually manage concurrent access among transactions and avoid deadlocks.
+			IIIII. Adjust the transaction isolation level:
+				🤔. Lower the transaction isolation level from Serializable to Repeatable Read or Read Committed.
+			IIIIII. Pay attention to transaction ordering when writing application programs.
+
+|#############################################################################################################|
+## 6. SQL
+reference: 50 practice questions
+https://hackmd.io/@_7vFEnkKTve5g-aFhT8EvQ/Sy-H0QeWr#%E7%B7%B4%E7%BF%92%E9%A1%8C
+	A. SQL commands can mainly be divided into the following types:
+	reference:
+	https://www.geeksforgeeks.org/sql-ddl-dql-dml-dcl-tcl-commands/
+		a. DDL – Data Definition Language ----> Used to define the structure of data (tables, fields, relationships).
+		b. DQL – Data Query Language ----> Mainly SELECT; used to retrieve data.
+		c. DML – Data Manipulation Language ----> Used to manipulate data contents (including insertion and deletion).
+		d. DCL – Data Control Language ----> Used to configure the operation privileges of database users.
+		e. TCL – Transaction Control Language ----> Used to control transactions.
+		f. Since most database operations are performed through applications (e.g., PHP, Java, C#, Python, etc.) and their backend APIs, COMMIT, ROLLBACK, SAVEPOINT, and similar statements are rarely used when directly operating a database, but they are very important in backend API operations.
+
+	B. Common regular expressions
+
+	C. SQL Injection ---- Can refer to the ChatGPT discussion "高普考_資訊處理考科11", where I discussed how different languages handle parameterized queries.
+	reference:
+	https://w.w3schools.com/sql/sql_injection.asp
+		a. Standard methods:
+			I. Use **parameterized queries**. The reference above explains this. Note that different backend-language SQL APIs use slightly different mechanisms, but the basic principle is the same.
+			II. Use **ORM (Object-Relational Mapping)**. You already roughly understand this. ORM itself generally uses parameterized queries and includes mechanisms against SQL injection ----> This is commonly used in modern development because it is simple, fast, and convenient.
+
+|#############################################################################################################|
+## 7. NoSQL
+(Still need to review the basic syntax.) ----> When dealing with huge amounts of data, NoSQL may be better because of high throughput and because it does not impose the same kinds of constraints as SQL databases.
+reference:
+https://www.1ju.org/mongodb/mongodb-limit-record
+Basic tutorial:
+https://medium.com/@ralph-tech/mongodb-%E5%85%A5%E9%96%80-8254939c9383
+	A. Properties:
+		a. Scalability
+			I. Reason: NoSQL databases are designed with horizontal scalability in mind, so storage and processing capacity can be expanded simply by adding more nodes. This is important for large-scale data. For example, Cassandra and HBase use distributed architectures and can scale to hundreds or even thousands of nodes.
+		b. Data Flexibility
+			I. Reason: NoSQL databases can handle many data formats and support flexible data models, such as document models (MongoDB), key-value models (Redis), column-store models (Cassandra), and graph models (Neo4j). This allows them to handle the diversity of big data. For example, MongoDB supports JSON documents, which are convenient for storing and processing semi-structured and unstructured data.
+		c. High Throughput and Low Latency
+			I. Reason: NoSQL databases emphasize high read/write throughput and low-latency data access, which is important for real-time big-data applications. For example, HBase performs well with large numbers of write operations and is suitable for real-time data analysis.
+		d. Suitable for Big Data / Massive Data
+			I. Big Data Analysis vs. Traditional Data Analysis:
+				🤔. Big Data Analysis: ----> Usually deals with unstructured data; data should be analyzable even when it is not rigidly structured.
+					😄. Big data analysis usually uses distributed computing and storage technologies such as the Hadoop ecosystem, Spark, and NoSQL databases to process and analyze huge amounts of data. These technologies can handle high-speed inputgh-capacity storage, and real-time analysis.
+					😄. Big data analysis tends to favor real-time analysis and processing to support rapid decisions and real-time applications (e.g., real-time recommendation and fraud detection). The analysis goals may be more complex and may need to process relationships and patterns across multiple data sources.
+					😄. Because of data diversity and uncertain sources, data quality and consistency may face greater challenges. Additional data cleaning, calibration, and dation may be needed to ensure accuracy. It often involves unstructured data.
+					😄. A significant feature of big-data analysis is its ability to process unstructured and semi-structured data, including text, social-media content, images and videos, and sensor data. Big-data technologies such as Hadoop, Spark, and NoSQL databases use distributed storage and computing to make such processing more efficient and practical.
+
+				🤔. Traditional Data Analysis: ---> Usually uses structured data.
+					😄. tional data analysis is mainly used for historical-data analysis, report generation, BI (Business Intelligence), and other traditional applications. The analysis goals are relatively simple and focus more on detailed reports and trend analysis.
+					😄. Traditional data analysis relies on traditional relational database management systems (RDBMS) and BI tools, such as SQL queries, OLAP analysis, and ETL (Extract, Transform, Load). These tools and technologies are generally used to process structured data d batch analysis.
+					😄. Traditional data analysis mainly focuses on structured data generated inside enterprises, such as sales records, customer information, and financial data. Data types are relatively uniform and easier to manage and process.
+					😄. Traditional data analysis mainly focuses on structured data generated inside enterprises, such as sales records, customer information, and financial data. Data types are relatively uniform and easier to manage and process.
+
+	A. MongoDB
+		a. Basic artecture is conceptually similar to an SQL database; the following are conceptual correspondences:
+			I. database (MongoDB) -> database (SQL DB)
+				🤔. Basic commands:
+					😄. show databases; ---> Show all databases
+					😄. use database_name; ----> Use the specified database; if it does not exist, create it
+			II. Common data structures:
+				🤔. {} represents a JSON document
+				🤔. [] represents an array
+			III. collection (MongoDB) -> table (SQL DB)
+				🤔. Basic commands:
+					😄. show coshow tables;
+					😄. db.collection_name.insert({document_content}) ----> If the collection does not exist, create it. Multiple documents can be inserted at once by using an array.
+					😄. db.collection_name.insertMany([{document_content}, {document_content2}.......]) ----> Same purpose as insert()
+					😄. db.collection_name.insertOne() can insert only one document
+					😄.
+				🤔. Properties:
+					😄. A collection is a collection of multiple JSON documents. It is often displayed using [] arouit is not itself an array; [] is only notation.
+					😄. JSON documents in the same collection do not need to have the same structure. For example, [{test1: "testValue1"}, {example1: "exampleValue", example2: "exampleValue2"}] is completely valid. This is one of its flexible features.
+
+				🤔. Query:
+					😄. db.collection_name.find({query_condition})
+						😄. ex: db.cities.find({capital: true})
+
+					😄. Common comparison operators:
+						😄. $eq: equal
+						😄. $gt: greater than
+						😄r than or equal
+						😄. $in: if in the array
+						😄. $lt: less than
+						😄. $lte: less than or equal
+						😄. $ne: not equal
+						😄. $nin: if not in the array
+						😄. ex: db.cities.find({area: {$gt: 1000}})
+
+					😄. Logical conditions (and, or, not...)
+						😄. and:
+							😄. db.users.find({
+								  "$and": [
+								    { "age": { "$gt": 20 } },
+								    { "hobbies": "reading" }
+								  ]
+								});
+						😄. or:
+							😄. db.users.find({
+								  "$or": [
+				    { "age": { "$lt": 20 } },
+								    { "hobbies": "swimming" }
+								  ]
+								});
+
+						😄. not:
+							😄. db.users.find({
+								  "age": { "$not": { "$eq": 30 } }
+								});
+
+						😄. nor is used to combine multiple conditions; a document matches only when all conditions are false.
+							😄. db.users.find({
+								  "$nor": [
+								    { "age": { "$gt": 20 } },
+								    { "hobbies": "swimming" }
+								  ]
+								});
+						😄. Combine multiple operators to construct compl:
+							😄. db.users.find({
+								  "$and": [
+								    { "age": { "$gte": 20, "$lte": 30 } },
+								    {
+								      "$or": [
+									{ "hobbies": "reading" },
+									{ "hobbies": "swimming" }
+								      ]
+								    }
+								  ]
+								});
+
+				🤔. Update:
+					😄. db.collection_name.updateOne({query_condition}, {$set: {new_content}}) --> Modify the first document matching the condition
+					😄. db.collection_name.updateMany({query_condition}, {$set: {new_content}}) --> Modify aents matching the condition
+
+				🤔. Delete:
+					😄. db.collection_name.deleteOne({query_condition}) ---> Delete the first document matching the condition
+					😄. db.collection_name.deleteMany({query_condition}) ---> Delete all documents matching the condition
+
+				🤔. Aggregate:
+					😄. Basic usage: ---> Put [] inside the aggregate() function, similar to creation syntax.
+						😄. db.article.aggregate([{$group : {_id : "$by_user", num_tutorial : {$sum : 1}}}]) ----> equivalent SQL:
+							SE, COUNT(*) AS num_tutorial
+							FROM article
+							GROUP BY by_user;
+
+						😄. db.employee.aggregate([
+							   { $match: { status: "A" } },
+							   { $group: { _id: "$employee_id", total: { $sum: "$field" } } }
+							]) ----> equivalent SQL:
+							SELECT employee_id, SUM(field) AS total
+							FROM employee
+							WHERE status = 'A'
+							GROUP BY employee_id;
+
+						😄. db.collection.aggregate([
+							  { $match: { field: "value" } }
+							]) ----> equivalent SQL:
+							SELECT * FROM collction
+							WHERE field = 'value';
+
+						😄. db.collection.aggregate([
+							  { $project: { field1: 1, field2: 1, newField: "$oldField" } }
+							]) ----> Used to select specific fields to return, rename fields, or calculate new fields. Equivalent SQL:
+							SELECT field1, field2, oldField AS newField
+							FROM collection;
+
+						😄. db.collection.aggregate([
+							  { $sort: { field: 1 } }
+							]) ----> equivalent SQL:
+							SELECT * FROM collection
+							ORDER BY field ASC;
+
+						😄. dection.aggregate([
+							  { $limit: 5 }
+							]) ----> equivalent SQL:
+							SELECT * FROM collection
+							LIMIT 5;
+
+						😄. db.collection.aggregate([
+							  { $skip: 10 }
+							]) ---> equivalent SQL:
+							SELECT * FROM collection
+							OFFSET 10;
+
+						😄. db.collection.aggregate([
+							  { $group: { _id: "$groupField", maxValue: { $max: "$valueField" } } }
+							]) ---> equivalent SQL:
+							SELECT groupField, MAX(valueField) AS maxValue
+							FROM collection
+							GROUP BY groupeld;
+
+						😄. db.collection.aggregate([
+							  { $group: { _id: "$groupField", minValue: { $min: "$valueField" } } }
+							]) ----> equivalent SQL:
+							SELECT groupField, MIN(valueField) AS minValue
+							FROM collection
+							GROUP BY groupField;
+
+						😄. db.collection.aggregate([
+							  { $group: { _id: "$groupField", avgValue: { $avg: "$valueField" } } }
+							]) ----> equivalent SQL:
+							SELECT groupField, AVG(valueField) AS avgValue
+							FROM collection
+							GROUP BY groupFiel|#############################################################################################################|
+## 8. Data Warehouse
+	A. Definition:
+		a. Usually integrates data from multiple databases. Its purpose is to centrally store and process data from multiple aspects (or multiple systems), whereas an ordinary database usually focuses on a single system.
+
+	B. Difference from a Database:
+	reference:
+	https://stackoverflow.com/questions/3419353/what-is-the-difference-between-a-database-and-a-data-warehouse
+	Pay attention to the "cashew" answer.
+	https://www.zhihu.com/question/24110442
+		a. Database: --> Used to efficiently retrieve, update, and manage data.
+			I. Databases use OLTP (Online Transaction Processing).
+			II. Databases are usually used for online business processing.
+			III. They usually require normalization to save storage space.
+			IV. They are not suitable for analysis (poor efficiency).
+
+		b. Data Warehouse --> A system used to integrate and analyze large amounts of data, usually from different sources.
+			I. Data warehouses use OLAP (Online Analytical Processing).
+ 			II. Data warehouses are used for data analysis, data mining, machine learning, and feature analysis.
+			III. They are often denormalized to reduce the time spent on analysis and improve efficiency.
+			IV. They are suitable for analysis.
+
+	C. Common Operations
+		a. Roll Up / Aggregation: Select certain dimensions and aggregate facts according to those dimensions. In SQL, this can be expressed as SELECT dim_a, aggs_func(fact_b) FROM fact_table GROUP BY dim_a. e.g. Risk-control scenario: likes scenario, decision = REJECT, how many UVs?
+		b. Drill Down: Roll-up and drill-down are opposite operations. Select certain dimensions and break them down into smaller dimensions (e.g., year into month, province into city), then aggregate the facts. e.g. Risk-control scenario: likes scenario, hit Rule A, decision = REJECT, how many UVs?
+		c. Slice / Dice: Select certain dimensions and filter their values according to specific values, turning the original large cube into a smaller cube. e.g. dim_a in ('CN', 'USA'). Risk-control scenario: likes scenario, hit Rules A, B, and C, decision = REJECT, how many UVs?
+		d. Pivot / Rotate: Exchange the positions of dimensions.
+
+|#############################################################################################################|
+## 9. Storage Devices and Architectures
+reference:
+https://blog.csdn.net/heguanghuicn/article/details/79478036
+https://www.iteye.com/blog/wallimn-1290721
+	A. File Server
+	B. DAS (Direct-Attached Storage)
+	C. NAS (Network-Attached Storage)
+		a. Accesses data through TCP/IP and uses industry-standard file-sharing protocols such as NFS, HTTP, and CIFS to provide sharing.
+
+	D. SAN (Storage Area Network) — generally, SAN refers to FC-SAN (Fibre Channel SAN), IP-SAN, etc.
+		a. Basic definition: SAN is a dedicated high-performance network used to connect multiple storage devices so that multiple servers can access them efficiently. SAN uses technologies such as Fibre Channel andCSI to provide high-bandwidth and low-latency data transmission. Although SAN is an independent network, it is usually integrated with an organization's LAN and WAN through servers to form an overall storage solution.
+			I. Fibre Channel ----> uses SCSI:
+			reference:
+			https://en.wikipedia.org/wiki/Fibre_Channel
+			https://www.zhihu.com/question/24669457
+				🤔. Fast but expensive.
+				🤔. It is not based on Ethernet (nor TCP/IP); it is an independent protocol and is not part of the OSI model.
+
+			II.I (Small Computer System Interface):
+				🤔. SCSI is an independent layered system that does not rely on traditional network protocol stacks such as MAC, IP, or TCP. It has its own layered structure and command set (independent of the seven-layer OSI model).
+				🤔. Storage devices such as hard disks have different read/write requirements from ordinary computers, so a specialized protocol was needed to make storage access more efficient; SCSI was created for this purpose.
+				🤔. Used for connection aa transfer between computers and storage devices.
+
+		b. Advantages:
+			I. High Scalability: SAN allows storage capacity to be expanded easily by directly adding storage devices without major changes to the existing architecture.
+			II. High Fault Tolerance: SANs often use RAID (such as RAID 1 mirroring and RAID 5 parity), providing data mirroring, redundancy, recovery, and backup capabilities.
+			III. High Performance: SAN networks use high-bandwidth, low-latency technologies such as Fibre Channel. Fibre Channel Protocol (FCP) transports SCSI commands over Fibre Channel networks, providing fast data transfer suitable for HPC and big-data processing.
+
+		c. Disadvantages:
+			I. High Cost: SAN hardware (such as Fibre Channel switches and storage devices), management software, and maintenance are expensive, making SAN more suitable for large enterprises and organizations requiring high-performance storage solutions.
+
+	E. IP-SAN
+		a. Basic definition: Its architectural concept is the same as SAN, but instead of using Fibre Channel protocols, it uses TCP/IP to transmit data. This greatly reduces deployment and management costs, although performance is generally lower. It uses the iSCSI protocol (FC-SAN uses Fibre Channel and SCSI).
+			I. iSCSI (Internet Small Computer System Interface)
+				🤔. iSCSI is a protocol that encapsulates SCSI commands in TCP/IP packets and transmits them over standard Ethernet.
+				🤔. In IP-SAN, storage devices and servers exchange SCSI commands and data through Ethernet.
+				🤔. IP k devices such as Ethernet switches, routers, and standard network interface cards (NICs) form a storage network using TCP/IP.
+
+		b. Advantages:
+			I. Low Cost: Provides the basic advantages of FC-SAN while using existing Ethernet infrastructure, reducing hardware and maintenance costs.
+			II. Flexibility: Uses standard network equipment and is easy to expand and manage.
+			III. Broad Compatibility: Supports remote storage access and data backup through WANs.
+
+		c. Disadvantages:
+			I. Lower Performance: Although modern Ethernet (such as 10-Gigabit Ethernet) is very fast, it may still be inferior to Fibre Channel in some high-performance applications.
+			II. Network Contention: Shares bandwidth with other network traffic, which may cause congestion and performance degradation.
+
+	F. FC-SAN vs. IP-SAN: Market Advantages?
+	reference:
+	https://cloud.baidu.com/article/2988731
+	https://searchstorage.techtarget.com.cn/6-16857/
+
+|#############################################################################################################|
+## 10. Database Exam Questions
+Multiple-choice questions (not divided by chapter):
+https://www.itest.org.tw/PDF/9912exam/IDD-9912.pdf
+https://www.takming.edu.tw/course/%E4%B8%89%E5%B9%B4%E7%B4%9A%E8%B3%87%E6%96%99%E5%BA%AB.pdf
+
+Multiple-choice questions (divided by chapter):
+
+Essay questions (divided by chapter):
+https://www.mis.nsysu.edu.tw/db-book/pro_ch3.html
+Reference books:
+https://www.mis.nsysu.edu.tw/db-book/pdf/ch1.pdf
+http://debussy.im.nuu.edu.tw/sjchen/Database/Final/Ch03.pdf
+
+Essay questions 2:
+http://debussy.im.nuu.edu.tw/sjchen/Database/Final/Ch06.pdf
+
+|#############################################################################################################|
+## 8.
