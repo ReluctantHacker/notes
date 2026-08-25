@@ -180,7 +180,7 @@ https://stackoverflow.com/questions/19781294/whats-the-difference-in-notation-fo
 	A. Normalization
 	reference:
 	https://stackoverflow.com/questions/723998/what-are-database-normal-forms-and-can-you-give-examples/724032#724032
-		a. First Normal Form (1NF): Split fields that can be split, and do not have repeating data; in other words, a primary key is needed.
+		a. First Normal Form (1NF): Split fields that can be split, and do not have repeating data; in other words, a primary key is needed. (noticed here, a primary key can be composite primary key, doesn't have to be single key, as long as it can uniquely deterime the record!)
 			I. Every non-key attribute should be dependent on the key.
 		b. Second Normal Form (2NF): Attributes that are only partially dependent on the primary key must be separated.
 			I. Every non-key attribute should be dependent on the key and the whole key.
@@ -195,7 +195,7 @@ https://stackoverflow.com/questions/19781294/whats-the-difference-in-notation-fo
 
 			I. "Candidate Keys" ---- A set of attributes that can uniquely determine a record (there may be multiple candidate keys). Candidate keys do not contain redundant attributes; candidate keys are a subset of superkeys.
 			II. "Superkeys" ---- A set of attributes that can uniquely determine a record (there may be many); redundant attributes are allowed.
-			III. "Functional Dependency" ---- Y depends on X, written as X -> Y. Remember! X -> Y means that once X is determined, Y is also determined. It does NOT mean that when X changes, Y must change! For example, a person's name depends on their ID number: once the ID number is determined, the name is determined. You cannot have ID = 1 and then have the name be either Wang or Mei; that would mean the name does not depend on the ID. I previously thought X -> Y meant "whenever X changes, Y must also change." That understanding is completely wrong!!! For example, different ID numbers can still belong to people with the same name. People can have the same full name. Therefore, that interpretation of dependency is incorrect!!!
+			III. "Functional Dependency" ---- Y depends on X, written as X -> Y. Remember! X -> Y means that once X is determined, Y is also determined. It does NOT mean that when X changes, Y must change! For example, a person's name depends on their ID number: once the ID number is determined, the name is determined. You cannot have ID = 1 and then have the name be either Wang or Mei; that would mean the name does not depend on the ID. I previously thought X -> Y meant "whenever X changes, Y must also change." That understanding is completely wrong!!! For example, different ID numbers can still belong to people with the same name. People can have the same full name. Therefore, that interpretation of dependency is incorrect!!! Well mathematically, you can write X->Y as Y=f(x)! 
 			IIII. "Closure" ---- This is also a set-theoretic concept. Suppose the elements of a set S remain within the set after an operation F; then S is closed under F. If S is not closed under an operation, we can usually find the smallest closed set containing S. This smallest closed set is called the closure of S (with respect to the operation).
 
 		e. Fourth Normal Form (4NF): "BCNF + remove all multivalued dependencies (MVDs)" ----> Multivalued dependency: In a relation R with at least three attributes, R(A,B,C), where the primary key is ABC, A corresponds to multiple values of B, A corresponds to multiple values of C, and B and C are independent.
@@ -705,4 +705,5 @@ Essay questions 2:
 http://debussy.im.nuu.edu.tw/sjchen/Database/Final/Ch06.pdf
 
 |#############################################################################################################|
-## 8.
+## 11. Study reference:
+http://jacy.nuu.edu.tw/sjchen/DataBaseMan_Final.html
