@@ -28,12 +28,32 @@ Joseph Priestley is generally credted with first isolating oxygen in relatively 
 
 He heated mercury in a sealed vessel containing air for a long time. He observed:
 ``` math
-\ce{Hg + X(something from air) ->[\Delta] HgO}
+\ce{Hg + X(something from air) ->[\Delta] HgX}
 ```
 The mercury gradually formed a red solid (mercuric oxide, which he called calx).
 
+The important observations were:
 
-His experiment was roughly:
+- The mercury became a solid calx.
+- The air volume decreased.
+- The mercury/calx system gained mass.
+- If the calx was heated strongly, it decomposed:
 ``` math
-\ce{HgO ->[\Delta] Hg + O2}
+\ce{HgX ->[\Delta] Hg + X_2}
+```
+He collected the gas X released from heated mercury calx and found that it supported combustion and respiration unusually well. He call X as **dephlogisticated air**. Although, he still based on theory of phlogiston, the explanation was actually hold: Air can absorb phlogiston. This particular air has had its phlogiston removed, so it can absorb much more phlogiston than ordinary air.
+
+Of course, he didn't know the symbol or equation of chemistry we use above, but he roughly got the idea as I presented.
+
+The problem of phlogiston theory is still that it can't handle some situations very coherently, and without some weird additional assumptions. That's because the premise of the theory is wrong at the first place as we know today. So of course, some weird things would happen. You'll need more and more patches to fix the theory once you do more experiments.
+
+In 1783, Lavoisier actually did the same experiment but realized a totally different inference. He just reverse the explanatory direction. The gas itself is a distinct substance that combines with the burning/calcining material. He called that substance X **Oxygen** and connected this interpretation with quantitive mass measurements, the composition of air, combustion, calcination, and eventually respiration. And his theory can explain more elegant than phlogiston theory.
+
+Ealier, in 1781, Cavendish perform the famous experiments showing that burning inflammable air with ordinary/dephlogisticated air produces water.
+``` math
+\ce{H_2+O_2−>H_2O}
+```
+He may interpreted it as:
+``` math
+\ce{inflammable air+dephlogisticated air->water}
 ```
