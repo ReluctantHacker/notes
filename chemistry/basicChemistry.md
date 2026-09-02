@@ -57,3 +57,21 @@ He may interpreted it as:
 ``` math
 \ce{inflammable air + dephlogisticated air -> water}
 ```
+
+Some big names includes Preistley have already took that inflammable air as phlogiston itself.
+
+This is reasable, In 1766, Cavendish discovered that inflammable air when metals (such as zinc or iron) were dissolved in acids (like hydrochloric or dilute sulfuric acid), they produced a flammable gas that was much lighter than air. According to phlogiston theory, a metal is a compound of "calx (metal ash) + phlogiston." Therefore, when the metal is dissolved by the acid, the "phlogiston" released from the metal was very likely the flammable gas he collected.
+
+Cavendish was not entirely certain about the claim that "hydrogen equals phlogiston." Nevertheless, he never abandoned the phlogiston theory. Even after his famous experiment proved that water is a compound of hydrogen and oxygen, he continued to use the language of "phlogiston theory" to explain his results.
+
+Well, anyway, Lavoisier was the first one who discovered the percentage took by oxygen in air is about 20%.
+
+And more importantly, he is the first one who proposed the **conservation of mass** in chemistry rigorously. 
+
+In ordinary mechanics of physics, pepole generally assumed that an object's mass doesn't mysteriously change during motion or interaction. So mass conservation was often treated as an implicit background assumption. But in chemistry, the story is toally different. Chemical reactions seemed to change the identity and apparent mass of substances—especially when gases were involved(they don't know how to measure mass of gas precisely). So whether matter was actually conserved became an experimental question.
+
+The reason why Lavoisier successfully constructed the conservation mass, because he can infer the mass of gas through the solid compound without directly measure the mass of gas! He knew that gas mixed inside the compound, its mass must be accounted for. This made him possible to weigh the closed system before and after.
+
+However, phlogiston theory failed to that.  In the phlogiston framework, combustion/calcination is a decomposition—the solid (metal) breaks down into calx + phlogiston. The phlogiston leaves the solid and escapes into the air (or is "absorbed" by the air as a passive sponge).
+
+Under this view, the gas is not a reactant—it's just a passive receiver. The metal never gains anything from the air; it only loses phlogiston. So they had absolutely no conceptual reason to think that the air's mass mattered to the solid's weight. When air lost exact weight that the metal gains, they think the weight is actually the one of phlogiston's. And that's why they failed.
