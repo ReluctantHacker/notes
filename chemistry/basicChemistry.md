@@ -51,9 +51,9 @@ In 1783, Lavoisier actually did the same experiment but realized a totally diffe
 
 Ealier, in 1781, Cavendish perform the famous experiments showing that burning inflammable air with ordinary/dephlogisticated air produces water.
 ``` math
-\ce{H_2+O_2−>H_2O}
+\ce{H_2 + O_2 −> H_2O}
 ```
 He may interpreted it as:
 ``` math
-\ce{inflammable air+dephlogisticated air->water}
+\ce{inflammable air + dephlogisticated air -> water}
 ```
