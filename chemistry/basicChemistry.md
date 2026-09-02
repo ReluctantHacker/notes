@@ -28,7 +28,7 @@ Joseph Priestley is generally credted with first isolating oxygen in relatively 
 
 He heated mercury in a sealed vessel containing air for a long time. He observed:
 ``` math
-ce\{Hg + X(something from air) ->[\Delta] HgO}
+\ce{Hg + X(something from air) ->[\Delta] HgO}
 ```
 The mercury gradually formed a red solid (mercuric oxide, which he called calx).
 
