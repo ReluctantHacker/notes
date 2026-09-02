@@ -1,15 +1,15 @@
 # Short History
 ## Four elements
-In Ancient Greek, Big names including Aristole developed a theory called **Four elements**, we all know this is bullshit nowaday, but back then, it's the only theory there. It basically saying that universe is built in four elements which are: Earth, Water, Air, Fire. And they can transfer from one to another through some mystery mechanics.
+In Ancient Greek, Big names including Aristole developed a theory called **Four elements**, we all know this is bullshit nowaday, but back then, it's the only theory there. It basically says sthat universe is built in four elements which are: Earth, Water, Air, Fire. And they can transfer from one to another through some mystery mechanics.
 
 ## Atom theory
-Leucippus and Democritus proposed this at about 500.BC. Every matter is constructed by some kinda of small indivisible particles.
+In Ancient Greek, Leucippus and Democritus proposed this at about 500.BC. Every matter is constructed by some kinda of small indivisible particles.
 
 ## Boyle's theory
 In 16th~17th century. People start to get uncomfortable about four elements through some many experiments that is hard to explained by it. Boyle proposed that "element should be substance that cannot be decomposed further by chemical means.".
 
 ## Phlogiston(燃素) theory
-In eartly 18th AC, Stahl started the idea of Phlogiston idea. Back then, Newton had already developed his famous gravity theory and let people see the power of science. People try to do the same thing in chemistry and find a logical elegant theory to hold. This phlogiston idea can explained a lotta chemistry process without big problem, so it accepted by people then. 
+In eartly 18th AC, Stahl started the idea of Phlogiston idea. Back then, Newton had already developed his famous gravity theory and let people see the power of rationality. People tried to do the same thing in chemistry and find a logical elegant theory to hold. This phlogiston idea can explain a lotta chemistry process without big problem, so it accepted by people then. 
 
 The idea is very simple: "The phlogiston theory posits that combustion occurs because a substance contains 'phlogiston.' Once combustion ceases, it is understood that the phlogiston within the substance has been depleted. And in the process of combustion, a substance release phlogiston, and there must be another substance absorb the releasing phlogiston."
 
@@ -24,3 +24,7 @@ But here's a big problem of the theory. Because of they have assume that Phogist
 In order to explain this, they said "Plogiston has different weight in different substance.", which is , obviously, not a very satisfying explanation.
 
 ## Lavoisier theory
+Joseph Priestley is generally credted with first isolating oxygen in relatively pure form in 1774, which he called "dephlogisticated air". He didn't recognized it as the element oxygen in the modern sense; he interpreted it within phlogiston theory. His experiment was roughly:
+``` chemistry
+\ce{HgO ->[\Delta] Hg + O2}
+```
