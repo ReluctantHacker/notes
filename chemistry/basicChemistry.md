@@ -24,7 +24,16 @@ But here's a big problem of the theory. Because of they have assume that Phogist
 In order to explain this, they said "Plogiston has different weight in different substance.", which is , obviously, not a very satisfying explanation.
 
 ## Lavoisier theory
-Joseph Priestley is generally credted with first isolating oxygen in relatively pure form in 1774, which he called "dephlogisticated air". He didn't recognized it as the element oxygen in the modern sense; he interpreted it within phlogiston theory. His experiment was roughly:
+Joseph Priestley is generally credted with first isolating oxygen in relatively pure form in 1774, which he called "dephlogisticated air". He didn't recognized it as the element oxygen in the modern sense; he interpreted it within phlogiston theory. 
+
+He heated mercury in a sealed vessel containing air for a long time. He observed:
+``` math
+ce\{Hg + X(something from air) ->[\Delta] HgO}
+```
+The mercury gradually formed a red solid (mercuric oxide, which he called calx).
+
+
+His experiment was roughly:
 ``` math
 \ce{HgO ->[\Delta] Hg + O2}
 ```
