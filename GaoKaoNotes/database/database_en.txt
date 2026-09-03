@@ -180,7 +180,7 @@ https://stackoverflow.com/questions/19781294/whats-the-difference-in-notation-fo
 	A. Normalization
 	reference:
 	https://stackoverflow.com/questions/723998/what-are-database-normal-forms-and-can-you-give-examples/724032#724032
-		a. First Normal Form (1NF): Split fields that can be split, and do not have repeating data; in other words, a primary key is needed. (noticed here, a primary key can be composite primary key, doesn't have to be single key, as long as it can uniquely deterime the record!)
+		a. First Normal Form (1NF): Split fields that can be split, and do not have repeating data; in other words, a primary key is needed. (noticed here, a primary key can be composite primary key, doesn't have to be single key, as long as it can uniquely deterime the record!) One more thing needs to be notice is that splitting fields and do not have repeating data actually should be the definition of the data table(or data set) itself! Or so called atomic values. People add those constrains in 1NF conventionally for some convenience. Basically, A data set(or table) should defaultly have spliting fields that can be split and has no repeating data at the first place or can't be called a valid data set.
 			I. Every non-key attribute should be dependent on the key.
 		b. Second Normal Form (2NF): Attributes that are only partially dependent on the primary key must be separated.
 			I. Every non-key attribute should be dependent on the key and the whole key.
