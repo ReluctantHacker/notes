@@ -50,6 +50,19 @@
 
 
 	C. Bluetooth
+        a. Bluetooh與其他常見的重要L2協議比較
+            Ethernet
+              L1 → electrical/optical signals
+              L2 → Ethernet frames, MAC addressing, switching
+
+            Wi-Fi
+              L1 → radio
+              L2 → 802.11 frames, MAC addressing, wireless medium access
+
+            Bluetooth
+              L1 → radio
+              L2 → Bluetooth link-layer mechanisms, device addressing, etc.
+            🤔. Bluetooth並沒有使用MAC address, 而是使用了MAC-like link-layer addressing. 每台設備只要有支援Bluetooth, 都會有Bluetooth Device Address (BD_ADDR). 例如現在的手機通常一定有, 然後藍芽耳機也會有個自己的BD_ADDR. 你可能會懷疑為何不直接使用MAC? 那是因為你的藍芽耳機, 鍵盤, 喇叭有的沒的, 這些東西平常不會需要接上網路, 他自然不需要MAC, 給他們MAC是種浪費. 藍芽在這些應用情況下表現得很好, 優化了short-range + low power + low hardware/implementation cost + sufficient bandwidth for personal peripherals.  核心技術大致使用以下: coordinated time-slot / connection-event communication + frequency hopping
 	D. LTE
 
 |#############################################################################################################|

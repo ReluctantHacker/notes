@@ -1,0 +1,99 @@
+// reference: https://www.cs.nthu.edu.tw/~nfhuang/chap01.htm
+
+1. OSI (Open System Interconnection) model, 
+	a. Description: 
+		I. Divided into 7 layers. Each layer encapsulates the data, with the packet from the upper layer containing the smaller packet from the lower layer, like Russian nesting dolls:
+
+	b. Layers:
+		I. Physical layer: 
+			🤔. Deals with the physical issues involved in communication between hardware devices.
+		II. Data-link layer: 
+			🤔. Handles data encapsulation, basic error-detection mechanisms for the communication channel, and uses the MAC address of the network interface card to determine the path of packets.
+		III. Network layer: 
+			🤔. Handles addressing based on physical/logical location (IP), making up for the fact that the data-link layer can only use MAC addresses, which makes long-distance transmission and intermediate routing difficult.
+		IV. Transport layer: 
+			🤔. Adds port numbers and, based on the network-layer architecture, determines whether communication should be reliable (TCP) or remain unreliable (UDP).
+		V. Session layer: 
+			🤔. Establishes a session space for the users on both sides.
+		VI. Presentation layer: 
+			🤔. Mainly responsible for data encryption and decryption.
+		VII. Application layer: 
+			🤔. You are already very familiar with this one. It mainly includes HTTP, FTP (rarely used nowadays), VoIP (video calls or phone calls in communication software).
+
+2. TCP/IP model, 
+reference:
+https://zhuanlan.zhihu.com/p/268196525
+https://stackoverflow.com/questions/9329105/are-we-using-tcp-ip-or-osi-in-internet
+	a. Description:
+		I. Divided into 4 layers. It can be considered a simplified version of OSI (or, more precisely, inspired by OSI). However, since it was adopted earlier than OSI, most real-world networking applications today are based on the TCP/IP model, which has become the de facto international standard, while OSI is used less in practice and is mainly used for teaching.
+		II. It is abbreviated as TCP/IP because the two core protocols of this protocol suite are TCP (Transmission Control Protocol) and IP (Internet Protocol), which were among the earliest standards adopted in this protocol family.
+
+	b. Layers:
+		I. Network Access layer: Responsible for managing the exchange of data between the host and the network.
+		II. Internet layer: Mainly responsible for solving the communication problem between hosts.
+		III. Transport layer: Provides end-to-end communication functions for application-layer entities, ensuring the ordered transmission and integrity of data packets.
+		IV. Application layer: Provides users with various services they need.
+
+3. 5-layer model, this can also be considered a simplification of OSI, mainly for teaching purposes. It combines OSI Layers 5, 6, and 7 into Layer 5, 
+
+
+4. Communication between layers can be divided into the following types:
+	a. One-to-one multiplexing
+	b. Upward Multiplexing, example below:
+             Application layer
+          ┌──────┬──────┬──────┐
+          │ HTTP │ DNS  │ SSH  │
+          └───┬──┴──┬───┴──┬───┘
+              ↓     ↓      ↓
+          ┌──────────────────┐
+          │  Transport layer │
+          │    TCP / UDP     │
+          └──────────────────┘
+	c. Downward Multiplexing, example below:
+              Network layer
+                  │
+            ┌─────┴─────┐
+            │    IP     │
+            └─────┬─────┘
+                  ↓
+       ┌──────────┴──────────┐
+       │                     │
+   Ethernet                Wi-Fi
+       │                     │
+       ↓                     ↓
+   Interface A           Interface B
+
+5. PDU (Protocol Data Unit) of each layer: The following reference comes from Wikipedia
+	Protocol data units of the OSI model are:
+		The Layer 4: transport layer PDU is the "segment (for TCP)" or the "datagram (for UDP)".
+		The Layer 3: network layer PDU is the "packet".
+		The Layer 2: data link layer PDU is the "frame".
+		The Layer 1: physical layer PDU is the "bit" or, more generally, "symbol".
+
+	Essentially, each layer encapsulates the data. This was already mentioned in the first point of the notes. The "packet" at each layer is given a different name, and their sizes are not necessarily the same.
+
+6. IEEE Project 802 network architecture. It consists of protocols or standards for the "Physical layer" and "Data-link layer". Since these two layers include many different types of transmission methods, such as wired, wireless, LAN, WAN, etc., Project 802 is essentially a collection of many different protocols.
+
+	802.1 : High Level Interface
+	802.2 : Logical Link Control
+	802.3 : CSMA/CD network -- Ethernet
+		a. IEEE 802.3u Fast Ethernet: Fast Ethernet is an Ethernet standard that provides a faster data transmission rate than traditional 10 Mbps Ethernet, reaching 100 Mbps. It uses the same CSMA/CD (Carrier Sense Multiple Access with Collision Detection) media access method as traditional Ethernet.
+
+		b. IEEE 802.3ab Gigabit Ethernet: Gigabit Ethernet is a high-speed Ethernet standard that provides a faster data transmission rate than Fast Ethernet, reaching 1 Gbps. It can use copper cable or fiber optic cable as the physical medium.
+
+		c. IEEE 802.3ae 10 Gigabit Ethernet: 10 Gigabit Ethernet is a higher-speed Ethernet standard that provides a data transmission rate of 10 Gbps, faster than Gigabit Ethernet. It is commonly used in applications requiring higher bandwidth, such as data centers and enterprise networks.
+
+		d. IEEE 802.3af Power over Ethernet (PoE): PoE is a technology that allows both data and electrical power to be transmitted through a single Ethernet cable. It allows network devices such as IP phones, surveillance cameras, and wireless access points to obtain power through the Ethernet network without requiring a separate power cable.
+
+	802.4 : Token-Bus network
+	802.5 : Token-Ring network
+	802.6 : DQDB Metropolitan Area Networks
+	802.7 : Broadband Technical Advisory Group
+	802.8 : Fiber Optic Technical Advisory Group
+	802.9 : Integrated Voice and Data LAN Working Group
+	802.10 : LAN Security Working Group
+	802.11 : Wireless LAN
+	802.12 : Demand-Priority High-Speed LAN (100VG-AnyLAN)
+	802.14 : CATV network
+
+7. Protocols in other layers, such as IP in the network layer, TCP and UDP in the transport layer, and HTTP, FTP, VoIP, etc. in the application layer.
