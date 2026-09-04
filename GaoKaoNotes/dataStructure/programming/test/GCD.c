@@ -6,7 +6,11 @@ int GCD(int n, int m) {
 		return GCD(m % n, n);
 	}
 	return n;
+}
 
+int betterGCD(int a, int b) {
+    if (b==0) return a;
+    return betterGCD(b, a%b);
 }
 
 int main() {
