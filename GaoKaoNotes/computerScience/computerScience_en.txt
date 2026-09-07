@@ -1,0 +1,273 @@
+1. Brief History
+reference: A Brief History of Computers — The Gear Era --PanSci, A Brief History of Computers — The Digital Era --PanSci
+The following PanSci articles contain a lot of extracurricular material. Pick out the key points; read the rest when you have time.
+https://pansci.asia/archives/tag/%E9%9B%BB%E8%85%A6%E7%B0%A1%E5%8F%B2
+https://www.youtube.com/watch?v=FANB4Ubbvgc&ab_channel=%E6%B7%B7%E4%B9%B1%E5%8D%9A%E7%89%A9%E9%A4%A8ChaosMuseum
+    Ā. In fact, when ancient scientists needed to perform relatively high-precision calculations, they often used the method of "lookup tables." For example, logarithms and trigonometric functions were calculated in advance and recorded in tables, and then looked up whenever needed. However, this method only treats the symptoms rather than the root cause, so the invention of calculating machines was still necessary.
+    A. 100 BC, Antikythera mechanism, the ancient Greeks used multiple sets of gears to simulate astronomical movements. The principle was somewhat similar to that of a clock, where the hour and minute hands use different gears.
+    B. 3000 BC, abacus (there is no need to bring up something that is thousands of years old; research it when you have time)
+    C. 1642 AD, French mathematician Blaise Pascal invented the mechanical adding machine Pascaline.
+    D. Leibniz spent nearly 20 years improving Pascal's calculator. He adopted the "stepped drum," also known as the "Leibniz Wheel," allowing mechanical calculators to perform multiplication and division. In addition, Leibniz also conducted research into binary numbers.
+    E. 1822 AD, Charles Babbage began designing the Difference Engine, which could automatically calculate logarithm tables and trigonometric tables and print them out. Babbage later abandoned the Difference Engine because of funding and other technical problems, and instead turned to a more advanced machine that was no longer limited to solving only a single problem: the programmable "Analytical Engine."
+    reference:
+    https://pansci.asia/archives/186892
+        a. Finite difference ---> It is essentially a finite version of differentiation. You already know the concept; you just didn't realize it.
+            I. Differentiation: df(x)/dx = lim_(dx->0) (f(x)-f(x+dx))/dx. If f(x) is a simple polynomial, the analytical solution is easy to obtain. But if it is not, you can no longer rely on the dx->0 limit method. Instead, you have to assume that dx is a finite but small value. This is finite difference, which is a numerical-solution concept. Of course, finite-difference theory contains much more than this; only the most basic concept is mentioned here.
+
+    F. Programmable Computers
+        a. Babbage's inspiration for the programmable computer came from the "loom."
+        reference for "how basic loom works": a shuttle and a comb are needed. After watching the videos, the basic principle becomes immediately obvious:
+        https://www.youtube.com/watch?v=rwwhx7HX8MA&ab_channel=%E4%BF%A1%E8%AA%BC%E5%9F%BA%E9%87%91%E6%9C%83
+        https://www.youtube.com/watch?v=lYGXRYmATks&ab_channel=TextileVlog
+
+        b. More than 100 years before Babbage studied the Analytical Engine, a Frenchman named Vaucanson (the same guy who invented the famous "digesting duck") was commissioned by the government to improve traditional looms and introduced the concept of "programming." This concept of programming came from the "barrel organ" or "music box." The simplest looms are designed for plain fabric: as long as the odd and even threads alternate, the rhythm alternates, and there is nothing particularly complicated about it. But if you want a loom to produce patterned designs, the difficulty increases dramatically. Even before Vaucanson, there was a man named Bouchon who had already attempted something similar. He clearly understood how the cylinder of a barrel organ was made: first, marks were drawn on paper according to the notes on the musical score; the paper was then wrapped around the surface of a cylinder; iron pins were hammered into the marked positions; finally, the paper was removed, and the job was done. However, Bouchon did not simply copy the idea and build another cylinder for a loom. He had another insight: the punched paper already contained the information needed to control the pipes. Turning it into a cylinder was merely an inherited practice from the music box and was not absolutely necessary. Perhaps a loom did not need a cylinder at all, and punched paper could be used to control the raising and lowering of the warp threads? He actually built one, but because the paper tore very easily, the machine was basically useless overall. Three years later, his assistant improved the design by connecting thick pieces of cardboard together, overcoming the problems of paper tearing and limited length. However, because the operating procedure was still very cumbersome, the overall weaving efficiency did not improve much, so it was still basically useless. Many years later, Vaucanson was ordered by the government to continue the project. He based his design on Bouchon's idea, but changed the paper strip so that it wrapped around a large metal cylinder. However, because there were still many limitations, it was still basically useless. Many years later, Jacquard finally succeeded in integrating the ideas into a functional loom.
+        reference:
+        https://www.youtube.com/watch?v=K6NgMNvK52A&ab_channel=VictoriaandAlbertMuseum
+
+        c. Babbage inherited these design ideas and built the Analytical Engine. Babbage's breakthroughs can be found in the reference below. It is more complicated, but essentially his breakthroughs were the following two points:
+        reference:
+        https://pansci.asia/archives/187657
+            I. Use different punched cards to represent different computational operations, achieving the ability to calculate essentially anything.
+            II. Separate the memory unit from the computational unit, making the operation of the machine much more rational.
+
+        d. Because the construction of the Difference Engine had failed, Babbage's Analytical Engine was also rejected by the British government. The British government was unwilling to support Babbage, but he was not alone. A remarkable woman, Ada Lovelace, understood the significance of the Analytical Engine and strongly supported him. Ada also understood the significance of punched cards and designed an algorithm containing loops to calculate "Bernoulli numbers," making her arguably the world's first programmer.
+        e. Babbage's designs ultimately failed to gain popularity. Perhaps the market demand was not yet there, but they were also limited by the computational speed of "gears." This limitation would not be overcome until the era of digital circuits.
+
+    G. At the same time, "analog computers" also began to develop rapidly, such as the planimeter:
+    reference:
+    https://www.youtube.com/watch?v=XQXO6edF6sA&ab_channel=calculatryx
+        a. Maxwell, Thomson, Kelvin, and other giants of physics all participated in improving the planimeter
+        b. Analog computers evolved from devices such as the planimeter and continued to develop until before World War II. They were used for tasks such as solving differential and integral equations, and at one point they were even the only machines capable of solving higher-order differential equations, becoming mainstream tools in research institutions.
+
+    H. 1884 AD, Herman Hollerith used relays and punched cards to design the first electrically powered automatic tabulating machine, which was used for the census and achieved fairly good results. He later founded the famous IBM with another person.
+        a. Principle of Hollerith's punched cards:
+            I. The paper contains many columns and rows, with holes used to record data. Usually, a hole represents 1, while no hole represents 0.
+            II. Holes are punched using a punch-card machine, and the cards are read using a card reader.
+
+    I. With Hollerith, computers were connected to electricity for the first time, but electricity was only used to drive relays for computation. The actual computation still relied on the mechanical action of electromagnets, rather than the electric current itself. Therefore, Hollerith's automatic tabulating machine can only be considered an electrically driven mechanical computer (like everything discussed earlier, it was still mechanical), not an electronic computer. Computers had to abandon mechanical methods and use electric current itself for computation. To accomplish this, the first step was to abandon the familiar decimal system and switch to binary.
+
+    J. 1937 AD, the famous Claude Shannon proposed that all circuits could be represented using binary Boolean algebra, and laid out the basic axioms and operational laws such as commutativity, associativity, etc. He then went further and analyzed different types of complex circuits, proving that they could also be represented using Boolean algebra. Finally, Shannon emphasized that this method was not limited to existing machines, but could also be used to solve all kinds of problems.
+
+    K. Among the pioneers of digital computers, the first to actually build one was the German Konrad Zuse. In the summer of 1936, Zuse turned his family's living room into a workshop and began building the Z1 computer (Zuse originally called it the V1, with V standing for the German "Versuchsmodell," meaning "experimental model." It was later renamed Z1 to distinguish it from Germany's V1 rocket). Zuse designed the Z1 with an arithmetic unit, memory unit, control unit, input/output unit, and paper-tape reader. This design was almost exactly the basic architecture of a modern computer. The only difference was that the Z1's memory unit was used only to store numbers involved in calculations, unlike modern computers, whose memory also stores programs. The Z1's computational procedures, like those of Babbage's Analytical Engine, were recorded on punched paper tape and then transmitted to the control unit by a reader. Later, at the suggestion of a friend, Zuse switched to discarded movie film, which was cheaper and more durable.
+
+    L. A proof of concept for a digital computer was completed in the kitchen — George Stibitz. On a weekend in November 1937, Stibitz brought some components home and assembled them on the kitchen table. He cut open a tobacco tin, cut out several pieces of thin metal, and used them to mount two relays, batteries, and light bulbs onto a wooden board. He then connected everything with wires, creating the first digital adder made from relays. Because it was born in the kitchen, Stibitz's wife simply named it "Model K." Since Stibitz only brought two sets of components home, it could only accept the binary inputs 01 or 10. The addition result was displayed using two light bulbs: lit meant 1, and unlit meant 0. Although this adder was extremely primitive, its significance lay in being a "proof of concept": it demonstrated that circuits built from relays could serve as a digital calculator. Stibitz believed that if he were given more relays, he could build a computer capable of addition, subtraction, multiplication, and division.
+
+    M. John Vincent Atanasoff. Atomic physics was Atanasoff's field of research. He happened to know that British physicist C. E. Wynn-Williams had built a binary counter using vacuum-tube circuits in 1932, capable of detecting particles at extremely high speeds. Therefore, he decided to use vacuum tubes as the components of his computer. However, vacuum tubes were expensive. If he used them throughout the entire machine, the required funding would probably be beyond what he and the school could afford. After weighing the options, Atanasoff decided to use vacuum tubes only in the arithmetic unit, while using capacitors as the memory elements. Capacitors were much cheaper. Although their charging and discharging speeds were slower, memory was not accessed as frequently as the arithmetic unit, so the slowdown was acceptable. The only problem was that the electrical charge in capacitors leaked away quickly, causing the stored information to disappear as well. Atanasoff could not figure out how to maintain the electrical charge in the capacitors. Then, one night in December 1937, he went for a drive to clear his mind, eventually driving about 300 kilometers away to Illinois. He walked into a roadside bar, ordered a drink, and slowly sipped it. Suddenly, inspiration struck, and the charging mechanism for the capacitors appeared in his mind. After overcoming this obstacle, he immediately sketched out the overall architecture and basic specifications of the computer on a napkin. A few hours later, Atanasoff walked out of the bar, satisfied, and slowly drove home, ready to begin building a fully electronic digital computer.
+
+    N. In the spring of 1938, Stibitz of Bell Labs finally received a response from his supervisor. He was asked to invent the "Complex Number Calculator" to deal with problems in telephone communications. Based on the characteristics of complex-number calculations, Stibitz designed the machine with two arithmetic units operating simultaneously, one handling the real part and the other handling the imaginary part. The arithmetic units naturally used relays, more than 400 of them in total, while the memory unit was adapted from an existing crossbar switching system. On September 11, 1940, the American Mathematical Society held its annual meeting at Dartmouth College. Stibitz demonstrated the complex-number calculator, which had already been operating for several months. Notably, several people who would later play important roles in computer development were also present, including John von Neumann, John Mauchly, the inventor of the first general-purpose electronic computer, and Norbert Wiener, the "father of cybernetics."
+
+    O. Bell Labs stopped investing in computer development after releasing the simplified Model VI immediately after Model V. Even so, they continued making many major contributions to computers and networks, including the modem, transistor, mobile communications, satellite communications, and eventually the UNIX operating system and C language. All of these changed the face of the digital age.
+
+    P. "Harvard Architecture" and "Von Neumann Architecture"
+    https://www.zhihu.com/question/586397018?write
+        a. After seeing a computer based on the Harvard architecture XXXXX, von Neumann believed that although the computing speed was fast enough, the preparation process was too cumbersome. Different parts of the computation were implemented by changing hardware wiring, with switches used to implement logical and arithmetic operations.
+
+            In other words, at this point, different instructions were implemented through hardware wiring.
+
+            Later, Professor von Neumann proposed using the same hardware and storing both instructions and data (software) in the hardware (memory). When different instructions needed to be executed, the hardware itself would not need to change; it could simply retrieve different software. Von Neumann therefore proposed several ideas. Other people took these suggestions and made various improvements, yet the credit for this architecture was somehow attributed almost entirely to von Neumann.
+        b. The basic differences between the two architectures:
+        reference:
+        https://www.zhihu.com/question/586397018?write
+            I. Harvard:
+                🤔. Program and data storage space (memory) are separated.
+                🤔. Different buses are used to access instructions and data simultaneously.
+            II. Von Neumann:
+                🤔. Programs and data share the same storage space (memory).
+                🤔. A single address bus and data bus are used.
+                🤔. Von Neumann additionally proposed a basic architecture that became the fundamental form of modern computers:
+                    😄. Input device (input)
+                        😄. Computer software essentially consists of data and instructions, both of which are entered through input devices.
+                    😄. Memory
+                        😄. The input data and instructions are stored in memory, ready to be accessed by the arithmetic unit and control unit.
+                    😄. Arithmetic unit (Arithmetic Logic Unit, ALU) ---> a component of the modern CPU
+                        😄. The arithmetic unit primarily performs operations on data. Under the control of the control unit, it reads data and performs arithmetic and logical operations. Its main component is the "Arithmetic Logic Unit (ALU)."
+                    😄. Control unit ---> a component of the modern CPU
+                        😄. It reads instructions from memory and executes them, controlling the corresponding operations. The arithmetic unit and control unit are the main components of the CPU and correspond, in a sense, to the data and instructions of computer software.
+                    😄. Output device (output)
+                        😄. Outputs the results.
+                🤔. The main idea of the architecture: The core spirit of the Von Neumann architecture is that there must be memory for storing both data and programs, and every memory address must be arbitrarily readable and writable. In addition, there must be computational and logical capabilities, as well as a control unit responsible for transferring data between memory and the arithmetic logic unit. Therefore, the most important characteristic of the Von Neumann architecture is that programs are encoded and stored in memory, treating program instructions as "data" as well. The instructions are read from memory and executed by the arithmetic logic unit, establishing the fundamental principles of computer design.
+                🤔. Von Neumann bottleneck
+                reference:
+                https://blog.csdn.net/guojunxiu/article/details/79942905
+                    😄. Because modern computers usually have CPUs (control unit + ALU) that are much faster than memory, putting instructions and data in the same memory means that only either data or instructions can be read at a time. Usually, there is much, much, much more data than instructions. Therefore, instructions have to wait until data has been transferred from memory to the CPU before they can be transferred. This wastes CPU resources, because at the CPU's speed, both could actually be processed simultaneously. In this situation, the Harvard architecture has an advantage. In fact, modern computers usually use a "Modified Harvard Architecture," typically placing cache memory between the CPU and main memory.
+
+            III. Harvard architecture seems faster than Von Neumann architecture. Why don't modern computers use it?
+            reference:
+            https://www.zhihu.com/question/22406681/answer/3457529102
+
+    Q. Turing Machine
+        a. During World War II, across the Atlantic in Britain, another expert began thinking about similar problems: Alan Turing. In fact, Turing initially studied mathematics, and this story begins with set theory.
+            I. Cantor proposed set theory and studied problems involving infinity.
+            II. Russell's paradox revealed a flaw in set theory.
+                🤔. Let A be the set of all elements satisfying the property P=P(x)=x∉x. Is A∈A?
+                    😄. if A∈A, then P(A)=A∉A, contradiction!!
+                    😄. if A∉A, according to the definition of A, A is the set of all elements satisfying P, so A∈A, contradiction!
+            III. Set theory was modified into "axiomatic set theory."
+            IV. Hilbert wondered: if set theory needs to be axiomatized, is mathematics itself complete? Does it need to be axiomatized? Can the truth or falsity of a mathematical statement be determined? (If it cannot be determined, it would be similar to Russell's paradox, where the statement cannot be classified as true or false.)
+            V. Gödel's incompleteness theorems proved that mathematics is indeed incomplete.
+            VI. Turing began thinking about Hilbert's third problem: how can we determine whether a mathematical statement can be classified as true or false?
+                🤔. To solve this problem, Turing started from the idea of a "Turing machine." Its basic abstract structure is as follows:
+                    😄. An infinitely long tape containing infinitely many squares (imagine a 1×∞ matrix).
+                    😄. A read/write head that can move only one square at a time.
+                    😄. The read/write head can write either 0 or 1 into any specified square, or read the value in a square.
+                    😄. Each square contains only 0 or 1.
+                    😄. A transition table records the action for each operation (this is essentially the concept of programming). The records can be organized into rows of instructions.
+                    😄. If contradictory instructions are encountered, the machine "halts." For example, an instruction such as "if you read 1, move right; if you read 0, move left" could cause the Turing machine to move back and forth forever when it encounters adjacent "1" and "0" values. It would never stop. This is analogous to a mathematical statement such as Russell's paradox. This "halting problem" is essentially Hilbert's decision problem. Turing was asking whether there could be a program that determines whether a given instruction set would cause a machine to halt.
+                    😄. Turing used a method similar to Cantor's diagonal argument to prove that no program can determine whether an arbitrary program will halt. In other words, Hilbert's decision problem has a negative answer.
+
+                🤔. Turing later led the codebreaking effort against the German Enigma machine during World War II, developed his own computing machines, and years later proposed the "Turing Test." He is regarded as the father of artificial intelligence.
+                🤔. Supplement ---> a universal Turing machine is a Turing machine capable of computing any computable sequence
+    R. After World War II
+        a. Computer hardware developed rapidly. IBM, Bell Labs, and other leading institutions around the world developed magnetic memory (a predecessor of the hard disk), transistors, and other technologies, replacing vacuum tubes and various other components.
+
+|#############################################################################################################|
+2. Types of Computers: (Except for quantum computers, the others are too sci-fi; just understand them briefly.)
+    A. Electronic computer (computer) ---> the computer in the modern sense
+        a. Flynn's Taxonomy ---> see the relevant reference for details
+            I. Single Instruction, Single Data (SISD)
+            II. Single Instruction, Multiple Data (SIMD)
+            III. Multiple Instruction, Single Data (MISD)
+            IV. Multiple Instruction, Multiple Data (MIMD)
+    B. Biological computer
+    C. Chemical computer
+    D. Photonic computer
+    E. Quantum computer
+    reference:
+    Regarding quantum computers, qubits, etc., this is a very important video explaining the principles very well:
+    https://www.youtube.com/watch?v=-UrdExQW0cs&ab_channel=Veritasium
+        a. A quantum wave function can exist in a superposition state. A qubit can be both 1 and 0 at the same time. When we perform a computation, we are effectively computing with both 1 and 0 simultaneously. A conventional computer with 3 bits, for example 101, computes 101. But with qubits, 3 qubits can exist in the superposition state a|000>+b|001>+c|010>+d|100>+e|011>+f|101>+g|110>+h|111>. This superposition is computed simultaneously, so in effect the computer computes a|000>, b|001>, c|010>, d|100>, e|011>, f|101>, g|110>, and h|111> simultaneously, for a total of 2^3=8 combinations. With n qubits, the number of combinations computed simultaneously is 2^n. This is called parallel computation.
+        b. However, when we measure the wave function, it randomly collapses into one eigenstate, and we do not know the other computational results. How to make the results of this parallel computation useful is therefore the central design challenge of quantum computers.
+
+
+|#############################################################################################################|
+3. Computer Computational Units
+    A. Basic units:
+        a. bit (1 or 0)
+        b. Byte = 8 bit
+        c. KB (Kilo-Byte) = 2^10 Byte = 1024 Byte (because this is approximately 1000, it is called Kilo for convenience)
+        d. MB (Mega-Byte) = 2^10 KB = 1024^2 Byte (because this is approximately 1,000,000, it is called Mega)
+        e. GB (Giga-Byte) = 2^10 MB = 1024^3 Byte
+        f. TB = 2^10 GB = 1024^4 Byte
+        g. PB = 2^10 TB = 1024^5 Byte
+
+    B. Converting between base 2, 8, 10, and 16:
+        a. 10->2 (2->10 can simply be calculated directly)
+            I. For integers, the basic method is repeated division. Record the remainders; after doing this a few times, you will get it. Use the new quotient as the next dividend, and the remainders as the result digits.
+            II. For fractions, use repeated multiplication. Whenever the result exceeds 1, record the integer part as the next result digit and continue the same process with the remaining fractional part until the fraction becomes 0. It may never become 0, which means that the number becomes a repeating or infinite fraction when represented in binary.
+
+        b. 2->16 or 16->2
+            I. 16=2^4, so convert in groups of 4 bits (for 16->2, each hexadecimal digit converts back into 4 bits). Very simple; don't overcomplicate it.
+        c. 2->8 or 8->2
+            II. 8=2^3, so convert in groups of 3 bits (for 8->2, each octal digit converts back into 3 bits).
+
+    C. Two's Complement:
+        a. If one byte is used to represent integers -127~127, the intuitive approach is to use XXXXXXX bits, with the first bit representing the sign: 0 for positive and 1 for negative. But this approach is somewhat inconvenient, because 0XXXXXXX+1XXXXXXXX ≠ 00000000. Modern computers therefore usually use the "complement" method.
+            I. One's complement directly flips 0 to 1 and 1 to 0. For two's complement (used by modern computers), first calculate the one's complement and then add 1. A positive number and the corresponding negative number then add up to 0.
+            I. Example: representing negative numbers using two's complement. Assume we use 8-bit binary to represent integers.
+                🤔. Represent -5
+                    😄. Binary representation of positive 5:
+                        😄. 00000101
+                    😄. Take the one's complement:
+                        😄. 11111010 (flip every bit)
+                    😄. Take the two's complement:
+                        😄. 11111010+1=11111011
+                    😄. Therefore, -5 in 8-bit binary is:
+                        😄. 11111011
+
+                🤔. Represent -12
+                    😄. Binary representation of positive 12:
+                        😄. 00001100
+                    😄. Take the one's complement:
+                        😄. 11110011 (flip every bit)
+                    😄. Take the two's complement:
+                        😄. 11110011+1=11110100
+                    😄. Therefore, -12 in 8-bit binary is:
+                        😄. 11110100
+        b. In two's-complement addition, if the result exceeds the representable range, for example 100+100=200>127, the result is considered invalid. Likewise, values below -127 are invalid.
+            I. If the sign bit changes during addition (the sign bit, i.e. the leftmost bit, changes from 1 to 0 or from 0 to 1), the result must have exceeded the representable range.
+            II. If there is a carry beyond 8 bits (assuming an 8-bit representation) but no overflow, the carry beyond the 8th bit can be ignored, and the remaining result is still correct.
+
+    C. Floating-point number
+        a. Computers use binary, which can represent any "integer," but cannot represent many "fractions" exactly. This is because some fractions cannot be divided evenly in a given base, resulting in an infinite binary fraction. Floating-point numbers therefore attempt to represent fractions using a finite number of bits as accurately as possible (although still not perfectly). For example, 0.1 in binary is 0.000110011001100110... (the 1100 repeats forever). The following [someone else's notes](https://github.com/lovelessless99/IEEE_754_Tutorial) provide a more detailed explanation of floating-point numbers, using the scientific-notation concept in binary.
+
+
+
+
+|#############################################################################################################|
+3. Computer Hardware Architecture (mainly the computational and memory units):
+    A. CPU
+        a. control unit
+        b. Arithmetic Logic Unit (Arithmetic Unit (AU) + Logical Unit (LU))
+        c. registers
+            I. Instruction Register
+            II. Program Counter (PC)
+            III. general registers
+            IV. cache memory, used as a bridge between the CPU and main memory; much faster than main memory
+        cache memory
+    B. Memory:
+        a. RAM (Random Access Memory)
+            I. DRAM (Dynamic RAM)
+            II. SRAM (Static RAM)
+        b. ROM (Read Only Memory; it is not a hard disk, don't confuse the two)
+            I. Can only be written once, and is commonly used in BIOS or some embedded systems
+
+    C. Hard disk
+        a. Traditional hard disk (uses magnetic material for storage)
+        b. Solid-state drive (uses memory chips as storage)
+
+
+|#############################################################################################################|
+4. Digital Logic Design:
+    A. Basic symbols (logic gates) ---> the following 3 are sufficient to construct all gates
+        a. A bar above a variable indicates NOT, or use "¬": NOT, highest precedence
+        b. "•" or "∧" indicates AND, second-highest precedence. (∧ looks like an A, so it stands for And; notation)
+        c. "+" indicates "∨": OR, lowest precedence
+
+    B. Common symbols (logic gates)
+        d. NAND (NOT AND), a universal gate; any gate can be constructed using only NAND
+            I. NAND(A,B)=¬(A∧B)
+            II. Constructing all gates:
+                🤔. NOT(A)=NAND(A,A)
+                🤔. A∧B=NOT(NAND(A,B))
+                🤔. A∨B=NAND(NOT(A),NOT(B))
+        e. NOR (NOT OR), also a universal gate; any gate can be constructed using only NOR
+            I. NOR(A,B)=¬(A∨B)
+        f. "⊕" indicates exclusive OR, XOR. 1 ⊕ 0 = 1, 0 ⊕ 1 = 1. Simply put, it outputs 1 only when the input values are different. Equation:
+            I. X ⊕ Y = (NOT X)•Y+X•(NOT Y)
+        g. exclusive NOR, XNOR. Outputs 1 when the input values are the same.
+
+    C. Boolean function and truth table
+        a. Boolean function representation: F(X, Y, Z) = (X AND NOT Y) OR Z........combined together
+        b. truth table representation: list all possible cases
+
+    D. Logic-gate diagram implementation (convert a Boolean function into a logic-gate diagram). Look up the symbols for each logic gate online.
+        a. General drawing principles (not necessarily applicable to every situation)
+            I. The final output is always on the far right.
+            II. Gates with the same precedence (operators with the same precedence in the Boolean function) should be vertically aligned.
+            III. From left to right, precedence decreases. The far-right operation has the lowest precedence (i.e. it is the last operator calculated in the Boolean function).
+
+        b. Examples
+            I. Adder, X, Y, SUM, CARRY
+                🤔. SUM(X, Y) = X ⊕ Y   ------>1 only when X and Y are different
+                🤔. CARRY(X, Y) = X • Y   ------>a carry occurs when both X and Y are 1
+            II. Full adder, X, Y, C_in (carry from the previous bit), SUM, C_out (carry including C_in),
+                🤔. SUM(X, Y, C_in) = A ⊕ B ⊕ C_in = (A ⊕ B) ⊕ C = A ⊕ (B ⊕ C)
+                🤔. C_out(X, Y, C_in) = (A∧B)∨(B∧C_in)∨(A∧C_in)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+References:
+https://web.csie.ndhu.edu.tw/sclo/project/ppt.html
