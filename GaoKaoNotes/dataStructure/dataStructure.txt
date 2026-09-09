@@ -97,7 +97,7 @@ u
             III. the triple arrow ↑↑↑ represents pentation (iterated tetration)
                 🤔. 2↑↑↑4 = H_5(2, 4) = 2↑↑(2↑↑(2↑↑2))
 
-        d. Ackermann函數, 沒有直接使用μ算子, 但仍可以透過μ算子建構, 因為μ算子可以用來模擬間接遞迴. 要證明ackermann函數為non-primitive的話, 策略就是: 證明沒有任何原始遞迴函數是ackermann函數. 也可以證明任意primitive函數的漲勢必定被Ackermann壓住, 有點類似我們討論數列發散的時候的漲勢(有些數列的漲勢會壓制某些數列)的那種情況, 這裡有一些關於證明的討論[https://math.stackexchange.com/questions/1228666/the-ackermanns-function-grows-faster-than-any-primitive-recursive-function]
+        d. Ackermann函數, 沒有直接使用μ算子, 但仍可以透過μ算子建構, 因為μ算子可以用來模擬間接遞迴. 要證明ackermann函數為non-primitive的話, 策略就是: 證明沒有任何原始遞迴函數是ackermann函數. 也可以證明任意primitive函數的漲勢必定被Ackermann壓住(因為任意non-primitive漲勢壓過primitive), 有點類似我們討論數列發散的時候的漲勢(有些數列的漲勢會壓制某些數列)的那種情況, 這裡有一些關於證明的討論[https://math.stackexchange.com/questions/1228666/the-ackermanns-function-grows-faster-than-any-primitive-recursive-function]
         e. Ackermann函數的性質, 與超越性的證明:
             I. 基本上m每+1, 增長速度生一個層級, 可以當成n是序列增長, m則是序列階級增長了
                 🤔. A(0, 0) = n+1
