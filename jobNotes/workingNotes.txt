@@ -37,3 +37,6 @@ batch程式:預計寫在114.115.109.151(帳號密碼都是cortex)
 2026/2/25
 1. HDR3(IP=114.115.109.163), T:/Data/TM01/CV_XX的資料copy到.112或.114. (112那台ssh過去的帳號密碼是noradguest / Nspotasa123456)
 2. resource_{date}.tle需要把formosat-8和aqua的TLE也加進去(非airbus都要加進去)
+
+2026/9/10
+1. opendata web虛擬機(140.115.109.243), account/password=Administrator/ncu-57693
