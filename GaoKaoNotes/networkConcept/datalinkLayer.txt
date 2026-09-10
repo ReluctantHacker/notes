@@ -69,6 +69,7 @@
 2. 乙太網路包(ethernet packet) 和 Frame(訊框, 第二層的傳輸單位PDU, 包含在ethernet packet), 以下是組成, 照順序
 	A. Preamble(乙太packet的一部分, 不是frame的一部分):
 		a. 固定7位元組(byte)
+        b. 主要是用來處理Synchronization of the sender's and receiver's timing/clock for interpreting the incoming bits.
 	
 	B. Start frame delimeter(SFD, 乙太packet的一部分, 不是frame的一部分):
 		a. 固定1位元組(byte)
@@ -153,17 +154,27 @@ https://www.zhihu.com/question/289026686
 		https://zh.wikipedia.org/zh-tw/%E5%A5%87%E5%81%B6%E6%A0%A1%E9%AA%8C%E4%BD%8D
 			I. 大原則, 若收發雙方共同決定用偶校驗, 則表示要讓驗證數據維持偶數個1. 若是奇校驗, 則表示要讓驗證數據維持奇數個1, 
 			II. .例如, 若相約用偶校驗, 則數據XXXXXXXX內有偶數個1則後面補0, 讓他維持偶數個1, 若有奇數個1則補1讓他變成偶數個1.   奇校驗則同樣的方式, 只是變成奇數
+            III. 更直觀的來說, the parity bit(最後一位), 他是一個"metadata", 或者說一個小note, 紀錄前面位元的1總數是偶還是奇. 例如10110010, 組後parity bit是0, 這表示前面1011001有偶數個1(或者你把二進制1加起來, 不看進位項, 得到0), 他是一個標記, 讓接收方知道數據有多少個1, 當數據出現傳輸上的錯誤(通常一個bit壞了, 從0變1或1變0)則接收方立刻可以知道. 當然這個機率只有1/2. More generally, any odd number of flipped bits is detected; any even number would miss detection.
 		b. 檢查集(Check sum, CS)
+            I. 範例: 假設資料流: 2, 5, 3. 先加總得到10, 然後2, 5, 3, 10一起傳送. 接收者得到後把2, 5, 3加總看是不是10. 假設收到的是2+7+3=12, 則代表有錯.
 		c. 循環多餘碼檢查法(Cycle Redundancy Check, CRC), ethernet一般都是用這個
 			I. 其實就是採用module 2除法, 把原始數據用模二除法, 得到的餘數接續在數據後端(注意其實是相加在數據後端), 實際實作的情況就是把模二除法的結果放在FCS(Frame check sequence)這個ethernet frame header.
-		d. ECC(Error correction code)  --->主要是hamming code, 比較複雜
-		reference:
-		https://gordonfang-85054.medium.com/%E6%BC%A2%E6%98%8E%E7%A2%BC%E4%BB%8B%E7%B4%B9-hamming-code-intro-1c6669f0cff0
+		d. ECC(Error correction code), 並非所有的error check都適合各種情況, ECC其實就是比前面提到的error check 再多一步  --->其中有
+            I. hamming code, 這個屬於歷史知名例子
+                reference:
+                https://gordonfang-85054.medium.com/%E6%BC%A2%E6%98%8E%E7%A2%BC%E4%BB%8B%E7%B4%B9-hamming-code-intro-1c6669f0cff0
+                🤔. check bit的位置有error同樣可以檢測出. 事實上是這樣的, check bits插入進原始data後, 他的整個數學機制是套在整個的組合後的資料, 所以check bit也是組合後的一員, 整個運算機制是一致的. check bit並非獨立於原始資料. 這個可以問AI
+            II. LDPC(Low-Density Parity-Check code), 廣泛使用於高速通信與儲存
+            III. Reed-Solomon, 廣泛用於optical/storage/media and QR codes
+            IV. 在5G中的control channels中有重要功能.
 
-	B. 自動回覆請求(Automatic Repeat Request, ARQ):
+	B. 自動回覆請求(Automatic Repeat Request, ARQ), error detection出問題後, 會觸發的機制:
 		a. 停止與等待ARQ(Stop-and-Wait Automatic Repeat Request)
+            I. 等待receiver回復ack, 若某包有error, 則不回復或是回復Nack
 		b. 退後N ARQ(Go-Back_N Automatic Repeat Request)
+            I. 先不管對方有無收到, 直接連續發送包, 等到receiver回復某包有誤, 在從該包開始重新連續發送. 而receiver其實是把有錯及其之後的包都abandon 
 		c. 選擇性重複 ARQ(Select-Repeat Automatic Repeat Request)--->大部分都用這個(例如TCP)
+            I. 與Go-back N的模式一樣連續發送, 但只重發有錯的, 因為receiver只會abandon有錯誤的包. 這個方式與sliding window大有關係
 
 |#############################################################################################################|
 6. 存取機制(電腦和電腦的連線方式), 或者說網路架構
