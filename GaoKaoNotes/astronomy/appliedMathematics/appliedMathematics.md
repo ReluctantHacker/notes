@@ -125,7 +125,7 @@ v = 0
 
 But we assume $v\neq 0$. Contradiction. So
 ``` math
-det(A-\lambdaI) = 0
+det(A-\lambda I) = 0
 ```
 We call this characteristic equation of A.
 
