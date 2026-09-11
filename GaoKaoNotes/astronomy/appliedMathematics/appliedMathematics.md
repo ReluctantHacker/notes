@@ -3,6 +3,7 @@
 ### Addition(too easy)
 ### Multiplication
 Multiplication is bit different from the familiar arithmetic. Multiplication is generally not commutative which means AB!=BA. And also, there is no inverse for every matrix. Some matrices have inverses, some don't.
+
 The properties below are independent of each others in abstract level for mulplication operation, and matrices doesn't have any.
 - commutative multiplication
 - nonzero(non-identity) elements must have inverses(some matrices do, some don't)
@@ -37,7 +38,12 @@ I =
 \qquad\text{(multiplicative identity)}
 ```
 
-### Matrix-vector multiplication(too easy)
+### Matrix-vector multiplication
+The calculation is very easy, but the meaning of this multiplication can be very deep. First, this multiplication can be thought of as a transformation of the vector. And the transformation is generally not commutative: applying transformation A and then B is generally different from applying B and then A. Naturally, because of the properties of matrics, a matrix operating on a vector can be thought as a function operating on a variable. It's naturally and structurally perfect fit. Moreover, if you take a good look of how a function work, you'll find that it's not commutative, either.
+``` math
+f(g(x)) \neq g(f(x)) generally
+```
+
 ### Matrix power
 
 ## Determinants
