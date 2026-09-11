@@ -39,14 +39,40 @@ I =
 ```
 
 ### Matrix-vector multiplication
-The calculation is very easy, but the meaning of this multiplication can be very deep. First, this multiplication can be thought of as a transformation of the vector. And the transformation is generally not commutative: applying transformation A and then B is generally different from applying B and then A. Naturally, because of the properties of matrics, a matrix operating on a vector can be thought as a function operating on a variable. It's naturally and structurally perfect fit. Moreover, if you take a good look of how a function work, you'll find that it's not commutative, either.
+The calculation is very easy, but the meaning of this multiplication can be very deep. First, this multiplication can be thought of as a transformation of the vector. And the transformation is generally not commutative: applying transformation A and then B is generally different from applying B and then A. Naturally, because of the properties of matrics, a matrix operating on a vector can be thought as a function operating on a variable. It's naturally and structurally perfect fit. Moreover, if you take a good look of how a function works, you'll find that it's not commutative, either.
 ``` math
 f(g(x)) \neq g(f(x)) generally
 ```
 
 ### Matrix power
+Matrix power means applying the same transformation n times to vector x. 
+``` math
+A^2 x = AAx
+```
+
+If we have this below:
+
+``` math
+A^(-1) AAx = Ax
+```
+
+Then we can have this 
+``` math
+A^(-1)(Ax) = Ix
+```
+
+Well, naturally, funtions have exactly the same math structure. Suppose we have this below
+``` math
+f^(-1)(f(f(x))) = f(x)
+```
+Then we can have 
+``` math
+f^(-1)(f(x)) = id(x) = x
+```
 
 ## Determinants
+But of course, not all matrix A can have $A^(-1)$ 
+
 ## Eigenvalues & Eigenvectors
 ## Basis
 ## Orthogonality
