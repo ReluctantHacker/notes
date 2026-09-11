@@ -53,25 +53,25 @@ A^2 x = AAx
 If we have this below:
 
 ``` math
-A^(-1) AAx = Ax
+A^{-1} AAx = Ax
 ```
 
 Then we can have this 
 ``` math
-A^(-1)(Ax) = Ix
+A^{-1}(Ax) = Ix
 ```
 
 Well, naturally, funtions have exactly the same math structure. Suppose we have this below
 ``` math
-f^(-1)(f(f(x))) = f(x)
+f^{-1}(f(f(x))) = f(x)
 ```
 Then we can have 
 ``` math
-f^(-1)(f(x)) = id(x) = x
+f^{-1}(f(x)) = id(x) = x
 ```
 
 ## Determinants
-But of course, not all matrix A can have $A^(-1)$ 
+But of course, not all matrix A can have $A^{-1}$ 
 
 ## Eigenvalues & Eigenvectors
 ## Basis
