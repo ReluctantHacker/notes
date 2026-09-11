@@ -138,6 +138,10 @@ for P is eigenvectors, and M is eigenvalues matrix. And so it can also be writte
 ``` math
 A=\lambda_1 v_1 w_1^T+\lambda_2 v_2 w_2^T+\cdots+\lambda_n v_n w_n^T
 ```
+
+where the $w_i^T$'s are the rows of $P^{-1}$.
+
+The decomposition has something to with finding basis.(This has not done yet)
 ## Basis
 ## Orthogonality
 ## Matrix equations
