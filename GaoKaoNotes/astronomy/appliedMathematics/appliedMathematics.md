@@ -71,9 +71,73 @@ f^{-1}(f(x)) = id(x) = x
 ```
 
 ## Determinants
-But of course, not all matrix A can have $A^{-1}$ 
+But of course, not all matrix A can have $A^{-1}$. As we know, that a matrix is a linear transformation(any matrix is automatically a linear transformation), the scaling factor of transformation A is $det(A)$. More precisely, how that transformation scales area/volume/higher dimention_scale.
+
+If we have $det(A)=0$. This mean A's output space has lower dimension than the input space. It would let vectors lose one dimensional information. For example volume becomes area, or area becomes a line. And the lose information(becomes 0) is not possible searching back. So apparently $det(A)=0$ implies that A has no $A^{-1}$. It's easy to prove that(although, i am not gonna talk about the details.
+``` math
+det(A) \neq 0 -> A^{-1} exists
+```
+
+There're other some common properties:
+- det(AB) = det(A)det(B)
+- det($A^{-1}$) = 1/det(A)
+- det(I) = 1
+- Effect of row operations
 
 ## Eigenvalues & Eigenvectors
+``` math
+Av = \lambda v
+```
+Generally, transformation A appling on a vector changes both its direction and magnitude. But some vectors $v$ are operated without changing direction but only by magnitude $\lambda$. Intuitively, those vectors are the axes of scaling/operation. We call them **eigenvectors**, the corresponding $\lambda$ is eigenvalue.
+
+From that definition, we easily get this below:
+``` math
+Av-\lambda v = 0
+```
+and then get
+``` math
+Av-\lambda I v = 0
+```
+and then
+``` math
+(A-\lambda I) v = 0
+```
+If det(X) != 0, then Xv=0 is not possible to happens for v!=0. So $det(A-\lambda I)$ must be 0 if v!=0.
+
+The reason for this is that if det(X) != 0, then we know that X is invertible, so can have
+``` math
+X^{-1}X = I
+```
+
+``` math
+Xv = 0
+```
+can be written as 
+
+``` math
+X^{-1}(Xv) = X^{-1}0
+```
+
+Therefore,
+``` math
+v = 0
+```
+
+But we assume $v\neq 0$. Contradiction. So
+``` math
+det(A-\lambdaI) = 0
+```
+We call this characteristic equation of A.
+
+## Eigen Decomposition
+It is basically saying that A can be written as 
+``` math
+A = PMP^{-1}
+``` 
+for P is eigenvectors, and M is eigenvalues matrix. And so it can also be written as 
+``` math
+A=\lambda_1 v_1 w_1^T+\lambda_2 v_2 w_2^T+\cdots+\lambda_n v_n w_n^T
+```
 ## Basis
 ## Orthogonality
 ## Matrix equations
