@@ -393,9 +393,6 @@ But of couse, we can have infinity components, so how do we represents the stabl
 Well, I came up with an obvious idea that uses standard deviation of all the possible phase difference
 
 
-
-
-
 Now, suppose we have a quantum system that has two possible results(two eigenstates):
 ``` math
 |\psi\rangle
@@ -406,9 +403,9 @@ Now, suppose we have a quantum system that has two possible results(two eigensta
 \right)
 ```
 
-When the system entangles with environment: (It uses tensor product here. Obviously, it means combination of two vectors, very reasonable)
+When the system entangles with environment, We suppose the final state(we are choosing a particular model/form of the interaction to illustrate what entanglement does. We are not claiming that this is the unique form that every system–environment interaction must produce.) would like this below that can't be separately cleanly with 0 and 1: (It uses tensor product here. Obviously, it means combination of two vectors, very reasonable)
 ``` math
-|\Psi\rangle
+|\Psi\rangle_SE
 =
 \frac{1}{\sqrt{2}}
 \left(
@@ -426,8 +423,17 @@ When you only focus on system S itself, you mathematically get this:
 =
 \mathrm{Tr}_E
 \left(
+\rho_SE
+\right)
+=
+\mathrm{Tr}_E
+\left(
 |\Psi\rangle\langle\Psi|
 \right)
+=
+\Sigma_k {\langle E_k | \rho_SE | E_k \lrangle}
+=
+\langle E_0 | \rho_SE | E_0 \lrangle + \langle E_1 | \rho_SE | E_1 \lrangle 
 =
 \frac{1}{2}
 \left(
