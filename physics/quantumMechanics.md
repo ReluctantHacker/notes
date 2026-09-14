@@ -431,9 +431,9 @@ When you only focus on system S itself, you mathematically get this:
 |\Psi\rangle\langle\Psi|
 \right)
 =
-\Sigma_k {\langle E_k | \rho_SE | E_k \lrangle}
+\Sigma_k {\langle E_k | \rho_SE | E_k \rangle}
 =
-\langle E_0 | \rho_SE | E_0 \lrangle + \langle E_1 | \rho_SE | E_1 \lrangle 
+\langle E_0 | \rho_SE | E_0 \rangle + \langle E_1 | \rho_SE | E_1 \rangle 
 =
 \frac{1}{2}
 \left(
