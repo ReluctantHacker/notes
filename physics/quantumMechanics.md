@@ -446,6 +446,9 @@ When you only focus on system S itself, you mathematically get this:
 \langle E_0|E_1\rangle |1\rangle\langle0|
 \right)
 ```
+
+Here we call $\rho$ **density operator**. For example, $\langle0|\rho_S|0\rangle$ means the component density of $\langle0\rangle$ of whole System S. When want to find $\rho_S$, we are actually finding $\rho_S = \sum_{k} {\langle E_k|\rho_{SE}|E_k\rangle}$ which is directly tring to extract the effect of E.
+
 Decoherence makes this:
 ``` math
 \langle E_0|E_1\rangle \approx 0
