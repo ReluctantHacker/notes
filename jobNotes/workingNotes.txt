@@ -40,3 +40,6 @@ batch程式:預計寫在114.115.109.151(帳號密碼都是cortex)
 
 2026/9/10
 1. opendata web虛擬機(140.115.109.243), account/password=Administrator/ncu-57693
+
+2026/9/15
+1. 加入GS2的FS8A的TLE名稱後面加一個空白, 似乎小天線在吃TLE的時候, 他的衛星名稱需要至少需要一個"空白"或一個"U"字符才不會當機. 例如"FORMOSAT-8A", 寫成"FORMOSAT-8A ", 這是目前推測的可能bug, 先照著改
