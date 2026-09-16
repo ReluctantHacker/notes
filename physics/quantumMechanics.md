@@ -406,11 +406,11 @@ e^{i\phi}|1\rangle |E_1\rangle
 
 Now, you can't say that $|0\rangle$ and $|1\rangle$ are eigenstates of the whole $\langle\Phi\rangle_{SE}$ system any more. The eigenstates are $|0\rangle |E_0\rangle$ and $|1\rangle |E_1\rangle$
 
-However, how this even leads to the result that $\langle0\rangle$ and $\langle1\rangle$ are not coherent with each other?
+However, how this even leads to the result that $|0\rangle$ and $|1\rangle$ are not coherent with each other?
 
 Well, again, to totally understand this, we need to clearly define what **coherent** actually is.
 
-When we say "coherent", we actually mean the phase is stable between two or multiple waves. For example, in $\langle\Psi\rangle = \dfrac{1}{\sqrt{2}}\left(\langle0\rangle+e^{i\phi}\langle1\rangle\right)$, we know $\langle0\rangle$ and $\langle1\rangle$ are coherent to each others but what does that mean?
+When we say "coherent", we actually mean the phase is stable between two or multiple waves. For example, in $|\Psi\rangle = \dfrac{1}{\sqrt{2}}\left(|0\rangle+e^{i\phi}|1\rangle\right)$, we know $|0\rangle$ and $|1\rangle$ are coherent to each others but what does that mean?
 
 From mathematical point of view, the phase information is hidden inside the amplitudes of two waves. Physically, how do we know if two waves even have phase difference? It's actually simple, observing the addition of their amplitude. 
 
