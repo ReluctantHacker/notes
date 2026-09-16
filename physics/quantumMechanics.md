@@ -429,6 +429,49 @@ The cross term
 That is the phase effect for amplitude addition.
 
 
+Now the environment enters
+``` math
+|\Psi\rangle_{SE}
+=
+\frac{1}{\sqrt{2}}
+\left(
+|0\rangle |E_0\rangle
++
+e^{i\phi}|1\rangle |E_1\rangle
+\right)
+```
+When we focus to measure system $S$ with addition, the relevant amplitude is now
+``` math
+|E_0\rangle + e^{i\phi}|E_1\langle|^2 = \langleE_0|E_0\rangle + \langleE_1|E_1\rangle + e^{i\phi}\langleE_0|E_1\rangle + e^{-i\phi}\langleE_1|E_0\rangle
+```
+
+Obviously, the phase effect here is
+``` math
+e^{i\phi}\langleE_0|E_1\rangle + e^{-i\phi}\langleE_1|E_0\rangle
+```
+
+Suppose $|E_0\rangle$ and $|E+1\rangle$ are orthogonal to each other, then
+``` math
+\langleE_0|E_1\rangle = \langleE_1|E_0\rangle = 0
+```
+
+makes the phase effect gone!
+
+But you may think like hold a second, what if $\phi=0$ at the first place? That makes phase term goes to 0, too. However, it still counts as having phase effect, so what's going on here?
+
+The key idea is that you have to understand the direction of phase. 
+
+Well, in complex plane, every complex number(including real number) is a vector. With operation of addition, substraction, etc. So even $\phi=0$, it still has phase effect. 
+
+The problem is that when the situation becomes like $|\Psi\rangle_{SE}$, if you add the coefficient of the it. You'll find the result is not following the rules in complex plane. It's actually something like a statistical result of summation of all the possible direction(phase) of vectors which makes phase effect gone. 
+
+
+
+
+
+
+
+
 When you only focus on system S itself, you mathematically get this:
 ``` math
 \rho_S
