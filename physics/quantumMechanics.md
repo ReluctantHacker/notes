@@ -467,6 +467,15 @@ A more pratical conclusion would be like this: changing the relative phase does 
 
 The problem is that when the situation becomes like $|\Psi\rangle_{SE}$, if you sum all the coefficient of the it. You'll find the result is not following the rules in complex plane. It's actually something like a statistical result of summation of all the possible direction(phase) of vectors which makes phase effect gone. 
 
+For $\phi=0$ as an example, you'll find that $(||0\rangle+|1\rangle)/\sqrt(2)| = 1$ and $(||0\rangle-|1\rangle)/\sqrt(2)| = 0$. The direction of complex number is there still. However, for $\Psi\rangle_{SE}$ 
+
+``` math
+|\dfrac{1}{\sqrt{2}}(|E_0\rangle + e^{i\phi}|E_1\rangle)|^2 = \dfrac{1}{2}(\langle E_0|E_0\rangle + \langle E_1|E_1\rangle + e^{i\phi}\langle E_0|E_1\rangle + e^{-i\phi}\langle E_1|E_0\rangle) = \dfrac{1}{2}(\langle E_0|E_0\rangle + \langle E_1|E_1\rangle) = 1/2
+```
+
+The result is different(the classical probability result) from the simple complex one prevoiusly!
+
+
 
 
 
