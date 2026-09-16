@@ -463,7 +463,9 @@ The key idea is that you have to understand the direction of phase.
 
 Well, in complex plane, every complex number(including real number) is a vector. With operation of addition, substraction, etc. So even $\phi=0$, it still has phase effect. 
 
-The problem is that when the situation becomes like $|\Psi\rangle_{SE}$, if you add the coefficient of the it. You'll find the result is not following the rules in complex plane. It's actually something like a statistical result of summation of all the possible direction(phase) of vectors which makes phase effect gone. 
+A more pratical conclusion would be like this: changing the relative phase does not change the observable
+
+The problem is that when the situation becomes like $|\Psi\rangle_{SE}$, if you sum all the coefficient of the it. You'll find the result is not following the rules in complex plane. It's actually something like a statistical result of summation of all the possible direction(phase) of vectors which makes phase effect gone. 
 
 
 
