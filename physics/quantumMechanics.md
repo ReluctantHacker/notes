@@ -442,17 +442,17 @@ e^{i\phi}|1\rangle |E_1\rangle
 ```
 When we focus to measure system $S$ with addition, the relevant amplitude is now
 ``` math
-|E_0\rangle + e^{i\phi}|E_1\langle|^2 = \langleE_0|E_0\rangle + \langleE_1|E_1\rangle + e^{i\phi}\langleE_0|E_1\rangle + e^{-i\phi}\langleE_1|E_0\rangle
+|E_0\rangle + e^{i\phi}|E_1\rangle|^2 = \langle E_0|E_0\rangle + \langle E_1|E_1\rangle + e^{i\phi}\langle E_0|E_1\rangle + e^{-i\phi}\langle E_1|E_0\rangle
 ```
 
 Obviously, the phase effect here is
 ``` math
-e^{i\phi}\langleE_0|E_1\rangle + e^{-i\phi}\langleE_1|E_0\rangle
+e^{i\phi}\langle E_0|E_1\rangle + e^{-i\phi}\langle E_1|E_0\rangle
 ```
 
 Suppose $|E_0\rangle$ and $|E+1\rangle$ are orthogonal to each other, then
 ``` math
-\langleE_0|E_1\rangle = \langleE_1|E_0\rangle = 0
+\langle E_0|E_1\rangle = \langle E_1|E_0\rangle = 0
 ```
 
 makes the phase effect gone!
