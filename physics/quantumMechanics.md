@@ -382,7 +382,7 @@ We have ideas about entanglement and what causes entanglement. Now, we are gonna
 
 When system S entangles with environment E. And you focus observation on S or E, you would see that the coherence is getting lower. This is called Decoherence as we know.
 
-We have roughly talked about coherence. Now, we are gonna define precisely about what **coherence** is. For example, the simplest situation, suppose we have two components of wave:
+We have roughly talked about coherence. Now, we are gonna define precisely about what **coherence** is. For example, the simplest situation, System S, suppose we have two components of wave with basises:
 ``` math
 |\psi\rangle=\frac{1}{\sqrt{2}}\left(|0\rangle+e^{i\phi}|1\rangle\right)
 ```
@@ -392,18 +392,7 @@ But of couse, we can have infinity components, so how do we represents the stabl
 
 Well, I came up with an obvious idea that uses standard deviation of all the possible phase difference
 
-
-Now, suppose we have a quantum system that has two possible results(two eigenstates):
-``` math
-|\psi\rangle
-=
-\frac{1}{\sqrt{2}}
-\left(
-|0\rangle + |1\rangle
-\right)
-```
-
-When the system entangles with environment, We suppose the final state(we are choosing a particular model/form of the interaction to illustrate what entanglement does. We are not claiming that this is the unique form that every system–environment interaction must produce.) would like this below that can't be separately cleanly with 0 and 1: (It uses tensor product here. Obviously, it means combination of two vectors, very reasonable)
+When the system S entangles with environment E, We suppose the final state(we are choosing a particular model/form of the interaction to illustrate what entanglement does. We are not claiming that this is the unique form that every system–environment interaction must produce.) would like this below that can't be separately cleanly with 0 and 1: (It uses tensor product here. Obviously, it means combination of two vectors, very reasonable)
 ``` math
 |\Psi\rangle_{SE}
 =
@@ -411,7 +400,7 @@ When the system entangles with environment, We suppose the final state(we are ch
 \left(
 |0\rangle |E_0\rangle
 +
-|1\rangle |E_1\rangle
+e^{i\phi}|1\rangle |E_1\rangle
 \right)
 ```
 
