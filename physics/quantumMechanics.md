@@ -442,7 +442,7 @@ e^{i\phi}|1\rangle |E_1\rangle
 ```
 When we focus to measure system $S$ with addition, the relevant amplitude is now
 ``` math
-|E_0\rangle + e^{i\phi}|E_1\rangle|^2 = \langle E_0|E_0\rangle + \langle E_1|E_1\rangle + e^{i\phi}\langle E_0|E_1\rangle + e^{-i\phi}\langle E_1|E_0\rangle
+||E_0\rangle + e^{i\phi}|E_1\rangle|^2 = \langle E_0|E_0\rangle + \langle E_1|E_1\rangle + e^{i\phi}\langle E_0|E_1\rangle + e^{-i\phi}\langle E_1|E_0\rangle
 ```
 
 Obviously, the phase effect here is
@@ -450,7 +450,7 @@ Obviously, the phase effect here is
 e^{i\phi}\langle E_0|E_1\rangle + e^{-i\phi}\langle E_1|E_0\rangle
 ```
 
-Suppose $|E_0\rangle$ and $|E+1\rangle$ are orthogonal to each other, then
+Suppose $|E_0\rangle$ and $|E_1\rangle$ are orthogonal to each other, then
 ``` math
 \langle E_0|E_1\rangle = \langle E_1|E_0\rangle = 0
 ```
