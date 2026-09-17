@@ -882,7 +882,7 @@ u
 		b. flag=1; 拜訪中
 		c. flag=2; 已拜訪
 
-	B. 深度優先(depth first traversal)----> 子node 先走
+	B. 深度優先(depth first traversal)----> 子node 先走, one kind of backtracking algorithm, 需注意的是, DFT產出的並非graph的path, 因為她backtrack, 所以等於過程中斷回到某個點再繼續, 這就不算graph path了
 		a. 過程
 			I. 選擇一個起始vertex vi, 
 			II. 選擇一個與vi相連接且flag=0的vj, 並設定vj為新的起始點
@@ -899,7 +899,7 @@ u
 			IIII. DFT的順序不unique, 除非你自己設定按照某種排列
 
 
-	C. 廣度優先(breadth first traversal) ----> sibling node 先走(遍歷所有silbling)
+	C. 廣度優先(breadth first traversal) ----> sibling node 先走(遍歷所有silbling), 這個不算backtrack, 但她的產出也不算graph path
 		a. 過程:
 			I. 選擇一個起始vertex vi,
 			II. 選擇一個與vi相連接且flag=0的vj, 
@@ -920,9 +920,13 @@ u
 		b. 可以找出連通的單元(組件, 或者說區塊吧)
 		c. 起概念是"拓撲排序", "最短路徑"的基礎
 
-    E. 尋找Eulerian Path(進階, 詳看graphTheory筆記)
-    F. 尋找Hamiltonian Path(進階, 詳看graphTheory筆記)
-
+    E. 尋找Eulerian Path(進階, 詳看graphTheory筆記). 
+        a. Definition: is a path uses every edge exactly once.
+        b. 不算一種traversal, 因為不一定經過所有edge
+    F. 尋找Hamiltonian Path(進階, 詳看graphTheory筆記). 
+        a. Definition: is a path that visits every vertex exactly once.
+        b. 算一種traversal(如果HP存在的話)
+        
 
 |#############################################################################################################|
 16. AOV(Activity On Vertex)  ---> 其實就是一個"有向圖"的應用
@@ -1061,15 +1065,16 @@ u
 	A. 目標:
 		a. 我們知道binary search tree越是balance, 平均search效率就越高: log(n)--->事實上是最高了...
 		b. 但我們在建構binary search tree的時候, 不見得會得到一顆平衡的樹, 我們需要些辦法獲得平衡的BST
+            I. 在self-balancing 之後, 理所當然, 你得到的tree與原本的不會一樣, 但因為他們都是BST且擁有的data set都一樣, 所以inorder traversal(其實就是照大小排)會一樣, 且search的結果也會一樣(但search的速度會較快, 這也是我們要self-balance的原因)
 		
 	B. 常見的算法(方法), 大部分都使用了"旋轉(rotate)"的操作:  每次insert都需要log(n)複雜度+1個rotate: O(log(n)
 		a. AVL tree(AVL是人名縮寫) 
 			I. 定義:
 				🤔. 為一顆binary search tree, 且height 平衡(balance)
 				🤔. 嚴格定義平衡(balance):
-					I. |height(Lchild(root))-height(Rchild(root))| <= 1,  
+					😄. |height(Lchild(root))-height(Rchild(root))| <= 1,  
 						😄: height(Lchild(root)) 為 左子tree高度, 
-                                                😄. height(Rchild(root)) 為 右子tree高度
+                        😄. height(Rchild(root)) 為 右子tree高度
 				🤔. 左右子tree也是AVL tree
 
 			II. 平衡因子(Balance factor, BF):
@@ -1079,24 +1084,24 @@ u
 			III. 建構時出現的不平衡情況:
 				🤔. LL不平衡: 
 					😄. height(Lchild(root))-height(Rchild(root)) > 1, 
-					😄. 且height(Lchild(Lchild(root))) > height(Lchild(Rchild(root)))
+					😄. 且height(Lchild(Lchild(root))) > height(Rchild(Lchild(root)))
 					😄. 翻譯成人話: height(左子tree) - height(右子tree) > 1
 					😄. 且height(左子tree的左子tree) > height(左子tree的右子tree)
 				🤔. LR不平衡
 					😄. height(Lchild(root))-height(Rchild(root)) > 1, 
-					😄. 且height(Lchild(Lchild(root))) < height(Lchild(Rchild(root)))
+					😄. 且height(Lchild(Lchild(root))) < height(Rchild(Lchild(root)))
 					😄. 翻譯成人話: height(左子tree) - height(右子tree) > 1
 					😄. 且height(左子tree的左子tree) < height(左子tree的右子tree)
 				🤔. RL不平衡
 					😄. height(Lchild(root))-height(Rchild(root)) < -1, 
-					😄. 且height(Rchild(Lchild(root))) > height(Rchild(Rchild(root)))
+					😄. 且height(Lchild(Rchild(root))) > height(Rchild(Rchild(root)))
 					😄. 翻譯成人話: height(左子tree) - height(右子tree) < -1
-					😄. 且height(右子tree的左子tree) > height(左子tree的右子tree)
+					😄. 且height(右子tree的左子tree) > height(右子tree的右子tree)
 				🤔. RR不平衡
 					😄. height(Lchild(root))-height(Rchild(root)) < -1, 
-				😄. 且height(Rchild(Lchild(root))) < height(Rchild(Rchild(root)))
+				    😄. 且height(Rchild(Rchild(root))) < height(Lchild(Rchild(root)))
 					😄. 翻譯成人話: height(左子tree) - height(右子tree) < -1
-					😄. 且height(右子tree的左子tree) < height(左子tree的右子tree)
+					😄. 且height(右子tree的左子tree) < height(右子tree的右子tree)
 
 			IIII. 調整不平衡的算法, 採用旋轉的方法:  ----> 快速公式(適用AVL tree)
 				🤔. 其實你根本不用管是哪種不平衡, 只要記住以下
@@ -1108,6 +1113,7 @@ u
 			reference: 以下有個比較清晰的參考說明:
 			https://simpletechtalks.com/avl-tree-self-balancing-rotations-right-left-rotation-explained/
 				🤔. 若發生RL不平衡, 則在先從較低level的開始調整, L不平衡的部分的連線元素, 進行順時針旋轉(稱之為右旋right rotation), 然後對剩餘L不平衡的部分(較高level)的連線元素, 進行逆時針旋轉(稱之為左旋left rotation).  發生LR不平衡, 則倒過來做. 若發生RR不平衡則只需對高level元素做left rotation.  LL不平衡則只需對高level做right rotation
+                    😂. 需要注意的是, LR或RL自平衡後有兩種可能結果. 例如LR不平衡樹(1<-2->(3->4))<-5->7, 他有兩種結果: (1<-2)<-3->(4<-5->7) / (1<-2->3)<-4->(5->7)
 
 			VI. remove node:
 			reference:  --->以下有很清楚的說明, 就是移植不斷往下平衡
