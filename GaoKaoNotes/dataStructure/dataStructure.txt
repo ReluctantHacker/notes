@@ -1196,7 +1196,7 @@ u
 		b. 除了root及failure node之外, 其餘node的degree介於[m/2]至m  ----> 重點!!!
 		c. 所有failure node在同一個level, 所有leaf在同一個level
 
-	B. 最簡單的B-tree:    2-3 tree:
+	B. 最簡單的B-tree:    2-3 tree(每個node最多兩個keys, 且最多三個子nodes, 他的m其實就是3):
 		a. 就是m=3(你如果m=2就變成balanced B.S.T), 根據定義任意node的degree介於2到3
 
 	C. 操作
