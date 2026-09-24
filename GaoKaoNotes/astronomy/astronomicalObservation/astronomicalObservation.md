@@ -155,6 +155,25 @@ The reason a sedereal day is only 23h56m4s is that in ancient, we define a day l
      │ need to turn 1 more degree counterclock to face sun again, this is Solar day
      ▼ (roughly 4 minutes)                      
 
+Like the diagram above, a solar day is like above. More specifically, if you observe the sun on earth, a solar day is the time takes the sun pass through meridian twice. A meridan is a longitude of celestial sphere, that longitude is the highest at the sky which means it includes the zenith point(the z axis intersection point of celestial sphere of the observer). 
+
+### A second
+In the earlier, people use a solar day to define a second which is 1/86400 mean solar day. The reason we use "mean solar day" is because the orbit of earth which revolutes around the sun is not perfect circle, so the orbit circulation speed is not constant. It makes the solar day not constant. We have already discussed that a solar day got about 4 minutes longer than sidereal day. It is the effect of earth revolution. So that 4 minutes should be something like 4.01, 3.99, 4.02....for different solar day because the revolution motion is not a perfect circle. That's the reason we use time range of mean solar day for definition of a second.
+
+However, even so, as we count the effect of revolution of earth, the spining(self-rotation) of earth is still unstable because of earthquake, tide and weather, etc. In 1960, people use the time range of 1900's tropical year as a year to define a second which is a **ephemeris second**. It's a constant because we choose the specific epoch! But pratically, the operation of getting the same time range of that second is hard to repeat. So in 1967, people use Cs-133 atomic transition(which can be easily reproduce) like 9,192,631,770 times as a second, the **SI second**, which had been highly match that ephemeris second. So **1 SI second = 1 ephemeris second**.
+
+### A year
+We define 24 hours a day, But how do we define a year?
+
+> [!NOTE]
+> One important thing you need to notice here, is that self-rotation motion of earth and revolution of earth around sun, they are independent motion, the ratio of them are not a perfectly 365 but roughly 365.25....
+
+Mostly, there are two ways to define a year:
+- tropical year: about 365.2422 days. Defined as the time earth spend to revolute from a equinox to the same equinox again.
+- sidereal year: about 365.2564 days. Defined as the time earth spend to revolute from a position to the same position again, relative to distant stars.
+
+Of course, these two years are NOT the same, because of precession of earth, equinox slowly changes which makes equinox "precede" to come. Earlier coming means it takes shorter time, it turns out precede about 20 minutes.
+
 ### Sidereal month
 ### Synodic month
 ### Standard time
