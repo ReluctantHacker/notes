@@ -158,7 +158,7 @@ The reason a sedereal day is only 23h56m4s is that in ancient, we define a day l
 Like the diagram above, a solar day is like above. More specifically, if you observe the sun on earth, a solar day is the time takes the sun pass through meridian twice. A meridan is a longitude of celestial sphere, that longitude is the highest at the sky which means it includes the zenith point(the z axis intersection point of celestial sphere of the observer). 
 
 ### A second
-In the earlier, people use a solar day to define a second which is 1/86400 mean solar day. The reason we use "mean solar day" is because the orbit of earth which revolutes around the sun is not perfect circle, so the orbit circulation speed is not constant. It makes the solar day not constant. We have already discussed that a solar day got about 4 minutes longer than sidereal day. It is the effect of earth revolution. So that 4 minutes should be something like 4.01, 3.99, 4.02....for different solar day because the revolution motion is not a perfect circle. That's the reason we use time range of mean solar day for definition of a second.
+In the earlier, people use a solar day to define a second which is 1/86400 mean solar day. The reason we use "mean solar day" is because the orbit of earth which revolutes around the sun is not perfect circle, so the orbit circulation **angular speed** is not constant(You should definitely go to review about planet motion to understand more here). It makes the solar day not constant. We have already discussed that a solar day got about 4 minutes longer than sidereal day. It is the effect of earth revolution. So that 4 minutes should be something like 4.01, 3.99, 4.02....for different solar day because the revolution motion is not a perfect circle. That's the reason we use time range of mean solar day for definition of a second.
 
 However, even so, as we count the effect of revolution of earth, the spining(self-rotation) of earth is still unstable because of earthquake, tide and weather, etc. In 1960, people use the time range of 1900's tropical year as a year to define a second which is a **ephemeris second**. It's a constant because we choose the specific epoch! But pratically, the operation of getting the same time range of that second is hard to repeat. So in 1967, people use Cs-133 atomic transition(which can be easily reproduce) like 9,192,631,770 times as a second, the **SI second**, which had been highly match that ephemeris second. So **1 SI second = 1 ephemeris second**.
 
@@ -175,9 +175,43 @@ Mostly, there are two ways to define a year:
 Of course, these two years are NOT the same, because of precession of earth, equinox slowly changes which makes equinox "precede" to come. Earlier coming means it takes shorter time, it turns out precede about 20 minutes.
 
 ### Sidereal month
+This is the time that moon spend to revolute earth to the same position relative to distant stars. It's about 27.321661 mean solar days.
+
 ### Synodic month
+This is the time range that moon spend to turn back to the same phase. It's about 29.5 mean solar days. The reason why this is longer than sidereal one is because earth is revoluting around the sun. After moon revoluting around earth one time, Earth is not at the same position compare to sun anymore, moon need to spin a little more to face the sun and get the same phase again.
+
+> [!NOTE]
+> The synodic month is not a constant! The reason is that moon revolutes around earth, earth also revolutes around sun. So after moon has already revolutes a cycle, it needs to revolute some more to chase the sun to get the same phase(pretty much like the situation of solar day, but not solar year, earth revolution doesn't need to chase anything, don't get mis). If moon's revolution orbit is perfect circle, then a month would be a constant. However, it's not perfect circle, so the angular speed is not constant! The angle the moon revolute additionally to chase the sun is about 29 degree. If you use the fastest angular speed and slowest angular speed of moon to calculate how many times it takes to go that 29 degree, they're about 1.97 days and 2.46 days. The difference is about 0.49 days.
+
+For observation, the shortest days of a synodic month are 29.27 days~29.83 days(0.56 days difference). Roughly match.
+
 ### Standard time
 ### Calendar
+#### (pure)solar calendar
+Totally based on concept of solar year and solar day. One year(tropical year) has about 365.2422 days which we have mentioned before. One of the calendars called **Gregorian calendar** which is also the broadly used today. It's not directly set 365.2422/12 a month but use the idea of leap(閏) month, leap year. Every four years a leap, not leap at the hundred, but leap again at four hundreds. The average days a year would be:
+``` math
+365+\dfrac{1}{4}+\dfrac{1}{100}+\dfrac{1}{400} = 365.2425 days
+```
+
+Which is very close to tropical year 365.2422 days. The error is small enough to pratical usage.
+
+Other famous ancient civilization that used solar calendar: 
+- Ancient Egyptian civil calendar: 12 months x 30 days + 5 days. Total 365 days without leap, slowly getting offset.
+- Julian calendar(used by Rome): 365 days, 4 years a leap, average 365.25 days a year, which is the mother of Gregorian calendar
+- Yazdegerdi calendar(used by Sasanian persian): 12 months x 30 days + 5 days. Same as Egyptian one. 
+- Jalali Calendar(created by muslim around 11AD): it fixed the offset problem of Yazdegerdi calendar by adding rules of leap year which is four leaps for every 33 years. More precisely, 5, 9, 13, 17, 21, 25, 29, 33 leaps for every 33 years.
+- Maya Haab calendar: 18 months x 20 days + 5 days. Totaly 365 days without leap, slowly getting offset.
+
+#### (pure)lunar calendar
+Totally based on concept of synodic month, 12 months a year(very roughly match tropical year), so you would have about 354 days a year. It makes this calendar offset 11 days every year. About 33 years, it would offset a year! This makes the calendar not possible to determine and doesn't care about seasons and weather, etc. Since this, pure lunar calendar is seldom for usage for most civilizations on earth.
+
+
+The famous ones:
+- Islamic/Hijri Calendar(broadly used by muslim even nowaday): This calendar doesn't care about seasons and weather, only cares about moon phase.
+
+#### Lunisolar calendar
+Basically, this is trying to define a month by moon phase and define year by solar tropical concept. The reason is that in pure solar calendar, moon phase would be getting offset. 
+
 
 ## Brightness
 
