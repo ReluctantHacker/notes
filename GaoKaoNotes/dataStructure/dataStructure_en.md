@@ -1168,9 +1168,70 @@
 				https://blog.csdn.net/weixin_44685869/article/details/106083874
 				https://zhuanlan.zhihu.com/p/257842997
 
-		E. B+ tree (in some respects, an improved variant of the B-tree)
+	E. B+ tree (in some respects, an improved variant of the B-tree)
 		reference:
 		https://www.zhihu.com/question/57466414
-			a. Differences from a B-tree:
+		a. Differences from a B-tree:
 			I. In a B+ tree, internal nodes are used mainly as index/search guides and do not store the full data records. Because internal nodes contain less payload, they can often hold more keys and therefore have a larger fan-out. For the same number of keys, this can reduce tree height and the number of node accesses required for lookup.
 			II. In addition, leaf nodes are typically linked together, making ordered traversal and range queries convenient. This is another major practical advantage.
+            III. Suppose example: 
+                Key → Data
+
+                10 → Alice
+                20 → Bob
+                30 → Carol
+                40 → David
+                50 → Eve
+                60 → Frank
+                70 → Grace
+                
+                🤔. For B tree:
+                                        [20:Bob | 50:Eve]
+                                       /         |         \
+                                      /          |          \
+                           [10:Alice]     [30:Carol | 40:David]     [60:Frank | 70:Grace]
+                🤔. For B+ tree(use the range as separator and you can see only leaves have data, others only have keys):
+                                     [20 | 50]
+                                    /    |    \
+                                   /     |     \
+                                  ↓      ↓      ↓
+                            (<=20)      (20~50)     (>=50)
+                           [10:Alice   [30:Carol   [50:Eve
+                            20:Bob]     40:David]   60:Frank
+                                                    70:Grace]
+                                  \         |          /
+                                   └────────┴─────────┘
+                                      leaf links →
+                🤔. If you want to find a range of data, suppose keys 20~60 for the example we have now, For the B tree case, once you find out 20, you need to go back to root and find 30 and keep do the same until done. However, for B+ tree, once you find 20, you can directly go to next 30, 40, ...60 without go to back to root and do the process again because leaf nodes have been an sorted sequence (and mostly we would give them links to conveniently do the going next).
+            III. Suppose another example: 
+                10 → Alice
+                20 → Bob
+                30 → Carol
+                40 → David
+                50 → Eve
+                60 → Frank
+                70 → Grace
+                80 → Helen
+                90 → Ian
+
+                🤔. Suppose 1 key occupies same space size as 1 data which is 1 byte. And suppose a node is 4 byte, then one node can contain only 2(key+data) at most. For B tree and B+ tree, they have same type of node.
+
+                🤔. For B tree:
+                                             [40:David | 70:Grace]
+                                            /          |           \
+                                           /           |            \
+                                  [20:Bob]           [50:Eve]      [80:Helen]
+                                  /     \             /    \         /      \
+                                 /       \           /      \       /        \
+                          [10:Alice] [30:Carol] [60:Frank]      [90:Ian]
+                🤔. For B+ tree:
+                                        ┌───────────────────────┐
+                                        │   30 | 50 | 70 | 90   │
+                                        └───────────────────────┘
+                                           /    |    |    |    \
+                                          ↓     ↓    ↓    ↓     ↓
+                                       ┌────┐ ┌────┐ ┌────┐ ┌────┐ ┌────┐
+                                       │10:A│ │30:C│ │50:E│ │70:G│ │90:I│
+                                       │20:B│ │40:D│ │60:F│ │80:H│ │    │
+                                       └────┘ └────┘ └────┘ └────┘ └────┘
+                🤔. In this example, you can clearly see that the tree height of B+ is shorter. The reason is that the node size is the same, and size of pointer of key is small enough for deliberately ignoring here.

@@ -5,6 +5,7 @@
 	C. Greatest Common Divisor(GCD)
 	D. Binomial Coefficient
 	E. Ackerman's Function
+        a. 實作上, 不會直接遇到, 但是在設計algorithm的時候, 會盡量避免設計成ackerman-like, 因為度發散會超快, 這是在理論上我們需要大致了解他的原因
 	F. Tower of Hanoi
 	G. Permutation
 

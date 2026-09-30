@@ -1204,6 +1204,7 @@ u
 	C. 操作
 	reference:  below is a very good example talks about how to insert and delete
 	https://www.tutorialspoint.com/data_structures_algorithms/b_trees.htm
+    https://www.geeksforgeeks.org/dsa/2-3-trees-search-and-insert/
 		a. Insert:
 			I. 過程可能會遇到node裡面key數量超過m-1的狀況(overflow), 需要"split"
 				🤔. split的辦法:
