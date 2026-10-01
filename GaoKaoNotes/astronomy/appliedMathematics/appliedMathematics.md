@@ -73,7 +73,7 @@ f^{-1}(f(x)) = id(x) = x
 ## Determinants
 But of course, not all matrix A can have $A^{-1}$. As we know, that a matrix is a linear transformation(any matrix is automatically a linear transformation), the scaling factor of transformation A is $det(A)$. More precisely, how that transformation scales area/volume/higher dimention_scale.
 
-If we have $det(A)=0$. This mean A's output space has lower dimension than the input space. It would let vectors lose one dimensional information. For example volume becomes area, or area becomes a line. And the lose information(becomes 0) is not possible searching back. So apparently $det(A)=0$ implies that A has no $A^{-1}$. It's easy to prove that(although, i am not gonna talk about the details.
+If we have $det(A)=0$. This mean A's output space has lower dimension than the input space. It would let vectors lose one dimensional information. For example volume becomes area, or area becomes a line. And the lose information(becomes 0) is not possible searching back. So apparently $det(A)=0$ implies that A has no $A^{-1}$. It's easy to prove that(although, i am not gonna talk about the details).
 ``` math
 det(A) \neq 0 -> A^{-1} exists
 ```
@@ -140,6 +140,11 @@ A=\lambda_1 v_1 w_1^T+\lambda_2 v_2 w_2^T+\cdots+\lambda_n v_n w_n^T
 ```
 
 where the $w_i^T$'s are the rows of $P^{-1}$.
+
+Well, sometimes we also writen it as 
+```  math
+M=P^{-1}AP
+```
 
 The decomposition has something to with finding basis which is very important.(This part of notes has not done yet)
 ## Basis
