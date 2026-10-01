@@ -158,7 +158,61 @@ and
 D^k = diag(\lambda_1^k, ..., \lambda_n^k)
 ```
 So it's easier to do $A^k$
+2. Decoupling
+- For solving linear function:
+``` math
+Ax = b
+```
+For knowing that $A=PDP^{-1}$, we can have $x=Py$, $c=P^{-1}b$, then:
+``` math
+Dy=c
+```
+Which is way more easier to solve than $Ax=b$. But of course, there are costs for calulation of $x=Py$, $c=P^{-1}b$. The efficiency advantage isn't that apparent in this case.
 
+- For solving linear differential equations:
+For linear differential system:
+``` math
+x'(t) = Ax(t)
+```
+the solution is:
+``` math
+x(t) = e^{At}x(0)
+```
+for 
+``` math
+e^{At} = I + At + \dfrac{A^2 t^2}{2!} + \dfrac{A^3 t^3}{3!} + ...
+```
+which is not easy to calculate, especially for $A^k$. In this case, if we apply decomposition:
+``` math
+x(t) = P e^{Dt} P^{-1} x(0)
+```
+for 
+``` math
+e^{Dt} = diag(e^{\lambda_1 t}, e^{\lambda_2 t, ..., e^{\lambda_n t)
+```
+This makes thing simpler.
+
+3. For Physics concept
+Variable transformation
+``` math
+x_1' = a_{11}x_1 + a_{12}x_2
+```
+``` math
+x_2' = a_{21}x_1 + a_{22}x_2
+```
+By using eigen vectors as basis:
+``` math
+y_1' = \lambda_1 y_1
+```
+``` math
+y_2' = \lambda_2 y_2
+```
+
+More naturally, the whole thing works in vector analysis. 
+``` math
+u = v_1 + v_2
+```
+(not done yet)
 
 The decomposition has something to with finding basis which is very important.(This part of notes has not done yet)
 ## Basis
