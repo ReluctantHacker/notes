@@ -132,9 +132,9 @@ We call this characteristic equation of A.
 ## Eigen Decomposition
 It is basically saying that A can be written as 
 ``` math
-A = PMP^{-1}
+A = PDP^{-1}
 ``` 
-for P is eigenvectors, and M is eigenvalues matrix. And so it can also be written as 
+for P is eigenvectors, and D is eigenvalues matrix which is a **diagonal matrix**. It can be written as 
 ``` math
 A=\lambda_1 v_1 w_1^T+\lambda_2 v_2 w_2^T+\cdots+\lambda_n v_n w_n^T
 ```
@@ -143,8 +143,22 @@ where the $w_i^T$'s are the rows of $P^{-1}$.
 
 Well, sometimes we also writen it as 
 ```  math
-M=P^{-1}AP
+D=P^{-1}AP
 ```
+
+So what are we doing now? Suppose we have a linear transformation X. By taking normal basis as basis, then X can be represented as A. If we use eigen vectors as basis, then it can be represented as D! And because D is diagonal!
+
+But why do we even need this? For practical reasons, why have this:
+1. Simplification of calculation
+``` math
+A^k = PD^kP^{-1}
+```
+and 
+``` math
+D^k = diag(\lambda_1^k, ..., \lambda_n^k)
+```
+So it's easier to do $A^k$
+
 
 The decomposition has something to with finding basis which is very important.(This part of notes has not done yet)
 ## Basis
