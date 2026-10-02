@@ -188,7 +188,7 @@ x(t) = P e^{Dt} P^{-1} x(0)
 ```
 for 
 ``` math
-e^{Dt} = diag(e^{\lambda_1 t}, e^{\lambda_2 t, ..., e^{\lambda_n t)
+e^{Dt} = diag(e^{\lambda_1 t}, e^{\lambda_2 t, ..., e^{\lambda_n t})
 ```
 This makes thing simpler.
 
