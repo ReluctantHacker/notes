@@ -246,16 +246,35 @@ But hold a second here...What are we even doing now? Why do we need eigen values
 
 The reason is abstract but profound. Let me explain here. Why do so many physics problems use eigen idea? It's because the problems themself is naturally eigen problem. For example, wave equation, heat equation, schrodinger equation...and a lot others. They are all naturally eigen problems. 
 
-Morever, because we define something naturally can be treated in eigen problem form. For example, wave. We define a basic wave which has definite $\omega$ and $k$, the plane waves(for 3 dimensions). The reason we use those basic waves to describe world, is also because they have certain $\omega$ and $k$. And naturally, we have wave equation for them.
+Morever, because we define something naturally can be treated in eigen problem form. For example, waves. We define a basic wave which has definite $\omega$ and $k$, the plane waves(for 3 dimensions). The reason we use those basic waves to describe world, is also because they have certain $\omega$ and $k$. And naturally, those basic waves(plane waves) naturally rise wave equation for them.
 
-The wave operator in wave equation is The A we've been discussed about.
+The wave operator in wave equation is actually just matrix A in the matrix discussion we've built. The wave operator naturally is bond with basic plane waves.
 
+So when I say I want to use wave equation or heat equation, I am actually saying that I want to use basic plane waves to analyize the system. Just like saying I want to use A to analysize the system, means naturally want to use eigen vectors v to analysis system.
 
+This means a physics equation(or law) means a transformation A, and it's corresponding eigen vectors are the basis we naturally want to use(like plane waves).
 
-
-
-The decomposition has something to with finding basis which is very important.(This part of notes has not done yet)
 ## Basis
+There are two very important ideas. For u'=Au
+- If you say A is a linear transformation, then u' is the new vector under the original basis. We call this **Active Transformation**.
+- If you say A is a change of basis(coordinate transformation), then u' is the same vector under the new basis. We call this **Passive Transformation**.
+
+In a passive transformation, the new basis vectors are actually the row vectors of matrix A. For example, A=[[a1, a2], [a3, a4]]. Then [a1, a2] and [a3, a4] are the new basis vectors.
+
+For more clearly, there are two important properties of the definition of a basis:
+- spanning: The basis vectors can generate every vector in the space through linear combinations.
+``` math
+span\{v_1,...,v_n\} = V
+```
+- Linear independence: The basis vectors are independent of each other. Which means the basis vectors are not redundant.
+``` math
+c_1 v_1 + ... + c_n v_n = 0
+```
+only when
+``` math
+c_1=...=c_n=0
+```
+
 ## Orthogonality
 ## Matrix equations
 ## Diagonalization
