@@ -223,6 +223,23 @@ A e_1 = a_1 e_1 + a_3 e_2
 ``` math
 A e_2 = a_2 e_1 + a_4 e_2
 ```
+Each output basis component is a weighted sum of the input basis components. We call this **coupling**. 
+
+But when we expand u in eigen vectors
+``` math
+u = c_1 v_1 + c_2 v_2
+```
+we get
+``` math
+Au = c_1 A v_1 + c_2 A v_2
+```
+And so
+``` math
+A v_1 = \lambda_1 v_1
+```
+``` math
+A v_2 = \lambda_2 v_2
+```
 
 
 The decomposition has something to with finding basis which is very important.(This part of notes has not done yet)
