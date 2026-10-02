@@ -240,6 +240,18 @@ A v_1 = \lambda_1 v_1
 ``` math
 A v_2 = \lambda_2 v_2
 ```
+Without coupling, we call this decoupling.
+
+But hold a second here...What are we even doing now? Why do we need eigen values and eigen vectors?
+
+The reason is abstract but profound. Let me explain here. Why do so many physics problems use eigen idea? It's because the problems themself is naturally eigen problem. For example, wave equation, heat equation, schrodinger equation...and a lot others. They are all naturally eigen problems. 
+
+Morever, because we define something naturally can be treated in eigen problem form. For example, wave. We define a basic wave which has definite $\omega$ and $k$, the plane waves(for 3 dimensions). The reason we use those basic waves to describe world, is also because they have certain $\omega$ and $k$. And naturally, we have wave equation for them.
+
+The wave operator in wave equation is The A we've been discussed about.
+
+
+
 
 
 The decomposition has something to with finding basis which is very important.(This part of notes has not done yet)
