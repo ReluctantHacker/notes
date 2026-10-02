@@ -276,6 +276,23 @@ c_1=...=c_n=0
 ```
 
 ## Orthogonality
+### Dot product
+Geometrically
+``` math
+u \dot v = u_1 v_1 + u_2 v_2 + ... + u_n v_n
+```
+and also we can have
+``` math
+u \dot v = |u||v| cos \theta
+```
+
+Strictly, we can have...
+### Orthogonal complements
+### Orthogonal bases
+### Projection
+### Gram-Schmidt process
+### Least squares
+
 ## Matrix equations
 ## Diagonalization
 ## Matrix decomposition (e.g. LU)
