@@ -286,7 +286,7 @@ and also we can have
 u \cdot v = |u||v| cos \theta
 ```
 
-Strictly, we can have...
+Strictly, we can define inner product for a space.
 ### Orthogonal complements
 ### Orthogonal bases
 ### Projection
