@@ -283,7 +283,7 @@ u \dot v = u_1 v_1 + u_2 v_2 + ... + u_n v_n
 ```
 and also we can have
 ``` math
-u \dot v = |u||v| cos \theta
+u \cdot v = |u||v| cos \theta
 ```
 
 Strictly, we can have...
