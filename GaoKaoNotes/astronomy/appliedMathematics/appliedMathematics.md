@@ -279,7 +279,7 @@ c_1=...=c_n=0
 ### Dot product
 Geometrically
 ``` math
-u \dot v = u_1 v_1 + u_2 v_2 + ... + u_n v_n
+u \cdot v = u_1 v_1 + u_2 v_2 + ... + u_n v_n
 ```
 and also we can have
 ``` math
