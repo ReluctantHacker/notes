@@ -208,11 +208,22 @@ y_1' = \lambda_1 y_1
 y_2' = \lambda_2 y_2
 ```
 
-More naturally, the whole thing works in vector analysis. 
+More naturally, the whole thing works in vector analysis. Suppose we have vector u by basic basis as below
 ``` math
-u = v_1 + v_2
+u = u_1 e_1 + u_2 e_2
 ```
-(not done yet)
+By doing some linear transformation A = [[a1, a2], [a3, a4]]. We get
+``` math
+Au = u_1 A e_1 + u_2 A e_2
+```
+And so
+``` math
+A e_1 = a_1 e_1 + a_3 e_2
+```
+``` math
+A e_2 = a_2 e_1 + a_4 e_2
+```
+
 
 The decomposition has something to with finding basis which is very important.(This part of notes has not done yet)
 ## Basis
