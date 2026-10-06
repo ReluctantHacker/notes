@@ -51,8 +51,7 @@ Here's a perfect [website](https://stellarium-web.org/p/observations) that you c
 For the beginners, it's useful to find out the **Big bear(in chinese astronomical system, literally just 北斗七星)** constellation, and use it to find the north star. Knowing this rough coordinate in the head, you can find the other constellations on the sky.
 
 > [NOTE!]
-> One thing should be noticed here. In the earth, you can only see half of the sky in celestial sphere if your position is fixed at a moment. The reason is that the rest half view of the sphere is blocked by earth! You can think that earth is a huge horizontal ground extending to infinity(of course it's not, but for observers, earth is huge enough), So you can only see the view one side of the ground. Doesn't matter about the position you are, you can only see half, but of course, this half would be different accoding to your position. For example, if you see "W" shape in the sky at north earth, you would see same thing as "M" at south earth. But of course, I mean if they both can see the same constellation. If two positions are exactly opposite on Earth, they see mutually exclusive halves of the celestial sphere. Another thing should be noticed is that, althought I say we see half of the celestial sphere, but it means "at a moment". However, when you talk about how much you can see "through a specific of time range", the thing becomes not that simple because earth is self-rotating. Well roughly, if you are at equator, at a moment, indeed, you can only see half of the sphere, but because of self-rotating, it gradually change that half sphere you see. In Theorically ideal situation, you can see all the sphere through the whole night. However, if you are at poles(north or south), you can only see the constant half sphere no matter how earth self-rotates.
-
+> One thing should be noticed here. In the earth, you can only see half of the sky in celestial sphere if your position is fixed at a moment. The reason is that the rest half view of the sphere is blocked by earth! You can think that earth is a huge horizontal ground extending to infinity(of course it's not, but for observers, earth is huge enough), So you can only see the view one side of the ground. Doesn't matter about the position you are, you can only see half, but of course, this half would be different accoding to your position. For example, if you see "W" shape in the sky at north earth, you would see same thing as "M" at south earth. But of course, I mean if they both can see the same constellation. If two positions are exactly opposite on Earth, they see mutually exclusive halves of the celestial sphere. Another thing should be noticed is that, althought I say we see half of the celestial sphere, but it means "at a moment". However, when you talk about how much you can see "through a specific of time range", the thing becomes not that simple because earth is self-rotating. Well roughly, if you are at equator, at a moment, indeed, you can only see half of the sphere, but because of self-rotating, it gradually change that half sphere you see. In Theorically ideal situation, you can see all the sphere through the whole night. However, if you are at poles(north or south), you can only see the constant half sphere no matter how earth self-rotates. In fact, back in ancient Greek, Aristotle in his article "On the Heavens", says "stars are seen in Egypt and around Cyprus that are not seen in northern regions". And he used this ideas to confirm the idea of spherical Earth.
 
 ### Coordinate systems
 For observing objects from a fixed location, telescope pointing and star catalogues. There are two common coordinate systems. 
@@ -100,7 +99,7 @@ $1'$ here is called one **Arcminute** and $1''$ is called one **Arcsecond**. The
 > [NOTE!]
 > From a astrophysicist: "As a professional astrophysicist - we use a WACKY set of units, not just arcseconds are weird. Magnitude, for example, (the way we measure "brightness") is a complete mess, the smaller the number, the brighter the object, and it is historically calibrated in relation to a specific star (usually Vega). But there you also get a hint of why our units are so weird - they all stem from conventions shaped by the techniques and instruments used over centuries. Arcseconds go back to the earliest astronomers of ancient cultures, and traditions like that have a strong hold on astronomy. When you have a field as old as astronomy, trying to enforce "better" units gets very tricky, because your entire catalogue of references and records would have to be translated into the new units, and that ALWAYS leads to transcription errors. It's already a horrid mess that we have multiple different systems to record the location of objects in the sky (we have Right Ascension and Declination, but those can be given in radians, arcseconds, minutes, etc etc, all kinds of units, even with different reference points...). In the end, it's just easier to stick with the old system, and maybe translate it to better units when you have to do specific calculations." From another one: "As another professional astrophysicist, I at least do what I can to nudge things in the right direction by giving coordinates in decimal degrees instead of the old standard with degree-arcmin-arcsec on one coordinate axis and hours-minutes-seconds on the other axis." The argument is that the unit is weird because of historical reasons.
 
-Vernal equinox(春(秋)分) is the point where the celestial equator crosses the ecliptic. But of course, if talk about the cross point, there are actually two intersection points. 
+Vernal equinox(春(秋)分) is the point where the celestial equator crosses the ecliptic. But of course, if talk about the cross point, there are actually two intersection points. Well, Ecliptic actually also is the path of the sun in celestial sphere caused by earth's orbital motion.
 * Vernal Equinox — the point where the Sun crosses the celestial equator from south to north. which is the 0h point.
 * Autumnal Equinox — the point where the Sun crosses the celestial equator from north to south. which is the 12h point.
 
@@ -116,7 +115,7 @@ ICRS
 ### Astronomical Unit (AU)
 ### Parsec (pc)
 
-## Apparent Motion of Celestial Objects
+## Apparent Motion(視運動) of Celestial Objects
 
 ### Apparent motion of the Sun, Moon, and stars
 ### Diurnal motion
@@ -125,7 +124,7 @@ ICRS
 ### Solar and lunar eclipses
 ### Precession
 
-## Actual Motion of Celestial Objects
+## Actual Motion(真運動) of Celestial Objects
 
 ### Actual motion of celestial objects
 
@@ -183,12 +182,12 @@ This is the time range that moon spend to turn back to the same phase. It's abou
 > [!NOTE]
 > The synodic month is not a constant! The reason is that moon revolutes around earth, earth also revolutes around sun. So after moon has already revolutes a cycle, it needs to revolute some more to chase the sun to get the same phase(pretty much like the situation of solar day, but not solar year, earth revolution doesn't need to chase anything, don't get mis). If moon's revolution orbit is perfect circle, then a month would be a constant. However, it's not perfect circle, so the angular speed is not constant! The angle the moon revolute additionally to chase the sun is about 29 degree. If you use the fastest angular speed and slowest angular speed of moon to calculate how many times it takes to go that 29 degree, they're about 1.97 days and 2.46 days. The difference is about 0.49 days.
 
-For observation, the shortest days of a synodic month are 29.27 days~29.83 days(0.56 days difference). Roughly match.
+For observation, a synodic month are 29.27 days~29.83 days(0.56 days difference). Roughly match the calculation 0.49 days.
 
 ### Standard time
 ### Calendar
 #### (pure)solar calendar
-Totally based on concept of solar year and solar day. One year(tropical year) has about 365.2422 days which we have mentioned before. One of the calendars called **Gregorian calendar** which is also the broadly used today. It's not directly set 365.2422/12 a month but use the idea of leap(閏) month, leap year. Every four years a leap, not leap at the hundred, but leap again at four hundreds. The average days a year would be:
+Totally based on concept of solar year and solar day. One year(tropical year) has about 365.2422 days which we have mentioned before. One of the calendars called **Gregorian calendar** which is also the broadly used today. It's not directly set 365.2422/12 a month but use the idea of leap(閏)  year which that year would have 366 days(one more day that year). Added that day into Feb month. Every four years a leap, not leap at the hundred, but leap again at four hundreds. The average days a year would be:
 ``` math
 365+\dfrac{1}{4}+\dfrac{1}{100}+\dfrac{1}{400} = 365.2425 days
 ```
@@ -210,7 +209,12 @@ The famous ones:
 - Islamic/Hijri Calendar(broadly used by muslim even nowaday): This calendar doesn't care about seasons and weather, only cares about moon phase.
 
 #### Lunisolar calendar
-Basically, this is trying to define a month by moon phase and define year by solar tropical concept. The reason is that in pure solar calendar, moon phase would be getting offset. 
+Basically, this is trying to define a month by moon phase and define year by solar tropical concept. The reason is that in pure solar calendar, moon phase would be getting offset. The rules are very simple, it also use the leap year. For the year that is not leap year, then totally follows rule of pure lunar calendar(roughly 354 days a year). For the leap year, add one more month that year(roughly 384 days a year).
+- Chinese Calendar: cut a tropical year(365.2422 days) to 24 parts(24節氣), the even ones(2, 4, 6, 8...) called "中氣". Because average solar month is 30.44 days and synodic month is 29.53 days. Solar month is roughly longer by 0.9 days. So for example, if 中氣 is the first day of this month, it would be like second or third day next month and so on. When you encounter a month that no 中氣, you add this month as leap month!(so you would have 13 months this year). Under this rule, 節氣 are not match to moon phase. It slowly offset and then turn back(about 19 years a cycle).  
+- Greek Calendar:
+- Hebrew Calendar:
+- Indian Calendar:
+- Babylon Calendar:
 
 
 ## Brightness
