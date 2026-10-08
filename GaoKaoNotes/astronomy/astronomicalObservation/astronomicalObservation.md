@@ -64,7 +64,7 @@ This includes main two parameters:
 > Horizontal coordinates are observer-dependent! This means, suppose you and I stand at different locations on Earth. We will generally measure different altitude and azimuth. Even if you stay in exactly the same location, the coordinates change as Earth rotates. That's why ground station use this system, because the location is fixed. Another thing you should noticed is that, Earth rotates! In the observer point of view, the printed Az/El is just the instantaneous direction from your location to the satellite, in your local sky. So from the user’s point of view, you don’t need to mentally add Earth’s rotation. You just follow the Az/El numbers. However, to produce those Az/El values, the software must transform the satellite’s position from an inertial/orbital frame into your Earth-fixed local horizon frame. That transformation includes Earth’s rotation. If Earth didn’t rotate, the same satellite orbit would produce different Az/El values over time.
 
 #### Equatorial Coordinate System
-This one is more important. Instead of using your location horizon, we use the celestial equator. It is essentially Earth's latitude/longitude system projected onto the celestial sphere. This system is still the standard and very widely used in modern astronomy.
+This one is more important. It is NOT a observer-dependent system, but an ABSOLUTE system which means it tries to make celestrial sphere as static reference frame. Instead of using your location horizon, we use the celestial equator. It is essentially Earth's latitude/longitude system projected onto the celestial sphere. This system is still the standard and very widely used in modern astronomy.
 
 There are two parameters:
 - Declination(Dec, δ): is defined using the same geometric idea as latitude, but on the celestial sphere. Aka, the latitude of celestial sphere. Latitude is specially for earth, and declination is for celestial sphere, but conceptually, they are the same model for different objects. 
@@ -107,26 +107,17 @@ But because earth precession, vernal equinox is not fixed, that means the 0 refe
 
 The modern system now use **J2000.0**
 
-ICRS
+#### ICRS
+J2000 is a constant system already, but it's hard to repeat it. The situation is kinda like definition a second. So in 1998, people create ICRS coordinate system. It roughly succeed the system structure of equatorial coordiante system, still using RA and Dec as variables, and point to J2000.0, In order to be compitable to old system. Only the reference is not vernal equinox anymore. They did their best to chose the farest stars(mainly Quasars for their extreme energy emission) but still be capable to be observed easily as new reference points. And use some math point to old vernal equinox by those points.
 
+> [NOTE!]
+> Although, we often use two variables Dec and RA to tell the object on celestial sphere. But we often take that object infinitely distant. In short, we only care about "direction" of that object. However, sometimes we need to deal with the real distant, the third variable **Parallax** can be added without problem.
 
 ### Angular distance / angular measurement
 ### Arcsecond
 ### Astronomical Unit (AU)
 ### Parsec (pc)
 
-## Apparent Motion(視運動) of Celestial Objects
-
-### Apparent motion of the Sun, Moon, and stars
-### Diurnal motion
-### Annual motion
-### Phases of the Moon
-### Solar and lunar eclipses
-### Precession
-
-## Actual Motion(真運動) of Celestial Objects
-
-### Actual motion of celestial objects
 
 ## Time
 
@@ -210,12 +201,67 @@ The famous ones:
 
 #### Lunisolar calendar
 Basically, this is trying to define a month by moon phase and define year by solar tropical concept. The reason is that in pure solar calendar, moon phase would be getting offset. The rules are very simple, it also use the leap year. For the year that is not leap year, then totally follows rule of pure lunar calendar(roughly 354 days a year). For the leap year, add one more month that year(roughly 384 days a year).
-- Chinese Calendar: cut a tropical year(365.2422 days) to 24 parts(24節氣), the even ones(2, 4, 6, 8...) called "中氣". Because average solar month is 30.44 days and synodic month is 29.53 days. Solar month is roughly longer by 0.9 days. So for example, if 中氣 is the first day of this month, it would be like second or third day next month and so on. When you encounter a month that no 中氣, you add this month as leap month!(so you would have 13 months this year). Under this rule, 節氣 are not match to moon phase. It slowly offset and then turn back(about 19 years a cycle).  
+- Chinese Calendar: cut a tropical year(365.2422 days) to 24 parts(24節氣), the even ones(2, 4, 6, 8...) called "中氣". Because average solar month is 30.44 days and synodic month is 29.53 days. Solar month is roughly longer by 0.9 days. So for example, if 中氣 is the first day of this month, it would be like second or third day next month and so on. When you encounter a month that no 中氣, you add this month as leap month!(so you would have 13 months this year). Under this rule, 節氣 are not match to moon phase. It slowly offset and then turn back(about 19 years a cycle, and so naturally 7 leaps in one cycle average).  
 - Greek Calendar:
 - Hebrew Calendar:
 - Indian Calendar:
 - Babylon Calendar:
 
+## Apparent Motion(視運動) of Celestial Objects
+**Apparent Motion** is just that the reference frame is based at the center of the observer.
+
+Before Newton, most astronomical activity is observing apparent motion
+
+### Apparent motion of Sun
+
+
+### Apparent Diurnal Motion(周日運動) for stars
+Apparent diurnal motion of a star is the apparent change in the star’s position on the celestial sphere over one day. 
+
+Of course we konw that it is caused primarily by Earth’s rotation about its axis. Roughly spend 23:56. (sidereal day)  
+### Apparent Annual Motion(周年運動) for stars
+Because sidereal day is about 23:56, so the same constellation came out from the sky is 4 minutes earlier everyday. Notice, the word "earlier" here is not precise, stars and constellations are 23:56 a cycle in celestial sphere. But because earth revolution to sun, the on/off time range of the sky light(sun comes/leave) is about 24:00 which is solar day. Sideal day is shorter than solar day. 
+
+### Apparent position of planets
+People use equatorial coordinate system to get apparent position of Planets. Practically, when people use telescope, they won't directly calibrate to J2000.0 but direct recent time, the reason is because even if you calibrate to J2000.0, the motion of earth is not J2000.0! So it slowly offset. Modern telescope would use software to help you calculate the result.
+#### Apparent Prograde motion(順行)
+Planet moves eastward against the background stars. 
+
+This is caused by planetary orbit.
+#### Retrograde Motion of planets(逆行)
+Planet moves westward (backward). 
+
+This is caused by Earth "overtaking" the outer planet
+#### Stationary motion of planet(留)
+#### Phase of inferior planet
+Mercuy and Venus show phasees (like the Moon).
+
+Mercury and Venus show phases (like the Moon) / Caused by internal planets orbiting the Sun and reflecting sunlight.
+####  Greatest Eastern / Western Elongation
+Inner planet reaches its maximum angular separation from the Sun / Caused by inner planet orbital geometry.
+
+#### Transit(凌日)
+Inner planet crosses the Sun's disk / Caused by the planet passing directly between Earth and the Sun.
+
+#### Opposition(衝日)
+Outer planet is opposite to the Sun in the sky / Caused by Earth being directly between the Sun and the outer planet.
+
+#### Conjunction(合日)
+Outer planet is in the same direction as the Sun / Caused by the outer planet being on the far side of the Sun.
+
+### Precession(歲差)
+We had already talked about this.
+
+### Apparent motion of the Sun, Moon, and stars
+### Diurnal motion
+### Annual motion
+### Phases of the Moon
+### Solar and lunar eclipses
+### Precession
+
+## Actual Motion(真運動) of Celestial Objects
+
+### Actual motion of celestial objects
 
 ## Brightness
 
