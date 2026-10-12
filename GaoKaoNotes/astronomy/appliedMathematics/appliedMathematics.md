@@ -315,7 +315,14 @@ In infinite-demensional inner product space, things become more complicated beca
 1. A subspace may not be closed.
 In finite dimensions, every subspace is closed, for infinite dimsions, it no longer holds.
 
-Notice here, "Closed under an operation" and "a closed subspace" are two different concepts, don't mix them up.
+Notice here, "Closed under an operation" and "a closed subspace" are two different concepts, don't mix them up. When we say a set is closed. The concept is originally from the idea of **closed interval** [a, b] and **open interval** (a, b) but it's for set.
+
+More specificially, when we say a set is closed or open, the precise is that the set is a subset of a topological space(or in most cases, a metric space, which is a special case of topological space, but a topological space which is not a metric space can discuss open or closed, too, only more weird). The topological space provides the "ambient space" and the rules (the topology) that decide which subsets are open. 
+
+So when we discuss, for example, S={1, 2, 3} is open or closed, the premise is that S is based on real number topological space(standard space on R). 
+
+So the so call "closed" means you draw any length range(area range for R^2, volume range for R^3) around an element in S. For example, element 2, and the range is radius 0.5. The numbers in the topological space that is includes are 2.5~1.5 which includes the number that are not in set S, we called this closed!
+
 
 ### Orthogonal bases
 ### Projection
