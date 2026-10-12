@@ -216,7 +216,7 @@ By doing some linear transformation A = [[a1, a2], [a3, a4]]. We get
 ``` math
 Au = u_1 A e_1 + u_2 A e_2
 ```
-And so
+For $e_1$ = [1, 0] and $e_2$ = [0, 1], and so
 ``` math
 A e_1 = a_1 e_1 + a_3 e_2
 ```
@@ -233,7 +233,7 @@ we get
 ``` math
 Au = c_1 A v_1 + c_2 A v_2
 ```
-And so
+And
 ``` math
 A v_1 = \lambda_1 v_1
 ```
@@ -276,7 +276,7 @@ c_1=...=c_n=0
 ```
 
 ## Orthogonality
-### Dot product
+### Dot(inner) product
 Geometrically
 ``` math
 u \cdot v = u_1 v_1 + u_2 v_2 + ... + u_n v_n
@@ -286,8 +286,31 @@ and also we can have
 u \cdot v = |u||v| cos \theta
 ```
 
-Strictly, we can define inner product for a space.
+Strictly, we can define inner product for a space without following axioms:
+- Symmetry: $\langle u,v\rangle=\langle v,u\rangle$
+- Linearity: $\langle au+bv,w\rangle=a\langle u,w\rangle+b\langle v,w\rangle$
+- Positive definiteness: $\langle u,u\rangle>0$ whenever $u\ne0$, and $\langle 0,0\rangle=0$
+
+These are mandotary by definition. If an operation violates anyone of these axioms, it is not an inner product under the standard definition.
 ### Orthogonal complements
+Given a subspace $W\subseteq V$, its orthogonal complement is
+``` math
+\boxed{
+W^\perp=\{v\in V:\langle v,w\rangle=0
+\text{ for every }w\in W\}
+}
+```
+In other words, $W^\perp$ contains every vector orthogonal to every vector in $W$.
+
+For example, In R^2, if W is the x-axis, then $W^\perp$ is the y-axis. Notice here, we are talking about "vectors", so the origin should always be (0, 0), so orthogonal complements of x-axis which is something like (a, 0) is should be (0, b) which is y-axis without problems.
+
+Another example, In R^3, if W is the x-axis, then $W^\perp$ is the yz-plane.
+```
+\boxed{
+W^\perp=\{v\in V:\langle v,w\rangle=0
+\text{ for every }w\in W\}
+}
+```
 ### Orthogonal bases
 ### Projection
 ### Gram-Schmidt process
