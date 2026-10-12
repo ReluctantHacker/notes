@@ -317,11 +317,12 @@ In finite dimensions, every subspace is closed, for infinite dimsions, it no lon
 
 Notice here, "Closed under an operation" and "a closed subspace" are two different concepts, don't mix them up. When we say a set is closed. The concept is originally from the idea of **closed interval** [a, b] and **open interval** (a, b) but it's for set.
 
-More specificially, when we say a set is closed or open, the precise is that the set is a subset of a topological space(or in most cases, a metric space, which is a special case of topological space, but a topological space which is not a metric space can discuss open or closed, too, only more weird). The topological space provides the "ambient space" and the rules (the topology) that decide which subsets are open. 
+More specificially, when we say a set is closed or open, the precise is that the set is a subset of a topological space(or in most cases, a metric space, which is a special case of topological space, but a topological space which is not a metric space can discuss open or closed, too, only more weird). The topological space provides the "ambient space" and the rules (the topology) that decide which subsets are open. (a topological space doesn't have to be continuous and infinite, it can be discrete and finite)
 
 So when we discuss, for example, S={1, 2, 3} is open or closed, the premise is that S is based on real number topological space(standard space on R). 
 
 So the so call "closed" means you draw any length range(area range for R^2, volume range for R^3) around an element in S. For example, element 2, and the range is radius 0.5. The numbers in the topological space that is includes are 2.5~1.5 which includes the number that are not in set S, we called this closed!
+
 2. The orthogonal complement may not recover the whole space
 For a general subspace W of an inner product space, we have 
 ``` math
@@ -329,8 +330,43 @@ For a general subspace W of an inner product space, we have
 ```
 here $\overline W$ is the closure of W.
 
+Closure means including the border elements of a set W to form a new set $overline W$. For example, [a, b] is the closure of (a, b).
 
+Consequently, if W is not closed,
+``` math
+(W^\perp)^\perp\ne W.
+```
+The double orthogonal complement recovers the closure of W, not necessarily W itself.
+
+3. Infinite-dimensional spaces introduce additional subtleties
+In a finite-dimensional space, we can choose a finite orthonormal basis and express every vector as a finite linear combination of its basis vectors.
+
+In an infinite-dimensional Hilbert space, an orthonormal basis may instead require an infinite series, with convergence becoming an essential part of the theory.
+
+There is also an important distinction between an inner product space and a Hilbert space: a Hilbert space is complete under the norm induced by its inner product. Completeness gives us additional powerful theorems, including the orthogonal decomposition theorem for every closed subspace.
 ### Orthogonal bases
+#### Definition of orthogonal bases
+A basis $\{v_1,v_2,\ldots,v_n\}$ of an inner product space V is an orthogonal basis if its distinct basis vectors are pairwise orthogonal:
+``` math
+\boxed{\langle v_i,v_j\rangle=0
+\quad\text{whenever }i\ne j}
+```
+With two requirements below:
+- The vectors form a basis, so they are linearly independent and span V.
+- Distinct basis vectors are orthogonal to each other.
+#### Orthonormal bases
+An orthonormal basis is an orthogonal basis whose vectors all have unit length.
+``` math
+\boxed{\langle v_i,v_j\rangle=\delta_{ij}}
+```
+#### Usage of orthogonal bases
+For vector v expressed by orthogonal basis
+``` math
+u=c_1v_1+c_2v_2+\cdots+c_nv_n
+```
+You can easily find any coefficient c by inner product because orthogonal properties.
+#### Why so many physics equations give eigen-orthogonal vectors?
+If $A^T=A$, then eigenvectors of A corresponding to distinct eigenvalues are orthogonal to each other.
 ### Projection
 ### Gram-Schmidt process
 ### Least squares
