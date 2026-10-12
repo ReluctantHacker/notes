@@ -304,7 +304,7 @@ For example, In R^2, if W is the x-axis, then $W^\perp$ is the y-axis. Notice he
 
 Another example, In R^3, if W is the x-axis, then $W^\perp$ is the yz-plane.
 
-The **direct sum** of $W^\perp$ and $W$, which means means all vectors of the form $u+w,\ u\in W^\peop,\ w\in W$ would be
+The **direct sum** of $W^\perp$ and $W$, which means means all vectors of the form $u+w,\ u\in W^\perp,\ w\in W$ would be
 ``` math
 V=W\oplus W^\perp
 ```
