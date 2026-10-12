@@ -322,6 +322,11 @@ More specificially, when we say a set is closed or open, the precise is that the
 So when we discuss, for example, S={1, 2, 3} is open or closed, the premise is that S is based on real number topological space(standard space on R). 
 
 So the so call "closed" means you draw any length range(area range for R^2, volume range for R^3) around an element in S. For example, element 2, and the range is radius 0.5. The numbers in the topological space that is includes are 2.5~1.5 which includes the number that are not in set S, we called this closed!
+2. The orthogonal complement may not recover the whole space
+For a general subspace W of an inner product space, we have 
+``` math
+(W^\perp)^\perp = W\bar
+```
 
 
 ### Orthogonal bases
