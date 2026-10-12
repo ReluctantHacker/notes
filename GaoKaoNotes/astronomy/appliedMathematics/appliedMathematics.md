@@ -325,8 +325,9 @@ So the so call "closed" means you draw any length range(area range for R^2, volu
 2. The orthogonal complement may not recover the whole space
 For a general subspace W of an inner product space, we have 
 ``` math
-(W^\perp)^\perp = W\bar
+(W^\perp)^\perp = \bar{W}
 ```
+here $\overline W$ is the closure of W.
 
 
 ### Orthogonal bases
