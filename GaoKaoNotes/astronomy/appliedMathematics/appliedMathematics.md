@@ -308,6 +308,15 @@ The **direct sum** of $W^\perp$ and $W$, which means means all vectors of the fo
 ``` math
 V=W\oplus W^\perp
 ```
+
+This result seems natural, but notice here, it only holds in finite-dimensional inner product space. 
+
+In infinite-demensional inner product space, things become more complicated because some of the guarantees we get automatically in finite dimensions no long holds. There are three differences.
+1. A subspace may not be closed.
+In finite dimensions, every subspace is closed, for infinite dimsions, it no longer holds.
+
+Notice here, "Closed under an operation" and "a closed subspace" are two different concepts, don't mix them up.
+
 ### Orthogonal bases
 ### Projection
 ### Gram-Schmidt process
