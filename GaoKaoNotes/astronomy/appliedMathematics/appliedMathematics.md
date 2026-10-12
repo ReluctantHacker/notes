@@ -295,21 +295,18 @@ These are mandotary by definition. If an operation violates anyone of these axio
 ### Orthogonal complements
 Given a subspace $W\subseteq V$, its orthogonal complement is
 ``` math
-\boxed{
 W^\perp=\{v\in V:\langle v,w\rangle=0
 \text{ for every }w\in W\}
-}
 ```
 In other words, $W^\perp$ contains every vector orthogonal to every vector in $W$.
 
 For example, In R^2, if W is the x-axis, then $W^\perp$ is the y-axis. Notice here, we are talking about "vectors", so the origin should always be (0, 0), so orthogonal complements of x-axis which is something like (a, 0) is should be (0, b) which is y-axis without problems.
 
 Another example, In R^3, if W is the x-axis, then $W^\perp$ is the yz-plane.
-```
-\boxed{
-W^\perp=\{v\in V:\langle v,w\rangle=0
-\text{ for every }w\in W\}
-}
+
+The **direct sum** of $W^\perp$ and $W$, which means means all vectors of the form $u+w,\ u\in W^\peop,\ w\in W$ would be
+``` math
+V=W\oplus W^\perp
 ```
 ### Orthogonal bases
 ### Projection
