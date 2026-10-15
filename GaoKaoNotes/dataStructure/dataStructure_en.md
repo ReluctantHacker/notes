@@ -3,6 +3,11 @@
 |#############################################################################################################|
 1. Some Data Structures
 	A. Primitive: integer, float, string, boolean
+        a. c language:
+            I. int: 4 bytes=32 bits, -2^31 ~ 2^31 -1, it uses the 2's complements
+            II. float: 4 bytes = 32 bits = 1 bits(sign) + 8 bits(exponent) + 23 bits(fraction), you can take reference here: computer_science [float_number notes](https://github.com/lovelessless99/IEEE_754_Tutorial). For conenient, we call exponent 8-bits value "E", means for example, exponent bits = E = 0000 0001 = 2. The exponent part uses the bias, which needs to plus 127, this is called excess-127. The reason for the bias is that the exponent needs negative number, too. The exponents is -127~128 (total 256)
+                🤔. For example, a = +1.Fx2^3 = |0|1000 0010|0001 0000 0000 0000 0000 0000 000|. The exponent part is E = 1000 0010 = 3+127, so the exponent is 3, so a = +1.0001 x 2^3
+                🤔. Because 1.Fx2^e can never represent 0 which we definitely needs it in float, so people choose the case when E=0 and F=0 for 1.Fx2^0-127 = 0. 
 	B. Non-primitive:
 		a. Linear (in sequential order): list, tuple, array, linked list, stack, queue
 		b. Non-linear: set, dictionary, tree, graph

@@ -2,7 +2,7 @@
 1. some datastructure
 	A. primitive: integer, float, string, boolean
         a. c語言:
-            I. int: 4 bytes=32 bits, 0~2^32-1
+            I. int: 4 bytes=32 bits, 2^31 ~ 2^31 -1 
             II. float: 4 bytes = 32 bits = 1 bits(sign) + 8 bits(exponent) + 23 bits(fraction), 可同時參考computer_science浮點數notes(https://github.com/lovelessless99/IEEE_754_Tutorial)
             III. char: 
 	B. non-primitive: 
