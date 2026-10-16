@@ -426,6 +426,16 @@ Definition:
 One thing to keep in mind is that Calculus is nothing more than an updated version of the Method of Exhuastion, but now it specifically deal with **Functions**. People have played algebra, geometry, and arithmetic for a long time. In 17th centuries, many math problems were being researched again, like finding area of a shape, finding the length of curve or volume of some solid body. Most of them were written in algebraic expressions and equations. So a problem may like this in that time: How do we computer the area under a unit circle curve which is express as $\sqrt{1-x^2}$ under first quadrant of cartesian coordinates? We can use the Method of Exhaustion, take n number of small rectangles under the curve, and when n increases the more accurate the area we computer.  By the way, the term "Function" is created by Lebniz in 1694.
 
 # Chapter 2: Definition of Infinity
+Standard
+--------
+
+Non-Standard
+------------
+Here's one resource discusses about [why people not using non-standard](https://www.zhihu.com/question/23285964)
+
+
+
+
 
 Reference:
 ----------

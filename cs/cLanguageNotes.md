@@ -376,7 +376,7 @@
       ```
     * 這是最簡單的用法, 雖然是最簡單的, 但實際上仍舊會在實際情況看到, 這種用法看似沒有意義, 如果定義了一個新變數類型new_type, 但是這個new_type完全就是type, 那何不用type? 這是因為如果當我們在其他地方使用這個new_type, 而如果哪一天需要修改成typedef type2 new_type; 我們就不需要把有new_type的地方全部改掉, 並且new_type的變數命名可以針對我們想要的情況, 已讓代碼可讀性提高.
 
-  * struct new_struct宣告後, 如果要取得結構內的元素, 可直接使用new_struct.attr1, 如果是struct的地址, 則可以使用(&newstruct)->attr1
+  * struct new_struct宣告後, 如果要取得結構內的元素, 可直接使用new_struct.attr1, 如果是struct的地址, 則可以使用(&newstruct)->attr1. 底層來說, struct 定義了一個自訂的複合型別(藍圖)。當你用它宣告一個變數（實例化）時，編譯器才會向作業系統／堆疊要一塊連續的記憶體，並按照藍圖把成員安排進去。
     * ```c
       #include <stdio.h>
       #include <stdlib.h>
@@ -797,8 +797,23 @@ gdb ./example_debug
       bool is_ready = true;  // Easier to understand than _Bool is_ready = 1;
       ```
   * ## 2. bool doesn't use 1 bit but 1 byte, the reason is that the smallest controllable(addressable) memory unit is 1 byte in most modern computer system and hardware architectures. For example, CPU and memory systems are optimized to read and write in chunks of 8 bits (1 byte). Addressing individual bits would require more complex circuitry and slow down performance. Of course there are exceptions like - Bit-addressable microcontrollers iin some embedded systems. In short,  1 byte unit of addressable memory is because of cpu design.  In the end, so bool doesn't have any memory advantage.
+
+# AND/OR 
+  * ## 1. AND
+    * "&" for bit level AND
+    * "&&" for logic level AND
+  * ## 2. OR
+    * "|" for bit level Or
+    * "||" for logic level OR
+    區分"|"和"||"這個的原因在於, logic "||"只要左邊的判斷成立, 就直接pass輸出1(如果fail則0), 而bit "|"需要把兩邊的位元組合併計算出結果, 且輸出值不一定為1. 這兩件事情的計算結果很可能是不同的. "&"和"&&"也是一樣的道理
     
-      
+# bit operators  
+  * ## 1. "&" 上面講過了
+  * ## 2. "|" 上面講過了
+  * ## 3. "~" not的意思, 就是1變0, 0變1
+  * ## 4. "^" 按位異或XOR, 兩bit不同則1, 若同則0
+  * ## 5. "<<" 整個bits左移n, 例如1u<<3表示 00000001->00001000, 例如8u<<6表示00001000->00000000超過截掉
+  * ## 6. ">>" 整個bits右移n, 例如8u>>3表示 00001000->00000001
     
 
 

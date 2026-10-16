@@ -2,13 +2,31 @@
 
 |#############################################################################################################|
 1. Some Data Structures
-	A. Primitive: integer, float, string, boolean
+	A. Primitive(type): integer, float, string, boolean
         a. c language:
-            I. int: 4 bytes=32 bits, -2^31 ~ 2^31 -1, it uses the 2's complements
+            I. signed int: 4 bytes=32 bits, -2^31 ~ 2^31 -1, it uses the 2's complements. Which is the default in c which means you don't need to type "signed" in front of "int".
+            I. unsigned int: 4 bytes=32 bits, 0 ~ 2^32 -1. You need to type "unsigned" in front of "int" to make int unsigned in c.
             II. float: 4 bytes = 32 bits = 1 bits(sign) + 8 bits(exponent) + 23 bits(fraction), you can take reference here: computer_science [float_number notes](https://github.com/lovelessless99/IEEE_754_Tutorial). For conenient, we call exponent 8-bits value "E", means for example, exponent bits = E = 0000 0001 = 2. The exponent part uses the bias, which needs to plus 127, this is called excess-127. The reason for the bias is that the exponent needs negative number, too. The exponents is -127~128 (total 256)
                 🤔. For example, a = +1.Fx2^3 = |0|1000 0010|0001 0000 0000 0000 0000 0000 000|. The exponent part is E = 1000 0010 = 3+127, so the exponent is 3, so a = +1.0001 x 2^3
                 🤔. Because 1.Fx2^e can never represent 0 which we definitely needs it in float, so people choose the case when E=0 and F=0 for 1.Fx2^0-127 = 0. 
-	B. Non-primitive:
+                🤔. For positive infinity, sign=0, E=11111111 and F=0. For negative infinity, sign=1, E=11111111 and F=0. 
+                🤔. For NaN(Not a Number), and sign=X, E=11111111 and F=1. Here, X means the sign bit can be either 0 or 1.
+                🤔. The infinity convention here, is mainly used for overflow and something over 0, the idea of nonzero/0 = infinty is pretty much familiar with non-standard analysis but they are not the same thing. In non-standard analysis infinity-infinity  and infinity/infinity can be 0. But in IEEE, infinity-inifnity and infinity/infinity would all get NaN.
+                🤔. There's no "signed" problem in float because it naturally includes the idea inside the mechanics 
+            III. double: double version of float. 8 bytes = 64 bits = 1 bits(sign) + 11 bits(exponent) + 52 bits(fraction)
+                🤔. It has its own non, infinity representation. The reason those two needs double version is that in the hardare level, cacluation can't handle two different type of data. For example, you can't do double+float, you have to change double to float or float to double to make the type the same to do the addition operation. So you need their own NaN and infinity to handle each calculation.
+                🤔. There's no "signed" problem in double because it naturally includes the idea inside the mechanics.
+            IV. char: We got a long story here. As you know, nowaday, a byte=8 bit in modern general-purpose computing is the basic unit for transmission, storage and even for memory addressing(1 byte per memory address). However, it's actually not always true when it comes to non-general-purpose computing. In fact, people use 4 bits, 6 bits, 8 bits as a byte in early day. Now, 8 bits becomes the standard for general-purpose computing. But, today, in area of "digital signal processor", because of efficiency, the standard is still not 8 bits! Actually, in early day, people often use 1 byte as a group of bits to be enough to represent a character. This is why in chinese, they call a byte "字節". In c language, a char is the same size as a byte, **it is actually a small length int**(so you can use char to do the math without problem, and use signed/unsigned for them). In most cases of general-purpose computing, it's 8 bits. Which can represent 256 symbols which is often read by ASCII coding including standand english symbols, number symbols and some special, in total occupy 0~127(128~255 is undefine). When c language do printf("hello, world\n"); It write the bytes into stdout. The program itself doesnt' care about decoding. Terminal would decoding the bytes and print it on your screen. In modern computer system, when you source code file has a chinese character is needed to be printed, if your system and txt file are all utf-8(the most used coding standard this day), then that character occupy 3 char(byte).
+            V. Boolean: Theoritically, it occupies one bit, but pratically, the smallest unit is 1 byte for general-purpose computing, so normally, when you declare a boolean variable, it automatically uses a byte. There's a way to save memory space by grouping 8 boolean variables into a byte for c language.
+                🤔. Use "struct":
+                    😂. struct Bits {
+                            unsigned char a : 1; // ": 1" is declaring the bit range
+                            unsigned char b : 1;
+                            // ...
+                        };
+                    😂. because struct is declare a "continuous" memory for a instance! So this works! The detailed reason you can check "cLanguage notes".
+                    😂. Actually you can handle a bit reversely, means, for example change a bit in a byte. You can check the details in "cLanguage notes"
+	B. Non-primitive(structure):
 		a. Linear (in sequential order): list, tuple, array, linked list, stack, queue
 		b. Non-linear: set, dictionary, tree, graph
 

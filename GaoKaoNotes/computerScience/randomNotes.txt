@@ -160,4 +160,11 @@ reference:
 https://www.zhihu.com/question/23374078
 	A. Ascii --> 最早的encoding, 一個character用一個byte表示, 這也是byte成為"字節"的原因
 	B. Unicode 
+        a. 規定不同字符所對應的數字, 兼容ASCII.
 	C. UTF-8
+        a. 是Unicode的一種編碼(encoding, 變成01形式)實作. 8表示用8 bits的意思. 在最古早的時候採用UTF-32, 所有字符都是32 bits, 但這很明顯, 數字小的就浪費了流量了, 例如A是65, 完全用8 bit就可以了. UTF-8採用Prefix code來達到自動判斷該用多少bit. 
+            I. 0XXXXXXX表示ASCII字符集, 也就是會自動判斷為1 byte
+            II. 110XXXXX 10XXXXXX, 自動判定為2 byte
+            III. 1110XXXX 10XXXXXX 10XXXXXX, 自動判定為3 byte
+            IV. 11110XXX 10XXXXXX 10XXXXXX 10XXXXXX, 自動判定為4 byte
+        b. 你可能會想, 開頭為0/110/1110/11110就可以了, 為何第二byte之後還要開頭冠10? 那是因為通用電腦都以8 bit為單位運算, 你檔案在傳送分割的時候可能會切割到這些位元, 你會不曉得從哪開始解碼. 從以上可以看出他的規則很巧妙的解決了這個問題: 遇到某個byte的時候, 開頭為10表示這個byte不是字符的開頭, 開頭為110表示他是2byte字符的開頭, 開頭為1110表示他是3byte字符的開頭, 開頭11110表示他是4byte字符的開頭. 這是一個折衷的方法, 他犧牲了開頭的一些bit來使整體運作可以判斷要吃多少byte
