@@ -63,3 +63,34 @@ int main() {
     return 0;
 }
 */
+
+/*
+// A more brief way
+#include <stdio.h>
+#include <stdlib.h>
+
+int scheduling(int *tasks, int task_num) {
+    int done = 0;
+    int i = 0;
+    showArray(tasks, task_num);
+    while (done<task_num) {
+        if (tasks[i]>0 && --tasks[i]==0) done++;
+        showArray(tasks, task_num);
+        i = (i+1)%task_num;
+    }
+    return 1;
+}
+
+int showArray(int *arr, int arr_len) {
+    for (int i=0; i<=arr_len-1; i++) printf("%d, ", arr[i]);
+    printf("\n");
+    return 1;
+}
+
+int main() {
+    int tasks[3] = {3, 2, 4};
+    scheduling(tasks, 3);
+    return 1;
+
+}
+*/
