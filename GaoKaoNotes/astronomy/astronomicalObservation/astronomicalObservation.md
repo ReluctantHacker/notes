@@ -223,10 +223,10 @@ Because sidereal day is about 23:56, so the same constellation came out from the
 
 ### Apparent position of planets
 People use equatorial coordinate system to get apparent position of Planets. Practically, when people use telescope, they won't directly calibrate to J2000.0 but direct recent time, the reason is because even if you calibrate to J2000.0, the motion of earth is not J2000.0! So it slowly offset. Modern telescope would use software to help you calculate the result.
-#### Apparent Prograde motion(順行)
+#### Apparent Prograde, Retrograde motion(順行, 逆行)
 Planet moves eastward against the background stars. 
 
-This is caused by earth's revolution around the sun. The sun would moves eastward everyday(solar day) against the background stars. The reason for this is again because of earth's revolution around the sun. (Since solar day needs more turning degree than sidereal day.) We define this behavior "Prograde".
+This is caused by revolutions of earth and the planets around the sun. The sun would moves eastward everyday(solar day) against the background stars. The reason for this is again because of earth's revolution around the sun. (Since solar day needs more turning degree than sidereal day.) We define this behavior "Prograde".
 
 For the planets in solar system, roughly we can use Kepler's planet motion model, suppose that all planets are circular motion revolute around the sun. We should observe their angular angle $\omega$
 
@@ -245,7 +245,7 @@ and
 ```
 
 so $\omega$ only matters by distance r from the sun. That means, roughly speaking, the earth always chases the superior planets(外行星) but always been chased by inferior planets(內行星) 
-For the case of superior planets, suppose that superior planet is static, then we would get the image below:
+For the case of superior planets, suppose that superior planet is static, then we would get prograde and retrograde occupy half of the orbit time, the image is like below:
 <p align="center">
   <img src="./images/astronomicalObservation_figure_1.svg"/>
 </p>
@@ -258,19 +258,20 @@ Suppose, that planet has a slower angular speed, then when the earth overtaking(
 
 In the superior planet cases, retragrade ONLY happens when catching up. The catching moment, we call it opposition(衝日), which is earth on the connection line of that superior planet and the sun.(which means sun, earth, and the planets counstuct into a straight line.) when there comes "superior conjunction(上合)" which is the sun locates between the line of earth and the planet, there's no catching up.
 
-In the case of inferior planet cases, the retrograde only happens when "inferior conjunction(下合)" which means the planet is on the line between sun and earth(this also means superior planets only has superior conjunction). When you check if superior conjunction for inferior planet case, you would see there's no retrograde.
+In the case of inferior planet cases, the retrograde ONLY happens when "inferior conjunction(下合, there's no inferior conjunction for superior planets)" which means the planet is on the connection line between sun and earth(this also means superior planets only has superior conjunction). When you check if superior conjunction for inferior planet case, you would see there's no retrograde.
+
+In inferior conjuntion, we should observe "transit(凌日)" on earth, which means we would observe planets flow over the sun in daytime. However, remember that supposed that the orbit of planets are simple circle and disk of orbits are all on the same planes. The truth is not like this, orbit disk of planets are not on the same plane generally. This makes transit not always happen when it comes to inferior conjunction.
 
 #### Retrograde Motion of planets(逆行)
 Planet moves westward (backward). We have talked this in prograde.
 
 This is caused by Earth "overtaking" the outer planet.
 #### Stationary motion of planet(留)
+
 #### Phase of inferior planet
 Mercuy and Venus show phasees (like the Moon).
 
 Mercury and Venus show phases (like the Moon) / Caused by internal planets orbiting the Sun and reflecting sunlight.
-####  Greatest Eastern / Western Elongation(大距)
-Inner planet reaches its maximum angular separation from the Sun / Caused by inner planet orbital geometry.
 
 #### Transit(凌日)
 Inner planet crosses the Sun's disk / Caused by the planet passing directly between Earth and the Sun.
@@ -280,6 +281,16 @@ Outer planet is opposite to the Sun in the sky / Caused by Earth being directly 
 
 #### Conjunction(合日)
 Outer planet is in the same direction as the Sun / Caused by the outer planet being on the far side of the Sun.
+
+####  Greatest Eastern / Western Elongation(大距)
+Inner(inferior) planet reaches its maximum angular separation from the Sun / Caused by inner planet orbital geometry. It like below:
+<p align="center">
+  <img src="./images/astronomicalObservation_figure_3.jpg"/>
+</p>
+
+<p align="center">
+  <img src="./images/astronomicalObservation_figure_2.svg"/>
+</p>
 
 ### Precession(歲差)
 We had already talked about this.
