@@ -121,7 +121,7 @@ J2000 is a constant system already, but it's hard to repeat it. The situation is
 
 ## Time
 
-### Sidereal day
+### Sidereal day(恆星日)
 > [NOTE!]
 > There's very convenient coincident you can keep in mind. Earth's self-rotation and it's revolution around the sun both coincidentally fit **right-hand rule**.
 
@@ -213,12 +213,11 @@ Basically, this is trying to define a month by moon phase and define year by sol
 Before Newton, most astronomical activity is observing apparent motion
 
 ### Apparent motion of Sun
-
+We talk about this before, including solar day, year, earth revolution, earth spin
 
 ### Apparent Diurnal Motion(周日運動) for stars
-Apparent diurnal motion of a star is the apparent change in the star’s position on the celestial sphere over one day. 
+Apparent diurnal motion of a star is the apparent change in the star’s position on the celestial sphere over one day. Of course we konw that it is caused primarily by Earth’s rotation(spin) about its axis. Roughly spend 23:56. (sidereal day)  
 
-Of course we konw that it is caused primarily by Earth’s rotation about its axis. Roughly spend 23:56. (sidereal day)  
 ### Apparent Annual Motion(周年運動) for stars
 Because sidereal day is about 23:56, so the same constellation came out from the sky is 4 minutes earlier everyday. Notice, the word "earlier" here is not precise, stars and constellations are 23:56 a cycle in celestial sphere. But because earth revolution to sun, the on/off time range of the sky light(sun comes/leave) is about 24:00 which is solar day. Sideal day is shorter than solar day. 
 
@@ -226,6 +225,34 @@ Because sidereal day is about 23:56, so the same constellation came out from the
 People use equatorial coordinate system to get apparent position of Planets. Practically, when people use telescope, they won't directly calibrate to J2000.0 but direct recent time, the reason is because even if you calibrate to J2000.0, the motion of earth is not J2000.0! So it slowly offset. Modern telescope would use software to help you calculate the result.
 #### Apparent Prograde motion(順行)
 Planet moves eastward against the background stars. 
+
+This is caused by earth's revolution around the sun. The sun would moves eastward everyday(solar day) against the background stars. The reason for this is again because of earth's revolution around the sun. (Since solar day needs more turning degree than sidereal day.) We define this behavior "Prograde".
+
+For the planets in solar system, roughly we can use Kepler's planet motion model, suppose that all planets are circular motion revolute around the sun. We should observe their angular angle $\omega$
+
+``` math
+a = \dfrac{GM}{r^2} = \dfrac{v^2}{r}
+```
+
+and so 
+``` math
+v = \sqrt{\dfrac{GM}{r}}
+```
+
+and 
+``` math
+\omega = \dfrac{v}{r} = \dfrac{\sqrt{GM}}{r^{\dfrac{3}{2}}}
+```
+
+so $\omega$ only matters by distance r from the sun. That means, roughly speaking, the earth always chases the superior planets(外行星) but always been chased by inferior planets(內行星) 
+
+<p align="center">
+  <img src="images/astronomicalObservation_figure_1.svg"/>
+</p>
+
+Figure_1
+
+
 
 This is caused by planetary orbit.
 #### Retrograde Motion of planets(逆行)
