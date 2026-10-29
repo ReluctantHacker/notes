@@ -170,6 +170,8 @@ This is the time that moon spend to revolute earth to the same position relative
 ### Synodic month
 This is the time range that moon spend to turn back to the same phase. It's about 29.5 mean solar days. The reason why this is longer than sidereal one is because earth is revoluting around the sun. After moon revoluting around earth one time, Earth is not at the same position compare to sun anymore, moon need to spin a little more to face the sun and get the same phase again.
 
+One thing is interesting and anti-intuitive is that you don't always see the moon at night, because when the moon move to the location between earth and sun, the moon is on the side of the sun, so at the night, you can't see it. In every month, there are few days you can't see the moon. (新月之時)
+
 > [!NOTE]
 > The synodic month is not a constant! The reason is that moon revolutes around earth, earth also revolutes around sun. So after moon has already revolutes a cycle, it needs to revolute some more to chase the sun to get the same phase(pretty much like the situation of solar day, but not solar year, earth revolution doesn't need to chase anything, don't get mis). If moon's revolution orbit is perfect circle, then a month would be a constant. However, it's not perfect circle, so the angular speed is not constant! The angle the moon revolute additionally to chase the sun is about 29 degree. If you use the fastest angular speed and slowest angular speed of moon to calculate how many times it takes to go that 29 degree, they're about 1.97 days and 2.46 days. The difference is about 0.49 days.
 
@@ -287,10 +289,17 @@ Inner(inferior) planet reaches its maximum angular separation from the Sun / Cau
 <p align="center">
   <img src="./images/astronomicalObservation_figure_3.jpg"/>
 </p>
+Why do we need even need to know this? Because oftenly, we want to observe the inner planets at Elongation.
+
+Why?
+
+Since, inner planets are on the side of the sun, intuitively, people may think it's not observable. However, remember we talked about the range we can observe of celestrial sphere? it's like below.
 
 <p align="center">
   <img src="./images/astronomicalObservation_figure_2.svg"/>
 </p>
+
+So at the moment the sun got blocked by ground horizon(晨/昏之時), you're staring to be capable to observe the celestrial sphere. You CAN observe inner planets as long as it's on the range of the observable area. And since we want observable target angularly separates from the sun as possible, in order to avoid influence of the sun light, Elongation is the best angle we can observe.
 
 ### Precession(歲差)
 We had already talked about this.
