@@ -247,7 +247,7 @@ and
 so $\omega$ only matters by distance r from the sun. That means, roughly speaking, the earth always chases the superior planets(外行星) but always been chased by inferior planets(內行星) 
 
 <p align="center">
-  <img src="./astronomy/astronomicalObservation/images/astronomicalObservation_figure_1.svg"/>
+  <img src="./images/astronomicalObservation_figure_1.svg"/>
 </p>
 
 Figure_1
