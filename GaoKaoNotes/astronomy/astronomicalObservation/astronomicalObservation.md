@@ -245,26 +245,31 @@ and
 ```
 
 so $\omega$ only matters by distance r from the sun. That means, roughly speaking, the earth always chases the superior planets(外行星) but always been chased by inferior planets(內行星) 
-
+For the case of superior planets, suppose that superior planet is static, then we would get the image below:
 <p align="center">
   <img src="./images/astronomicalObservation_figure_1.svg"/>
 </p>
 
 Figure_1
 
+Suppose, that planet has the same angular speed as earth, then we have perfectly eternal prograde. 
 
+Suppose, that planet has a slower angular speed, then when the earth overtaking(catch) that planet in angular angle relative to sun, then it happens retrograde. Retrograde only happens in small angle of range of overtaking, according to the speed difference between earth and that planet. It happens like 順->留(stationary)->逆->留->順. All happens in that small range of angle when catching up. The angular speed of connection line of earth and the planet goes very large in that small range, and then goes down.
 
-This is caused by planetary orbit.
+In the superior planet cases, retragrade ONLY happens when catching up. The catching moment, we call it opposition(衝日), which is earth on the connection line of that superior planet and the sun.(which means sun, earth, and the planets counstuct into a straight line.) when there comes "superior conjunction(上合)" which is the sun locates between the line of earth and the planet, there's no catching up.
+
+In the case of inferior planet cases, the retrograde only happens when "inferior conjunction(下合)" which means the planet is on the line between sun and earth(this also means superior planets only has superior conjunction). When you check if superior conjunction for inferior planet case, you would see there's no retrograde.
+
 #### Retrograde Motion of planets(逆行)
-Planet moves westward (backward). 
+Planet moves westward (backward). We have talked this in prograde.
 
-This is caused by Earth "overtaking" the outer planet
+This is caused by Earth "overtaking" the outer planet.
 #### Stationary motion of planet(留)
 #### Phase of inferior planet
 Mercuy and Venus show phasees (like the Moon).
 
 Mercury and Venus show phases (like the Moon) / Caused by internal planets orbiting the Sun and reflecting sunlight.
-####  Greatest Eastern / Western Elongation
+####  Greatest Eastern / Western Elongation(大距)
 Inner planet reaches its maximum angular separation from the Sun / Caused by inner planet orbital geometry.
 
 #### Transit(凌日)
