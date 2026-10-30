@@ -365,6 +365,23 @@ The Moon's dark inner shadow (the umbra) sweeps across Earth's surface at supers
 6. The Saros Cycle
 The Saros Cycle is an ancient and highly precise period of 18 years, 11 days, and 8 hours that governs eclipse repetitions. After one Saros cycle, the Sun, Earth, and Moon return to almost the exact same geometric alignment (including their nodes and perigee/apogee distances). Because of this near-perfect orbital reset, eclipses repeat in a predictable pattern, allowing ancient Babylonians to accurately forecast future eclipses centuries in advance.
 
+#### Nodal Regression of Eclipses
+We know that the Moon's orbital plane is tilted by about 5 degrees relative to Earth's orbital plane, and eclipses can only occur at their intersection points (the nodes). If the relative orientation of these two planes remained fixed in space, the Earth-Sun-Moon alignment would follow a perfectly fixed annual cycle, meaning a solar eclipse on March 1st this year would theoretically repeat around March 1st next year. However, the lunar orbital plane undergoes PRECESSION relative to the ecliptic pole, causing its nodes to "regress backward" along the ecliptic. Consequently, the true eclipse cycle is not strictly one year; we must account for this nodal regression, which continually shifts the geometry and causes the eclipse seasons to arrive about 19 days earlier each year.
+
+YES! Eclipses happen every year! The reason you think they are extremely rare is because of a local versus global perspective. Globally, there are at least 2 to 5 solar eclipses and 2 to 3 lunar eclipses every year (averaging about 2.4 solar eclipses annually).
+
+The misconception of rarity comes from two main factors. First, the Moon's shadow on Earth is incredibly narrow—the "path of totality" is usually only about 100 to 200 kilometers wide. Since 70% of Earth is ocean and much of the land is uninhabited, the shadow often misses populated areas entirely. Second, the media typically only reports "total" or "annular" eclipses, ignoring the frequent partial eclipses that happen over the poles or oceans.
+
+So, while a solar eclipse is a guaranteed annual cosmic event, having a total solar eclipse sweep directly over your specific hometown is indeed a once-in-a-century phenomenon. (By contrast, lunar eclipses are much easier to see because Earth's shadow is huge—half the planet can watch them at the same time!)
+
+Well, it is not accurate to say partial eclipses occur more frequently than total eclipses, because they are not independent events. Geometrically, the umbra (total eclipse) is surrounded by the much larger penumbra (partial eclipse); thus, every total solar eclipse is naturally accompanied by partial eclipses across a vast surrounding area. However, because the umbra is so narrow, it often misses the Earth entirely. An eclipse event is classified as a 'partial-only' eclipse when the umbra passes above or below Earth, leaving only the penumbra to sweep across the surface. Therefore, while total eclipses are always accompanied by partials, 'partial-only' eclipse events do occur more often in the annual global tally than total eclipse events.
+
+<p align="center">
+  <img src="./images/astronomicalObservation_figure_6.svg"/>
+</p>
+<p align="center">
+  <img src="./images/astronomicalObservation_figure_7.svg"/>
+</p>
 ### Precession
 
 ## Actual Motion(真運動) of Celestial Objects
