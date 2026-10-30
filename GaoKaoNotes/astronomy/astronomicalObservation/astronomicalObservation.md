@@ -369,7 +369,7 @@ The Saros Cycle is an ancient and highly precise period of 18 years, 11 days, an
 We know that the Moon's orbital plane is tilted by about 5 degrees relative to Earth's orbital plane, and eclipses can only occur at their intersection points (the nodes). If the relative orientation of these two planes remained fixed in space, the Earth-Sun-Moon alignment would follow a perfectly fixed annual cycle, meaning a solar eclipse on March 1st this year would theoretically repeat around March 1st next year. And we would have two eclipse seasons a year.
 
 <p align="center">
-  <img src="./images/astronomicalObservation_figure_8.svg"/>
+  <img src="./images/astronomicalObservation_figure_9.svg"/>
 </p>
 
 However, the lunar orbital plane undergoes PRECESSION relative to the ecliptic pole, causing its nodes to "regress backward" along the ecliptic. Consequently, the true eclipse cycle is not strictly one year; we must account for this nodal regression, which continually shifts the geometry and causes the eclipse seasons to arrive about 19 days earlier each year.
