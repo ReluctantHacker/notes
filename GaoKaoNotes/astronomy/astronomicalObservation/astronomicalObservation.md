@@ -372,7 +372,7 @@ We know that the Moon's orbital plane is tilted by about 5 degrees relative to E
   <img src="./images/astronomicalObservation_figure_9.svg"/>
 </p>
 
-However, the lunar orbital plane undergoes PRECESSION relative to the ecliptic pole, causing its nodes to "regress backward" along the ecliptic. Consequently, the true eclipse cycle is not strictly one year; we must account for this nodal regression, which continually shifts the geometry and causes the eclipse seasons to arrive about 19 days earlier each year.
+However, the lunar orbital plane undergoes PRECESSION relative to the ecliptic pole, causing its nodes to "regress backward" along the ecliptic. Consequently, the true eclipse cycle is not strictly one year; we must account for this nodal regression, which continually shifts the geometry and causes the eclipse seasons to arrive about 19(~18.62) days earlier each year.
 
 <p align="center">
   <img src="./images/astronomicalObservation_figure_8.svg"/>
@@ -395,6 +395,8 @@ Well, it is not accurate to say partial eclipses occur more frequently than tota
 An eclipse season is the time window in which a solar eclipse is geometrically possible, obtained by converting the eclipse condition into the Sun’s angular distance from the Moon’s orbital node. An eclipse occurs if the Moon’s shadow, at least its penumbra, touches Earth, meaning the distance γ from the shadow axis to Earth’s center is below about 1.54 Earth radii. Since Earth’s radius subtends about 1° at the Moon’s distance, the new Moon’s ecliptic latitude β must be below roughly 1.5°. The lunar orbit is inclined about 5.1° to the ecliptic, so β ≈ 5.1° × sin Δ, where Δ is the Moon’s angular distance from the node, which at new Moon is also the Sun’s. The most favorable combination of distances and inclination stretches this to the published “major limit” of about 18.5°. The Sun moves relative to the node at about 1.04° per day (360° / 346.62 d, the eclipse year), so the window is about 37° wide, or roughly 35 days (31–37 d depending on distances). Inside the “minor limit” of about 15.4° (a window of about 29.6 d), an eclipse is guaranteed. That window slightly exceeds the synodic month (29.53 d), so every season contains at least one eclipse, which is why there are at least two eclipses per year.
 
 The criterion is deliberately generous: an eclipse counts as soon as the penumbra grazes Earth, even if only a sliver of the Sun is covered. This has three consequences. First, the ends of a season contain marginal partial eclipses, visible only near the poles around sunrise or sunset and with very small magnitude. Second, a central (total or annular) eclipse requires the axis to cross Earth (γ below about 1.0, versus 1.54 for any eclipse), so its window is only about two thirds of the season, roughly three weeks. That is shorter than a synodic month, so a season can pass without a total or annular eclipse. Third, the guarantee of two eclipses per year rests on the generous criterion. Years with only partial eclipses, such as 2025 and 2018, show this in practice.
+
+With all those idea, we can explain **Saros Cycle** which we just mentioned about now. We have said that elicpse season comes earlier 18.62 days per year(solar year). That means about 18.62X19 = 
 ### Precession
 
 ## Actual Motion(真運動) of Celestial Objects
