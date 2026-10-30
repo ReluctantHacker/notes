@@ -366,7 +366,17 @@ The Moon's dark inner shadow (the umbra) sweeps across Earth's surface at supers
 The Saros Cycle is an ancient and highly precise period of 18 years, 11 days, and 8 hours that governs eclipse repetitions. After one Saros cycle, the Sun, Earth, and Moon return to almost the exact same geometric alignment (including their nodes and perigee/apogee distances). Because of this near-perfect orbital reset, eclipses repeat in a predictable pattern, allowing ancient Babylonians to accurately forecast future eclipses centuries in advance.
 
 #### Nodal Regression of Eclipses
-We know that the Moon's orbital plane is tilted by about 5 degrees relative to Earth's orbital plane, and eclipses can only occur at their intersection points (the nodes). If the relative orientation of these two planes remained fixed in space, the Earth-Sun-Moon alignment would follow a perfectly fixed annual cycle, meaning a solar eclipse on March 1st this year would theoretically repeat around March 1st next year. However, the lunar orbital plane undergoes PRECESSION relative to the ecliptic pole, causing its nodes to "regress backward" along the ecliptic. Consequently, the true eclipse cycle is not strictly one year; we must account for this nodal regression, which continually shifts the geometry and causes the eclipse seasons to arrive about 19 days earlier each year.
+We know that the Moon's orbital plane is tilted by about 5 degrees relative to Earth's orbital plane, and eclipses can only occur at their intersection points (the nodes). If the relative orientation of these two planes remained fixed in space, the Earth-Sun-Moon alignment would follow a perfectly fixed annual cycle, meaning a solar eclipse on March 1st this year would theoretically repeat around March 1st next year. And we would have two eclipse seasons a year.
+
+<p align="center">
+  <img src="./images/astronomicalObservation_figure_8.svg"/>
+</p>
+
+However, the lunar orbital plane undergoes PRECESSION relative to the ecliptic pole, causing its nodes to "regress backward" along the ecliptic. Consequently, the true eclipse cycle is not strictly one year; we must account for this nodal regression, which continually shifts the geometry and causes the eclipse seasons to arrive about 19 days earlier each year.
+
+<p align="center">
+  <img src="./images/astronomicalObservation_figure_8.svg"/>
+</p>
 
 YES! Eclipses happen every year! The reason you think they are extremely rare is because of a local versus global perspective. Globally, there are at least 2 to 5 solar eclipses and 2 to 3 lunar eclipses every year (averaging about 2.4 solar eclipses annually).
 
