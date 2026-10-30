@@ -172,6 +172,8 @@ This is the time range that moon spend to turn back to the same phase. It's abou
 
 One thing is interesting and anti-intuitive is that you don't always see the moon at night, because when the moon move to the location between earth and sun, the moon is on the side of the sun, so at the night, you can't see it. In every month, there are few days you can't see the moon. (新月之時)
 
+There's one more idea called **Lunar day**, which means "sun rise to sun rise inverval observed on moon", the duration is exactly the same as Synodic month. Roughly, they are the same because the spin and revolution periof of moon are the same! This is not a coincident but some serious gravity effect.
+
 > [!NOTE]
 > The synodic month is not a constant! The reason is that moon revolutes around earth, earth also revolutes around sun. So after moon has already revolutes a cycle, it needs to revolute some more to chase the sun to get the same phase(pretty much like the situation of solar day, but not solar year, earth revolution doesn't need to chase anything, don't get mis). If moon's revolution orbit is perfect circle, then a month would be a constant. However, it's not perfect circle, so the angular speed is not constant! The angle the moon revolute additionally to chase the sun is about 29 degree. If you use the fastest angular speed and slowest angular speed of moon to calculate how many times it takes to go that 29 degree, they're about 1.97 days and 2.46 days. The difference is about 0.49 days.
 
@@ -271,7 +273,7 @@ This is caused by Earth "overtaking" the outer planet.
 #### Stationary motion of planet(留)
 
 #### Phase of inferior planet
-Mercuy and Venus show phasees (like the Moon).
+Mercuy and Venus show phases (like the Moon).
 
 Mercury and Venus show phases (like the Moon) / Caused by internal planets orbiting the Sun and reflecting sunlight.
 
@@ -305,10 +307,64 @@ So at the moment the sun got blocked by ground horizon(晨/昏之時), you're st
 We had already talked about this.
 
 ### Apparent motion of the Sun, Moon, and stars
-### Diurnal motion
+
+### Diurnal motion(週日運動/視運動)
+This is just the so called "every apparent motion caused by earth spin". Two things can be talked about
+#### Diurnal Parallax(周日視差)
+Since the observer is moving through the spin of earth, and since there's distance from different position on earth, this caused the effect that near celestrial object(like moon) got some small displacement angle relative to far stars.
+<p align="center">
+  <img src="./images/astronomicalObservation_figure_4.svg"/>
+</p>
+We have a pretty much the same reasons caused to **Annual Parallax** which I am not dicuss here.
+
+#### Diurnal Aberration(週日光行差)
+Diurnal aberration is the slight apparent shift in a star's position caused by the Earth's rotation interacting with the finite speed of light. Because starlight arrives from all directions, the effect is essentially a velocity vector addition between the incoming light (cc) and the observer's rotational velocity (up to ~465 m/s eastward at the equator), which tilts the apparent direction of every incoming light ray toward the direction of Earth's motion. Unlike a uniform shift, this varies depending on the star's position relative to the direction of motion, meaning it slightly distorts the relative positions of the constellations rather than just shifting the whole sky as a single picture. The maximum deflection is about 0.32 arcseconds; while this can be ignored for casual stargazing, it must be precisely corrected in high-precision astrometry to measure true stellar parallax. This effect is distinct from the much larger annual aberration (~20.5 arcseconds) caused by Earth's revolution around the Sun.
+<p align="center">
+  <img src="./images/astronomicalObservation_figure_5.svg"/>
+</p>
+We have a pretty much the same reasons caused to **Annual Aberration** which I am not dicuss here.
+
 ### Annual motion
+
 ### Phases of the Moon
+We have already discussed about phases of moon, now we keep going to talk about some other interesting things. 
+
+#### Earthshine
+In the new moon, you still can see a little in the dark side of the moon, the reason for this is that the reflection light from sun by earth. A interesting thing is that if you observe earth on the moon, you'll see the eactly the phase of earth as exactly inverse to the phase of moon obsersved from earth.
+
+#### The delay of moon
+Because revolution of moon around earth, our moon getting late about 50 minutes every day. This means "Moonrise-to-moonrise interval" is about 24h50m.
+
+#### Tidal Locking(潮汐鎖定)
+Picture the Moon as a slightly stretched ball, an ellipse with a long axis and a short axis. In reality the stretch is tiny, only about 2 km in a radius of 1,737 km, but the picture shows the mechanism. Earth’s gravity pulls harder on the end of the long axis nearer to it than on the far end, so the long axis behaves like a compass needle and is tugged toward the Earth–Moon line. If the Moon spins faster than it orbits, its long axis keeps swinging past that line, and Earth keeps tugging it back. Because the Moon’s interior is not perfectly rigid, each swing turns a little of the motion into heat through internal friction. The spin is therefore gradually slowed and the swinging dies out, like a pendulum settling in a thick fluid. Over billions of years the long axis ends up pointing steadily at Earth, which means one rotation takes exactly as long as one orbit (27.32 d). Without that friction there would be no net braking, only endless wobbling around the line.
+
+Tidal locking is mutual, not one-sided. Just as Earth locked the Moon, the Moon raises tidal bulges on Earth that lag slightly ahead of the Earth–Moon line, and the Moon’s pull on those bulges brakes Earth’s rotation (the day lengthens by about 1.7 ms per century) while pushing the Moon outward by about 3.8 cm per year. Earth is simply far harder to lock. It is about 81 times more massive and spins much faster, so there is far more rotational angular momentum to remove, and the Moon’s tidal force on Earth is only about a twentieth of Earth’s tidal force on the Moon. The Sun also raises tides on Earth, about half as strong as the Moon’s despite its enormous mass, because tidal force falls off with the cube of distance, and it also brakes Earth’s spin, but its great distance makes the process just as slow. Both effects would need tens of billions of years to finish the job, longer than the Sun has left on the main sequence (about 5 billion years), so Earth will not actually become locked.
+
+This is not a special case of the Moon, Sun and Earth. Any body deformed by a nearby massive companion, and with some internal friction, is slowly braked until one side faces its partner, and the rate rises steeply as the two get closer (roughly with the sixth power of the separation). Most of the large moons of Jupiter, Saturn, Uranus and Neptune, including Io, Europa, Ganymede, Callisto, Titan and Triton, are tidally locked to their planets, as are Mars’s small moons Phobos and Deimos. Pluto and Charon are locked to each other, so each always shows the same face to the other. Beyond the Solar System, close-in exoplanets such as hot Jupiters are expected to be locked, and their large day–night temperature contrasts fit that picture. Close binary stars also tend to synchronize their spins with their orbits. Earth itself is being braked by the Moon’s tides, losing about 1.7 ms per day per century, but it is far from locked and will not get there on any timescale the Sun’s lifetime allows.
+
+In practice the lock is not perfectly rigid, because almost all orbits are ellipses. The Moon’s spin is steady, but its orbital speed is not: it moves faster near perigee and slower near apogee, so the Earth-facing side swings back and forth like a slowly nodding head. This wobble is called libration. The Moon’s axis is also slightly tilted relative to its orbit, which adds a north–south nodding. Together these swings reach roughly 8° east–west and 7° north–south, and over time they let us see about 59% of the lunar surface instead of exactly 50%. The more eccentric the orbit, the larger the swings, because the gap between the steady spin and the uneven orbital motion grows. Beyond a certain eccentricity, simple 1:1 locking stops being the stable end state. Tidal force grows steeply as the distance shrinks, so the braking is dominated by the closest approach to the Sun, and the spin settles to match the orbital angular speed near that point rather than the average one. Mercury, whose orbit is far more eccentric than the Moon’s (about 0.21 versus 0.055), ends up in a 3:2 spin–orbit resonance, rotating exactly three times for every two orbits.
+
 ### Solar and lunar eclipses
+There are some interesting things about eclipses
+
+1. The Orbital Intersection (Why they don't happen monthly)
+Solar and lunar eclipses do not occur every month because the Moon's orbital plane (the ecliptic of the Moon) is tilted by about 5° relative to Earth's orbital plane. Consequently, during most New Moons and Full Moons, the Moon passes slightly above or below the Sun or Earth's shadow. Eclipses only occur when a syzygy (New Moon or Full Moon) aligns precisely with one of the two "nodes" where the Moon's orbit crosses Earth's orbital plane, creating specific "eclipse seasons."
+
+2. The Elliptical Orbit (Total vs. Annular)
+The occurrence of total versus annular solar eclipses is dictated by the Moon's elliptical orbit. When a solar eclipse happens while the Moon is near perigee (closest to Earth), its apparent angular diameter is large enough to completely cover the Sun, creating a total eclipse. Conversely, when it occurs near apogee (farthest from Earth), the Moon appears slightly smaller than the Sun, leaving a bright ring of sunlight visible, which is known as an annular eclipse.
+
+3. The 400x Cosmic Coincidence
+The perfect visual match between the Sun and the Moon in our sky is an extraordinary geometric coincidence. The Sun is approximately 400 times larger in diameter than the Moon, but it is also roughly 400 times farther away from Earth. This precise ratio causes both bodies to have an apparent angular diameter of about 0.5°, allowing for the breathtaking phenomenon of total solar eclipses where the Sun's corona becomes visible.
+
+4. The Blood Moon (Rayleigh Scattering)
+During a total lunar eclipse, the Moon does not turn completely black; instead, it glows a coppery red. This happens because sunlight passing through Earth's atmosphere is refracted (bent) into the planet's shadow. As it travels through the atmosphere, shorter blue wavelengths are scattered away (Rayleigh scattering), while longer red wavelengths survive and are bent onto the lunar surface. Essentially, a Blood Moon is illuminated by all the sunrises and sunsets on Earth at once.
+
+5. The Supersonic Umbra
+The Moon's dark inner shadow (the umbra) sweeps across Earth's surface at supersonic speeds, ranging from 1 to 2 km/s. Because Earth's rotation (about 465 m/s at the equator) is much slower than the shadow's movement, any fixed location on the ground falls into darkness for only a very short time. Consequently, the maximum duration of totality at any single point is less than 7.5 minutes, forcing eclipse chasers to strategically position themselves along the path of totality.
+
+6. The Saros Cycle
+The Saros Cycle is an ancient and highly precise period of 18 years, 11 days, and 8 hours that governs eclipse repetitions. After one Saros cycle, the Sun, Earth, and Moon return to almost the exact same geometric alignment (including their nodes and perigee/apogee distances). Because of this near-perfect orbital reset, eclipses repeat in a predictable pattern, allowing ancient Babylonians to accurately forecast future eclipses centuries in advance.
+
 ### Precession
 
 ## Actual Motion(真運動) of Celestial Objects
