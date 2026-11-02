@@ -387,10 +387,21 @@ For example, the ordinary inner product for wave equation, quantum mechanics and
 =\int_a^b f^*(x)g(x)\,dx
 ```
 ### Projection
-Easily, A projects on B 
+Normally, the projection of vector v onto vector u means below:
 ``` math
-\mathrm{proj}_B A=\frac{\langle A,B\rangle}{\langle B,B\rangle}\,B
+\mathrm{proj}_u v=\frac{\langle v,u\rangle}{\langle u,u\rangle}\,u
 ```
+
+More specifically, it's not v onto u, but v onto subspace of u. u is only the representation vector of that subspace. So a more serious definition is:
+
+For a vector Pv in subspace W, v-Pv is orthogonal to all the vectors in W. For P is a linear operator, we call it **idempotent operator**.
+
+It has properties below:
+- $P^2=P$
+- $P=P^T$ (for simple inner product space, $P=P^*$
+
+
+
 ### Gram-Schmidt process
 ### Least squares
 
