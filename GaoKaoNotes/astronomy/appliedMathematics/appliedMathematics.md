@@ -366,8 +366,31 @@ u=c_1v_1+c_2v_2+\cdots+c_nv_n
 ```
 You can easily find any coefficient c by inner product because orthogonal properties.
 #### Why so many physics equations give eigen-orthogonal vectors?
-If $A^T=A$, then eigenvectors of A corresponding to distinct eigenvalues are orthogonal to each other.
+If $A^T=A$(**symmetric matrix**), then eigenvectors of A corresponding to distinct eigenvalues are orthogonal to each other.
+
+For the standard Euclidean inner product:
+``` math
+\langle Au,v\rangle=\langle u,Av\rangle
+\quad\text{for all }u,v
+```
+if and only if 
+``` math
+A^T=A
+```
+
+For many physics equations, this seems naturally hold. However, notice here, discussion of the Symmetry of a physics equation(or any mathematical equation) has no meaning before you clealry define inner product. So you can only say a physics equation/operator is symmetric under a specific well-defined inner product.
+
+For example, the ordinary inner product for wave equation, quantum mechanics and many important physics equations share the form:
+
+``` math
+\langle f,g\rangle
+=\int_a^b f^*(x)g(x)\,dx
+```
 ### Projection
+Easily, A projects on B 
+``` math
+\mathrm{proj}_B A=\frac{\langle A,B\rangle}{\langle B,B\rangle}\,B
+```
 ### Gram-Schmidt process
 ### Least squares
 
