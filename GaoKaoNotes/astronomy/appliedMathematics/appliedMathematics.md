@@ -399,7 +399,7 @@ For a vector Pv in subspace W, v-Pv is orthogonal to all the vectors in W. For P
 It has properties below:
 - $P^2=P$
 - $P=P^T$ (for simple inner product space, $P=P^*$ 
-- ** $Pw=w$, for w in W, and $Px=0$ for x in $W^\perp$
+- *** $Pw=w$, for w in W, and $Px=0$ for x in $W^\perp$
 
 
 
