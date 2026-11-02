@@ -394,16 +394,42 @@ Normally, the projection of vector v onto vector u means below:
 
 More specifically, it's not v onto u, but v onto subspace of u. u is only the representation vector of that subspace. So a more serious definition is:
 
-For a vector Pv in subspace W, v-Pv is orthogonal to all the vectors in W. For P is a linear operator, we call it **idempotent operator**.
+For a vector Pv in subspace W=span{u}, v-Pv is orthogonal to all the vectors in W. For P is a linear operator, we call it **idempotent operator**.
 
 It has properties below:
 - $P^2=P$
 - $P=P^T$ (for simple inner product space, just self-adjoint)
 - $Pw=w$, for w in W, and $Px=0$ for x in $W^\perp$
 
+Notice the definition of P, we said "Pv in subspace W", this means P is for all v, if you find p, you can find the projection of v onto W. So P is a property of subspace W.
 
+Of course, the projection target doesn't have to be 1 dimensional, it could W=span{w1, w2} which means the projection of vector v onto plane W.
+
+Importantly,
+``` math
+P=M(M^TM)^{-1}M^T
+```
+This is actually the same thing as Gram-Schmidt process which we are gonna talk about latter.
+
+for the row of M is a basis vectors, no matter what this basis is as long as basis vectors are
+1. linear independent
+2. $M^T$ is for standard inner product which is the one you familiar. The non-standard one usually is weighted inner product which is not gonna be discussed here.
 
 ### Gram-Schmidt process
+This is a process, or more specifically, an algorithm to find a standand orthogonal normal basis.
+
+The basic idea is very simple, using the idea of projection
+``` math
+u_1=w_1
+```
+``` math
+u_j=w_j-\sum_{i<j}\dfrac{\langle w_j, u_i \rangle}{\langle u_i, u_i\rangle}u_i
+```
+
+
+
+
+
 ### Least squares
 
 ## Matrix equations
