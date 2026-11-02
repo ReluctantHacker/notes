@@ -422,9 +422,6 @@ The basic idea is very simple, using the idea of projection
 ``` math
 u_1=w_1
 ```
-``` math
-u_j=w_j-\sum_{i<j}\dfrac{\langle w_j, u_i \rangle}{\langle u_i, u_i\rangle}u_i
-```
 
 
 ### Least squares
