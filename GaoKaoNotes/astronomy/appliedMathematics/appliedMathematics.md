@@ -423,7 +423,7 @@ The basic idea is very simple, using the idea of projection
 u_1=w_1
 ```
 ``` math
-\mathbf{u}_1=\mathbf{w}_1,\qquad \mathbf{u}_j=\mathbf{w}_j-\sum_{i<j}\frac{\langle\mathbf{w}_j,\mathbf{u}_i\rangle}{\langle\mathbf{u}_i,\mathbf{u}_i\rangle}\mathbf{u}_i,\qquad \mathbf{e}_j=\frac{\mathbf{u}_j}{\|\mathbf{u}_j\|}
+test
 ```
 
 ### Least squares
