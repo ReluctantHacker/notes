@@ -423,7 +423,7 @@ The basic idea is very simple, using the idea of projection
 u_1=w_1
 ```
 ``` math
-u_j=w_j
+\sum_{i=1}^{n}{i^k}
 ```
 
 ### Least squares
