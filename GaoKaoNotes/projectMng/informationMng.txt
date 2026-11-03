@@ -326,6 +326,9 @@
 
 			VII. 部署管理：
 				🤔. 虛擬主機的管理通常通過虛擬機管理平台（如 VMware、Hyper-V、KVM）來實現。部署新虛擬機器需要完整的操作系統安裝和配置，過程相對複雜。
+
+            VIII. image:
+                🤔. 當我們抓image的時候, 我們實際上是抓user space, 而不是kernel(共用宿主的), 例如docker pull ubuntu:24.04, 實際上是在抓ubuntu的基本檔案系統, ubuntu的libraries, shell, system utilities, 相關設定. "linux"本來就是指linux kernel的意思, Ubuntu/Debian/Fedora 只是對應的user space發行版而已
 				
 
 
@@ -663,6 +666,7 @@ https://medium.com/upas/%E5%85%AC%E9%83%A8%E9%96%80%E7%9A%84%E8%B3%87%E5%AE%89%E
 			III. 單點登入(SSO, single sign on):
 				🤔. 用户只需通过一次身份验证即可访问多个系统或应用程序，而无需在每个系统中单独登录, 例如windows的AD
 			IV. token驗證
+                🤔. 這裡有個解說, 講解我們為何使用token: https://dev.to/aws-builders/why-do-we-need-the-json-web-token-jwt-in-the-modern-web-5702
 			V. 第三方驗證(Third-Party Authentication), 例如常見的OAuth和OpenID Connect:
 				🤔. 用於授權和身分驗證的開放標準, 通常用於web應用中實現第三方登入和授權, 例如你登入chatgpt, 可以使用google登入, 等於是把身分驗證的工作委託給第三方平台完成. 完成驗證後, 應用程序或系統便算是確認了用戶身份。這樣的機制能夠提高安全性，簡化用戶管理，並減少重複創建帳戶的需求
 				🤔. 第三方驗證由於很方便, 所以越來越流行了, 他有以下好處:
