@@ -48,3 +48,4 @@ batch程式:預計寫在114.115.109.151(帳號密碼都是cortex)
 2026/11/2
 1. 在130底下T:\DiskController_1_01\CV_XX, 找到FS5的TMI合併成VCDU, 測試
 2. 我打算從14底下去抓resource.txt, 140.115.109.14的user/password: srsl/srsl123
+3. 目前遇到orbit number算不準的問題, 由於我們用檔名的時間去算orbit number, 與實際用AOS去算, 少了大概1分鐘, 理論計算上要加1分鐘才能補回差距, 另外後來發現也可以從\\140.115.109.14\1A\_Receiving File的PCM xml檔案的orbit number
