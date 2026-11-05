@@ -665,9 +665,18 @@ https://medium.com/upas/%E5%85%AC%E9%83%A8%E9%96%80%E7%9A%84%E8%B3%87%E5%AE%89%E
 				🤔. 使用兩個或多個的驗證因素來確認用戶身分, 可能有密碼, 智能卡, 生物特徵(指紋視網膜之類的)
 			III. 單點登入(SSO, single sign on):
 				🤔. 用户只需通过一次身份验证即可访问多个系统或应用程序，而无需在每个系统中单独登录, 例如windows的AD
-			IV. token驗證
+			IV. token驗證(這裡講JWT, 即JSON Web Token)
                 🤔. 這裡有個解說, 講解我們為何使用token: https://dev.to/aws-builders/why-do-we-need-the-json-web-token-jwt-in-the-modern-web-5702
-			V. 第三方驗證(Third-Party Authentication), 例如常見的OAuth和OpenID Connect:
+                🤔. 簡單來說它是用"算法"去取代傳統的"查表". 最原始的http驗證機制是採用帳號密碼驗證, 由於http是無狀態, 每次驗證都要傳送帳號密碼, 然後server會去資料庫查詢, 但很顯然這種作法既不安全又麻煩. 後來的sessionID法則是將帳號密碼轉換成一個ID存在server的記憶體, 每次客戶瀏覽器都傳送這個ID讓server的記憶體去查是否有這個ID, 但這樣擴展的時候會很麻煩, 因為ID是存在記憶體, 你多一台附載server, 就要想辦法讓這個ID分享過去讓它也能驗證. 而token的作法, 則是採用"公私鑰"的機制(大部分), 用"算法驗算"取代"存取查表". 簡單來說server自己產生公私鑰對, 兩鑰匙都保留在server, 然後有使用者request登入後, serve用私鑰將該使用者的ID或類似能變別使用者的unique資訊進行演算產生特殊簽名(不同使用者的unique資訊不一樣, 產生的簽名也會一樣), 然後server把簽名丟入token中送給使用者, 使用者每次request都夾帶這個token, server用公鑰去驗證是否合法. 如此一來, server就不用去記憶token, 不用收到token後去查token的表, 而是直接演算token是否合法.
+                🤔. bearer token與access token, 這兩個名詞不是同一個層級的概念, 要搞清楚, 通常大部分的access token都是bearer token
+                    😂. bearer token 指的是誰持有這個token, 就能使用
+                    😂. access token 指的是被授予某種存取權限的token
+                🤔. token本質上與sessionID都是一個"臨時帳號密碼", 特別之處在不需查表而是透過演算驗證, 法解決了sessionID查表遇到擴展的麻煩. 但它並沒解決中間劫持的問題, 有人取得了使用者的token, 就能仿造你的合法request. 現代網頁的安全機制都有另外搭配以下機制
+                    😂. 傳輸層: HTTPS/TLS加密
+                    😂. 短有效期: Access Token(數分鐘至數小時失效), 被盜後可用窗口期有限. 原理其實很簡單, 它就是在簽名時候把expired time放進token的payload, 在整個內容一起簽名. 所以公鑰在驗證的時候, 可以驗證是否過期了.
+            V. 持有證明PoP(Proof of Posession), 
+                🤔. 這個可看作token架構的升級版. 基本就是讓客戶端也擁有公私鑰對, 用自己的私鑰加密request然後公鑰給server去解那個request. 這樣一來可以防止"偽造請求"和"重放攻擊", 因為只有客戶的私鑰才能簽名(防偽), 然後再加上時間一起簽進去(防重放), 攻擊者沒有直接的攻擊方式
+			VI. 第三方驗證(Third-Party Authentication), 例如常見的OAuth和OpenID Connect:
 				🤔. 用於授權和身分驗證的開放標準, 通常用於web應用中實現第三方登入和授權, 例如你登入chatgpt, 可以使用google登入, 等於是把身分驗證的工作委託給第三方平台完成. 完成驗證後, 應用程序或系統便算是確認了用戶身份。這樣的機制能夠提高安全性，簡化用戶管理，並減少重複創建帳戶的需求
 				🤔. 第三方驗證由於很方便, 所以越來越流行了, 他有以下好處:
 					😄. 方便, 使用者不需要在不同的應用軟體中建立驗證帳號, 使勇者管理帳號的成本降低了
@@ -694,6 +703,15 @@ https://medium.com/upas/%E5%85%AC%E9%83%A8%E9%96%80%E7%9A%84%E8%B3%87%E5%AE%89%E
 
 	C. 黑客攻擊方法
 		a. 惡意軟件攻擊（Malware Attacks）：這是一種常見的攻擊方式，包括病毒、木馬、間諜軟件（Spyware）和勒索軟件（Ransomware）等。黑客通過惡意軟件來入侵受害者的系統，竊取敏感信息、破壞系統運作或勒索金錢等。
+            I. Autolt惡意腳本打包成.exe
+                🤔. 這個其實就是把autolt腳本語言加密後與autolt解釋器打包成一個.exe, 由於舊的病毒識別機制是根據機器碼的操作邏輯來分析, 他不識別腳本的形式, 所以系統(尤其是舊windows)無法識別出病毒, 但這種攻擊在新系統中通常已經不起作用了.
+            II. 建立持久化
+                🤔. 例如將惡意程式複製到特定的路徑, 例如%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup, 例如你寫一個copy_virus.exe, 然後想辦法騙使用者點擊.
+            III. 进程挖空（Process Hollowing）
+                🤔. 如何把恶意代码注入到 某個系統本身的合法工具(例如: regsvcs.exe) 这类合法进程中运行.
+                    😂. 做法就是先發起一個合法的進程(例如regsvcs), 然後找到這個進程内存中的原始代码地址, 再填入惡意代碼並讓他執行.
+                    😂. 通常這個掏空的動作會需要用到Nt系列的系統函數, Nt 系列函數允許使用者模式程式透過系統調用，請求內核執行底層操作，包括記憶體分配、保護屬性修改、讀寫其他進程記憶體、取消映射記憶體區域、查詢進程資訊等。(並非任意但已夠用於惡意直入?)
+
 
 		b. 釣魚攻擊（Phishing Attacks）：這種攻擊方式通常通過電子郵件、短信或社交媒體等途徑來進行，黑客偽裝成合法的機構或個人，試圖誘導用戶提供個人敏感信息，如用戶名、密碼、信用卡信息等。
 
