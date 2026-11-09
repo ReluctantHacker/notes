@@ -21,14 +21,22 @@ Suppose $\gamma=2$, in System S, 50 years past, S would see only 25 years past i
 
 For S, A and B happen simultanesouly. But for S', they are not.
 
-| event | S time piont| S' time point|
+| event | S time point| S' time point|
 |---|---:|---:|
-| A：S 50y pass | 50 年 | 100 年 |
-| B：S' 25y pass | 50 年 | 25 年 |
+| A：S 50y pass | 50y | 100y |
+| B：S' 25y pass | 50y | 25y |
 
 For System S, A and B happen at the same time t=50y, but for system S', A and B happen at t'=25y and t'=100y, not the same time.
 
 Simultaneity is not absolute anymore, but a relative concept.
+
+So who's the younger one after 50 years?
+| event | S time point| S' time point|
+|---|---:|---:|
+| X：S 50y pass | 50y | 25y |
+| Y：S' 50y pass | 50y | 25y |
+
+Event-X and Event-Y are not the same event, and not even happen in the same time for both system. In System S, he observes that Event-X happens at 50 years time point, but Event-Y at 100 years time point. In system S', he observes that Event-Y happens at 50 years time point, but Event-X happens at 100 years time point.
 
 # Space Contraction (Length contraction)
 If time dilation, then according to the axiom of constant light speed to every reference frame, space should contracts because time dilates.
