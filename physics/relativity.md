@@ -34,7 +34,7 @@ So who's the younger one after 50 years?
 | event | S time point| S' time point|
 |---|---:|---:|
 | X：S 50y pass | 50y | 25y |
-| Y：S' 50y pass | 50y | 25y |
+| Y：S' 50y pass | 25y | 50y |
 
 Event-X and Event-Y are not the same event, and not even happen in the same time for both system. In System S, he observes that Event-X happens at 50 years time point, but Event-Y at 100 years time point. In system S', he observes that Event-Y happens at 50 years time point, but Event-X happens at 100 years time point.
 
