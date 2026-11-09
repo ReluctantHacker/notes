@@ -1,7 +1,32 @@
 # Time dilation
+Time is just order of "events".
+
+In system S', observer o' emit a light go up to the ceil, and get the spending time $\Delta t'$. From light emits and arrives, there are two events. In system S, observer o observes same two events.
+
 ``` math
 \Delta t' = \sqrt{\dfrac{c^2-v^2}{c^2}} \Delta t = \dfrac{\Delta t}{\gamma}
 ```
+
+There's one thing you might think weird or even contradictory. Observer-o sees two events have larger time difference. o' sees smaller one. However, they should see the same time dilation effect from both point of view, so what's going on here?
+
+The key point is that, you defaultly think  two events should happens both in S and S'. But they are not if you accept
+
+1. Principle of Relativity
+2. Constancy of the speed of light 
+
+Suppose $\gamma=2$, in System S, 50 years past, S would see only 25 years past in system S' is true. However, according to the relavitity, S' should see S is the slower one, and find S is younger after some years. The key point is that 
+
+- Event-A: passing 50 years in S
+- Event-B: passing 25 years in S'
+
+For S, A and B happen simultanesouly. But for S', they are not.
+
+| 事件 | S 時間 | S' 時間 |
+|---|---:|---:|
+| A：S 經過 50 年 | 50 年 | 100 年 |
+| B：S' 經過 25 年 | 50 年 | 25 年 |
+
+Simultaneity is not absolute anymore, but a relative concept.
 
 # Space Contraction (Length contraction)
 If time dilation, then according to the axiom of constant light speed to every reference frame, space should contracts because time dilates.
