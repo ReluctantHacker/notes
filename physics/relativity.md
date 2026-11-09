@@ -1,6 +1,6 @@
 # Time dilation
 ``` math
-\delta t' = \sqrt{\dfrac{c^2-v^2}{c^2}} \delta t
+\Delta t' = \sqrt{\dfrac{c^2-v^2}{c^2}} \Delta t
 ```
 
 # Space Contraction (Length contraction)
