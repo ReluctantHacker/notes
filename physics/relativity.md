@@ -41,6 +41,21 @@ So who's the younger one after 50 years?
 Event-X and Event-Y are not the same event, and not even happen in the same time for both system. In System S, he observes that Event-X happens at 50 years time point, but Event-Y at 100 years time point. In system S', he observes that Event-Y happens at 50 years time point, but Event-X happens at 100 years time point.
 
 # Space Contraction (Length contraction)
+In time dilation, the observers observe the "orthogonal" motion of light relative to motion of the reference frame. 
+
+They're actually measuring the time difference between two events. However, when you measuing the distance in space, you can't just say that $\Delta t c = \Delta d$ and $\Delta t' c = \Delta d'$ so distance dilation, too. It's not how it is because distance/length means velocity multiplies time. 
+
+The distance should be difference of two different positions **at the same time**(simultaneously). In system S, for a bar with two ends point A and B, if we want to measure the distance between them.
+``` math
+L=x_B(t)-x_A(t)
+```
+
+And because only speed of light is constant, So it should be:
+``` math
+\dfrac{\Delta d}{\Delta t} = \dfrac{\Delta d'}{\Delta t'} = c
+```
+
+
 If time dilation, then according to the axiom of constant light speed to every reference frame, space should contracts because time dilates.
 
 # Lorentz transformation
