@@ -21,10 +21,12 @@ Suppose $\gamma=2$, in System S, 50 years past, S would see only 25 years past i
 
 For S, A and B happen simultanesouly. But for S', they are not.
 
-| 事件 | S 時間 | S' 時間 |
+| event | S time piont| S' time point|
 |---|---:|---:|
-| A：S 經過 50 年 | 50 年 | 100 年 |
-| B：S' 經過 25 年 | 50 年 | 25 年 |
+| A：S 50y pass | 50 年 | 100 年 |
+| B：S' 25y pass | 50 年 | 25 年 |
+
+For System S, A and B happen at the same time t=50y, but for system S', A and B happen at t'=25y and t'=100y, not the same time.
 
 Simultaneity is not absolute anymore, but a relative concept.
 
