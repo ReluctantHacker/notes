@@ -1,3 +1,20 @@
+# Event
+Event is a point on space-time, (R, t)
+
+## Proper Time
+Suppose two events A and B both occur in the inertial frame S′ at the same spatial position x′. Then the time difference between them is called their **proper time**. Proper time is a central idea, because it is the quantity that defines the **world line** of a particle, which we will discuss later.
+
+Suppose two events C and D both occur in the inertial frame S′, but at different spatial positions. The time difference between them is not a proper time. The reason: to observe both events with one and the same clock, that clock would have to travel from the position of C to the position of D. Such a clock moves relative to S′, so it is not at rest in S′. A proper time must be measured by a clock at rest in the frame where both events occur at the same place.
+
+When we talk about **velocity**, we mean the ratio of the spatial separation to the time separation between two events. For events $E_1$ and $E_2$ with coordinates ($x_1$, $t_1$) and ($x_2$, $t_2$), this is
+``` math
+v = \dfrac{x_2-x_1}{t_2-t_1}
+```
+
+If we accept that events are the only fundamental physical entities, then velocity can be defined entirely in terms of the relations between events, without assuming world lines or four-velocity as independent concepts. In special relativity, this position is tenable.
+
+# World line(Worldline)
+
 # Time dilation
 Time is just order of "events".
 
