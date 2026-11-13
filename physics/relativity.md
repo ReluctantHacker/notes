@@ -17,6 +17,7 @@ v = \dfrac{x_2-x_1}{t_2-t_1}
 If we accept that events are the only fundamental physical entities, then velocity can be defined entirely in terms of the relations between events, without assuming world lines or four-velocity as independent concepts. In special relativity, this position is tenable.
 
 
+
 # Time dilation
 We define time range by events(the detail you can see classicalMechanics notes), but observers get different time range of two events from different inertial reference frame.
 
@@ -62,12 +63,34 @@ Event-X and Event-Y are not the same event, and not even happen in the same time
 # Proper Distance
 **Proper Distance** of two events are the space distance between two events when they are at the same time in S'. This is reasonable, because, intuitively, it's the same idea of classical distance. 
 
-The more interesting thing is that there is a symmetry structure between the concept of proper distance and proper time. In proper time, we define two events A and B at same position, which mean "space static" between two events. In proper distance, we define two events C and D at same time, which means "time static" between two events. When you observe A and B in S which has relative velocity to S', you are not seeing proper time anymore, because A, B are not in the same position. When you observe C and D in S, you are not seeing proper distance, either, because D and D are not at the same time anymore.
+The more interesting thing is that there is a symmetry structure between the concept of proper distance and proper time. In proper time, we define two events A and B at same position, which mean "space static" between two events. In proper distance, we define two events C and D at same time, which means "time static" between two events. When you observe A and B in S which has relative velocity to S', you are not seeing proper time anymore, because A, B are not in the same position. When you observe C and D in S, you are not seeing proper distance, either, because C and D are not at the same time anymore.
+
+It's easy to understand A, B. For C, D, suppose a train is at rest in frame S'. A lamp at the center of the carriage flashes, and the light reaches the rear end (event C) and the front end (event D). In S', the two ends are equidistant from the center and light speed is invariant, so the light reaches both ends simultaneously. Thus C and D are simultaneous in S', and the spatial distance between them in S' is their proper distance. Now observe the same two events from frame S, in which the train moves forward with speed v. The rear and moves toward the light while the front end moves away from it, so the light reaches the rear end first and the front end later. Therefore C and D are no longer simultaneously in S, and the spatial distance measured in S is not the proper distance; it is larger.
+
+# Spatial Length(normally just length)
+Spatial Length is actually the proper distance of two events when the system is the proper system. There's a very important idea of relative length. 
+
+Event A and Event B occurs in system S' at the same time. Event C and Event D occurs in system S at the same time. Then if velocity of AC(transfer in same system) equal to velocity of BD(transfer in same system) equal to the velocity between S and S', then distance of AB is the length L0 in S' which is the distance of CD in S.
+
+# Time Length
+Time Length is actually the proper time in S' at the same position of two events when the system is the proper system.
+
+If space and time are symmetry, we should discuss the version of length of time, too. For events E, F, G, H. E and F should be at same position in S'. G and H should be at same position in S. If velocity of EG equal to velocity of FH equal to the velocity between S and S', then time difference between EF in S' which is correspond to the time difference between GH.
+
+AB are the two end points of a ruler. EF are the two end points of a "time ruler". CD and GH are the same situation.
+
+> [NOTE!]
+> In a time snapshot, the spatial points captured have no temporal separation between them—only spatial separation. This is the case where relativity reduces to the classical concept of distance: when we speak of “distance” in the classical setting, we implicitly assume that all spatial points in the universe share a universal time; at that time, one computes the spatial distance between any two points, and time has no effect on space.
+
+> In a space snapshot, the temporal points captured have no spatial separation between them—only temporal separation. This is the case where relativity reduces to the classical concept of time interval: when we speak of “time interval” in the classical setting, we presuppose that all temporal points in the universe share an absolute space, so the time at every spatial point is the same, and space has no effect on time.
+
+# Distance dilation
+In system S', C and D are at same time. However, in S, it see C and D at different time. Suppose spatial distance of C and D in S is d'
 
 # Space Contraction (Length contraction)
-We define length(metric) as space distance of two events as they are at same time.
+We define length(metric) as space distance of two events as they are at same time. However, notice here, because two events at same time in S' would not at the same time in S. So when we measure the length from different reference frame, we are actually measure two groups of events with one includes two events.
 
-Using the exactly same thought experiment in time dilation. The S' measure the distance of up going and down going back
+Using the exactly same thought experiment in time dilation. The S' measure the distance of a flash of light starting to go up(Event A) to the ceil mirror(Event B).
 ``` math
 L' = 2c \delta t'
 ```
@@ -76,7 +99,7 @@ L' = 2c \delta t'
 
 In time dilation, the observers observe the "orthogonal" motion of light relative to motion of the reference frame. 
 
-They're actually measuring the time difference between two events. However, when you measuing the distance in space, you can't just say that $\Delta t c = \Delta d$ and $\Delta t' c = \Delta d'$ so distance dilation, too. It's not how it is because distance/length means velocity multiplies time. 
+They're actually measuring the time difference between two events. However, when you measuring the distance in space, you can't just say that $\Delta t c = \Delta d$ and $\Delta t' c = \Delta d'$ so distance dilation, too. It's not how it is because distance/length means velocity multiplies time. 
 
 The distance should be difference of two different positions **at the same time**(simultaneously). In system S, for a bar with two ends point A and B, if we want to measure the distance between them.
 ``` math
