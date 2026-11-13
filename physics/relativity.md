@@ -80,9 +80,9 @@ If space and time are symmetry, we should discuss the version of length of time,
 AB are the two end points of a ruler. EF are the two end points of a "time ruler". CD and GH are the same situation.
 
 > [!NOTE]
-> In a time snapshot(Events with a certain time), the spatial points captured have no temporal separation between them—only spatial separation. This is the case where relativity reduces to the classical concept of distance: when we speak of “distance” in the classical setting, we implicitly assume that all spatial points in the universe share a universal time; at that time, one computes the spatial distance between any two points, and time has no effect on space.
+> In a time snapshot(All events with a certain same time), the spatial points captured have no temporal separation between them—only spatial separation. This is the case where relativity reduces to the classical concept of distance: when we speak of “distance” in the classical setting, we implicitly assume that all spatial points in the universe share a universal time; at that time, one computes the spatial distance between any two points, and time has no effect on space.
 >
-> In a space snapshot(Events with a certain space point), the temporal points captured have no spatial separation between them—only temporal separation. This is the case where relativity reduces to the classical concept of time interval: when we speak of “time interval” in the classical setting, we presuppose that all temporal points in the universe share an absolute space, so the time at every spatial point is the same, and space has no effect on time.
+> In a space snapshot(all events with a certain space point), the temporal points captured have no spatial separation between them—only temporal separation. This is the case where relativity reduces to the classical concept of time interval: when we speak of “time interval” in the classical setting, we presuppose that all temporal points in the universe share an absolute space, so the time at every spatial point is the same, and space has no effect on time.
 
 # Distance dilation
 In system S', C and D are at same time. However, in S, it see C and D at different time. Suppose spatial distance of C and D in S is d'
